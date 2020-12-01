@@ -1,38 +1,56 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+h1 {
   text-align: center;
+  margin: 0.5rem 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+select {
+  margin-bottom: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Campo-form input[type="file"],
+.Campo-form input[type="password"],
+.Campo-form input[type="email"],
+select {
+  border: 1px solid #e1e1e1;
+  padding: 1rem;
+  flex: 1;
+  border-radius: 5px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Container {
   display: flex;
+  margin: 10px auto;
+  border: 1px solid black;
+  border-radius: 5pt;
+  width: 60%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.btn {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+.btn-primario {
+  background-color: blue;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.btn-block {
+  display: block;
+  width: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-secundario {
+  background-color: gray;
+  color: white;
+}
+.Container-form {
+  margin: auto;
+}
+.Campo-form {
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
 }

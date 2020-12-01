@@ -1,0 +1,32 @@
+[
+  {
+    "id" : "1",
+    "deviceName" : "Iphone 6",
+    "userId" : "1"
+  },
+  {
+    "id" : "2",
+    "deviceName" : "Iphone 7",
+    "userId" : "3"
+  },
+  {
+    "id" : "3",
+    "deviceName" : "Iphone 8",
+    "userId" : "2"
+  },
+  {
+    "id" : "4",
+    "deviceName" : "Samsung",
+    "userId" : "2"
+  },
+  {
+    "id" : "5",
+    "deviceName" : "Xiaomi",
+    "userId" : "1"
+  },
+  {
+    "id" : "6",
+    "deviceName" : "Huawei",
+    "userId" : "3"
+  }
+]

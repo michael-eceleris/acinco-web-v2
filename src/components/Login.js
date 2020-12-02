@@ -1,22 +1,28 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect, useContext} from 'react';
 
 import Devices from './Devices';
+import AuthContext from '../context/auth/authContext';
+import FormContext from '../context/form/formContext';
 
+const Form = () => {
 
-const Form = ({data}) => {
-    const [user, setUser] = useState({
+    const authContext = useContext(AuthContext); 
+    const { authenticate, login, authUser} = authContext;   
+    const formContext = useContext(FormContext);
+    const { clearForm } = formContext;
+    const [ user, setUser] = useState({
         email: '',
         password: ''
     });
-    const [validate, setValide] = useState(null)
     const [ error, setError] = useState(false);
     const { email, password} = user;
 
     useEffect(()=>{
-        setValide(null)
+        authUser(null);
+        clearForm();
     },[email,password])
 
-    const onChange = ( e) => {
+    const onChange = (e) => {
         setUser({
             ...user,
             [e.target.name] : e.target.value,
@@ -28,8 +34,10 @@ const Form = ({data}) => {
         if(email.trim() === "" || password.trim() === ""){
             console.log("todos lo campos son necesarios")
         }
-        const validate = data.filter((user) => user.email === email && user.password === password )
-        if(validate.length  == 1) setValide(validate[0]);
+        login({
+            ...user,
+            [e.target.name] : e.target.value
+        })
     }
     return (
         <div className="Container-form">
@@ -62,9 +70,9 @@ const Form = ({data}) => {
                     />
                 </div>
             </form>
-            { validate ? (<div>
+            { authenticate? (<div>
                 <p>Esta validado</p>
-                <Devices userId={validate.id}/>
+                <Devices />
             </div>): null}
         </div>
     )

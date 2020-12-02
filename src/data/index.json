@@ -2,19 +2,16 @@
   {
     "id": "1",
     "email" : "correo1@correo.com",
-    "password": "12345",
-    "dispositivos" : []
+    "password": "12345"
   },
   {
     "id": "2",
     "email" : "correo2@correo.com",
-    "password": "12345",
-    "dispositivos" : []
+    "password": "12345"
   },
   {
     "id": "3",
     "email" : "correo3@correo.com",
-    "password": "12345",
-    "dispositivos" : []
+    "password": "12345"
   }
 ]

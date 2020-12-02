@@ -1,17 +1,22 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import plans from '../data/plans.json';
-import coverage from '../data/coverage.json';
+import coverages from '../data/coverage.json';
 import Document from './Documents';
-const Coverage = ({planSelect}) => {
+import FormContext from '../context/form/formContext';
+const Coverage = () => {
+  const formContext = useContext(FormContext);
+  const {device, plan, selectCoverage} = formContext;
   const [ coverageSelect, setCoverageSelect ] = useState(null);
   useEffect(()=>{
+    selectCoverage(null)
     setCoverageSelect(null)
-  },[planSelect])
-  const selectPlan = plans.find( plan => plan.id === planSelect.plans);
+  },[plan])
+  const selectPlan = plans.find( planId => planId.id === plan);
   const plansCoverage = selectPlan.cobertura.map(coverages => coverages.coberturaPlan);
-  const selectCoverage = coverage.filter( cov => cov.id === plansCoverage[0]);
+  const coverage = coverages.filter( cov => cov.id === plansCoverage[0]);
 
   const onChange = e => {
+    selectCoverage(e.target.value)
     setCoverageSelect({
       ...coverageSelect,
       [e.target.name] : e.target.value,
@@ -21,9 +26,9 @@ const Coverage = ({planSelect}) => {
     <div>
       <select name="coverage" onChange={onChange}>
         <option>---Selecione su cobertura</option>
-        {selectCoverage.map(cov => (<option key={cov.id} value={cov.id}>{cov.coverageName}</option>))}
+        {coverage.map(cov => (<option key={cov.id} value={cov.id}>{cov.coverageName}</option>))}
       </select>
-      {coverageSelect ? <Document coverageSelect={coverageSelect} /> : null}
+      {coverageSelect ? <Document /> : null}
     </div>
    );
 }

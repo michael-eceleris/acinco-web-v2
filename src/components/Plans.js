@@ -1,29 +1,39 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import Coverage from './Coverage';
 import plans from '../data/plans.json';
-const Plans = ({deviceId }) => {
-  const [planSelect, setPlanSelect] = useState(null);
-  useEffect(()=>{
-    setPlanSelect(null)
-  },[deviceId])
+import FormContext from '../context/form/formContext';
+
+
+const Plans = () => {
+
   const selectDevice = [];
-  const plansDevice = plans.map( plan => plan.devices.map(device => (device.devicePlan === deviceId ) && selectDevice.push(plan)))
-  console.log(selectDevice)
+  const formContext = useContext(FormContext);
+  const { device, selectPlan } = formContext;
+
+  const [planSelect, setPlanSelect] = useState(null);
+
+  useEffect(()=>{
+    selectPlan(null);
+    setPlanSelect(null);
+  },[device]);
+
+  const plansDevice = plans.map( plan => plan.devices.map(deviceId => (deviceId.devicePlan === device ) && selectDevice.push(plan)));
   const onChange = e => {
+    selectPlan(e.target.value);
     setPlanSelect({
       ...planSelect,
-      [e.target.name] : e.target.value
-    })
-  }
+      [e.target.name] : e.target.value,
+    });
+  };
   return ( 
     <div>
       <select name="plans" onChange={onChange}>
-        <option>---Seleccione Plan ---</option>
+        <option value="">---Seleccione Plan ---</option>
         {selectDevice.map( plan => (<option key={plan.id} value={plan.id}>{plan.planName}</option>))}
       </select>
-      {planSelect? <Coverage planSelect={planSelect} />: null}
+      {planSelect? <Coverage />: null}
     </div>
   );
-}
+};
  
 export default Plans;

@@ -1,34 +1,35 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import FormContext from '../context/form/formContext';
+import docs from '../data/documents.json';
 import MoreInfo from './MoreInfo'
-const Documents = ({coverageSelect}) => {
-  const { coverage } = coverageSelect;
-  const [submit, setSubmit] = useState(null)
-  console.log(coverage)
-  const onSubmit = e => {
-    e.preventDefault()
-    setSubmit(true);
+const Documents = () => {
+  const formContext = useContext(FormContext);
+  const { coverage, selectDocument } = formContext;
+  const Docs = docs.find(doc => doc.coverageId === coverage);
+  const documents  = [];
+  const [loadDocuments, setLoadDocuments] = useState(false);
+
+  const onLoad = (e) => {
+    documents.push(e.target.value)
+    if(documents.length === Docs.documents.length) {
+      setLoadDocuments(true);
+      selectDocument(documents);
+    }else{
+      setLoadDocuments(false);
+    }
   }
   return ( 
     <div>
-      <form
-        onSubmit={onSubmit}
-      >
-        {coverage ? (
-          <div className="Campo-form">
-            <input 
-              type="file"
-            />
-          </div>
-        ) : null}
-        <div className="Campo-form">
+      {Docs.documents.map( doc => (
+        <div className="Campo-form" onChange={onLoad}>
+          <label>{doc}</label>
           <input 
-            type="submit"
-            className=" btn btn-primario btn-block"
-            value="Submit documentos"
+            type="file"
+            required
           />
         </div>
-      </form>
-      {submit ? <MoreInfo /> : null}
+      ))}
+      {loadDocuments ? <MoreInfo /> : null}
     </div>
   );
 }

@@ -1,17 +1,11 @@
-import React,{useEffect, useState} from 'react';
+import React, { useState, useContext } from 'react';
+import FormContext from '../context/form/formContext';
 
 const MoreInfo = () => {
+  const formContext = useContext(FormContext);
+  const { selectMoreInfo } = formContext;
   const [ phoneNumber, setPhoneNumber] = useState('');
   const [error, setError] = useState(null);
-  /* useEffect(()=> {
-    if(phoneNumber.length < 8  || phoneNumber.length > 11) {
-      setError(true)
-    }else {
-      setError(false)
-    }
-  },[phoneNumber]) */
-  console.log(phoneNumber.length)
-  console.log(error)
   const handleChange = e => {
     e.preventDefault()
     if(phoneNumber.length < 7  || phoneNumber.length > 10) {
@@ -20,14 +14,15 @@ const MoreInfo = () => {
       setError(false)
     }
     setPhoneNumber(e.target.value)
+    selectMoreInfo(phoneNumber)
   }
   return ( 
     <div className="Container-form">
-      <form>
         <div className="Campo-form">
           <label> Seleccionar fecha</label>
           <input 
             type="date"
+            required
           />
         </div>
         <div className="Campo-form">
@@ -37,7 +32,7 @@ const MoreInfo = () => {
             type="number"
             name="number"
             placeholder="Phone number"
-            required={true}
+            required
             onChange={handleChange}
             value={phoneNumber}
           />
@@ -48,9 +43,16 @@ const MoreInfo = () => {
           <input 
             type="text"
             placeholder="otra"
+            required
           />
         </div>
-      </form>
+        <div className="Campo-form">
+          <input 
+            type="submit"
+            className= "btn btn-primario btn-block"
+            value="SUBMIT"
+          />
+        </div>
     </div>
    );
 }

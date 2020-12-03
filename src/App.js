@@ -1,18 +1,14 @@
 import './App.css'
-import Login from './components/Login';
-import Data from './data'
 import AuthState from './context/auth/authState';
 import FormState from './context/form/formState';
+import Layout from './layout/Layout';
 function App() {
   return (
-    <AuthState>
       <FormState>
-        <div className="Container">
-          <h1>Login</h1>
-          <Login data={Data}/>
-        </div>
+        <AuthState>
+            <Layout />
+        </AuthState>
       </FormState>
-    </AuthState>
   );
 }
 

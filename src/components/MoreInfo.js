@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, Fragment } from 'react';
 import FormContext from '../context/form/formContext';
 
 const MoreInfo = () => {
@@ -17,7 +17,7 @@ const MoreInfo = () => {
     selectMoreInfo(phoneNumber)
   }
   return ( 
-    <div className="Container-form">
+    <Fragment>
         <div className="Campo-form">
           <label> Seleccionar fecha</label>
           <input 
@@ -46,14 +46,7 @@ const MoreInfo = () => {
             required
           />
         </div>
-        <div className="Campo-form">
-          <input 
-            type="submit"
-            className= "btn btn-primario btn-block"
-            value="SUBMIT"
-          />
-        </div>
-    </div>
+    </Fragment>
    );
 }
  

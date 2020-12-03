@@ -1,7 +1,8 @@
 import { 
   SUCCESFULL_LOGIN, 
   ERROR_LOGIN, 
-  AUTH
+  AUTH,
+  GET_USER
 } from '../../types';
 
 export default (state, action) => {
@@ -9,7 +10,7 @@ export default (state, action) => {
     case SUCCESFULL_LOGIN:
       return {
         ...state,
-        user: action.payload,
+        token: action.payload,
         authenticate: true,
       }
     case ERROR_LOGIN:
@@ -18,10 +19,11 @@ export default (state, action) => {
         authenticate: null,
         user: null
       }
-    case AUTH:
+    case GET_USER:
       return{
         ...state,
-        authenticate: action.payload
+        authenticate: true,
+        user: action.payload,
       }
     default:
       return state;

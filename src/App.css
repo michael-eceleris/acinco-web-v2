@@ -3,12 +3,51 @@
   padding: 0;
   box-sizing: content-box;
 }
+body {
+  background-color: #e1e1e1;
+}
 h1 {
-  text-align: center;
   margin: 0.5rem 0;
+  color: #1f262d;
+  font-size: 1.5rem;
 }
 select {
   margin-bottom: 10px;
+}
+.header {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  margin-left: 10px;
+}
+.container-steeper {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+}
+.stepper {
+  border-top: 0.5px solid #687482;
+  border-bottom: 0.5px solid #687482;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  width: 100%;
+}
+.stepper div {
+  width: 10%;
+  text-align: center;
+  margin: 10px;
+}
+.icon {
+  width: 100%;
+}
+.content-stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  width: 80%;
+  flex-direction: column;
 }
 .Campo-form input[type="file"],
 .Campo-form input[type="password"],
@@ -19,38 +58,141 @@ select {
   flex: 1;
   border-radius: 5px;
 }
-.Container {
-  display: flex;
-  margin: 10px auto;
-  border: 1px solid black;
-  border-radius: 5pt;
-  width: 60%;
-  flex-direction: column;
+.container {
+  margin: 10px;
+  border-radius: 2pt;
+  background-color: white;
 }
 .btn {
-  margin-top: 1rem;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  border: none;
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.78rem 1rem;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+    transform 0.25s ease-in-out;
+}
+.btn:hover {
+  color: #212529;
+  text-decoration: none;
 }
 .btn-primario {
-  background-color: blue;
-  color: white;
+  color: #ffffff;
+  background-color: #4285f4;
+  border-color: #4285f4;
 }
-.btn-block {
-  display: block;
-  width: 100%;
+.btn-primario:hover {
+  color: #ffffff;
+  background-color: #1e6ef2;
+  border-color: #1266f1;
+  box-shadow: 0 0 0 0.2rem rgba(94, 151, 246, 0.5);
 }
+.btn-sm,
+.btn-group-sm > .btn {
+  padding: 0.46rem 1rem;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
 .btn-secundario {
-  background-color: gray;
-  color: white;
+  color: #ffffff;
+  background-color: #6c757d;
+  border-color: #6c757d;
 }
-.Container-form {
-  margin: auto;
+.btn-secundario:hover {
+  color: #ffffff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+.btn-secundario:focus,
+.btn-secundario.focus {
+  color: #ffffff;
+  background-color: #5a6268;
+  border-color: #545b62;
+  box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+}
+.btn-secundario.disabled,
+.btn-secundario:disabled {
+  color: #ffffff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.btn-secundario:not(:disabled):not(.disabled):active,
+.btn-secundario:not(:disabled):not(.disabled).active,
+.show > .btn-secundario.dropdown-toggle {
+  color: #ffffff;
+  background-color: #545b62;
+  border-color: #4e555b;
+}
+.btn-secundario:not(:disabled):not(.disabled):active:focus,
+.btn-secundario:not(:disabled):not(.disabled).active:focus,
+.show > .btn-secundario.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+}
+.mb-5,
+.my-5 {
+  margin-bottom: 1rem !important;
+}
+.lead {
+  font-size: 1.32812rem;
+  font-weight: 300;
+}
+.fs--16 {
+  font-size: 16px !important;
+}
+.max-w-250 {
+  max-width: 250px !important;
+}
+.ml-auto,
+.mx-auto {
+  margin-left: auto !important;
+}
+.container-form {
+  width: 90%;
+  border: 0.5px solid #e1e1e1;
+  border-radius: 5pt;
+  padding: 20pt;
 }
 .Campo-form {
   display: flex;
   margin-bottom: 1rem;
   align-items: center;
+}
+.container-review {
+  width: 90%;
+  border: 0.5px solid #e1e1e1;
+  border-radius: 5pt;
+  padding: 20pt;
+}
+.campo-review {
+  display: flex;
+  flex-direction: column;
+  color: #6c757d;
+  margin: 10px 0px;
+  border-bottom: 0.5px solid #e1e1e1;
+  white-space: nowrap;
+}
+.campo-review label {
+  margin: 5px 0px;
+}
+.campo-review h3 {
+  color: black;
+  font-size: 20px;
+  margin: 5px 0px;
+}
+.campo-btn {
+  display: flex;
+  justify-content: space-evenly;
 }

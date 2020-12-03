@@ -1,39 +1,55 @@
-import React,{useReducer} from 'react';
+import React,{useContext, useReducer, useEffect } from 'react';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
 import users from '../../data';
 import { 
   SUCCESFULL_LOGIN, 
-  AUTH, 
+  GET_USER, 
   ERROR_LOGIN
 } from '../../types';
+import FormContext from '../form/formContext';
+import clienteAxios from '../../config/axios';
+import tokenAuth from '../../config/tokenAuth';
 
 const AuthState = (props ) => {
+  const formContext = useContext(FormContext);
+  const { getDevices } = formContext;
   const initialState = {
     user: null,
     authenticate: null,
+    token: null,
   }
   const [state, dispatch] = useReducer(authReducer, initialState);
-
-  const login = (datos) => {
-    const user = users.find(( user ) => user.email === datos.email && user.password === datos.password )
-    if(user){
+  
+  const login = async (datos) => {
+    try {
+      const response = await clienteAxios.post('/auth/login', datos);
       dispatch({
-        type: SUCCESFULL_LOGIN,
-        payload: user
-      })
-    }else{
+          type: SUCCESFULL_LOGIN,
+          payload: response.data,
+        });
+    }catch (error) {
+      console.log(error);
       dispatch({
         type: ERROR_LOGIN
       })
     }
   }
-  const authUser = (auth) => {
-    dispatch({
-      type: AUTH,
-      payload: auth
-    })
+  const authUser = async () => {
+    if(state.token) {
+      tokenAuth(state.token);
+    }
+    try {
+      const response  = await clienteAxios.get('user/me')
+      dispatch({
+        type: GET_USER,
+        payload: response.data
+      })
+    } catch (error) {
+      console.log(error);
+    }
   }
+
   return(
     <AuthContext.Provider
       value={{

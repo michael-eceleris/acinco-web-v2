@@ -7,21 +7,19 @@ import FormContext from '../context/form/formContext';
 const Form = () => {
 
     const authContext = useContext(AuthContext); 
-    const { authenticate, login, authUser} = authContext;   
+    const { token, authenticate, login, authUser} = authContext;   
     const formContext = useContext(FormContext);
-    const { clearForm } = formContext;
+    const { clearForm, nextStep, getDevices } = formContext;
     const [ user, setUser] = useState({
-        email: '',
-        password: ''
+        username: '',
+        password: '',
     });
     const [ error, setError] = useState(false);
-    const { email, password} = user;
+    const { username, password} = user;
 
-    useEffect(()=>{
-        authUser(null);
-        clearForm();
-    },[email,password])
-
+    useEffect(()=> {
+        authUser();
+    },[authenticate,token])
     const onChange = (e) => {
         setUser({
             ...user,
@@ -31,7 +29,7 @@ const Form = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        if(email.trim() === "" || password.trim() === ""){
+        if(username.trim() === "" || password.trim() === ""){
             console.log("todos lo campos son necesarios")
         }
         login({
@@ -40,15 +38,16 @@ const Form = () => {
         })
     }
     return (
-        <div className="Container-form">
+        <div className="container-form">
+            <h1>Login</h1>
             <form onSubmit={handleOnSubmit}>
                 <div className="Campo-form">
                     <input 
-                        id="email"
-                        name="email"
+                        id="username"
+                        name="username"
                         type="email"
                         placeholder="email"
-                        value={email}
+                        value={username}
                         onChange={onChange}
                     />
                 </div>
@@ -65,15 +64,12 @@ const Form = () => {
                 <div className="Campo-form">
                     <input 
                         type="submit"
-                        className= "btn btn-primario btn-block"
+                        className= "btn btn-sm btn-primario"
                         value="SIGN IN"
                     />
                 </div>
             </form>
-            { authenticate? (<div>
-                <p>Esta validado</p>
-                <Devices />
-            </div>): null}
+            { authenticate ? nextStep(1): null}
         </div>
     )
 }

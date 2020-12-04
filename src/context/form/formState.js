@@ -24,16 +24,15 @@ import clienteAxios from '../../config/axios';
 
 const FormState = (props) => {
   const initialState = {
-    userId: null,
     device: null,
     devicesUser: null,
     plan: null,
     plansDevice: null,
     coverage: null,
     coveragePlans: null,
-    documents: [],
-    documentsCoverage: [],
-    moreInfo:{},
+    documents: null,
+    documentsCoverage: null,
+    moreInfo:null,
     step: 0,
   }
   const [state, dispatch ] = useReducer(formReducer, initialState);
@@ -63,28 +62,27 @@ const FormState = (props) => {
   const getCoverages = async(id) => {
     try {
       const response = await clienteAxios.get(`/cobertura/tipo-cobertura-cobertura/dispositivo-cliente-plan/${id}`);
-      console.log(response)
+      const types_coverage = response.data.map( ( cov ) => cov.tipos_cobertura_cobertura);
+      const coverages = types_coverage.map( ( cov2 ) => cov2[0])
+      console.log(coverages)
       dispatch({
         type: COVERAGE_PLAN,
-        payload: response.data
+        payload: coverages,
       })
     } catch (error) {
       console.log(error)
     }
-    /* const selectPlan = plans.find( planId => planId.id === id);
-    const plansCoverage = selectPlan.cobertura.map(coverages => coverages.coberturaPlan);
-    const coverage = coverages.filter( cov => cov.id === plansCoverage[0]);
-    dispatch({
-      type: COVERAGE_PLAN,
-      payload: coverage
-    }) */
   }
-  const getDocuments = (id) => {
-    /* const docs = document.find(doc => doc.coverageId === id);
-    dispatch({
-      type: DOCS_COVERAGE,
-      payload: docs.documents
-    }) */
+  const getDocuments = async (id) => {
+    try {
+      const response = await clienteAxios.get(`/documento/tipo-cobertura-cobertura/${id}`)
+      dispatch({
+        type: DOCS_COVERAGE,
+        payload: response.data,
+      })
+    } catch (error) {
+      console.log(error);
+    }
   }
   const selectDevice = (id) => {
     const device = state.devicesUser.find(deviceId => deviceId.id == id);
@@ -104,7 +102,7 @@ const FormState = (props) => {
   }
   const selectCoverage = (id) => {
     if(state.coveragePlans){
-      const coverage = state.coveragePlans.find(coverageId => coverageId.nombre === id);
+      const coverage = state.coveragePlans.find(coverageId => coverageId.id == id);
       dispatch({
         type: SELECT_COVERAGE,
         payload: coverage,
@@ -130,10 +128,8 @@ const FormState = (props) => {
       type: CLEAR_FORM
     })
   }
-  const submitForm = (e,id) => {
-    e.preventDefault()
-    state.userId= id
-    console.log(state)
+  const submitForm = () => {
+    
   }
   const nextStep = (id) => {
     dispatch({

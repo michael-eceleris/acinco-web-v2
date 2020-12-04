@@ -1,11 +1,11 @@
-import React,{useContext, useReducer, useEffect } from 'react';
+import React,{useContext, useReducer} from 'react';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
-import users from '../../data';
 import { 
   SUCCESFULL_LOGIN, 
   GET_USER, 
-  ERROR_LOGIN
+  ERROR_LOGIN,
+  LOGOUT,
 } from '../../types';
 import FormContext from '../form/formContext';
 import clienteAxios from '../../config/axios';
@@ -13,7 +13,7 @@ import tokenAuth from '../../config/tokenAuth';
 
 const AuthState = (props ) => {
   const formContext = useContext(FormContext);
-  const { getDevices } = formContext;
+  const { clearForm } = formContext;
   const initialState = {
     user: null,
     authenticate: null,
@@ -50,13 +50,20 @@ const AuthState = (props ) => {
     }
   }
 
+  const logOut = () => {
+    dispatch({
+      type: LOGOUT,
+    })
+  }
+
   return(
     <AuthContext.Provider
       value={{
         user: state.user,
         authenticate: state.authenticate,
         login,
-        authUser
+        authUser,
+        logOut,
       }}    
     >
       {props.children}

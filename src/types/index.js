@@ -1,6 +1,7 @@
 export const SUCCESFULL_LOGIN = "SUCCESFULL_LOGIN";
 export const ERROR_LOGIN = "ERROR_LOGIN";
 export const GET_USER = "GET_USER";
+export const LOGOUT = "LOGOUT";
 
 export const SELECT_DEVICE = "SELECT_DEVICE";
 export const SELECT_PLAN = "SELECT_PLAN";

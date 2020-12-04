@@ -85,9 +85,15 @@ export default (state, action) => {
       return {
         ...state,
         device: null,
+        devicesUser: null,
         plan: null,
+        plansDevice: null,
         coverage: null,
+        coveragePlans: null,
         documents: null,
+        documentsCoverage: null,
+        moreInfo:null,
+        step: 0,
       }
     default:
       return state;

@@ -9,12 +9,9 @@ const Coverage = () => {
   useEffect(()=>{
     selectCoverage(null)
   },[plan])
-  /* const selectPlan = plans.find( planId => planId.id === plan);
-  const plansCoverage = selectPlan.cobertura.map(coverages => coverages.coberturaPlan);
-  const coverage = coverages.filter( cov => cov.id === plansCoverage[0]); */
   return ( 
     <Fragment>
-      { coveragePlans ? coveragePlans.map((cov) => (<option value={cov.nombre}>{cov.nombre}</option>)) : null}
+      { coveragePlans ? coveragePlans.map((cov) => (<option key={cov.id} value={cov.id}>{cov.nombre}</option>)) : null}
     </Fragment>
    );
 }

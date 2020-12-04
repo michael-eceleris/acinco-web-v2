@@ -7,11 +7,10 @@ import AuthContext from '../context/auth/authContext';
 const SelectServices = () => {
   const formContext = useContext(FormContext);
   const authContext = useContext(AuthContext);
-  const { user, authUser } = authContext;
+  const { user, authUser, logOut } = authContext;
   const {
     device,
     plan, 
-    plansDevice,
     coverage,
     getDevices, 
     getPlans,
@@ -19,11 +18,12 @@ const SelectServices = () => {
     getDocuments,
     selectDevice, 
     selectPlan,
-    selectCoverage, 
-    submitForm, 
+    selectCoverage,
     nextStep,
     previusStep,
+    clearForm,
     } = formContext;
+  const [ error, setError ] = useState(false);
   const [deviceSelect, setDeviceSelect] = useState(null);
   const [planSelect, setPlanSelect] = useState(null);
   const [ coverageSelect, setCoverageSelect ] = useState(null);
@@ -57,6 +57,20 @@ const SelectServices = () => {
     });
     getDocuments(e.target.value);
   }
+
+  const handleNextStep = () => {
+    if(device && plan && coverage){
+      setError(false);
+      nextStep(2);
+    }else{
+      setError(true);
+    }
+  }
+  const handlePreviusStep = () => {
+    clearForm();
+    logOut();
+    previusStep(0);
+  }
   return ( 
     <div className="container-form">
       <label>Seleccione su dispostivo</label>
@@ -65,6 +79,7 @@ const SelectServices = () => {
           <option> ---Selecciona tu dispostivo---</option>
           <Devices />
         </select>
+        {error && !device ? <p> *Campo requerido </p>: null}
       </div>
       <label>Seleccione su plan</label>
       <div className="Campo-form">
@@ -72,6 +87,7 @@ const SelectServices = () => {
           <option> ---Selecciona tu dispostivo---</option>
             {device ?  <Plans /> : null }
         </select>
+        {error & !plan ? <p> *Campo requerido </p>: null}
       </div>
       <label>Seleccione su cobertura</label>
       <div className="Campo-form">
@@ -79,17 +95,18 @@ const SelectServices = () => {
           <option> ---Selecciona tu dispostivo---</option>
             {plan ? <Coverages /> : null}
         </select>
+        {error & !coverage ? <p> *Campo requerido </p>: null}
       </div>
       <div className="campo-btn">
         <button
           className="btn btn-sm btn-secundario"
-          onClick={()=>previusStep(0)}
+          onClick={handlePreviusStep}
         >
           Atras
         </button>
         <button
           className="btn btn-sm btn-primario"
-          onClick={()=> nextStep(2)}
+          onClick={handleNextStep}
         >
           Siguente
         </button>

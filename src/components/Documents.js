@@ -1,36 +1,42 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useRef, useContext, Fragment} from 'react';
 import FormContext from '../context/form/formContext';
-import docs from '../data/documents.json';
-import MoreInfo from './MoreInfo'
 const Documents = () => {
   const formContext = useContext(FormContext);
   const { documentsCoverage, coverage, selectDocument } = formContext;
-  /* const Docs = docs.find(doc => doc.coverageId === coverage); */
-  const documents  = [];
-  const [loadDocuments, setLoadDocuments] = useState(false);
-
+  let documents = [];
+  const [loadDocuments, setLoadDocuments] = useState(null);
+  const [document, setDocument] = useState([])
   const onLoad = (e) => {
-    documents.push(e.target.value)
+    setDocument(
+      {
+        ...document,
+      nombre_documento_save: e.target.name,
+      doc: e.target.value
+      }
+    )
     if(documents.length === documentsCoverage.length) {
       setLoadDocuments(true);
-      selectDocument(documents);
+      selectDocument(document);
     }else{
       setLoadDocuments(false);
     }
   }
   return ( 
-    <div>
-      {documentsCoverage.map( doc => (
-        <div className="Campo-form" onChange={onLoad}>
-          <label>{doc}</label>
+    <Fragment>
+      {documentsCoverage.map( doc => (<Fragment key={doc.id}>
+        <label>{doc.nombre_documento_save}</label>
+        <div className="Campo-form" /* onChange={onLoad} */ >
           <input 
+            name={doc.nombre_documento_save}
             type="file"
             required
+            accept=".pdf"
+            onChange={onLoad}
           />
         </div>
+        </ Fragment>
       ))}
-      {/* {loadDocuments ? <MoreInfo /> : null} */}
-    </div>
+    </Fragment>
   );
 }
 export default Documents;

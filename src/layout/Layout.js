@@ -1,5 +1,4 @@
 import React ,{ useContext} from 'react';
-import SteprWizard from 'react-step-wizard';
 import Stepper from '../components/Stepper';
 import Login from '../components/Login';
 import SelectService from '../layout/SelectServices';

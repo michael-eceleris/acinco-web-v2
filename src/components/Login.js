@@ -9,7 +9,7 @@ const Form = () => {
     const authContext = useContext(AuthContext); 
     const { token, authenticate, login, authUser} = authContext;   
     const formContext = useContext(FormContext);
-    const { clearForm, nextStep, getDevices } = formContext;
+    const { nextStep } = formContext;
     const [ user, setUser] = useState({
         username: '',
         password: '',
@@ -17,9 +17,6 @@ const Form = () => {
     const [ error, setError] = useState(false);
     const { username, password} = user;
 
-    useEffect(()=> {
-        authUser();
-    },[authenticate,token])
     const onChange = (e) => {
         setUser({
             ...user,
@@ -36,6 +33,7 @@ const Form = () => {
             ...user,
             [e.target.name] : e.target.value
         })
+        authUser();
     }
     return (
         <div className="container-form">
@@ -61,7 +59,7 @@ const Form = () => {
                         onChange={onChange}
                     />
                 </div>
-                <div className="Campo-form">
+                <div className="cambo-btn">
                     <input 
                         type="submit"
                         className= "btn btn-sm btn-primario"

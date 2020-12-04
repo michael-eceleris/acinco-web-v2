@@ -3,16 +3,94 @@
   padding: 0;
   box-sizing: content-box;
 }
-body {
-  background-color: #e1e1e1;
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-h1 {
-  margin: 0.5rem 0;
-  color: #1f262d;
-  font-size: 1.5rem;
+body {
+  margin: 0;
+  font-family: Roboto, "Poppins", "Source Sans Pro", "Muli", "Noto Sans",
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #ffffff;
+}
+span {
+  font-weight: 200;
+  font-family: Roboto, "Poppins", "Source Sans Pro", "Muli", "Noto Sans",
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+p {
+  color: red;
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 select {
   margin-bottom: 10px;
+}
+input[type="file"]::-webkit-file-upload-button {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.78rem 1rem;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+    transform 0.25s ease-in-out;
+  color: #ffffff;
+  background-color: #4285f4;
+  border-color: #4285f4;
+  padding: 0.46rem 1rem;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
 }
 .header {
   display: table-cell;
@@ -24,22 +102,8 @@ select {
   display: flex;
   background-color: white;
   flex-direction: column;
-}
-.stepper {
-  border-top: 0.5px solid #687482;
-  border-bottom: 0.5px solid #687482;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: stretch;
-  width: 100%;
-}
-.stepper div {
-  width: 10%;
-  text-align: center;
-  margin: 10px;
-}
-.icon {
-  width: 100%;
+  border-top: 0.5px solid #e1e1e1;
+  border-bottom: 0.5px solid #e1e1e1;
 }
 .content-stepper {
   display: flex;
@@ -52,16 +116,26 @@ select {
 .Campo-form input[type="file"],
 .Campo-form input[type="password"],
 .Campo-form input[type="email"],
+.Campo-form input[type="text"],
+.Campo-form input[type="number"],
+.Campo-form input[type="date"],
+textarea,
 select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 1px solid #e1e1e1;
   padding: 1rem;
   flex: 1;
   border-radius: 5px;
 }
 .container {
-  margin: 10px;
+  margin: 10px auto;
+  padding: 10px;
   border-radius: 2pt;
   background-color: white;
+  width: 80%;
+  box-shadow: 2px 3px 1px 5px #e1e1e1;
 }
 .btn {
   display: inline-block;
@@ -88,9 +162,9 @@ select {
   text-decoration: none;
 }
 .btn-primario {
-  color: #ffffff;
-  background-color: #4285f4;
-  border-color: #4285f4;
+  color: #e5f0fe;
+  background-color: #5d9afc;
+  border-color: #5d9afc;
 }
 .btn-primario:hover {
   color: #ffffff;
@@ -107,14 +181,14 @@ select {
 }
 
 .btn-secundario {
-  color: #ffffff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  color: #5d9afc;
+  background-color: #e5f0fe;
+  border-color: #e5f0fe;
 }
 .btn-secundario:hover {
-  color: #ffffff;
-  background-color: #5a6268;
-  border-color: #545b62;
+  color: #5d9afc;
+  background-color: #e5f0fe;
+  border-color: #e5f0fe;
 }
 .btn-secundario:focus,
 .btn-secundario.focus {
@@ -168,7 +242,7 @@ select {
 .Campo-form {
   display: flex;
   margin-bottom: 1rem;
-  align-items: center;
+  flex-direction: column;
 }
 .container-review {
   width: 90%;
@@ -195,4 +269,7 @@ select {
 .campo-btn {
   display: flex;
   justify-content: space-evenly;
+}
+.step {
+  activebgcolor: blue;
 }

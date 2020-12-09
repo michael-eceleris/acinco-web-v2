@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Banner from "../components/Banner";
-import SectionService from "../components/SectionServices";
-import ProductsHome from "../components/ProductsHome";
-import OurExperience from "../components/OurExperience";
+import Banner from "../components/componentsHome/Banner";
+import SectionService from "../components/componentsHome/SectionServices";
+import ProductsHome from "../components/componentsHome/ProductsHome";
+import OurExperience from "../components/componentsHome/OurExperience";
 import OurClients from "../components/OurClients";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer"

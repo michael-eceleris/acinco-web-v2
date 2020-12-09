@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import TeamWork from '../../assets/icons/teamwork.svg';
-import SmartPhone from "../../assets/icons/telefono-inteligente.svg";
-import PhoneRepair from "../../assets/images/phone-repair-icon.png";
-import MobileSecure from "../../assets/images/mobile-secure.png";
-import LogoSamgung from "../../assets/icons/samsung.svg";
-import LogoAxaColpatria from "../../assets/icons/logo-axa-colpatria.png";
-import Logo from '../../assets/images/Logo.png';
+import SmartPhone from "../../../assets/icons/telefono-inteligente.svg";
+import PhoneRepair from "../../../assets/images/phone-repair-icon.png";
+import MobileSecure from "../../../assets/images/mobile-secure.png";
+import LogoSamgung from "../../../assets/icons/samsung.svg";
+import LogoAxaColpatria from "../../../assets/icons/logo-axa-colpatria.png";
 
 const ProductsHome = () => {
   return ( 

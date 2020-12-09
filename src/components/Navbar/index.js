@@ -16,20 +16,21 @@ const Navbar = () => {
                 <path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
               </svg>
             </button>
-            <Link className="navbar-brand">
+            <Link className="navbar-brand" to="/">
               <img width="100" height="100" alt="Logo de la empresa" src={Logo}/>
             </Link>
           </div>
           <div className="collapse navbar-collapse navbar-animate-fadein justify-content-end">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link js-ajax">Inicio</Link>
+                <Link className="nav-link js-ajax" to="/">Inicio</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link js-ajax">Reclamaciones</Link>
               </li>
               <li className="nav-item dropdown active">
                 <Link 
+                  to="/nuestros-productos"
                   className="nav-link dropdown-toggle" 
                   data-toggle="dropdown" 
                   aria-haspopup="true" 
@@ -39,37 +40,37 @@ const Navbar = () => {
                 <div  aria-labelledby="mainNavHome" className="dropdown-menu dropdown-menu-clean dropdown-menu-hover">
                   <ul className="list-unstyled m-0 p-o">
                     <li className="dropdown-item">
-                      <Link className="dropdown-link"> 
+                      <Link className="dropdown-link" to="/pospago-5-3"> 
                         Proteccion total
                       </Link>
                     </li>
                     <li className="dropdown-item">
-                      <Link className="dropdown-link"> 
-                        fractura de pantalla
+                      <Link className="dropdown-link" to="/pospago-5-2"> 
+                        Fractura de pantalla
                       </Link>
                     </li>
                     <li className="dropdown-item">
-                      <Link className="dropdown-link"> 
+                      <Link className="dropdown-link" to="/arma-tu-plan-smart-app"> 
                         Arma tu plan - Smart App
                       </Link>
                     </li>
                     <li className="dropdown-item">
-                      <Link className="dropdown-link"> 
+                      <Link className="dropdown-link" to="/seguro-gamas"> 
                         Seguro por Gama
                       </Link>
                     </li>
                     <li className="dropdown-item">
-                      <Link className="dropdown-link"> 
+                      <Link className="dropdown-link" to="/samsung"> 
                         Samsung
                       </Link>
                     </li>
                     <li className="dropdown-item">
-                      <Link className="dropdown-link"> 
+                      <Link className="dropdown-link" to="/soat-asistencia-de-pantalla"> 
                         SOAT Asitencia de pantallla
                       </Link>
                     </li>
                     <li className="dropdown-item">
-                      <Link className="dropdown-link"> 
+                      <Link className="dropdown-link" to="/colsubsidio"> 
                         Asistencia Colsubsidio -<br/>
                         Axa Colpatria Seguros
                       </Link>

@@ -1,7 +1,7 @@
 import React from 'react';
-import IconMap from "../../assets/icons/mapa.svg";
-import IconPadlock from "../../assets/icons/candado.svg";
-import IconTigo from "../../assets/icons/Logo_Tigo_blanco.svg"
+import IconMap from "../../../assets/icons/mapa.svg";
+import IconPadlock from "../../../assets/icons/candado.svg";
+import IconTigo from "../../../assets/icons/Logo_Tigo_blanco.svg"
 
 const OurExperience = () => {
   return ( 

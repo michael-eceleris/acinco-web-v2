@@ -18106,7 +18106,8 @@ nav.nav-deep > ul ul > li > a.nav-link > i {
 }
 @font-face {
   font-family: Flaticon;
-  src: local("Flaticon"), url(./assets/fonts/flaticon/Flaticon.woff2) format("woff2"),
+  src: local("Flaticon"),
+    url(./assets/fonts/flaticon/Flaticon.woff2) format("woff2"),
     url(./assets/fonts/flaticon/Flaticon.woff) format("woff"),
     url(./assets/fonts/flaticon/Flaticon.ttf) format("truetype"),
     url(./assets/fonts/flaticon/Flaticon.eot) format("embedded-opentype"),

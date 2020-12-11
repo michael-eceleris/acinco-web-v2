@@ -15,11 +15,11 @@ jobs:
         with:
           node-version: 14
 
-      - name: Install Packages
-        run: yarn install
-
-      - name: Build
-        run: yarn build
+#      - name: Install Packages
+#        run: yarn install
+#
+#      - name: Build
+#        run: yarn build
 
       - name: Remote - Clean Files
         uses: appleboy/ssh-action@master

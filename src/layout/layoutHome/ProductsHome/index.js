@@ -314,7 +314,6 @@ const ProductsHome = () => {
           </Link>
         </div>
       </div>
-      <i className="arrow arrow-lg arrow-bottom arrow-center border-theme-color-light"></i>
     </section>
   );
 };

@@ -49,7 +49,6 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <i className="arrow arrow-lg arrow-bottom arrow-center border-primary"></i>
     </section>
   );
 };

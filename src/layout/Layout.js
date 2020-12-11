@@ -32,18 +32,6 @@ const Layout = () => {
           ) : null}
         </div>
       </div>
-      <svg
-        class="absolute-full z-index-0"
-        width="100%"
-        height="100%"
-        viewBox="0 0 1920 90"
-        preserveAspectRatio="none"
-      >
-        <path
-          fill="rgba(0,0,0,.01)"
-          d="M1920,0C1217,0,120.574,155.567,0,0v90h1920V0z"
-        ></path>
-      </svg>
     </section>
   );
 };

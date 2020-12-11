@@ -13,10 +13,12 @@ const Layout = () => {
   const { step } = formContext;
 
   return (
-    <section className="mb-1">
-      <div className="container">
-        <Stepper />
-        <div className="content-stepper">
+    <section className="col-12 col-lg-12 mb-3">
+      <div className="portlet w-75 m-auto">
+        <div className="portlet-header border-bottom">
+          <Stepper />
+        </div>
+        <div className="portlet-body w-50 m-auto">
           {step === 0 ? (
             <Login />
           ) : step === 1 ? (

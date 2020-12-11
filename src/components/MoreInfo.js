@@ -1,4 +1,4 @@
-import React, { useState, useContext, Fragment, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import FormContext from "../context/form/formContext";
 import clienteAxios from "../config/axios";
 
@@ -149,7 +149,7 @@ const MoreInfo = ({ setError, error }) => {
   };
 
   return (
-    <Fragment>
+    <>
       <label>Selecione su género</label>
       <br />
       <div className="form-label-group mb-3">
@@ -252,7 +252,7 @@ const MoreInfo = ({ setError, error }) => {
           </p>
         ) : null}
       </div>
-      <div className="mt-4">
+      <div className="mt-4 d-flex justify-content-between">
         <button
           className="btn btn-sm btn-outline-secondary"
           onClick={handlePreviusStep}
@@ -263,7 +263,7 @@ const MoreInfo = ({ setError, error }) => {
           Siguiente
         </button>
       </div>
-    </Fragment>
+    </>
   );
 };
 

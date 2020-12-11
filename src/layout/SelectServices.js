@@ -75,80 +75,71 @@ const SelectServices = () => {
     previusStep(0);
   };
   return (
-    <div className="col-12 col-xl-12 mb-3">
-      <div className="portlet">
-        <div className="portlet-header border-bottom">
-          <h4>Selecciona tu cobertura</h4>
+    <>
+      <div className="container p-1">
+        <h4>Selecciona tu cobertura</h4>
+        <p className="fs--17">
+          En esta parte tienes que escoger el dipositivo, el plan y el tipo de
+          cobertura para realizar la reclamación.
+        </p>
+        <div className="form-label-group mb-4 ">
+          <select
+            name="devices"
+            onChange={onChangeDevice}
+            className="form-control bs-select"
+            required
+          >
+            <option>---Selecciona tu dispostivo---</option>
+            <Devices />
+          </select>
+          <label>Seleccione su dispostivo</label>
+          {error && !device ? (
+            <p className="text-danger"> *Campo requerido </p>
+          ) : null}
         </div>
-        <div className="portlet-body">
-          <p className="fs--17">
-            En esta parte tienes que escoger el dipositivo, el plan y el tipo de
-            cobertura para realizar la reclamación.
-          </p>
-          <div className="container py-4 w-75">
-            <div className="form-label-group mb-3 ">
-              <select
-                name="devices"
-                onChange={onChangeDevice}
-                className="form-control bs-select"
-                required
-              >
-                <option>---Selecciona tu dispostivo---</option>
-                <Devices />
-              </select>
-              <label>Seleccione su dispostivo</label>
-              {error && !device ? (
-                <p className="text-danger"> *Campo requerido </p>
-              ) : null}
-            </div>
-            <div className="form-label-group mb-3">
-              <select
-                name="plans"
-                onChange={onChangePlan}
-                className="form-control bs-select"
-                disabled={device ? false : true}
-              >
-                <option>---Selecciona tu plan---</option>
-                {device ? <Plans /> : null}
-              </select>
-              <label>Seleccione su plan</label>
-              {error & !plan ? (
-                <p className="text-danger"> *Campo requerido </p>
-              ) : null}
-            </div>
-            <div className="form-label-group mb-3">
-              <select
-                name="coverage"
-                onChange={onChangeCoverage}
-                disabled={plan ? false : true}
-                className="form-control bs-select"
-              >
-                <option>---Selecciona tu cobertura---</option>
-                {plan ? <Coverages /> : null}
-              </select>
-              <label>Seleccione su cobertura</label>
-              {error & !coverage ? (
-                <p className="text-danger"> *Campo requerido </p>
-              ) : null}
-            </div>
-            <div className="mt-4">
-              <button
-                className="btn btn-sm btn-outline-secondary"
-                onClick={handlePreviusStep}
-              >
-                Atras
-              </button>
-              <button
-                className="btn btn-sm btn-primary"
-                onClick={handleNextStep}
-              >
-                Siguente
-              </button>
-            </div>
-          </div>
+        <div className="form-label-group mb-4">
+          <select
+            name="plans"
+            onChange={onChangePlan}
+            className="form-control bs-select"
+            disabled={device ? false : true}
+          >
+            <option>---Selecciona tu plan---</option>
+            {device ? <Plans /> : null}
+          </select>
+          <label>Seleccione su plan</label>
+          {error & !plan ? (
+            <p className="text-danger"> *Campo requerido </p>
+          ) : null}
+        </div>
+        <div className="form-label-group mb-4">
+          <select
+            name="coverage"
+            onChange={onChangeCoverage}
+            disabled={plan ? false : true}
+            className="form-control bs-select"
+          >
+            <option>---Selecciona tu cobertura---</option>
+            {plan ? <Coverages /> : null}
+          </select>
+          <label>Seleccione su cobertura</label>
+          {error & !coverage ? (
+            <p className="text-danger"> *Campo requerido </p>
+          ) : null}
+        </div>
+        <div className="mt-4 d-flex justify-content-between">
+          <button
+            className="btn btn-sm btn-outline-secondary"
+            onClick={handlePreviusStep}
+          >
+            Atras
+          </button>
+          <button className="btn btn-sm btn-primary" onClick={handleNextStep}>
+            Siguente
+          </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

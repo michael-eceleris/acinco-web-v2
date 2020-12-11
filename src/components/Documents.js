@@ -111,7 +111,7 @@ const Documents = ({ setError, error, setDocumentsName }) => {
             );
           })
         : null}
-      <div className="mt-4">
+      <div className="mt-4 d-flex justify-content-between">
         <button
           className="btn btn-sm btn-outline-secondary"
           onClick={handlePreviusStep}

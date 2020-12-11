@@ -53,167 +53,158 @@ const ReviewLayout = () => {
     }
   };
   return (
-    <div className="col-12 col-xl-12 mb-3">
-      <div className="portlet">
-        <div className="portlet-header bordero-bottom">
-          <h4>Enviar</h4>
-        </div>
-        <div className="portlet-body">
-          <p className="fs--17">
-            Revisa los datos, confirma que esten correctos y envía tu
-            reclamación.
-          </p>
-          <div className="container py6 w-75">
-            <h6> Datos personales:</h6>
-            <div className="p--15 bg-white rounded">
-              <div className="table-responsive">
-                <table className="table table-sm">
-                  <tbody>
-                    <tr>
-                      <td width="50%">Nombre:</td>
-                      <td width="50%">{user.name}</td>
-                    </tr>
-                    <tr>
-                      <td width="50%">Tipo de documento:</td>
-                      <td width="50%">{user.identification_type.name}</td>
-                    </tr>
-                    <tr>
-                      <td width="50%">Número de documento:</td>
-                      <td width="50%">{user.identification_number}</td>
-                    </tr>
-                    <tr>
-                      <td width="50%">Email:</td>
-                      <td width="50%"> {user.email}</td>
-                    </tr>
-                    <tr>
-                      <td width="50%">Línea Principal:</td>
-                      <td width="50%">{device.linea_uno}</td>
-                    </tr>
-                    {device.linea_dos ? (
-                      <tr>
-                        <td width="50%">Línea Secundaria: </td>
-                        <td width="50%">{device.linea_dos}</td>
-                      </tr>
-                    ) : null}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <h6> Datos del plan:</h6>
-            <div className="p--15 bg-white rounded">
-              <div className="table-responsive">
-                <table className="table table-sm">
-                  <tbody>
-                    <tr>
-                      <td width="50%">Nombre del plan:</td>
-                      <td width="50%">{plan.plan.nombre}</td>
-                    </tr>
-                    <tr>
-                      <td width="50%">Aplicando a la cobertura de:</td>
-                      <td width="50%">{coverage.nombre} </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <h6> Datos del dispositivo:</h6>
-            <div className="p--15 bg-white rounded">
-              <div className="table-responsive">
-                <table className="table table-sm">
-                  <tbody>
-                    <tr>
-                      <td width="50%">Marca del dispositivo:</td>
-                      <td width="50%">{device.dispositivo.nombre}</td>
-                    </tr>
-                    <tr>
-                      <td width="50%">Fabricante:</td>
-                      <td width="50%">
-                        {device.dispositivo.fabricante.nombre}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td width="50%">IMEI Principal:</td>
-                      <td width="50%">{device.imei_uno}</td>
-                    </tr>
-                    <tr>
-                      <td width="50%">IMEI Secundario:</td>
-                      <td width="50%">{device.imei_dos}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <h6>Datos del siniestro</h6>
-            <div className="p--15 bg-white rounded">
-              <div className="table-responsive">
-                <table className="table table-sm">
-                  <tbody>
-                    <tr>
-                      <td width="50%">Género:</td>
-                      <td width="50%">{moreInfo.nombre_genero}</td>
-                    </tr>
-                    <tr>
-                      <td width="50%">Fecha del Siniestro:</td>
-                      <td width="50%">{moreInfo.fecha_siniestro} </td>
-                    </tr>
-                    <tr>
-                      <td width="50%">Ciudad del Siniestro:</td>
-                      <td width="50%">{moreInfo.nombre_siniestro} </td>
-                    </tr>
-                    <tr>
-                      <td width="50%">Línea del Siniestro:</td>
-                      <td width="50%">{moreInfo.linea_siniestro_one}</td>
-                    </tr>
-                    <tr>
-                      <td width="50%">Descripción</td>
-                      <td width="50%">{moreInfo.mensaje_ticket}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <h6>Documentos cargados:</h6>
-            <div className="p--15 bg-white rounded">
-              <div className="table-responsive">
-                <table className="table table-sm">
-                  <tbody>
-                    {documents.map((doc) => (
-                      <tr>
-                        <td width="50%">{doc.nombre_documento_save}</td>
-                        <td width="50%">{doc.nameFile}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            {showModal ? <Modal /> : null}
-            <label className="form-checkbox form-checkbox-primary">
-              <input
-                type="checkbox"
-                checked={confirmed}
-                onChange={() => setConfirmed(!confirmed)}
-              />
-              <i></i>Confirmas que se envie la reclamación.
-            </label>
-
-            {error ? <p className="text-danger">* Requerido</p> : null}
-            <div className="mt-4">
-              <button
-                className="btn btn-sm btn-outline-secondary"
-                onClick={() => previusStep(3)}
-              >
-                Atras
-              </button>
-              <button className="btn btn-sm btn-primary" onClick={handleSubmit}>
-                Enviar
-              </button>
-            </div>
+    <>
+      <div className="container py-1">
+        <h4>Enviar</h4>
+        <p className="fs--17">
+          Revisa los datos, confirma que esten correctos y envía tu reclamación.
+        </p>
+        <h6 className="font-weight-medium"> Datos personales:</h6>
+        <div className="bg-white rounded">
+          <div className="table-responsive ">
+            <table className="table table-sm text-gray-700">
+              <tbody>
+                <tr>
+                  <td width="50%">Nombre:</td>
+                  <td width="50%">{user.name}</td>
+                </tr>
+                <tr>
+                  <td width="50%">Tipo de documento:</td>
+                  <td width="50%">{user.identification_type.name}</td>
+                </tr>
+                <tr>
+                  <td width="50%">Número de documento:</td>
+                  <td width="50%">{user.identification_number}</td>
+                </tr>
+                <tr>
+                  <td width="50%">Email:</td>
+                  <td width="50%"> {user.email}</td>
+                </tr>
+                <tr>
+                  <td width="50%">Línea Principal:</td>
+                  <td width="50%">{device.linea_uno}</td>
+                </tr>
+                {device.linea_dos ? (
+                  <tr>
+                    <td width="50%">Línea Secundaria: </td>
+                    <td width="50%">{device.linea_dos}</td>
+                  </tr>
+                ) : null}
+              </tbody>
+            </table>
           </div>
         </div>
+        <h6 className="font-weight-medium"> Datos del plan:</h6>
+        <div className="bg-white rounded">
+          <div className="table-responsive">
+            <table className="table table-sm text-gray-700">
+              <tbody>
+                <tr>
+                  <td width="50%">Nombre del plan:</td>
+                  <td width="50%">{plan.plan.nombre}</td>
+                </tr>
+                <tr>
+                  <td width="50%">Aplicando a la cobertura de:</td>
+                  <td width="50%">{coverage.nombre} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h6 className="font-weight-medium"> Datos del dispositivo:</h6>
+        <div className="bg-white rounded">
+          <div className="table-responsive">
+            <table className="table table-sm text-gray-700">
+              <tbody>
+                <tr>
+                  <td width="50%">Marca del dispositivo:</td>
+                  <td width="50%">{device.dispositivo.nombre}</td>
+                </tr>
+                <tr>
+                  <td width="50%">Fabricante:</td>
+                  <td width="50%">{device.dispositivo.fabricante.nombre}</td>
+                </tr>
+                <tr>
+                  <td width="50%">IMEI Principal:</td>
+                  <td width="50%">{device.imei_uno}</td>
+                </tr>
+                <tr>
+                  <td width="50%">IMEI Secundario:</td>
+                  <td width="50%">{device.imei_dos}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <h6 className="font-weight-medium">Datos del siniestro</h6>
+        <div className="bg-white rounded">
+          <div className="table-responsive">
+            <table className="table table-sm text-gray-700">
+              <tbody>
+                <tr>
+                  <td width="50%">Género:</td>
+                  <td width="50%">{moreInfo.nombre_genero}</td>
+                </tr>
+                <tr>
+                  <td width="50%">Fecha del Siniestro:</td>
+                  <td width="50%">{moreInfo.fecha_siniestro} </td>
+                </tr>
+                <tr>
+                  <td width="50%">Ciudad del Siniestro:</td>
+                  <td width="50%">{moreInfo.nombre_siniestro} </td>
+                </tr>
+                <tr>
+                  <td width="50%">Línea del Siniestro:</td>
+                  <td width="50%">{moreInfo.linea_siniestro_one}</td>
+                </tr>
+                <tr>
+                  <td width="50%">Descripción</td>
+                  <td width="50%">{moreInfo.mensaje_ticket}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <h6 className="font-weight-medium"> Documentos cargados:</h6>
+        <div className="bg-white rounded">
+          <div className="table-responsive">
+            <table className="table table-sm text-gray-700">
+              <tbody>
+                {documents.map((doc) => (
+                  <tr>
+                    <td width="50%">{doc.nombre_documento_save}</td>
+                    <td width="50%">{doc.nameFile}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        {showModal ? <Modal /> : null}
+        <label className="form-checkbox form-checkbox-primary">
+          <input
+            type="checkbox"
+            checked={confirmed}
+            onChange={() => setConfirmed(!confirmed)}
+          />
+          <i></i>Confirmas que se envie la reclamación.
+        </label>
+
+        {error ? <p className="text-danger">* Requerido</p> : null}
+        <div className="mt-4 d-flex justify-content-between">
+          <button
+            className="btn btn-sm btn-outline-secondary"
+            onClick={() => previusStep(3)}
+          >
+            Atras
+          </button>
+          <button className="btn btn-sm btn-primary" onClick={handleSubmit}>
+            Enviar
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <section className="mt-1">
+    <section className="mt-1 bg-light">
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-6 mb-5">
@@ -22,20 +22,7 @@ const ContactUs = () => {
                 <h2 className="h3-xs font-weight-light mb-5">
                   Envia tu mensaje
                 </h2>
-                <form
-                  noValidate
-                  action="_ajax/ajax_form_test_submit.html"
-                  method="GET"
-                  data-ajax-container="#ajax_dd_contact_response_container"
-                  data-ajax-update-url="false"
-                  data-ajax-show-loading-icon="true"
-                  data-ajax-callback-function=""
-                  data-error-scroll-up="true"
-                  data-error-toast-text="<i className='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!"
-                  data-error-toast-delay="2000"
-                  data-error-toast-position="bottom-center"
-                  className="bs-validate js-ajax"
-                >
+                <form className="bs-validate js-ajax">
                   <input
                     type="hidden"
                     name="action"

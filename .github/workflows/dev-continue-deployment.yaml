@@ -15,11 +15,11 @@ jobs:
         with:
           node-version: 14
 
-#      - name: Install Packages
-#        run: yarn install
-#
-#      - name: Build
-#        run: yarn build
+      - name: Install Packages
+        run: npm install
+
+      - name: Build
+        run: npm run build
 
       - name: Remote - Clean Files
         uses: appleboy/ssh-action@master
@@ -28,9 +28,10 @@ jobs:
           username: ${{ secrets.SSH_ACINCO_USER }}
           key: ${{ secrets.SSH_ACINCO_KEY }}
           script: |
-            mkdir deployment-acinco-web
             cd deployment-acinco-web
-            pwd
+            git clone git@github.com:AcincoEceleris/acinco-web.git
+            git pull origin dev
+            ls
 
 
 

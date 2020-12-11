@@ -9,7 +9,7 @@ import SmartPhoneGamaAlta from "../../../assets/icons/iphone.svg";
 
 const ProductsHome = () => {
   return (
-    <section className="bg-theme-color-light">
+    <section className="bg-gray-200">
       <div className="container">
         <div className="text-center mb--100">
           <h1 className="font-weight-light mb-4">
@@ -170,6 +170,10 @@ const ProductsHome = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="bg-white pt-4 rounded overflow-hidden mt--30">
+          <div className="row col-border">
             <div className="col-12 col-md-12 col-lg-4 mb-4">
               <div className="card p-4 b-0 h-100">
                 <div className="mt-3 mb-5 d-middle">
@@ -305,12 +309,11 @@ const ProductsHome = () => {
           </div>
         </div>
         <div className="text-center mt-5">
-          <Link className="btn btn-secondary btn-soft">
+          <Link className="btn btn-secondary btn-soft" to="/nuestros-productos">
             Conoce más detalles
           </Link>
         </div>
       </div>
-      <i className="arrow arrow-lg arrow-bottom arrow-center border-theme-color-light"></i>
     </section>
   );
 };

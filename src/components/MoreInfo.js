@@ -4,7 +4,7 @@ import clienteAxios from "../config/axios";
 
 const MoreInfo = ({ setError, error }) => {
   const formContext = useContext(FormContext);
-  const { selectMoreInfo, nextStep, previusStep } = formContext;
+  const { documents, selectMoreInfo, nextStep, previusStep } = formContext;
   const [moreInfoLocal, setMoreInfoLocal] = useState({
     mensaje_ticket: "",
     linea_siniestro_one: "",
@@ -146,6 +146,16 @@ const MoreInfo = ({ setError, error }) => {
   };
   const handlePreviusStep = () => {
     previusStep(2);
+    documents.map(
+      (doc, index) =>
+        (documents[index] = {
+          id: doc.id,
+          nombre_documento_save: doc.nombre_documento_save,
+          files: null,
+          nameFile: null,
+          error: null,
+        })
+    );
   };
 
   return (

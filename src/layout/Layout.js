@@ -13,7 +13,7 @@ const Layout = () => {
   const { step } = formContext;
 
   return (
-    <section className="col-12 col-lg-12 mb-3">
+    <section className="col-12 col-lg-12 mb-3 bg-theme-color-light">
       <div className="portlet w-75 m-auto">
         <div className="portlet-header border-bottom">
           <Stepper />

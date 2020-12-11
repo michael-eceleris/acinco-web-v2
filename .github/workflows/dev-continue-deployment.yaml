@@ -1,0 +1,86 @@
+name: Development Continue Deployment
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v1
+
+      - name: Install Node.js v14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Install Packages
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Remote - Clean Files
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_ACINCO_HOST }}
+          username: ${{ secrets.SSH_ACINCO_USER }}
+          key: ${{ secrets.SSH_ACINCO_KEY }}
+          script: |
+            mkdir deployment-acinco-web
+            cd deployment-acinco-web
+            pwd
+
+
+
+#      - name: Remote - Clean Files
+#        uses: appleboy/ssh-action@master
+#        with:
+#          host: ${{ secrets.SSH_ACINCO_HOST }}
+#          username: ${{ secrets.SSH_ACINCO_USER }}
+#          key: ${{ secrets.SSH_ACINCO_KEY }}
+#          script: |
+#            rm -rf /home/${{ secrets.SSH_ACINCO_USER }}/deploy-acinco-web/*
+#
+#      - name: Remote - Copy Build Files
+#        uses: burnett01/rsync-deployments@4.1
+#        with:
+#          switches: -avzr
+#          path: build/
+#          remote_path: /home/${{ secrets.SSH_ACINCO_USER }}/deploy-acinco-web/build/
+#          remote_host: ${{ secrets.SSH_ACINCO_HOST }}
+#          remote_user: ${{ secrets.SSH_ACINCO_USER }}
+#          remote_key: ${{ secrets.SSH_ACINCO_KEY }}
+#
+#      - name: Remote - Copy Deployment Files
+#        uses: burnett01/rsync-deployments@4.1
+#        with:
+#          switches: -avzr
+#          path: deployment/dev/
+#          remote_path: /home/${{ secrets.SSH_ACINCO_USER }}/deploy-acinco-web/
+#          remote_host: ${{ secrets.SSH_ACINCO_HOST }}
+#          remote_user: ${{ secrets.SSH_ACINCO_USER }}
+#          remote_key: ${{ secrets.SSH_ACINCO_KEY }}
+#
+#      - name: Remote - Build Docker
+#        uses: appleboy/ssh-action@master
+#        with:
+#          host: ${{ secrets.SSH_ACINCO_HOST }}
+#          username: ${{ secrets.SSH_ACINCO_USER }}
+#          key: ${{ secrets.SSH_ACINCO_KEY }}
+#          script: |
+#            cd /home/${{ secrets.SSH_ACINCO_USER }}/deploy-acinco-web/
+#            docker build -t eceleris/acinco-web .
+#
+#      - name: Remote - Deploy Docker
+#        uses: appleboy/ssh-action@master
+#        with:
+#          host: ${{ secrets.SSH_ACINCO_HOST }}
+#          username: ${{ secrets.SSH_ACINCO_USER }}
+#          key: ${{ secrets.SSH_ACINCO_KEY }}
+#          script: |
+#            cd /home/${{ secrets.SSH_ACINCO_USER }}/deploy-acinco-web/
+#            docker stop acinco-web
+#            docker rm acinco-web
+#            docker run -d --name=acinco-web -p 80:8080 eceleris/acinco-web

@@ -69,7 +69,7 @@ const Documents = ({ setError, error, setDocumentsName }) => {
       setError(false);
     } else {
       setError(true);
-      documents.map((doc) => (doc.error = "requerido"));
+      documents.map((doc) => (doc.error = "* Requerido"));
     }
   };
   const handlePreviusStep = () => {

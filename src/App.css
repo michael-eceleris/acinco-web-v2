@@ -15260,7 +15260,7 @@ button.close .fi {
 }
 .btn.rounded-circle > i,
 .btn.rounded-circle > span:not(.badge) {
-  font-size: 1rem !important;
+  font-size: 1rem ;
   position: absolute;
   top: 50%;
   left: 0;

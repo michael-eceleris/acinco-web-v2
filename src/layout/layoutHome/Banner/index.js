@@ -3,15 +3,18 @@ import LogoBanner from "../../../assets/icons/Device.svg";
 
 const Banner = () => {
   return (
-    <section className="p-0 bg-primary">
+    <section className="p-0 bg-white">
       <svg
-        className="position-absolute top-0 start-0 end-0"
-        viewBox="0 480.469 1000 39.062"
+        className="absolute-full z-index-0 "
+        width="100%"
+        height="100%"
+        viewBox="0 0 1920 90"
+        preserveAspectRatio="none"
       >
-        <polygon
-          fill="#FFFFFF"
-          points="0,519.531 0,480.469 1000,480.469 "
-        ></polygon>
+        <path
+          fill="rgba(0,50,114,1)"
+          d="M1920,0C1217,0,120.574,155.567,0,0v90h1920V0z"
+        ></path>
       </svg>
       <div className="container min-h75vh d-middle pt-5">
         <div className="row text-center-xs">
@@ -21,10 +24,10 @@ const Banner = () => {
             data-aos-delay="0"
           >
             <div className="mt-7">
-              <h1 className="font-weight-light mb-4 text-white">
-                <span className="font-weight-medium">¿Que hacemos?</span>
+              <h1 className="font-weight-light mb-4">
+                <span className="font-weight-medium fs--40">¿Que hacemos?</span>
               </h1>
-              <p className="lead text-white">
+              <p className="lead ">
                 Desarrollamos planes estratégicos para la evolución y ejecución
                 en la transformación de productos masivos en el sector de
                 telecomunicaciones.

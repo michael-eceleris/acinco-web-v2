@@ -3,15 +3,18 @@ import Searching from "../../../assets/icons/searching.svg";
 
 const Banner = () => {
   return (
-    <section className="p-0 bg-primary">
+    <section className="p-0 bg-white">
       <svg
-        className="position-absolute top-0 start-0 end-0"
-        viewBox="0 480.469 1000 39.062"
+        className="absolute-full z-index-0 "
+        width="100%"
+        height="100%"
+        viewBox="0 0 1920 90"
+        preserveAspectRatio="none"
       >
-        <polygon
-          fill="#FFFFFF"
-          points="0,519.531 0,480.469 1000,480.469 "
-        ></polygon>
+        <path
+          fill="rgba(0,50,114,1)"
+          d="M1920,0C1217,0,120.574,155.567,0,0v90h1920V0z"
+        ></path>
       </svg>
       <div className="container min-h75vh d-middle pt-5">
         <div className="row text-center-xs">
@@ -22,12 +25,10 @@ const Banner = () => {
           >
             <div className="mt-7">
               <h1 className="font-weight-light mb-4">
-                <span className="font-weight-medium text-white">
-                  Reclamaciones
-                </span>
+                <span className="font-weight-medium">Reclamaciones</span>
               </h1>
             </div>
-            <p className=" lead mb-5 text-white">
+            <p className=" lead mb-5">
               <span className="font-weight-medium "> ¡Es muy simple!</span> Con
               tan solo 5 sencillos pasos puedes realizar reclamaciones.
             </p>

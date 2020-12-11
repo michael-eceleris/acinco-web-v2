@@ -13,7 +13,7 @@ const Layout = () => {
   const { step } = formContext;
 
   return (
-    <section className="col-12 col-lg-12 mb-3">
+    <section className="col-12 col-lg-12 mb-3 bg-theme-color-light">
       <div className="portlet w-75 m-auto">
         <div className="portlet-header border-bottom">
           <Stepper />
@@ -32,6 +32,18 @@ const Layout = () => {
           ) : null}
         </div>
       </div>
+      <svg
+        class="absolute-full z-index-0"
+        width="100%"
+        height="100%"
+        viewBox="0 0 1920 90"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="rgba(0,0,0,.01)"
+          d="M1920,0C1217,0,120.574,155.567,0,0v90h1920V0z"
+        ></path>
+      </svg>
     </section>
   );
 };

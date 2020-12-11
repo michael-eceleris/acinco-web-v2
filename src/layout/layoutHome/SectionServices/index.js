@@ -2,7 +2,7 @@ import React from "react";
 
 const SectionServices = () => {
   return (
-    <section className="pt-5 pb-5 mb-3 shadow-xs">
+    <section className="pt-5 pb-5 mb-3 shadow-xs bg-white">
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-4 mb-4 d-flex">

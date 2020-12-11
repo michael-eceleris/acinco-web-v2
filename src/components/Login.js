@@ -43,7 +43,7 @@ const Form = () => {
         <h4>Identíficate</h4>
         <p className="fs--17">Identíficate para saber quien eres</p>
         <form onSubmit={handleOnSubmit} className="collapse bs-validate show">
-          <div className="form-label-group mb-3">
+          <div className="form-label-group mb-3 w-75 ml-auto mr-auto">
             <input
               className="form-control"
               id="username"
@@ -55,7 +55,7 @@ const Form = () => {
             />
             <label htmlFor="username">Email</label>
           </div>
-          <div className="form-label-group mb-3">
+          <div className="form-label-group mb-3 w-75 ml-auto mr-auto">
             <input
               className="form-control"
               id="password"
@@ -67,9 +67,11 @@ const Form = () => {
             />
             <label htmlFor="password">Password</label>
           </div>
-          <button type="submit" className="btn btn-block btn-primary">
-            Inicia Sesión
-          </button>
+          <div className="d-flex justify-content-end">
+            <button type="submit" className="btn btn-sm btn-primary">
+              Inicia Sesión
+            </button>
+          </div>
         </form>
       </div>
       {authenticate && user && !error ? nextStep(1) : null}

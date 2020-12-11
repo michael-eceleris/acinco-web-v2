@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <section className="mt-1 bg-light">
+    <section className="mt-1">
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-6 mb-5">

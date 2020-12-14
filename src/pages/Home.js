@@ -1,18 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Banner from "../components/componentsHome/Banner";
-import SectionService from "../components/componentsHome/SectionServices";
-import ProductsHome from "../components/componentsHome/ProductsHome";
-import OurExperience from "../components/componentsHome/OurExperience";
+import Banner from "../layout/layoutHome/Banner";
+import SectionService from "../layout/layoutHome/SectionServices";
+import ProductsHome from "../layout/layoutHome/ProductsHome";
+import OurExperience from "../layout/layoutHome/OurExperience";
 import OurClients from "../components/OurClients";
 import ContactUs from "../components/ContactUs";
-import Footer from "../components/Footer"
-import TeamWork from '../assets/icons/teamwork.svg';
-import SuperHeroWork from "../assets/icons/superheroteamwork.svg";
-
+import Footer from "../components/Footer";
 
 const Home = () => {
-  return ( 
+  return (
     <>
       <Banner />
       <SectionService />
@@ -22,7 +19,7 @@ const Home = () => {
       <ContactUs />
       <Footer />
     </>
-   );
-}
- 
+  );
+};
+
 export default Home;

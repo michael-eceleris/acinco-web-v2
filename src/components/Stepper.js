@@ -1,43 +1,44 @@
-import React, {Fragment, useContext} from 'react';
-import { Stepper , Step } from 'react-form-stepper';
+import React, { Fragment, useContext } from "react";
+import { Stepper, Step } from "react-form-stepper";
 
-import logoUser from '../assets/icons/user-protection.svg';
-import FormContext from '../context/form/formContext';
+import logoUser from "../assets/icons/user-protection.svg";
+import FormContext from "../context/form/formContext";
 const CustomStepper = () => {
   const formContext = useContext(FormContext);
   const { step } = formContext;
-  return (  
+  return (
     <Fragment>
-      <div className="header">
-        <h1>Tramites y reclamaciones</h1>
+      <div>
+        <h1>Reclamaciones</h1>
       </div>
-      <div className="container-steeper"
-      >
-       <Stepper 
-        activeStep={step} 
-        hideConnectors={true}
-        styleConfig={{
-          completedBgColor: '#5d9afc',
-          completedTextColor: '#e1e1e1',
-          activeBgColor: '#5d9afc', 
-          inactiveBgColor: '#e5f0fe', 
-          circleFontSize:'1.5rem',
-          size: '2.5rem',
-          activeTextColor: '#e1e1e1',
-          inactiveTextColor: '#5d9afc',
-          borderRadius: '30%',
-          labelFontSize: '1rem',
-        }}
-        >
-         <Step label="1) Ingresa" />
-         <Step label="2) Tus servicios"/>
-         <Step label="3) Documentos"/>
-         <Step label="4) Más información"/>
-         <Step label="5) Review"/>
-       </Stepper>
+      <div className="col-12 col-xl-12 mb-3">
+        <div className="container">
+          <Stepper
+            activeStep={step}
+            hideConnectors={true}
+            styleConfig={{
+              completedBgColor: "#003272",
+              completedTextColor: "#e1e1e1",
+              activeBgColor: "#003272",
+              inactiveBgColor: "#e1e1e1",
+              circleFontSize: "1.5rem",
+              size: "2.5rem",
+              activeTextColor: "#e1e1e1",
+              inactiveTextColor: "#5d9afc",
+              borderRadius: "30%",
+              labelFontSize: "1rem",
+            }}
+          >
+            <Step className="col-md-4" label="1) Identíficate" />
+            <Step className="col-md-4" label="2) Selecciona tu cobertura" />
+            <Step className="col-md-4" label="3) Subir documentos" />
+            <Step className="col-md-4" label="4) Información adicional" />
+            <Step className="col-md-4" label="5) Enviar" />
+          </Stepper>
+        </div>
       </div>
     </Fragment>
   );
-}
- 
+};
+
 export default CustomStepper;

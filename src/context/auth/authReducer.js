@@ -1,9 +1,4 @@
-import { 
-  SUCCESFULL_LOGIN, 
-  ERROR_LOGIN,
-  GET_USER,
-  LOGOUT
-} from '../../types';
+import { SUCCESFULL_LOGIN, ERROR_LOGIN, GET_USER, LOGOUT } from "../../types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -12,27 +7,31 @@ export default (state, action) => {
         ...state,
         token: action.payload,
         authenticate: true,
-      }
+        error: false,
+      };
     case ERROR_LOGIN:
-      return{
+      return {
         ...state,
         authenticate: null,
-        user: null
-      }
+        user: null,
+        error: true,
+      };
     case GET_USER:
-      return{
+      return {
         ...state,
         authenticate: true,
         user: action.payload,
-      }
+        error: false,
+      };
     case LOGOUT:
       return {
         ...state,
         authenticate: null,
         user: null,
         token: null,
-      }
+        error: false,
+      };
     default:
       return state;
   }
-}
+};

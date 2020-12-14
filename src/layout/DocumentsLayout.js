@@ -1,38 +1,29 @@
-import React,{ useContext, useState } from 'react';
-import FormContext from '../context/form/formContext';
-import Documents from '../components/Documents';
+import React, { useContext, useState, useEffect } from "react";
+import FormContext from "../context/form/formContext";
+import Documents from "../components/Documents";
 const DocumentsLayout = () => {
   const formContext = useContext(FormContext);
-  const { documents, nextStep, previusStep } = formContext;
-  const [ error, setError ] = useState(false);
-  const handleNextStep = () => {
-    if(documents){
-      nextStep(3);
-      setError(false);
-    }else {
-      setError(true);
-    }
-  }
-  return ( 
-    <div className="container-form">
-      <Documents />
-      {error && !documents ? <p>* Todo los campos son onbligatorios</p> : null }
-      <div className="campo-btn">
-        <button
-          className="btn btn-sm btn-secundario"
-          onClick={()=> previusStep(1)}
-        >
-          Atras
-        </button>
-        <button
-          className="btn btn-sm btn-primario"
-          onClick={handleNextStep}
-        >
-          Siguiente
-        </button>
+  const { documents, coverage } = formContext;
+  const [error, setError] = useState(false);
+  const [documentsName, setDocumentsName] = useState([]);
+  return (
+    <>
+      <div className="container py-1">
+        <h4>Subir documentos</h4>
+        <p className="fs--17">
+          Sube los documentos necesarios para la cobertura de {coverage.nombre}
+        </p>
+        <div className="container py-4">
+          <Documents
+            setError={setError}
+            error={error}
+            setDocumentsName={setDocumentsName}
+          />
+        </div>
+        {error ? null : null}
       </div>
-    </div>
-   );
-}
- 
+    </>
+  );
+};
+
 export default DocumentsLayout;

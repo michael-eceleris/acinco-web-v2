@@ -6,6 +6,7 @@ const Plans = () => {
   const { device, selectPlan, plansDevice } = formContext;
   useEffect(() => {
     selectPlan(null);
+    //eslint-disable-next-line
   }, [device]);
   return (
     <Fragment>

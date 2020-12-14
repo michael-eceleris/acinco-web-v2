@@ -48,7 +48,7 @@ const Banner = () => {
               height="400"
               className="img-fluid lazy "
               src={TeamWork}
-              alt="image"
+              alt="logo_productos"
             />
           </div>
         </div>

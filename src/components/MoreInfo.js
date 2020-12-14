@@ -5,16 +5,6 @@ import clienteAxios from "../config/axios";
 const MoreInfo = ({ setError, error }) => {
   const formContext = useContext(FormContext);
   const { documents, selectMoreInfo, nextStep, previusStep } = formContext;
-  const [moreInfoLocal, setMoreInfoLocal] = useState({
-    mensaje_ticket: "",
-    linea_siniestro_one: "",
-    fecha_siniestro: null,
-    ciudad_siniestro: null,
-    nombre_siniestro: null,
-    genero_reclamante: null,
-    nombre_genero: null,
-  });
-
   const [phoneNumber, setPhoneNumber] = useState("");
   const [cityActual, setCityActual] = useState(null);
   const [cityNameActual, setCityNameActual] = useState(null);
@@ -111,15 +101,6 @@ const MoreInfo = ({ setError, error }) => {
   };
 
   const handleNextStep = () => {
-    setMoreInfoLocal({
-      mensaje_ticket: messageActual,
-      linea_siniestro_one: phoneNumber,
-      fecha_siniestro: dateActual,
-      ciudad_siniestro: cityActual,
-      nombre_siniestro: cityNameActual,
-      genero_reclamante: genderActual,
-      nombre_genero: genderNameActual,
-    });
     selectMoreInfo({
       mensaje_ticket: messageActual,
       linea_siniestro_one: phoneNumber,

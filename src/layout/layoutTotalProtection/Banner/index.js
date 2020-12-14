@@ -46,7 +46,7 @@ const Banner = () => {
               width="400"
               className="img-fluid lazy "
               src={MobileSecure}
-              alt="image"
+              alt="logo_total_proteccion"
             />
           </div>
         </div>

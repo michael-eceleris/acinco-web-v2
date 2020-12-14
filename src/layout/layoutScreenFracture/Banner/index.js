@@ -49,7 +49,7 @@ const Banner = () => {
                 width="400"
                 className="img-fluid lazy "
                 src={PhoneRepair}
-                alt="image"
+                alt="logo_fractura_de_pantalla"
               />
             </div>
           </div>

@@ -1,7 +1,5 @@
 import React, { Fragment, useContext } from "react";
 import { Stepper, Step } from "react-form-stepper";
-
-import logoUser from "../assets/icons/user-protection.svg";
 import FormContext from "../context/form/formContext";
 const CustomStepper = () => {
   const formContext = useContext(FormContext);

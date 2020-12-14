@@ -17,7 +17,7 @@ import {
   OPEN_MODAL,
   CLOSE_MODAL,
 } from "../../types";
-
+//eslint-disable-next-line
 export default (state, action) => {
   switch (action.type) {
     case DEVICES_USER:

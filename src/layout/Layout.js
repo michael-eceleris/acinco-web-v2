@@ -5,7 +5,6 @@ import SelectService from "../layout/SelectServices";
 import DocumentsLayout from "../layout/DocumentsLayout";
 import MoreInfoLayout from "../layout/MoreInfoLayout";
 import ReviewLayout from "../layout/ReviewLayout";
-import AuthContext from "../context/auth/authContext";
 import FormContext from "../context/form/formContext";
 
 const Layout = () => {

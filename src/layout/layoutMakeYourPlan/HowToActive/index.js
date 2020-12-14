@@ -27,7 +27,11 @@ const HowToActive = () => {
                   <h3 className="h5">Activa Protección Móvil.</h3>
                   <p className="mb-6 mb-md-8">
                     Ingresa a{" "}
-                    <a href="http://smart.tigo.com.co/" target="_blank">
+                    <a
+                      href="http://smart.tigo.com.co/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       {" "}
                       Smart App{" "}
                     </a>{" "}
@@ -55,6 +59,7 @@ const HowToActive = () => {
                       href="https://itunes.apple.com/co/app/protecci%C3%B3n-m%C3%B3vil-seguro/id1116274602?mt=8"
                       target="_blank"
                       className="btn btn-sm transition-hover-top mb-2 rounded-circle"
+                      rel="noreferrer"
                     >
                       <i className="fi fi-brand-apple fs--30 "></i>
                     </a>
@@ -62,6 +67,7 @@ const HowToActive = () => {
                       href="https://play.google.com/store/apps/details?id=com.hidesoft.tigo&amp;hl=es"
                       target="_blank"
                       className=" btn btn-sm transition-hover-top mb-2 rounded-circle"
+                      rel="noreferrer"
                     >
                       <i className="fi fi-brand-android fs--30"></i>
                     </a>

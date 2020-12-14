@@ -1,10 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import HurtoCalificado from "../../../assets/images/icon_hurtocalificado.png";
-import HurtoSimple from "../../../assets/images/hurtosimple.png";
-import TotalHurt from "../../../assets/images/icon_daniototal.png";
-import ScreenRepair from "../../../assets/images/icon_reparaciondepantalla.png";
-
 const Coverages = () => {
   return (
     <>

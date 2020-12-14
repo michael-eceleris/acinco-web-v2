@@ -44,7 +44,7 @@ const Banner = () => {
               height="400"
               className="img-fluid lazy "
               src={LogoBanner}
-              alt="image"
+              alt="home_image"
             />
           </div>
         </div>

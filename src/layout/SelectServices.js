@@ -29,11 +29,13 @@ const SelectServices = () => {
   const [coverageSelect, setCoverageSelect] = useState(null);
   useEffect(() => {
     authUser();
+    //eslint-disable-next-line
   }, []);
   useEffect(() => {
     if (user) {
       getDevices(user.id);
     }
+    //eslint-disable-next-line
   }, [authenticate, user]);
 
   const onChangeDevice = (e) => {

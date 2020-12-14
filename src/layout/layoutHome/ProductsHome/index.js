@@ -28,7 +28,7 @@ const ProductsHome = () => {
                 </div>
                 <h4>Protección Total</h4>
                 <div className="card-body pl-0 pr-0 text-gray-600">
-                  <p className="lead">
+                  <p className="lead fs--18">
                     Esta es la cobertura que te ofrece el plan Protección Total:
                   </p>
                   <div className="clearfix mb-2">
@@ -80,7 +80,7 @@ const ProductsHome = () => {
                 <h4>Arma tu Plan - Smart App </h4>
 
                 <div className="card-body pl-0 pr-0 text-gray-600">
-                  <p className="lead">
+                  <p className="lead fs--18">
                     Puedes armar tu plan de acuerdo a tus necesidades, ten en
                     cuenta estas coberturas:
                   </p>
@@ -113,9 +113,8 @@ const ProductsHome = () => {
                   </div>
 
                   <hr className="mt-6" />
-
                   <Link
-                    className="btn btn-primary btn-block"
+                    className="btn btn-primary btn-block "
                     to="/arma-tu-plan-smart-app"
                   >
                     Conocer más
@@ -131,7 +130,7 @@ const ProductsHome = () => {
                 </div>
                 <h4>Samsung</h4>
                 <div className="card-body pl-0 pr-0 text-gray-600">
-                  <p className="lead">
+                  <p className="lead fs--18">
                     Tienes un celular samgung, mira estas coberturas que te
                     pueden ayudar:
                   </p>
@@ -162,6 +161,7 @@ const ProductsHome = () => {
                     </div>{" "}
                     Recobro hasta del 80%
                   </div>
+                  <div className="clearfix mb-2">&nbsp;</div>
 
                   <hr className="mt-6" />
                   <Link className="btn btn-primary btn-block" to="/samsung">
@@ -181,7 +181,7 @@ const ProductsHome = () => {
                 </div>
                 <h4>Fractura de Pantalla</h4>
                 <div className="card-body pl-0 pr-0 text-gray-600">
-                  <p className="lead">
+                  <p className="lead fs--18">
                     Protege la pantalla de tu celular, mira estas coberturas:
                   </p>
                   <div className="clearfix mb-2">
@@ -202,8 +202,9 @@ const ProductsHome = () => {
                     </div>{" "}
                     Recobro hasta del 70%
                   </div>
+                  <div className="clearfix mb-2">&nbsp;</div>
 
-                  <hr className="mt--120" />
+                  <hr className="mt-6" />
                   <Link
                     className="btn btn-primary  btn-block"
                     to="/pospago-5-2"
@@ -220,7 +221,7 @@ const ProductsHome = () => {
                 </div>
                 <h4>Seguro por Gama</h4>
                 <div className="card-body pl-0 pr-0 text-gray-600">
-                  <p className="lead">
+                  <p className="lead fs--18">
                     Se ajusta a las gama de tu celular, mira las cobertura que
                     trae
                   </p>
@@ -252,7 +253,7 @@ const ProductsHome = () => {
                     Solo pagarás el 35% del evaluo
                   </div>
 
-                  <hr className="mt--90" />
+                  <hr className="mt-6" />
                   <Link
                     className="btn btn-primary btn-block"
                     to="/seguro-gamas"
@@ -271,7 +272,7 @@ const ProductsHome = () => {
                 <h4>SOAT Asistencia de Pantalla</h4>
 
                 <div className="card-body pl-0 pr-0 text-gray-600">
-                  <p className="lead">
+                  <p className="lead fs--18">
                     Adquiriste el SOAT con AXA Colpatria Seguros, este plan es
                     ideal para ti, mira las coberturas que tiene
                   </p>
@@ -296,7 +297,7 @@ const ProductsHome = () => {
                     Solo pagarás el 35% del arreglo
                   </div>
 
-                  <hr className="mt--60" />
+                  <hr className="mt-6" />
                   <Link
                     className="btn btn-primary btn-block"
                     to="/soat-asistencia-de-pantalla"

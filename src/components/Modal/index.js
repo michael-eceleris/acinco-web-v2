@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./modal.css";
 import FormContext from "../../context/form/formContext";
+
 const Modal = () => {
   const formContext = useContext(FormContext);
   const { showModal, closeModal, submit } = formContext;
@@ -14,7 +15,7 @@ const Modal = () => {
           <div className="modal-main">
             {submit.status === 200 ? (
               <>
-                <div className="modal-title">
+                <div className="modal-header">
                   <svg
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
@@ -42,17 +43,19 @@ const Modal = () => {
                   </svg>
                 </div>
                 <div className="modal-body">
-                  <h3 className="text-center">Reclamación enviada con exito</h3>
-                  <p className="lead fs--16">
-                    Acabas de enviar tu reclamación, por lo tanto se cerra tu
+                  <h3 className="modal-title mb-2">
+                    Reclamación enviada con exito
+                  </h3>
+                  <div className="modal-text mt-1">
+                    Acabas de enviar tu reclamación, por lo tanto se cerrara tu
                     sesión, sin embargo puedes seguir haciendo el proceso de
                     reclamaciones.
-                  </p>
+                  </div>
                 </div>
               </>
             ) : submit.status === 500 ? (
               <>
-                <div className="modal-title">
+                <div className="modal-header">
                   <svg
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
@@ -95,28 +98,25 @@ const Modal = () => {
                   </svg>
                 </div>
                 <div className="modal-body">
-                  <h3 className="text-center">Algo Salio</h3>
+                  <h3 className="modal-title  mb-2">Algo Salio Mal</h3>
                   {submit.data ? (
                     submit.data.message ? (
-                      <p className="lead fs--16">
+                      <div className="modal-text">
                         Ya tienes un proceso con esta cobertura
-                      </p>
+                      </div>
                     ) : null
                   ) : (
-                    <p className="lead fs--16">
+                    <div className="modal-text">
                       Acaba de ocurrir un problema, lo sentimos, vuelva a
                       realizar el proceso de reclamación.
-                    </p>
+                    </div>
                   )}
                 </div>
               </>
             ) : null}
-            <div className="modal-footer">
-              <button
-                className="btn btn-primary btn-block"
-                onClick={closeModal}
-              >
-                Cierra
+            <div className="modal-actions mb-3">
+              <button className="btn btn-primary btn-sm" onClick={closeModal}>
+                OK
               </button>
             </div>
           </div>

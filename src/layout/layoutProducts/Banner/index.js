@@ -1,6 +1,5 @@
 import React from "react";
 import TeamWork from "../../../assets/icons/teamwork.svg";
-import ProductToure from "../../../assets/icons/product_tour.svg";
 
 const Banner = () => {
   return (

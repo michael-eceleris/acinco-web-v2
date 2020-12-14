@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import SmartPhone from "../../../assets/icons/telefono-inteligente.svg";
 import PhoneRepair from "../../../assets/icons/phone-repair-icon.svg";
 import MobileSecure from "../../../assets/icons/mobile-secure.svg";
-import LogoSamgung from "../../../assets/icons/samsung_black.svg";
+import LogoSamgung from "../../../assets/icons/samsung.svg";
 import LogoAxaColpatria from "../../../assets/icons/logo-axa-colpatria.svg";
-import SmartPhoneGamaAlta from "../../../assets/icons/iphone.svg";
+import SmartPhoneGamaAlta from "../../../assets/icons/mobile-payment.svg";
 
 const ProductsHome = () => {
   return (
@@ -65,7 +65,10 @@ const ProductsHome = () => {
                     Recobro hasta del 70%
                   </div>
                   <hr className="mt-6" />
-                  <Link className="btn btn-primary btn-block" to="/pospago-5-3">
+                  <Link
+                    className="btn btn-lg btn-primary mb-2"
+                    to="/pospago-5-3"
+                  >
                     Conocer más{" "}
                   </Link>
                 </div>
@@ -114,7 +117,7 @@ const ProductsHome = () => {
 
                   <hr className="mt-6" />
                   <Link
-                    className="btn btn-primary btn-block "
+                    className="btn btn-primary btn-lg "
                     to="/arma-tu-plan-smart-app"
                   >
                     Conocer más
@@ -125,8 +128,8 @@ const ProductsHome = () => {
 
             <div className="col-12 col-md-12 col-lg-4 mb-4">
               <div className="card p-4 b-0 h-100">
-                <div className="mt-3 mb-5 d-middle">
-                  <img height="120" src={LogoSamgung} alt="samsung" />
+                <div className="mt-3 mb-3 d-middle">
+                  <img height="150" src={LogoSamgung} alt="samsung" />
                 </div>
                 <h4>Samsung</h4>
                 <div className="card-body pl-0 pr-0 text-gray-600">
@@ -164,7 +167,7 @@ const ProductsHome = () => {
                   <div className="clearfix mb-2">&nbsp;</div>
 
                   <hr className="mt-6" />
-                  <Link className="btn btn-primary btn-block" to="/samsung">
+                  <Link className="btn btn-primary btn-lg" to="/samsung">
                     Conocer más
                   </Link>
                 </div>
@@ -205,10 +208,7 @@ const ProductsHome = () => {
                   <div className="clearfix mb-2">&nbsp;</div>
 
                   <hr className="mt-6" />
-                  <Link
-                    className="btn btn-primary  btn-block"
-                    to="/pospago-5-2"
-                  >
+                  <Link className="btn btn-primary  btn-lg" to="/pospago-5-2">
                     Conocer más
                   </Link>
                 </div>
@@ -254,10 +254,7 @@ const ProductsHome = () => {
                   </div>
 
                   <hr className="mt-6" />
-                  <Link
-                    className="btn btn-primary btn-block"
-                    to="/seguro-gamas"
-                  >
+                  <Link className="btn btn-primary btn-lg" to="/seguro-gamas">
                     Conocer más
                   </Link>
                 </div>
@@ -299,7 +296,7 @@ const ProductsHome = () => {
 
                   <hr className="mt-6" />
                   <Link
-                    className="btn btn-primary btn-block"
+                    className="btn btn-primary btn-lg"
                     to="/soat-asistencia-de-pantalla"
                   >
                     Conocer más

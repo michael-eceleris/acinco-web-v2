@@ -39,11 +39,11 @@ const Form = () => {
           Usuario o contraseña incorrecta
         </div>
       ) : null}
-      <div className="container p-2">
+      <div className="container p-2 w-50">
         <h4>Identíficate</h4>
         <p className="fs--17">Identíficate para saber quien eres</p>
         <form onSubmit={handleOnSubmit} className="collapse bs-validate show">
-          <div className="form-label-group mb-3 w-75 ml-auto mr-auto">
+          <div className="form-label-group mb-3  ml-auto mr-auto">
             <input
               className="form-control"
               id="username"
@@ -55,7 +55,7 @@ const Form = () => {
             />
             <label htmlFor="username">Email</label>
           </div>
-          <div className="form-label-group mb-3 w-75 ml-auto mr-auto">
+          <div className="form-label-group mb-3 ml-auto mr-auto">
             <input
               className="form-control"
               id="password"

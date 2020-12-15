@@ -306,11 +306,11 @@ const ProductsHome = () => {
             </div>
           </div>
         </div>
-        <div className="text-center mt-5">
+        {/*  <div className="text-center mt-5">
           <Link className="btn btn-secondary btn-soft" to="/nuestros-productos">
             Conoce más detalles
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

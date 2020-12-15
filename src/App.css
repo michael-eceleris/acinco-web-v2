@@ -2239,8 +2239,8 @@ fieldset:disabled a.btn {
 }
 .btn-secondary {
   color: #fff;
-  background-color: #97bf26;
-  border-color: #97bf26;
+  background-color: #6c757d;
+  border-color: #6c757d;
 }
 .btn-secondary.focus,
 .btn-secondary:focus,
@@ -2256,8 +2256,8 @@ fieldset:disabled a.btn {
 .btn-secondary.disabled,
 .btn-secondary:disabled {
   color: #fff;
-  background-color: #97bf26;
-  border-color: #97bf26;
+  background-color: #6c757d;
+  border-color: #6c757d;
 }
 .btn-secondary:not(:disabled):not(.disabled).active,
 .btn-secondary:not(:disabled):not(.disabled):active,

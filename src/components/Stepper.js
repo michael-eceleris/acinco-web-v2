@@ -19,7 +19,6 @@ const CustomStepper = () => {
   const [fivethStep, setFivethStep] = useState(false);
 
   const changeActiveColor = (id) => {
-    console.log(id);
     switch (id) {
       case 1:
         setFirstStep(true);

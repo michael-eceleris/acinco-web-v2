@@ -172,7 +172,7 @@ const ReviewLayout = () => {
             <table className="table table-sm text-gray-700">
               <tbody>
                 {documents.map((doc) => (
-                  <tr>
+                  <tr key={doc.id}>
                     <td width="50%">{doc.nombre_documento_save}</td>
                     <td width="50%">{doc.nameFile}</td>
                   </tr>

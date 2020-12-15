@@ -9,7 +9,8 @@ const Devices = () => {
       {devicesUser
         ? devicesUser.map((device) => (
             <option key={device.id} value={device.id}>
-              {device.dispositivo.nombre} - IMEI {device.imei_uno}
+              {device.dispositivo.nombre} - IMEI {device.imei_uno} - Linea{" "}
+              {device.linea_uno}
             </option>
           ))
         : null}

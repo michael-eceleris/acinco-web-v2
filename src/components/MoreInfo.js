@@ -205,7 +205,7 @@ const MoreInfo = ({ setError, error }) => {
           <p className="text-danger">* Fecha incorrecta</p>
         ) : null}
       </div>
-      <label>Número de telefono</label>
+      <label>Número de linea con la que sucedío el siniestro</label>
       <br />
       <div className="form-group">
         <input

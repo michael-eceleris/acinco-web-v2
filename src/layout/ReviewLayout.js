@@ -81,12 +81,12 @@ const ReviewLayout = () => {
                   <td width="50%"> {user.email}</td>
                 </tr>
                 <tr>
-                  <td width="50%">Línea Principal:</td>
+                  <td width="50%">Línea Principal Asegurada:</td>
                   <td width="50%">{device.linea_uno}</td>
                 </tr>
                 {device.linea_dos ? (
                   <tr>
-                    <td width="50%">Línea Secundaria: </td>
+                    <td width="50%">Línea Secundaria Asegurada: </td>
                     <td width="50%">{device.linea_dos}</td>
                   </tr>
                 ) : null}
@@ -126,11 +126,11 @@ const ReviewLayout = () => {
                   <td width="50%">{device.dispositivo.fabricante.nombre}</td>
                 </tr>
                 <tr>
-                  <td width="50%">IMEI Principal:</td>
+                  <td width="50%">IMEI Principal Asegurado:</td>
                   <td width="50%">{device.imei_uno}</td>
                 </tr>
                 <tr>
-                  <td width="50%">IMEI Secundario:</td>
+                  <td width="50%">IMEI Secundario Asegurado:</td>
                   <td width="50%">{device.imei_dos}</td>
                 </tr>
               </tbody>
@@ -155,7 +155,7 @@ const ReviewLayout = () => {
                   <td width="50%">{moreInfo.nombre_siniestro} </td>
                 </tr>
                 <tr>
-                  <td width="50%">Línea del Siniestro:</td>
+                  <td width="50%">Línea con la que sucedío el siniestro:</td>
                   <td width="50%">{moreInfo.linea_siniestro_one}</td>
                 </tr>
                 <tr>

@@ -45,10 +45,32 @@ const Modal = () => {
                   <h3 className="modal-title mb-2">
                     Reclamación enviada con exito
                   </h3>
-                  <div className="modal-text mt-1">
-                    Acabas de enviar tu reclamación, por lo tanto se cerrara tu
-                    sesión, sin embargo puedes seguir haciendo el proceso de
-                    reclamaciones.
+                  <>
+                    {submit.data ? (
+                      submit.data.ticketId.toString().length <= 6 ? (
+                        <h5 className="font-weight-medium">
+                          Tu número de radicado es{" "}
+                          <span className="font-weight-bold ">
+                            {("000000" + submit.data.ticketId).slice(-6)}{" "}
+                          </span>
+                        </h5>
+                      ) : (
+                        <h5 className="font-weight-medium">
+                          Tu número de radicado es{" "}
+                          <span className="font-weight-bold ">
+                            {(
+                              "0".repeat(submit.data.ticketId.length) +
+                              submit.data.ticketId
+                            ).slice(-submit.data.ticketId.length)}{" "}
+                          </span>
+                        </h5>
+                      )
+                    ) : null}
+                  </>
+                  <div className="modal-text mt-1 fs--18">
+                    Acabas de enviar tu reclamación por lo tanto se cerrará tu
+                    sesión, aunque puedes seguir realizando reclamaciones si lo
+                    consideras necesario.
                   </div>
                 </div>
               </>

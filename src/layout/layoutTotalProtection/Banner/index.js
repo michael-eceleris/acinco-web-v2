@@ -28,22 +28,17 @@ const Banner = () => {
                 <span className="font-weight-medium">Protección Total</span>
               </h1>
               <p className="lead mb--0">
-                Este producto cubre hurto calificado, hurto simple, daño total
-                accidentaly fractura de pantalla. Este seguro aplica para
-                clientes que adquieren los planes Pospago 5.3, plan Bussiness
-                Combo B2B Voz y SMS Nacional ilimitado +35GB y/o Combo B2B Voz y
-                SMS Nacional ilimitado +50GB, sin ningún costo adicional
+                Este seguro aplica para clientes que adquieren los planes
+                Pospago 5.3, plan Bussiness Combo B2B Voz y SMS Nacional
+                ilimitado +35GB y/o Combo B2B Voz y SMS Nacional ilimitado
+                +50GB, sin ningún costo adicional
               </p>
               <p className="fs--14">* Aplican términos y condiciones.</p>
             </div>
           </div>
-          <div
-            className="col-12 col-md-6 order-2 order-md-1 pb-5 d-middle"
-            data-aos="fade-in"
-            data-aos-delay="200"
-          >
+          <div className="col-12 col-md-6 order-2 order-md-1 pb-5 d-middle">
             <img
-              width="400"
+              width="450"
               className="img-fluid lazy "
               src={MobileSecure}
               alt="logo_total_proteccion"

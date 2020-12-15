@@ -194,7 +194,7 @@ const ReviewLayout = () => {
         {error ? <p className="text-danger">* Requerido</p> : null}
         <div className="mt-4 d-flex justify-content-between">
           <button
-            className="btn btn-sm btn-outline-secondary"
+            className="btn btn-sm btn-secondary"
             onClick={() => previusStep(3)}
           >
             Atras

@@ -1,5 +1,5 @@
 import { SUCCESFULL_LOGIN, ERROR_LOGIN, GET_USER, LOGOUT } from "../../types";
-
+//eslint-disable-next-line
 export default (state, action) => {
   switch (action.type) {
     case SUCCESFULL_LOGIN:

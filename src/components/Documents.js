@@ -1,6 +1,6 @@
 import React, { useState, useContext, Fragment } from "react";
 import FormContext from "../context/form/formContext";
-const Documents = ({ setError, error, setDocumentsName }) => {
+const Documents = ({ setError, setDocumentsName }) => {
   const formContext = useContext(FormContext);
   const {
     documents,
@@ -13,12 +13,15 @@ const Documents = ({ setError, error, setDocumentsName }) => {
     previusStep,
   } = formContext;
   const [document, setDocument] = useState([]);
+  //eslint-disable-next-line
   const [errorSize, setErrorSize] = useState(false);
+  //eslint-disable-next-line
   const [errorType, setErrorType] = useState(false);
   const onLoad = (e) => {
     const { files, name, id } = e.target;
     const { size, type } = files[0];
     documents.find((doc, index) =>
+      //eslint-disable-next-line
       doc.id == id
         ? (documents[index] = {
             id: doc.id,
@@ -113,7 +116,7 @@ const Documents = ({ setError, error, setDocumentsName }) => {
         : null}
       <div className="mt-4 d-flex justify-content-between">
         <button
-          className="btn btn-sm btn-outline-secondary"
+          className="btn btn-sm btn-secondary"
           onClick={handlePreviusStep}
         >
           Atras

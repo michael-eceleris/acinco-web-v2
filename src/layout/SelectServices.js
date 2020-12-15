@@ -29,11 +29,13 @@ const SelectServices = () => {
   const [coverageSelect, setCoverageSelect] = useState(null);
   useEffect(() => {
     authUser();
+    //eslint-disable-next-line
   }, []);
   useEffect(() => {
     if (user) {
       getDevices(user.id);
     }
+    //eslint-disable-next-line
   }, [authenticate, user]);
 
   const onChangeDevice = (e) => {
@@ -129,7 +131,7 @@ const SelectServices = () => {
         </div>
         <div className="mt-4 d-flex justify-content-between">
           <button
-            className="btn btn-sm btn-outline-secondary"
+            className="btn btn-sm btn-secondary"
             onClick={handlePreviusStep}
           >
             Atras

@@ -1,39 +1,156 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
 import { Stepper, Step } from "react-form-stepper";
-
-import logoUser from "../assets/icons/user-protection.svg";
+import { ReactComponent as Devices } from "../assets/icons/devices.svg";
+import { ReactComponent as Document } from "../assets/icons/contract.svg";
+import { ReactComponent as FolderDocuments } from "../assets/icons/archive.svg";
+import { ReactComponent as User } from "../assets/icons/user.svg";
+import { ReactComponent as Send } from "../assets/icons/cuadricula-de-globo.svg";
 import FormContext from "../context/form/formContext";
 const CustomStepper = () => {
   const formContext = useContext(FormContext);
   const { step } = formContext;
+  useEffect(() => {
+    changeActiveColor(step);
+  }, [step]);
+  const [firstStep, setFirstStep] = useState(false);
+  const [secondStep, setSecondStep] = useState(false);
+  const [thirdStep, setThirdStep] = useState(false);
+  const [fourthStep, setFourthStep] = useState(false);
+  const [fivethStep, setFivethStep] = useState(false);
+
+  const changeActiveColor = (id) => {
+    console.log(id);
+    switch (id) {
+      case 1:
+        setFirstStep(true);
+        setSecondStep(true);
+        setThirdStep(false);
+        setFourthStep(false);
+        setFivethStep(false);
+        break;
+      case 2:
+        setFirstStep(true);
+        setSecondStep(true);
+        setThirdStep(true);
+        setFourthStep(false);
+        setFivethStep(false);
+        break;
+      case 3:
+        setFirstStep(true);
+        setSecondStep(true);
+        setThirdStep(true);
+        setFourthStep(true);
+        setFivethStep(false);
+        break;
+      case 4:
+        setFirstStep(true);
+        setSecondStep(true);
+        setThirdStep(true);
+        setFourthStep(true);
+        setFivethStep(true);
+        break;
+      default:
+        setFirstStep(true);
+        setSecondStep(false);
+        setThirdStep(false);
+        setFourthStep(false);
+        setFivethStep(false);
+        break;
+    }
+  };
   return (
     <Fragment>
-      <div>
-        <h1>Reclamaciones</h1>
-      </div>
       <div className="col-12 col-xl-12 mb-3">
         <div className="container">
+          <h2 className="ml-5 mb-0">Reclamaciones</h2>
           <Stepper
             activeStep={step}
             hideConnectors={true}
             styleConfig={{
-              completedBgColor: "#003272",
-              completedTextColor: "#e1e1e1",
-              activeBgColor: "#003272",
-              inactiveBgColor: "#e1e1e1",
-              circleFontSize: "1.5rem",
-              size: "2.5rem",
-              activeTextColor: "#e1e1e1",
-              inactiveTextColor: "#5d9afc",
-              borderRadius: "30%",
-              labelFontSize: "1rem",
+              completedBgColor: "#ffffff",
+              completedTextColor: "#ffffff",
+              activeBgColor: "#ffffff",
+              inactiveBgColor: "#ffffff",
+              activeTextColor: "#ffffff",
+              inactiveTextColor: "#ffffff",
             }}
+            className="m-0 p-2"
           >
-            <Step className="col-md-4" label="1) Identíficate" />
-            <Step className="col-md-4" label="2) Selecciona tu cobertura" />
-            <Step className="col-md-4" label="3) Subir documentos" />
-            <Step className="col-md-4" label="4) Información adicional" />
-            <Step className="col-md-4" label="5) Enviar" />
+            <Step className="col-md-4">
+              <div className="m-0">
+                <User
+                  fill={firstStep ? "#003272" : "#e1e1e1"}
+                  width="200"
+                  height="80"
+                />
+                <p
+                  style={{ color: firstStep ? "#003272" : "#bababa" }}
+                  className="mt--5"
+                >
+                  1.Identificate{" "}
+                </p>
+              </div>
+            </Step>
+            <Step className="col-md-4">
+              <div>
+                <Devices
+                  fill={secondStep ? "#003272" : "#e1e1e1"}
+                  width="200"
+                  height="80"
+                />
+                <p
+                  style={{ color: secondStep ? "#003272" : "#bababa" }}
+                  className="mt--5"
+                >
+                  2.Selecciona tu cobertura{" "}
+                </p>
+              </div>
+            </Step>
+            <Step className="col-md-4">
+              <div>
+                <FolderDocuments
+                  fill={thirdStep ? "#003272" : "#e1e1e1"}
+                  width="200"
+                  height="80"
+                />
+                <p
+                  style={{ color: thirdStep ? "#003272" : "#bababa" }}
+                  className="mt--5"
+                >
+                  3.Subir documentos{" "}
+                </p>
+              </div>
+            </Step>
+            <Step className="col-md-4">
+              <div>
+                <Document
+                  fill={fourthStep ? "#003272" : "#e1e1e1"}
+                  width="200"
+                  height="80"
+                />
+                <p
+                  style={{ color: fourthStep ? "#003272" : "#bababa" }}
+                  className="mt--5"
+                >
+                  3.Información adicional{" "}
+                </p>
+              </div>
+            </Step>
+            <Step className="col-md-4">
+              <div>
+                <Send
+                  fill={fivethStep ? "#003272" : "#e1e1e1"}
+                  width="200"
+                  height="80"
+                />
+                <p
+                  style={{ color: fivethStep ? "#003272" : "#bababa" }}
+                  className="mt--5"
+                >
+                  5.Enviar
+                </p>
+              </div>
+            </Step>
           </Stepper>
         </div>
       </div>

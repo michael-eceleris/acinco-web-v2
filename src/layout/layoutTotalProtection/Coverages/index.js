@@ -1,10 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import HurtoCalificado from "../../../assets/images/icon_hurtocalificado.png";
-import HurtoSimple from "../../../assets/images/hurtosimple.png";
-import TotalHurt from "../../../assets/images/icon_daniototal.png";
-import ScreenRepair from "../../../assets/images/icon_reparaciondepantalla.png";
-
 const Coverages = () => {
   return (
     <>
@@ -15,26 +9,26 @@ const Coverages = () => {
           </h2>
           <div className="table-responsive">
             <h3 className="h5">Coberturas</h3>
-            <table className="table table-striped">
+            <table className="table table-hover">
               <tbody>
                 <tr>
-                  <td className="text-muted w-50">Hurto Calificado</td>
+                  <td className="text-muted">Hurto Calificado</td>
                   <td>Si</td>
                 </tr>
                 <tr>
-                  <td className="text-muted w-50">Hurto Simple</td>
+                  <td className="text-muted">Hurto Simple</td>
                   <td>Si</td>
                 </tr>
                 <tr>
-                  <td className="text-muted w-50">Daño Total</td>
+                  <td className="text-muted">Daño Total</td>
                   <td>Si</td>
                 </tr>
                 <tr>
-                  <td className="text-muted w-50">Reparación de Pantalla</td>
+                  <td className="text-muted">Reparación de Pantalla</td>
                   <td>Si</td>
                 </tr>
                 <tr>
-                  <td className="text-muted w-50">Reclamaciones</td>
+                  <td className="text-muted">Reclamaciones</td>
                   <td>&ndash;</td>
                 </tr>
               </tbody>

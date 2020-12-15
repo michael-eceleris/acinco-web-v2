@@ -1,10 +1,11 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import FormContext from "../context/form/formContext";
 import Documents from "../components/Documents";
 const DocumentsLayout = () => {
   const formContext = useContext(FormContext);
-  const { documents, coverage } = formContext;
+  const { coverage } = formContext;
   const [error, setError] = useState(false);
+  //eslint-disable-next-line
   const [documentsName, setDocumentsName] = useState([]);
   return (
     <>

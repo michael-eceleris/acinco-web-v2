@@ -1,9 +1,7 @@
-import React, { useContext, useState } from "react";
-import FormContext from "../context/form/formContext";
+import React, { useState } from "react";
+
 import MoreInfo from "../components/MoreInfo";
 const MoreInfoLayout = () => {
-  const formContext = useContext(FormContext);
-  const { moreInfo } = formContext;
   const [error, setError] = useState(false);
   return (
     <>

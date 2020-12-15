@@ -32,7 +32,7 @@ const OurExperience = () => {
                 className="js-ajax d-block text-decoration-none text-dark transition-hover-top transition-all-ease-250"
               >
                 <div className="bg-white w--120 h--120 mb-4 border border-light rounded-circle shadow-md d-inline-flex justify-content-center align-items-center">
-                  <img src={IconMap} width="70" />
+                  <img src={IconMap} width="70" alt="logo_mapa_colombia" />
                 </div>
 
                 <h3 className="h4">Colombia</h3>
@@ -55,7 +55,7 @@ const OurExperience = () => {
                 className="js-ajax d-block text-decoration-none text-dark transition-hover-top transition-all-ease-250"
               >
                 <div className="bg-white w--120 h--120 mb-4 border border-light rounded-circle shadow-md d-inline-flex justify-content-center align-items-center">
-                  <img src={IconPadlock} width="70" />
+                  <img src={IconPadlock} width="70" alt="logo_candado" />
                 </div>
 
                 <h3 className="h4">Anti-Fraude</h3>
@@ -80,7 +80,7 @@ const OurExperience = () => {
                 className="js-ajax d-block text-decoration-none text-dark transition-hover-top transition-all-ease-250"
               >
                 <div className="bg-white w--120 h--120 mb-4 border border-light rounded-circle shadow-md d-inline-flex justify-content-center align-items-center">
-                  <img src={IconTigo} width="70" />
+                  <img src={IconTigo} width="70" alt="logo_tigo" />
                 </div>
 
                 <h3 className="h4">Colombia Móvil</h3>

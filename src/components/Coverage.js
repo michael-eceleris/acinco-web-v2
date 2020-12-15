@@ -5,6 +5,7 @@ const Coverage = () => {
   const { coveragePlans, plan, selectCoverage } = formContext;
   useEffect(() => {
     selectCoverage(null);
+    //eslint-disable-next-line
   }, [plan]);
   return (
     <Fragment>

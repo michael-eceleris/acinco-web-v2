@@ -108,10 +108,15 @@ const Navbar = () => {
                 </div>
               </li>
               <li className="nav-item">
-                <Link className="nav-link js-ajax">
+                <a
+                  className="nav-link js-ajax"
+                  href="https://www.acinco.com.co/wp-content/uploads/2018/09/Politica-deprotecciondedatos-min.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {" "}
                   Politica de Proteccion
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

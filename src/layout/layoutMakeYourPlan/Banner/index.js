@@ -50,7 +50,7 @@ const Banner = () => {
                 width="400"
                 className="img-fluid lazy "
                 src={Smartphone}
-                alt="image"
+                alt="logo_smart_app"
               />
             </div>
           </div>

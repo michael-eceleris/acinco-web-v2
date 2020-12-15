@@ -38,7 +38,12 @@ const Banner = () => {
             data-aos="fade-in"
             data-aos-delay="0"
           >
-            <img width="600" height="400" src={Searching} alt="image" />
+            <img
+              width="600"
+              height="400"
+              src={Searching}
+              alt="reclamos_imagen"
+            />
           </div>
         </div>
       </div>

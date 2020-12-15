@@ -10,7 +10,6 @@ const Coverages = () => {
           <div className="table-responsive">
             <h3 className="h5">Coberturas</h3>
             <table className="table table-hover">
-              
               <tbody>
                 <tr>
                   <td className="text-muted">Hurto Calificado</td>

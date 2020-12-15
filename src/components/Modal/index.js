@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import "./modal.css";
 import FormContext from "../../context/form/formContext";
-
 const Modal = () => {
   const formContext = useContext(FormContext);
   const { showModal, closeModal, submit } = formContext;

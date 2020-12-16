@@ -4,10 +4,10 @@ const Coverages = () => {
     <>
       <section className="border-top">
         <div className="container ">
-          <h2 className="font-weight-light mb-4 text-center-xs">
+          <h2 className="font-weight-light mb-4 text-center">
             Detalles del plan Protección Total
           </h2>
-          <div className="table-responsive">
+          <div className="table-responsive mx-auto w--700">
             <table className="table table-hover table-align-middle font-weight-medium text-center">
               <h3 className="h5 ml-2 text-align-start">Coberturas</h3>
               <tbody>
@@ -15,23 +15,22 @@ const Coverages = () => {
                   <td className="text-align-start">
                     Hurto Calificado
                     <small className="d-block text-muted">
-                      Apoderarse sin consentimiento de tu dispositivo asegurado
-                      mediante el uso de la violencia, dejandote en condición de
-                      inferioridad
+                      Aplica para hurto calificado, el hurto calificado ocurre
+                      cuando se apoderan de tu dispositivo con el uso de la
+                      violencia.
                     </small>
                   </td>
-                  <td>Si</td>
                 </tr>
                 <tr>
                   <td className="text-align-start">
                     Hurto Simple
                     <small className="d-block text-muted">
-                      Apoderarse ilegitimo de tu dispostivo asegurado, sin el
-                      uso de la violencia, no incluye extravío ni perdida del
-                      dispositivo
+                      Aplica para hurto simple, el hurto simple ocurre cuando se
+                      apoderan de tu dispositivo sin el uso de la violencia.
+                      Esta cobertura no aplica para perdida por parte del
+                      usuario.
                     </small>
                   </td>
-                  <td>Si</td>
                 </tr>
                 <tr>
                   <td className="text-align-start">
@@ -42,7 +41,6 @@ const Coverages = () => {
                       mismo
                     </small>
                   </td>
-                  <td>Si</td>
                 </tr>
                 <tr>
                   <td className="text-align-start">
@@ -53,16 +51,17 @@ const Coverages = () => {
                       del equipo
                     </small>
                   </td>
-                  <td>Si</td>
                 </tr>
                 <tr>
                   <td className="text-align-start">
                     Reclamaciones
                     <small className="d-block text-muted">
-                      Cuenta con dos (2) reclamaciones por vigencia anual
+                      Cuenta con dos (2) reclamaciones por vigencia anual, de
+                      las cuales una (1) es por hurto calificado, hurto simple o
+                      daño total accidental, y una (1) por fractura de pantalla
+                      en caso de accidente.
                     </small>
                   </td>
-                  <td>Si</td>
                 </tr>
               </tbody>
             </table>

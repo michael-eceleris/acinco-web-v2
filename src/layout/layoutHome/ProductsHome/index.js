@@ -9,7 +9,7 @@ import SmartPhoneGamaAlta from "../../../assets/icons/mobile-payment.svg";
 
 const ProductsHome = () => {
   return (
-    <section className="bg-gray-200">
+    <section className="bg-theme-color-light">
       <div className="container">
         <div className="text-center mb--100">
           <h1 className="font-weight-light mb-4">
@@ -65,12 +65,14 @@ const ProductsHome = () => {
                     Recobro hasta del 70%
                   </div>
                   <hr className="mt-6" />
-                  <Link
-                    className="btn btn-lg btn-primary mb-2"
-                    to="/pospago-5-3"
-                  >
-                    Conocer más{" "}
-                  </Link>
+                  <div className="d-flex justify-content-center">
+                    <Link
+                      className="btn btn-lg btn-primary mb-2"
+                      to="/pospago-5-3"
+                    >
+                      Conocer más{" "}
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -116,12 +118,14 @@ const ProductsHome = () => {
                   </div>
 
                   <hr className="mt-6" />
-                  <Link
-                    className="btn btn-primary btn-lg "
-                    to="/arma-tu-plan-smart-app"
-                  >
-                    Conocer más
-                  </Link>
+                  <div className="d-flex justify-content-center">
+                    <Link
+                      className="btn btn-primary btn-lg"
+                      to="/arma-tu-plan-smart-app"
+                    >
+                      Conocer más
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -167,9 +171,11 @@ const ProductsHome = () => {
                   <div className="clearfix mb-2">&nbsp;</div>
 
                   <hr className="mt-6" />
-                  <Link className="btn btn-primary btn-lg" to="/samsung">
-                    Conocer más
-                  </Link>
+                  <div className="d-flex justify-content-center">
+                    <Link className="btn btn-primary btn-lg" to="/samsung">
+                      Conocer más
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -208,9 +214,11 @@ const ProductsHome = () => {
                   <div className="clearfix mb-2">&nbsp;</div>
 
                   <hr className="mt-6" />
-                  <Link className="btn btn-primary  btn-lg" to="/pospago-5-2">
-                    Conocer más
-                  </Link>
+                  <div className="d-flex justify-content-center">
+                    <Link className="btn btn-primary btn-lg" to="/pospago-5-2">
+                      Conocer más
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -254,9 +262,11 @@ const ProductsHome = () => {
                   </div>
 
                   <hr className="mt-6" />
-                  <Link className="btn btn-primary btn-lg" to="/seguro-gamas">
-                    Conocer más
-                  </Link>
+                  <div className="d-flex justify-content-center">
+                    <Link className="btn btn-primary btn-lg" to="/seguro-gamas">
+                      Conocer más
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -295,12 +305,14 @@ const ProductsHome = () => {
                   </div>
 
                   <hr className="mt-6" />
-                  <Link
-                    className="btn btn-primary btn-lg"
-                    to="/soat-asistencia-de-pantalla"
-                  >
-                    Conocer más
-                  </Link>
+                  <div className="d-flex justify-content-center">
+                    <Link
+                      className="btn btn-primary btn-lg"
+                      to="/soat-asistencia-de-pantalla"
+                    >
+                      Conocer más
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

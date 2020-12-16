@@ -3622,7 +3622,7 @@ input[type="submit"].btn-block {
   background-color: #e9ecef;
 }
 .custom-file-input:lang(en) ~ .custom-file-label:after {
-  content: "Browse";
+  content: "Subir";
 }
 .custom-file-input:lang(ro) ~ .custom-file-label:after {
   content: "Caută";

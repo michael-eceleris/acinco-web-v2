@@ -2,9 +2,9 @@ import React, { Fragment, useContext, useState, useEffect } from "react";
 import { Stepper, Step } from "react-form-stepper";
 import { ReactComponent as Devices } from "../assets/icons/devices.svg";
 import { ReactComponent as Document } from "../assets/icons/contract.svg";
-import { ReactComponent as FolderDocuments } from "../assets/icons/archive.svg";
+import { ReactComponent as Upload } from "../assets/icons/upload.svg";
 import { ReactComponent as User } from "../assets/icons/user.svg";
-import { ReactComponent as Send } from "../assets/icons/cuadricula-de-globo.svg";
+import { ReactComponent as Send } from "../assets/icons/send.svg";
 import FormContext from "../context/form/formContext";
 const CustomStepper = () => {
   const formContext = useContext(FormContext);
@@ -107,7 +107,7 @@ const CustomStepper = () => {
             </Step>
             <Step className="col-md-4">
               <div>
-                <FolderDocuments
+                <Upload
                   fill={thirdStep ? "#003272" : "#e1e1e1"}
                   width="200"
                   height="80"

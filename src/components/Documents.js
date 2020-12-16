@@ -32,15 +32,32 @@ const Documents = ({ setError }) => {
           })
         : null
     );
-    setDocument([
-      ...document,
-      {
-        id,
-        nombre_documento_save: name,
-        files: files[0],
-        nameFile: files[0].name,
-      },
-    ]);
+
+    if (size > 2000000 || type !== "application/pdf") {
+      setDocument([...document]);
+    } else if (document.length === documentsCoverage.length) {
+      const actual = document.map((doc) => doc.id).indexOf(id);
+      document.splice(actual, 1);
+      setDocument([
+        ...document,
+        {
+          id,
+          nombre_documento_save: name,
+          files: files[0],
+          nameFile: files[0].name,
+        },
+      ]);
+    } else {
+      setDocument([
+        ...document,
+        {
+          id,
+          nombre_documento_save: name,
+          files: files[0],
+          nameFile: files[0].name,
+        },
+      ]);
+    }
   };
   const handleNextStep = () => {
     if (document.length === documentsCoverage.length) {
@@ -64,7 +81,7 @@ const Documents = ({ setError }) => {
         ? documents.map((doc) => {
             return (
               <div className=" mb-3 row flex-row" key={doc.id}>
-                <p>{doc.nombre_documento_save}</p>
+                <p className="mb-0">{doc.nombre_documento_save}</p>
                 <div className="custom-file custom-file-primary">
                   <input
                     id={doc.id}

@@ -40,7 +40,12 @@ const HowToActive = () => {
                       rel="noreferrer"
                       target="_blank"
                     >
-                      <img src={IconApple} height="35" className="mr-2" />
+                      <img
+                        src={IconApple}
+                        height="35"
+                        className="mr-2"
+                        alt="logo_apple"
+                      />
                       <span className="text-align-start">
                         <span className="d-block line-height-1 fs--13">
                           Download on the
@@ -60,6 +65,7 @@ const HowToActive = () => {
                         src={IconGooglePlayStore}
                         height="30"
                         className=" mr-2"
+                        alt="logo_play_store"
                       />
                       <span className="text-align-start">
                         <span className="d-block line-height-1 fs--13">

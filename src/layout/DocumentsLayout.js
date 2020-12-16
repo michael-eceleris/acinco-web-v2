@@ -5,8 +5,6 @@ const DocumentsLayout = () => {
   const formContext = useContext(FormContext);
   const { coverage } = formContext;
   const [error, setError] = useState(false);
-  //eslint-disable-next-line
-  const [documentsName, setDocumentsName] = useState([]);
   return (
     <>
       <div className="container py-1">
@@ -15,11 +13,7 @@ const DocumentsLayout = () => {
           Sube los documentos necesarios para la cobertura de {coverage.nombre}
         </p>
         <div className="container py-4">
-          <Documents
-            setError={setError}
-            error={error}
-            setDocumentsName={setDocumentsName}
-          />
+          <Documents setError={setError} error={error} />
         </div>
         {error ? null : null}
       </div>

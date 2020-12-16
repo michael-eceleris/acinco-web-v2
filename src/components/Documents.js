@@ -1,6 +1,6 @@
 import React, { useState, useContext, Fragment } from "react";
 import FormContext from "../context/form/formContext";
-const Documents = ({ setError, setDocumentsName }) => {
+const Documents = ({ setError }) => {
   const formContext = useContext(FormContext);
   const {
     documents,
@@ -13,16 +13,11 @@ const Documents = ({ setError, setDocumentsName }) => {
     previusStep,
   } = formContext;
   const [document, setDocument] = useState([]);
-  //eslint-disable-next-line
-  const [errorSize, setErrorSize] = useState(false);
-  //eslint-disable-next-line
-  const [errorType, setErrorType] = useState(false);
   const onLoad = (e) => {
     const { files, name, id } = e.target;
     const { size, type } = files[0];
     documents.find((doc, index) =>
-      //eslint-disable-next-line
-      doc.id == id
+      doc.id === parseInt(id)
         ? (documents[index] = {
             id: doc.id,
             nombre_documento_save: doc.nombre_documento_save,
@@ -37,14 +32,12 @@ const Documents = ({ setError, setDocumentsName }) => {
           })
         : null
     );
-    if (size > 2000000) {
-      setErrorSize(true);
-    } else if (type !== "application/pdf") {
-      setErrorType(true);
-    } else {
-      setErrorSize(false);
-      setErrorType(false);
 
+    if (size > 2000000 || type !== "application/pdf") {
+      setDocument([...document]);
+    } else if (document.length === documentsCoverage.length) {
+      const actual = document.map((doc) => doc.id).indexOf(id);
+      document.splice(actual, 1);
       setDocument([
         ...document,
         {
@@ -54,7 +47,8 @@ const Documents = ({ setError, setDocumentsName }) => {
           nameFile: files[0].name,
         },
       ]);
-      setDocumentsName([
+    } else {
+      setDocument([
         ...document,
         {
           id,
@@ -86,8 +80,8 @@ const Documents = ({ setError, setDocumentsName }) => {
       {documents
         ? documents.map((doc) => {
             return (
-              <div className=" mb-3 row flex-row">
-                <p>{doc.nombre_documento_save}</p>
+              <div className=" mb-3 row flex-row" key={doc.id}>
+                <p className="mb-0">{doc.nombre_documento_save}</p>
                 <div className="custom-file custom-file-primary">
                   <input
                     id={doc.id}
@@ -114,9 +108,9 @@ const Documents = ({ setError, setDocumentsName }) => {
             );
           })
         : null}
-      <div className="mt-4 d-flex justify-content-between">
+      <div className="mt-4 justify-content-between row flex-row">
         <button
-          className="btn btn-sm btn-secondary"
+          className="btn btn-sm btn-outline-secondary"
           onClick={handlePreviusStep}
         >
           Atras

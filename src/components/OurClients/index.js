@@ -18,7 +18,7 @@ const OurClients = () => {
               <div className="h--150 col-6 col-md-3 d-flex align-items-center text-center">
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-80 img-fluid opacity-5 ml-3 mr-3  lazy"
+                    className="max-h-80 img-fluid opacity-7 ml-3 mr-3  lazy"
                     src={LogoHuawei}
                     alt="logo_huawei"
                   />
@@ -33,7 +33,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-600 img-fluid opacity-5 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-600 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
                     src={LogoSamgung}
                     alt="logo_samsung"
                   />
@@ -48,7 +48,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-700 img-fluid opacity-5 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-700 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
                     data-src="demo.files/svg/vendors/vendor_coinbase.svg"
                     src={LogoAxaColpatria}
                     alt="logo_axa_colpatria"
@@ -64,7 +64,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-80 img-fluid opacity-5 ml-3 mr-3 max-w-120 lazy"
+                    className="max-h-80 img-fluid opacity-7 ml-3 mr-3 max-w-120 lazy"
                     data-src="demo.files/svg/vendors/vendor_instagram.svg"
                     src={LogoTigo}
                     alt="logo_tigo"
@@ -80,7 +80,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-120 img-fluid opacity-5 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-120 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
                     data-src="demo.files/svg/vendors/vendor_pinterest.svg"
                     src={LogoAxaService}
                     alt="logo_axa_service"
@@ -96,7 +96,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-600 img-fluid opacity-5 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-600 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
                     data-src="demo.files/svg/vendors/vendor_dribble.svg"
                     src={LogoTelefonicaTelecom}
                     alt="logo_telefonica_telecom"
@@ -112,7 +112,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-600 img-fluid opacity-5 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-600 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
                     src={LogoTelefonicaData}
                     alt="logo_telefonica_data"
                   />
@@ -127,7 +127,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-600 img-fluid opacity-5 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-600 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
                     src={LogoEricsson}
                     alt="logo_ericsson"
                   />

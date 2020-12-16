@@ -67,7 +67,7 @@ const Form = () => {
             />
             <label htmlFor="password">Password</label>
           </div>
-          <div className="d-flex justify-content-end">
+          <div className="d-flex justify-content-center">
             <button type="submit" className="btn btn-sm btn-primary">
               Inicia Sesión
             </button>

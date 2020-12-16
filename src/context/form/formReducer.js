@@ -17,8 +17,7 @@ import {
   OPEN_MODAL,
   CLOSE_MODAL,
 } from "../../types";
-//eslint-disable-next-line
-export default (state, action) => {
+const formReducer = (state, action) => {
   switch (action.type) {
     case DEVICES_USER:
       return {
@@ -129,3 +128,4 @@ export default (state, action) => {
       return state;
   }
 };
+export default formReducer;

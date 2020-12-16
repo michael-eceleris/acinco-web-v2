@@ -95,8 +95,9 @@ const FormState = (props) => {
     }
   };
   const selectDevice = (id) => {
-    //eslint-disable-next-line
-    const device = state.devicesUser.find((deviceId) => deviceId.id == id);
+    const device = state.devicesUser.find(
+      (deviceId) => deviceId.id === parseInt(id)
+    );
     dispatch({
       type: SELECT_DEVICE,
       payload: device,
@@ -104,8 +105,9 @@ const FormState = (props) => {
   };
   const selectPlan = (id) => {
     if (state.plansDevice) {
-      //eslint-disable-next-line
-      const plan = state.plansDevice.find((planId) => planId.id == id);
+      const plan = state.plansDevice.find(
+        (planId) => planId.id === parseInt(id)
+      );
       dispatch({
         type: SELECT_PLAN,
         payload: plan,
@@ -115,8 +117,7 @@ const FormState = (props) => {
   const selectCoverage = (id) => {
     if (state.coveragePlans) {
       const coverage = state.coveragePlans.find(
-        //eslint-disable-next-line
-        (coverageId) => coverageId.id == id
+        (coverageId) => coverageId.id === parseInt(id)
       );
       dispatch({
         type: SELECT_COVERAGE,
@@ -158,8 +159,8 @@ const FormState = (props) => {
       ciudad_siniestro,
     } = data;
     var formData = new FormData();
-    //eslint-disable-next-line
-    documentos_requerido_id.map((doc) => {
+
+    documentos_requerido_id.forEach((doc) => {
       formData.append(doc.id, doc.files);
     });
     formData.append("cliente_id", cliente_id);

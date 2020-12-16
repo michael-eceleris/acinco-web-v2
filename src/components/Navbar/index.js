@@ -48,15 +48,14 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item dropdown active">
-                <Link
-                  to="/nuestros-productos"
+                <p
                   className="nav-link dropdown-toggle"
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
                   Nuestros Productos
-                </Link>
+                </p>
                 <div
                   aria-labelledby="mainNavHome"
                   className="dropdown-menu dropdown-menu-clean dropdown-menu-hover"

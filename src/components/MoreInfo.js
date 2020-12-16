@@ -19,6 +19,7 @@ const MoreInfo = ({ setError, error }) => {
   const [errorCity, setErrorCity] = useState(false);
   const [errorDate, setErrorDate] = useState(false);
   const [errorNumberPhone, setErrorNumberPhone] = useState(false);
+  const [errorLengthNumber, setErrorLengthNumber] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const date = new Date();
   let day = null;
@@ -57,10 +58,16 @@ const MoreInfo = ({ setError, error }) => {
 
   const handleChangeNumber = (e) => {
     setPhoneNumber(e.target.value);
-    if (!e.target.validity.valid) {
+    console.log(phoneNumber.length);
+    if (phoneNumber.length >= 10 || phoneNumber.length === 0) {
+      setErrorLengthNumber(true);
+      setErrorNumberPhone(false);
+    } else if (!e.target.validity.valid) {
       setErrorNumberPhone(true);
+      setErrorLengthNumber(false);
     } else {
       setErrorNumberPhone(false);
+      setErrorLengthNumber(false);
     }
   };
   const handleChangeMenssage = (e) => {
@@ -141,9 +148,7 @@ const MoreInfo = ({ setError, error }) => {
 
   return (
     <>
-      <label>Selecione su género</label>
-      <br />
-      <div className="form-label-group mb-3">
+      <div className="form-label-group mb-4">
         <select
           onChange={handleChangeGenre}
           id="gender"
@@ -159,15 +164,14 @@ const MoreInfo = ({ setError, error }) => {
               ))
             : null}
         </select>
+        <label>Selecione su género</label>
         {error && !genderActual ? (
-          <p className="text-danger"> * Campo requerido</p>
+          <p className="text-danger">* Campo requerido</p>
         ) : errorGender ? (
           <p className="text-danger">* Campo obligatorio</p>
         ) : null}
       </div>
-      <label>Selecione la ciudad </label>
-      <br />
-      <div className="form-label-group mb-3">
+      <div className="form-label-group mb-4">
         <select
           onChange={handleChangeCity}
           id="city"
@@ -183,15 +187,14 @@ const MoreInfo = ({ setError, error }) => {
               ))
             : null}
         </select>
+        <label>Selecione la ciudad en la que ocurrio el siniestro</label>
         {error && !cityActual ? (
           <p className="text-danger">* Campo requerido</p>
         ) : errorCity ? (
           <p className="text-danger">* Campo obligatorio</p>
         ) : null}
       </div>
-      <label> Seleccionar fecha</label>
-      <br />
-      <div className="form-group">
+      <div className="form-label-group mb-4">
         <input
           className="form-control"
           type="date"
@@ -199,53 +202,69 @@ const MoreInfo = ({ setError, error }) => {
           max={actualDate}
           onChange={handleChangeDate}
         />
+        <label> Seleccionar fecha en la que ocurrio el siniestro</label>
         {error && !dateActual ? (
           <p className="text-danger">* Campo requerido</p>
         ) : errorDate ? (
           <p className="text-danger">* Fecha incorrecta</p>
         ) : null}
       </div>
-      <label>Número de telefono</label>
-      <br />
-      <div className="form-group">
+      <div className="form-label-group">
         <input
           className="form-control"
           id="number"
           type="text"
           name="number"
-          placeholder="Phone number"
           required
           onChange={handleChangeNumber}
           value={phoneNumber}
           pattern="[0-9]{0,10}"
         />
-        {error && !phoneNumber ? (
-          <p className="text-danger">* Campo requerido</p>
-        ) : errorNumberPhone ? (
-          <p className="text-danger">* Numero incorrecto</p>
-        ) : null}
+        <label>Número de linea con la que sucedío el siniestro</label>
       </div>
-      <label>Mensaje</label>
-      <br />
-      <div className="form-group">
+      <div className="mb-4 d-flex justify-content-between">
+        <div>
+          {error && !phoneNumber ? (
+            <p className="text-danger">* Campo requerido</p>
+          ) : errorLengthNumber && !errorNumberPhone ? (
+            <p className="text-danger">* Excediste la cantidad de números</p>
+          ) : errorNumberPhone && !errorLengthNumber ? (
+            <p className="text-danger">* Solo se permiten números</p>
+          ) : null}
+        </div>
+        <div>
+          <p className="text-left p-0 m-0">{phoneNumber.length}/10</p>
+        </div>
+      </div>
+      <div className="form-label-group">
         <textarea
           className="form-control"
           required
-          placeholder="Mensaje"
+          placeholder="Descripcion del siniestro"
           onChange={handleChangeMenssage}
           rows="3"
         ></textarea>
-        {error && !messageActual ? (
-          <p className="text-danger">* Campo requerido</p>
-        ) : errorMessage ? (
-          <p className="text-danger">
-            * Accediste el número máximo de caracteres
+        <label>Descripcion del siniestro</label>
+      </div>
+      <div className="mb-4 d-flex justify-content-between">
+        <div>
+          {error && !messageActual ? (
+            <p className="text-danger">* Campo requerido</p>
+          ) : errorMessage ? (
+            <p className="text-danger">
+              * Accediste el número máximo de caracteres
+            </p>
+          ) : null}
+        </div>
+        <div>
+          <p className="text-left p-0 m-0">
+            {messageActual ? messageActual.length : 0}/350
           </p>
-        ) : null}
+        </div>
       </div>
       <div className="mt-4 d-flex justify-content-between">
         <button
-          className="btn btn-sm btn-secondary"
+          className="btn btn-sm btn-outline-secondary"
           onClick={handlePreviusStep}
         >
           Atras

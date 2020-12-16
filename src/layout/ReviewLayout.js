@@ -81,12 +81,12 @@ const ReviewLayout = () => {
                   <td width="50%"> {user.email}</td>
                 </tr>
                 <tr>
-                  <td width="50%">Línea Principal:</td>
+                  <td width="50%">Línea Principal Asegurada:</td>
                   <td width="50%">{device.linea_uno}</td>
                 </tr>
                 {device.linea_dos ? (
                   <tr>
-                    <td width="50%">Línea Secundaria: </td>
+                    <td width="50%">Línea Secundaria Asegurada: </td>
                     <td width="50%">{device.linea_dos}</td>
                   </tr>
                 ) : null}
@@ -126,11 +126,11 @@ const ReviewLayout = () => {
                   <td width="50%">{device.dispositivo.fabricante.nombre}</td>
                 </tr>
                 <tr>
-                  <td width="50%">IMEI Principal:</td>
+                  <td width="50%">IMEI Principal Asegurado:</td>
                   <td width="50%">{device.imei_uno}</td>
                 </tr>
                 <tr>
-                  <td width="50%">IMEI Secundario:</td>
+                  <td width="50%">IMEI Secundario Asegurado:</td>
                   <td width="50%">{device.imei_dos}</td>
                 </tr>
               </tbody>
@@ -155,7 +155,7 @@ const ReviewLayout = () => {
                   <td width="50%">{moreInfo.nombre_siniestro} </td>
                 </tr>
                 <tr>
-                  <td width="50%">Línea del Siniestro:</td>
+                  <td width="50%">Línea con la que sucedío el siniestro:</td>
                   <td width="50%">{moreInfo.linea_siniestro_one}</td>
                 </tr>
                 <tr>
@@ -172,7 +172,7 @@ const ReviewLayout = () => {
             <table className="table table-sm text-gray-700">
               <tbody>
                 {documents.map((doc) => (
-                  <tr>
+                  <tr key={doc.id}>
                     <td width="50%">{doc.nombre_documento_save}</td>
                     <td width="50%">{doc.nameFile}</td>
                   </tr>
@@ -194,7 +194,7 @@ const ReviewLayout = () => {
         {error ? <p className="text-danger">* Requerido</p> : null}
         <div className="mt-4 d-flex justify-content-between">
           <button
-            className="btn btn-sm btn-secondary"
+            className="btn btn-sm btn-outline-secondary"
             onClick={() => previusStep(3)}
           >
             Atras

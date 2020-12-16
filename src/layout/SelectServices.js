@@ -131,7 +131,7 @@ const SelectServices = () => {
         </div>
         <div className="mt-4 d-flex justify-content-between">
           <button
-            className="btn btn-sm btn-secondary"
+            className="btn btn-sm btn-outline-secondary"
             onClick={handlePreviusStep}
           >
             Atras

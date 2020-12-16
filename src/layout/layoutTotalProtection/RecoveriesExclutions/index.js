@@ -7,8 +7,7 @@ const Recoveries = () => {
         <div className="container p-0">
           <div className="row d-flex flex-wrap align-items-center my-7 ">
             <div className="col-12 col-lg-6 mb-5">
-              <hr className="h--1 bg-primary w--50" />
-              <h2 className="h1 text-primary mb-4">Recobros</h2>
+              <h2 className="h1 text-primary mb-4 text-center">Recobros</h2>
               <p className="lead mb-5">
                 Si te ocurre un siniestro, o alguna circunstancia en la cual se
                 vea aplicable alguna de las coberturas que trae el plan, ten en
@@ -49,12 +48,11 @@ const Recoveries = () => {
           </div>
         </div>
       </section>
-      <section className="pt-2 pb-2 bg-theme-color-light mt-2 ">
+      <section className="pt-2 pb-2 bg-theme-color-custom-aliceblue">
         <div className="container p-0">
           <div className="row d-flex flex-wrap align-items-center my-7">
             <div className="order-lg-2 col-12 col-lg-6 mb-5">
-              <hr className="h--1 bg-success w--50" />
-              <h2 className="h1 text-success mb-4">Exclusiones</h2>
+              <h2 className="h1 text-success mb-4 text-center">Exclusiones</h2>
               <p className="lead mb-5">
                 Existen algunas exclusiones en las cuales no son aplicables a
                 las coberturas de este plan, ten en cuenta esto antes de
@@ -65,7 +63,9 @@ const Recoveries = () => {
               <div className="row gutters-md gutters-xs--xs">
                 <div className="col-6 jarallax">
                   <div className="bg-white shadow-xs rounded-xl p-4 mb-4 mb-2-xs bg-primary-soft-hover transition-bg-ease-150 text-decoration-none text-gray-800 h-100">
-                    <i className="fi fi-smartphone fs--45"></i>
+                    <div className="text-center p-0 m-0">
+                      <i className="fi fi-smartphone fs--45"></i>
+                    </div>
                     <h3 className="h5 py-3">Daño al equipo móvil</h3>
                     <p>
                       Daño al equipo móvil por consecuencia de terceros, debido
@@ -77,7 +77,9 @@ const Recoveries = () => {
 
                 <div className="col-6 jarallax">
                   <div className="bg-white shadow-xs rounded-xl p-4 mb-4 mb-2-xs bg-success-soft-hover transition-bg-ease-150 text-decoration-none text-gray-800 h-100">
-                    <i className="fi fi-round-info-full fs--45"></i>
+                    <div className="text-center p-0 m-0">
+                      <i className="fi fi-round-info-full fs--45"></i>
+                    </div>
                     <h3 className="h5 py-3">Fraude</h3>
                     <p>
                       Pérdidas por fraudes o actos deshonestos de terceros,

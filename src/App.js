@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import ScrollTop from "./config/scrolltop";
 import Home from "./pages/Home";
 import Claims from "./pages/Claims";
-import Product from "./pages/Products";
 import TotalProtection from "./pages/TotalProtection";
 import ScreenFracture from "./pages/ScreenFracture";
 import MakeYourPlan from "./pages/MakeYourPlan";
@@ -29,9 +28,6 @@ function App() {
             </Route>
             <Route path="/tramites-y-reclamaciones" exact>
               <Claims />
-            </Route>
-            <Route path="/nuestros-productos" exact>
-              <Product />
             </Route>
             <Route path="/pospago-5-3" exact>
               <TotalProtection />

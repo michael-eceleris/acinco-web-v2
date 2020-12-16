@@ -56,112 +56,177 @@ const ReviewLayout = () => {
         <p className="fs--17">
           Revisa los datos, confirma que esten correctos y envía tu reclamación.
         </p>
-        <h6 className="font-weight-medium"> Datos personales:</h6>
-        <div className="bg-white rounded font-weight-light">
+        <div className="bg-white rounded font-weight-light mb-4 ">
           <div className="table-responsive">
             <table className="table table-sm text-gray-700">
               <tbody>
                 <tr>
-                  <td>Nombre:</td>
-                  <td>{user.name}</td>
+                  <td className="border-top-0">
+                    <h6 className="font-weight-medium mb-4">
+                      Datos personales
+                    </h6>
+                  </td>
+                  <td className="border-top-0">&nbsp;</td>
+                </tr>
+
+                <tr>
+                  <td className="border-bottom border-top-0">Nombre:</td>
+                  <td className="border-bottom border-top-0">{user.name}</td>
                 </tr>
                 <tr>
-                  <td>Tipo de documento:</td>
-                  <td>{user.identification_type.name}</td>
+                  <td className="border-bottom border-top-0">
+                    Tipo de documento:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {user.identification_type.name}
+                  </td>
                 </tr>
                 <tr>
-                  <td>Número de documento:</td>
-                  <td>{user.identification_number}</td>
+                  <td className="border-bottom border-top-0">
+                    Número de documento:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {user.identification_number}
+                  </td>
                 </tr>
                 <tr>
-                  <td>Género:</td>
-                  <td>{moreInfo.nombre_genero}</td>
+                  <td className="border-bottom border-top-0">Género:</td>
+                  <td className="border-bottom border-top-0">
+                    {moreInfo.nombre_genero}
+                  </td>
                 </tr>
                 <tr>
-                  <td>Email:</td>
-                  <td> {user.email}</td>
+                  <td className="border-bottom border-top-0">Email:</td>
+                  <td className="border-bottom border-top-0"> {user.email}</td>
                 </tr>
                 <tr>
-                  <td>Línea Principal Asegurada:</td>
-                  <td>{device.linea_uno}</td>
+                  <td className="border-bottom border-top-0">
+                    Línea Principal Asegurada:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {device.linea_uno}
+                  </td>
                 </tr>
                 {device.linea_dos ? (
                   <tr>
-                    <td>Línea Secundaria Asegurada: </td>
-                    <td>{device.linea_dos}</td>
+                    <td className="border-bottom border-top-0">
+                      Línea Secundaria Asegurada:{" "}
+                    </td>
+                    <td className="border-bottom border-top-0">
+                      {device.linea_dos}
+                    </td>
                   </tr>
                 ) : null}
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <h6 className="font-weight-medium"> Datos del dispositivo:</h6>
-        <div className="bg-white rounded font-weight-light">
-          <div className="table-responsive">
-            <table className="table table-sm text-gray-700">
-              <tbody>
                 <tr>
-                  <td>Marca del dispositivo:</td>
-                  <td>{device.dispositivo.nombre}</td>
+                  <td className="border-top-0">
+                    <h6 className="font-weight-medium mb-4 mt-4">
+                      Datos del dispositivo
+                    </h6>
+                  </td>
+                  <td className="border-top-0">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td>Fabricante:</td>
-                  <td>{device.dispositivo.fabricante.nombre}</td>
+                  <td className="border-bottom border-top-0">
+                    Marca del dispositivo:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {device.dispositivo.nombre}
+                  </td>
                 </tr>
                 <tr>
-                  <td>IMEI Principal Asegurado:</td>
-                  <td>{device.imei_uno}</td>
+                  <td className="border-bottom border-top-0">Fabricante:</td>
+                  <td className="border-bottom border-top-0">
+                    {device.dispositivo.fabricante.nombre}
+                  </td>
                 </tr>
                 <tr>
-                  <td>IMEI Secundario Asegurado:</td>
-                  <td>{device.imei_dos}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <h6 className="font-weight-medium">Datos del siniestro</h6>
-        <div className="bg-white rounded font-weight-light">
-          <div className="table-responsive">
-            <table className="table table-sm text-gray-700">
-              <tbody>
-                <tr>
-                  <td>Nombre del plan al que aplica:</td>
-                  <td>{plan.plan.nombre}</td>
+                  <td className="border-bottom border-top-0">
+                    IMEI Principal Asegurado:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {device.imei_uno}
+                  </td>
                 </tr>
                 <tr>
-                  <td>Aplicando a la cobertura de:</td>
-                  <td>{coverage.nombre} </td>
+                  <td className="border-bottom border-top-0">
+                    IMEI Secundario Asegurado:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {device.imei_dos}
+                  </td>
                 </tr>
                 <tr>
-                  <td>Fecha del Siniestro:</td>
-                  <td>{moreInfo.fecha_siniestro} </td>
+                  <td className="border-top-0">
+                    <h6 className="font-weight-medium mb-4 mt-4">
+                      Datos del siniestro
+                    </h6>
+                  </td>
+                  <td className="border-top-0">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td>Ciudad en donde sucedío el siniestro:</td>
-                  <td>{moreInfo.nombre_siniestro} </td>
+                  <td className="border-bottom border-top-0">
+                    Nombre del plan al que aplica:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {plan.plan.nombre}
+                  </td>
                 </tr>
                 <tr>
-                  <td>Línea con la que sucedío el siniestro:</td>
-                  <td>{moreInfo.linea_siniestro_one}</td>
+                  <td className="border-bottom border-top-0">
+                    Aplicando a la cobertura de:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {coverage.nombre}{" "}
+                  </td>
                 </tr>
                 <tr>
-                  <td>Descripción del siniestro</td>
-                  <td>{moreInfo.mensaje_ticket}</td>
+                  <td className="border-bottom border-top-0">
+                    Fecha del Siniestro:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {moreInfo.fecha_siniestro}{" "}
+                  </td>
                 </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <h6 className="font-weight-medium "> Documentos cargados:</h6>
-        <div className="bg-white rounded font-weight-light mt-2 mb-2">
-          <div className="table-responsive">
-            <table className="table table-sm text-gray-700">
-              <tbody>
+                <tr>
+                  <td className="border-bottom border-top-0">
+                    Ciudad en donde sucedío el siniestro:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {moreInfo.nombre_siniestro}{" "}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-top-0">
+                    Línea con la que sucedío el siniestro:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {moreInfo.linea_siniestro_one}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-top-0">
+                    Descripción del siniestro
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {moreInfo.mensaje_ticket}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border-top-0">
+                    <h6 className="font-weight-medium mb-4 mt-4">
+                      Documentos cargados
+                    </h6>
+                  </td>
+                  <td className="border-top-0">&nbsp;</td>
+                </tr>
                 {documents.map((doc) => (
                   <tr key={doc.id}>
-                    <td>{doc.nombre_documento_save}</td>
-                    <td>{doc.nameFile}</td>
+                    <td className="border-bottom border-top-0">
+                      {doc.nombre_documento_save}
+                    </td>
+                    <td className="border-bottom border-top-0">
+                      {doc.nameFile}
+                    </td>
                   </tr>
                 ))}
               </tbody>

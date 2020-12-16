@@ -29,11 +29,11 @@ const Banner = () => {
                 <span className="text-primary font-weight-medium">
                   Asegura tu celular
                 </span>
-                ,<br />¡
+                {/* ,<br />¡
                 <span className="font-weight-medium fs--30">
                   Porque tenerlo te costo esfuerzo, asegurarlo te cuesta poco
                 </span>
-                !
+                ! */}
               </h1>
               <p className="lead">
                 Aquí conoceras nuestros productos que tenemos disponibles para

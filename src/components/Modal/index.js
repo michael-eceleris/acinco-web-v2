@@ -1,12 +1,22 @@
 import React, { useContext } from "react";
 import "./modal.css";
+import AuthContext from "../../context/auth/authContext";
 import FormContext from "../../context/form/formContext";
 const Modal = () => {
+  const authContext = useContext(AuthContext);
+  const { logOut } = authContext;
   const formContext = useContext(FormContext);
-  const { showModal, closeModal, submit } = formContext;
+  const { showModal, submit, closeModal, previusStep, clearForm } = formContext;
   const showModalLocal = showModal
     ? "modal display-block"
     : "modal display-none";
+  window.scrollTo(0, 0);
+  const handleClose = () => {
+    closeModal();
+    previusStep(0);
+    clearForm();
+    logOut();
+  };
   return (
     <>
       {submit ? (
@@ -42,9 +52,7 @@ const Modal = () => {
                   </svg>
                 </div>
                 <div className="modal-body">
-                  <h3 className="modal-title mb-2">
-                    Reclamación enviada con exito
-                  </h3>
+                  <h3 className="modal-title mb-2">Reclamación exitosa</h3>
                   <>
                     {submit.data ? (
                       submit.data.ticketId.toString().length <= 6 ? (
@@ -68,9 +76,7 @@ const Modal = () => {
                     ) : null}
                   </>
                   <div className="modal-text mt-1 fs--18">
-                    Acabas de enviar tu reclamación por lo tanto se cerrará tu
-                    sesión, aunque puedes seguir realizando reclamaciones si lo
-                    consideras necesario.
+                    Se creo una reclamación con tus datos ingresados
                   </div>
                 </div>
               </>
@@ -119,24 +125,31 @@ const Modal = () => {
                   </svg>
                 </div>
                 <div className="modal-body">
-                  <h3 className="modal-title  mb-2">Algo Salio Mal</h3>
+                  <h3 className="modal-title  mb-2">
+                    No fue posible crear tu reclamación
+                  </h3>
                   {submit.data ? (
                     submit.data.message ? (
                       <div className="modal-text">
-                        Ya tienes un proceso con esta cobertura
+                        No fue posible generar tu reclamacion debido a que el
+                        dispositivo seleccionado ya posee una reclamación en
+                        proceso
                       </div>
-                    ) : null
+                    ) : (
+                      <div className="modal-text">
+                        Acaba de ocurrir un problema, lo sentimos.
+                      </div>
+                    )
                   ) : (
                     <div className="modal-text">
-                      Acaba de ocurrir un problema, lo sentimos, vuelva a
-                      realizar el proceso de reclamación.
+                      Acaba de ocurrir un problema, lo sentimos.
                     </div>
                   )}
                 </div>
               </>
             ) : null}
             <div className="modal-actions mb-3">
-              <button className="btn btn-primary btn-sm" onClick={closeModal}>
+              <button className="btn btn-primary btn-sm" onClick={handleClose}>
                 OK
               </button>
             </div>

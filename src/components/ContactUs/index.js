@@ -88,8 +88,9 @@ const ContactUs = () => {
                           Autorizo el uso de mis datos personales para recibir
                           más información
                           <a
-                            href="page-terms-and-conditions.html"
+                            href="https://www.acinco.com.co/wp-content/uploads/2018/09/Politica-deprotecciondedatos-min.pdf"
                             target="_blank"
+                            rel="noreferrer"
                           >
                             {" "}
                             Politica de privacidad
@@ -100,7 +101,7 @@ const ContactUs = () => {
                     </div>
                     <button
                       type="submit"
-                      className="btn btn-secondary btn-pill btn-block"
+                      className="btn btn-primary btn-pill btn-block"
                     >
                       Enviar
                     </button>

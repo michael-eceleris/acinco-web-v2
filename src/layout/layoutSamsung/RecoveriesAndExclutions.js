@@ -1,18 +1,17 @@
 import React from "react";
-import Dollar from "../../../assets/icons/dollar-sign-solid.svg";
-
+import Dollar from "../../assets/icons/dollar-sign-solid.svg";
 const Recoveries = () => {
   return (
     <>
-      <section className="pt-2 pb-2 bg-theme-color-light">
+      <section className="pt-2 pb-2 bg-theme-color-light ">
         <div className="container p-0">
-          <div className="row d-flex flex-wrap align-items-center my-7">
+          <div className="row d-flex flex-wrap align-items-center my-7 ">
             <div className="col-12 col-lg-6 mb-5">
               <h2 className="h1 text-primary mb-4 text-center">Recobros</h2>
               <p className="lead mb-5">
-                Si te ocurre un siniestro, o alguna circunstancia en la cual se
-                vea aplicable alguna de las coberturas que trae el plan, ten en
-                cuenta esta informacion.
+                Si te ocurre alguna circunstancia en la que la pantalla del
+                dispositivo se vea afectaba, ten en cuenta esto esta
+                información.
               </p>
             </div>
             <div className="col-12 col-lg-6 mb-5">
@@ -26,8 +25,8 @@ const Recoveries = () => {
                       ¿Cuánto pagarás?
                     </h3>
                     <p className="pt-3 text-justify">
-                      El seguro te cubre el 65% del valor del arreglo, por lo
-                      tanto solo pagas el 35% del mismo.
+                      El seguro te cubre el 80% del valor del arreglo, por lo
+                      tanto solo pagas el 20% del mismo.
                     </p>
                   </div>
                 </div>
@@ -42,9 +41,8 @@ const Recoveries = () => {
                     </h3>
                     <p className="text-justify">
                       El porcentaje corresponde a los montos cubiertos por la
-                      aseguradora, es decir, el recobro será calculado sore el
-                      precio de venta al momento de la indemnización y en el
-                      caso de la pantalla al momento de su reparación.
+                      aseguradora, es decir, el recobro será calculado sobre el
+                      precio de reparación de la pantalla.
                     </p>
                   </div>
                 </div>
@@ -72,12 +70,12 @@ const Recoveries = () => {
                       <i className="fi fi-smartphone fs--45"></i>
                     </div>
                     <h3 className="h5 py-3 text-center">
-                      Manipulación al equipo móvil
+                      Daño al equipo móvil
                     </h3>
                     <p className="text-justify">
-                      Manipulación o reparaciones realizadas al equipo antes de
-                      adquirir el seguro, de igual forma reparaciones realizadas
-                      posteriormente en talleres no autorizados.
+                      Daño al equipo móvil por consecuencia de terceros, debido
+                      a la mala manipulación del mismo, y al desgaste natural
+                      que tiene este debido al uso.
                     </p>
                   </div>
                 </div>
@@ -87,10 +85,10 @@ const Recoveries = () => {
                     <div className="text-center p-0 m-0">
                       <i className="fi fi-round-info-full fs--45"></i>
                     </div>
-                    <h3 className="h5 py-3 text-center">Abandono</h3>
+                    <h3 className="h5 py-3 text-center">Fraude</h3>
                     <p className="text-justify">
-                      Extravío, pérdida o abandono del celular por descuido del
-                      propiertario y/o usuario.
+                      Pérdidas por fraudes o actos deshonestos de terceros,
+                      tales como clonación o similares, entre otras.
                     </p>
                   </div>
                 </div>

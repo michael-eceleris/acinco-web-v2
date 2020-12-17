@@ -1,5 +1,5 @@
 import React from "react";
-import Samsung from "../../assets/icons/samsung.svg";
+import Samsung from "../../assets/icons/icon-seguro-samsung.svg";
 
 const Banner = () => {
   return (

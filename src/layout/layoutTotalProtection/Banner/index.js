@@ -1,5 +1,5 @@
 import React from "react";
-import MobileSecure from "../../../assets/icons/mobile-secure.svg";
+import MobileSecure from "../../../assets/icons/icon-seguro-total.svg";
 
 const Banner = () => {
   return (

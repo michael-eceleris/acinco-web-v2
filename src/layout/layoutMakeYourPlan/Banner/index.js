@@ -1,5 +1,5 @@
 import React from "react";
-import Smartphone from "../../../assets/icons/telefono-inteligente.svg";
+import Smartphone from "../../../assets/icons/icon-smart-app.svg";
 
 const Banner = () => {
   return (

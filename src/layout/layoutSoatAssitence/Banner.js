@@ -1,5 +1,5 @@
 import React from "react";
-import LogoAxaColpatria from "../../assets/icons/logo-axa-colpatria.svg";
+import LogoAxaColpatria from "../../assets/icons/icon-seguro-axa.svg";
 
 const Banner = () => {
   return (

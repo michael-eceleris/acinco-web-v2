@@ -179,6 +179,14 @@ const ReviewLayout = () => {
                     {coverage.nombre}{" "}
                   </td>
                 </tr>
+                {/* <tr>
+                  <td className="border-bottom border-top-0">
+                    Con un valor asegurado de:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    ${device.nombre.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}
+                  </td>
+                </tr> */}
                 <tr>
                   <td className="border-bottom border-top-0">
                     Fecha del Siniestro:

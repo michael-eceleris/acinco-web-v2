@@ -1,5 +1,5 @@
 import React from "react";
-import SmartPhoneGamaAlta from "../../assets/icons/mobile-payment.svg";
+import SmartPhoneGamaAlta from "../../assets/icons/icon-seguro-gama.svg";
 
 const Banner = () => {
   return (

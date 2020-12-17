@@ -33,11 +33,7 @@ const Banner = () => {
               tan solo 5 sencillos pasos puedes realizar reclamaciones.
             </p>
           </div>
-          <div
-            className="col-12 col-md-6 order-2 order-md-1 pb-5"
-            data-aos="fade-in"
-            data-aos-delay="0"
-          >
+          <div className="col-12 col-md-6 order-2 order-md-1 pb-5">
             <img
               width="600"
               height="400"

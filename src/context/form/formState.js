@@ -18,6 +18,7 @@ import {
   DOCS_COVERAGE,
   OPEN_MODAL,
   CLOSE_MODAL,
+  LOADING,
 } from "../../types";
 import clienteAxios from "../../config/axios";
 
@@ -35,6 +36,7 @@ const FormState = (props) => {
     step: 0,
     submit: null,
     showModal: false,
+    isLoading: false,
   };
   const [state, dispatch] = useReducer(formReducer, initialState);
 
@@ -176,15 +178,24 @@ const FormState = (props) => {
     try {
       const result = await clienteAxios.post("/ticket/", formData);
       dispatch({
-        type: SUBMIT_FORM,
-        payload: result,
+        type: LOADING,
       });
+      setTimeout(() => {
+        dispatch({
+          type: SUBMIT_FORM,
+          payload: result,
+        });
+      }, 3000);
     } catch (error) {
-      console.log(error);
       dispatch({
-        type: ERROR_FORM,
-        payload: error.response,
+        type: LOADING,
       });
+      setTimeout(() => {
+        dispatch({
+          type: ERROR_FORM,
+          payload: error.response,
+        });
+      }, 1000);
     }
   };
   const nextStep = (id) => {
@@ -227,6 +238,7 @@ const FormState = (props) => {
         step: state.step,
         submit: state.submit,
         showModal: state.showModal,
+        isLoading: state.isLoading,
         selectDevice,
         selectPlan,
         selectCoverage,

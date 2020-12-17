@@ -21,3 +21,4 @@ export const NEXT_STEP = "NEXT_STEP";
 export const PREVIUS_STEP = "PREVIUS_STEP";
 export const OPEN_MODAL = "OPEN_MODAL";
 export const CLOSE_MODAL = "CLOSE_MODAL";
+export const LOADING = "LOADING";

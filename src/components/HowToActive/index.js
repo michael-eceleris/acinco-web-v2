@@ -34,7 +34,7 @@ const HowToActive = () => {
                       (Play Store)
                     </p>
                   </div>
-                  <div class="container d-flex justify-content-end">
+                  <div class="container d-flex justify-content-around mt-4">
                     <a
                       href="https://itunes.apple.com/co/app/protecci%C3%B3n-m%C3%B3vil-seguro/id1116274602?mt=8"
                       className="btn btn-dark rounded-xl transition-hover-top d-flex"
@@ -47,7 +47,7 @@ const HowToActive = () => {
                         className="mr-2"
                         alt="logo_apple"
                       />
-                      <span className="text-align-start">
+                      <span className="text-align-start w--100">
                         <span className="d-block line-height-1 fs--13">
                           Download on the
                         </span>
@@ -68,7 +68,7 @@ const HowToActive = () => {
                         className=" mr-2"
                         alt="logo_play_store"
                       />
-                      <span className="text-align-start">
+                      <span className="text-align-start w--100">
                         <span className="d-block line-height-1 fs--13">
                           Download on the
                         </span>

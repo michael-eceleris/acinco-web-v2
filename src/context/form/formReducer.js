@@ -16,6 +16,7 @@ import {
   DOCS_COVERAGE,
   OPEN_MODAL,
   CLOSE_MODAL,
+  LOADING,
 } from "../../types";
 const formReducer = (state, action) => {
   switch (action.type) {
@@ -78,6 +79,7 @@ const formReducer = (state, action) => {
         ...state,
         submit: action.payload,
         showModal: true,
+        isLoading: false,
       };
     case NEXT_STEP:
       return {
@@ -89,15 +91,18 @@ const formReducer = (state, action) => {
         ...state,
         step: action.payload,
       };
-    case ERROR_SELECT:
+    case LOADING:
       return {
         ...state,
+        isLoading: true,
       };
+    case ERROR_SELECT:
     case ERROR_FORM:
       return {
         ...state,
         submit: action.payload,
         showModal: true,
+        isLoading: false,
       };
     case OPEN_MODAL:
       return {
@@ -108,6 +113,7 @@ const formReducer = (state, action) => {
       return {
         ...state,
         showModal: false,
+        submit: null,
       };
     case CLEAR_FORM:
       return {
@@ -122,7 +128,6 @@ const formReducer = (state, action) => {
         documentsCoverage: null,
         moreInfo: null,
         step: 0,
-        showModal: true,
       };
     default:
       return state;

@@ -19,7 +19,6 @@ const MoreInfo = ({ setError, error }) => {
   const [errorCity, setErrorCity] = useState(false);
   const [errorDate, setErrorDate] = useState(false);
   const [errorNumberPhone, setErrorNumberPhone] = useState(false);
-  const [errorLengthNumber, setErrorLengthNumber] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const date = new Date();
   let day = null;
@@ -58,16 +57,10 @@ const MoreInfo = ({ setError, error }) => {
 
   const handleChangeNumber = (e) => {
     setPhoneNumber(e.target.value);
-    console.log(phoneNumber.length);
-    if (phoneNumber.length >= 10 || phoneNumber.length === 0) {
-      setErrorLengthNumber(true);
-      setErrorNumberPhone(false);
-    } else if (!e.target.validity.valid) {
+    if (!e.target.validity.valid) {
       setErrorNumberPhone(true);
-      setErrorLengthNumber(false);
     } else {
       setErrorNumberPhone(false);
-      setErrorLengthNumber(false);
     }
   };
   const handleChangeMenssage = (e) => {
@@ -224,11 +217,11 @@ const MoreInfo = ({ setError, error }) => {
       </div>
       <div className="mb-4 d-flex justify-content-between">
         <div>
-          {error && !phoneNumber ? (
+          {(error && !phoneNumber) || (error && phoneNumber.length === 0) ? (
             <p className="text-danger">* Campo requerido</p>
-          ) : errorLengthNumber && !errorNumberPhone ? (
+          ) : phoneNumber.length > 10 ? (
             <p className="text-danger">* Excediste la cantidad de números</p>
-          ) : errorNumberPhone && !errorLengthNumber ? (
+          ) : errorNumberPhone ? (
             <p className="text-danger">* Solo se permiten números</p>
           ) : null}
         </div>

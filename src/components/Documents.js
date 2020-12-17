@@ -32,7 +32,6 @@ const Documents = ({ setError }) => {
           })
         : null
     );
-
     if (size > 2000000 || type !== "application/pdf") {
       setDocument([...document]);
     } else if (document.length === documentsCoverage.length) {
@@ -93,7 +92,11 @@ const Documents = ({ setError }) => {
                     className="custom-file-input"
                   />
                   <label className="custom-file-label" htmlFor={doc.id}>
-                    {doc.nameFile ? doc.nameFile : null}
+                    {doc.nameFile
+                      ? doc.nameFile
+                      : document.length !== 0
+                      ? document.find((docAc) => docAc.id === doc.id).nameFile
+                      : null}
                   </label>
                 </div>
                 <div>

@@ -3622,7 +3622,7 @@ input[type="submit"].btn-block {
   background-color: #e9ecef;
 }
 .custom-file-input:lang(en) ~ .custom-file-label:after {
-  content: "Browse";
+  content: "Subir";
 }
 .custom-file-input:lang(ro) ~ .custom-file-label:after {
   content: "Caută";
@@ -12505,6 +12505,9 @@ textarea.text-white::-moz-placeholder {
 }
 .bg-theme-color-custom-aliceblue {
   background-color: rgba(76, 233, 251, 0.04) !important;
+}
+.bg-theme-color-custom-purple {
+  background-color: rgba(94, 88, 199, 0.035) !important;
 }
 .bg-gray-100 {
   background-color: #f8f9fa !important;

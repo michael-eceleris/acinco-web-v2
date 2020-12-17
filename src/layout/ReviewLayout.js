@@ -11,14 +11,14 @@ const ReviewLayout = () => {
     coverage,
     documents,
     moreInfo,
+    isLoading,
     previusStep,
     submitForm,
-    clearForm,
   } = formContext;
   const [confirmed, setConfirmed] = useState(false);
   const [error, setError] = useState(false);
   const authContext = useContext(AuthContext);
-  const { user, logOut } = authContext;
+  const { user } = authContext;
   const { imei_uno } = device;
   const {
     mensaje_ticket,
@@ -40,148 +40,200 @@ const ReviewLayout = () => {
     genero_reclamante_id: parseInt(genero_reclamante),
     documentos_requerido_id: documents,
   };
-
   const handleSubmit = () => {
-    if (confirmed) {
-      clearForm();
-      logOut();
-      previusStep(0);
+    if (isLoading === false && confirmed) {
       submitForm(formData);
       setError(false);
     } else {
       setError(true);
     }
   };
+
   return (
     <>
-      <div className="container py-1">
+      <div className="container py-1 ">
         <h4>Enviar</h4>
         <p className="fs--17">
           Revisa los datos, confirma que esten correctos y envía tu reclamación.
         </p>
-        <h6 className="font-weight-medium"> Datos personales:</h6>
-        <div className="bg-white rounded">
-          <div className="table-responsive ">
+        <div className="bg-white rounded font-weight-light mb-4 ">
+          <div className="table-responsive">
             <table className="table table-sm text-gray-700">
               <tbody>
                 <tr>
-                  <td width="50%">Nombre:</td>
-                  <td width="50%">{user.name}</td>
+                  <td className="border-top-0">
+                    <h6 className="font-weight-medium mb-4">
+                      Datos personales
+                    </h6>
+                  </td>
+                  <td className="border-top-0">&nbsp;</td>
+                </tr>
+
+                <tr>
+                  <td className="border-bottom border-top-0">Nombre:</td>
+                  <td className="border-bottom border-top-0">{user.name}</td>
                 </tr>
                 <tr>
-                  <td width="50%">Tipo de documento:</td>
-                  <td width="50%">{user.identification_type.name}</td>
+                  <td className="border-bottom border-top-0">
+                    Tipo de documento:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {user.identification_type.name}
+                  </td>
                 </tr>
                 <tr>
-                  <td width="50%">Número de documento:</td>
-                  <td width="50%">{user.identification_number}</td>
+                  <td className="border-bottom border-top-0">
+                    Número de documento:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {user.identification_number}
+                  </td>
                 </tr>
                 <tr>
-                  <td width="50%">Email:</td>
-                  <td width="50%"> {user.email}</td>
+                  <td className="border-bottom border-top-0">Género:</td>
+                  <td className="border-bottom border-top-0">
+                    {moreInfo.nombre_genero}
+                  </td>
                 </tr>
                 <tr>
-                  <td width="50%">Línea Principal Asegurada:</td>
-                  <td width="50%">{device.linea_uno}</td>
+                  <td className="border-bottom border-top-0">Email:</td>
+                  <td className="border-bottom border-top-0"> {user.email}</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-top-0">
+                    Línea Principal Asegurada:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {device.linea_uno}
+                  </td>
                 </tr>
                 {device.linea_dos ? (
                   <tr>
-                    <td width="50%">Línea Secundaria Asegurada: </td>
-                    <td width="50%">{device.linea_dos}</td>
+                    <td className="border-bottom border-top-0">
+                      Línea Secundaria Asegurada:{" "}
+                    </td>
+                    <td className="border-bottom border-top-0">
+                      {device.linea_dos}
+                    </td>
                   </tr>
                 ) : null}
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <h6 className="font-weight-medium"> Datos del plan:</h6>
-        <div className="bg-white rounded">
-          <div className="table-responsive">
-            <table className="table table-sm text-gray-700">
-              <tbody>
                 <tr>
-                  <td width="50%">Nombre del plan:</td>
-                  <td width="50%">{plan.plan.nombre}</td>
+                  <td className="border-top-0">
+                    <h6 className="font-weight-medium mb-4 mt-4">
+                      Datos del dispositivo
+                    </h6>
+                  </td>
+                  <td className="border-top-0">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td width="50%">Aplicando a la cobertura de:</td>
-                  <td width="50%">{coverage.nombre} </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <h6 className="font-weight-medium"> Datos del dispositivo:</h6>
-        <div className="bg-white rounded">
-          <div className="table-responsive">
-            <table className="table table-sm text-gray-700">
-              <tbody>
-                <tr>
-                  <td width="50%">Marca del dispositivo:</td>
-                  <td width="50%">{device.dispositivo.nombre}</td>
+                  <td className="border-bottom border-top-0">
+                    Marca del dispositivo:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {device.dispositivo.nombre}
+                  </td>
                 </tr>
                 <tr>
-                  <td width="50%">Fabricante:</td>
-                  <td width="50%">{device.dispositivo.fabricante.nombre}</td>
+                  <td className="border-bottom border-top-0">Fabricante:</td>
+                  <td className="border-bottom border-top-0">
+                    {device.dispositivo.fabricante.nombre}
+                  </td>
                 </tr>
                 <tr>
-                  <td width="50%">IMEI Principal Asegurado:</td>
-                  <td width="50%">{device.imei_uno}</td>
+                  <td className="border-bottom border-top-0">
+                    IMEI Principal Asegurado:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {device.imei_uno}
+                  </td>
                 </tr>
                 <tr>
-                  <td width="50%">IMEI Secundario Asegurado:</td>
-                  <td width="50%">{device.imei_dos}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <h6 className="font-weight-medium">Datos del siniestro</h6>
-        <div className="bg-white rounded">
-          <div className="table-responsive">
-            <table className="table table-sm text-gray-700">
-              <tbody>
-                <tr>
-                  <td width="50%">Género:</td>
-                  <td width="50%">{moreInfo.nombre_genero}</td>
+                  <td className="border-bottom border-top-0">
+                    IMEI Secundario Asegurado:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {device.imei_dos}
+                  </td>
                 </tr>
                 <tr>
-                  <td width="50%">Fecha del Siniestro:</td>
-                  <td width="50%">{moreInfo.fecha_siniestro} </td>
+                  <td className="border-top-0">
+                    <h6 className="font-weight-medium mb-4 mt-4">
+                      Datos del siniestro
+                    </h6>
+                  </td>
+                  <td className="border-top-0">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td width="50%">Ciudad del Siniestro:</td>
-                  <td width="50%">{moreInfo.nombre_siniestro} </td>
+                  <td className="border-bottom border-top-0">
+                    Nombre del plan al que aplica:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {plan.plan.nombre}
+                  </td>
                 </tr>
                 <tr>
-                  <td width="50%">Línea con la que sucedío el siniestro:</td>
-                  <td width="50%">{moreInfo.linea_siniestro_one}</td>
+                  <td className="border-bottom border-top-0">
+                    Aplicando a la cobertura de:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {coverage.nombre}{" "}
+                  </td>
                 </tr>
                 <tr>
-                  <td width="50%">Descripción</td>
-                  <td width="50%">{moreInfo.mensaje_ticket}</td>
+                  <td className="border-bottom border-top-0">
+                    Fecha del Siniestro:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {moreInfo.fecha_siniestro}{" "}
+                  </td>
                 </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <h6 className="font-weight-medium"> Documentos cargados:</h6>
-        <div className="bg-white rounded">
-          <div className="table-responsive">
-            <table className="table table-sm text-gray-700">
-              <tbody>
+                <tr>
+                  <td className="border-bottom border-top-0">
+                    Ciudad en donde sucedío el siniestro:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {moreInfo.nombre_siniestro}{" "}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-top-0">
+                    Línea con la que sucedío el siniestro:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {moreInfo.linea_siniestro_one}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-top-0">
+                    Descripción del siniestro
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    {moreInfo.mensaje_ticket}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border-top-0">
+                    <h6 className="font-weight-medium mb-4 mt-4">
+                      Documentos cargados
+                    </h6>
+                  </td>
+                  <td className="border-top-0">&nbsp;</td>
+                </tr>
                 {documents.map((doc) => (
                   <tr key={doc.id}>
-                    <td width="50%">{doc.nombre_documento_save}</td>
-                    <td width="50%">{doc.nameFile}</td>
+                    <td className="border-bottom border-top-0">
+                      {doc.nombre_documento_save}
+                    </td>
+                    <td className="border-bottom border-top-0">
+                      {doc.nameFile}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
         </div>
-        {showModal ? <Modal /> : null}
+        {showModal && !isLoading ? <Modal /> : null}
         <label className="form-checkbox form-checkbox-primary">
           <input
             type="checkbox"
@@ -201,6 +253,13 @@ const ReviewLayout = () => {
           </button>
           <button className="btn btn-sm btn-primary" onClick={handleSubmit}>
             Enviar
+            {isLoading ? (
+              <i
+                class="spinner-border spinner-border-sm ml-2 mr-0"
+                role="status"
+                aria-hidden="true"
+              ></i>
+            ) : null}
           </button>
         </div>
       </div>

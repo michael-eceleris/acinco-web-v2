@@ -9,9 +9,9 @@ const Recoveries = () => {
             <div className="col-12 col-lg-6 mb-5">
               <h2 className="h1 text-primary mb-4 text-center">Recobros</h2>
               <p className="lead mb-5">
-                Si te ocurre alguna circunstancia en la que la pantalla del
-                dispositivo se vea afectaba, ten en cuenta esto esta
-                información.
+                Si te ocurre un siniestro, o alguna circunstancia en la cual se
+                vea aplicable alguna de las coberturas que trae el plan, ten en
+                cuenta esta informacion.
               </p>
             </div>
             <div className="col-12 col-lg-6 mb-5">

@@ -38,7 +38,7 @@ const Banner = () => {
                   Este plan es para ti, que te gusta configurar las cosas a tus
                   necesidades.
                 </p>
-                <p className="fs--14">Aplican términos y condiciones.</p>
+                <p className="fs--14">* Aplican términos y condiciones.</p>
               </div>
             </div>
             <div

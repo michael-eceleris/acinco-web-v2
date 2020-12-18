@@ -248,6 +248,7 @@ const ReviewLayout = () => {
             </table>
           </div>
         </div>
+
         {showModal && !isLoading ? <Modal /> : null}
         <label className="form-checkbox form-checkbox-primary">
           <input

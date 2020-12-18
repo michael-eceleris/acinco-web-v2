@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import FormContext from "../context/form/formContext";
 import clienteAxios from "../config/axios";
+import DropdownFilter from "./Dropdown/DropdownFilter";
+import Dropdown from "./Dropdown/Dropdown";
 
 const MoreInfo = ({ setError, error }) => {
   const formContext = useContext(FormContext);
@@ -12,7 +14,6 @@ const MoreInfo = ({ setError, error }) => {
   const [genderNameActual, setGenderNameActual] = useState(null);
   const [dateActual, setDateActual] = useState(null);
   const [messageActual, setMessageActual] = useState(null);
-
   const [gender, setGenre] = useState(null);
   const [city, setCity] = useState(null);
   const [errorGender, setErrorGender] = useState(false);
@@ -71,21 +72,24 @@ const MoreInfo = ({ setError, error }) => {
       setErrorMessage(false);
     }
   };
-  const handleChangeGenre = (e) => {
-    if (e.target.value !== "") {
-      setGenderActual(e.target.value);
-      setGenderNameActual(e.target.options[e.target.value].text);
+  const handleChangeGenre = (value) => {
+    console.log(value);
+    console.log(value.id);
+    if (value) {
+      setGenderActual(value.id);
+      setGenderNameActual(value);
       setErrorGender(false);
     } else {
       setErrorGender(true);
     }
   };
-  const handleChangeCity = (e) => {
-    if (e.target.value !== "") {
-      setCityActual(e.target.value);
-      setCityNameActual(e.target.options[e.target.value].text);
+  const handleChangeCity = (value) => {
+    if (value !== null) {
+      setCityActual(value.id);
+      setCityNameActual(`${value.nombre} - ${value.departamento.nombre}`);
       setErrorCity(false);
     } else {
+      setCityNameActual(null);
       setErrorCity(true);
     }
   };
@@ -141,46 +145,30 @@ const MoreInfo = ({ setError, error }) => {
 
   return (
     <>
-      <div className="form-label-group mb-4">
-        <select
-          onChange={handleChangeGenre}
-          id="gender"
-          className="form-control bs-select"
-        >
-          <option value="">---Seleccione su género---</option>
-          {gender
-            ? gender.map((gen) => (
-                <option key={gen.id} value={gen.id}>
-                  {" "}
-                  {gen.name}
-                </option>
-              ))
-            : null}
-        </select>
-        <label>Selecione su género</label>
+      <div className="form-group">
+        <Dropdown
+          options={gender ? gender : []}
+          prompt="Selecciona tu género"
+          id="id"
+          label1="name"
+          onChange={(val) => handleChangeGenre(val)}
+          value={genderNameActual}
+        />
         {error && !genderActual ? (
           <p className="text-danger">* Campo requerido</p>
         ) : errorGender ? (
           <p className="text-danger">* Campo obligatorio</p>
         ) : null}
       </div>
-      <div className="form-label-group mb-4">
-        <select
-          onChange={handleChangeCity}
-          id="city"
-          className="form-control bs-select"
-        >
-          <option value="">---Seleccione su ciudad---</option>
-          {city
-            ? city.map((cit) => (
-                <option key={cit.id} value={cit.id}>
-                  {" "}
-                  {cit.nombre} - {cit.departamento.nombre}
-                </option>
-              ))
-            : null}
-        </select>
-        <label>Selecione la ciudad en la que ocurrio el siniestro</label>
+      <div className="form-group mb-4">
+        <DropdownFilter
+          options={city ? city : []}
+          prompt="Seleccione la ciudad en la que ocurrio el siniestro."
+          id="id"
+          label="nombre"
+          value={cityNameActual}
+          onChange={(val) => handleChangeCity(val)}
+        />
         {error && !cityActual ? (
           <p className="text-danger">* Campo requerido</p>
         ) : errorCity ? (

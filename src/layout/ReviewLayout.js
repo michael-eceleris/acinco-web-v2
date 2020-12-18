@@ -14,11 +14,13 @@ const ReviewLayout = () => {
     isLoading,
     previusStep,
     submitForm,
+    loading,
   } = formContext;
   const [confirmed, setConfirmed] = useState(false);
   const [error, setError] = useState(false);
   const authContext = useContext(AuthContext);
   const { user } = authContext;
+  /* const [loading, setLoading] = useState(false); */
   const {
     imei_uno,
     dispositivo: { valor },
@@ -45,7 +47,11 @@ const ReviewLayout = () => {
     documentos_requerido_id: documents,
   };
   const handleSubmit = () => {
-    if (isLoading === false && confirmed) {
+    if (confirmed) {
+      loading(true);
+      setTimeout(() => {
+        loading(false);
+      }, 2500);
       submitForm(formData);
       setError(false);
     } else {
@@ -131,7 +137,7 @@ const ReviewLayout = () => {
                 </tr>
                 <tr>
                   <td className="border-bottom border-top-0">
-                    Marca del dispositivo:
+                    Modelo del dispositivo:
                   </td>
                   <td className="border-bottom border-top-0">
                     {device.dispositivo.nombre}
@@ -271,7 +277,7 @@ const ReviewLayout = () => {
             Enviar
             {isLoading ? (
               <i
-                class="spinner-border spinner-border-sm ml-2 mr-0"
+                class="spinner-border spinner-border-sm ml-2 mr-0 mb--3"
                 role="status"
                 aria-hidden="true"
               ></i>

@@ -1,17 +1,18 @@
 import React, { useContext, useState, useEffect } from "react";
-import Devices from "../components/Devices";
-import Plans from "../components/Plans";
-import Coverages from "../components/Coverage";
 import FormContext from "../context/form/formContext";
 import AuthContext from "../context/auth/authContext";
+import Dropdown from "../components/Dropdown/Dropdown";
 const SelectServices = () => {
   const formContext = useContext(FormContext);
   const authContext = useContext(AuthContext);
   const { user, authUser, logOut, authenticate } = authContext;
   const {
     device,
+    devicesUser,
     plan,
+    plansDevice,
     coverage,
+    coveragePlans,
     getDevices,
     getPlans,
     getCoverages,
@@ -24,9 +25,6 @@ const SelectServices = () => {
     clearForm,
   } = formContext;
   const [error, setError] = useState(false);
-  const [deviceSelect, setDeviceSelect] = useState(null);
-  const [planSelect, setPlanSelect] = useState(null);
-  const [coverageSelect, setCoverageSelect] = useState(null);
   useEffect(() => {
     authUser();
     //eslint-disable-next-line
@@ -38,29 +36,17 @@ const SelectServices = () => {
     //eslint-disable-next-line
   }, [authenticate, user]);
 
-  const onChangeDevice = (e) => {
-    selectDevice(e.target.value);
-    setDeviceSelect({
-      ...deviceSelect,
-      [e.target.name]: e.target.value,
-    });
-    getPlans(e.target.value);
+  const onChangeDevice = (value) => {
+    selectDevice(value.id);
+    getPlans(value.id);
   };
-  const onChangePlan = (e) => {
-    selectPlan(e.target.value);
-    setPlanSelect({
-      ...planSelect,
-      [e.target.name]: e.target.value,
-    });
-    getCoverages(e.target.value);
+  const onChangePlan = (value) => {
+    selectPlan(value.id);
+    getCoverages(value.id);
   };
-  const onChangeCoverage = (e) => {
-    selectCoverage(e.target.value);
-    setCoverageSelect({
-      ...coverageSelect,
-      [e.target.name]: e.target.value,
-    });
-    getDocuments(e.target.value);
+  const onChangeCoverage = (value) => {
+    selectCoverage(value.id);
+    getDocuments(value.id);
   };
 
   const handleNextStep = () => {
@@ -84,47 +70,49 @@ const SelectServices = () => {
           En esta parte tienes que escoger el dipositivo, el plan y el tipo de
           cobertura para realizar la reclamación.
         </p>
-        <div className="form-label-group mb-4 ">
-          <select
-            name="devices"
-            onChange={onChangeDevice}
-            className="form-control bs-select"
-            required
-          >
-            <option>---Selecciona tu dispostivo---</option>
-            <Devices />
-          </select>
-          <label>Seleccione su dispostivo</label>
+        <div className="form-group mb-4">
+          <Dropdown
+            options={devicesUser ? devicesUser : []}
+            prompt="Selecciona el dispositivo"
+            id="id"
+            label1="dispositivo"
+            prop1="nombre"
+            label2="IMEI"
+            prop2="imei_uno"
+            label3="Linea"
+            prop3="linea_uno"
+            value={device}
+            onChange={(val) => onChangeDevice(val)}
+          />
           {error && !device ? (
             <p className="text-danger"> *Campo requerido </p>
           ) : null}
         </div>
-        <div className="form-label-group mb-4">
-          <select
-            name="plans"
-            onChange={onChangePlan}
-            className="form-control bs-select"
+        <div className="form-group mb-4">
+          <Dropdown
+            options={plansDevice ? plansDevice : []}
+            prompt="Selecciona tu plan"
+            id="id"
+            label1="plan"
+            prop1="nombre"
+            onChange={(val) => onChangePlan(val)}
+            value={plan}
             disabled={device ? false : true}
-          >
-            <option>---Selecciona tu plan---</option>
-            {device ? <Plans /> : null}
-          </select>
-          <label>Seleccione su plan</label>
+          />
           {error & !plan ? (
             <p className="text-danger"> *Campo requerido </p>
           ) : null}
         </div>
-        <div className="form-label-group mb-4">
-          <select
-            name="coverage"
-            onChange={onChangeCoverage}
+        <div className="form-group mb-4">
+          <Dropdown
+            options={coveragePlans ? coveragePlans : []}
+            prompt="Selecciona tu cobertura"
+            id="id"
+            label1="nombre"
+            value={coverage}
+            onChange={(val) => onChangeCoverage(val)}
             disabled={plan ? false : true}
-            className="form-control bs-select"
-          >
-            <option>---Selecciona tu cobertura---</option>
-            {plan ? <Coverages /> : null}
-          </select>
-          <label>Seleccione su cobertura</label>
+          />
           {error & !coverage ? (
             <p className="text-danger"> *Campo requerido </p>
           ) : null}

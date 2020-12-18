@@ -1,7 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import FormContext from "../context/form/formContext";
 import clienteAxios from "../config/axios";
-import Dropdown from "../components/DropdownFilter/DropdownFilter";
+import DropdownFilter from "./Dropdown/DropdownFilter";
+import Dropdown from "./Dropdown/Dropdown";
 
 const MoreInfo = ({ setError, error }) => {
   const formContext = useContext(FormContext);
@@ -71,10 +72,12 @@ const MoreInfo = ({ setError, error }) => {
       setErrorMessage(false);
     }
   };
-  const handleChangeGenre = (e) => {
-    if (e.target.value !== "") {
-      setGenderActual(e.target.value);
-      setGenderNameActual(e.target.options[e.target.value].text);
+  const handleChangeGenre = (value) => {
+    console.log(value);
+    console.log(value.id);
+    if (value) {
+      setGenderActual(value.id);
+      setGenderNameActual(value);
       setErrorGender(false);
     } else {
       setErrorGender(true);
@@ -142,23 +145,15 @@ const MoreInfo = ({ setError, error }) => {
 
   return (
     <>
-      <div className="form-label-group mb-4">
-        <select
-          onChange={handleChangeGenre}
-          id="gender"
-          className="form-control bs-select"
-        >
-          <option value="">---Seleccione su género---</option>
-          {gender
-            ? gender.map((gen) => (
-                <option key={gen.id} value={gen.id}>
-                  {" "}
-                  {gen.name}
-                </option>
-              ))
-            : null}
-        </select>
-        <label>Selecione su género</label>
+      <div className="form-group">
+        <Dropdown
+          options={gender ? gender : []}
+          prompt="Selecciona tu género"
+          id="id"
+          label1="name"
+          onChange={(val) => handleChangeGenre(val)}
+          value={genderNameActual}
+        />
         {error && !genderActual ? (
           <p className="text-danger">* Campo requerido</p>
         ) : errorGender ? (
@@ -166,7 +161,7 @@ const MoreInfo = ({ setError, error }) => {
         ) : null}
       </div>
       <div className="form-group mb-4">
-        <Dropdown
+        <DropdownFilter
           options={city ? city : []}
           prompt="Seleccione la ciudad en la que ocurrio el siniestro."
           id="id"

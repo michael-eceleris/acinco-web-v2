@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import LogoHuawei from "../../assets/icons/huawei.svg";
 import LogoSamgung from "../../assets/icons/samsung.svg";
 import LogoTigo from "../../assets/icons/Logo_Tigo.svg";
@@ -8,11 +9,33 @@ import LogoTelefonicaData from "../../assets/icons/telefonica-data.svg";
 import LogoEricsson from "../../assets/icons/ericsson-logo.svg";
 import LogoAxaService from "../../assets/icons/axa-assistance.svg";
 
+const H2 = styled.h2`
+  display: inline-block;
+  position: relative;
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 0.2px;
+    background-color: currentColor;
+    top: 0.7em;
+  }
+
+  &::before {
+    left: -95px;
+  }
+
+  &::after {
+    right: -95px;
+  }
+`;
+
 const OurClients = () => {
   return (
     <section className="bg-theme-color-light">
-      <div className="mx-auto max-w-600">
-        <h2 className="h3-xs text-center">Nuestros clientes</h2>
+      <div className="mx-auto max-w-600 text-center">
+        <H2 className="h3-xs lead fs--35 font-italic">Nuestros clientes</H2>
       </div>
       <div className="container z-index-1">
         <div className="mt-5 p-3 bg-white shadow-md rounded overflow-hidden">

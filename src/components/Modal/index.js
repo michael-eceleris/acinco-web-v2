@@ -6,7 +6,14 @@ const Modal = () => {
   const authContext = useContext(AuthContext);
   const { logOut } = authContext;
   const formContext = useContext(FormContext);
-  const { showModal, submit, closeModal, previusStep, clearForm } = formContext;
+  const {
+    showModal,
+    isLoading,
+    submit,
+    closeModal,
+    previusStep,
+    clearForm,
+  } = formContext;
   const showModalLocal = showModal
     ? "modal display-block"
     : "modal display-none";
@@ -19,7 +26,7 @@ const Modal = () => {
   };
   return (
     <>
-      {submit ? (
+      {submit && !isLoading ? (
         <div className={showModalLocal}>
           <div className="modal-main">
             {submit.status === 200 ? (
@@ -57,14 +64,16 @@ const Modal = () => {
                     {submit.data ? (
                       submit.data.data.id.toString().length <= 6 ? (
                         <h5 className="font-weight-medium">
-                          Tu número de radicado es{" "}
+                          Tu reclamación fue creada exitosamente con número de
+                          radicado es No.{" "}
                           <span className="font-weight-bold ">
                             {("000000" + submit.data.data.id).slice(-6)}{" "}
                           </span>
                         </h5>
                       ) : (
                         <h5 className="font-weight-medium">
-                          Tu número de radicado es{" "}
+                          Tu reclamación fue creada exitosamente con número de
+                          radicado es No.{" "}
                           <span className="font-weight-bold ">
                             {(
                               "0".repeat(submit.data.data.id.length) +
@@ -75,9 +84,6 @@ const Modal = () => {
                       )
                     ) : null}
                   </>
-                  <div className="modal-text mt-1 fs--18">
-                    Se creo una reclamación con tus datos ingresados
-                  </div>
                 </div>
               </>
             ) : submit.status === 500 ? (

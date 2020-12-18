@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import FormContext from "../context/form/formContext";
 import clienteAxios from "../config/axios";
+import Dropdown from "../components/DropdownFilter/DropdownFilter";
 
 const MoreInfo = ({ setError, error }) => {
   const formContext = useContext(FormContext);
@@ -12,7 +13,6 @@ const MoreInfo = ({ setError, error }) => {
   const [genderNameActual, setGenderNameActual] = useState(null);
   const [dateActual, setDateActual] = useState(null);
   const [messageActual, setMessageActual] = useState(null);
-
   const [gender, setGenre] = useState(null);
   const [city, setCity] = useState(null);
   const [errorGender, setErrorGender] = useState(false);
@@ -80,12 +80,13 @@ const MoreInfo = ({ setError, error }) => {
       setErrorGender(true);
     }
   };
-  const handleChangeCity = (e) => {
-    if (e.target.value !== "") {
-      setCityActual(e.target.value);
-      setCityNameActual(e.target.options[e.target.value].text);
+  const handleChangeCity = (value) => {
+    if (value !== null) {
+      setCityActual(value.id);
+      setCityNameActual(`${value.nombre} - ${value.departamento.nombre}`);
       setErrorCity(false);
     } else {
+      setCityNameActual(null);
       setErrorCity(true);
     }
   };
@@ -164,23 +165,15 @@ const MoreInfo = ({ setError, error }) => {
           <p className="text-danger">* Campo obligatorio</p>
         ) : null}
       </div>
-      <div className="form-label-group mb-4">
-        <select
-          onChange={handleChangeCity}
-          id="city"
-          className="form-control bs-select"
-        >
-          <option value="">---Seleccione su ciudad---</option>
-          {city
-            ? city.map((cit) => (
-                <option key={cit.id} value={cit.id}>
-                  {" "}
-                  {cit.nombre} - {cit.departamento.nombre}
-                </option>
-              ))
-            : null}
-        </select>
-        <label>Selecione la ciudad en la que ocurrio el siniestro</label>
+      <div className="form-group mb-4">
+        <Dropdown
+          options={city ? city : []}
+          prompt="Seleccione la ciudad en la que ocurrio el siniestro."
+          id="id"
+          label="nombre"
+          value={cityNameActual}
+          onChange={(val) => handleChangeCity(val)}
+        />
         {error && !cityActual ? (
           <p className="text-danger">* Campo requerido</p>
         ) : errorCity ? (

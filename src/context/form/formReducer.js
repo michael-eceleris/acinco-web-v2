@@ -94,7 +94,7 @@ const formReducer = (state, action) => {
     case LOADING:
       return {
         ...state,
-        isLoading: true,
+        isLoading: action.payload,
       };
     case ERROR_SELECT:
     case ERROR_FORM:

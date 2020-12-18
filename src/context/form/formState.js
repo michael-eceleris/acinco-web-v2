@@ -178,24 +178,14 @@ const FormState = (props) => {
     try {
       const result = await clienteAxios.post("/ticket/", formData);
       dispatch({
-        type: LOADING,
+        type: SUBMIT_FORM,
+        payload: result,
       });
-      setTimeout(() => {
-        dispatch({
-          type: SUBMIT_FORM,
-          payload: result,
-        });
-      }, 3000);
     } catch (error) {
       dispatch({
-        type: LOADING,
+        type: ERROR_FORM,
+        payload: error.response,
       });
-      setTimeout(() => {
-        dispatch({
-          type: ERROR_FORM,
-          payload: error.response,
-        });
-      }, 1000);
     }
   };
   const nextStep = (id) => {
@@ -221,6 +211,12 @@ const FormState = (props) => {
   const closeModal = () => {
     dispatch({
       type: CLOSE_MODAL,
+    });
+  };
+  const loading = (data) => {
+    dispatch({
+      type: LOADING,
+      payload: data,
     });
   };
   return (
@@ -254,6 +250,7 @@ const FormState = (props) => {
         getDocuments,
         openModal,
         closeModal,
+        loading,
       }}
     >
       {props.children}

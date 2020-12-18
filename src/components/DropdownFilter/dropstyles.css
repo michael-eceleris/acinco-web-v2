@@ -1,0 +1,99 @@
+.dropdown {
+  position: relative;
+  color: #333;
+  cursor: default;
+}
+
+.dropdown .arrow {
+  position: absolute;
+  right: 15px;
+  top: 38px;
+  width: 10px;
+  height: 10px;
+  margin: -20px 0 0 -20px;
+  -webkit-transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px black solid;
+  border-bottom: 2px black solid;
+  transition: 0.8s;
+}
+
+.dropdown .arrow.open {
+  top: 40px;
+  -webkit-transform: rotate(225deg);
+  transition: 0.8s;
+}
+.selected-value-label {
+  color: #95a4af;
+  font-size: 1.0625rem;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 15px;
+  font-family: inherit;
+  top: 10px;
+  transition: 0.1s ease all;
+  -moz-transition: 0.1s ease all;
+  -webkit-transition: 0.1s ease all;
+}
+.selected-value input[class="input-drop"]:focus {
+  outline: none;
+}
+.selected-value input[class="input-drop"]:focus ~ label,
+input[class="input-drop"]:valid ~ label {
+  font-size: 12px;
+  color: #95a4af;
+  top: 0.5px;
+  left: 15px;
+  padding-top: 3px;
+  padding-bottom: 0;
+}
+
+.dropdown .selected-value input[class="input-drop"] {
+  line-height: 1.5;
+  font-size: 1.0625rem;
+  background-color: #fff;
+  border: 1px solid #dde4ea;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  cursor: default;
+  outline: none;
+  padding: 19px 52px 5px 13px;
+  transition: all 200ms ease;
+  width: 100%;
+}
+
+.dropdown .options {
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-top: -1px;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dropdown .options.open {
+  display: block;
+}
+
+.dropdown .option {
+  box-sizing: border-box;
+  color: rgba(51, 51, 51, 0.8);
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+}
+
+.dropdown .option.selected,
+.dropdown .option:hover {
+  background-color: #f2f9fc;
+  color: #333;
+}

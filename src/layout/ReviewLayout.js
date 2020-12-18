@@ -19,7 +19,11 @@ const ReviewLayout = () => {
   const [error, setError] = useState(false);
   const authContext = useContext(AuthContext);
   const { user } = authContext;
-  const { imei_uno } = device;
+  const {
+    imei_uno,
+    dispositivo: { valor },
+  } = device;
+
   const {
     mensaje_ticket,
     linea_siniestro_one,
@@ -181,6 +185,17 @@ const ReviewLayout = () => {
                 </tr>
                 <tr>
                   <td className="border-bottom border-top-0">
+                    Con un valor asegurado de:
+                  </td>
+                  <td className="border-bottom border-top-0">
+                    ${" "}
+                    {valor
+                      .toString()
+                      .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-top-0">
                     Fecha del Siniestro:
                   </td>
                   <td className="border-bottom border-top-0">
@@ -233,6 +248,7 @@ const ReviewLayout = () => {
             </table>
           </div>
         </div>
+
         {showModal && !isLoading ? <Modal /> : null}
         <label className="form-checkbox form-checkbox-primary">
           <input

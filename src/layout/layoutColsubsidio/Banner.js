@@ -1,5 +1,5 @@
 import React from "react";
-import MobileSecure from "../../../assets/icons/icon-seguro-total.svg";
+import MobileSecure from "../../assets/icons/mobile-secure.svg";
 
 const Banner = () => {
   return (
@@ -23,15 +23,15 @@ const Banner = () => {
             data-aos="fade-in"
             data-aos-delay="0"
           >
-            <div className="mt-2 ml--10">
+            <div className="mt-4 ml--10">
               <h1 className="font-weight-light mb-4">
-                <span className="font-weight-medium">Protección Total</span>
+                <span className="font-weight-medium">
+                  Asistencia Colsubsidio - Axa Colpatria Seguros
+                </span>
               </h1>
               <p className="lead mb--0">
-                Este seguro aplica para clientes que adquieren los planes
-                Pospago 5.3, plan Bussiness Combo B2B Voz y SMS Nacional
-                ilimitado +35GB y/o Combo B2B Voz y SMS Nacional ilimitado
-                +50GB, sin ningún costo adicional
+                Está dirigido a todos los usuarios Colsubsidio que adquieran su
+                póliza hogar con Axa Colpatria Seguro.
               </p>
               <p className="fs--14">* Aplican términos y condiciones.</p>
             </div>

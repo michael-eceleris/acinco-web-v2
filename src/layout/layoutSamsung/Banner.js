@@ -1,9 +1,9 @@
 import React from "react";
-import Searching from "../../../assets/icons/searching.svg";
+import Samsung from "../../assets/icons/icon-seguro-samsung.svg";
 
 const Banner = () => {
   return (
-    <section className="p-0 bg-white">
+    <section className="p-0 bg-white ">
       <svg
         className="absolute-full z-index-0 "
         width="100%"
@@ -23,27 +23,31 @@ const Banner = () => {
             data-aos="fade-in"
             data-aos-delay="0"
           >
-            <div className="mt-7">
+            <div className="mt-4 ml--10">
               <h1 className="font-weight-light mb-4">
-                <span className="font-weight-medium">Reclamaciones</span>
+                <span className="font-weight-medium">Samsung</span>
               </h1>
+              <p className="lead mb--0">
+                Este seguro aplica para todos los usuarios que adquieran su
+                equipo en tiendas especializadas de Samsung.
+              </p>
+              <p className="fs--14">* Aplican términos y condiciones.</p>
             </div>
-            <p className=" lead mb-5">
-              <span className="font-weight-medium "> ¡Es muy simple!</span> Con
-              tan solo 5 sencillos pasos puedes realizar reclamaciones.
-            </p>
           </div>
-          <div className="col-12 col-md-6 order-2 order-md-1 pb-5">
+          <div
+            className="col-12 col-md-6 order-2 order-md-1 pb-5 d-middle"
+            data-aos="fade-in"
+            data-aos-delay="200"
+          >
             <img
-              width="600"
-              height="400"
-              src={Searching}
-              alt="reclamos_imagen"
+              width="400"
+              className="img-fluid lazy "
+              src={Samsung}
+              alt="logo_total_proteccion"
             />
           </div>
         </div>
       </div>
-      <i className="arrow arrow-lg arrow-bottom arrow-center border-primary"></i>
     </section>
   );
 };

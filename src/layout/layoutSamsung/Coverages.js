@@ -2,10 +2,10 @@ import React from "react";
 const Coverages = () => {
   return (
     <>
-      <section className="border-top">
+      <section>
         <div className="container ">
-          <h2 className="font-weight-light mb-5 text-center">
-            Detalles del plan Fractura de Pantalla
+          <h2 className="font-weight-light mb-4 text-center">
+            Detalles del plan Samsung
           </h2>
           <div className="table-responsive mx-auto w--700">
             <table className="table table-hover table-align-middle font-weight-medium text-center">
@@ -23,10 +23,21 @@ const Coverages = () => {
                 </tr>
                 <tr>
                   <td className="text-align-start">
+                    Garantía Extendida
+                    <small className="d-block text-muted">
+                      Una vez terminada la grantía dada por SAMSUNG ELECTRONICS
+                      COLOMBIA, comienza la garantía extendida, la cual tiene
+                      las mismas coberturas que ofrece la de SAMSUNG, daño
+                      cámara, auricular, micrófono, etc.
+                    </small>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="text-align-start">
                     Reclamaciones
                     <small className="d-block text-muted">
-                      Cuenta con una (1) reclmación anual por fractura de
-                      pantalla en caso de accidente.
+                      Cuenta con una (1) reclamación por seis (6) meses, desde
+                      la fecha de expedición de la factura de compra.
                     </small>
                   </td>
                 </tr>

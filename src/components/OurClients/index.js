@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import LogoHuawei from "../../assets/icons/huawei.svg";
 import LogoSamgung from "../../assets/icons/samsung.svg";
 import LogoTigo from "../../assets/icons/Logo_Tigo.svg";
@@ -8,9 +9,34 @@ import LogoTelefonicaData from "../../assets/icons/telefonica-data.svg";
 import LogoEricsson from "../../assets/icons/ericsson-logo.svg";
 import LogoAxaService from "../../assets/icons/axa-assistance.svg";
 
+const H2 = styled.h2`
+  display: inline-block;
+  position: relative;
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 0.2px;
+    background-color: currentColor;
+    top: 0.7em;
+  }
+
+  &::before {
+    left: -95px;
+  }
+
+  &::after {
+    right: -95px;
+  }
+`;
+
 const OurClients = () => {
   return (
     <section className="bg-theme-color-light">
+      <div className="mx-auto max-w-600 text-center">
+        <H2 className="h3-xs lead fs--35 font-italic">Nuestros clientes</H2>
+      </div>
       <div className="container z-index-1">
         <div className="mt-5 p-3 bg-white shadow-md rounded overflow-hidden">
           <div className="bg-white overflow-hidden">
@@ -18,7 +44,7 @@ const OurClients = () => {
               <div className="h--150 col-6 col-md-3 d-flex align-items-center text-center">
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-80 img-fluid opacity-7 ml-3 mr-3  lazy"
+                    className="max-h-80 img-fluid ml-3 mr-3  lazy"
                     src={LogoHuawei}
                     alt="logo_huawei"
                   />
@@ -33,7 +59,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-600 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-600 img-fluid ml-3 mr-3 max-w-180 lazy"
                     src={LogoSamgung}
                     alt="logo_samsung"
                   />
@@ -48,7 +74,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-700 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-700 img-fluid ml-3 mr-3 max-w-180 lazy"
                     data-src="demo.files/svg/vendors/vendor_coinbase.svg"
                     src={LogoAxaColpatria}
                     alt="logo_axa_colpatria"
@@ -64,7 +90,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-80 img-fluid opacity-7 ml-3 mr-3 max-w-120 lazy"
+                    className="max-h-80 img-fluid ml-3 mr-3 max-w-120 lazy"
                     data-src="demo.files/svg/vendors/vendor_instagram.svg"
                     src={LogoTigo}
                     alt="logo_tigo"
@@ -80,7 +106,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-120 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-120 img-fluid ml-3 mr-3 max-w-180 lazy"
                     data-src="demo.files/svg/vendors/vendor_pinterest.svg"
                     src={LogoAxaService}
                     alt="logo_axa_service"
@@ -96,7 +122,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-600 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-600 img-fluid ml-3 mr-3 max-w-180 lazy"
                     data-src="demo.files/svg/vendors/vendor_dribble.svg"
                     src={LogoTelefonicaTelecom}
                     alt="logo_telefonica_telecom"
@@ -112,7 +138,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-600 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-600 img-fluid ml-3 mr-3 max-w-180 lazy"
                     src={LogoTelefonicaData}
                     alt="logo_telefonica_data"
                   />
@@ -127,7 +153,7 @@ const OurClients = () => {
               >
                 <a href="#!" className="w-100">
                   <img
-                    className="max-h-600 img-fluid opacity-7 ml-3 mr-3 max-w-180 lazy"
+                    className="max-h-600 img-fluid ml-3 mr-3 max-w-180 lazy"
                     src={LogoEricsson}
                     alt="logo_ericsson"
                   />

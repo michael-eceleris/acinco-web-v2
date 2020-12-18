@@ -2,10 +2,10 @@ import React from "react";
 const Coverages = () => {
   return (
     <>
-      <section className="border-top">
+      <section>
         <div className="container ">
-          <h2 className="font-weight-light mb-5 text-center">
-            Detalles del plan Fractura de Pantalla
+          <h2 className="font-weight-light mb-4 text-center">
+            Detalles del plan SOAT Asistencia Pantalla
           </h2>
           <div className="table-responsive mx-auto w--700">
             <table className="table table-hover table-align-middle font-weight-medium text-center">
@@ -15,7 +15,7 @@ const Coverages = () => {
                   <td className="text-align-start">
                     Reparación de Pantalla
                     <small className="d-block text-muted">
-                      cubre costos de reparación en la pantalla, no cubre daños
+                      Cubre costos de reparación en la pantalla, no cubre daños
                       en la tarjeta principal, ni baterías ni daños por humedad
                       del equipo
                     </small>
@@ -25,8 +25,8 @@ const Coverages = () => {
                   <td className="text-align-start">
                     Reclamaciones
                     <small className="d-block text-muted">
-                      Cuenta con una (1) reclmación anual por fractura de
-                      pantalla en caso de accidente.
+                      Cuenta con una (1) reclamación durante tres (3) meses
+                      desde la compra del Soat
                     </small>
                   </td>
                 </tr>

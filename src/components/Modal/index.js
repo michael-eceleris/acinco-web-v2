@@ -55,11 +55,11 @@ const Modal = () => {
                   <h3 className="modal-title mb-2">Reclamación exitosa</h3>
                   <>
                     {submit.data ? (
-                      submit.data.ticketId.toString().length <= 6 ? (
+                      submit.data.data.id.toString().length <= 6 ? (
                         <h5 className="font-weight-medium">
                           Tu número de radicado es{" "}
                           <span className="font-weight-bold ">
-                            {("000000" + submit.data.ticketId).slice(-6)}{" "}
+                            {("000000" + submit.data.data.id).slice(-6)}{" "}
                           </span>
                         </h5>
                       ) : (
@@ -67,9 +67,9 @@ const Modal = () => {
                           Tu número de radicado es{" "}
                           <span className="font-weight-bold ">
                             {(
-                              "0".repeat(submit.data.ticketId.length) +
-                              submit.data.ticketId
-                            ).slice(-submit.data.ticketId.length)}{" "}
+                              "0".repeat(submit.data.data.id.length) +
+                              submit.data.id
+                            ).slice(-submit.data.data.id.length)}{" "}
                           </span>
                         </h5>
                       )

@@ -39,7 +39,7 @@ const Form = () => {
           Usuario o contraseña incorrecta
         </div>
       ) : null}
-      {errorUser === 500 || errorUser === 403 ? (
+      {errorUser === 500 /* || errorUser === 403 */ ? (
         <div className="alert alert-danger">
           Ocurrio un problema, lo sentimos
         </div>
@@ -79,7 +79,7 @@ const Form = () => {
           </div>
         </form>
       </div>
-      {authenticate && userLocal && !error && user ? nextStep(1) : null}
+      {authenticate && userLocal && error !== 500 ? nextStep(1) : null}
     </>
   );
 };

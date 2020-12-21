@@ -73,8 +73,6 @@ const MoreInfo = ({ setError, error }) => {
     }
   };
   const handleChangeGenre = (value) => {
-    console.log(value);
-    console.log(value.id);
     if (value) {
       setGenderActual(value.id);
       setGenderNameActual(value);
@@ -112,7 +110,7 @@ const MoreInfo = ({ setError, error }) => {
       ciudad_siniestro: cityActual,
       nombre_siniestro: cityNameActual,
       genero_reclamante: genderActual,
-      nombre_genero: genderNameActual,
+      nombre_genero: genderNameActual.name,
     });
     if (
       messageActual &&
@@ -154,6 +152,7 @@ const MoreInfo = ({ setError, error }) => {
           onChange={(val) => handleChangeGenre(val)}
           value={genderNameActual}
         />
+        {console.log(genderNameActual)}
         {error && !genderActual ? (
           <p className="text-danger">* Campo requerido</p>
         ) : errorGender ? (
@@ -182,6 +181,7 @@ const MoreInfo = ({ setError, error }) => {
           required
           max={actualDate}
           onChange={handleChangeDate}
+          placeholder="Seleccionar fecha en la que ocurrio el siniestro"
         />
         <label> Seleccionar fecha en la que ocurrio el siniestro</label>
         {error && !dateActual ? (
@@ -200,6 +200,7 @@ const MoreInfo = ({ setError, error }) => {
           onChange={handleChangeNumber}
           value={phoneNumber}
           pattern="[0-9]{0,10}"
+          placeholder="Número de linea con la que sucedío el siniestro"
         />
         <label>Número de linea con la que sucedío el siniestro</label>
       </div>
@@ -210,7 +211,11 @@ const MoreInfo = ({ setError, error }) => {
           ) : phoneNumber.length > 10 ? (
             <p className="text-danger">* Excediste la cantidad de números</p>
           ) : errorNumberPhone ? (
-            <p className="text-danger">* Solo se permiten números</p>
+            phoneNumber.length === 0 ? (
+              <p className="text-danger">* Campo requerido</p>
+            ) : (
+              <p className="text-danger">* Solo se permiten números</p>
+            )
           ) : null}
         </div>
         <div>

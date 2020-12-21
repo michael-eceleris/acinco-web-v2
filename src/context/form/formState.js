@@ -118,8 +118,8 @@ const FormState = (props) => {
   };
   const selectCoverage = (id) => {
     if (state.coveragePlans) {
-      const coverage = state.coveragePlans.find(
-        (coverageId) => coverageId.id === parseInt(id)
+      const coverage = state.coveragePlans.find((coverageId) =>
+        coverageId !== undefined ? coverageId.id === id : null
       );
       dispatch({
         type: SELECT_COVERAGE,

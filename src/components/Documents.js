@@ -11,6 +11,7 @@ const Documents = ({ setError }) => {
     selectPlan,
     nextStep,
     previusStep,
+    clearForm,
   } = formContext;
   const [document, setDocument] = useState([]);
   const onLoad = (e) => {
@@ -69,6 +70,7 @@ const Documents = ({ setError }) => {
     }
   };
   const handlePreviusStep = () => {
+    clearForm();
     selectDevice(null);
     selectCoverage(null);
     selectPlan(null);

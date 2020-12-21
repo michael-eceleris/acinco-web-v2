@@ -2,7 +2,7 @@ import React from "react";
 const Coverages = () => {
   return (
     <>
-      <section className="border-top">
+      <section>
         <div className="container ">
           <h2 className="font-weight-light mb-4 text-center">
             Detalles del plan Protección Total

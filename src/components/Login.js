@@ -5,7 +5,7 @@ import FormContext from "../context/form/formContext";
 
 const Form = () => {
   const authContext = useContext(AuthContext);
-  const { user, error, errorUser, authenticate, login, authUser } = authContext;
+  const { error, errorUser, authenticate, login, authUser } = authContext;
   const formContext = useContext(FormContext);
   const { nextStep } = formContext;
   const [userLocal, setUserLocal] = useState({

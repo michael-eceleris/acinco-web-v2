@@ -1,7 +1,13 @@
 import React, { useReducer } from "react";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
-import { SUCCESFULL_LOGIN, GET_USER, ERROR_LOGIN, LOGOUT } from "../../types";
+import {
+  SUCCESFULL_LOGIN,
+  GET_USER,
+  ERROR_LOGIN,
+  LOGOUT,
+  ERROR_USER,
+} from "../../types";
 import clienteAxios from "../../config/axios";
 import tokenAuth from "../../config/tokenAuth";
 
@@ -11,6 +17,7 @@ const AuthState = (props) => {
     authenticate: null,
     token: null,
     error: false,
+    errorUser: null,
   };
   const [state, dispatch] = useReducer(authReducer, initialState);
 
@@ -39,7 +46,11 @@ const AuthState = (props) => {
         payload: response.data,
       });
     } catch (error) {
-      console.log(error);
+      console.log();
+      dispatch({
+        type: ERROR_USER,
+        payload: error.response.status,
+      });
     }
   };
 
@@ -56,6 +67,7 @@ const AuthState = (props) => {
         user: state.user,
         authenticate: state.authenticate,
         error: state.error,
+        errorUser: state.errorUser,
         login,
         authUser,
         logOut,

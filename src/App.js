@@ -13,6 +13,9 @@ import Samsung from "./pages/Samsung";
 import ScreenAssistenceSoat from "./pages/ScreenAssistenceSoat";
 import AssistenceColsubsidio from "./pages/AssistenceColsubsidio";
 import SoatDetail from "./pages/SoatDetail";
+import TermAndConditions from "./components/TermsAndConditions/TermsAndConditions";
+import TermAndConditionsTwo from "./components/TermsAndConditions/TermsAndConditionsTwo";
+import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndConditionsSamsung";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
@@ -52,6 +55,36 @@ function App() {
             </Route>
             <Route path="/detalle-soat" exact>
               <SoatDetail />
+            </Route>
+            <Route path="/pospago-5-3/terminos-condiciones" exact>
+              <TermAndConditions namePlan="Total Proteccion" plan="all" />
+            </Route>
+            <Route path="/pospago-5-2/terminos-condiciones" exact>
+              <TermAndConditions
+                namePlan="Fractura de Pantalla"
+                plan="screen"
+              />
+            </Route>
+            <Route path="/arma-tu-plan-smart-app/terminos-condiciones" exact>
+              <TermAndConditions namePlan="Smart App" plan="all" />
+            </Route>
+            <Route path="/colsubsidio/terminos-condiciones" exact>
+              <TermAndConditionsTwo
+                namePlan="Asistencia Colsubsido"
+                plan="colsubsidio"
+              />
+            </Route>
+            <Route
+              path="/soat-asistencia-de-pantalla/terminos-condiciones"
+              exact
+            >
+              <TermAndConditionsTwo
+                namePlan="SOAT Asistencia de Pantalla"
+                plan="soat"
+              />
+            </Route>
+            <Route path="/samsung/terminos-condiciones" exact>
+              <TermAndConditionsSamsung />
             </Route>
           </Switch>
         </Router>

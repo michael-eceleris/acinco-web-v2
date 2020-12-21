@@ -16,6 +16,7 @@ import SoatDetail from "./pages/SoatDetail";
 import TermAndConditions from "./components/TermsAndConditions/TermsAndConditions";
 import TermAndConditionsTwo from "./components/TermsAndConditions/TermsAndConditionsTwo";
 import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndConditionsSamsung";
+import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Router>
           <ScrollTop />
           <Navbar />
+          <WhatsappButton />
           <Switch>
             <Route path="/" exact>
               <Home />

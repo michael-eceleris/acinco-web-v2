@@ -1,5 +1,5 @@
 import React from "react";
-import PhoneRepair from "../../../assets/icons/phone-repair-icon.svg";
+import PhoneRepair from "../../../assets/icons/phoneRepair.svg";
 
 const Banner = () => {
   return (
@@ -40,7 +40,7 @@ const Banner = () => {
             </div>
             <div className="col-12 col-md-6 order-2 order-md-1 pb-5 d-middle">
               <img
-                width="400"
+                width="450"
                 className="img-fluid lazy "
                 src={PhoneRepair}
                 alt="logo_fractura_de_pantalla"

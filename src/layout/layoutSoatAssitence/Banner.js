@@ -36,11 +36,7 @@ const Banner = () => {
               <p className="fs--14">* Aplican términos y condiciones.</p>
             </div>
           </div>
-          <div
-            className="col-12 col-md-6 order-2 order-md-1 pb-5 d-middle"
-            data-aos="fade-in"
-            data-aos-delay="200"
-          >
+          <div className="col-12 col-md-6 order-2 order-md-1 pb-5 d-middle">
             <img
               width="400"
               className="img-fluid lazy "

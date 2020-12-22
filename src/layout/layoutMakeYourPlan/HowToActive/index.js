@@ -33,7 +33,7 @@ const HowToActive = () => {
                       (Play Store)
                     </p>
                   </div>
-                  <div class="container d-flex justify-content-around mt-4">
+                  <div className="container d-flex justify-content-around mt-4">
                     <a
                       href="https://itunes.apple.com/co/app/protecci%C3%B3n-m%C3%B3vil-seguro/id1116274602?mt=8"
                       className="btn btn-dark rounded-xl transition-hover-top d-flex"

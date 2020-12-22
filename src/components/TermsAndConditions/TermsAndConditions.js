@@ -15,7 +15,7 @@ const TermsAndConditions = (props) => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-4">
-              <div className="position-sticky" style={{ top: 10 }}>
+              <div className="position-sticky" style={{ top: 90 }}>
                 <div>
                   <ul
                     id="list-example"

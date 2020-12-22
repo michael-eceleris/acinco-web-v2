@@ -1,4 +1,10 @@
-import { SUCCESFULL_LOGIN, ERROR_LOGIN, GET_USER, LOGOUT } from "../../types";
+import {
+  SUCCESFULL_LOGIN,
+  ERROR_LOGIN,
+  GET_USER,
+  LOGOUT,
+  ERROR_USER,
+} from "../../types";
 
 const authReducer = (state, action) => {
   switch (action.type) {
@@ -8,6 +14,12 @@ const authReducer = (state, action) => {
         token: action.payload,
         authenticate: true,
         error: false,
+      };
+    case ERROR_USER:
+      return {
+        ...state,
+        errorUser: action.payload,
+        authenticate: null,
       };
     case ERROR_LOGIN:
       return {
@@ -22,6 +34,7 @@ const authReducer = (state, action) => {
         authenticate: true,
         user: action.payload,
         error: false,
+        errorUser: null,
       };
     case LOGOUT:
       return {

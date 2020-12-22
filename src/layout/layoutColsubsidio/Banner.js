@@ -1,5 +1,5 @@
 import React from "react";
-import MobileSecure from "../../assets/icons/mobile-secure.svg";
+import MobileSecure from "../../assets/icons/iconColsubsidio.svg";
 
 const Banner = () => {
   return (
@@ -36,13 +36,9 @@ const Banner = () => {
               <p className="fs--14">* Aplican términos y condiciones.</p>
             </div>
           </div>
-          <div
-            className="col-12 col-md-6 order-2 order-md-1 pb-5 d-middle"
-            data-aos="fade-in"
-            data-aos-delay="200"
-          >
+          <div className="col-12 col-md-6 order-2 order-md-1 pb-5 d-middle">
             <img
-              width="400"
+              width="450"
               className="img-fluid lazy "
               src={MobileSecure}
               alt="logo_total_proteccion"

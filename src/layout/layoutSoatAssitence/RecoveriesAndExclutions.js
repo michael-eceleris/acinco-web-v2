@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Dollar from "../../assets/icons/dollar-sign-solid.svg";
 const Recoveries = () => {
   return (
@@ -8,11 +9,18 @@ const Recoveries = () => {
           <div className="row d-flex flex-wrap align-items-center my-7 ">
             <div className="col-12 col-lg-6 mb-5">
               <h2 className="h1 text-primary mb-4 text-center">Recobros</h2>
-              <p className="lead mb-5">
+              <p className="lead mb-3">
                 Si te ocurre alguna circunstancia en la que la pantalla del
                 dispositivo se vea afectaba, ten en cuenta esto esta
                 información.
               </p>
+              <Link
+                className="btn btn-link text-decoration-none"
+                to="/soat-asistencia-de-pantalla/terminos-condiciones"
+              >
+                Leer más
+                <i className="fi fi-arrow-right-slim ml-2"></i>
+              </Link>
             </div>
             <div className="col-12 col-lg-6 mb-5">
               <div className="row gutters-md gutters-xs--xs">
@@ -56,11 +64,18 @@ const Recoveries = () => {
           <div className="row d-flex flex-wrap align-items-center my-7">
             <div className="order-lg-2 col-12 col-lg-6 mb-5">
               <h2 className="h1 text-success mb-4 text-center">Exclusiones</h2>
-              <p className="lead mb-5">
+              <p className="lead mb-3">
                 Existen algunas exclusiones en las cuales no son aplicables a
                 las coberturas de este plan, ten en cuenta esto antes de
                 realizar su reclamación y recobro respectivo.
               </p>
+              <Link
+                className="btn btn-link text-decoration-none"
+                to="/soat-asistencia-de-pantalla/terminos-condiciones"
+              >
+                Leer más
+                <i className="fi fi-arrow-right-slim ml-2"></i>
+              </Link>
             </div>
             <div className="order-lg-1 col-12 col-lg-6 mb-5">
               <div className="row gutters-md gutters-xs--xs">

@@ -68,22 +68,24 @@ const Dropdown = ({
       </div>
       <div className={`options ${open ? "open" : null}`}>
         {options.length > 0 ? (
-          options.map((option) => (
-            <div
-              key={option[id]}
-              className={`option ${value === option ? "selected" : null}`}
-              onClick={() => {
-                selecOption(option);
-              }}
-              onTouchEnd={toggle}
-            >
-              {`${prop1 ? option[label1][prop1] : option[label1]}${
-                label2 ? `- ${label2} ` : ""
-              }${prop2 ? option[prop2] : ""}${label3 ? `- ${label3} ` : ""}${
-                prop3 ? option[prop3] : ""
-              } `}
-            </div>
-          ))
+          options.map((option) =>
+            option !== undefined ? (
+              <div
+                key={option[id]}
+                className={`option ${value === option ? "selected" : null}`}
+                onClick={() => {
+                  selecOption(option);
+                }}
+                onTouchEnd={toggle}
+              >
+                {`${prop1 ? option[label1][prop1] : option[label1]}${
+                  label2 ? `- ${label2} ` : ""
+                }${prop2 ? option[prop2] : ""}${label3 ? `- ${label3} ` : ""}${
+                  prop3 ? option[prop3] : ""
+                }`}
+              </div>
+            ) : null
+          )
         ) : (
           <div className="option">No hay opciones</div>
         )}

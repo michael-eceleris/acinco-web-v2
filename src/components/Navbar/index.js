@@ -3,27 +3,11 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/images/Logo.png";
 const Navbar = () => {
   return (
-    <header className="shadow-xs">
-      <div className="container position-relative">
+    <header className="shadow-xs mb-5">
+      <div className="z-index-9999 position-fixed w-100 bg-white top-0">
         <nav className="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherent">
-          <div className="align-items-start">
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarMainNav"
-              aria-controls="navbarMainNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <svg width="25" viewBox="0 0 20 20">
-                <path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
-                <path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
-                <path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
-                <path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
-              </svg>
-            </button>
-            <Link className="navbar-brand" to="/">
+          <div className="w-25 justify-content-end d-flex">
+            <Link className="navbar-brand mr-0" to="/">
               <img
                 width="100"
                 height="100"
@@ -32,7 +16,7 @@ const Navbar = () => {
               />
             </Link>
           </div>
-          <div className="collapse navbar-collapse navbar-animate-fadein justify-content-end">
+          <div className="collapse navbar-collapse navbar-animate-fadein justify-content-center w-75">
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link js-ajax" to="/">
@@ -115,6 +99,17 @@ const Navbar = () => {
                 >
                   {" "}
                   Politica de Proteccion
+                </a>
+              </li>
+              <li>
+                <a
+                  className="nav-link js-ajax"
+                  href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/CLAUSULADO-POLIZA-34.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  Clausulado Poliza 34
                 </a>
               </li>
             </ul>

@@ -5,18 +5,18 @@ import FormContext from "../context/form/formContext";
 
 const Form = () => {
   const authContext = useContext(AuthContext);
-  const { error, authenticate, login, authUser } = authContext;
+  const { error, errorUser, authenticate, login, authUser } = authContext;
   const formContext = useContext(FormContext);
   const { nextStep } = formContext;
-  const [user, setUser] = useState({
+  const [userLocal, setUserLocal] = useState({
     username: "",
     password: "",
   });
-  const { username, password } = user;
+  const { username, password } = userLocal;
 
   const onChange = (e) => {
-    setUser({
-      ...user,
+    setUserLocal({
+      ...userLocal,
       [e.target.name]: e.target.value,
     });
   };
@@ -27,7 +27,7 @@ const Form = () => {
       console.log("todos lo campos son necesarios");
     }
     login({
-      ...user,
+      ...userLocal,
       [e.target.name]: e.target.value,
     });
     authUser();
@@ -37,6 +37,11 @@ const Form = () => {
       {error ? (
         <div className="alert alert-danger">
           Usuario o contraseña incorrecta
+        </div>
+      ) : null}
+      {errorUser === 500 /* || errorUser === 403 */ ? (
+        <div className="alert alert-danger">
+          Ocurrio un problema, lo sentimos
         </div>
       ) : null}
       <div className="container p-2 w-50">
@@ -74,7 +79,7 @@ const Form = () => {
           </div>
         </form>
       </div>
-      {authenticate && user && !error ? nextStep(1) : null}
+      {authenticate && userLocal && error !== 500 ? nextStep(1) : null}
     </>
   );
 };

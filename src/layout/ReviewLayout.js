@@ -20,7 +20,6 @@ const ReviewLayout = () => {
   const [error, setError] = useState(false);
   const authContext = useContext(AuthContext);
   const { user } = authContext;
-  /* const [loading, setLoading] = useState(false); */
   const {
     imei_uno,
     dispositivo: { valor },
@@ -117,7 +116,7 @@ const ReviewLayout = () => {
                     {device.linea_uno}
                   </td>
                 </tr>
-                {device.linea_dos ? (
+                {device.linea_dos !== null ? (
                   <tr>
                     <td className="border-bottom border-top-0">
                       Línea Secundaria Asegurada:{" "}
@@ -157,14 +156,16 @@ const ReviewLayout = () => {
                     {device.imei_uno}
                   </td>
                 </tr>
-                <tr>
-                  <td className="border-bottom border-top-0">
-                    IMEI Secundario Asegurado:
-                  </td>
-                  <td className="border-bottom border-top-0">
-                    {device.imei_dos}
-                  </td>
-                </tr>
+                {device.ime_dos !== undefined ? (
+                  <tr>
+                    <td className="border-bottom border-top-0">
+                      IMEI Secundario Asegurado:
+                    </td>
+                    <td className="border-bottom border-top-0">
+                      {device.imei_dos}
+                    </td>
+                  </tr>
+                ) : null}
                 <tr>
                   <td className="border-top-0">
                     <h6 className="font-weight-medium mb-4 mt-4">

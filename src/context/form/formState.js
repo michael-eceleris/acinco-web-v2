@@ -37,6 +37,7 @@ const FormState = (props) => {
     submit: null,
     showModal: false,
     isLoading: false,
+    maxSizeDoc: 2000000,
   };
   const [state, dispatch] = useReducer(formReducer, initialState);
 
@@ -235,6 +236,7 @@ const FormState = (props) => {
         submit: state.submit,
         showModal: state.showModal,
         isLoading: state.isLoading,
+        maxSizeDoc: state.maxSizeDoc,
         selectDevice,
         selectPlan,
         selectCoverage,

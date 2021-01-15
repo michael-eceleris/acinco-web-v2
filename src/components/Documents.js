@@ -27,21 +27,20 @@ const Documents = ({ setError }) => {
             nameFile: files[0].name,
             error:
               size > maxSizeDoc
-                ? "Excediste el tamaño permitido de 2MB"
-                : type !== "application/pdf" || type !== "image/jpeg"
+                ? "Excediste el tamaño permitido de 4MB"
+                : type !== "application/pdf" && type !== "image/jpeg"
                 ? "Error el tipo de documento tiene que ser pdf o jpg"
                 : null,
           })
         : null
     );
+    const actual = document.map((doc) => doc.id).indexOf(id);
     if (
       size > maxSizeDoc ||
-      type !== "application/pdf" ||
-      type !== "image/jpeg"
+      (type !== "application/pdf" && type !== "image/jpeg")
     ) {
       setDocument([...document]);
-    } else if (document.length === documentsCoverage.length) {
-      const actual = document.map((doc) => doc.id).indexOf(id);
+    } else if (document.length === documentsCoverage.length || actual !== -1) {
       document.splice(actual, 1);
       setDocument([
         ...document,
@@ -94,7 +93,7 @@ const Documents = ({ setError }) => {
                     name={doc.nombre_documento_save}
                     type="file"
                     required
-                    accept=".pdf, .jpg"
+                    accept=".pdf, .jpg, .jpeg"
                     onChange={onLoad}
                     className="custom-file-input"
                   />
@@ -111,7 +110,7 @@ const Documents = ({ setError }) => {
                     <p className="text-danger"> {doc.error} </p>
                   ) : null}
                   <small className="d-block text-muted">
-                    Upload max size 2MB (pdf o jpg).
+                    Upload max size 4MB (PDF o JPG).
                   </small>
                 </div>
               </div>

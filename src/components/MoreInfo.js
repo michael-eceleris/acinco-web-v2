@@ -23,12 +23,18 @@ const MoreInfo = ({ setError, error }) => {
   const [errorMessage, setErrorMessage] = useState(false);
   const date = new Date();
   let day = null;
+  let month = null;
   if (date.getDate() < 10) {
     day = 0;
   } else {
     day = "";
   }
-  const actualDate = `${date.getFullYear()}-${
+  if (date.getMonth() + 1 < 10) {
+    month = 0;
+  } else {
+    month = "";
+  }
+  const actualDate = `${date.getFullYear()}-${month}${
     date.getMonth() + 1
   }-${day}${date.getDate()}`;
 

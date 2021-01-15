@@ -37,7 +37,7 @@ const FormState = (props) => {
     submit: null,
     showModal: false,
     isLoading: false,
-    maxSizeDoc: 2000000,
+    maxSizeDoc: 4000000,
   };
   const [state, dispatch] = useReducer(formReducer, initialState);
 
@@ -75,7 +75,10 @@ const FormState = (props) => {
       const types_coverage = response.data.map(
         (cov) => cov.tipos_cobertura_cobertura
       );
-      const coverages = types_coverage.map((cov2) => cov2[0]);
+      const coverages = [];
+      types_coverage.map((cov) =>
+        cov.length > 0 ? cov.map((cov2) => coverages.push(cov2)) : cov
+      );
       dispatch({
         type: COVERAGE_PLAN,
         payload: coverages,

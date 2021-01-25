@@ -20,10 +20,8 @@ const ReviewLayout = () => {
   const [error, setError] = useState(false);
   const authContext = useContext(AuthContext);
   const { user } = authContext;
-  const {
-    imei_uno,
-    dispositivo: { valor },
-  } = device;
+  const { imei_uno } = device;
+  const { valor_asegurado } = plan;
 
   const {
     mensaje_ticket,
@@ -196,7 +194,7 @@ const ReviewLayout = () => {
                   </td>
                   <td className="border-bottom border-top-0">
                     ${" "}
-                    {valor
+                    {valor_asegurado
                       .toString()
                       .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
                   </td>

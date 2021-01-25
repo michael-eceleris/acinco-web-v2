@@ -61,7 +61,7 @@ const CustomStepper = () => {
     <Fragment>
       <div className="col-12 col-xl-12 mb-3">
         <div className="container">
-          <h2 className="ml-5 mb-0">Reclamaciones</h2>
+          <h2 className="ml-5 mb-0">Proceso de reclamación</h2>
           <Stepper
             activeStep={step}
             hideConnectors={true}
@@ -131,7 +131,7 @@ const CustomStepper = () => {
                   style={{ color: fourthStep ? "#003272" : "#bababa" }}
                   className="mt--5"
                 >
-                  3.Información adicional{" "}
+                  4.Información adicional{" "}
                 </p>
               </div>
             </Step>

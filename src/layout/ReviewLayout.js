@@ -239,16 +239,18 @@ const ReviewLayout = () => {
                   </td>
                   <td className="border-top-0">&nbsp;</td>
                 </tr>
-                {documents.map((doc) => (
-                  <tr key={doc.id}>
-                    <td className="border-bottom border-top-0">
-                      {doc.nombre_documento_save}
-                    </td>
-                    <td className="border-bottom border-top-0">
-                      {doc.nameFile}
-                    </td>
-                  </tr>
-                ))}
+                {documents.map((doc) =>
+                  doc.files === null ? null : (
+                    <tr key={doc.id}>
+                      <td className="border-bottom border-top-0">
+                        {doc.nombre_documento_save}
+                      </td>
+                      <td className="border-bottom border-top-0">
+                        {doc.nameFile}
+                      </td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>

@@ -73,9 +73,9 @@ const CustomStepper = () => {
               activeTextColor: "#ffffff",
               inactiveTextColor: "#ffffff",
             }}
-            className="m-0 p-2"
+            className="m-0 p-2 cursor-default"
           >
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default">
               <div className="m-0">
                 <User
                   fill={firstStep ? "#003272" : "#e1e1e1"}
@@ -90,7 +90,7 @@ const CustomStepper = () => {
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default">
               <div>
                 <Devices
                   fill={secondStep ? "#003272" : "#e1e1e1"}
@@ -105,7 +105,7 @@ const CustomStepper = () => {
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default">
               <div>
                 <Upload
                   fill={thirdStep ? "#003272" : "#e1e1e1"}
@@ -120,7 +120,7 @@ const CustomStepper = () => {
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default">
               <div>
                 <Document
                   fill={fourthStep ? "#003272" : "#e1e1e1"}
@@ -135,7 +135,7 @@ const CustomStepper = () => {
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default">
               <div>
                 <Send
                   fill={fivethStep ? "#003272" : "#e1e1e1"}

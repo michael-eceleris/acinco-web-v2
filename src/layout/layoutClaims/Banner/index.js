@@ -28,12 +28,12 @@ const Banner = () => {
                 <span className="font-weight-medium">Reclamación</span>
               </h1>
             </div>
-            <p className=" lead mb-5">
+            <p className="lead mb-5">
               <span className="font-weight-medium "> ¡Es muy simple!</span> Con
               tan solo 5 sencillos pasos puedes realizar tu reclamación.
             </p>
           </div>
-          <div className="col-12 col-md-6 order-2 order-md-1 pb-5">
+          <div className="col-12 col-md-6 order-2 order-md-2 pb-5">
             <img
               width="600"
               height="400"

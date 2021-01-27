@@ -22,7 +22,6 @@ const Message = ({ hideMessage, setHideMessage }) => {
     if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
     return M.join(" ");
   })());
-  console.log(typeClient);
   return (
     <Fragment>
       {typeClient !== "Chrome" && hideMessage ? (

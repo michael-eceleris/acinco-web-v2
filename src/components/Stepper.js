@@ -8,7 +8,7 @@ import { ReactComponent as Send } from "../assets/icons/send.svg";
 import FormContext from "../context/form/formContext";
 const CustomStepper = () => {
   const formContext = useContext(FormContext);
-  const { step } = formContext;
+  const { step, openModal } = formContext;
   useEffect(() => {
     changeActiveColor(step);
   }, [step]);
@@ -61,7 +61,18 @@ const CustomStepper = () => {
     <Fragment>
       <div className="col-12 col-xl-12 mb-3">
         <div className="container">
-          <h2 className="ml-5 mb-0">Proceso de reclamación</h2>
+          <h2 className="ml-5 mb-1">Proceso de reclamación</h2>
+          <p className="ml-5  lead">
+            Antes de realizar tu reclamación revisa los documentos necesarios,
+            revisalos{" "}
+            <a
+              onClick={() => openModal()}
+              style={{ cursor: "pointer", color: "blue" }}
+            >
+              aquí
+            </a>
+            .
+          </p>
           <Stepper
             activeStep={step}
             hideConnectors={true}

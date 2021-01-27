@@ -1,5 +1,5 @@
 import React from "react";
-import Searching from "../../../assets/icons/searching.svg";
+import Searching from "../../../assets/images/icon_senor_mirando_arriba.png";
 
 const Banner = () => {
   return (
@@ -35,10 +35,11 @@ const Banner = () => {
           </div>
           <div className="col-12 col-md-6 order-2 order-md-2 pb-5">
             <img
-              width="600"
+              width="250"
               height="400"
               src={Searching}
               alt="reclamos_imagen"
+              className="ml-7"
             />
           </div>
         </div>

@@ -3,16 +3,19 @@ import "./modal.css";
 import FormContext from "../../context/form/formContext";
 const InfoRequired = () => {
   const formContext = useContext(FormContext);
-  const { showModal, closeModal } = formContext;
-  const showModalLocal = showModal
-    ? "modal display-block"
-    : "modal display-none";
+  const { showModal, closeModal, submit } = formContext;
+  const showModalLocal =
+    !submit && showModal ? "modal display-block" : "modal display-none";
   const formatoReclamacion = (
     <li>
       <p className="text-justify">
         Formato de reclamación debidamente diligenciado por el cliente, lo
         puedes encontrar{" "}
-        <a href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/Formato_Reclamacion_AXA_COLPATRIA.pdf">
+        <a
+          href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/Formato_Reclamacion_AXA_COLPATRIA.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
           aquí
         </a>
         .

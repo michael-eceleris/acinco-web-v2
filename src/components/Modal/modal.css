@@ -1,6 +1,12 @@
 html {
   scroll-behavior: smooth;
 }
+.btn_link {
+  border: none;
+  background-color: white;
+  border-bottom: 1px dashed #97a4af;
+  padding: 0px;
+}
 .nav_doc {
   background: #fff;
   width: 100%;
@@ -53,9 +59,15 @@ html {
   line-height: 5rem;
   z-index: 2;
 }
-@media (min-height: 700px) {
+@media screen and (min-height: 700px) {
   .sct_doc {
     height: 600px;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .sct_doc {
+    height: 1000px;
   }
 }
 

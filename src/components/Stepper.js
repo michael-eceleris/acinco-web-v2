@@ -65,12 +65,12 @@ const CustomStepper = () => {
           <p className="ml-5  lead">
             Antes de realizar tu reclamación revisa los documentos necesarios,
             revisalos{" "}
-            <a
+            <button
+              className="link-muted btn_link "
               onClick={() => openModal()}
-              style={{ cursor: "pointer", color: "blue" }}
             >
               aquí
-            </a>
+            </button>
             .
           </p>
           <Stepper

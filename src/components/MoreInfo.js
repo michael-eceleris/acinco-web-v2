@@ -121,6 +121,7 @@ const MoreInfo = ({ setError, error }) => {
     if (
       messageActual &&
       phoneNumber &&
+      phoneNumber.length === 10 &&
       dateActual &&
       cityActual &&
       cityNameActual &&

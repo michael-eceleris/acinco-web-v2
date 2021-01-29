@@ -9,11 +9,9 @@ const DocumentsLayout = () => {
     <>
       <div className="container py-1">
         <h4>Subir documentos</h4>
-        <p className="fs--17 mb--0">
-          Sube los documentos necesarios para la cobertura de{" "}
-          <b>{coverage.nombre}</b>
+        <p className="fs--17">
+          Sube los documentos necesarios para la cobertura de {coverage.nombre}
         </p>
-        <p className="text-red-500 mt--0 fs--15">* Obligatorio</p>
         <div className="container py-4">
           <Documents setError={setError} error={error} />
         </div>

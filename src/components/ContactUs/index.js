@@ -185,7 +185,7 @@ const ContactUs = () => {
                   type="submit"
                   className="btn btn-primary btn-block mt-4"
                 >
-                  Enviar Mensaje
+                  Send Message
                 </button>
               </form>
             </div>

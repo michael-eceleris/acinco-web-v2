@@ -5,7 +5,6 @@ import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
 import Layout from "../layout/Layout";
 import Modal from "../components/Modal";
-import ModalInfo from "../components/Modal/infoRequired";
 const Claims = () => {
   const formContext = useContext(FormContext);
   const { showModal } = formContext;
@@ -13,7 +12,6 @@ const Claims = () => {
   return (
     <>
       {showModal ? <Modal /> : null}
-      <ModalInfo />
       <Banner />
       <Layout />
       <ContactUs />

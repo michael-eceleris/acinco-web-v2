@@ -121,7 +121,6 @@ const MoreInfo = ({ setError, error }) => {
     if (
       messageActual &&
       phoneNumber &&
-      phoneNumber.length === 10 &&
       dateActual &&
       cityActual &&
       cityNameActual &&
@@ -213,9 +212,7 @@ const MoreInfo = ({ setError, error }) => {
       </div>
       <div className="mb-4 d-flex justify-content-between">
         <div>
-          {(error && !phoneNumber) ||
-          (error && phoneNumber.length === 0) ||
-          (error && phoneNumber.length !== 10) ? (
+          {(error && !phoneNumber) || (error && phoneNumber.length === 0) ? (
             <p className="text-danger">* Campo requerido</p>
           ) : phoneNumber.length > 10 ? (
             <p className="text-danger">* Excediste la cantidad de números</p>

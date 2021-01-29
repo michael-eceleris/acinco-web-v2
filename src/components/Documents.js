@@ -64,36 +64,13 @@ const Documents = ({ setError }) => {
     }
   };
   const handleNextStep = () => {
-    if (
-      !document.find(
-        (doc) => doc.nombre_documento_save === "Factura de compra."
-      ) &&
-      document.length === documentsCoverage.length - 1
-    ) {
-      documentsCoverage.find((doc) =>
-        doc.nombre_documento_save === "Factura de compra."
-          ? (document[documentsCoverage.length - 1] = {
-              id: doc.id,
-              nombre_documento_save: doc.nombre_documento_save,
-              files: null,
-              nameFile: null,
-            })
-          : null
-      );
-      selectDocument(document);
-      nextStep(3);
-      setError(false);
-    } else if (document.length === documentsCoverage.length) {
+    if (document.length === documentsCoverage.length) {
       selectDocument(document);
       nextStep(3);
       setError(false);
     } else {
       setError(true);
-      documents.map((doc) =>
-        doc.nombre_documento_save !== "Factura de compra."
-          ? (doc.error = "* Requerido")
-          : null
-      );
+      documents.map((doc) => (doc.error = "* Requerido"));
     }
   };
   const handlePreviusStep = () => {
@@ -109,15 +86,7 @@ const Documents = ({ setError }) => {
         ? documents.map((doc) => {
             return (
               <div className=" mb-3 row flex-row" key={doc.id}>
-                <p className="mb-0 d-flex">
-                  {doc.nombre_documento_save}{" "}
-                  <small className="d-block fs--15 text-red-500 ml--2 ">
-                    {doc.nombre_documento_save !== "Factura de compra."
-                      ? "*"
-                      : null}
-                  </small>{" "}
-                </p>
-
+                <p className="mb-0">{doc.nombre_documento_save}</p>
                 <div className="custom-file custom-file-primary">
                   <input
                     id={doc.id}

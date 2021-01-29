@@ -8,7 +8,7 @@ import { ReactComponent as Send } from "../assets/icons/send.svg";
 import FormContext from "../context/form/formContext";
 const CustomStepper = () => {
   const formContext = useContext(FormContext);
-  const { step } = formContext;
+  const { step, openModal } = formContext;
   useEffect(() => {
     changeActiveColor(step);
   }, [step]);
@@ -61,7 +61,18 @@ const CustomStepper = () => {
     <Fragment>
       <div className="col-12 col-xl-12 mb-3">
         <div className="container">
-          <h2 className="ml-5 mb-0">Reclamaciones</h2>
+          <h2 className="ml-5 mb-1">Proceso de reclamación</h2>
+          <p className="ml-5  lead">
+            Antes de realizar tu reclamación revisa los documentos necesarios,
+            revisalos{" "}
+            <button
+              className="link-muted btn_link "
+              onClick={() => openModal()}
+            >
+              aquí
+            </button>
+            .
+          </p>
           <Stepper
             activeStep={step}
             hideConnectors={true}
@@ -73,9 +84,9 @@ const CustomStepper = () => {
               activeTextColor: "#ffffff",
               inactiveTextColor: "#ffffff",
             }}
-            className="m-0 p-2"
+            className="m-0 p-2 cursor-default"
           >
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default">
               <div className="m-0">
                 <User
                   fill={firstStep ? "#003272" : "#e1e1e1"}
@@ -90,7 +101,7 @@ const CustomStepper = () => {
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default">
               <div>
                 <Devices
                   fill={secondStep ? "#003272" : "#e1e1e1"}
@@ -105,7 +116,7 @@ const CustomStepper = () => {
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default">
               <div>
                 <Upload
                   fill={thirdStep ? "#003272" : "#e1e1e1"}
@@ -120,7 +131,7 @@ const CustomStepper = () => {
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default">
               <div>
                 <Document
                   fill={fourthStep ? "#003272" : "#e1e1e1"}
@@ -131,11 +142,11 @@ const CustomStepper = () => {
                   style={{ color: fourthStep ? "#003272" : "#bababa" }}
                   className="mt--5"
                 >
-                  3.Información adicional{" "}
+                  4.Información adicional{" "}
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default">
               <div>
                 <Send
                   fill={fivethStep ? "#003272" : "#e1e1e1"}

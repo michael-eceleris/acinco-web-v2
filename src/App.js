@@ -17,15 +17,19 @@ import TermAndConditions from "./components/TermsAndConditions/TermsAndCondition
 import TermAndConditionsTwo from "./components/TermsAndConditions/TermsAndConditionsTwo";
 import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndConditionsSamsung";
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
+import Message from "./components/Modal/message/messaje";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState } from "react";
 function App() {
+  const [hideMessage, setHideMessage] = useState(true);
   return (
     <FormState>
       <AuthState>
         <Router>
           <ScrollTop />
-          <Navbar />
+          <Message setHideMessage={setHideMessage} hideMessage={hideMessage} />
+          <Navbar hideMessage={hideMessage} />
           <WhatsappButton />
           <Switch>
             <Route path="/" exact>

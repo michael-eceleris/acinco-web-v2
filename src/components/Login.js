@@ -9,11 +9,11 @@ const Form = () => {
   const formContext = useContext(FormContext);
   const { nextStep } = formContext;
   const [userLocal, setUserLocal] = useState({
-    email: "",
-    cedula: "",
+    username: "",
+    password: "",
   });
   const [errorEmpty, setErrorEmpty] = useState(false);
-  const { email, cedula } = userLocal;
+  const { password, username } = userLocal;
 
   const onChange = (e) => {
     setUserLocal({
@@ -24,7 +24,7 @@ const Form = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    if (email.trim() === "" || cedula.trim() === "") {
+    if (password.trim() === "" || username.trim() === "") {
       console.log("todos lo campos son necesarios");
       setErrorEmpty(true);
     } else {
@@ -60,26 +60,26 @@ const Form = () => {
           <div className="form-label-group mb-3 ml-auto mr-auto">
             <input
               className="form-control"
-              id="cedula"
-              name="cedula"
+              id="username"
+              name="username"
               placeholder="Número de identificación"
-              value={cedula}
+              value={username}
               pattern="[0-9]{0,10}"
               onChange={onChange}
             />
-            <label htmlFor="cedula">Número de identificación</label>
+            <label htmlFor="username">Número de identificación</label>
           </div>
           <div className="form-label-group mb-3  ml-auto mr-auto">
             <input
               className="form-control"
-              id="email"
-              name="email"
+              id="password"
+              name="password"
               type="email"
               placeholder="Correo electrónico"
-              value={email}
+              value={password}
               onChange={onChange}
             />
-            <label htmlFor="email">Correo electrónico</label>
+            <label htmlFor="password">Correo electrónico</label>
           </div>
 
           <div className="d-flex justify-content-center">

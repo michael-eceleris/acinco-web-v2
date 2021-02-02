@@ -139,11 +139,12 @@ const MoreInfo = ({ setError, error }) => {
     documents.map(
       (doc, index) =>
         (documents[index] = {
-          id: doc.id,
+          id: parseInt(doc.id),
           nombre_documento_save: doc.nombre_documento_save,
           files: null,
           nameFile: null,
           error: null,
+          required: doc.required,
         })
     );
   };

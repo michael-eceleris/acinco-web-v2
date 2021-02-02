@@ -46,6 +46,7 @@ const formReducer = (state, action) => {
               nombre_documento_save: doc.nombre_documento_save,
               files: null,
               error: null,
+              required: doc.required,
             })
         ),
       };

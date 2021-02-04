@@ -1,4 +1,4 @@
-import React, { useState, useContext, Fragment } from "react";
+import React, { useState, useContext, Fragment, useEffect } from "react";
 import FormContext from "../context/form/formContext";
 const Documents = ({ setError }) => {
   const formContext = useContext(FormContext);
@@ -15,9 +15,15 @@ const Documents = ({ setError }) => {
     clearForm,
   } = formContext;
   const [document, setDocument] = useState([]);
+  const [noRequiredDoc, setNoRequiredDoc] = useState(0);
+  useEffect(() => {
+    let doc = documents.filter((doc) => (doc.required === false ? doc : null));
+    setNoRequiredDoc(doc.length);
+  }, [documents]);
   const onLoad = (e) => {
     const { files, name, id } = e.target;
     const { size, type } = files[0];
+    console.log("cargo doc");
     documents.find((doc, index) =>
       doc.id === parseInt(id)
         ? (documents[index] = {
@@ -25,6 +31,7 @@ const Documents = ({ setError }) => {
             nombre_documento_save: doc.nombre_documento_save,
             files: files[0],
             nameFile: files[0].name,
+            required: doc.required,
             error:
               size > maxSizeDoc
                 ? "Excediste el tamaño permitido de 4MB"
@@ -35,6 +42,7 @@ const Documents = ({ setError }) => {
         : null
     );
     const actual = document.map((doc) => doc.id).indexOf(id);
+    const required = documentsCoverage.find((doc) => doc.id === parseInt(id));
     if (
       size > maxSizeDoc ||
       (type !== "application/pdf" && type !== "image/jpeg")
@@ -49,6 +57,13 @@ const Documents = ({ setError }) => {
           nombre_documento_save: name,
           files: files[0],
           nameFile: files[0].name,
+          required: required.required,
+          error:
+            size > maxSizeDoc
+              ? "Excediste el tamaño permitido de 4MB"
+              : type !== "application/pdf" && type !== "image/jpeg"
+              ? "Error el tipo de documento tiene que ser pdf o jpg"
+              : null,
         },
       ]);
     } else {
@@ -59,17 +74,58 @@ const Documents = ({ setError }) => {
           nombre_documento_save: name,
           files: files[0],
           nameFile: files[0].name,
+          required: required.required,
+          error:
+            size > maxSizeDoc
+              ? "Excediste el tamaño permitido de 4MB"
+              : type !== "application/pdf" && type !== "image/jpeg"
+              ? "Error el tipo de documento tiene que ser pdf o jpg"
+              : null,
         },
       ]);
     }
   };
   const handleNextStep = () => {
+    console.log("da press boton");
+    const pasa = documents.map((doc, index) =>
+      documents[index].required && documents[index].files === null
+        ? (doc.error = "* Requerido")
+        : null
+    );
+    console.log(pasa);
+    if (
+      document.length === documentsCoverage.length - noRequiredDoc &&
+      pasa.filter((pa) => pa === "* Requerido").length === 0
+    ) {
+      console.log("if primero");
+      documentsCoverage.find((doc) =>
+        doc.required === false
+          ? (document[documentsCoverage.length - 1] = {
+              id: doc.id,
+              nombre_documento_save: doc.nombre_documento_save,
+              files: null,
+              nameFile: null,
+              required: doc.required,
+            })
+          : null
+      );
+      selectDocument(document);
+      nextStep(3);
+      setError(false);
+    } else if (document.length === documentsCoverage.length) {
+      console.log("if segundo");
     if (document.length === documentsCoverage.length) {
       selectDocument(document);
       nextStep(3);
       setError(false);
     } else {
+      console.log("if no pasa");
       setError(true);
+      documents.map((doc) =>
+        doc.required === true || doc.required === "true"
+          ? (doc.error = "* Requerido")
+          : null
+      );
       documents.map((doc) => (doc.error = "* Requerido"));
     }
   };
@@ -86,6 +142,14 @@ const Documents = ({ setError }) => {
         ? documents.map((doc) => {
             return (
               <div className=" mb-3 row flex-row" key={doc.id}>
+                <p className="mb-0 d-flex">
+                  {doc.nombre_documento_save}{" "}
+                  {doc.required === true || doc.required === "true" ? (
+                    <span className="d-block fs--15 text-red-500 ml--2 ">
+                      *
+                    </span>
+                  ) : null}
+                </p>
                 <p className="mb-0">{doc.nombre_documento_save}</p>
                 <div className="custom-file custom-file-primary">
                   <input

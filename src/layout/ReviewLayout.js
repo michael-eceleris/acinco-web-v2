@@ -48,10 +48,10 @@ const ReviewLayout = () => {
   const handleSubmit = () => {
     if (confirmed) {
       loading(true);
+      submitForm(formData);
       setTimeout(() => {
         loading(false);
-      }, 2500);
-      submitForm(formData);
+      }, 30000);
       setError(false);
     } else {
       setError(true);
@@ -77,10 +77,15 @@ const ReviewLayout = () => {
                   </td>
                   <td className="border-top-0">&nbsp;</td>
                 </tr>
-
                 <tr>
-                  <td className="border-bottom border-top-0">Nombre:</td>
+                  <td className="border-bottom border-top-0">Nombre(s):</td>
                   <td className="border-bottom border-top-0">{user.name}</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom border-top-0">Apellido(s):</td>
+                  <td className="border-bottom border-top-0">
+                    {user.second_name}
+                  </td>
                 </tr>
                 <tr>
                   <td className="border-bottom border-top-0">
@@ -274,7 +279,11 @@ const ReviewLayout = () => {
           >
             Atras
           </button>
-          <button className="btn btn-sm btn-primary" onClick={handleSubmit}>
+          <button
+            className="btn btn-sm btn-primary"
+            onClick={handleSubmit}
+            disabled={isLoading}
+          >
             Enviar
             {isLoading ? (
               <i

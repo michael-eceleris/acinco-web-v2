@@ -1,4 +1,4 @@
-name: Production Continue Deployment
+name: Stage Continue Deployment
 on:
   push:
     branches:

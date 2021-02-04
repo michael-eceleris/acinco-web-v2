@@ -2,7 +2,7 @@ name: Production Continue Deployment
 on:
   push:
     branches:
-      - master
+      - stage
 jobs:
   deploy:
     runs-on: ubuntu-latest

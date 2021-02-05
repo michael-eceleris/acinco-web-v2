@@ -114,19 +114,20 @@ const Documents = ({ setError }) => {
       setError(false);
     } else if (document.length === documentsCoverage.length) {
       console.log("if segundo");
-    if (document.length === documentsCoverage.length) {
-      selectDocument(document);
-      nextStep(3);
-      setError(false);
-    } else {
-      console.log("if no pasa");
-      setError(true);
-      documents.map((doc) =>
-        doc.required === true || doc.required === "true"
-          ? (doc.error = "* Requerido")
-          : null
-      );
-      documents.map((doc) => (doc.error = "* Requerido"));
+      if (document.length === documentsCoverage.length) {
+        selectDocument(document);
+        nextStep(3);
+        setError(false);
+      } else {
+        console.log("if no pasa");
+        setError(true);
+        documents.map((doc) =>
+          doc.required === true || doc.required === "true"
+            ? (doc.error = "* Requerido")
+            : null
+        );
+        documents.map((doc) => (doc.error = "* Requerido"));
+      }
     }
   };
   const handlePreviusStep = () => {
@@ -150,7 +151,6 @@ const Documents = ({ setError }) => {
                     </span>
                   ) : null}
                 </p>
-                <p className="mb-0">{doc.nombre_documento_save}</p>
                 <div className="custom-file custom-file-primary">
                   <input
                     id={doc.id}

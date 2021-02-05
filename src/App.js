@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import AuthState from "./context/auth/authState";
 import FormState from "./context/form/formState";
 import Navbar from "./components/Navbar";
@@ -21,12 +22,14 @@ import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
+  const [hideMessage, setHideMessage] = useState(true);
   return (
     <FormState>
       <AuthState>
         <Router>
           <ScrollTop />
-          <Navbar />
+          <Message setHideMessage={setHideMessage} hideMessage={hideMessage} />
+          <Navbar hideMessage={hideMessage} />
           <WhatsappButton />
           <Switch>
             <Route path="/" exact>

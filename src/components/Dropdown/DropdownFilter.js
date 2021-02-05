@@ -48,7 +48,7 @@ const Dropdown = ({ options, prompt, value, onChange, label, id }) => {
             onClick={toggle}
             onTouchEnd={toggle}
             required
-            class="input-drop"
+            className="input-drop"
           />
           <label className="selected-value-label">{prompt}</label>
         </div>

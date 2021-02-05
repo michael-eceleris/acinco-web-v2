@@ -13472,6 +13472,9 @@ a.text-pink-hover:hover {
 .b--0-end {
   border-right: 0 !important;
 }
+.cursor-default {
+  cursor: default !important;
+}
 .hide-ltr {
   display: none !important;
 }

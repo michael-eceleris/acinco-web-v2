@@ -41,7 +41,7 @@ const MoreInfo = ({ setError, error }) => {
   useEffect(() => {
     const getGenre = async () => {
       try {
-        const response = await clienteAxios.get("/user/gender");
+        const response = await clienteAxios.get("/api/v1/user/gender");
         setGenre(response.data);
       } catch (error) {
         console.log(error);
@@ -53,7 +53,7 @@ const MoreInfo = ({ setError, error }) => {
   useEffect(() => {
     const getCity = async () => {
       try {
-        const response = await clienteAxios.get("/shared/city");
+        const response = await clienteAxios.get("api/v1/shared/city");
         setCity(response.data);
       } catch (error) {
         console.log(error);
@@ -121,6 +121,7 @@ const MoreInfo = ({ setError, error }) => {
     if (
       messageActual &&
       phoneNumber &&
+      phoneNumber.length === 10 &&
       dateActual &&
       cityActual &&
       cityNameActual &&
@@ -213,7 +214,9 @@ const MoreInfo = ({ setError, error }) => {
       </div>
       <div className="mb-4 d-flex justify-content-between">
         <div>
-          {(error && !phoneNumber) || (error && phoneNumber.length === 0) ? (
+          {(error && !phoneNumber) ||
+          (error && phoneNumber.length === 0) ||
+          (error && phoneNumber.length !== 10) ? (
             <p className="text-danger">* Campo requerido</p>
           ) : phoneNumber.length > 10 ? (
             <p className="text-danger">* Excediste la cantidad de números</p>

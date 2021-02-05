@@ -16,6 +16,7 @@ import SoatDetail from "./pages/SoatDetail";
 import TermAndConditions from "./components/TermsAndConditions/TermsAndConditions";
 import TermAndConditionsTwo from "./components/TermsAndConditions/TermsAndConditionsTwo";
 import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndConditionsSamsung";
+import Message from "./components/Modal/message/messaje";
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

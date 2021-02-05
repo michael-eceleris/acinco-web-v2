@@ -13,7 +13,7 @@ const Form = () => {
     password: "",
   });
   const { username, password } = userLocal;
-
+  const [errorEmpty, setErrorEmpty] = useState(false);
   const onChange = (e) => {
     setUserLocal({
       ...userLocal,
@@ -25,16 +25,24 @@ const Form = () => {
     e.preventDefault();
     if (username.trim() === "" || password.trim() === "") {
       console.log("todos lo campos son necesarios");
+      setErrorEmpty(true);
+    } else {
+      setErrorEmpty(false);
+      login({
+        ...userLocal,
+        [e.target.name]: e.target.value,
+      });
+      authUser();
     }
-    login({
-      ...userLocal,
-      [e.target.name]: e.target.value,
-    });
-    authUser();
   };
   return (
     <>
-      {error ? (
+      {errorEmpty ? (
+        <div className="alert alert-danger">
+          Todos los campos son obligatorios
+        </div>
+      ) : null}
+      {error && !errorEmpty ? (
         <div className="alert alert-danger">
           Usuario o contraseña incorrecta
         </div>
@@ -53,24 +61,25 @@ const Form = () => {
               className="form-control"
               id="username"
               name="username"
-              type="email"
-              placeholder="Email"
+              type="text"
+              placeholder="Número de identificación"
               value={username}
+              pattern="[0-9]{0,10}"
               onChange={onChange}
             />
-            <label htmlFor="username">Email</label>
+            <label htmlFor="username">Número de identificación</label>
           </div>
           <div className="form-label-group mb-3 ml-auto mr-auto">
             <input
               className="form-control"
               id="password"
               name="password"
-              type="password"
-              placeholder="Password"
+              type="text"
+              placeholder="Correo electrónico"
               value={password}
               onChange={onChange}
             />
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Correo electrónico</label>
           </div>
           <div className="d-flex justify-content-center">
             <button type="submit" className="btn btn-sm btn-primary">

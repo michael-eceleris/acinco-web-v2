@@ -41,7 +41,7 @@ const MoreInfo = ({ setError, error }) => {
   useEffect(() => {
     const getGenre = async () => {
       try {
-        const response = await clienteAxios.get("/user/gender");
+        const response = await clienteAxios.get("/api/v1/user/gender");
         setGenre(response.data);
       } catch (error) {
         console.log(error);
@@ -53,7 +53,7 @@ const MoreInfo = ({ setError, error }) => {
   useEffect(() => {
     const getCity = async () => {
       try {
-        const response = await clienteAxios.get("/shared/city");
+        const response = await clienteAxios.get("api/v1/shared/city");
         setCity(response.data);
       } catch (error) {
         console.log(error);

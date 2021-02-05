@@ -151,7 +151,6 @@ const Documents = ({ setError }) => {
                     </span>
                   ) : null}
                 </p>
-                <p className="mb-0">{doc.nombre_documento_save}</p>
                 <div className="custom-file custom-file-primary">
                   <input
                     id={doc.id}

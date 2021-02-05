@@ -1,5 +1,5 @@
 import React from "react";
-import Searching from "../../../assets/images/icon_senor_mirando_arriba.png";
+import Searching from "../../../assets/icons/searching.svg";
 
 const Banner = () => {
   return (
@@ -25,21 +25,20 @@ const Banner = () => {
           >
             <div className="mt-7">
               <h1 className="font-weight-light mb-4">
-                <span className="font-weight-medium">Reclamación</span>
+                <span className="font-weight-medium">Reclamaciones</span>
               </h1>
             </div>
-            <p className="lead mb-5">
+            <p className=" lead mb-5">
               <span className="font-weight-medium "> ¡Es muy simple!</span> Con
-              tan solo 5 sencillos pasos puedes realizar tu reclamación.
+              tan solo 5 sencillos pasos puedes realizar reclamaciones.
             </p>
           </div>
-          <div className="col-12 col-md-6 order-2 order-md-2 pb-5">
+          <div className="col-12 col-md-6 order-2 order-md-1 pb-5">
             <img
-              width="250"
+              width="600"
               height="400"
               src={Searching}
               alt="reclamos_imagen"
-              className="ml-7"
             />
           </div>
         </div>

@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/Logo.png";
-const Navbar = ({ hideMessage }) => {
-  const hide = hideMessage ? "mt--30" : "top-0";
-  const hideM = hideMessage ? " " : "mb-5";
+const Navbar = () => {
   return (
-    <header className={`shadow-xs ${hideM}`}>
-      <div className={`z-index-99 position-fixed w-100 bg-white ${hide}`}>
+    <header className="shadow-xs mb-5">
+      <div className="z-index-9999 position-fixed w-100 bg-white top-0">
         <nav className="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherent">
           <div className="w-25 justify-content-end d-flex">
             <Link className="navbar-brand mr-0" to="/">

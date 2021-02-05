@@ -20,16 +20,13 @@ import Message from "./components/Modal/message/messaje";
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useState } from "react";
 function App() {
-  const [hideMessage, setHideMessage] = useState(true);
   return (
     <FormState>
       <AuthState>
         <Router>
           <ScrollTop />
-          <Message setHideMessage={setHideMessage} hideMessage={hideMessage} />
-          <Navbar hideMessage={hideMessage} />
+          <Navbar />
           <WhatsappButton />
           <Switch>
             <Route path="/" exact>

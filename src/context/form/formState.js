@@ -89,22 +89,12 @@ const FormState = (props) => {
   };
   const getDocuments = async (id) => {
     try {
-      let docs = [];
-      let ind = null;
       const response = await clienteAxios.get(
         `/documento/tipo-cobertura-cobertura/${id}`
       );
-      response.data.map((doc, index) =>
-        doc.nombre_documento_save === "Factura de compra."
-          ? (ind = index)
-          : docs.push(doc)
-      );
-      docs[response.data.length - 1] = response.data.find((doc, index) =>
-        index === ind ? doc : null
-      );
       dispatch({
         type: DOCS_COVERAGE,
-        payload: docs,
+        payload: response.data,
       });
     } catch (error) {
       console.log(error);

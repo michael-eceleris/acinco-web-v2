@@ -38,6 +38,7 @@ const FormState = (props) => {
     showModal: false,
     isLoading: false,
     maxSizeDoc: 4000000,
+    product: null,
   };
   const [state, dispatch] = useReducer(formReducer, initialState);
 
@@ -216,9 +217,10 @@ const FormState = (props) => {
     });
   };
 
-  const openModal = () => {
+  const openModal = (produc) => {
     dispatch({
       type: OPEN_MODAL,
+      payload: produc,
     });
   };
 
@@ -250,6 +252,7 @@ const FormState = (props) => {
         showModal: state.showModal,
         isLoading: state.isLoading,
         maxSizeDoc: state.maxSizeDoc,
+        product: state.product,
         selectDevice,
         selectPlan,
         selectCoverage,

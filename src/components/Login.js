@@ -43,14 +43,26 @@ const Form = () => {
         </div>
       ) : null}
       {error && !errorEmpty ? (
-        <div className="alert alert-danger">
-          Usuario o contraseña incorrecta
-        </div>
+        <>
+          <div className="alert alert-danger">
+            Usuario o contraseña incorrecta.
+          </div>
+          <div className="alert alert-danger">
+            Comunicate en Bogotá 4898599, para el resto de Colombia 01 8000 513
+            323 o WhatsApp +57 1 5142355
+          </div>
+        </>
       ) : null}
-      {errorUser === 500 /* || errorUser === 403 */ ? (
-        <div className="alert alert-danger">
-          Ocurrio un problema, lo sentimos
-        </div>
+      {errorUser === 500 ? (
+        <>
+          <div className="alert alert-danger">
+            Ocurrio un problema, lo sentimos.
+          </div>
+          <div className="alert alert-danger">
+            Comunicate en Bogotá 4898599, para el resto de Colombia 01 8000 513
+            323 o WhatsApp +57 1 5142355
+          </div>
+        </>
       ) : null}
       <div className="container p-2 w-50">
         <h4>Identíficate</h4>

@@ -78,7 +78,7 @@ const Modal = () => {
                     {submit.data ? (
                       submit.data.data.id.toString().length <= 6 ? (
                         <h5 className="font-weight-medium">
-                          Tu reclamación fue creada exitosamente con número de
+                          Tu reclamación fue creada exitosamente, tu número de
                           radicado es No.{" "}
                           <span className="font-weight-bold ">
                             {("000000" + submit.data.data.id).slice(-6)}{" "}
@@ -86,7 +86,7 @@ const Modal = () => {
                         </h5>
                       ) : (
                         <h5 className="font-weight-medium">
-                          Tu reclamación fue creada exitosamente con número de
+                          Tu reclamación fue creada exitosamente, tu número de
                           radicado es No.{" "}
                           <span className="font-weight-bold ">
                             {(

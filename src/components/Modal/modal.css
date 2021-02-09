@@ -6,6 +6,9 @@ html {
   background-color: white;
   padding: 0px;
 }
+.btn_link:hover {
+  color: #6c757d;
+}
 .btn_one {
   width: 100%;
   float: left;

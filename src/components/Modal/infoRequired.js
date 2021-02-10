@@ -3,9 +3,10 @@ import "./modal.css";
 import FormContext from "../../context/form/formContext";
 const InfoRequired = () => {
   const formContext = useContext(FormContext);
-  const { showModal, closeModal, submit } = formContext;
+  const { showModal, closeModal, submit, product } = formContext;
   const showModalLocal =
     !submit && showModal ? "modal display-block" : "modal display-none";
+  const widthModal = product !== null ? "modal-main w-50" : "modal-main w-75";
   const formatoReclamacion = (
     <li>
       <p className="text-justify">
@@ -149,7 +150,7 @@ const InfoRequired = () => {
   };
   return (
     <div className={showModalLocal}>
-      <div className="modal-main w-75">
+      <div className={widthModal}>
         <div className="modal-header flex-row">
           <div className="m-auto">
             <h3>DOCUMENTACION PRODUCTOS</h3>
@@ -159,63 +160,94 @@ const InfoRequired = () => {
           </div>
         </div>
         <div className="modal-body">
-          <div className="nav_doc">
-            <button
-              className="btn_doc tablink active-doc"
-              onClick={(e) => openDocs(e, "protecciontotal")}
-            >
-              <h2 className="h5 font-weight-normal">
-                Pospago 5.3 - Protección Total
-              </h2>
-            </button>
-            <button
-              className="btn_doc tablink"
-              onClick={(e) => openDocs(e, "fracturapantalla")}
-            >
-              <h2 className="h5 font-weight-normal">
-                Pospago 5.2 – Fractura de Pantalla
-              </h2>
-            </button>
-            <button
-              className="btn_doc tablink"
-              onClick={(e) => openDocs(e, "smart")}
-            >
-              <h2 className="h5 font-weight-normal">
-                Arma tu Plan – Smart App
-              </h2>
-            </button>
-            <button
-              className="btn_doc tablink "
-              onClick={(e) => openDocs(e, "gamas")}
-            >
-              <h2 className="h5 font-weight-normal">Seguro por gamas</h2>
-            </button>
-          </div>
-          <section className="sct_doc">
-            <div id="protecciontotal" className="doc">
-              <HurtoCalificado />
-              <HurtoSimple />
-              <DañoTotalAccidental />
-              <FracturaPantalla />
-            </div>
-            <div
-              id="fracturapantalla"
-              className="doc"
-              style={{ display: "none" }}
-            >
-              <FracturaPantalla />
-            </div>
-            <div id="smart" className="doc" style={{ display: "none" }}>
-              <HurtoCalificado smartplan={true} />
-              <HurtoSimple smartplan={true} />
-              <DañoTotalAccidental smartplan={true} />
-            </div>
-            <div id="gamas" className="doc" style={{ display: "none" }}>
-              <HurtoCalificado />
-              <HurtoSimple />
-              <DañoTotalAccidental />
-            </div>
-          </section>
+          {product !== null ? (
+            <>
+              <div className="nav_doc">
+                <button className="btn_one tablink active-doc">
+                  <h2 className="h5 font-weight-normal">
+                    {product.plan === "Tigo 5.3"
+                      ? "Pospago 5.3 - Protección Total"
+                      : product.plan === "Tigo 5.2"
+                      ? "Pospago 5.2 – Fractura de Pantalla"
+                      : null}
+                  </h2>
+                </button>
+              </div>
+              <section className="sct_doc">
+                <div className="doc">
+                  {product.cobertura === "Fractura Pantalla" ? (
+                    <FracturaPantalla />
+                  ) : product.cobertura === "Hurto Simple" ? (
+                    <HurtoSimple />
+                  ) : product.cobertura === "Hurto Calificado" ? (
+                    <HurtoCalificado />
+                  ) : product.cobertura === "Daño Total" ? (
+                    <DañoTotalAccidental />
+                  ) : null}
+                </div>
+              </section>
+            </>
+          ) : (
+            <>
+              <div className="nav_doc">
+                <button
+                  className="btn_doc tablink active-doc"
+                  onClick={(e) => openDocs(e, /* product */ "protecciontotal")}
+                >
+                  <h2 className="h5 font-weight-normal">
+                    Pospago 5.3 - Protección Total
+                  </h2>
+                </button>
+                <button
+                  className="btn_doc tablink"
+                  onClick={(e) => openDocs(e, "fracturapantalla")}
+                >
+                  <h2 className="h5 font-weight-normal">
+                    Pospago 5.2 – Fractura de Pantalla
+                  </h2>
+                </button>
+                <button
+                  className="btn_doc tablink"
+                  onClick={(e) => openDocs(e, "smart")}
+                >
+                  <h2 className="h5 font-weight-normal">
+                    Arma tu Plan – Smart App
+                  </h2>
+                </button>
+                <button
+                  className="btn_doc tablink "
+                  onClick={(e) => openDocs(e, "gamas")}
+                >
+                  <h2 className="h5 font-weight-normal">Seguro por gamas</h2>
+                </button>
+              </div>
+              <section className="sct_doc">
+                <div id="protecciontotal" className="doc">
+                  <HurtoCalificado />
+                  <HurtoSimple />
+                  <DañoTotalAccidental />
+                  <FracturaPantalla />
+                </div>
+                <div
+                  id="fracturapantalla"
+                  className="doc"
+                  style={{ display: "none" }}
+                >
+                  <FracturaPantalla />
+                </div>
+                <div id="smart" className="doc" style={{ display: "none" }}>
+                  <HurtoCalificado smartplan={true} />
+                  <HurtoSimple smartplan={true} />
+                  <DañoTotalAccidental smartplan={true} />
+                </div>
+                <div id="gamas" className="doc" style={{ display: "none" }}>
+                  <HurtoCalificado />
+                  <HurtoSimple />
+                  <DañoTotalAccidental />
+                </div>
+              </section>
+            </>
+          )}
         </div>
       </div>
     </div>

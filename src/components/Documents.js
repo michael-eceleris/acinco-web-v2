@@ -141,6 +141,16 @@ const Documents = ({ setError }) => {
                       *
                     </span>
                   ) : null}
+                  {doc.nombre_documento_save === "Formato de reclamación." ? (
+                    <a
+                      href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/Formato_Reclamacion_AXA_COLPATRIA.pdf"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="ml--8 link-muted btn_link font-weight-medium"
+                    >
+                      Descargalo aquí.
+                    </a>
+                  ) : null}
                 </p>
                 <div className="custom-file custom-file-primary">
                   <input

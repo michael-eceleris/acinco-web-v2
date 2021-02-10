@@ -4,8 +4,22 @@ html {
 .btn_link {
   border: none;
   background-color: white;
-  border-bottom: 1px dashed #97a4af;
   padding: 0px;
+}
+.btn_link:hover {
+  color: #6c757d;
+}
+.btn_one {
+  width: 100%;
+  float: left;
+  color: #e1e1e1;
+  text-align: center;
+  cursor: default !important;
+  transition: 0.5s;
+  z-index: 2;
+  border: 0px;
+  height: 6rem;
+  background-color: white;
 }
 .nav_doc {
   background: #fff;

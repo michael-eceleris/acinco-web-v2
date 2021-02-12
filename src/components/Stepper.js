@@ -67,7 +67,7 @@ const CustomStepper = () => {
             revisalos{" "}
             <button
               className="link-muted btn_link "
-              onClick={() => openModal()}
+              onClick={() => openModal(null)}
             >
               aquí
             </button>

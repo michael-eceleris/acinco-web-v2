@@ -9,18 +9,23 @@ const DocumentsLayout = () => {
     <>
       <div className="container py-1">
         <h4>Subir documentos</h4>
-        <p className="fs--17 mb--0">
-          Sube los documentos necesarios para la cobertura de{" "}
+        <p className="fs--17 mb--5 text-justify">
+          En esta sección debes subir los documentos necesarios para la
+          cobertura de <b>{coverage.nombre}</b>. Para subir los documentos
+          necesarios debes seguir las siguientes{" "}
           <button
             className="link-muted btn_link "
             onClick={() =>
               openModal({ plan: plan.plan.nombre, cobertura: coverage.nombre })
             }
           >
-            <b>{coverage.nombre}</b>
+            <b>instrucciones</b>
           </button>
+          . Ten en cuenta que los documentos que tengan el simbolo (
+          <small className="text-red-500 mt--0 fs--15"> * </small>) son
+          obligatorios.
         </p>
-        <p className="text-red-500 mt--0 fs--15">* Obligatorio</p>
+        <p className="fs--17 mb--0"></p>
         <div className="container py-4">
           <Documents setError={setError} error={error} />
         </div>

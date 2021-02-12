@@ -7,7 +7,7 @@ const Form = () => {
   const authContext = useContext(AuthContext);
   const { error, errorUser, authenticate, login, authUser } = authContext;
   const formContext = useContext(FormContext);
-  const { nextStep } = formContext;
+  const { loading, nextStep, isLoading } = formContext;
   const [userLocal, setUserLocal] = useState({
     username: "",
     password: "",
@@ -20,49 +20,72 @@ const Form = () => {
       [e.target.name]: e.target.value,
     });
   };
+  const [handleClose, setHandleClose] = useState(true);
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    setHandleClose(true);
     if (username.trim() === "" || password.trim() === "") {
-      console.log("todos lo campos son necesarios");
       setErrorEmpty(true);
     } else {
-      setErrorEmpty(false);
+      loading(true);
       login({
         ...userLocal,
         [e.target.name]: e.target.value,
       });
+      setTimeout(() => {
+        loading(false);
+      }, 1500);
       authUser();
+      setErrorEmpty(false);
     }
   };
   return (
     <>
-      {errorEmpty ? (
+      {errorEmpty && handleClose ? (
         <div className="alert alert-danger">
+          <button
+            onClick={() => {
+              setHandleClose(false);
+            }}
+            className="position-absolute right-0 top-0 btn btn-sm btn-icon"
+          >
+            <i className="fi fi-close "></i>
+          </button>
           Todos los campos son obligatorios
         </div>
       ) : null}
-      {error && !errorEmpty ? (
-        <>
-          <div className="alert alert-danger">
-            Usuario o contraseña incorrecta.
-          </div>
-          <div className="alert alert-danger">
-            Comunicate en Bogotá 4898599, para el resto de Colombia 01 8000 513
-            323 o WhatsApp +57 1 5142355
-          </div>
-        </>
+      {error && !errorEmpty && !isLoading && handleClose ? (
+        <div className="alert alert-danger">
+          <button
+            onClick={() => {
+              setHandleClose(false);
+            }}
+            className="position-absolute right-0 top-0 btn btn-sm btn-icon"
+          >
+            <i className="fi fi-close "></i>
+          </button>
+          <p>Usuario o contraseña incorrecta. </p>
+          <p className="mb-0">
+            Si el problema continua comunicate en Bogotá 4898599, para el resto
+            de Colombia 01 8000 513 323 o WhatsApp +57 1 5142355
+          </p>
+        </div>
       ) : null}
-      {errorUser === 500 ? (
-        <>
-          <div className="alert alert-danger">
-            Ocurrio un problema, lo sentimos.
-          </div>
-          <div className="alert alert-danger">
-            Comunicate en Bogotá 4898599, para el resto de Colombia 01 8000 513
-            323 o WhatsApp +57 1 5142355
-          </div>
-        </>
+      {errorUser === 500 && !isLoading && handleClose ? (
+        <div className="alert alert-danger">
+          <button
+            onClick={() => {
+              setHandleClose(false);
+            }}
+            className="position-absolute right-0 top-0 btn btn-sm btn-icon"
+          >
+            <i className="fi fi-close "></i>
+          </button>
+          Ocurrio un problema, lo sentimos. <br /> Por favor comunicate en
+          Bogotá 4898599, para el resto de Colombia 01 8000 513 323 o WhatsApp
+          +57 1 5142355
+        </div>
       ) : null}
       <div className="container p-2 w-50">
         <h4>Identíficate</h4>
@@ -94,8 +117,19 @@ const Form = () => {
             <label htmlFor="password">Correo electrónico</label>
           </div>
           <div className="d-flex justify-content-center">
-            <button type="submit" className="btn btn-sm btn-primary">
+            <button
+              type="submit"
+              className="btn btn-sm btn-primary justify-content-between"
+              disabled={isLoading}
+            >
               Inicia Sesión
+              {isLoading ? (
+                <i
+                  className="spinner-border spinner-border-sm ml-2 mr-0 mb--3"
+                  role="status"
+                  aria-hidden="true"
+                ></i>
+              ) : null}
             </button>
           </div>
         </form>

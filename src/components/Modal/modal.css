@@ -8,6 +8,7 @@ html {
 }
 .btn_link:hover {
   color: #6c757d;
+  text-decoration: underline !important;
 }
 .btn_one {
   width: 100%;

@@ -29,7 +29,6 @@ const AuthState = (props) => {
         payload: response.data,
       });
     } catch (error) {
-      console.log(error.response);
       dispatch({
         type: ERROR_LOGIN,
       });
@@ -46,7 +45,6 @@ const AuthState = (props) => {
         payload: response.data,
       });
     } catch (error) {
-      console.log();
       dispatch({
         type: ERROR_USER,
         payload: error.response.status,

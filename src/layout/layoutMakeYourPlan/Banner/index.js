@@ -1,12 +1,12 @@
 import React from "react";
-import Smartphone from "../../../assets/icons/icon-smart-app.svg";
+import Smartphone from "../../../assets/images/mobile-women.png";
 
 const Banner = () => {
   return (
     <>
       <section className="p-0 bg-white ">
         <svg
-          className="absolute-full z-index-0 "
+          className="absolute-full z-index-0 show2 "
           width="100%"
           height="100%"
           viewBox="0 0 1920 90"
@@ -41,9 +41,9 @@ const Banner = () => {
                 <p className="fs--14">* Aplican términos y condiciones.</p>
               </div>
             </div>
-            <div className="col-12 col-md-6 order-2 order-md-1 pb-5 d-middle">
+            <div className="col-12 col-md-6 order-2 order-md-1 d-middle show2">
               <img
-                width="400"
+                width="250"
                 className="img-fluid lazy "
                 src={Smartphone}
                 alt="logo_smart_app"

@@ -19958,3 +19958,49 @@ img.lazy {
   -webkit-filter: blur(0);
   filter: blur(0);
 }
+
+@media (max-width: 766px) {
+  .show2 {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  .show3 {
+    visibility: visible !important;
+  }
+  .navcustom {
+    padding-left: 0.5rem !important;
+    align-items: flex-start !important;
+  }
+  .tablecustom {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    word-break: normal;
+  }
+  .btncustom {
+    padding: 10px 5px;
+    font-size: 10px;
+  }
+}
+@media (min-width: 766.1px) {
+  .show2 {
+    visibility: visible !important;
+  }
+  .show3{
+    display: none !important;
+    visibility: hidden !important;
+  }
+  .navcustom {
+    width: 25% !important;
+    justify-content: flex-end !important;
+    display: flex !important;
+  }
+  .tablecustom {
+    display: block;
+    width: 700px;
+    overflow-x: auto;
+    word-break: normal;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+}

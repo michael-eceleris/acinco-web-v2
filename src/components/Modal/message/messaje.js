@@ -29,7 +29,7 @@ const Message = ({ hideMessage, setHideMessage }) => {
           typeClient !== "Opera" && hideMessage ? (
             <div className="z-index-99 bg-gray-200 fixed-top w-100 d-flex justify-content-between h--30">
               <p className="m-auto text-dark font-weight-lighter fs--20">
-                Te recomandemos usar Google Chrome, Firefox, Opera o Edge para
+                Te recomandamos usar Google Chrome, Firefox, Opera o Edge para
                 un correcto funcionamiento.
               </p>
               <button

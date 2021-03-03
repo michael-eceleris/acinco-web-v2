@@ -7,7 +7,7 @@ const Coverages = () => {
           <h2 className="font-weight-light mb-4 text-center">
             Detalles del plan Seguro por Gama
           </h2>
-          <div className="table-responsive mx-auto w--700">
+          <div className="tablecustom">
             <table className="table table-hover table-align-middle font-weight-medium text-center">
               <tbody>
                 <h3 className="h5 ml-2 text-align-start mb-3 mt-3">

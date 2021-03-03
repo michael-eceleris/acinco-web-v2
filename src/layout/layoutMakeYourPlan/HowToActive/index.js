@@ -33,10 +33,10 @@ const HowToActive = () => {
                       (Play Store)
                     </p>
                   </div>
-                  <div className="container d-flex justify-content-around mt-4">
+                  <div className="m-auto d-flex justify-content-around pt-2">
                     <a
                       href="https://itunes.apple.com/co/app/protecci%C3%B3n-m%C3%B3vil-seguro/id1116274602?mt=8"
-                      className="btn btn-dark rounded-xl transition-hover-top d-flex"
+                      className="btn btn-dark rounded-xl transition-hover-top d-flex btncustom"
                       rel="noreferrer"
                       target="_blank"
                     >
@@ -46,7 +46,7 @@ const HowToActive = () => {
                         className="mr-2"
                         alt="logo_apple"
                       />
-                      <span className="text-align-start">
+                      <span className="text-align-start w--100">
                         <span className="d-block line-height-1 fs--13">
                           Download on the
                         </span>
@@ -57,7 +57,7 @@ const HowToActive = () => {
                     </a>
                     <a
                       href="https://play.google.com/store/apps/details?id=com.hidesoft.tigo&amp;hl=es"
-                      className="btn btn-dark rounded-xl transition-hover-top d-flex"
+                      className="btn btn-dark rounded-xl transition-hover-top d-flex btncustom"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -67,7 +67,7 @@ const HowToActive = () => {
                         className=" mr-2"
                         alt="logo_play_store"
                       />
-                      <span className="text-align-start">
+                      <span className="text-align-start w--100">
                         <span className="d-block line-height-1 fs--13">
                           Download on the
                         </span>

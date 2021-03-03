@@ -276,6 +276,7 @@ const ReviewLayout = () => {
           <button
             className="btn btn-sm btn-outline-secondary"
             onClick={() => previusStep(3)}
+            disabled={isLoading}
           >
             Atras
           </button>

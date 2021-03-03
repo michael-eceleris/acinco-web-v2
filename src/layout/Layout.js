@@ -12,26 +12,28 @@ const Layout = () => {
   const { step } = formContext;
 
   return (
-    <section className="col-12 col-lg-12 mb-3 bg-theme-color-light">
-      <div className="portlet w-75 m-auto">
-        <div className="portlet-header border-bottom">
-          <Stepper />
+    <>
+      <section className="col-12 col-lg-12 mb-3 bg-gray-100 show2">
+        <div className="portlet w-75 m-auto">
+          <div className="portlet-header border-bottom">
+            <Stepper />
+          </div>
+          <div className="portlet-body w-50 m-auto">
+            {step === 0 ? (
+              <Login />
+            ) : step === 1 ? (
+              <SelectService />
+            ) : step === 2 ? (
+              <DocumentsLayout />
+            ) : step === 3 ? (
+              <MoreInfoLayout />
+            ) : step === 4 ? (
+              <ReviewLayout />
+            ) : null}
+          </div>
         </div>
-        <div className="portlet-body w-50 m-auto">
-          {step === 0 ? (
-            <Login />
-          ) : step === 1 ? (
-            <SelectService />
-          ) : step === 2 ? (
-            <DocumentsLayout />
-          ) : step === 3 ? (
-            <MoreInfoLayout />
-          ) : step === 4 ? (
-            <ReviewLayout />
-          ) : null}
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

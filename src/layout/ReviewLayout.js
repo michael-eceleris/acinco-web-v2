@@ -20,10 +20,8 @@ const ReviewLayout = () => {
   const [error, setError] = useState(false);
   const authContext = useContext(AuthContext);
   const { user } = authContext;
-  const {
-    imei_uno,
-    dispositivo: { valor },
-  } = device;
+  const { imei_uno } = device;
+  const { valor_asegurado } = plan;
 
   const {
     mensaje_ticket,
@@ -201,7 +199,7 @@ const ReviewLayout = () => {
                   </td>
                   <td className="border-bottom border-top-0">
                     ${" "}
-                    {valor
+                    {valor_asegurado
                       .toString()
                       .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
                   </td>
@@ -246,16 +244,18 @@ const ReviewLayout = () => {
                   </td>
                   <td className="border-top-0">&nbsp;</td>
                 </tr>
-                {documents.map((doc) => (
-                  <tr key={doc.id}>
-                    <td className="border-bottom border-top-0">
-                      {doc.nombre_documento_save}
-                    </td>
-                    <td className="border-bottom border-top-0">
-                      {doc.nameFile}
-                    </td>
-                  </tr>
-                ))}
+                {documents.map((doc) =>
+                  doc.files === null ? null : (
+                    <tr key={doc.id}>
+                      <td className="border-bottom border-top-0">
+                        {doc.nombre_documento_save}
+                      </td>
+                      <td className="border-bottom border-top-0">
+                        {doc.nameFile}
+                      </td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>
@@ -276,6 +276,7 @@ const ReviewLayout = () => {
           <button
             className="btn btn-sm btn-outline-secondary"
             onClick={() => previusStep(3)}
+            disabled={isLoading}
           >
             Atras
           </button>

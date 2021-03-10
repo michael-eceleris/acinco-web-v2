@@ -7,7 +7,7 @@ const Coverages = () => {
           <h2 className="font-weight-light mb-4 text-center">
             Detalles del plan SOAT Asistencia Pantalla
           </h2>
-          <div className="table-responsive mx-auto w--700">
+          <div className="tablecustom">
             <table className="table table-hover table-align-middle font-weight-medium text-center">
               <h3 className="h5 ml-2 text-align-start mb-3">Coberturas</h3>
               <tbody>

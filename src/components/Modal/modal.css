@@ -1,6 +1,90 @@
 html {
   scroll-behavior: smooth;
 }
+.btn_link {
+  border: none;
+  background-color: white;
+  padding: 0px;
+}
+.btn_link:hover {
+  color: #6c757d;
+  text-decoration: underline !important;
+}
+.btn_one {
+  width: 100%;
+  float: left;
+  color: #e1e1e1;
+  text-align: center;
+  cursor: default !important;
+  transition: 0.5s;
+  z-index: 2;
+  border: 0px;
+  height: 6rem;
+  background-color: white;
+}
+.nav_doc {
+  background: #fff;
+  width: 100%;
+  height: 5rem;
+}
+.sct_doc {
+  height: 350px;
+  width: 100%;
+  padding: 40px 0px !important;
+  overflow: auto;
+}
+.sct_doc::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.sct_doc::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+.sct_doc::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.sct_doc::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}
+.btn_doc {
+  width: 25%;
+  float: left;
+  color: #e1e1e1;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+  z-index: 2;
+  border: 0px;
+  height: 6rem;
+  background-color: white;
+}
+.active-doc {
+  color: #000000;
+  border-bottom: 1px solid black !important;
+}
+.btn_doc:hover {
+  color: #000000;
+  border-bottom: 1px solid black !important;
+}
+.btn_doc:before {
+  display: block;
+  font-size: 3rem;
+  line-height: 5rem;
+  z-index: 2;
+}
+@media screen and (min-height: 700px) {
+  .sct_doc {
+    height: 600px;
+  }
+}
+@media screen and (min-height: 1000px) {
+  .sct_doc {
+    height: 1000px;
+  }
+}
+
 .modal {
   display: flex;
   position: fixed;

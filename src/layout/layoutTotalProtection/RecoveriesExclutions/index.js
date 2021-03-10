@@ -6,7 +6,7 @@ const Recoveries = () => {
     <>
       <section className="pt-2 pb-2 bg-theme-color-light ">
         <div className="container p-0">
-          <div className="row d-flex flex-wrap align-items-center my-7 ">
+          <div className=" d-flex flex-wrap align-items-center my-7 ">
             <div className="col-12 col-lg-6 mb-5">
               <h2 className="h1 text-primary mb-4 text-center">Recobros</h2>
               <p className="lead mb-3">
@@ -62,7 +62,7 @@ const Recoveries = () => {
       </section>
       <section className="pt-2 pb-2 bg-theme-color-custom-purple">
         <div className="container p-0">
-          <div className="row d-flex flex-wrap align-items-center my-7">
+          <div className=" d-flex flex-wrap align-items-center my-7">
             <div className="order-lg-2 col-12 col-lg-6 mb-5">
               <h2 className="h1 text-success mb-4 text-center">Exclusiones</h2>
               <p className="lead mb-3">

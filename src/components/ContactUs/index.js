@@ -85,7 +85,7 @@ const ContactUs = () => {
                 ) : null}
                 <div className="form-label-group mt-3">
                   <input
-                    placeholder="Email"
+                    placeholder="Correo Electrónico"
                     id="contact_email"
                     name="contact_email"
                     type="email"
@@ -102,7 +102,7 @@ const ContactUs = () => {
 
                 <div className="form-label-group mt-3">
                   <input
-                    placeholder="Phone"
+                    placeholder="Número de teléfono"
                     id="contact_phone"
                     name="contact_phone"
                     type="text"
@@ -140,7 +140,7 @@ const ContactUs = () => {
 
                 <div className="form-label-group">
                   <textarea
-                    placeholder="Message"
+                    placeholder="Mensaje"
                     id="contact_message"
                     name="contact_message"
                     className="form-control"
@@ -185,7 +185,7 @@ const ContactUs = () => {
                   type="submit"
                   className="btn btn-primary btn-block mt-4"
                 >
-                  Send Message
+                  Enviar Mensaje
                 </button>
               </form>
             </div>

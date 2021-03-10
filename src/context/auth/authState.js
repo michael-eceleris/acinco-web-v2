@@ -23,13 +23,12 @@ const AuthState = (props) => {
 
   const login = async (datos) => {
     try {
-      const response = await clienteAxios.post("/auth/login", datos);
+      const response = await clienteAxios.post("/api/v1/auth/login", datos);
       dispatch({
         type: SUCCESFULL_LOGIN,
         payload: response.data,
       });
     } catch (error) {
-      console.log(error.response);
       dispatch({
         type: ERROR_LOGIN,
       });
@@ -40,13 +39,12 @@ const AuthState = (props) => {
       tokenAuth(state.token);
     }
     try {
-      const response = await clienteAxios.get("user/me");
+      const response = await clienteAxios.get("/api/v1/user/me");
       dispatch({
         type: GET_USER,
         payload: response.data,
       });
     } catch (error) {
-      console.log();
       dispatch({
         type: ERROR_USER,
         payload: error.response.status,

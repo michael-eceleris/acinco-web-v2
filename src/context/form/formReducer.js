@@ -109,12 +109,14 @@ const formReducer = (state, action) => {
       return {
         ...state,
         showModal: true,
+        product: action.payload,
       };
     case CLOSE_MODAL:
       return {
         ...state,
         showModal: false,
         submit: null,
+        product: null,
       };
     case CLEAR_FORM:
       return {

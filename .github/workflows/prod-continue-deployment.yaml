@@ -86,4 +86,4 @@ jobs:
             cd /home/${{ secrets.ACINCO_PROD_SSH_USER }}/acinco-web/
             docker stop acinco-web
             docker rm acinco-web
-            docker run -d --name=acinco-web -p 80:80 eceleris/acinco-web
+            docker run -d --name=acinco-web -p 127.0.0.1:8080:80 eceleris/acinco-web

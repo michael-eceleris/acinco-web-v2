@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import FormContext from "../context/form/formContext";
 import Banner from "../layout/layoutClaims/Banner";
-import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
 import Layout from "../layout/Layout";
 import Modal from "../components/Modal";
@@ -18,7 +17,6 @@ const Claims = () => {
       <Banner />
       <ClaimsMobile />
       <Layout />
-      <ContactUs />
       <Footer />
     </>
   );

@@ -15,7 +15,7 @@ const Navbar = ({ hideMessage }) => {
       <div className={`z-index-99 position-fixed w-100 bg-white ${hide}`}>
         <nav className="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherent">
           <div className="navcustom">
-            <button
+            {/* <button
               className="navbar-toggler ml-1"
               type="button"
               data-toggle="collapse"
@@ -25,7 +25,6 @@ const Navbar = ({ hideMessage }) => {
               aria-label="Toggle navigation"
               onClick={() => setShow(true)}
             >
-              {console.log(show)}
               <svg
                 style={{ marginTop: 0, width: "70%" }}
                 width="25"
@@ -48,7 +47,7 @@ const Navbar = ({ hideMessage }) => {
                   d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"
                 ></path>
               </svg>
-            </button>
+            </button> */}
             <Link class="navbar-brand" to="/">
               <img
                 width="100"
@@ -91,7 +90,7 @@ const Navbar = ({ hideMessage }) => {
                 />
               </Link>
             </div>
-            <ul className="navbar-nav">
+            {/* <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link js-ajax" to="/">
                   Inicio
@@ -186,7 +185,7 @@ const Navbar = ({ hideMessage }) => {
                   Clausulado Poliza 34
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </nav>
       </div>

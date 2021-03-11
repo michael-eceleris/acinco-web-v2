@@ -295,7 +295,11 @@ const InfoRequired = () => {
                 </button>
               </div>
               <section className="sct_doc">
-                <div id="protecciontotal" className="doc">
+                <div
+                  id="protecciontotal"
+                  className="doc"
+                  style={{ display: "block" }}
+                >
                   <ul>
                     <HurtoCalificado />
                     <HurtoSimple />

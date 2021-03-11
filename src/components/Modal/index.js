@@ -168,7 +168,7 @@ const Modal = () => {
                               </span>
                             )}
                             y fue realizada el dia{" "}
-                            {submit.data.data.fecha_creacion.substring(8, 11)}{" "}
+                            {submit.data.data.fecha_creacion.substring(8, 10)}{" "}
                             {
                               month[
                                 parseInt(

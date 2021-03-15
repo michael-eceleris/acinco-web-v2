@@ -33,8 +33,9 @@ const Recoveries = () => {
                       ¿Cuánto pagarás?
                     </h3>
                     <p className="pt-3 text-justify">
-                      El seguro te cubre el 70% del valor del dispositivo, por
-                      lo tanto solo pagas el 30% del mismo.
+                      El seguro te cubre el 70% del valor del dispositivo o de
+                      la reparación de la pantalla, por lo tanto solo pagas el
+                      30% del mismo.
                     </p>
                   </div>
                 </div>
@@ -49,7 +50,7 @@ const Recoveries = () => {
                     </h3>
                     <p className="text-justify">
                       El porcentaje corresponde a los montos cubiertos por la
-                      aseguradora, es decir, el recobro será calculado sore el
+                      aseguradora, es decir, el recobro será calculado sobre el
                       precio de venta al momento de la indemnización y en el
                       caso de la pantalla al momento de su reparación.
                     </p>
@@ -70,13 +71,15 @@ const Recoveries = () => {
                 las coberturas de este plan, ten en cuenta esto antes de
                 realizar su reclamación y recobro respectivo.
               </p>
-              <Link
+              <a
                 className="btn btn-link text-decoration-none"
-                to="/pospago-5-3/terminos-condiciones"
+                href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/CLAUSULADO-POLIZA-34.pdf"
+                target="_blank"
+                rel="noreferrer"
               >
                 Leer más
                 <i className="fi fi-arrow-right-slim ml-2"></i>
-              </Link>
+              </a>
             </div>
             <div className="order-lg-1 col-12 col-lg-6 mb-5">
               <div className="row gutters-md gutters-xs--xs">

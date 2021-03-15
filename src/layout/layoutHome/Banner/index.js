@@ -37,7 +37,7 @@ const Banner = () => {
                 ! */}
                 </h1>
                 <p className="lead">
-                  Aquí conoceras nuestros productos que tenemos disponibles para
+                  Aquí conocerás nuestros productos que tenemos disponibles para
                   ti como usuario de Colombia Móvil/Tigo. Podrás obtener
                   información y hacer tu reclamación .
                 </p>

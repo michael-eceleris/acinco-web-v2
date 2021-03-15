@@ -11,8 +11,7 @@ const Recoveries = () => {
               <h2 className="h1 text-primary mb-4 text-center">Recobros</h2>
               <p className="lead mb-3">
                 Si te ocurre alguna circunstancia en la que la pantalla del
-                dispositivo se vea afectaba, ten en cuenta esto esta
-                información.
+                dispositivo se vea afectada, ten en cuenta esta información
               </p>
               <Link
                 className="btn btn-link text-decoration-none"
@@ -69,13 +68,15 @@ const Recoveries = () => {
                 las coberturas de este plan, ten en cuenta esto antes de
                 realizar su reclamación y recobro respectivo.
               </p>
-              <Link
+              <a
                 className="btn btn-link text-decoration-none"
-                to="/samsung/terminos-condiciones"
+                href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/CLAUSULADO-POLIZA-34.pdf"
+                target="_blank"
+                rel="noreferrer"
               >
                 Leer más
                 <i className="fi fi-arrow-right-slim ml-2"></i>
-              </Link>
+              </a>
             </div>
             <div className="order-lg-1 col-12 col-lg-6 mb-5">
               <div className="row gutters-md gutters-xs--xs">

@@ -63,7 +63,7 @@ const ContactUs = () => {
       <section>
         <div className="container">
           <h2 className="font-weight-light mb-5">
-            Tienes alguna duda, contáctanos
+            Si tienes alguna duda, contáctanos
           </h2>
 
           <div className="row">
@@ -212,7 +212,7 @@ const ContactUs = () => {
                   </h3>
                   <ul className="list-unstyled m-0 fs--15">
                     <li className="list-item text-muted">
-                      Lunes &ndash; Sabado: 08:00 am – 6:00 pm
+                      Lunes &ndash; Sábado: 08:00 am – 6:00 pm
                     </li>
                   </ul>
                 </div>
@@ -222,7 +222,7 @@ const ContactUs = () => {
                   <i className="fi fi-phone text-gray-500 float-start fs--20"></i>
                 </div>
                 <div>
-                  <h3 className="h4 font-weight-normal">Números de contácto</h3>
+                  <h3 className="h4 font-weight-normal">Números de contacto</h3>
                   <ul className="list-unstyled m-0">
                     <li className="list-item mb-2 text-gray-500">
                       <p>En Bogotá 4898599</p>

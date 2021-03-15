@@ -12506,7 +12506,7 @@ textarea.text-white::-moz-placeholder {
   background-color: rgba(76, 233, 251, 0.04) !important;
 }
 .bg-theme-color-custom-purple {
-  background-color: rgb(245, 186, 66, 0.18) !important;
+  background-color: rgb(151, 191, 38, 0.08) !important;
 }
 .bg-gray-100 {
   background-color: #f8f9fa !important;
@@ -19971,6 +19971,9 @@ img.lazy {
     padding-left: 0.5rem !important;
     align-items: flex-start !important;
   }
+  .imgcustom {
+    height: 110px !important;
+  }
   .tablecustom {
     display: block;
     width: 100%;
@@ -19980,13 +19983,24 @@ img.lazy {
   .btncustom {
     padding: 10px 5px;
     font-size: 10px;
+    margin: 0 0 5px 0 !important;
+  }
+}
+@media (max-width: 1200px) {
+  .btncustom {
+    padding: 10px 5px;
+    font-size: 10px;
+    margin: 0 0 5px 0 !important;
+  }
+  .tablelogin {
+    width: 100% !important;
   }
 }
 @media (min-width: 766.1px) {
   .show2 {
     visibility: visible !important;
   }
-  .show3{
+  .show3 {
     display: none !important;
     visibility: hidden !important;
   }
@@ -20002,5 +20016,8 @@ img.lazy {
     word-break: normal;
     margin-right: auto !important;
     margin-left: auto !important;
+  }
+  .btncustom {
+    padding: 10px 5px;
   }
 }

@@ -9,7 +9,7 @@ const TotalProtection = () => {
   return (
     <>
       <Banner />
-      <HowToActive />
+      <HowToActive plan="all" />
       <Coverages />
       <Recoveries />
       <ContactUs />

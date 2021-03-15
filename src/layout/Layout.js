@@ -18,7 +18,7 @@ const Layout = () => {
           <div className="portlet-header border-bottom">
             <Stepper />
           </div>
-          <div className="portlet-body w-50 m-auto">
+          <div className="portlet-body w-50 m-auto tablelogin">
             {step === 0 ? (
               <Login />
             ) : step === 1 ? (

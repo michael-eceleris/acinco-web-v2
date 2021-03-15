@@ -15,7 +15,7 @@ const Navbar = ({ hideMessage }) => {
       <div className={`z-index-99 position-fixed w-100 bg-white ${hide}`}>
         <nav className="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherent">
           <div className="navcustom">
-            {/* <button
+            <button
               className="navbar-toggler ml-1"
               type="button"
               data-toggle="collapse"
@@ -47,7 +47,7 @@ const Navbar = ({ hideMessage }) => {
                   d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"
                 ></path>
               </svg>
-            </button> */}
+            </button>
             <Link class="navbar-brand" to="/">
               <img
                 width="100"
@@ -90,7 +90,7 @@ const Navbar = ({ hideMessage }) => {
                 />
               </Link>
             </div>
-            {/* <ul className="navbar-nav">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link js-ajax" to="/">
                   Inicio
@@ -169,9 +169,9 @@ const Navbar = ({ hideMessage }) => {
                   href="https://www.acinco.com.co/wp-content/uploads/2018/09/Politica-deprotecciondedatos-min.pdf"
                   target="_blank"
                   rel="noreferrer"
+                  style={{ whiteSpace: "nowrap" }}
                 >
-                  {" "}
-                  Politica de Proteccion
+                  Política de Protección
                 </a>
               </li>
               <li>
@@ -180,12 +180,12 @@ const Navbar = ({ hideMessage }) => {
                   href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/CLAUSULADO-POLIZA-34.pdf"
                   target="_blank"
                   rel="noreferrer"
+                  style={{ whiteSpace: "nowrap" }}
                 >
-                  {" "}
-                  Clausulado Poliza 34
+                  Clausulado Póliza 34
                 </a>
               </li>
-            </ul> */}
+            </ul>
           </div>
         </nav>
       </div>

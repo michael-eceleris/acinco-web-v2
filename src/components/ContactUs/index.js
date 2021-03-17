@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import FormContext from "../../context/form/formContext";
 import Modal from "../Modal";
+import ReCAPTCHA from "react-google-recaptcha";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 
 const ContactUs = () => {
@@ -11,6 +13,8 @@ const ContactUs = () => {
   const [message, setMessage] = useState("");
   const [numberError, setNumberError] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
+  const [captcha, setCaptcha] = useState(null);
+  const sitekey = process.env.REACT_APP_SITE_KEY_CAPTCHA;
 
   const handleChangeNumber = (e) => {
     setNumber(e.target.value);
@@ -26,7 +30,7 @@ const ContactUs = () => {
 
   const onSubmit = (data) => {
     data.consent = data.consent.toString();
-    if (data) {
+    if (data && captcha) {
       loading(true);
       contactUs(data);
       setTimeout(() => {
@@ -39,9 +43,26 @@ const ContactUs = () => {
       setConfirmed(false);
       setNumber("");
       setMessage("");
+      window.grecaptcha.reset();
     }
   };
 
+  const onChange = async (value) => {
+    const secret = process.env.REACT_APP_SECRET_KEY_CAPTCHA;
+    try {
+      const res = await axios.get(
+        `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${value}`
+      );
+      if (res.status === 200) {
+        setCaptcha(res);
+      } else {
+        setCaptcha(res);
+      }
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <section>
@@ -204,6 +225,20 @@ const ContactUs = () => {
                 {errors ? (
                   errors.consent ? (
                     <p className="text-danger">{errors.consent.message}</p>
+                  ) : null
+                ) : null}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: 20,
+                  }}
+                >
+                  <ReCAPTCHA onChange={onChange} sitekey={sitekey} />
+                </div>
+                {errors ? (
+                  (captcha === null) & (Object.keys(errors).length > 0) ? (
+                    <p className="text-danger">* Requerido</p>
                   ) : null
                 ) : null}
                 <button

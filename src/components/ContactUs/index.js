@@ -1,28 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import FormContext from "../../context/form/formContext";
+import Modal from "../Modal";
+import { useForm } from "react-hook-form";
 
 const ContactUs = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const formContext = useContext(FormContext);
+  const { contactUs, isLoading, loading, showModal } = formContext;
+  const { register, handleSubmit, errors, setValue } = useForm();
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
-  const [emaileError, setEmaileError] = useState(false);
   const [numberError, setNumberError] = useState(false);
-  const [messageError, setMessageError] = useState(false);
-  const [error, setError] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
-
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-    if (!e.target.validity.valid) {
-      setEmaileError(true);
-    } else {
-      setEmaileError(false);
-    }
-  };
 
   const handleChangeNumber = (e) => {
     setNumber(e.target.value);
@@ -34,103 +22,126 @@ const ContactUs = () => {
   };
   const handleChangeMenssage = (e) => {
     setMessage(e.target.value);
-    if (e.target.value.length > 350) {
-      setMessageError(true);
-    } else {
-      setMessageError(false);
-    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (
-      name === "" ||
-      email === "" ||
-      number === "" ||
-      message === "" ||
-      confirmed === false ||
-      number.length < 7
-    ) {
-      setError(true);
-    } else {
-      setError(false);
-      console.log(name + email + number + message);
+  const onSubmit = (data) => {
+    data.consent = data.consent.toString();
+    if (data) {
+      loading(true);
+      contactUs(data);
+      setTimeout(() => {
+        loading(false);
+      }, 30000);
+      setValue("name", "");
+      setValue("phone_number", "");
+      setValue("email", "");
+      setValue("message", "");
+      setConfirmed(false);
+      setNumber("");
+      setMessage("");
     }
   };
 
   return (
     <>
       <section>
+        {showModal && !isLoading ? <Modal /> : null}
         <div className="container">
           <h2 className="font-weight-light mb-5">
             Si tienes alguna duda, contáctanos
           </h2>
-
           <div className="row">
             <div className="col-12 col-lg-8 mb-4">
-              <form className="bs-validate" onSubmit={handleSubmit}>
+              <form className="bs-validate" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-label-group ">
                   <input
+                    ref={register({
+                      required: {
+                        value: true,
+                        message: "* Requerido",
+                      },
+                      maxLength: 50,
+                    })}
                     placeholder="Nombre"
-                    id="contact_name"
-                    name="contact_name"
+                    id="name"
+                    name="name"
                     type="text"
                     className="form-control"
-                    onChange={handleName}
                   />
-                  <label htmlFor="contact_name">Nombre</label>
+                  <label htmlFor="name">Nombre</label>
                 </div>
-                {error && !name ? (
-                  <p className="text-danger">* Requerido</p>
+                {errors ? (
+                  errors.name ? (
+                    <p className="text-danger">{errors.name.message}</p>
+                  ) : null
                 ) : null}
                 <div className="form-label-group mt-3">
                   <input
+                    ref={register({
+                      required: {
+                        value: true,
+                        message: "* Requerido",
+                      },
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "* Correo electrónico inválido",
+                      },
+                    })}
                     placeholder="Correo Electrónico"
-                    id="contact_email"
-                    name="contact_email"
+                    id="email"
+                    name="email"
                     type="email"
                     className="form-control"
-                    onChange={handleEmail}
                   />
-                  <label htmlFor="contact_email">Correo Electrónico</label>
+                  <label htmlFor="email">Correo Electrónico</label>
                 </div>
-                {error && !email ? (
-                  <p className="text-danger">* Requerido</p>
-                ) : emaileError ? (
-                  <p className="text-danger">* Correo electronico invalido</p>
+                {errors ? (
+                  errors.email ? (
+                    <p className="text-danger">{errors.email.message}</p>
+                  ) : null
                 ) : null}
-
                 <div className="form-label-group mt-3">
                   <input
+                    ref={register({
+                      maxLength: {
+                        value: 10,
+                        message: "* Excediste la cantidad de números",
+                      },
+                      required: {
+                        value: true,
+                        message: "* Requerido",
+                      },
+                      minLength: {
+                        value: 7,
+                        message: "* Es muy corto el número",
+                      },
+                    })}
                     placeholder="Número de teléfono"
-                    id="contact_phone"
-                    name="contact_phone"
+                    id="phone_number"
+                    name="phone_number"
                     type="text"
                     className="form-control"
                     onChange={handleChangeNumber}
-                    value={number}
-                    pattern="[0-9]{0,10}"
+                    pattern="[0-9]+"
                   />
-                  <label htmlFor="contact_phone">Número de teléfono</label>
+                  <label htmlFor="phone_number">Número de teléfono</label>
                 </div>
                 <div className="mb-4 d-flex justify-content-between">
                   <div>
-                    {(error && !number) || (error && number.length === 0) ? (
-                      <p className="text-danger">* Campo requerido</p>
-                    ) : number.length > 10 ? (
-                      <p className="text-danger">
-                        * Excediste la cantidad de números
-                      </p>
-                    ) : numberError ? (
-                      number.length === 0 ? (
-                        <p className="text-danger">* Campo requerido</p>
-                      ) : (
+                    {errors ? (
+                      errors.phone_number && !numberError ? (
                         <p className="text-danger">
-                          * Solo se permiten números
+                          {errors.phone_number.message}
                         </p>
-                      )
-                    ) : error && number.length < 7 ? (
-                      <p className="text-danger">* Es muy corto el número</p>
+                      ) : numberError ? (
+                        number.length === 0 ? (
+                          <p className="text-danger">* Campo requerido</p>
+                        ) : (
+                          <p className="text-danger">
+                            * Solo se permiten números
+                          </p>
+                        )
+                      ) : null
                     ) : null}
                   </div>
                   <div>
@@ -140,23 +151,31 @@ const ContactUs = () => {
 
                 <div className="form-label-group">
                   <textarea
+                    ref={register({
+                      required: {
+                        value: true,
+                        message: "* Requerido",
+                      },
+                      maxLength: {
+                        value: 350,
+                        message: "* Accediste el número máximo de caracteres",
+                      },
+                    })}
                     placeholder="Mensaje"
-                    id="contact_message"
-                    name="contact_message"
+                    id="message"
+                    name="message"
                     className="form-control"
                     rows="3"
                     onChange={handleChangeMenssage}
                   ></textarea>
-                  <label htmlFor="contact_message">Mensaje</label>
+                  <label htmlFor="message">Mensaje</label>
                 </div>
                 <div className="mb-4 d-flex justify-content-between">
                   <div>
-                    {error && !message ? (
-                      <p className="text-danger">* Campo requerido</p>
-                    ) : messageError ? (
-                      <p className="text-danger">
-                        * Accediste el número máximo de caracteres
-                      </p>
+                    {errors ? (
+                      errors.message ? (
+                        <p className="text-danger">{errors.message.message}</p>
+                      ) : null
                     ) : null}
                   </div>
                   <div>
@@ -168,6 +187,10 @@ const ContactUs = () => {
                 <div className="clearfix bg-light position-relative rounded p-4">
                   <label className="form-checkbox form-checkbox-primary">
                     <input
+                      ref={register({
+                        required: { value: true, message: "* Requerido" },
+                      })}
+                      name="consent"
                       type="checkbox"
                       checked={confirmed}
                       onChange={() => setConfirmed(!confirmed)}
@@ -178,14 +201,24 @@ const ContactUs = () => {
                     </span>
                   </label>
                 </div>
-                {error && !confirmed ? (
-                  <p className="text-danger">* Requerido</p>
+                {errors ? (
+                  errors.consent ? (
+                    <p className="text-danger">{errors.consent.message}</p>
+                  ) : null
                 ) : null}
                 <button
                   type="submit"
                   className="btn btn-primary btn-block mt-4"
+                  disabled={isLoading}
                 >
                   Enviar Mensaje
+                  {isLoading ? (
+                    <i
+                      class="spinner-border spinner-border-sm ml-2 mr-0 mb--3"
+                      role="status"
+                      aria-hidden="true"
+                    ></i>
+                  ) : null}
                 </button>
               </form>
             </div>

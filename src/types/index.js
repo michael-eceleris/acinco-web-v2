@@ -23,3 +23,6 @@ export const PREVIUS_STEP = "PREVIUS_STEP";
 export const OPEN_MODAL = "OPEN_MODAL";
 export const CLOSE_MODAL = "CLOSE_MODAL";
 export const LOADING = "LOADING";
+
+export const SEND_CONTACT_US = "SEND_CONTACT_US";
+export const ERROR_CONTACT_US = "ERROR_CONTACT_US";

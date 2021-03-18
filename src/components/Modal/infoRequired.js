@@ -3,9 +3,11 @@ import "./modal.css";
 import FormContext from "../../context/form/formContext";
 const InfoRequired = () => {
   const formContext = useContext(FormContext);
-  const { showModal, closeModal, submit, product } = formContext;
+  const { showModal, closeModal, submit, product, submitContact } = formContext;
   const showModalLocal =
-    !submit && showModal ? "modal display-block" : "modal display-none";
+    !submit && showModal && !submitContact
+      ? "modal display-block"
+      : "modal display-none";
   const widthModal = product !== null ? "modal-main w-50" : "modal-main w-75";
   const formatoReclamacion = (
     <li>

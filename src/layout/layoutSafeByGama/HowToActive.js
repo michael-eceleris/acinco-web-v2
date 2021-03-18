@@ -19,7 +19,7 @@ const HowToActive = () => {
                   </h3>
                   <p className="mb-6 mb-md-8 text-justify">
                     Adquiere tu plan y tu dispositivo en una tienda Tigo, ten en
-                    cuenta que te dispositivo debe estar asociado a tu línea
+                    cuenta que este dispositivo debe estar asociado a tu línea
                     principal.
                   </p>
                 </div>

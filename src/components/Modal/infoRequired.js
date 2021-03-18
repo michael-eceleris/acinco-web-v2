@@ -83,7 +83,7 @@ const InfoRequired = () => {
         <li>
           <p className="text-justify">
             Puedes anexar la factura de compra legal del equipo, con esto nos
-            ayudarias con el proceso y asi tener una respuesta pronta.
+            ayudarías con el proceso y así tener una respuesta pronta.
           </p>
         </li>
       </>
@@ -115,7 +115,7 @@ const InfoRequired = () => {
         <li>
           <p className="text-justify">
             Puedes anexar la factura de compra legal del equipo, con esto nos
-            ayudarias con el proceso y asi tener una respuesta pronta.
+            ayudarías con el proceso y así tener una respuesta pronta.
           </p>
         </li>
       </>
@@ -147,7 +147,7 @@ const InfoRequired = () => {
         <li>
           <p className="text-justify">
             Puedes anexar la factura de compra legal del equipo, con esto nos
-            ayudarias con el proceso y asi tener una respuesta pronta.
+            ayudarías con el proceso y así tener una respuesta pronta.
           </p>
         </li>
       </>
@@ -180,7 +180,7 @@ const InfoRequired = () => {
         <li>
           <p className="text-justify">
             Puedes anexar la factura de compra legal del equipo, con esto nos
-            ayudarias con el proceso y asi tener una respuesta pronta.
+            ayudarías con el proceso y así tener una respuesta pronta.
           </p>
         </li>
       </>

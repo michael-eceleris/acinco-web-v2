@@ -120,7 +120,7 @@ const Navbar = ({ hideMessage }) => {
                   <ul className="list-unstyled m-0 p-o">
                     <li className="dropdown-item">
                       <Link className="dropdown-link" to="/pospago-5-3">
-                        Proteccion total
+                        Protección total
                       </Link>
                     </li>
                     <li className="dropdown-item">
@@ -151,7 +151,7 @@ const Navbar = ({ hideMessage }) => {
                         className="dropdown-link"
                         to="/soat-asistencia-de-pantalla"
                       >
-                        SOAT Asitencia de pantallla
+                        SOAT Asistencia de pantalla
                       </Link>
                     </li>
                     <li className="dropdown-item">

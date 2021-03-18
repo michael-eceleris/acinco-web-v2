@@ -88,8 +88,8 @@ const Form = () => {
         </div>
       ) : null}
       <div className="container p-2 w-50">
-        <h4>Identíficate</h4>
-        <p className="fs--17">Identíficate para saber quien eres</p>
+        <h4>Identifícate</h4>
+        <p className="fs--17">Identifícate para saber quién eres</p>
         <form onSubmit={handleOnSubmit} className="collapse bs-validate show">
           <div className="form-label-group mb-3  ml-auto mr-auto">
             <input

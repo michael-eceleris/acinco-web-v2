@@ -22,12 +22,12 @@ const HowToActive = ({ plan }) => {
                     <p className="mb-6 mb-md-8 text-justify">
                       Adquiere tu plan pospago 5.3 + equipo comprado en Tigo o
                       en otro operador y/o retail. Un asesor te informará los
-                      beneficios del seguro
+                      beneficios del seguro.
                     </p>
                   ) : (
                     <p className="mb-6 mb-md-8 text-justify">
                       Adquiere tu plan pospago 5.2 + equipo comprado en Tigo y/o
-                      retail. Un asesor te informará los beneficios del seguro
+                      retail. Un asesor te informará los beneficios del seguro.
                     </p>
                   )}
                 </div>
@@ -39,8 +39,8 @@ const HowToActive = ({ plan }) => {
                     <h3 className="h5">Descarga la app.</h3>
                     <p className="mb-2 text-justify">
                       Descarga la app de Protección Móvil y realiza el proceso
-                      de registro, esta disponible en la App Store y Google Play
-                      (Play Store)
+                      de registro, está disponible en la App Store y Google Play
+                      (Play Store).
                     </p>
                   </div>
                   <div className="ml-4 d-flex w-100 mt-2 ">
@@ -106,7 +106,7 @@ const HowToActive = ({ plan }) => {
                   <p className="mb-6 mb-md-8 text-justify">
                     Te enviaremos un mensaje de texto (SMS) al número de
                     télefono que registraste, y realiza la confirmación
-                    respectiva
+                    respectiva.
                   </p>
                 </div>
               </div>
@@ -116,10 +116,10 @@ const HowToActive = ({ plan }) => {
                   <h3 className="h5">Validación</h3>
                   <p className="mb-6 mb-md-8 text-justify">
                     Una vez validada la información te enviaremos el certificado
-                    individual de seguros a tu correo electrónico y
+                    individual de seguros a tu correo electrónico
                     <span className="font-weight-medium">
                       {" "}
-                      ¡Listo ya tienes asegurado tu dispositivo!
+                      ¡y listo, ya tienes asegurado tu dispositivo!
                     </span>
                   </p>
                 </div>

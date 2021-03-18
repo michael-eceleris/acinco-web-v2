@@ -32,10 +32,10 @@ const Banner = () => {
                 </h1>
                 <p className="lead">
                   <span className="font-weight-medium">
-                    ¡Arma el plan tu mismo!
+                    ¡Arma el plan tú mismo!
                   </span>{" "}
                   <br />
-                  Este plan va dirigido a los usuario Tigo que tengan activo un
+                  Este plan va dirigido a los usuarios Tigo que tengan activo un
                   Arma tu plan superior a $74.900 y activen la casilla de
                   Protección Móvil en Smart App
                 </p>

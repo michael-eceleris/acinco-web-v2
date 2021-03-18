@@ -19,19 +19,19 @@ const HowToActive = () => {
                 <div className="ml-2 mr-4">
                   <h3 className="h5">Obtén primero un plan pospago.</h3>
                   <p className="mb-6 mb-md-8">
-                    Adquiere un Arma tu Plan en Tigo superior $74.900.
+                    Adquiere un Arma tu Plan en Tigo superior a $74.900.
                   </p>
                 </div>
               </div>
               <div className="d-flex mb-3">
-                <div className="w--50 fi mdi-filter_3 fs--25 mt--n6 text-success"></div>
+                <div className="w--50 fi mdi-filter_2 fs--25 mt--n6 text-success"></div>
                 <div className="d-flex row ml--1">
                   <div className="ml-4 mr-4">
                     <h3 className="h5">Descarga la app.</h3>
                     <p className="mb-2">
                       Descarga la app de Protección Móvil y realiza el proceso
-                      de registro, esta disponible en la App Store y Google Play
-                      (Play Store)
+                      de registro, está disponible en la App Store y Google Play
+                      (Play Store).
                     </p>
                   </div>
                   <div className="ml-4 d-flex w-100 mt-2">
@@ -56,7 +56,7 @@ const HowToActive = () => {
                         />
                         <span className="text-align-start w--100">
                           <span className="d-block line-height-1 fs--13">
-                            Download on the
+                            Disponible en
                           </span>
                           <span className="d-block line-height-1 fs--18 pt-1">
                             App Store
@@ -77,7 +77,7 @@ const HowToActive = () => {
                         />
                         <span className="text-align-start w--100">
                           <span className="d-block line-height-1 fs--13">
-                            Download on the
+                            Disponible en
                           </span>
                           <span className="d-block line-height-1 fs--18 pt-1">
                             Play Store
@@ -92,7 +92,7 @@ const HowToActive = () => {
 
             <div className="col-12 col-md-5">
               <div className="d-flex mb-3">
-                <div className="w--50 fi mdi-filter_2 fs--25 mt--n6 text-success"></div>
+                <div className="w--50 fi mdi-filter_3 fs--25 mt--n6 text-success"></div>
 
                 <div className="ml-4 mr-4">
                   <h3 className="h5">Activa Protección Móvil.</h3>
@@ -115,15 +115,15 @@ const HowToActive = () => {
                 <div className="w--50 fi mdi-filter_4 fs--25 mt--n6 text-success"></div>
 
                 <div className="ml-4 mr-4">
-                  <h3 className="h5">Confirmacion y Validación</h3>
+                  <h3 className="h5">Confirmación y Validación</h3>
                   <p className="mb-6 mb-md-8">
                     Te enviaremos un mensaje de texto (SMS) al número que
-                    registraste y confirma. una vez validada la información te
+                    registraste y confirma. Una vez validada la información te
                     enviaremos el certificado individual de seguros a tu correo
-                    electrónico y
+                    electrónico
                     <span className="font-weight-medium">
                       {" "}
-                      ¡Listo ya tienes asegurado tu dispositivo!
+                      ¡y listo, ya tienes asegurado tu dispositivo!
                     </span>
                   </p>
                 </div>

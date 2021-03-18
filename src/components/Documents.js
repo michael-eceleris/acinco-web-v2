@@ -147,7 +147,7 @@ const Documents = ({ setError }) => {
                         rel="noreferrer"
                         className="ml--8 link-muted btn_link font-weight-medium"
                       >
-                        Descargalo aquí.
+                        Descárgalo aquí.
                       </a>
                     ) : null}
                   </p>
@@ -187,7 +187,7 @@ const Documents = ({ setError }) => {
           className="btn btn-sm btn-outline-secondary"
           onClick={handlePreviusStep}
         >
-          Atras
+          Atrás
         </button>
         <button className="btn btn-sm btn-primary" onClick={handleNextStep}>
           Siguiente

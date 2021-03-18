@@ -25,7 +25,7 @@ const Coverages = () => {
                     <div className="h-75">
                       <p className="lead fs--18 text-justify">
                         Fractura o fisura de la pantalla de tu equipo móvil en
-                        caso de accidente
+                        caso de accidente.
                       </p>
                     </div>
                   </div>
@@ -41,7 +41,7 @@ const Coverages = () => {
                     <div className="h-75">
                       <p className="lead fs--18 text-justify">
                         Cuenta con una (1) reclamación durante tres (3) meses
-                        desde la compra del Soat
+                        desde la compra del SOAT.
                       </p>
                     </div>
                   </div>

@@ -39,7 +39,7 @@ const Coverages = () => {
                   <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
                     <div className="h-75">
                       <p className="lead fs--18 text-justify">
-                        Esta garantía se extiende por 1 año la cual empieza una
+                        Esta garantía se extiende por 1 año, la cual empieza una
                         vez terminado el periodo de la garantía dada por SAMSUNG
                         ELECTRONICS COLOMBIA S.A. Dicha garantía tiene las
                         mismas coberturas que la garantía dada por SAMSUNG

@@ -14,7 +14,7 @@ const OurExperience = () => {
 
               <p className="lead">
                 Contamos con experiencia amplia ofreciendo productos basados en
-                seguros por más de 10 años siendo así, una empresa con alta
+                seguros por más de 10 años, siendo así, una empresa con alta
                 calidad de servicio.
               </p>
             </div>

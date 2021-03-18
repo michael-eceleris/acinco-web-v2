@@ -13,7 +13,7 @@ const Recoveries = () => {
               <p className="lead mb-3">
                 Si te ocurre un siniestro, o alguna circunstancia en la cual se
                 vea aplicable alguna de las coberturas que trae el plan, ten en
-                cuenta esta informacion.
+                cuenta esta información.
               </p>
               <Link
                 className="btn btn-link text-decoration-none"
@@ -66,9 +66,9 @@ const Recoveries = () => {
             <div className="order-lg-2 col-12 col-lg-6 mb-5">
               <h2 className="h1 text-success mb-4 text-center">Exclusiones</h2>
               <p className="lead mb-3">
-                Existen algunas exclusiones en las cuales no son aplicables a
-                las coberturas de este plan, ten en cuenta esto antes de
-                realizar su reclamación y recobro respectivo.
+                Existen algunas exclusiones en las cuales no son aplicables las
+                coberturas de este plan, ten en cuenta esto antes de realizar su
+                reclamación y recobro respectivo.
               </p>
               <a
                 className="btn btn-link text-decoration-none"
@@ -106,7 +106,7 @@ const Recoveries = () => {
                     <h3 className="h5 py-3 text-center">Abandono</h3>
                     <p className="text-justify">
                       Extravío, pérdida o abandono del celular por descuido del
-                      propiertario y/o usuario.
+                      propietario y/o usuario.
                     </p>
                   </div>
                 </div>

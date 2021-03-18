@@ -64,7 +64,7 @@ const CustomStepper = () => {
           <h2 className="ml-5 mb-1">Proceso de reclamación</h2>
           <p className="ml-5  lead">
             Antes de realizar tu reclamación revisa los documentos necesarios,
-            revisalos{" "}
+            revísalos{" "}
             <button
               className="link-muted btn_link "
               onClick={() => openModal(null)}
@@ -97,7 +97,7 @@ const CustomStepper = () => {
                   style={{ color: firstStep ? "#003272" : "#bababa" }}
                   className="mt--5"
                 >
-                  1.Identificate{" "}
+                  1.Identifícate
                 </p>
               </div>
             </Step>

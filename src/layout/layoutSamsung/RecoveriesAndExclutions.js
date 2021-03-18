@@ -11,7 +11,7 @@ const Recoveries = () => {
               <h2 className="h1 text-primary mb-4 text-center">Recobros</h2>
               <p className="lead mb-3">
                 Si te ocurre alguna circunstancia en la que la pantalla del
-                dispositivo se vea afectada, ten en cuenta esta información
+                dispositivo se vea afectada, ten en cuenta esta información.
               </p>
               <Link
                 className="btn btn-link text-decoration-none"
@@ -64,9 +64,9 @@ const Recoveries = () => {
             <div className="order-lg-2 col-12 col-lg-6 mb-5">
               <h2 className="h1 text-success mb-4 text-center">Exclusiones</h2>
               <p className="lead mb-3">
-                Existen algunas exclusiones en las cuales no son aplicables a
-                las coberturas de este plan, ten en cuenta esto antes de
-                realizar su reclamación y recobro respectivo.
+                Existen algunas exclusiones en las cuales no son aplicables las
+                coberturas de este plan, ten en cuenta esto antes de realizar su
+                reclamación y recobro respectivo.
               </p>
               <a
                 className="btn btn-link text-decoration-none"

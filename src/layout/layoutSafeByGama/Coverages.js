@@ -83,9 +83,9 @@ const Coverages = () => {
                   <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
                     <div className="h-75">
                       <p className="lead fs--18 text-justify">
-                        Apoderamiento ilegitimo de tu bien asegurado realizado
+                        Apoderamiento ilegítimo de tu bien asegurado realizado
                         sin fuerza, ni violencia e intimidación. No incluye
-                        perdida, extravío del producto en un descuido.
+                        pérdida, extravío del producto en un descuido.
                       </p>
                     </div>
                   </div>
@@ -106,7 +106,7 @@ const Coverages = () => {
                   <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
                     <div className="h-75">
                       <p className="lead fs--18 text-justify">
-                        Daño físico de tu bien asegurado producto de un
+                        Daño físico de tu bien asegurado, producto de un
                         accidente y que este impida el funcionamiento de tu
                         equipo.
                       </p>

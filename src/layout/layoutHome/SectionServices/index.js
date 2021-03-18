@@ -154,7 +154,7 @@ const SectionServices = () => {
               </h3>
               <p className="fs--15 m-0">
                 Estructurar e implementar beneficios asociados a un grupo de
-                clientes/empresas como asistencias y seguros
+                clientes/empresas como asistencias y seguros.
               </p>
             </div>
           </div>
@@ -215,7 +215,7 @@ const SectionServices = () => {
               </h3>
               <p className="fs--15 m-0">
                 Apoyo en la comercialización de productos y de asistencias (App
-                móvil y web)
+                móvil y web).
               </p>
             </div>
           </div>
@@ -238,7 +238,7 @@ const SectionServices = () => {
                 </a>
               </h3>
               <p className="fs--15 m-0">
-                Realizamos análisis de siniestros con información artificial
+                Realizamos análisis de siniestros con información artificial.
               </p>
             </div>
           </div>

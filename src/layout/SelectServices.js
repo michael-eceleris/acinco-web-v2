@@ -67,7 +67,7 @@ const SelectServices = () => {
       <div className="container p-1">
         <h4>Selecciona tu cobertura</h4>
         <p className="fs--17">
-          En esta parte tienes que escoger el dipositivo, el plan y el tipo de
+          En esta parte tienes que escoger el dispositivo, el plan y el tipo de
           cobertura para realizar la reclamación.
         </p>
         <div className="form-group mb-4">
@@ -79,7 +79,7 @@ const SelectServices = () => {
             prop1="nombre"
             label2="IMEI"
             prop2="imei_uno"
-            label3="Linea"
+            label3="Línea"
             prop3="linea_uno"
             value={device}
             onChange={(val) => onChangeDevice(val)}
@@ -122,10 +122,10 @@ const SelectServices = () => {
             className="btn btn-sm btn-outline-secondary"
             onClick={handlePreviusStep}
           >
-            Atras
+            Atrás
           </button>
           <button className="btn btn-sm btn-primary" onClick={handleNextStep}>
-            Siguente
+            Siguiente
           </button>
         </div>
       </div>

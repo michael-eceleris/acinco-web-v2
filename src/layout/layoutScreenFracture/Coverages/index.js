@@ -50,7 +50,7 @@ const Coverages = () => {
                   <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
                     <div className="h-75">
                       <p className="lead fs--18 text-justify">
-                        Cuenta con una (1) reclmación anual por fractura de
+                        Cuenta con una (1) reclamación anual por fractura de
                         pantalla en caso de accidente.
                       </p>
                     </div>

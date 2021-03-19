@@ -162,7 +162,15 @@ const Documents = ({ setError }) => {
                     onChange={onLoad}
                     className="custom-file-input"
                   />
-                  <label className="custom-file-label" htmlFor={doc.id}>
+                  <label
+                    className="custom-file-label"
+                    style={{
+                      whiteSpace: "nowrap",
+                      textOverflow: "ellipsis",
+                      overflow: "hidden",
+                    }}
+                    htmlFor={doc.id}
+                  >
                     {doc.files !== null
                       ? doc.nameFile
                       : document.find((docAc) => docAc.id === doc.id)

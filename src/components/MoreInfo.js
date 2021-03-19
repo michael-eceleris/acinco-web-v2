@@ -210,7 +210,9 @@ const MoreInfo = ({ setError, error }) => {
           pattern="[0-9]{0,10}"
           placeholder="Número de línea con la que sucedió el siniestro"
         />
-        <label>Número de línea con la que sucedió el siniestro</label>
+        <label className="fontcustom">
+          Número de línea con la que sucedió 2 el siniestro
+        </label>
       </div>
       <div className="mb-4 d-flex justify-content-between">
         <div>
@@ -240,7 +242,7 @@ const MoreInfo = ({ setError, error }) => {
           onChange={handleChangeMenssage}
           rows="3"
         ></textarea>
-        <label>Descripción del siniestro</label>
+        <label className="fontcustom">Descripción del siniestro</label>
       </div>
       <div className="mb-4 d-flex justify-content-between">
         <div>

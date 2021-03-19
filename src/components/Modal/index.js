@@ -149,7 +149,7 @@ const Modal = () => {
                       </svg>
                     </div>
                     <div className="modal-body">
-                      <h3 className="modal-title  mb-2">
+                      <h3 className="modal-title mb-2">
                         No fue posible crear tu reclamación
                       </h3>
                       {submit.data.error ? (

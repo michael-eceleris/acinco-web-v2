@@ -19985,6 +19985,12 @@ img.lazy {
     font-size: 10px;
     margin: 0 0 5px 0 !important;
   }
+  .textcustom {
+    margin-left: 0 !important;
+  }
+  .fontcustom {
+    font-size: 12px
+  }
 }
 @media (max-width: 1200px) {
   .btncustom {

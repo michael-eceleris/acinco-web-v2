@@ -5,7 +5,6 @@ import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
 import Layout from "../layout/Layout";
 import Modal from "../components/Modal";
-import ClaimsMobile from "../layout/layoutClaims/ClaimsMobile";
 import ModalInfo from "../components/Modal/infoRequired";
 const Claims = () => {
   const formContext = useContext(FormContext);
@@ -16,7 +15,6 @@ const Claims = () => {
       {showModal ? <Modal /> : null}
       <ModalInfo />
       <Banner />
-      <ClaimsMobile />
       <Layout />
       <ContactUs />
       <Footer />

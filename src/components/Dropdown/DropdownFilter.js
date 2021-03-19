@@ -6,11 +6,11 @@ const Dropdown = ({ options, prompt, value, onChange, label, id }) => {
   const [query, setQuery] = useState("");
   const ref = useRef(null);
   useEffect(() => {
-    ["click", "tocuhend"].forEach((e) => {
+    ["click", "touchend"].forEach((e) => {
       document.addEventListener(e, toggle);
     });
     return () =>
-      ["click", "tocuhend"].forEach((e) => {
+      ["click", "touchend"].forEach((e) => {
         document.removeEventListener(e, toggle);
       });
   }, []);
@@ -63,7 +63,9 @@ const Dropdown = ({ options, prompt, value, onChange, label, id }) => {
               onClick={() => {
                 selecOption(option);
               }}
-              onTouchEnd={toggle}
+              onTouchEnd={() => {
+                selecOption(option);
+              }}
             >
               {option[label]} - {option.departamento.nombre}
             </div>

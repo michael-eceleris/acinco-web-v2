@@ -14,6 +14,7 @@ const ContactUs = () => {
   const [numberError, setNumberError] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
   const [captcha, setCaptcha] = useState(null);
+  const [errorCaptcha, setErrorCaptcha] = useState(false);
   const sitekey = process.env.REACT_APP_SITE_KEY_CAPTCHA;
 
   const handleChangeNumber = (e) => {
@@ -44,23 +45,29 @@ const ContactUs = () => {
       setNumber("");
       setMessage("");
       window.grecaptcha.reset();
+      setCaptcha(null);
+      setErrorCaptcha(false);
+    } else {
+      setErrorCaptcha(true);
     }
   };
 
   const onChange = async (value) => {
     const secret = process.env.REACT_APP_SECRET_KEY_CAPTCHA;
     try {
-      const res = await axios.get(
+      const res = await axios.post(
         `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${value}`
       );
       if (res.status === 200) {
         setCaptcha(res);
+        setErrorCaptcha(false);
       } else {
         setCaptcha(res);
       }
       console.log(res);
     } catch (error) {
       console.log(error);
+      setErrorCaptcha(true);
     }
   };
   return (
@@ -223,7 +230,7 @@ const ContactUs = () => {
                   </label>
                 </div>
                 {errors ? (
-                  errors.consent ? (
+                  errors.consent && confirmed === false ? (
                     <p className="text-danger">{errors.consent.message}</p>
                   ) : null
                 ) : null}
@@ -236,11 +243,10 @@ const ContactUs = () => {
                 >
                   <ReCAPTCHA onChange={onChange} sitekey={sitekey} />
                 </div>
-                {errors ? (
-                  (captcha === null) & (Object.keys(errors).length > 0) ? (
-                    <p className="text-danger">* Requerido</p>
-                  ) : null
+                {errorCaptcha ? (
+                  <p className="text-danger">* Requerido</p>
                 ) : null}
+
                 <button
                   type="submit"
                   className="btn btn-primary btn-block mt-4"

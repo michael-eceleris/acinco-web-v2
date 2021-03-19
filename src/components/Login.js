@@ -87,7 +87,7 @@ const Form = () => {
           +57 1 5142355
         </div>
       ) : null}
-      <div className="container p-2 w-50">
+      <div className="container p-2 w-50 tablelogin">
         <h4>Identifícate</h4>
         <p className="fs--17">Identifícate para saber quién eres</p>
         <form onSubmit={handleOnSubmit} className="collapse bs-validate show">

@@ -97,3 +97,8 @@ input[class="input-drop"]:valid ~ label {
   background-color: #f2f9fc;
   color: #333;
 }
+@media (max-width: 766px) {
+  .selected-value-label {
+    font-size: 12px !important;
+  }
+}

@@ -41,7 +41,7 @@ const Banner = () => {
               width="300"
               className="img-fluid lazy "
               src={LogoAxaColpatria}
-              alt="logo_total_proteccion"
+              alt="logo_soat_proteccion"
             />
           </div>
         </div>

@@ -14,8 +14,8 @@ const Coverages = () => {
             <h3 className="h3 ml-2 mb-1 mt-2 text-center">Coberturas</h3>
           </div>
           <div className="bg-white pt-1 rounded overflow-hidden">
-            <div className="row col-border">
-              <div className="col-12 col-md-12 col-lg-6 mb-4">
+            <div className="row justify-content-center">
+              <div className="col-12 col-md-12 col-lg-6 mb-4 m-auto">
                 <div className="card p-4 b-0 h-100">
                   <div className="d-middle mb-3">
                     <img
@@ -37,17 +37,19 @@ const Coverages = () => {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="row justify-content-center">
               <div className="col-12 col-md-12 col-lg-6 mb-4">
-                <div className="card p-4 b-0 h-100">
-                  <div className="d-middle mb-3">
+                <div className="card p-4 b-0 h-100 flex-lg-row flex-md-column">
+                  <div className="d-middle mb-3 mr-4">
                     <img
-                      width="140"
+                      width="160"
                       src={Claims}
                       alt="reparacion_de_pantalla"
                     />
                   </div>
-                  <h5>Reclamaciones</h5>
                   <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                    <h5 style={{ color: "black" }}>Reclamaciones</h5>
                     <div className="h-75">
                       <p className="lead fs--18 text-justify">
                         Cuenta con una (1) reclamación anual por fractura de

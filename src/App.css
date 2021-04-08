@@ -19971,6 +19971,7 @@ img.lazy {
   filter: blur(0);
 }
 
+
 .hypens {
   hyphens: auto;
   -ms-hyphens: auto;
@@ -19992,6 +19993,7 @@ img.lazy {
   .imgcustom {
     height: 110px !important;
   }
+
   .tablecustom {
     display: block;
     width: 100%;
@@ -20001,6 +20003,7 @@ img.lazy {
   .btncustom {
     padding: 10px 5px;
     font-size: 10px;
+
     margin: 0 0 5px 0 !important;
   }
   .textcustom {
@@ -20044,4 +20047,5 @@ img.lazy {
   .btncustom {
     padding: 10px 5px;
   }
+
 }

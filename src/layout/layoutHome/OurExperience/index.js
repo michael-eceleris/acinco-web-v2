@@ -6,7 +6,7 @@ import IconTigo from "../../../assets/icons/Logo_Tigo_negro.svg";
 const OurExperience = () => {
   return (
     <>
-      <section>
+      <section className="p-0">
         <div className="container">
           <div className="text-center mb-6">
             <div className="mx-auto max-w-600">

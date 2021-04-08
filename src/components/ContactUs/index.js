@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import FormContext from "../../context/form/formContext";
 import Modal from "../Modal";
-import ReCAPTCHA from "react-google-recaptcha";
-import axios from "axios";
+//import ReCAPTCHA from "react-google-recaptcha";
+//import axios from "axios";
 import { useForm } from "react-hook-form";
 
 const ContactUs = () => {
@@ -13,9 +13,9 @@ const ContactUs = () => {
   const [message, setMessage] = useState("");
   const [numberError, setNumberError] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
-  const [captcha, setCaptcha] = useState(null);
-  const [errorCaptcha, setErrorCaptcha] = useState(false);
-  const sitekey = process.env.REACT_APP_SITE_KEY_CAPTCHA;
+  //const [captcha, setCaptcha] = useState(null);
+  //const [errorCaptcha, setErrorCaptcha] = useState(false);
+  //const sitekey = process.env.REACT_APP_SITE_KEY_CAPTCHA;
 
   const handleChangeNumber = (e) => {
     setNumber(e.target.value);
@@ -31,7 +31,7 @@ const ContactUs = () => {
 
   const onSubmit = (data) => {
     data.consent = data.consent.toString();
-    if (data && captcha) {
+    if (data /*&& captcha*/) {
       loading(true);
       contactUs(data);
       setTimeout(() => {
@@ -44,15 +44,15 @@ const ContactUs = () => {
       setConfirmed(false);
       setNumber("");
       setMessage("");
-      window.grecaptcha.reset();
-      setCaptcha(null);
-      setErrorCaptcha(false);
+      //window.grecaptcha.reset();
+      //setCaptcha(null);
+      //setErrorCaptcha(false);
     } else {
-      setErrorCaptcha(true);
+      //setErrorCaptcha(true);
     }
   };
 
-  const onChange = async (value) => {
+  /* const onChange = async (value) => {
     const secret = process.env.REACT_APP_SECRET_KEY_CAPTCHA;
     try {
       const res = await axios.post(
@@ -69,7 +69,7 @@ const ContactUs = () => {
       console.log(error);
       setErrorCaptcha(true);
     }
-  };
+  }; */
   return (
     <>
       <section>
@@ -234,7 +234,7 @@ const ContactUs = () => {
                     <p className="text-danger">{errors.consent.message}</p>
                   ) : null
                 ) : null}
-                <div
+                {/* <div
                   style={{
                     display: "flex",
                     justifyContent: "center",
@@ -246,7 +246,7 @@ const ContactUs = () => {
                 {errorCaptcha ? (
                   <p className="text-danger">* Requerido</p>
                 ) : null}
-
+                */}
                 <button
                   type="submit"
                   className="btn btn-primary btn-block mt-4"

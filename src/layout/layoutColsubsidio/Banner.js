@@ -1,7 +1,6 @@
 import React from "react";
 import MobileSecure from "../../assets/images/home.png";
 
-
 const Banner = () => {
   return (
     <section className="p-0 bg-white ">

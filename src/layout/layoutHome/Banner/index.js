@@ -34,7 +34,6 @@ const Banner = () => {
                 <p className="lead">
                   Aquí conocerás nuestros productos que tenemos disponibles para
                   ti. Podrás obtener información y hacer tu reclamación.
-
                 </p>
               </div>
             </div>

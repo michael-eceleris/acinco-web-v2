@@ -12,7 +12,7 @@ const Recoveries = () => {
               <p className="lead mb-3">
                 Si te ocurre un siniestro, o alguna circunstancia en la cual se
                 vea aplicable alguna de las coberturas que trae el plan, ten en
-                cuenta esta informacion.
+                cuenta esta información.
               </p>
               <Link
                 className="btn btn-link text-decoration-none"
@@ -65,17 +65,19 @@ const Recoveries = () => {
             <div className="order-lg-2 col-12 col-lg-6 mb-5">
               <h2 className="h1 text-success mb-4 text-center">Exclusiones</h2>
               <p className="lead mb-3">
-                Existen algunas exclusiones en las cuales no son aplicables a
-                las coberturas de este plan, ten en cuenta esto antes de
-                realizar su reclamación y recobro respectivo.
+                Existen algunas exclusiones en las cuales no son aplicables las
+                coberturas de este plan, ten en cuenta esto antes de realizar su
+                reclamación y recobro respectivo.
               </p>
-              <Link
+              <a
                 className="btn btn-link text-decoration-none"
-                to="/colsubsidio/terminos-condiciones"
+                href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/CLAUSULADO-POLIZA-34.pdf"
+                target="_blank"
+                rel="noreferrer"
               >
                 Leer más
                 <i className="fi fi-arrow-right-slim ml-2"></i>
-              </Link>
+              </a>
             </div>
             <div className="order-lg-1 col-12 col-lg-6 mb-5">
               <div className="row gutters-md gutters-xs--xs">

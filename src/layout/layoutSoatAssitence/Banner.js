@@ -30,7 +30,7 @@ const Banner = () => {
                 </span>
               </h1>
               <p className="lead mb--0">
-                Esta dirigido a todos los usuarios que adquieran su Soat con Axa
+                Está dirigido a todos los usuarios que adquieran su SOAT con Axa
                 Colpatria Seguro
               </p>
               <p className="fs--14">* Aplican términos y condiciones.</p>
@@ -41,7 +41,7 @@ const Banner = () => {
               width="300"
               className="img-fluid lazy "
               src={LogoAxaColpatria}
-              alt="logo_total_proteccion"
+              alt="logo_soat_proteccion"
             />
           </div>
         </div>

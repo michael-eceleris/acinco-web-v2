@@ -170,7 +170,7 @@ const MoreInfo = ({ setError, error }) => {
       <div className="form-group mb-4">
         <DropdownFilter
           options={city ? city : []}
-          prompt="Seleccione la ciudad en la que ocurrio el siniestro."
+          prompt="Selecciona la ciudad en la que ocurrió el siniestro."
           id="id"
           label="nombre"
           value={cityNameActual}
@@ -189,9 +189,9 @@ const MoreInfo = ({ setError, error }) => {
           required
           max={actualDate}
           onChange={handleChangeDate}
-          placeholder="Seleccionar fecha en la que ocurrio el siniestro"
+          placeholder="Seleccionar fecha en la que ocurrió el siniestro"
         />
-        <label> Seleccionar fecha en la que ocurrio el siniestro</label>
+        <label> Seleccionar fecha en la que ocurrió el siniestro</label>
         {error && !dateActual ? (
           <p className="text-danger">* Campo requerido</p>
         ) : errorDate ? (
@@ -208,9 +208,11 @@ const MoreInfo = ({ setError, error }) => {
           onChange={handleChangeNumber}
           value={phoneNumber}
           pattern="[0-9]{0,10}"
-          placeholder="Número de linea con la que sucedío el siniestro"
+          placeholder="Número de línea con la que sucedió el siniestro"
         />
-        <label>Número de linea con la que sucedío el siniestro</label>
+        <label className="fontcustom">
+          Número de línea con la que sucedió 2 el siniestro
+        </label>
       </div>
       <div className="mb-4 d-flex justify-content-between">
         <div>
@@ -236,11 +238,11 @@ const MoreInfo = ({ setError, error }) => {
         <textarea
           className="form-control"
           required
-          placeholder="Descripcion del siniestro"
+          placeholder="Descripción del siniestro"
           onChange={handleChangeMenssage}
           rows="3"
         ></textarea>
-        <label>Descripcion del siniestro</label>
+        <label className="fontcustom">Descripción del siniestro</label>
       </div>
       <div className="mb-4 d-flex justify-content-between">
         <div>
@@ -263,7 +265,7 @@ const MoreInfo = ({ setError, error }) => {
           className="btn btn-sm btn-outline-secondary"
           onClick={handlePreviusStep}
         >
-          Atras
+          Atrás
         </button>
         <button className="btn btn-sm btn-primary" onClick={handleNextStep}>
           Siguiente

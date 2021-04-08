@@ -63,7 +63,7 @@ function App() {
               <SoatDetail />
             </Route>
             <Route path="/pospago-5-3/terminos-condiciones" exact>
-              <TermAndConditions namePlan="Total Proteccion" plan="all" />
+              <TermAndConditions namePlan="Protección Total" plan="all" />
             </Route>
             <Route path="/pospago-5-2/terminos-condiciones" exact>
               <TermAndConditions
@@ -72,11 +72,17 @@ function App() {
               />
             </Route>
             <Route path="/arma-tu-plan-smart-app/terminos-condiciones" exact>
-              <TermAndConditions namePlan="Smart App" plan="all" />
+              <TermAndConditions
+                namePlan="Arma tu plan – Smart App"
+                plan="smart"
+              />
+            </Route>
+            <Route path="/seguro-gamas/terminos-condiciones" exact>
+              <TermAndConditions namePlan="Seguro por Gama" plan="gama" />
             </Route>
             <Route path="/colsubsidio/terminos-condiciones" exact>
               <TermAndConditionsTwo
-                namePlan="Asistencia Colsubsido"
+                namePlan="Asistencia Colsubsidio – Axa Colpatria Seguros"
                 plan="colsubsidio"
               />
             </Route>

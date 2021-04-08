@@ -147,7 +147,7 @@ const Documents = ({ setError }) => {
                         rel="noreferrer"
                         className="ml--8 link-muted btn_link font-weight-medium"
                       >
-                        Descargalo aquí.
+                        Descárgalo aquí.
                       </a>
                     ) : null}
                   </p>
@@ -162,7 +162,15 @@ const Documents = ({ setError }) => {
                     onChange={onLoad}
                     className="custom-file-input"
                   />
-                  <label className="custom-file-label" htmlFor={doc.id}>
+                  <label
+                    className="custom-file-label"
+                    style={{
+                      whiteSpace: "nowrap",
+                      textOverflow: "ellipsis",
+                      overflow: "hidden",
+                    }}
+                    htmlFor={doc.id}
+                  >
                     {doc.files !== null
                       ? doc.nameFile
                       : document.find((docAc) => docAc.id === doc.id)
@@ -187,7 +195,7 @@ const Documents = ({ setError }) => {
           className="btn btn-sm btn-outline-secondary"
           onClick={handlePreviusStep}
         >
-          Atras
+          Atrás
         </button>
         <button className="btn btn-sm btn-primary" onClick={handleNextStep}>
           Siguiente

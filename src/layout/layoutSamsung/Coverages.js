@@ -1,48 +1,77 @@
 import React from "react";
+import Shield from "../../assets/icons/shield.svg";
+import Claims from "../../assets/icons/claim.svg";
+import RepairPhone from "../../assets/icons/cellphone.svg";
+
 const Coverages = () => {
   return (
     <>
-      <section>
-        <div className="container ">
-          <h2 className="font-weight-light mb-4 text-center">
-            Detalles del plan Samsung
-          </h2>
-          <div className="tablecustom">
-            <table className="table table-hover table-align-middle font-weight-medium text-center">
-              <h3 className="h5 ml-2 text-align-start mb-3">Coberturas</h3>
-              <tbody>
-                <tr>
-                  <td className="text-align-start">
-                    Reparación de Pantalla
-                    <small className="d-block text-muted">
-                      cubre costos de reparación en la pantalla, no cubre daños
-                      en la tarjeta principal, ni baterías ni daños por humedad
-                      del equipo
-                    </small>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-align-start">
-                    Garantía Extendida
-                    <small className="d-block text-muted">
-                      Una vez terminada la grantía dada por SAMSUNG ELECTRONICS
-                      COLOMBIA, comienza la garantía extendida, la cual tiene
-                      las mismas coberturas que ofrece la de SAMSUNG, daño
-                      cámara, auricular, micrófono, etc.
-                    </small>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-align-start">
-                    Reclamaciones
-                    <small className="d-block text-muted">
-                      Cuenta con una (1) reclamación por seis (6) meses, desde
-                      la fecha de expedición de la factura de compra.
-                    </small>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      <section className="bg-white">
+        <div className="container">
+          <div className="text-center mb--100">
+            <h2 className="font-weight-light mb-4 text-center">
+              Detalles del plan Samsung
+            </h2>
+            <h3 className="h3 ml-2 mb-1 mt-2 text-center">Coberturas</h3>
+          </div>
+          <div className="bg-white pt-1 rounded overflow-hidden">
+            <div className="row col-border">
+              <div className=" row col-border justify-content-center">
+                <div className="col-12 col-md-12 col-lg-4 mb-4">
+                  <div className="card p-4 b-0 h-100 mt-1">
+                    <div className="d-middle mb-3">
+                      <img
+                        width="140"
+                        src={RepairPhone}
+                        alt="hurto_calificado"
+                      />
+                    </div>
+                    <h5>Reparación de Pantalla</h5>
+                    <div className="card-body pl-0 pr-0 text-gray-600 ">
+                      <p className="lead fs--18 text-justify">
+                        Fractura o fisura de la pantalla de tu equipo móvil en
+                        caso de accidente.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-12 col-md-12 col-lg-4 mb-4">
+                  <div className="card p-4 b-0 h-100 mt-1">
+                    <div className=" d-middle mb-3">
+                      <img width="140" src={Shield} alt="hurto_simple" />
+                    </div>
+                    <h5>Garantía Extendida</h5>
+                    <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                      <div className="h-75">
+                        <p className="lead fs--18 text-justify">
+                          Esta garantía se extiende por 1 año, la cual empieza
+                          una vez terminado el periodo de la garantía dada por
+                          SAMSUNG ELECTRONICS COLOMBIA S.A. Dicha garantía tiene
+                          las mismas coberturas que la garantía dada por SAMSUNG
+                          ELECTRONICS COLOMBIA S.A.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-12 col-lg-12 mb-4 ml-sm-0 ml-md-0 ml-xl-12 border-0 pr-xl-23 pr-sm-0 pr-md-0">
+                <div className="card p-4 b-0 h-100 flex-lg-row flex-md-column">
+                  <div className=" d-middle mb-3">
+                    <img width="160" src={Claims} alt="daño_total_accidental" />
+                  </div>
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                    <h5 style={{ color: "black" }}>Reclamaciones</h5>
+                    <div className="h-75">
+                      <p className="lead fs--18 text-justify">
+                        Cuenta con una (1) reclamación por un (1) año, desde la
+                        fecha de expedición de la factura de compra.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

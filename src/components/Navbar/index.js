@@ -25,7 +25,6 @@ const Navbar = ({ hideMessage }) => {
               aria-label="Toggle navigation"
               onClick={() => setShow(true)}
             >
-              {console.log(show)}
               <svg
                 style={{ marginTop: 0, width: "70%" }}
                 width="25"
@@ -121,7 +120,7 @@ const Navbar = ({ hideMessage }) => {
                   <ul className="list-unstyled m-0 p-o">
                     <li className="dropdown-item">
                       <Link className="dropdown-link" to="/pospago-5-3">
-                        Proteccion total
+                        Protección total
                       </Link>
                     </li>
                     <li className="dropdown-item">
@@ -152,7 +151,7 @@ const Navbar = ({ hideMessage }) => {
                         className="dropdown-link"
                         to="/soat-asistencia-de-pantalla"
                       >
-                        SOAT Asitencia de pantallla
+                        SOAT Asistencia de pantalla
                       </Link>
                     </li>
                     <li className="dropdown-item">
@@ -170,9 +169,9 @@ const Navbar = ({ hideMessage }) => {
                   href="https://www.acinco.com.co/wp-content/uploads/2018/09/Politica-deprotecciondedatos-min.pdf"
                   target="_blank"
                   rel="noreferrer"
+                  style={{ whiteSpace: "nowrap" }}
                 >
-                  {" "}
-                  Politica de Proteccion
+                  Política de Protección
                 </a>
               </li>
               <li>
@@ -181,9 +180,9 @@ const Navbar = ({ hideMessage }) => {
                   href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/CLAUSULADO-POLIZA-34.pdf"
                   target="_blank"
                   rel="noreferrer"
+                  style={{ whiteSpace: "nowrap" }}
                 >
-                  {" "}
-                  Clausulado Poliza 34
+                  Clausulado Póliza 34
                 </a>
               </li>
             </ul>

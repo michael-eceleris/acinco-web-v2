@@ -28,8 +28,8 @@ const Banner = () => {
                 <span className="font-weight-medium">Seguro por Gama</span>
               </h1>
               <p className="lead mb--0">
-                Este servicio va dirigido a toso los usuarios que tengan un plan
-                postpago en Tigo
+                Este servicio va dirigido a todos los usuarios que tengan un
+                plan pospago en Tigo.
               </p>
               <p className="fs--14">* Aplican términos y condiciones.</p>
             </div>
@@ -39,7 +39,7 @@ const Banner = () => {
               width="300"
               className="img-fluid lazy  "
               src={SmartPhoneGamaAlta}
-              alt="logo_seguro-gama"
+              alt="logo_seguro_gama"
             />
           </div>
         </div>

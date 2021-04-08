@@ -19,6 +19,8 @@ import {
   OPEN_MODAL,
   CLOSE_MODAL,
   LOADING,
+  SEND_CONTACT_US,
+  ERROR_CONTACT_US,
 } from "../../types";
 import clienteAxios from "../../config/axios";
 
@@ -39,6 +41,7 @@ const FormState = (props) => {
     isLoading: false,
     maxSizeDoc: 4000000,
     product: null,
+    submitContact: null,
   };
   const [state, dispatch] = useReducer(formReducer, initialState);
 
@@ -203,6 +206,22 @@ const FormState = (props) => {
       });
     }
   };
+
+  const contactUs = async (data) => {
+    try {
+      const result = await clienteAxios.post("/api/v1/shared/contactar", data);
+      console.log(result);
+      dispatch({
+        type: SEND_CONTACT_US,
+        payload: result,
+      });
+    } catch (error) {
+      dispatch({
+        type: ERROR_CONTACT_US,
+        payload: error.response,
+      });
+    }
+  };
   const nextStep = (id) => {
     dispatch({
       type: NEXT_STEP,
@@ -253,6 +272,7 @@ const FormState = (props) => {
         isLoading: state.isLoading,
         maxSizeDoc: state.maxSizeDoc,
         product: state.product,
+        submitContact: state.submitContact,
         selectDevice,
         selectPlan,
         selectCoverage,
@@ -269,6 +289,7 @@ const FormState = (props) => {
         openModal,
         closeModal,
         loading,
+        contactUs,
       }}
     >
       {props.children}

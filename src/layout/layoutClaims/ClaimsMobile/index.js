@@ -15,7 +15,7 @@ const ClaimsMobile = () => {
               </h6>
             </div>
           </div>
-          <div className="portlet-body m-auto ">
+          <div className="portlet-body m-auto d-flex justify-content-around ">
             <a
               href="https://itunes.apple.com/co/app/protecci%C3%B3n-m%C3%B3vil-seguro/id1116274602?mt=8"
               className="btn btn-dark rounded-xl transition-hover-top d-flex btncustom w--150 m-auto"
@@ -30,7 +30,7 @@ const ClaimsMobile = () => {
               />
               <span className="text-align-start w--100">
                 <span className="d-block line-height-1 fs--13">
-                  Download on the
+                  Disponible en
                 </span>
                 <span className="d-block line-height-1 fs--18 pt-1">
                   App Store
@@ -46,12 +46,13 @@ const ClaimsMobile = () => {
               <img
                 src={IconGooglePlayStore}
                 height="30"
-                className=" mr-2"
+                className="mr-2"
+
                 alt="logo_play_store"
               />
               <span className="text-align-start w--100">
                 <span className="d-block line-height-1 fs--13">
-                  Download on the
+                  Disponible en
                 </span>
                 <span className="d-block line-height-1 fs--18 pt-1">
                   Play Store

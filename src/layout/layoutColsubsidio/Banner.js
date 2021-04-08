@@ -1,5 +1,5 @@
 import React from "react";
-import MobileSecure from "../../assets/images/mobile.png";
+import MobileSecure from "../../assets/images/home.png";
 
 const Banner = () => {
   return (
@@ -41,7 +41,7 @@ const Banner = () => {
               width="300"
               className="img-fluid lazy "
               src={MobileSecure}
-              alt="logo_total_proteccion"
+              alt="logo_colsubsido"
             />
           </div>
         </div>

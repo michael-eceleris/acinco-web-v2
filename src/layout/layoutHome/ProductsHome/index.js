@@ -60,11 +60,11 @@ const ProductsHome = () => {
                       </div>{" "}
                       Reparación de Pantalla
                     </div>
-                    <div className="clearfix mb-2">
+                    <div className="clearfix mb-2 d-flex">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
                         <i className="fi fi-check"></i>
-                      </div>{" "}
-                      Recobro hasta del 70%
+                      </div>
+                      Cobertura hasta del 70% de tu equipo
                     </div>
                   </div>
                   <div className="h-25">
@@ -92,8 +92,8 @@ const ProductsHome = () => {
                 <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
                   <div className="h-75">
                     <p className="lead fs--18">
-                      Puedes armar tu plan de acuerdo a tus necesidades, ten en
-                      cuenta estas coberturas:
+                      El plan Smart App, dirigido a clientes Tigo, te ofrece las
+                      siguientes coberturas:
                     </p>
                     <div className="clearfix mb-2">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
@@ -116,11 +116,11 @@ const ProductsHome = () => {
                       Daño Total Accidental
                     </div>
 
-                    <div className="clearfix mb-2">
+                    <div className="clearfix mb-2 d-flex">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
                         <i className="fi fi-check"></i>
                       </div>{" "}
-                      Recobro hasta del 65%
+                      Cobertura hasta del 65% de tu equipo
                     </div>
                   </div>
                   <div className="h-25">
@@ -147,16 +147,9 @@ const ProductsHome = () => {
                 <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
                   <div className="h-75">
                     <p className="lead fs--18">
-                      Tienes un celular samgung, mira estas coberturas que te
-                      pueden ayudar:
+                      Tienes un celular Samsung (referencias seleccionadas),
+                      mira estas coberturas que te pueden ayudar:
                     </p>
-                    <div className="clearfix mb-2">
-                      <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
-                        <i className="fi fi-check"></i>
-                      </div>{" "}
-                      Te cubre Samsung Galaxy Fold
-                    </div>
-
                     <div className="clearfix mb-2">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
                         <i className="fi fi-check"></i>
@@ -171,11 +164,11 @@ const ProductsHome = () => {
                       Garantía Extendida
                     </div>
 
-                    <div className="clearfix mb-2">
+                    <div className="clearfix mb-2 d-flex">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
                         <i className="fi fi-check"></i>
                       </div>{" "}
-                      Recobro hasta del 80%
+                      Cobertura hasta del 80% de tu equipo
                     </div>
                   </div>
                   <div className="h-25">
@@ -193,7 +186,7 @@ const ProductsHome = () => {
         </div>
         <div className="bg-white pt-4 rounded overflow-hidden mt--30">
           <div className="row col-border">
-            <div className="col-12 col-md-12 col-lg-4 mb-4">
+            <div className="col-12 col-md-6 col-lg-4 mb-4">
               <div className="card p-4 b-0 h-100">
                 <div className="mt-3 mb-5 d-middle">
                   <img height="120" src={PhoneRepair} alt="samsung" />
@@ -204,23 +197,17 @@ const ProductsHome = () => {
                     <p className="lead fs--18">
                       Protege la pantalla de tu celular, mira estas coberturas:
                     </p>
-                    <div className="clearfix mb-2">
+                    <div className="clearfix mb-2 d-flex">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
                         <i className="fi fi-check"></i>
-                      </div>{" "}
-                      Reparación de Pantalla
+                      </div>
+                      Reparación de Pantalla en caso de accidente
                     </div>
-                    <div className="clearfix mb-2">
+                    <div className="clearfix mb-2 d-flex">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
                         <i className="fi fi-check"></i>
                       </div>{" "}
-                      Te cubre solamente la pantalla
-                    </div>
-                    <div className="clearfix mb-2">
-                      <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
-                        <i className="fi fi-check"></i>
-                      </div>{" "}
-                      Recobro hasta del 70%
+                      Cobertura hasta del 70% de tu equipo
                     </div>
                   </div>
                   <div className="h-25">
@@ -237,7 +224,7 @@ const ProductsHome = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-12 col-lg-4 mb-4">
+            <div className="col-12 col-md-6 col-lg-4 mb-4">
               <div className="card p-4 b-0 h-100">
                 <div className="mt-3 mb-5 d-middle">
                   <img height="120" src={SmartPhoneGamaAlta} alt="samsung" />
@@ -246,8 +233,8 @@ const ProductsHome = () => {
                 <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
                   <div className="h-75">
                     <p className="lead fs--18">
-                      Se ajusta a las gama de tu celular, mira las cobertura que
-                      trae
+                      Se ajusta a la gama de tu celular, mira las coberturas que
+                      trae:
                     </p>
                     <div className="clearfix mb-2">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
@@ -270,11 +257,11 @@ const ProductsHome = () => {
                       Daño Total Accidental
                     </div>
 
-                    <div className="clearfix mb-2">
+                    <div className="clearfix mb-2 d-flex">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
                         <i className="fi fi-check"></i>
                       </div>{" "}
-                      Solo pagarás el 35% del evaluo
+                      Cobertura hasta del 65% de tu equipo
                     </div>
                   </div>
                   <div className="h-25">
@@ -302,8 +289,8 @@ const ProductsHome = () => {
                 <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
                   <div className="h-75">
                     <p className="lead fs--18">
-                      Adquiriste el SOAT con AXA Colpatria Seguros, este plan es
-                      ideal para ti, mira las coberturas que tiene
+                      Si adquiriste el SOAT con AXA Colpatria Seguros, este plan
+                      es ideal para ti, mira las coberturas que tiene:
                     </p>
                     <div className="clearfix mb-2">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
@@ -311,15 +298,7 @@ const ProductsHome = () => {
                       </div>{" "}
                       Fractura de pantalla
                     </div>
-
-                    <div className="clearfix mb-2">
-                      <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
-                        <i className="fi fi-check"></i>
-                      </div>{" "}
-                      Te cubre solamente la pantalla
-                    </div>
-
-                    <div className="clearfix mb-2">
+                    <div className="clearfix mb-2 d-flex">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
                         <i className="fi fi-check"></i>
                       </div>{" "}

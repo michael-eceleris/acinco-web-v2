@@ -74,7 +74,7 @@ html {
   line-height: 5rem;
   z-index: 2;
 }
-@media screen and (min-height: 700px) {
+@media screen and (min-height: 766px) {
   .sct_doc {
     height: 600px;
   }
@@ -226,5 +226,42 @@ svg {
   }
   100% {
     stroke-dashoffset: 900;
+  }
+}
+
+@media (max-width: 766px) {
+  .modal-title {
+    padding: 0;
+  }
+  ol {
+    padding-left: 20px !important;
+    margin-left: 0 !important;
+  }
+  ul {
+    padding-left: 20px !important;
+    margin-left: 0 !important;
+  }
+  .nav_doc h2 {
+    font-size: 15px !important;
+  }
+  .nav_doc {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn_doc {
+    width: 100%;
+  }
+  .sct_doc {
+    padding-top: 0;
+  }
+  .info {
+    padding-top: 40px !important;
+  }
+  .modal-body {
+    padding: 13px 0px;
+  }
+  .modal-header {
+    justify-content: space-between;
+    padding: 0;
   }
 }

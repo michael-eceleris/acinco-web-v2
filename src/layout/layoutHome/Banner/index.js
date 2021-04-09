@@ -26,14 +26,14 @@ const Banner = () => {
             >
               <div className="mb-5 ml--20 mt-4">
                 <h1 className="font-weight-light mb-2">
-                  Bienvenido a <br />
+                  Bienvenido a{" "}
                   <span className="text-primary font-weight-medium">
-                    Asegura tu celular
+                    Acinco
                   </span>
                 </h1>
                 <p className="lead">
                   Aquí conocerás nuestros productos que tenemos disponibles para
-                  ti. Podrás obtener información y hacer tu reclamación.
+                  ti, podrás obtener información.
                 </p>
               </div>
             </div>

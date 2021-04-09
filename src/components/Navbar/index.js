@@ -105,14 +105,15 @@ const Navbar = ({ hideMessage }) => {
                 </Link>
               </li>
               <li className="nav-item dropdown active">
-                <p
+                <Link
                   className="nav-link dropdown-toggle"
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
+                  to="/productos"
                 >
                   Nuestros Productos
-                </p>
+                </Link>
                 <div
                   aria-labelledby="mainNavHome"
                   className="dropdown-menu dropdown-menu-clean dropdown-menu-hover"

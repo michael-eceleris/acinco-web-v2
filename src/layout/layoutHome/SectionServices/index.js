@@ -4,6 +4,7 @@ import Merchandising from "../../../assets/icons/merchandising.svg";
 import SearchSiniestros from "../../../assets/icons/Search.svg";
 import Net from "../../../assets/icons/red.svg"
 
+
 const SectionServices = () => {
   return (
     <section className="pt-5 pb-5 mb-3 shadow-xs bg-white">

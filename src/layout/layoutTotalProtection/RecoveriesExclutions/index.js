@@ -48,7 +48,7 @@ const Recoveries = () => {
                     <h3 className="h5 py-3 text-center">
                       ¿A qué equivale ese porcentaje?
                     </h3>
-                    <p className="text-justify">
+                    <p className="text-justify hypens">
                       El porcentaje corresponde a los montos cubiertos por la
                       aseguradora, es decir, el recobro será calculado sobre el
                       precio de venta al momento de la indemnización y en el

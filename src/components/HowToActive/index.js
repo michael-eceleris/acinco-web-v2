@@ -113,9 +113,9 @@ const HowToActive = ({ plan }) => {
               <div className="d-flex mb-3">
                 <div className="w--50 fi mdi-filter_4 fs--25 mt--n6 text-success"></div>
                 <div className="ml-4 mr-4">
-                  <h3 className="h5">Validación</h3>
+                  <h3 className="h5">Validación.</h3>
                   <p className="mb-6 mb-md-8 text-justify">
-                    Una vez validada la información te enviaremos el certificado
+                    Una vez validada la información, te enviaremos el certificado
                     individual de seguros a tu correo electrónico
                     <span className="font-weight-medium">
                       {" "}

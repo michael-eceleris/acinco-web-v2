@@ -30,16 +30,10 @@ const Banner = () => {
                   <span className="text-primary font-weight-medium">
                     Asegura tu celular
                   </span>
-                  {/* ,<br />¡
-                <span className="font-weight-medium fs--30">
-                  Porque tenerlo te costo esfuerzo, asegurarlo te cuesta poco
-                </span>
-                ! */}
                 </h1>
                 <p className="lead">
                   Aquí conocerás nuestros productos que tenemos disponibles para
-                  ti como usuario de Colombia Móvil/Tigo. Podrás obtener
-                  información y hacer tu reclamación .
+                  ti. Podrás obtener información y hacer tu reclamación.
                 </p>
               </div>
             </div>
@@ -48,7 +42,7 @@ const Banner = () => {
                 width="300"
                 className="img-fluid lazy"
                 src={LogoBanner}
-                alt="logo_productos"
+                alt="logo_home"
               />
             </div>
           </div>

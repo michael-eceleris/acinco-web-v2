@@ -21,11 +21,11 @@ const Coverages = () => {
               <div className="col-12 col-md-6 col-lg-3 mb-4">
                 <div className="card p-4 b-0 h-100 mt-1">
                   <div className="d-middle mb-3">
-                    <img width="170" src={Bandit} alt="hurto_calificado" />
+                    <img width="140" src={Bandit} alt="hurto_calificado" />
                   </div>
                   <h5>Hurto Calificado</h5>
                   <div className="card-body pl-0 pr-0 text-gray-600 ">
-                    <p className="lead fs--18 text-justify">
+                    <p className="lead fs--18 text-justify hypens">
                       Apoderarse sin consentimiento de tu bien asegurado con
                       violencia, colocándote en condiciones de indefensión o
                       inferioridad.

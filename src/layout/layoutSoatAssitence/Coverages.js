@@ -14,7 +14,7 @@ const Coverages = () => {
             <h3 className="h3 ml-2 mb-1 mt-2 text-center">Coberturas</h3>
           </div>
           <div className="bg-white pt-1 rounded overflow-hidden">
-            <div className="row col-border">
+            <div className="row justify-content-center">
               <div className="col-12 col-md-12 col-lg-6 mb-4">
                 <div className="card p-4 b-0 h-100 mt-1">
                   <div className=" d-middle mb-3">
@@ -31,13 +31,15 @@ const Coverages = () => {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="row justify-content-center">
               <div className="col-12 col-md-12 col-lg-6 mb-4">
-                <div className="card p-4 b-0 h-100">
-                  <div className=" d-middle mb-3">
-                    <img width="140" src={Claims} alt="reclamaciones" />
+                <div className="card p-4 b-0 h-100 flex-lg-row flex-md-column">
+                  <div className=" d-middle mb-3 mr-4">
+                    <img width="160" src={Claims} alt="reclamaciones" />
                   </div>
-                  <h5>Reclamaciones</h5>
                   <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                    <h5 style={{ color: "black" }}>Reclamaciones</h5>
                     <div className="h-75">
                       <p className="lead fs--18 text-justify">
                         Cuenta con una (1) reclamación durante tres (3) meses

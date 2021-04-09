@@ -39,7 +39,7 @@ const Banner = () => {
               width="300"
               className="img-fluid lazy  "
               src={SmartPhoneGamaAlta}
-              alt="logo_seguro-gama"
+              alt="logo_seguro_gama"
             />
           </div>
         </div>

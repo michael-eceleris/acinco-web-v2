@@ -23,9 +23,9 @@ const HowToActive = () => {
                   </p>
                 </div>
               </div>
-              <div className="d-flex mb-3">
-                <div className="w--50 fi mdi-filter_2 fs--25 mt--n6 text-success"></div>
-                <div className="d-flex row ml--1">
+              <div className="d-flex mb-3 mt-md-5 mt-xl-0">
+                <div className="w--50 fi mdi-filter_2 fs--25 mt--n6 text-success pt-md-3 pt-xl-0"></div>
+                <div className="d-flex row ml--1 pt-md-3 pt-xl-0">
                   <div className="ml-4 mr-4">
                     <h3 className="h5">Descarga la app.</h3>
                     <p className="mb-2">
@@ -115,7 +115,7 @@ const HowToActive = () => {
                 <div className="w--50 fi mdi-filter_4 fs--25 mt--n6 text-success"></div>
 
                 <div className="ml-4 mr-4">
-                  <h3 className="h5">Confirmación y Validación</h3>
+                  <h3 className="h5">Confirmación y Validación.</h3>
                   <p className="mb-6 mb-md-8">
                     Te enviaremos un mensaje de texto (SMS) al número que
                     registraste y confirma. Una vez validada la información te

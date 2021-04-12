@@ -1,199 +1,327 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SmartPhone from "../../../assets/icons/telefono-inteligente.svg";
+import PhoneRepair from "../../../assets/icons/phone-repair-icon.svg";
+import MobileSecure from "../../../assets/icons/mobile-secure.svg";
+import LogoSamgung from "../../../assets/icons/samsung.svg";
+import LogoAxaColpatria from "../../../assets/icons/logo-axa-colpatria.svg";
+import SmartPhoneGamaAlta from "../../../assets/icons/mobile-payment.svg";
 
 const Products = () => {
   return (
     <>
-      <section className="bg-theme-color-light">
+      <section className=" bg-gray-100">
         <div className="container">
-          <div className="table-responsive">
-            <h3 className="fs--50  mb-2 lead">Nuestros Productos</h3>
-            <p className="lead fs--20">
-              Puedes observar la diferentes coberturas que tenemos en cada uno
-              de nuestros planes, para que asi mismo escogas el que más se
-              adecue a tus necesidades. En la parte superior encontrarás
-              nuestros planes, y en el costado izquierdo las coberturas con una
-              descripción de lo que significa cada una
-            </p>
-            <table className="table table-hover table-align-middle font-weight-medium text-center">
-              <thead>
-                <tr>
-                  <th>&nbsp;</th>
-                  <th
-                    colSpan="4"
-                    className="font-weight-medium text-center text-primary fs--20 w--100"
-                  >
-                    PLANES
-                  </th>
-                </tr>
-                <tr>
-                  <th className="text-align-start">
-                    Coberturas
-                    <small className="d-block fs--13 text-muted">
-                      * Aplicán términos y condiciones.
-                    </small>
-                  </th>
-                  <th className="font-weight-medium text-center text-primary fs--20 w--100">
-                    <span className="d-block w--120 fs--17">
-                      FRACTURA DE PANTALLA
-                    </span>
-                  </th>
-                  <th className="font-weight-medium text-center text-primary fs--20 w--100">
-                    <span className="d-block w--120 fs--17">
-                      SEGURO POR GAMA
-                    </span>
-                  </th>
-                  <th className="font-weight-medium text-center text-primary fs--20 w--100">
-                    <span className="d-block w--120 fs--17">ARMA TU PLAN</span>
-                  </th>
-                  <th className="font-weight-medium text-center text-primary fs--20 w--100">
-                    <span className="d-block w--120 fs--17">
-                      PROTECCION TOTAL
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="text-align-start">
-                    Reparación de pantalla
-                    <small className="d-block text-muted">
-                      Fractura de pantalla causada por un accidente
-                    </small>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-align-start">
-                    Hurto Calificado
-                    <small className="d-block text-muted">
-                      Apoderarse sin consentimiento de tu bien asegurado con
-                      violencia
-                    </small>
-                  </td>
-                  <td>
-                    <i className="fi mdi-close fs--25 text-danger"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-align-start">
-                    Hurto Simple
-                    <small className="d-block text-muted">
-                      Apoderarse sin consentimiento de tu bien asegurado sin
-                      violencia
-                    </small>
-                  </td>
-                  <td>
-                    <i className="fi mdi-close fs--25 text-danger"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-align-start">
-                    Daño Total Accidental
-                    <small className="d-block text-muted">
-                      Daño fisico causado por un accidente impidiendo el
-                      funcionamiento del equipo
-                    </small>
-                  </td>
-                  <td>
-                    <i className="fi mdi-close fs--25 text-danger"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-align-start">
-                    No cuenta con cantidad de reclamaciones
-                    <small className="d-block text-muted">
-                      No tiene un límite de reclamaciones que puedas realizar
-                    </small>
-                  </td>
-                  <td>
-                    <i className="fi mdi-close fs--25 text-danger"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-close fs--25 text-danger"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-close fs--25 text-danger"></i>
-                  </td>
-                  <td>
-                    <i className="fi mdi-check fs--25 text-primary"></i>
-                  </td>
-                </tr>
-                <tr class="font-weight-normal">
-                  <td>&nbsp;</td>
-                  <td class="text-gray-500 font-weight-normal fs--13">
-                    <Link
-                      className="btn btn-primary btn-pill mb-1"
-                      to="/pospago-5-2"
-                    >
-                      Ver Más
-                    </Link>
-                  </td>
-                  <td class="text-gray-500 font-weight-normal fs--13">
-                    <Link
-                      className="btn btn-primary btn-pill mb-1"
-                      to="/seguro-gamas"
-                    >
-                      Ver Más
-                    </Link>
-                  </td>
-                  <td class="text-gray-500 font-weight-normal fs--13">
-                    <Link
-                      className="btn btn-primary btn-pill mb-1"
-                      to="/arma-tu-plan-smart-app"
-                    >
-                      Ver Más
-                    </Link>
-                  </td>
-                  <td class="text-gray-500 font-weight-normal fs--13">
-                    <Link
-                      className="btn btn-primary btn-pill mb-1"
-                      to="/pospago-5-3"
-                    >
-                      Ver Más
-                    </Link>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <h3 className="fs--50  mb-2 lead text-center mb-4">
+            Nuestros Productos
+          </h3>
+          <p className="lead fs--20 mb-5">
+            Puedes observar la diferentes coberturas que tenemos en cada uno de
+            nuestros planes, para que asi mismo escogas el que más se adecue a
+            tus necesidades.
+          </p>
+          <div className="bg-white pt-4 rounded overflow-hidden">
+            <div className="row col-border">
+              <div className="col-12 col-md-12 col-lg-4 mb-4">
+                <div className="card p-4 b-0 h-100">
+                  <div className="mt-3 mb-5 d-middle">
+                    <img height="120" src={MobileSecure} alt="mobile" />
+                  </div>
+                  <h4>Protección Total</h4>
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                    <div className="h-75">
+                      <p className="lead fs--18">
+                        Esta es la cobertura que te ofrece el plan Protección
+                        Total:
+                      </p>
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Hurto Calificado
+                      </div>
+
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Hurto Simple
+                      </div>
+
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Daño Total
+                      </div>
+
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Reparación de Pantalla
+                      </div>
+                      <div className="clearfix mb-2 d-flex">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>
+                        Cobertura hasta del 70% de tu equipo
+                      </div>
+                    </div>
+                    <div className="h-25">
+                      <hr />
+                      <div className="d-flex justify-content-center">
+                        <Link
+                          className="btn btn-lg btn-primary mb-2"
+                          to="/pospago-5-3"
+                        >
+                          Conocer más{" "}
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-12 col-md-12 col-lg-4 mb-4">
+                <div className="card p-4 b-0 h-100 mt-1">
+                  <div className="mt-3 mb-5 d-middle">
+                    <img height="120" src={SmartPhone} alt="mobile_2" />
+                  </div>
+                  <h4>Arma tu Plan - Smart App </h4>
+
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                    <div className="h-75">
+                      <p className="lead fs--18">
+                        El plan Smart App, dirigido a clientes Tigo, te ofrece
+                        las siguientes coberturas:
+                      </p>
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Hurto Calificado
+                      </div>
+
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Hurto Simple
+                      </div>
+
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Daño Total Accidental
+                      </div>
+
+                      <div className="clearfix mb-2 d-flex">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Cobertura hasta del 65% de tu equipo
+                      </div>
+                    </div>
+                    <div className="h-25">
+                      <hr />
+                      <div className="d-flex justify-content-center">
+                        <Link
+                          className="btn btn-primary btn-lg"
+                          to="/arma-tu-plan-smart-app"
+                        >
+                          Conocer más
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-12 col-md-12 col-lg-4 mb-4">
+                <div className="card p-4 b-0 h-100">
+                  <div className="mt-3 mb-3 d-middle">
+                    <img height="150" src={LogoSamgung} alt="samsung" />
+                  </div>
+                  <h4>Samsung</h4>
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                    <div className="h-75">
+                      <p className="lead fs--18">
+                        Tienes un celular Samsung (referencias seleccionadas),
+                        mira estas coberturas que te pueden ayudar:
+                      </p>
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Fractura de Pantalla
+                      </div>
+
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Garantía Extendida
+                      </div>
+
+                      <div className="clearfix mb-2 d-flex">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Cobertura hasta del 80% de tu equipo
+                      </div>
+                    </div>
+                    <div className="h-25">
+                      <hr />
+                      <div className="d-flex justify-content-center">
+                        <Link className="btn btn-primary btn-lg" to="/samsung">
+                          Conocer más
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white pt-4 rounded overflow-hidden mt--30">
+            <div className="row col-border">
+              <div className="col-12 col-md-12 col-lg-4 mb-4">
+                <div className="card p-4 b-0 h-100">
+                  <div className="mt-3 mb-5 d-middle">
+                    <img height="120" src={PhoneRepair} alt="samsung" />
+                  </div>
+                  <h4>Fractura de Pantalla</h4>
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                    <div className="h-75">
+                      <p className="lead fs--18">
+                        Protege la pantalla de tu celular, mira estas
+                        coberturas:
+                      </p>
+                      <div className="clearfix mb-2 d-flex">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>
+                        Reparación de Pantalla en caso de accidente
+                      </div>
+                      <div className="clearfix mb-2 d-flex">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Cobertura hasta del 70% de tu equipo
+                      </div>
+                    </div>
+                    <div className="h-25">
+                      <hr />
+                      <div className="d-flex justify-content-center">
+                        <Link
+                          className="btn btn-primary btn-lg"
+                          to="/pospago-5-2"
+                        >
+                          Conocer más
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-12 col-lg-4 mb-4">
+                <div className="card p-4 b-0 h-100">
+                  <div className="mt-3 mb-5 d-middle">
+                    <img height="120" src={SmartPhoneGamaAlta} alt="samsung" />
+                  </div>
+                  <h4>Seguro por Gama</h4>
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                    <div className="h-75">
+                      <p className="lead fs--18">
+                        Se ajusta a la gama de tu celular, mira las coberturas
+                        que trae:
+                      </p>
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Hurto Calificado
+                      </div>
+
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Hurto Simple
+                      </div>
+
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Daño Total Accidental
+                      </div>
+
+                      <div className="clearfix mb-2 d-flex">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Cobertura hasta del 65% de tu equipo
+                      </div>
+                    </div>
+                    <div className="h-25">
+                      <hr />
+                      <div className="d-flex justify-content-center">
+                        <Link
+                          className="btn btn-primary btn-lg"
+                          to="/seguro-gamas"
+                        >
+                          Conocer más
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-12 col-lg-4 mb-4">
+                <div className="card p-4 b-0 h-100">
+                  <div className="mt-3 mb-5 d-middle">
+                    <img height="120" src={LogoAxaColpatria} alt="samsung" />
+                  </div>
+
+                  <h4>SOAT Asistencia de Pantalla</h4>
+
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                    <div className="h-75">
+                      <p className="lead fs--18">
+                        Si adquiriste el SOAT con AXA Colpatria Seguros, este
+                        plan es ideal para ti, mira las coberturas que tiene:
+                      </p>
+                      <div className="clearfix mb-2">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Fractura de pantalla
+                      </div>
+                      <div className="clearfix mb-2 d-flex">
+                        <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
+                          <i className="fi fi-check"></i>
+                        </div>{" "}
+                        Solo pagarás el 35% del arreglo
+                      </div>
+                    </div>
+                    <div className="h-25">
+                      <hr />
+                      <div className="d-flex justify-content-center">
+                        <Link
+                          className="btn btn-primary btn-lg"
+                          to="/soat-asistencia-de-pantalla"
+                        >
+                          Conocer más
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

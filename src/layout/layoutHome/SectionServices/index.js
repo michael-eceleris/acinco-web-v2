@@ -2,6 +2,8 @@ import React from "react";
 import People from "../../../assets/icons/People.svg";
 import Merchandising from "../../../assets/icons/merchandising.svg";
 import SearchSiniestros from "../../../assets/icons/Search.svg";
+import Net from "../../../assets/icons/red.svg"
+
 
 const SectionServices = () => {
   return (
@@ -242,7 +244,7 @@ const SectionServices = () => {
               </p>
             </div>
           </div>
-          {/* <div className="col-12 col-lg-4 mb-4 d-flex">
+          <div className="col-12 col-lg-4 mb-4 d-flex">
             <div className="w--50">
               <img src={Net} width="60" className="mt--30" alt="red-servicio" />
             </div>
@@ -260,7 +262,7 @@ const SectionServices = () => {
                 reparación de equipos móviles y pantallas.
               </p>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </section>

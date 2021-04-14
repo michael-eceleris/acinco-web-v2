@@ -1,26 +1,17 @@
 import "./App.css";
+import { useState } from "react";
 import AuthState from "./context/auth/authState";
 import FormState from "./context/form/formState";
 import Navbar from "./components/Navbar";
 import ScrollTop from "./config/scrolltop";
-import Home from "./pages/Home";
 import Claims from "./pages/Claims";
-import TotalProtection from "./pages/TotalProtection";
-import ScreenFracture from "./pages/ScreenFracture";
-import MakeYourPlan from "./pages/MakeYourPlan";
-import SafeByGama from "./pages/SafeByGama";
-import Samsung from "./pages/Samsung";
-import ScreenAssistenceSoat from "./pages/ScreenAssistenceSoat";
-import AssistenceColsubsidio from "./pages/AssistenceColsubsidio";
-import SoatDetail from "./pages/SoatDetail";
-import TermAndConditions from "./components/TermsAndConditions/TermsAndConditions";
-import TermAndConditionsTwo from "./components/TermsAndConditions/TermsAndConditionsTwo";
-import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndConditionsSamsung";
+import Message from "./components/Modal/message/messaje";
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
+  const [hideMessage, setHideMessage] = useState(true);
   return (
     <FormState>
       <AuthState>

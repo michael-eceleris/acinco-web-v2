@@ -21,67 +21,78 @@ const Documents = ({ setError }) => {
     setNoRequiredDoc(doc.length);
   }, [documents]);
   const onLoad = (e) => {
-    const { files, name, id } = e.target;
-    const { size, type } = files[0];
-    documents.find((doc, index) =>
-      doc.id === parseInt(id)
-        ? (documents[index] = {
-            id: doc.id,
-            nombre_documento_save: doc.nombre_documento_save,
-            files: files[0],
-            nameFile: files[0].name,
-            required: doc.required,
-            error:
-              size > maxSizeDoc
-                ? "Excediste el tamaño permitido de 4MB"
-                : type !== "application/pdf" && type !== "image/jpeg"
-                ? "Error el tipo de documento tiene que ser pdf o jpg"
-                : null,
-          })
-        : null
-    );
-    const actual = document.map((doc) => doc.id).indexOf(id);
-    const required = documentsCoverage.find((doc) => doc.id === parseInt(id));
-    if (
-      size > maxSizeDoc ||
-      (type !== "application/pdf" && type !== "image/jpeg")
-    ) {
-      setDocument([...document]);
-    } else if (document.length === documentsCoverage.length || actual !== -1) {
-      document.splice(actual, 1);
-      setDocument([
-        ...document,
-        {
-          id,
-          nombre_documento_save: name,
-          files: files[0],
-          nameFile: files[0].name,
-          required: required.required,
-          error:
-            size > maxSizeDoc
-              ? "Excediste el tamaño permitido de 4MB"
-              : type !== "application/pdf" && type !== "image/jpeg"
-              ? "Error el tipo de documento tiene que ser pdf o jpg"
-              : null,
-        },
-      ]);
-    } else {
-      setDocument([
-        ...document,
-        {
-          id,
-          nombre_documento_save: name,
-          files: files[0],
-          nameFile: files[0].name,
-          required: required.required,
-          error:
-            size > maxSizeDoc
-              ? "Excediste el tamaño permitido de 4MB"
-              : type !== "application/pdf" && type !== "image/jpeg"
-              ? "Error el tipo de documento tiene que ser pdf o jpg"
-              : null,
-        },
-      ]);
+    if (e.target) {
+      const { files, name, id } = e.target;
+      if (files.length > 0) {
+        const { size, type } = files[0];
+        documents.find((doc, index) =>
+          doc.id === parseInt(id)
+            ? (documents[index] = {
+                id: doc.id,
+                nombre_documento_save: doc.nombre_documento_save,
+                files: files[0],
+                nameFile: files[0].name,
+                required: doc.required,
+                error:
+                  size > maxSizeDoc
+                    ? "Excediste el tamaño permitido de 4MB"
+                    : type !== "application/pdf" && type !== "image/jpeg"
+                    ? "Error el tipo de documento tiene que ser pdf o jpg"
+                    : null,
+              })
+            : null
+        );
+        const actual = document.map((doc) => doc.id).indexOf(id);
+        const required = documentsCoverage.find(
+          (doc) => doc.id === parseInt(id)
+        );
+        if (
+          size > maxSizeDoc ||
+          (type !== "application/pdf" && type !== "image/jpeg")
+        ) {
+          setDocument([...document]);
+        } else if (
+          document.length === documentsCoverage.length ||
+          actual !== -1
+        ) {
+          document.splice(actual, 1);
+          setDocument([
+            ...document,
+            {
+              id,
+              nombre_documento_save: name,
+              files: files[0],
+              nameFile: files[0].name,
+              required: required.required,
+              error:
+                size > maxSizeDoc
+                  ? "Excediste el tamaño permitido de 4MB"
+                  : type !== "application/pdf" && type !== "image/jpeg"
+                  ? "Error el tipo de documento tiene que ser pdf o jpg"
+                  : null,
+            },
+          ]);
+        } else {
+          setDocument([
+            ...document,
+            {
+              id,
+              nombre_documento_save: name,
+              files: files[0],
+              nameFile: files[0].name,
+              required: required.required,
+              error:
+                size > maxSizeDoc
+                  ? "Excediste el tamaño permitido de 4MB"
+                  : type !== "application/pdf" && type !== "image/jpeg"
+                  ? "Error el tipo de documento tiene que ser pdf o jpg"
+                  : null,
+            },
+          ]);
+        }
+      } else {
+        setDocument([...document]);
+      }
     }
   };
   const handleNextStep = () => {

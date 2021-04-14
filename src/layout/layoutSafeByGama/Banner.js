@@ -19,7 +19,7 @@ const Banner = () => {
       <div className="container min-h75vh d-middle pt-5">
         <div className="row text-center-xs">
           <div
-            className="col-12 col-md-6 order-2 order-md-1 pb-5"
+            className="col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-3"
             data-aos="fade-in"
             data-aos-delay="0"
           >

@@ -1,8 +1,14 @@
+import "date-fns";
 import React, { useState, useContext, useEffect } from "react";
 import FormContext from "../context/form/formContext";
 import clienteAxios from "../config/axios";
 import DropdownFilter from "./Dropdown/DropdownFilter";
 import Dropdown from "./Dropdown/Dropdown";
+import DateFnsUtils from "@date-io/date-fns";
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker,
+} from "@material-ui/pickers";
 
 const MoreInfo = ({ setError, error }) => {
   const formContext = useContext(FormContext);
@@ -36,7 +42,7 @@ const MoreInfo = ({ setError, error }) => {
   }
   const actualDate = `${date.getFullYear()}-${month}${
     date.getMonth() + 1
-  }-${day}${date.getDate()}`;
+  }-${day}${date.getDate()} `;
 
   useEffect(() => {
     const getGenre = async () => {
@@ -99,25 +105,16 @@ const MoreInfo = ({ setError, error }) => {
   };
 
   const handleChangeDate = (e) => {
-    e.preventDefault();
-    if (e.target.value > actualDate) {
+    if (e === "Invalid Date" || e.toISOString().substring(0, 10) > actualDate) {
       setErrorDate(true);
     } else {
-      setDateActual(e.target.value);
+      let date = e.toISOString().substring(0, 10);
+      setDateActual(date);
       setErrorDate(false);
     }
   };
 
   const handleNextStep = () => {
-    selectMoreInfo({
-      mensaje_ticket: messageActual,
-      linea_siniestro_one: phoneNumber,
-      fecha_siniestro: dateActual,
-      ciudad_siniestro: cityActual,
-      nombre_siniestro: cityNameActual,
-      genero_reclamante: genderActual,
-      nombre_genero: genderNameActual.name,
-    });
     if (
       messageActual &&
       phoneNumber &&
@@ -128,6 +125,15 @@ const MoreInfo = ({ setError, error }) => {
       genderActual &&
       genderNameActual
     ) {
+      selectMoreInfo({
+        mensaje_ticket: messageActual,
+        linea_siniestro_one: phoneNumber,
+        fecha_siniestro: dateActual,
+        ciudad_siniestro: cityActual,
+        nombre_siniestro: cityNameActual,
+        genero_reclamante: genderActual,
+        nombre_genero: genderNameActual.name,
+      });
       nextStep(4);
       setError(false);
     } else {
@@ -160,7 +166,6 @@ const MoreInfo = ({ setError, error }) => {
           onChange={(val) => handleChangeGenre(val)}
           value={genderNameActual}
         />
-        {console.log(genderNameActual)}
         {error && !genderActual ? (
           <p className="text-danger">* Campo requerido</p>
         ) : errorGender ? (
@@ -182,7 +187,31 @@ const MoreInfo = ({ setError, error }) => {
           <p className="text-danger">* Campo obligatorio</p>
         ) : null}
       </div>
-      <div className="form-label-group mb-4">
+      <div className="form-group mb-4">
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <KeyboardDatePicker
+            clearable
+            format="dd/MM/yyyy"
+            className="form-control"
+            label="Seleccionar fecha en la que ocurrió el siniestro"
+            onChange={handleChangeDate}
+            value={dateActual}
+            maxDate={actualDate}
+            placeholder="dd/mm/aaaa"
+            style={{
+              backgroundColor: "#fff",
+              padding: "0.78rem 0 0.78rem 1rem",
+              border: "1px solid #dde4ea",
+            }}
+          />
+        </MuiPickersUtilsProvider>
+        {error && !dateActual ? (
+          <p className="text-danger">* Campo requerido</p>
+        ) : errorDate ? (
+          <p className="text-danger">* Fecha incorrecta</p>
+        ) : null}
+      </div>
+      {/* <div className="form-label-group mb-4">
         <input
           className="form-control"
           type="date"
@@ -197,7 +226,7 @@ const MoreInfo = ({ setError, error }) => {
         ) : errorDate ? (
           <p className="text-danger">* Fecha incorrecta</p>
         ) : null}
-      </div>
+      </div> */}
       <div className="form-label-group">
         <input
           className="form-control"
@@ -211,7 +240,7 @@ const MoreInfo = ({ setError, error }) => {
           placeholder="Número de línea con la que sucedió el siniestro"
         />
         <label className="fontcustom">
-          Número de línea con la que sucedió 2 el siniestro
+          Número de línea con la que sucedió el siniestro
         </label>
       </div>
       <div className="mb-4 d-flex justify-content-between">

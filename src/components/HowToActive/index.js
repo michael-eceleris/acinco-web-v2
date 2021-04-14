@@ -63,7 +63,7 @@ const HowToActive = ({ plan }) => {
                           className="mr-2"
                           alt="logo_apple"
                         />
-                        <span className="text-align-start w--80">
+                        <span className="text-align-start w--100">
                           <span className="d-block line-height-1 fs--13">
                             Disponible en
                           </span>
@@ -84,7 +84,7 @@ const HowToActive = ({ plan }) => {
                           className=" mr-2"
                           alt="logo_play_store"
                         />
-                        <span className="text-align-start w--80">
+                        <span className="text-align-start w--100">
                           <span className="d-block line-height-1 fs--13">
                             Disponible en
                           </span>

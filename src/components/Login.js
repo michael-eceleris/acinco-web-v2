@@ -65,7 +65,7 @@ const Form = () => {
           >
             <i className="fi fi-close "></i>
           </button>
-          <p>Usuario o contraseña incorrecta. </p>
+          <p>Número de identificación o correo electrónico incorrecto.</p>
           <p className="mb-0">
             Si el problema continua comunicate en Bogotá 4898599, para el resto
             de Colombia 01 8000 513 323 o WhatsApp +57 1 5142355

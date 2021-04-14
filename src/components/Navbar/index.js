@@ -15,7 +15,7 @@ const Navbar = ({ hideMessage }) => {
       <div className={`z-index-99 position-fixed w-100 bg-white ${hide}`}>
         <nav className="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherent">
           <div className="navcustom">
-            {/* <button
+            <button
               className="navbar-toggler ml-1"
               type="button"
               data-toggle="collapse"
@@ -47,7 +47,7 @@ const Navbar = ({ hideMessage }) => {
                   d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"
                 ></path>
               </svg>
-            </button> */}
+            </button>
             <Link class="navbar-brand" to="/">
               <img
                 width="100"
@@ -90,7 +90,7 @@ const Navbar = ({ hideMessage }) => {
                 />
               </Link>
             </div>
-            {/* <ul className="navbar-nav">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link js-ajax" to="/">
                   Inicio
@@ -105,14 +105,15 @@ const Navbar = ({ hideMessage }) => {
                 </Link>
               </li>
               <li className="nav-item dropdown active">
-                <p
+                <Link
                   className="nav-link dropdown-toggle"
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
+                  to="/productos"
                 >
                   Nuestros Productos
-                </p>
+                </Link>
                 <div
                   aria-labelledby="mainNavHome"
                   className="dropdown-menu dropdown-menu-clean dropdown-menu-hover"
@@ -120,7 +121,7 @@ const Navbar = ({ hideMessage }) => {
                   <ul className="list-unstyled m-0 p-o">
                     <li className="dropdown-item">
                       <Link className="dropdown-link" to="/pospago-5-3">
-                        Proteccion total
+                        Protección total
                       </Link>
                     </li>
                     <li className="dropdown-item">
@@ -151,7 +152,7 @@ const Navbar = ({ hideMessage }) => {
                         className="dropdown-link"
                         to="/soat-asistencia-de-pantalla"
                       >
-                        SOAT Asitencia de pantallla
+                        SOAT Asistencia de pantalla
                       </Link>
                     </li>
                     <li className="dropdown-item">
@@ -169,9 +170,9 @@ const Navbar = ({ hideMessage }) => {
                   href="https://www.acinco.com.co/wp-content/uploads/2018/09/Politica-deprotecciondedatos-min.pdf"
                   target="_blank"
                   rel="noreferrer"
+                  style={{ whiteSpace: "nowrap" }}
                 >
-                  {" "}
-                  Politica de Proteccion
+                  Política de Protección
                 </a>
               </li>
               <li>
@@ -180,12 +181,12 @@ const Navbar = ({ hideMessage }) => {
                   href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/CLAUSULADO-POLIZA-34.pdf"
                   target="_blank"
                   rel="noreferrer"
+                  style={{ whiteSpace: "nowrap" }}
                 >
-                  {" "}
-                  Clausulado Poliza 34
+                  Clausulado Póliza 34
                 </a>
               </li>
-            </ul> */}
+            </ul> 
           </div>
         </nav>
       </div>

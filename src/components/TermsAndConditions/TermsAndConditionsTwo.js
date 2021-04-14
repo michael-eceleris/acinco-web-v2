@@ -6,9 +6,15 @@ const TermsAndConditions = (props) => {
     <>
       <section className="bg-white p-5">
         <div className="container">
-          <h1 className="h2 text-center">
-            Términos y Condiciones del Plan {namePlan}
-          </h1>
+          {plan === "colsubsidio" ? (
+            <h1 className="h2 text-center">
+              Términos y Condiciones del Plan <br /> {namePlan}
+            </h1>
+          ) : (
+            <h1 className="h2 text-center">
+              Términos y Condiciones del Plan {namePlan}
+            </h1>
+          )}
         </div>
       </section>
       <section className="pt--50 bg-theme-color-light">
@@ -54,6 +60,15 @@ const TermsAndConditions = (props) => {
                         <span>Condiciones Generales</span>
                       </a>
                     </li>
+                    <li>
+                      <a
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#atencion"
+                      >
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
+                        <span>Atención al Cliente</span>
+                      </a>
+                    </li>
 
                     <li>
                       <a
@@ -72,7 +87,7 @@ const TermsAndConditions = (props) => {
             <div className="col-12 col-lg-8">
               <div className="bg-white p-5 p-4-xs rounded-xl article-format">
                 <h2 id="plan" className="h4 text-primary font-weight-normal">
-                  Información del Plan {namePlan}
+                  {namePlan}
                 </h2>
                 {plan === "colsubsidio" ? (
                   <>
@@ -103,12 +118,22 @@ const TermsAndConditions = (props) => {
                     <p>35% del valor de la reparación de la pantalla</p>
                   </>
                 ) : null}
-                <h2
-                  id="seguro-pantalla"
-                  className="h4 text-primary font-weight-normal"
-                >
-                  Seguro de pantalla
-                </h2>
+                {plan === "soat" ? (
+                  <h2
+                    id="seguro-pantalla"
+                    className="h4 text-primary font-weight-normal"
+                  >
+                    Términos y Condiciones de la Asistencia de Pantalla
+                  </h2>
+                ) : (
+                  <h2
+                    id="seguro-pantalla"
+                    className="h4 text-primary font-weight-normal"
+                  >
+                    Términos y Condiciones de Seguro de pantalla
+                  </h2>
+                )}
+
                 <ul>
                   <li>
                     <p>
@@ -158,17 +183,28 @@ const TermsAndConditions = (props) => {
                   <li>
                     <p>No aplica para equipos comprados en otros países.</p>
                   </li>
-                  <li>
-                    <p>
-                      Al comprar la póliza de hogar, se notificará por medio de
-                      un mensaje de texto la URL en donde se podrá realizar un
-                      registro de su equipo móvil.
-                    </p>
-                  </li>
+                  {plan === "colsubsidio" ? (
+                    <li>
+                      <p>
+                        Al comprar la póliza de hogar, se notificará por medio
+                        de un mensaje de texto la URL en donde se podrá realizar
+                        un registro de su equipo móvil.
+                      </p>
+                    </li>
+                  ) : (
+                    <li>
+                      <p>
+                        Al comprar el Soat, se notificará por medio de un
+                        mensaje de texto la URL en donde se tendrá que realizar
+                        un registro del equipo móvil a asegurar.
+                      </p>
+                    </li>
+                  )}
+
                   <li>
                     <p>
                       Para hacer uso de la asistencia el cliente deberá cancelar
-                      un copago correspondiente al 35% del valor de la
+                      el deducible correspondiente al 35% del valor de la
                       reparación de la pantalla del equipo.
                     </p>
                   </li>
@@ -186,14 +222,24 @@ const TermsAndConditions = (props) => {
                 >
                   Condiciones Generales
                 </h2>
-                <p>
-                  La asistencia de protección de pantalla es un beneficio
-                  otorgado por AXA COLPATRIA SEGUROS S.A., el cual cubre la
-                  rotura accidental de pantalla por 12 (doce) meses a partir de
-                  la fecha de adquisición de la póliza de hogar. Estarán
-                  excluidos del servicio todos aquellos eventos originados,
-                  basados o atribuibles a:
-                </p>
+                {plan === "colsubsidio" ? (
+                  <p>
+                    La asistencia de protección de pantalla es un beneficio
+                    otorgado por AXA COLPATRIA SEGUROS S.A., el cual cubre la
+                    rotura accidental de pantalla por 12 (doce) meses a partir
+                    de la fecha de adquisición de la póliza de hogar. Estarán
+                    excluidos del servicio todos aquellos eventos originados,
+                    basados o atribuibles a:
+                  </p>
+                ) : (
+                  <p>
+                    La asistencia protección de pantalla es un beneficio
+                    provisto por AXA COLPATRIA SEGUROS S.A., el cual cubre la
+                    rotura accidental de pantalla por 3 (tres) meses a partir de
+                    la fecha de adquisición del Soat. Estarán excluidos todos
+                    aquellos eventos originados, basados o atribuibles a:
+                  </p>
+                )}
                 <ul>
                   <li>
                     <p>Lucro cesante, o pérdidas consecuenciales</p>
@@ -211,50 +257,71 @@ const TermsAndConditions = (props) => {
                     </p>
                   </li>
                   <li>
-                    <p>Decomiso o embargo del bien asistido.</p>
+                    <p>Decomiso o embargo del bien asegurado.</p>
                   </li>
                   <li>
                     <p>
                       Pérdidas causadas o resultantes de acciones
                       gubernamentales, tales como confiscación, incautación o
-                      destrucción del bien asistido por orden de autoridad
+                      destrucción del bien asegurado por orden de autoridad
                       gubernamental competente.
                     </p>
                   </li>
                   <li>
                     <p>
                       Pérdidas por fraudes o actos deshonestos de terceros,
-                      tales como clonación y similares.
+                      tales como clonación y similares
                     </p>
                   </li>
                   <li>
                     <p>
-                      Hurto parcial del bien asistido (hurto de sus partes, de
+                      Hurto parcial del bien asegurado (hurto de sus partes, de
                       sus componentes o de sus periféricos).
                     </p>
                   </li>
                   <li>
-                    <p>Extravío total o parcial del bien asistido.</p>
+                    <p>Extravío total o parcial del bien asegurado.</p>
                   </li>
                   <li>
                     <p>Pérdida por desaparición misteriosa.</p>
                   </li>
                   <li>
                     <p>
-                      Pérdidas como consecuencia de que el usuario, o cualquier
-                      persona a quien éste le haya confiado el bien asistido, se
-                      haya desprendido intencionalmente de la misma.
+                      Pérdidas como consecuencia de que el asegurado, o
+                      cualquier persona a quien éste le haya confiado el bien
+                      asegurado, se haya desprendido intencionalmente de la
+                      misma.
                     </p>
                   </li>
                   <li>
                     <p>
                       Pérdidas o daños de elementos considerados accesorios o
-                      periféricos del bien asistido como baterías, audífonos,
+                      periféricos del bien asegurado como baterías, audífonos,
                       manos libres, forros, teclados y cargadores, y accesorios
                       similares.
                     </p>
                   </li>
                 </ul>
+                <h2
+                  id="atencion"
+                  className="h4 text-primary font-weight-normal"
+                >
+                  Atención al Cliente
+                </h2>
+                <p>
+                  La reclamación del servicio de asistencia se puede realizar a
+                  través de la línea 01 8000 513 323 o en Bogotá al 4898599 de
+                  lunes a sábado de 8 am a 6 pm o por medio del chat habilitado
+                  en la siguiente página{" "}
+                  <a
+                    href="http://www.aseguratucelular.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    www.aseguratucelular.com
+                  </a>
+                  .
+                </p>
                 <h2
                   id="documentacion"
                   className="h4 text-primary font-weight-normal"
@@ -264,7 +331,14 @@ const TermsAndConditions = (props) => {
                 <p>
                   Para hacer efectivo el servicio el usuario debe radicar los
                   siguientes documentos por medio de la página web de{" "}
-                  <a href="www.aseguratucelular.com">aseguratucelular</a>
+                  <a
+                    href="http://www.aseguratucelular.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    www.aseguratucelular.com
+                  </a>
+                  .
                 </p>
                 <ul>
                   <li>
@@ -292,7 +366,7 @@ const TermsAndConditions = (props) => {
                 <p>
                   En un máximo de 5 días hábiles de entregar los documentos y
                   haber realizado el pago del copago, A Cinco analizará los
-                  documentos y dará una respuesta, si es pre-aprobado se enviará
+                  documentos y dará una respuesta, si es preaprobado se enviará
                   una orden de reparación para que el equipo sea llevado a
                   cualquier punto Servientrega a nivel nacional para ser
                   trasladado al taller para su reparación o en su defecto en el

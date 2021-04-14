@@ -3,10 +3,15 @@ import "./modal.css";
 import FormContext from "../../context/form/formContext";
 const InfoRequired = () => {
   const formContext = useContext(FormContext);
-  const { showModal, closeModal, submit, product } = formContext;
+  const { showModal, closeModal, submit, product, submitContact } = formContext;
   const showModalLocal =
-    !submit && showModal ? "modal display-block" : "modal display-none";
-  const widthModal = product !== null ? "modal-main w-50" : "modal-main w-75";
+    !submit && showModal && !submitContact
+      ? "modal display-block"
+      : "modal display-none";
+  const widthModal =
+    product !== null
+      ? "modal-main w-50 tablelogin"
+      : "modal-main w-75 tablelogin";
   const formatoReclamacion = (
     <li>
       <p className="text-justify">
@@ -81,7 +86,7 @@ const InfoRequired = () => {
         <li>
           <p className="text-justify">
             Puedes anexar la factura de compra legal del equipo, con esto nos
-            ayudarias con el proceso y asi tener una respuesta pronta.
+            ayudarías con el proceso y así tener una respuesta pronta.
           </p>
         </li>
       </>
@@ -113,7 +118,7 @@ const InfoRequired = () => {
         <li>
           <p className="text-justify">
             Puedes anexar la factura de compra legal del equipo, con esto nos
-            ayudarias con el proceso y asi tener una respuesta pronta.
+            ayudarías con el proceso y así tener una respuesta pronta.
           </p>
         </li>
       </>
@@ -145,7 +150,7 @@ const InfoRequired = () => {
         <li>
           <p className="text-justify">
             Puedes anexar la factura de compra legal del equipo, con esto nos
-            ayudarias con el proceso y asi tener una respuesta pronta.
+            ayudarías con el proceso y así tener una respuesta pronta.
           </p>
         </li>
       </>
@@ -178,7 +183,7 @@ const InfoRequired = () => {
         <li>
           <p className="text-justify">
             Puedes anexar la factura de compra legal del equipo, con esto nos
-            ayudarias con el proceso y asi tener una respuesta pronta.
+            ayudarías con el proceso y así tener una respuesta pronta.
           </p>
         </li>
       </>
@@ -203,11 +208,11 @@ const InfoRequired = () => {
         <div className="modal-header flex-row">
           <div className="m-auto">
             {product !== null ? (
-              <h4 className="text-center">
+              <h4 className="text-center h5-xs">
                 INTRUCCIONES PARA REALIZAR LA RECLAMACIÓN
               </h4>
             ) : (
-              <h3>DOCUMENTACION PRODUCTOS</h3>
+              <h3 className="h6-xs">DOCUMENTACION PRODUCTOS</h3>
             )}
           </div>
           <button className="btn btn-icon" onClick={() => closeModal()}>
@@ -238,7 +243,7 @@ const InfoRequired = () => {
                   </h2>
                 </button>
               </div>
-              <section className="pt-6 pb-4">
+              <section className="pt-6 pb-4 info">
                 <div className="doc">
                   {product.cobertura === "Fractura Pantalla" ? (
                     <ol>
@@ -267,7 +272,7 @@ const InfoRequired = () => {
                   className="btn_doc tablink active-doc"
                   onClick={(e) => openDocs(e, "protecciontotal")}
                 >
-                  <h2 className="h5 font-weight-normal">
+                  <h2 className="h5 font-weight-normal h6-xs">
                     Pospago 5.3 - Protección Total
                   </h2>
                 </button>
@@ -275,7 +280,7 @@ const InfoRequired = () => {
                   className="btn_doc tablink"
                   onClick={(e) => openDocs(e, "fracturapantalla")}
                 >
-                  <h2 className="h5 font-weight-normal">
+                  <h2 className="h5 font-weight-normal h6-xs">
                     Pospago 5.2 – Fractura de Pantalla
                   </h2>
                 </button>
@@ -283,7 +288,7 @@ const InfoRequired = () => {
                   className="btn_doc tablink"
                   onClick={(e) => openDocs(e, "smart")}
                 >
-                  <h2 className="h5 font-weight-normal">
+                  <h2 className="h5 font-weight-normal h6-xs">
                     Arma tu Plan – Smart App
                   </h2>
                 </button>
@@ -291,7 +296,9 @@ const InfoRequired = () => {
                   className="btn_doc tablink "
                   onClick={(e) => openDocs(e, "gamas")}
                 >
-                  <h2 className="h5 font-weight-normal">Seguro por gamas</h2>
+                  <h2 className="h5 font-weight-normal h6-xs">
+                    Seguro por gamas
+                  </h2>
                 </button>
               </div>
               <section className="sct_doc">

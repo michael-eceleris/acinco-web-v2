@@ -6,7 +6,7 @@ import IconTigo from "../../../assets/icons/Logo_Tigo_negro.svg";
 const OurExperience = () => {
   return (
     <>
-      <section className="p-0">
+      <section>
         <div className="container">
           <div className="text-center mb-6">
             <div className="mx-auto max-w-600">
@@ -14,7 +14,7 @@ const OurExperience = () => {
 
               <p className="lead">
                 Contamos con experiencia amplia ofreciendo productos basados en
-                seguros por más de 10 años siendo asi, una empresa con alta
+                seguros por más de 10 años, siendo así, una empresa con alta
                 calidad de servicio.
               </p>
             </div>
@@ -22,7 +22,7 @@ const OurExperience = () => {
 
           <div className="row col-border text-center">
             <div
-              className="col-6 col-md-4 py-5"
+              className="col-12 col-md-4 py-5"
               data-aos="fade-up"
               data-aos-delay="50"
               data-aos-offset="0"
@@ -45,7 +45,7 @@ const OurExperience = () => {
             </div>
 
             <div
-              className="col-6 col-md-4 py-5"
+              className="col-12 col-md-4 py-5"
               data-aos="fade-up"
               data-aos-delay="250"
               data-aos-offset="0"
@@ -58,10 +58,10 @@ const OurExperience = () => {
                   <img src={IconPadlock} width="70" alt="logo_candado" />
                 </div>
 
-                <h3 className="h4">Anti-Fraude</h3>
+                <h3 className="h4">AntiFraude</h3>
 
                 <p className="max-w-250 mx-auto fs--16">
-                  Desarrollamos un Software de calidad, anti fraude y
+                  Desarrollamos un Software de calidad, antifraude y
                   correlacional en el cual hemos mejorado durante los más de 10
                   años de experiencia, garantizando un sistema con altísimo
                   control de fraude.
@@ -70,7 +70,7 @@ const OurExperience = () => {
             </div>
 
             <div
-              className="col-12 col-md-4 py-5 border-top-xs"
+              className="col-12 col-md-4 py-5"
               data-aos="fade-up"
               data-aos-delay="450"
               data-aos-offset="0"

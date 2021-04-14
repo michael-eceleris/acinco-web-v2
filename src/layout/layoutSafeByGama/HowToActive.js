@@ -17,9 +17,9 @@ const HowToActive = () => {
                   <h3 className="h5">
                     Obtén primero un plan pospago y un dispositivo.
                   </h3>
-                  <p className="mb-6 mb-md-8">
+                  <p className="mb-6 mb-md-8 text-justify">
                     Adquiere tu plan y tu dispositivo en una tienda Tigo, ten en
-                    cuenta que te dispositivo debe estar asociado a tu línea
+                    cuenta que este dispositivo debe estar asociado a tu línea
                     principal.
                   </p>
                 </div>
@@ -31,11 +31,11 @@ const HowToActive = () => {
                 <div className="d-flex row ml--1">
                   <div className="ml-4 mr-4">
                     <h3 className="h5">Solicita la activación.</h3>
-                    <p className="mb-2">
-                      Solicita la activación del seguro por gama, para tu
-                      dispositivo ten en cuenta que a partir de la fecha que
-                      adquieras tu dispositivo tienes un periodo maximo de tres
-                      (3) meses para contratar este seguro.
+                    <p className="mb-2 text-justify">
+                      Solicita la activación del seguro por gama, ten en cuenta
+                      que a partir de la fecha que adquieras tu dispositivo
+                      tienes un periodo máximo de tres (3) meses para contratar
+                      este seguro.
                     </p>
                   </div>
                 </div>

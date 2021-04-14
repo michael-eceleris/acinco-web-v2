@@ -19,18 +19,18 @@ const Banner = () => {
       <div className="container min-h75vh d-middle pt-5">
         <div className="row text-center-xs">
           <div
-            className="col-12 col-md-6 order-2 order-md-1 pb-5"
+            className="col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-2"
             data-aos="fade-in"
             data-aos-delay="0"
           >
             <div className="mt-2 ml--10">
-              <h1 className="font-weight-light mb-4">
+              <h1 className="font-weight-light mb-4 h2-md">
                 <span className="font-weight-medium">
                   SOAT Asistencia Pantalla
                 </span>
               </h1>
-              <p className="lead mb--0">
-                Esta dirigido a todos los usuarios que adquieran su Soat con Axa
+              <p className="lead mb--0 h5-md">
+                Está dirigido a todos los usuarios que adquieran su SOAT con Axa
                 Colpatria Seguro
               </p>
               <p className="fs--14">* Aplican términos y condiciones.</p>
@@ -41,7 +41,7 @@ const Banner = () => {
               width="300"
               className="img-fluid lazy "
               src={LogoAxaColpatria}
-              alt="logo_total_proteccion"
+              alt="logo_soat_proteccion"
             />
           </div>
         </div>

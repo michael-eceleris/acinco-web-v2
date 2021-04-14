@@ -20,26 +20,20 @@ const Banner = () => {
         <div className="min-h75vh d-middle pt-5 ">
           <div className="row text-center-xs">
             <div
-              className="col-12 col-md-6 order-2 order-md-1 pb-5"
+              className="col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-5"
               data-aos="fade-in"
               data-aos-delay="0"
             >
               <div className="mb-5 ml--20 mt-4">
                 <h1 className="font-weight-light mb-2">
-                  Bienvenido a <br />
+                  Bienvenido a{" "}
                   <span className="text-primary font-weight-medium">
-                    Asegura tu celular
+                    Acinco
                   </span>
-                  {/* ,<br />¡
-                <span className="font-weight-medium fs--30">
-                  Porque tenerlo te costo esfuerzo, asegurarlo te cuesta poco
-                </span>
-                ! */}
                 </h1>
                 <p className="lead">
-                  Aquí conoceras nuestros productos que tenemos disponibles para
-                  ti como usuario de Colombia Móvil/Tigo. Podrás obtener
-                  información y hacer tu reclamación .
+                  Aquí conocerás nuestros productos que tenemos disponibles para
+                  ti, podrás obtener información.
                 </p>
               </div>
             </div>
@@ -48,7 +42,7 @@ const Banner = () => {
                 width="300"
                 className="img-fluid lazy"
                 src={LogoBanner}
-                alt="logo_productos"
+                alt="logo_home"
               />
             </div>
           </div>

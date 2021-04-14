@@ -24,10 +24,10 @@ const Banner = () => {
             data-aos-delay="0"
           >
             <div className="mt-2 ml--10">
-              <h1 className="font-weight-light mb-4">
+              <h1 className="font-weight-light mb-4 h2-md">
                 <span className="font-weight-medium">Protección Total</span>
               </h1>
-              <p className="lead mb--0">
+              <p className="lead mb--0 h6-md">
                 Este seguro aplica para clientes que adquieren los planes
                 Pospago 5.3, plan Bussiness Combo B2B Voz y SMS Nacional
                 ilimitado +35GB y/o Combo B2B Voz y SMS Nacional ilimitado

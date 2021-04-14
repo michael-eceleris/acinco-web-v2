@@ -21,7 +21,7 @@ const DocumentsLayout = () => {
           >
             <b>instrucciones</b>
           </button>
-          . Ten en cuenta que los documentos que tengan el simbolo (
+          . Ten en cuenta que los documentos que tengan el símbolo (
           <small className="text-red-500 mt--0 fs--15"> * </small>) son
           obligatorios.
         </p>

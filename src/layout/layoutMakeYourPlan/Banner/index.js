@@ -20,23 +20,20 @@ const Banner = () => {
         <div className="container min-h75vh d-middle pt-5">
           <div className="row text-center-xs">
             <div
-              className="col-12 col-md-6 order-2 order-md-1 pb-5"
+              className="col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-4"
               data-aos="fade-in"
               data-aos-delay="0"
             >
-              <div className="mt-5 ml--10">
-                <h1 className="font-weight-light mb-4">
+              <div className="mt-4 ml--10 mb-5">
+                <h1 className="font-weight-light mb-4 h2-md">
                   <span className="font-weight-medium">
                     Arma tu Plan - Smart App
                   </span>
                 </h1>
-                <p className="lead mb--0">
-                  <span className="font-weight-medium">
-                    ¡Arma el plan tu mismo!
-                  </span>{" "}
-                  <br />
-                  Este plan es para ti, que te gusta configurar las cosas a tus
-                  necesidades.
+                <p className="lead h6-md">
+                  Este plan va dirigido a los usuarios Tigo que tengan activo un
+                  Arma tu plan superior a $74.900 y activen la casilla de
+                  Protección Móvil en Smart App
                 </p>
                 <p className="fs--14">* Aplican términos y condiciones.</p>
               </div>
@@ -51,7 +48,6 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <i className="arrow arrow-lg arrow-bottom arrow-center border-primary pb-0 "></i>
       </section>
     </>
   );

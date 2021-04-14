@@ -65,7 +65,7 @@ const Form = () => {
           >
             <i className="fi fi-close "></i>
           </button>
-          <p>Usuario o contraseña incorrecta. </p>
+          <p>Número de identificación o correo electrónico incorrecto.</p>
           <p className="mb-0">
             Si el problema continua comunicate en Bogotá 4898599, para el resto
             de Colombia 01 8000 513 323 o WhatsApp +57 1 5142355
@@ -87,9 +87,9 @@ const Form = () => {
           +57 1 5142355
         </div>
       ) : null}
-      <div className="container p-2 w-50">
-        <h4>Identíficate</h4>
-        <p className="fs--17">Identíficate para saber quien eres</p>
+      <div className="container p-2 w-50 tablelogin">
+        <h4>Identifícate</h4>
+        <p className="fs--17">Identifícate para saber quién eres</p>
         <form onSubmit={handleOnSubmit} className="collapse bs-validate show">
           <div className="form-label-group mb-3  ml-auto mr-auto">
             <input

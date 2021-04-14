@@ -103,10 +103,19 @@ const TermsAndConditions = () => {
                     <li>
                       <a
                         className="nav-link rounded-pill scroll-to py-3"
-                        href="#legales"
+                        href="#generalidades"
                       >
                         <i className="fs--13 fi fi-arrow-end-slim"></i>
-                        <span>Legales de la actividad</span>
+                        <span>Generalidades</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#declaraciones"
+                      >
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
+                        <span>Declaraciones y Autorizaciones</span>
                       </a>
                     </li>
                   </ul>
@@ -117,7 +126,7 @@ const TermsAndConditions = () => {
             <div className="col-12 col-lg-8">
               <div className="bg-white p-5 p-4-xs rounded-xl article-format">
                 <h2 id="plan" className="h4 text-primary font-weight-normal">
-                  Información del Plan Samsung
+                  Samsung
                 </h2>
                 <p>
                   Este producto cubre la reparación de la pantalla en caso de
@@ -128,18 +137,26 @@ const TermsAndConditions = () => {
                   vigencia por fractura de pantalla.
                 </p>
                 <h3 className="h6 text-muted">Vigencia</h3>
-                <p> Seis (6) meses</p>
+                <p> Doce (12) meses</p>
+                <h3 className="h6 text-muted">Cobertura</h3>
+                <ul>
+                  <li>
+                    <p>
+                      Cubre solo una (1) reclamación por año por fractura de
+                      pantalla en caso de accidente.
+                    </p>
+                  </li>
+                  <li>
+                    <p>Un (1) año de garantía extendida</p>
+                  </li>
+                </ul>
                 <h3 className="h6 text-muted">Recobro</h3>
-                <p>
-                  Un recobro por reclamación aprobada, 20% del valor de la
-                  pantalla.
-                </p>
-
+                <p>20% del valor de la reparación de la pantalla.</p>
                 <h2
                   id="seguro-pantalla"
                   className="h4 text-primary font-weight-normal"
                 >
-                  Seguro de pantalla
+                  Términos y Condiciones Seguro de Pantalla
                 </h2>
                 <ul>
                   <li>
@@ -151,10 +168,10 @@ const TermsAndConditions = () => {
                   <li>
                     <p>
                       Aplica únicamente para las referencias seleccionadas:
-                      Samsung Galaxy Note 8, Samsung Galaxy Note 9, Samsung
-                      Galaxy S10, Samsung Galaxy S10+, Samsung Galaxy S10e,
-                      Samsung Galaxy S9, Samsung Galaxy S9+, Samsung Galaxy Note
-                      10, Samsung A80.
+                      Samsung Galaxy Fold, Samsung Galaxy ZFold 2, Samsung
+                      Galaxy ZFlip, Samsung Galaxy S20+, Samsung Galaxy S20,
+                      Samsung Galaxy S21, Samsung Galaxy S21+, Samsung Galaxy
+                      S21 Ultra.
                     </p>
                   </li>
                   <li>
@@ -186,11 +203,12 @@ const TermsAndConditions = () => {
                   Condiciones Generales
                 </h2>
                 <p>
-                  La asistencia de protección de pantalla es un beneficio
-                  otorgado por AXA COLPATRIA SEGUROS S.A., el cual cubre la
-                  rotura accidental de pantalla por 12 (doce) meses a partir de
-                  la fecha de adquisición de la póliza de hogar. Estarán
-                  excluidos del servicio todos aquellos eventos originados,
+                  El seguro protección de pantalla de Samsung Care es un
+                  beneficio tomado por Samsung Electronics Colombia S.A. y
+                  provisto por AXA COLPATRIA SEGUROS S.A., el cual cubre la
+                  rotura accidental de pantalla por 1 (un) evento durante 1 año
+                  a partir de la fecha de expedición de la factura. Estarán
+                  excluidos de la póliza todos aquellos eventos originados,
                   basados o atribuibles a:
                 </p>
                 <ul>
@@ -240,17 +258,47 @@ const TermsAndConditions = () => {
                   </li>
                   <li>
                     <p>
-                      Pérdidas como consecuencia de que el usuario, o cualquier
-                      persona a quien éste le haya confiado el bien asistido, se
-                      haya desprendido intencionalmente de la misma.
+                      Pérdidas como consecuencia de que el asegurado, o
+                      cualquier persona a quien éste le haya confiado el bien
+                      asegurado, se haya desprendido intencionalmente de la
+                      misma.
                     </p>
                   </li>
                   <li>
                     <p>
                       Pérdidas o daños de elementos considerados accesorios o
-                      periféricos del bien asistido como baterías, audífonos,
+                      periféricos del bien asegurado como baterías, audífonos,
                       manos libres, forros, teclados y cargadores, y accesorios
                       similares.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Para más información sobre las condiciones y exclusiones
+                      del seguro ingresa a{" "}
+                      <a
+                        href="https://www.samsung.com/co/offer/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        www.samsung.com.co/offer
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      La reclamación del seguro se puede realizar a través de la
+                      línea 01 8000 513 323 o en Bogotá al 4898599 de lunes a
+                      sábado de 8 am a 6 pm o por medio del siguiente link{" "}
+                      <a
+                        href="http://www.aseguratucelular.com"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        www.aseguratucelular.com
+                      </a>
+                      . Para hacer efectivo el seguro el usuario debe presentar
+                      los siguientes documentos a la aseguradora.
                     </p>
                   </li>
                 </ul>
@@ -263,7 +311,13 @@ const TermsAndConditions = () => {
                 <p>
                   Para hacer efectivo el servicio el usuario debe radicar los
                   siguientes documentos por medio de la página web de{" "}
-                  <a href="www.aseguratucelular.com.">aseguratucelular</a>
+                  <a
+                    href="http://www.aseguratucelular.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    aseguratucelular
+                  </a>
                 </p>
                 <ul>
                   <li>
@@ -294,27 +348,35 @@ const TermsAndConditions = () => {
                       reparación del equipo.
                     </p>
                   </li>
+                  <li>
+                    <p>
+                      En un máximo de 5 días hábiles de entregar los documentos
+                      y haber realizado el pago del deducible, la aseguradora
+                      analizará los documentos y dará una respuesta, si es
+                      preaprobado se enviará una orden de reparación para que el
+                      equipo sea llevado a cualquier punto Servientrega a nivel
+                      nacional para ser trasladado al taller para su reparación.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      El tiempo máximo para reparar la pantalla será de 5 días
+                      hábiles, el equipo será entregado a la dirección indicada
+                      por el cliente.
+                    </p>
+                  </li>
                 </ul>
-                <p>
-                  En un máximo de 5 días hábiles de entregar los documentos y
-                  haber realizado el pago del copago, A Cinco analizará los
-                  documentos y dará una respuesta, si es pre-aprobado se enviará
-                  una orden de reparación para que el equipo sea llevado a
-                  cualquier punto Servientrega a nivel nacional para ser
-                  trasladado al taller para su reparación o en su defecto en el
-                  lugar de domicilio indicado por el cliente.
-                </p>
                 <h2
                   id="plan-extendido"
                   className="h4 text-primary font-weight-normal"
                 >
-                  Información de la Garantía Extendida
+                  Términos y condiciones aplicables a casos de rotura en
+                  pantalla y garantía extendida del equipo Samsung.
                 </h2>
                 <p>
-                  Servicio preferencial para Galaxy Fold denominado GALAXY FOLD
-                  PREMIER SERVICE: Galaxy Fold cuenta con un servicio exclusivo
-                  de atención personalizada, diseñada para ofrecer la mejor
-                  experiencia a los clientes.
+                  Servicio preferencial para PREMIER SERVICE: cuenta con un
+                  servicio exclusivo de atención personalizada, diseñada para
+                  ofrecer la mejor experiencia a los clientes.
                 </p>
                 <h3 className="h6 text-muted">Cobertura</h3>
                 <ul>
@@ -336,16 +398,19 @@ const TermsAndConditions = () => {
                 <p> Del 15 de enero de 2020 al 31 de marzo de 2020.</p>
                 <h3 className="h6 text-muted">Productos Participantes</h3>
                 <p>
-                  Modelo Samsung Galaxy Fold (SM-F900FZKJCOO / SM-F900FZSJCOO).
+                  Modelo Samsung Galaxy Fold Samsung Galaxy ZFold 2, Samsung
+                  Galaxy ZFlip, Samsung Galaxy S20+, Samsung Galaxy S20, Samsung
+                  Galaxy S21, Samsung Galaxy S21+, Samsung Galaxy S21 Ultra.
                   Comprado a través de distribuidores autorizados por Samsung en
-                  Colombia, No aplica para equipos comprados en otros países.
+                  Colombia.
                 </p>
+                <p>No aplica para equipos comprados en otros países.</p>
                 <h3 className="h6 text-muted">Beneficios</h3>
                 <p>
                   <b className="font-weight-medium">
                     Fractura de pantalla por 1 año:{" "}
                   </b>
-                  Si el Galaxy Fold llega a sufrir una rotura accidental de la
+                  Si el equipo llega a sufrir una rotura accidental de la
                   pantalla principal, cuenta con la cobertura de un seguro que
                   cubre 1 ruptura accidental de pantalla durante un año a partir
                   de la fecha de expedición de la factura de compra.
@@ -372,15 +437,14 @@ const TermsAndConditions = () => {
                 >
                   Condiciones Generales
                 </h2>
-
                 <ul>
                   <li>
                     <p>
-                      Los usuarios del Galaxy Fold, cuentan con un año adicional
-                      a la garantía dada por SAMSUNG ELECTRONICS COLOMBIA S.A.,
-                      esta garantía será provista por SAMSUNG ELECTRONICS
-                      COLOMBIA S.A. a través del operador ACINCO S.A.S., como
-                      operador especializado.
+                      Los usuarios cuentan con un año adicional a la garantía
+                      dada por SAMSUNG ELECTRONICS COLOMBIA S.A., esta garantía
+                      será provista por SAMSUNG ELECTRONICS COLOMBIA S.A. a
+                      través del operador ACINCO S.A.S., como operador
+                      especializado.
                     </p>
                   </li>
                   <li>
@@ -401,14 +465,14 @@ const TermsAndConditions = () => {
                       el equipo móvil debe ser sometido a una tercera (3)
                       reparación, en lugar de desarrollar la respectiva
                       reparación, procederá a reemplazar el equipo móvil, previo
-                      diagnóstico del centro de servicio..
+                      diagnóstico del centro de servicio.
                     </p>
                   </li>
                   <li>
                     <p>
                       Las reparaciones no son acumulables con las realizadas
                       durante la garantía dada por SAMSUNG ELECTRONICS COLOMBIA
-                      S.A..
+                      S.A.
                     </p>
                   </li>
                   <li>
@@ -469,51 +533,134 @@ const TermsAndConditions = () => {
                   </a>
                   .
                 </p>
-                <h2 id="legales" className="h4 text-primary font-weight-normal">
-                  Legales de la actividad
+                <h2
+                  id="generalidades"
+                  className="h4 text-primary font-weight-normal"
+                >
+                  Generalidades
+                </h2>
+                <ul>
+                  <li>
+                    <p>
+                      En caso de suscribir la póliza, se entiende que este es un
+                      contrato de adhesión, el cual no puede ser modificado en
+                      sus condiciones generales y particulares descritas en este
+                      documento.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Para que la póliza mantenga las condiciones pactadas, es
+                      importante que el consumidor cumpla con las garantías y se
+                      informe la situación de siniestro de acuerdo a los tiempos
+                      y procedimientos definidos en el clausulado general forma
+                      P1648 póliza de seguro equipos de telefonía móvil celular,
+                      que también estarán disponibles en el link{" "}
+                      <a href="http://www.aseguratucelular.com/">
+                        http://www.aseguratucelular.com/
+                      </a>{" "}
+                      y{" "}
+                      <a href="https://www.axacolpatria.co/portal/Portals/0/PDF/Clausulados/clausulado-seguro-equipos-telefonia-movil.pdf">
+                        https://www.axacolpatria.co/portal/Portals/0/PDF/Clausulados/clausulado-seguro-equipos-telefonia-movil.pdf
+                      </a>
+                      .
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      La cobertura de seguro a la que hace referencia este
+                      certificado estará vigente hasta que se incurra en alguna
+                      de las causales de terminación del contrato de seguro
+                      establecidas en las condiciones generales o en la ley.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      El valor asegurado y el monto de la prima, indicados en
+                      este certificado, se incrementarán en cada aniversario de
+                      este documento con base en el índice anual de precios al
+                      consumidor, IPC, establecido al 31 de diciembre del año
+                      anterior al aniversario
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      El contrato de seguros puede ser cancelado en cualquier
+                      momento de su vigencia, por lo tanto, deberá acérquese a
+                      una tienda TIGO para más información o comunicarse a la
+                      línea de atención al cliente <b>#321.</b>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Mediante este documento se deja constancia que el
+                      asegurado da la autorización para el tratamiento de sus
+                      datos personales, desde la celebración del contrato de
+                      seguro y durante la ejecución del mismo con la
+                      aseguradora, quién recolectará, administrará y usará los
+                      datos personales del asegurado en los términos previstos
+                      en la legislación aplicable.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Además de las exclusiones contenidas en las condiciones
+                      generales de la póliza, se excluye toda circunstancia
+                      originada en, basada en, o de cualquier manera atribuible
+                      a, o como consecuencia directa o indirecta de, actos que
+                      supongan sanciones legales de índole comercial, económico
+                      o de cualquier naturaleza, en virtud de las cuales esté
+                      prohibido expedir seguros o pagar indemnizaciones,
+                      incluyendo, pero no limitado a las sanciones impuestas por
+                      la OFAC (Office of Foreign Assets Control).
+                    </p>
+                  </li>
+                </ul>
+                <h2
+                  id="declaraciones"
+                  className="h4 text-primary font-weight-normal"
+                >
+                  Declaraciones y Autorizaciones
                 </h2>
                 <p>
-                  “Campaña vigente desde el 15 de enero al 31 de marzo de 2020.
-                  Visita una de las tiendas autorizadas, compra el nuevo Samsung
-                  Galaxy Fold para que disfrutes del servicio GALAXY FOLD
-                  PREMIER SERVICE, que incluye los siguientes beneficios: 1.
-                  Samsung Club Premium, 2. Fold Concierge, 3. Samsung Care
-                  gratis por 1 año (seguro de pantalla) 4. Garantía Extendida
-                  por 1 año. Aplica únicamente para las compras realizadas en
-                  las Tiendas Autorizadas Participantes (Tiendas físicas y
-                  Online). Los precios de venta al público son definidos por las
-                  Tiendas Autorizadas Participantes. Los beneficios no son
-                  canjeables por dinero en efectivo, por abonos a cuentas
-                  bancarias, abonos a tarjetas de crédito o débito ni por
-                  cualquier otro premio. Para acceder a los beneficios de la
-                  aplicación Samsung Club Premium, los clientes deberán
-                  descargar la aplicación a través de Play Store. Los
-                  consumidores podrán contactar a su Fold Concierge en cualquier
-                  momento, vía telefónica a #782, y demás opciones disponibles
-                  en www.samsung.com/co/support. Samsung Care es un Beneficio
-                  exclusivo para usuarios del Samsung Galaxy Fold. El seguro
-                  protección de pantalla de Samsung Care es provisto por AXA
-                  COLPATRIA SEGUROS S.A. y cubre la rotura accidental de
-                  pantalla por 1 (un) evento durante 12 meses a partir de la
-                  fecha de expedición de la factura. La reclamación del seguro
-                  se puede realizar en la línea 01 8000 513 323 o en Bogotá al
-                  4898599 de lunes a sábado de 8am a 6 pm, para hacer efectivo
-                  el seguro, el usuario debe presentar la factura a la
-                  aseguradora, llenar el formato de reclamación con los soportes
-                  requeridos por la aseguradora y debe pagar un deducible del
-                  20% del valor de la reparación. La Garantía extendida será
-                  provista por SAMSUNG ELECTRONICS COLOMBIA S.A. a través del
-                  operador ACINCO S.A.S. Los detalles de la promoción se podrán
-                  consultar en{" "}
-                  <a
-                    href="https://www.samsung.com/co/offer/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    www.samsung.com.co/offer
-                  </a>
-                  ”.
+                  Mediante el presente documento dejamos constancia que el
+                  asegurado ha emitido, previamente a la expedición del presente
+                  certificado, las declaraciones y autorizaciones sobre los
+                  asuntos que se enuncian a continuación
                 </p>
+                <ul>
+                  <li>
+                    <p>
+                      El Tomador, Asegurado y/o beneficiario autorizan a la
+                      Compañía para que con fines estadísticos y de información
+                      entre compañías, entre éstas y las autoridades competentes
+                      y con fines de administración de información a través de
+                      terceros debidamente autorizados, consulte, almacene,
+                      administre, transfiera y reporte a las centrales de datos
+                      que considere necesario o a cualquier otra entidad
+                      autorizada que se encuentre en el territorio nacional o
+                      fuera de éste, la información derivada del presente
+                      contrato de seguros y que resulte de todas las operaciones
+                      que directa o indirectamente se deriven del contrato de
+                      seguros, así como sobre novedades, referencias y manejo de
+                      la póliza y demás información que surja del presente
+                      contrato el cual el Tomador y/o Asegurado y/o Beneficiario
+                      declaran conocer y aceptar en todas sus partes.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      El asegurado ha sido debidamente informado sobre el
+                      alcance y las limitaciones de la cobertura del seguro que
+                      ha adquirido, con base en los amparos y las exclusiones
+                      establecidas en las condiciones del contrato, las cuales
+                      se encuentran a su disposición en la página web{" "}
+                      <a href="www.axacolpatria.co">www.axacolpatria.co</a>, en
+                      la cual también encontrará, información relevante en
+                      materia de protección al consumidor financiero.
+                    </p>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

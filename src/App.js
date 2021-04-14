@@ -16,8 +16,8 @@ import SoatDetail from "./pages/SoatDetail";
 import TermAndConditions from "./components/TermsAndConditions/TermsAndConditions";
 import TermAndConditionsTwo from "./components/TermsAndConditions/TermsAndConditionsTwo";
 import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndConditionsSamsung";
-import Message from "./components/Modal/message/messaje";
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
+import Products from "./pages/Products";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
@@ -26,11 +26,14 @@ function App() {
       <AuthState>
         <Router>
           <ScrollTop />
-          <Navbar />
+          <Navbar hideMessage={false} />
           <WhatsappButton />
           <Switch>
             <Route path="/" exact>
               <Home />
+            </Route>
+            <Route path="/productos" exact>
+              <Products />
             </Route>
             <Route path="/tramites-y-reclamaciones" exact>
               <Claims />
@@ -60,7 +63,7 @@ function App() {
               <SoatDetail />
             </Route>
             <Route path="/pospago-5-3/terminos-condiciones" exact>
-              <TermAndConditions namePlan="Total Proteccion" plan="all" />
+              <TermAndConditions namePlan="Protección Total" plan="all" />
             </Route>
             <Route path="/pospago-5-2/terminos-condiciones" exact>
               <TermAndConditions
@@ -69,11 +72,17 @@ function App() {
               />
             </Route>
             <Route path="/arma-tu-plan-smart-app/terminos-condiciones" exact>
-              <TermAndConditions namePlan="Smart App" plan="all" />
+              <TermAndConditions
+                namePlan="Arma tu plan – Smart App"
+                plan="smart"
+              />
+            </Route>
+            <Route path="/seguro-gamas/terminos-condiciones" exact>
+              <TermAndConditions namePlan="Seguro por Gama" plan="gama" />
             </Route>
             <Route path="/colsubsidio/terminos-condiciones" exact>
               <TermAndConditionsTwo
-                namePlan="Asistencia Colsubsido"
+                namePlan="Asistencia Colsubsidio – Axa Colpatria Seguros"
                 plan="colsubsidio"
               />
             </Route>

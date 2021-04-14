@@ -5,10 +5,23 @@ import { ReactComponent as Document } from "../assets/icons/contract.svg";
 import { ReactComponent as Upload } from "../assets/icons/upload.svg";
 import { ReactComponent as User } from "../assets/icons/user.svg";
 import { ReactComponent as Send } from "../assets/icons/send.svg";
+import styled from "styled-components";
 import FormContext from "../context/form/formContext";
+
+const DivCircle = styled.div`
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+`;
+
 const CustomStepper = () => {
   const formContext = useContext(FormContext);
-  const { step } = formContext;
+  const { step, openModal } = formContext;
   useEffect(() => {
     changeActiveColor(step);
   }, [step]);
@@ -59,9 +72,104 @@ const CustomStepper = () => {
   };
   return (
     <Fragment>
-      <div className="col-12 col-xl-12 mb-3">
+      <div className=" col-xl-12 mb-3">
         <div className="container">
-          <h2 className="ml-5 mb-0">Reclamaciones</h2>
+          <h2 className="ml-5 mb-1 h4-xs h2-md textcustom">
+            Proceso de reclamación
+          </h2>
+          <p className="ml-5 lead textcustom h6-xs">
+            Antes de realizar tu reclamación revisa los documentos necesarios,
+            revísalos{" "}
+            <button
+              className="link-muted btn_link "
+              onClick={() => openModal(null)}
+            >
+              aquí
+            </button>
+            .
+          </p>
+          <div className="show3">
+            <div className="d-flex justify-content-around ">
+              <DivCircle
+                style={{
+                  backgroundColor: firstStep ? "#003272" : "#e1e1e1",
+                  color: firstStep ? "#e1e1e1" : "#003272",
+                }}
+              >
+                1
+              </DivCircle>
+              <DivCircle
+                style={{
+                  backgroundColor: secondStep ? "#003272" : "#e1e1e1",
+                  color: secondStep ? "#e1e1e1" : "#003272",
+                }}
+              >
+                2
+              </DivCircle>
+              <DivCircle
+                style={{
+                  backgroundColor: thirdStep ? "#003272" : "#e1e1e1",
+                  color: thirdStep ? "#e1e1e1" : "#003272",
+                }}
+              >
+                3
+              </DivCircle>
+              <DivCircle
+                style={{
+                  backgroundColor: fourthStep ? "#003272" : "#e1e1e1",
+                  color: fourthStep ? "#e1e1e1" : "#003272",
+                }}
+              >
+                4
+              </DivCircle>
+              <DivCircle
+                style={{
+                  backgroundColor: fivethStep ? "#003272" : "#e1e1e1",
+                  color: fivethStep ? "#e1e1e1" : "#003272",
+                }}
+              >
+                5
+              </DivCircle>
+            </div>
+            <div className="mt-3 mb-0">
+              <p
+                style={{ color: "#003272" }}
+                className="mt--5 fs--20 text-center-xs"
+              >
+                {firstStep &&
+                !secondStep &&
+                !thirdStep &&
+                !fourthStep &&
+                !fivethStep
+                  ? "1.Identifícate"
+                  : firstStep &&
+                    secondStep &&
+                    !thirdStep &&
+                    !fourthStep &&
+                    !fivethStep
+                  ? "2.Selecciona tu cobertura"
+                  : firstStep &&
+                    secondStep &&
+                    thirdStep &&
+                    !fourthStep &&
+                    !fivethStep
+                  ? "3.Subir documentos"
+                  : firstStep &&
+                    secondStep &&
+                    thirdStep &&
+                    fourthStep &&
+                    !fivethStep
+                  ? "4.Información adicional"
+                  : firstStep &&
+                    secondStep &&
+                    thirdStep &&
+                    fourthStep &&
+                    fivethStep
+                  ? "5.Enviar"
+                  : null}
+              </p>
+            </div>
+          </div>
           <Stepper
             activeStep={step}
             hideConnectors={true}
@@ -73,44 +181,47 @@ const CustomStepper = () => {
               activeTextColor: "#ffffff",
               inactiveTextColor: "#ffffff",
             }}
-            className="m-0 p-2"
+            className="m-0 p-2 cursor-default show2 min-h-200"
           >
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default min-h-150">
               <div className="m-0">
                 <User
                   fill={firstStep ? "#003272" : "#e1e1e1"}
                   width="200"
                   height="80"
+                  className="show2"
                 />
                 <p
                   style={{ color: firstStep ? "#003272" : "#bababa" }}
-                  className="mt--5"
+                  className="mt--5 textcustom h6-xs"
                 >
-                  1.Identificate{" "}
+                  1.Identifícate
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default min-h-150">
               <div>
                 <Devices
                   fill={secondStep ? "#003272" : "#e1e1e1"}
                   width="200"
                   height="80"
+                  className="show2"
                 />
                 <p
                   style={{ color: secondStep ? "#003272" : "#bababa" }}
-                  className="mt--5"
+                  className="mt--5 textcustom h6-xs"
                 >
                   2.Selecciona tu cobertura{" "}
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default min-h-150">
               <div>
                 <Upload
                   fill={thirdStep ? "#003272" : "#e1e1e1"}
                   width="200"
                   height="80"
+                  className="show2"
                 />
                 <p
                   style={{ color: thirdStep ? "#003272" : "#bababa" }}
@@ -120,27 +231,29 @@ const CustomStepper = () => {
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default min-h-150">
               <div>
                 <Document
                   fill={fourthStep ? "#003272" : "#e1e1e1"}
                   width="200"
                   height="80"
+                  className="show2"
                 />
                 <p
                   style={{ color: fourthStep ? "#003272" : "#bababa" }}
                   className="mt--5"
                 >
-                  3.Información adicional{" "}
+                  4.Información adicional{" "}
                 </p>
               </div>
             </Step>
-            <Step className="col-md-4">
+            <Step className="col-md-4 cursor-default min-h-150">
               <div>
                 <Send
                   fill={fivethStep ? "#003272" : "#e1e1e1"}
                   width="200"
                   height="80"
+                  className="show2"
                 />
                 <p
                   style={{ color: fivethStep ? "#003272" : "#bababa" }}

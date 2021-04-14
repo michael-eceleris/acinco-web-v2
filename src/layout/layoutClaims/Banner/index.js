@@ -1,11 +1,11 @@
 import React from "react";
-import Searching from "../../../assets/icons/searching.svg";
+import Searching from "../../../assets/images/icon_senor_mirando_arriba.png";
 
 const Banner = () => {
   return (
     <section className="p-0 bg-white">
       <svg
-        className="absolute-full z-index-0 "
+        className="absolute-full z-index-0 show2 "
         width="100%"
         height="100%"
         viewBox="0 0 1920 90"
@@ -19,31 +19,31 @@ const Banner = () => {
       <div className="container min-h75vh d-middle pt-5">
         <div className="row text-center-xs">
           <div
-            className="col-12 col-md-6 order-2 order-md-1 pb-5"
+            className="col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-5"
             data-aos="fade-in"
             data-aos-delay="0"
           >
             <div className="mt-7">
               <h1 className="font-weight-light mb-4">
-                <span className="font-weight-medium">Reclamaciones</span>
+                <span className="font-weight-medium">Reclamación</span>
               </h1>
             </div>
             <p className=" lead mb-5">
               <span className="font-weight-medium "> ¡Es muy simple!</span> Con
-              tan solo 5 sencillos pasos puedes realizar reclamaciones.
+              tan solo 5 sencillos pasos puedes realizar tu reclamación.
             </p>
           </div>
-          <div className="col-12 col-md-6 order-2 order-md-1 pb-5">
+          <div className="col-12 col-md-6 order-2 order-md-2 show2">
             <img
-              width="600"
+              width="250"
               height="400"
               src={Searching}
               alt="reclamos_imagen"
+              className="ml-7"
             />
           </div>
         </div>
       </div>
-      <i className="arrow arrow-lg arrow-bottom arrow-center border-primary"></i>
     </section>
   );
 };

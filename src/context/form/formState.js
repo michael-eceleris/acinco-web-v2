@@ -19,6 +19,8 @@ import {
   OPEN_MODAL,
   CLOSE_MODAL,
   LOADING,
+  SEND_CONTACT_US,
+  ERROR_CONTACT_US,
 } from "../../types";
 import clienteAxios from "../../config/axios";
 
@@ -38,13 +40,15 @@ const FormState = (props) => {
     showModal: false,
     isLoading: false,
     maxSizeDoc: 4000000,
+    product: null,
+    submitContact: null,
   };
   const [state, dispatch] = useReducer(formReducer, initialState);
 
   const getDevices = async (id) => {
     try {
       const response = await clienteAxios.get(
-        `/dispositivo/dispositivo-cliente/user/${id}`
+        `/api/v1/dispositivo/dispositivo-cliente/user/${id}`
       );
       dispatch({
         type: DEVICES_USER,
@@ -57,7 +61,7 @@ const FormState = (props) => {
   const getPlans = async (id) => {
     try {
       const response = await clienteAxios.get(
-        `/dispositivo/dispositivo-cliente-plan/dispositivo-cliente/${id}`
+        `/api/v1/dispositivo/dispositivo-cliente-plan/dispositivo-cliente/${id}`
       );
       dispatch({
         type: PLANS_DEVICE,
@@ -70,7 +74,7 @@ const FormState = (props) => {
   const getCoverages = async (id) => {
     try {
       const response = await clienteAxios.get(
-        `/cobertura/tipo-cobertura-cobertura/dispositivo-cliente-plan/${id}`
+        `/api/v1/cobertura/tipo-cobertura-cobertura/dispositivo-cliente-plan/${id}`
       );
       const types_coverage = response.data.map(
         (cov) => cov.tipos_cobertura_cobertura
@@ -89,12 +93,22 @@ const FormState = (props) => {
   };
   const getDocuments = async (id) => {
     try {
+      let docs = [];
+      let ind = null;
       const response = await clienteAxios.get(
-        `/documento/tipo-cobertura-cobertura/${id}`
+        `/api/v1/documento/tipo-cobertura-cobertura/${id}`
+      );
+      response.data.map((doc, index) =>
+        doc.nombre_documento_save === "Factura de compra."
+          ? (ind = index)
+          : docs.push(doc)
+      );
+      docs[response.data.length - 1] = response.data.find((doc, index) =>
+        index === ind ? doc : null
       );
       dispatch({
         type: DOCS_COVERAGE,
-        payload: response.data,
+        payload: docs,
       });
     } catch (error) {
       console.log(error);
@@ -180,7 +194,7 @@ const FormState = (props) => {
     formData.append("genero_reclamante_id", genero_reclamante_id);
     formData.append("ciudad_id", ciudad_siniestro);
     try {
-      const result = await clienteAxios.post("/ticket/", formData);
+      const result = await clienteAxios.post("/api/v1/ticket/", formData);
       dispatch({
         type: SUBMIT_FORM,
         payload: result,
@@ -188,6 +202,22 @@ const FormState = (props) => {
     } catch (error) {
       dispatch({
         type: ERROR_FORM,
+        payload: error.response,
+      });
+    }
+  };
+
+  const contactUs = async (data) => {
+    try {
+      const result = await clienteAxios.post("/api/v1/shared/contactar", data);
+      console.log(result);
+      dispatch({
+        type: SEND_CONTACT_US,
+        payload: result,
+      });
+    } catch (error) {
+      dispatch({
+        type: ERROR_CONTACT_US,
         payload: error.response,
       });
     }
@@ -206,9 +236,10 @@ const FormState = (props) => {
     });
   };
 
-  const openModal = () => {
+  const openModal = (produc) => {
     dispatch({
       type: OPEN_MODAL,
+      payload: produc,
     });
   };
 
@@ -240,6 +271,8 @@ const FormState = (props) => {
         showModal: state.showModal,
         isLoading: state.isLoading,
         maxSizeDoc: state.maxSizeDoc,
+        product: state.product,
+        submitContact: state.submitContact,
         selectDevice,
         selectPlan,
         selectCoverage,
@@ -256,6 +289,7 @@ const FormState = (props) => {
         openModal,
         closeModal,
         loading,
+        contactUs,
       }}
     >
       {props.children}

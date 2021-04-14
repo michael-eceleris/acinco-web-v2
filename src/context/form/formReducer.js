@@ -17,6 +17,8 @@ import {
   OPEN_MODAL,
   CLOSE_MODAL,
   LOADING,
+  SEND_CONTACT_US,
+  ERROR_CONTACT_US,
 } from "../../types";
 const formReducer = (state, action) => {
   switch (action.type) {
@@ -97,6 +99,18 @@ const formReducer = (state, action) => {
         ...state,
         isLoading: action.payload,
       };
+    case SEND_CONTACT_US:
+      return {
+        ...state,
+        isLoading: false,
+        showModal: true,
+        submitContact: action.payload,
+      };
+    case ERROR_CONTACT_US:
+      return {
+        ...state,
+        isLoading: false,
+      };
     case ERROR_SELECT:
     case ERROR_FORM:
       return {
@@ -109,12 +123,15 @@ const formReducer = (state, action) => {
       return {
         ...state,
         showModal: true,
+        product: action.payload,
       };
     case CLOSE_MODAL:
       return {
         ...state,
         showModal: false,
         submit: null,
+        product: null,
+        submitContact: null,
       };
     case CLEAR_FORM:
       return {

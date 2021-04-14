@@ -1,18 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Dollar from "../../assets/icons/dollar-sign-solid.svg";
 const Recoveries = () => {
   return (
     <>
       <section className="pt-2 pb-2 bg-theme-color-light ">
         <div className="container p-0">
-          <div className="row d-flex flex-wrap align-items-center my-7 ">
+          <div className="d-flex flex-wrap align-items-center my-7 ">
             <div className="col-12 col-lg-6 mb-5">
               <h2 className="h1 text-primary mb-4 text-center">Recobros</h2>
               <p className="lead mb-5">
                 Si te ocurre un siniestro, o alguna circunstancia en la cual se
                 vea aplicable alguna de las coberturas que trae el plan, ten en
-                cuenta esta informacion.
+                cuenta esta información.
               </p>
+              <Link
+                className="btn btn-link text-decoration-none"
+                to="/seguro-gamas/terminos-condiciones"
+              >
+                Leer más
+                <i className="fi fi-arrow-right-slim ml-2"></i>
+              </Link>
             </div>
             <div className="col-12 col-lg-6 mb-5">
               <div className="row gutters-md gutters-xs--xs">
@@ -39,11 +47,10 @@ const Recoveries = () => {
                     <h3 className="h5 py-3 text-center">
                       ¿A qué equivale ese porcentaje?
                     </h3>
-                    <p className="text-justify">
+                    <p className="text-justify hypens">
                       El porcentaje corresponde a los montos cubiertos por la
-                      aseguradora, es decir, el recobro será calculado sore el
-                      precio de venta al momento de la indemnización y en el
-                      caso de la pantalla al momento de su reparación.
+                      aseguradora, es decir, el recobro será calculado sobre el
+                      precio de venta al momento de la indemnización.
                     </p>
                   </div>
                 </div>
@@ -54,14 +61,23 @@ const Recoveries = () => {
       </section>
       <section className="pt-2 pb-2 bg-theme-color-custom-purple">
         <div className="container p-0">
-          <div className="row d-flex flex-wrap align-items-center my-7">
+          <div className="d-flex flex-wrap align-items-center my-7">
             <div className="order-lg-2 col-12 col-lg-6 mb-5">
               <h2 className="h1 text-success mb-4 text-center">Exclusiones</h2>
               <p className="lead mb-5">
-                Existen algunas exclusiones en las cuales no son aplicables a
-                las coberturas de este plan, ten en cuenta esto antes de
-                realizar su reclamación y recobro respectivo.
+                Existen algunas exclusiones en las cuales no son aplicables las
+                coberturas de este plan, ten en cuenta esto antes de realizar su
+                reclamación y recobro respectivo.
               </p>
+              <a
+                className="btn btn-link text-decoration-none"
+                href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/CLAUSULADO-POLIZA-34.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Leer más
+                <i className="fi fi-arrow-right-slim ml-2"></i>
+              </a>
             </div>
             <div className="order-lg-1 col-12 col-lg-6 mb-5">
               <div className="row gutters-md gutters-xs--xs">

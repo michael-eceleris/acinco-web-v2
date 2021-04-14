@@ -20,10 +20,8 @@ const ReviewLayout = () => {
   const [error, setError] = useState(false);
   const authContext = useContext(AuthContext);
   const { user } = authContext;
-  const {
-    imei_uno,
-    dispositivo: { valor },
-  } = device;
+  const { imei_uno } = device;
+  const { valor_asegurado } = plan;
 
   const {
     mensaje_ticket,
@@ -63,7 +61,7 @@ const ReviewLayout = () => {
       <div className="container py-1 ">
         <h4>Enviar</h4>
         <p className="fs--17">
-          Revisa los datos, confirma que esten correctos y envía tu reclamación.
+          Revisa los datos, confirma que estén correctos y envía tu reclamación.
         </p>
         <div className="bg-white rounded font-weight-light mb-4 ">
           <div className="table-responsive">
@@ -201,7 +199,7 @@ const ReviewLayout = () => {
                   </td>
                   <td className="border-bottom border-top-0">
                     ${" "}
-                    {valor
+                    {valor_asegurado
                       .toString()
                       .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
                   </td>
@@ -216,7 +214,7 @@ const ReviewLayout = () => {
                 </tr>
                 <tr>
                   <td className="border-bottom border-top-0">
-                    Ciudad en donde sucedío el siniestro:
+                    Ciudad en donde sucedió el siniestro:
                   </td>
                   <td className="border-bottom border-top-0">
                     {moreInfo.nombre_siniestro}{" "}
@@ -224,7 +222,7 @@ const ReviewLayout = () => {
                 </tr>
                 <tr>
                   <td className="border-bottom border-top-0">
-                    Línea con la que sucedío el siniestro:
+                    Línea con la que sucedió el siniestro:
                   </td>
                   <td className="border-bottom border-top-0">
                     {moreInfo.linea_siniestro_one}
@@ -246,16 +244,18 @@ const ReviewLayout = () => {
                   </td>
                   <td className="border-top-0">&nbsp;</td>
                 </tr>
-                {documents.map((doc) => (
-                  <tr key={doc.id}>
-                    <td className="border-bottom border-top-0">
-                      {doc.nombre_documento_save}
-                    </td>
-                    <td className="border-bottom border-top-0">
-                      {doc.nameFile}
-                    </td>
-                  </tr>
-                ))}
+                {documents.map((doc) =>
+                  doc.files === null ? null : (
+                    <tr key={doc.id}>
+                      <td className="border-bottom border-top-0">
+                        {doc.nombre_documento_save}
+                      </td>
+                      <td className="border-bottom border-top-0">
+                        {doc.nameFile}
+                      </td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>
@@ -268,7 +268,7 @@ const ReviewLayout = () => {
             checked={confirmed}
             onChange={() => setConfirmed(!confirmed)}
           />
-          <i></i>Confirmas que se envie la reclamación.
+          <i></i>Confirmas que se envíe la reclamación.
         </label>
 
         {error ? <p className="text-danger">* Requerido</p> : null}
@@ -276,8 +276,9 @@ const ReviewLayout = () => {
           <button
             className="btn btn-sm btn-outline-secondary"
             onClick={() => previusStep(3)}
+            disabled={isLoading}
           >
-            Atras
+            Atrás
           </button>
           <button
             className="btn btn-sm btn-primary"

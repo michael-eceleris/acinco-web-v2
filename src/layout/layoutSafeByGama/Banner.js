@@ -1,11 +1,11 @@
 import React from "react";
-import SmartPhoneGamaAlta from "../../assets/icons/icon-seguro-gama.svg";
+import SmartPhoneGamaAlta from "../../assets/images/mobile.png";
 
 const Banner = () => {
   return (
     <section className="p-0 bg-white ">
       <svg
-        className="absolute-full z-index-0 "
+        className="absolute-full z-index-0 show2 "
         width="100%"
         height="100%"
         viewBox="0 0 1920 90"
@@ -19,7 +19,7 @@ const Banner = () => {
       <div className="container min-h75vh d-middle pt-5">
         <div className="row text-center-xs">
           <div
-            className="col-12 col-md-6 order-2 order-md-1 pb-5"
+            className="col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-3"
             data-aos="fade-in"
             data-aos-delay="0"
           >
@@ -28,18 +28,18 @@ const Banner = () => {
                 <span className="font-weight-medium">Seguro por Gama</span>
               </h1>
               <p className="lead mb--0">
-                Este servicio va dirigido a toso los usuarios que tengan un plan
-                postpago en Tigo
+                Este servicio va dirigido a todos los usuarios que tengan un
+                plan pospago en Tigo.
               </p>
               <p className="fs--14">* Aplican términos y condiciones.</p>
             </div>
           </div>
-          <div className="col-12 col-md-6 order-2 order-md-1 pb-5 d-middle">
+          <div className="col-12 col-md-6 order-2 order-md-1 d-middle show2">
             <img
-              width="400"
-              className="img-fluid lazy "
+              width="300"
+              className="img-fluid lazy  "
               src={SmartPhoneGamaAlta}
-              alt="logo_seguro-gama"
+              alt="logo_seguro_gama"
             />
           </div>
         </div>

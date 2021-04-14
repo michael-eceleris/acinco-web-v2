@@ -21,83 +21,90 @@ const Documents = ({ setError }) => {
     setNoRequiredDoc(doc.length);
   }, [documents]);
   const onLoad = (e) => {
-    const { files, name, id } = e.target;
-    const { size, type } = files[0];
-    console.log("cargo doc");
-    documents.find((doc, index) =>
-      doc.id === parseInt(id)
-        ? (documents[index] = {
-            id: doc.id,
-            nombre_documento_save: doc.nombre_documento_save,
-            files: files[0],
-            nameFile: files[0].name,
-            required: doc.required,
-            error:
-              size > maxSizeDoc
-                ? "Excediste el tamaño permitido de 4MB"
-                : type !== "application/pdf" && type !== "image/jpeg"
-                ? "Error el tipo de documento tiene que ser pdf o jpg"
-                : null,
-          })
-        : null
-    );
-    const actual = document.map((doc) => doc.id).indexOf(id);
-    const required = documentsCoverage.find((doc) => doc.id === parseInt(id));
-    if (
-      size > maxSizeDoc ||
-      (type !== "application/pdf" && type !== "image/jpeg")
-    ) {
-      setDocument([...document]);
-    } else if (document.length === documentsCoverage.length || actual !== -1) {
-      document.splice(actual, 1);
-      setDocument([
-        ...document,
-        {
-          id,
-          nombre_documento_save: name,
-          files: files[0],
-          nameFile: files[0].name,
-          required: required.required,
-          error:
-            size > maxSizeDoc
-              ? "Excediste el tamaño permitido de 4MB"
-              : type !== "application/pdf" && type !== "image/jpeg"
-              ? "Error el tipo de documento tiene que ser pdf o jpg"
-              : null,
-        },
-      ]);
-    } else {
-      setDocument([
-        ...document,
-        {
-          id,
-          nombre_documento_save: name,
-          files: files[0],
-          nameFile: files[0].name,
-          required: required.required,
-          error:
-            size > maxSizeDoc
-              ? "Excediste el tamaño permitido de 4MB"
-              : type !== "application/pdf" && type !== "image/jpeg"
-              ? "Error el tipo de documento tiene que ser pdf o jpg"
-              : null,
-        },
-      ]);
+    if (e.target) {
+      const { files, name, id } = e.target;
+      if (files.length > 0) {
+        const { size, type } = files[0];
+        documents.find((doc, index) =>
+          doc.id === parseInt(id)
+            ? (documents[index] = {
+                id: doc.id,
+                nombre_documento_save: doc.nombre_documento_save,
+                files: files[0],
+                nameFile: files[0].name,
+                required: doc.required,
+                error:
+                  size > maxSizeDoc
+                    ? "Excediste el tamaño permitido de 4MB"
+                    : type !== "application/pdf" && type !== "image/jpeg"
+                    ? "Error el tipo de documento tiene que ser pdf o jpg"
+                    : null,
+              })
+            : null
+        );
+        const actual = document.map((doc) => doc.id).indexOf(id);
+        const required = documentsCoverage.find(
+          (doc) => doc.id === parseInt(id)
+        );
+        if (
+          size > maxSizeDoc ||
+          (type !== "application/pdf" && type !== "image/jpeg")
+        ) {
+          setDocument([...document]);
+        } else if (
+          document.length === documentsCoverage.length ||
+          actual !== -1
+        ) {
+          document.splice(actual, 1);
+          setDocument([
+            ...document,
+            {
+              id,
+              nombre_documento_save: name,
+              files: files[0],
+              nameFile: files[0].name,
+              required: required.required,
+              error:
+                size > maxSizeDoc
+                  ? "Excediste el tamaño permitido de 4MB"
+                  : type !== "application/pdf" && type !== "image/jpeg"
+                  ? "Error el tipo de documento tiene que ser pdf o jpg"
+                  : null,
+            },
+          ]);
+        } else {
+          setDocument([
+            ...document,
+            {
+              id,
+              nombre_documento_save: name,
+              files: files[0],
+              nameFile: files[0].name,
+              required: required.required,
+              error:
+                size > maxSizeDoc
+                  ? "Excediste el tamaño permitido de 4MB"
+                  : type !== "application/pdf" && type !== "image/jpeg"
+                  ? "Error el tipo de documento tiene que ser pdf o jpg"
+                  : null,
+            },
+          ]);
+        }
+      } else {
+        setDocument([...document]);
+      }
     }
   };
   const handleNextStep = () => {
-    console.log("da press boton");
     const pasa = documents.map((doc, index) =>
       documents[index].required && documents[index].files === null
         ? (doc.error = "* Requerido")
         : null
     );
-    console.log(pasa);
     if (
       document.length === documentsCoverage.length - noRequiredDoc &&
       pasa.filter((pa) => pa === "* Requerido").length === 0
     ) {
-      console.log("if primero");
       documentsCoverage.find((doc) =>
         doc.required === false
           ? (document[documentsCoverage.length - 1] = {
@@ -113,20 +120,16 @@ const Documents = ({ setError }) => {
       nextStep(3);
       setError(false);
     } else if (document.length === documentsCoverage.length) {
-      console.log("if segundo");
-    if (document.length === documentsCoverage.length) {
       selectDocument(document);
       nextStep(3);
       setError(false);
     } else {
-      console.log("if no pasa");
       setError(true);
       documents.map((doc) =>
         doc.required === true || doc.required === "true"
           ? (doc.error = "* Requerido")
           : null
       );
-      documents.map((doc) => (doc.error = "* Requerido"));
     }
   };
   const handlePreviusStep = () => {
@@ -142,15 +145,24 @@ const Documents = ({ setError }) => {
         ? documents.map((doc) => {
             return (
               <div className=" mb-3 row flex-row" key={doc.id}>
-                <p className="mb-0 d-flex">
-                  {doc.nombre_documento_save}{" "}
-                  {doc.required === true || doc.required === "true" ? (
-                    <span className="d-block fs--15 text-red-500 ml--2 ">
-                      *
-                    </span>
-                  ) : null}
-                </p>
-                <p className="mb-0">{doc.nombre_documento_save}</p>
+                <div className="mb-0 d-flex">
+                  <p className=" mb-0 text-justify">
+                    {doc.nombre_documento_save}{" "}
+                    {doc.required === true || doc.required === "true" ? (
+                      <span className="fs--15 text-red-500 ml--2 ">*</span>
+                    ) : null}
+                    {doc.nombre_documento_save === "Formato de reclamación." ? (
+                      <a
+                        href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/Formato_Reclamacion_AXA_COLPATRIA.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="ml--8 link-muted btn_link font-weight-medium"
+                      >
+                        Descárgalo aquí.
+                      </a>
+                    ) : null}
+                  </p>
+                </div>
                 <div className="custom-file custom-file-primary">
                   <input
                     id={doc.id}
@@ -161,7 +173,15 @@ const Documents = ({ setError }) => {
                     onChange={onLoad}
                     className="custom-file-input"
                   />
-                  <label className="custom-file-label" htmlFor={doc.id}>
+                  <label
+                    className="custom-file-label"
+                    style={{
+                      whiteSpace: "nowrap",
+                      textOverflow: "ellipsis",
+                      overflow: "hidden",
+                    }}
+                    htmlFor={doc.id}
+                  >
                     {doc.files !== null
                       ? doc.nameFile
                       : document.find((docAc) => docAc.id === doc.id)
@@ -186,7 +206,7 @@ const Documents = ({ setError }) => {
           className="btn btn-sm btn-outline-secondary"
           onClick={handlePreviusStep}
         >
-          Atras
+          Atrás
         </button>
         <button className="btn btn-sm btn-primary" onClick={handleNextStep}>
           Siguiente

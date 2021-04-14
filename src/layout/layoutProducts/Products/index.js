@@ -89,7 +89,6 @@ const Products = () => {
                     <img height="120" src={SmartPhone} alt="mobile_2" />
                   </div>
                   <h4>Arma tu Plan - Smart App </h4>
-
                   <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column">
                     <div className="h-75">
                       <p className="lead fs--18">

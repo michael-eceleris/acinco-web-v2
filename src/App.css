@@ -19976,7 +19976,31 @@ img.lazy {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
 }
-
+label + .MuiInput-formControl {
+  margin-top: 0 !important;
+}
+.MuiFormLabel-root {
+  color: #95a4af !important;
+  padding: 3px 1rem 0px 1rem !important;
+}
+.MuiSvgIcon-root {
+  margin-top: 0;
+}
+.MuiInputLabel-formControl {
+  transform: translate(0, 15px) scale(1);
+}
+.MuiInputBase-input {
+  padding: 10px 0px 0px !important;
+}
+.MuiInput-underline::before {
+  border-bottom: none !important;
+}
+.MuiInput-underline::after {
+  border-bottom: none !important;
+}
+.MuiFormHelperText-root.Mui-error {
+  color: transparent !important;
+}
 @media (max-width: 766px) {
   .show2 {
     display: none !important;
@@ -20046,5 +20070,4 @@ img.lazy {
   .btncustom {
     padding: 10px 5px;
   }
-
 }

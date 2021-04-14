@@ -5,7 +5,7 @@ import IconApple from "../../../assets/icons/apple-brands.svg";
 const ClaimsMobile = () => {
   return (
     <>
-      <section className="col-12 col-lg-12 mb-3 bg-gray-100 show3">
+      <section className="col-12 col-lg-12 mb-3 bg-gray-100 show3 show2">
         <div className="portlet w-75 m-auto">
           <div className="portlet-header border-bottom">
             <div className="container p-2">

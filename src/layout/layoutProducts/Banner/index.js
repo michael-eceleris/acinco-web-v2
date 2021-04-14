@@ -31,7 +31,7 @@ const Banner = () => {
                     Asegura tu celular
                   </span>
                 </h1>
-                <p className="lead">
+                <p className="lead h6-md">
                   Aquí conocerás nuestros productos que tenemos disponibles para
                   ti. Podrás obtener información y hacer tu reclamación.
                 </p>

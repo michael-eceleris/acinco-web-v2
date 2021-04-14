@@ -28,7 +28,7 @@ const Products = () => {
                     <img height="120" src={MobileSecure} alt="mobile" />
                   </div>
                   <h4>Protección Total</h4>
-                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column">
                     <div className="h-75">
                       <p className="lead fs--18">
                         Esta es la cobertura que te ofrece el plan Protección
@@ -89,8 +89,7 @@ const Products = () => {
                     <img height="120" src={SmartPhone} alt="mobile_2" />
                   </div>
                   <h4>Arma tu Plan - Smart App </h4>
-
-                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column">
                     <div className="h-75">
                       <p className="lead fs--18">
                         El plan Smart App, dirigido a clientes Tigo, te ofrece
@@ -145,7 +144,7 @@ const Products = () => {
                     <img height="150" src={LogoSamgung} alt="samsung" />
                   </div>
                   <h4>Samsung</h4>
-                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column">
                     <div className="h-75">
                       <p className="lead fs--18">
                         Tienes un celular Samsung (referencias seleccionadas),
@@ -193,7 +192,7 @@ const Products = () => {
                     <img height="120" src={PhoneRepair} alt="samsung" />
                   </div>
                   <h4>Fractura de Pantalla</h4>
-                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column">
                     <div className="h-75">
                       <p className="lead fs--18">
                         Protege la pantalla de tu celular, mira estas
@@ -232,7 +231,7 @@ const Products = () => {
                     <img height="120" src={SmartPhoneGamaAlta} alt="samsung" />
                   </div>
                   <h4>Seguro por Gama</h4>
-                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column">
                     <div className="h-75">
                       <p className="lead fs--18">
                         Se ajusta a la gama de tu celular, mira las coberturas
@@ -288,7 +287,7 @@ const Products = () => {
 
                   <h4>SOAT Asistencia de Pantalla</h4>
 
-                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between">
+                  <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column">
                     <div className="h-75">
                       <p className="lead fs--18">
                         Si adquiriste el SOAT con AXA Colpatria Seguros, este

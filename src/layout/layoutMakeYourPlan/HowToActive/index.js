@@ -18,7 +18,7 @@ const HowToActive = () => {
                 <div className="w--50 fi mdi-filter_1 fs--25 mt--n6 text-success"></div>
                 <div className="ml-2 mr-4">
                   <h3 className="h5">Obtén primero un plan pospago.</h3>
-                  <p className="mb-6 mb-md-8">
+                  <p className="mb-6 mb-md-8 text-justify">
                     Adquiere un Arma tu Plan en Tigo superior a $74.900.
                   </p>
                 </div>
@@ -28,7 +28,7 @@ const HowToActive = () => {
                 <div className="d-flex row ml--1 pt-md-3 pt-xl-0">
                   <div className="ml-4 mr-4">
                     <h3 className="h5">Descarga la app.</h3>
-                    <p className="mb-2">
+                    <p className="mb-2 text-justify">
                       Descarga la app de Protección Móvil y realiza el proceso
                       de registro, está disponible en la App Store y Google Play
                       (Play Store).
@@ -93,10 +93,9 @@ const HowToActive = () => {
             <div className="col-12 col-md-5">
               <div className="d-flex mb-3">
                 <div className="w--50 fi mdi-filter_3 fs--25 mt--n6 text-success"></div>
-
                 <div className="ml-4 mr-4">
                   <h3 className="h5">Activa Protección Móvil.</h3>
-                  <p className="mb-6 mb-md-8">
+                  <p className="mb-6 mb-md-8 text-justify">
                     Ingresa a{" "}
                     <a
                       href="http://smart.tigo.com.co/"
@@ -113,10 +112,9 @@ const HowToActive = () => {
               </div>
               <div className="d-flex mb-3">
                 <div className="w--50 fi mdi-filter_4 fs--25 mt--n6 text-success"></div>
-
                 <div className="ml-4 mr-4">
                   <h3 className="h5">Confirmación y Validación.</h3>
-                  <p className="mb-6 mb-md-8">
+                  <p className="mb-6 mb-md-8 text-justify">
                     Te enviaremos un mensaje de texto (SMS) al número que
                     registraste y confirma. Una vez validada la información te
                     enviaremos el certificado individual de seguros a tu correo

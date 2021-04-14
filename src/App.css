@@ -20013,13 +20013,10 @@ label + .MuiInput-formControl {
     padding-left: 0.5rem !important;
     align-items: flex-start !important;
   }
-<<<<<<< HEAD
   .imgcustom {
     height: 110px !important;
   }
 
-=======
->>>>>>> 0e0a7b1900250c26f29e432179920326356f6317
   .tablecustom {
     display: block;
     width: 100%;
@@ -20029,7 +20026,6 @@ label + .MuiInput-formControl {
   .btncustom {
     padding: 10px 5px;
     font-size: 10px;
-<<<<<<< HEAD
 
     margin: 0 0 5px 0 !important;
   }
@@ -20048,19 +20044,13 @@ label + .MuiInput-formControl {
   }
   .tablelogin {
     width: 100% !important;
-=======
->>>>>>> 0e0a7b1900250c26f29e432179920326356f6317
   }
 }
 @media (min-width: 766.1px) {
   .show2 {
     visibility: visible !important;
   }
-<<<<<<< HEAD
   .show3 {
-=======
-  .show3{
->>>>>>> 0e0a7b1900250c26f29e432179920326356f6317
     display: none !important;
     visibility: hidden !important;
   }
@@ -20077,10 +20067,7 @@ label + .MuiInput-formControl {
     margin-right: auto !important;
     margin-left: auto !important;
   }
-<<<<<<< HEAD
   .btncustom {
     padding: 10px 5px;
   }
-=======
->>>>>>> 0e0a7b1900250c26f29e432179920326356f6317
 }

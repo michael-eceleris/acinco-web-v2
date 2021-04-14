@@ -158,11 +158,7 @@ const Documents = ({ setError }) => {
                         rel="noreferrer"
                         className="ml--8 link-muted btn_link font-weight-medium"
                       >
-<<<<<<< HEAD
                         Descárgalo aquí.
-=======
-                        Descargalo aquí.
->>>>>>> 0e0a7b1900250c26f29e432179920326356f6317
                       </a>
                     ) : null}
                   </p>

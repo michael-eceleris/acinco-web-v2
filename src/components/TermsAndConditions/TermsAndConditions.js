@@ -53,7 +53,7 @@ const TermsAndConditions = (props) => {
                           href="#terminos"
                         >
                           <i className="fs--13 fi fi-arrow-end-slim"></i>
-                          <span>Terminos</span>
+                          <span>Términos</span>
                         </a>
                       </li>
                     ) : (
@@ -81,10 +81,10 @@ const TermsAndConditions = (props) => {
                     <li>
                       <a
                         className="nav-link rounded-pill scroll-to py-3"
-                        href="#genereladidades"
+                        href="#generalidades"
                       >
                         <i className="fs--13 fi fi-arrow-end-slim"></i>
-                        <span>Genereladidades</span>
+                        <span>Generalidades</span>
                       </a>
                     </li>
 
@@ -885,10 +885,10 @@ const TermsAndConditions = (props) => {
                 )}
 
                 <h2
-                  id="genereladidades"
+                  id="generalidades"
                   className="h4 text-primary font-weight-normal"
                 >
-                  Genereladidades
+                  Generalidades
                 </h2>
                 <ul>
                   <li>

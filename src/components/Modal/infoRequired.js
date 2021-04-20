@@ -105,7 +105,7 @@ const InfoRequired = () => {
             Original o copia de la declaración Extra juicio autenticada que
             contenga como mínimo la siguiente información: Nombre completo del
             asegurado, número de identificación, dirección de residencia y del
-            trabajo, teléfono de residencia de del lugar de trabajo, fecha, hora
+            trabajo, teléfono de residencia y del lugar de trabajo, fecha, hora
             y lugar de ocurrencia, un recuento detallado de los hechos, número
             de la línea del celular extraviado, marca y modelo del equipo
             extraviado.

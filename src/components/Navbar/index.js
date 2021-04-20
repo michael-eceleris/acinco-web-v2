@@ -186,7 +186,7 @@ const Navbar = ({ hideMessage }) => {
                   Clausulado Póliza 34
                 </a>
               </li>
-            </ul> 
+            </ul>
           </div>
         </nav>
       </div>

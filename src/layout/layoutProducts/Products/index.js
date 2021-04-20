@@ -17,7 +17,7 @@ const Products = () => {
           </h3>
           <p className="lead fs--20 mb-5">
             Puedes observar la diferentes coberturas que tenemos en cada uno de
-            nuestros planes, para que asi mismo escogas el que más se adecue a
+            nuestros planes, para que así mismo escojas el que más se adecúe a
             tus necesidades.
           </p>
           <div className="bg-white pt-4 rounded overflow-hidden">

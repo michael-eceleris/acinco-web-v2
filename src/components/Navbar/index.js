@@ -48,7 +48,7 @@ const Navbar = ({ hideMessage }) => {
                 ></path>
               </svg>
             </button>
-            <Link class="navbar-brand" to="/">
+            <Link className="navbar-brand" to="/">
               <img
                 width="100"
                 height="100"
@@ -62,9 +62,9 @@ const Navbar = ({ hideMessage }) => {
               show ? "show w-100" : ""
             }`}
           >
-            <div class="navbar-xs d-none">
+            <div className="navbar-xs d-none">
               <button
-                class="navbar-toggler pt-0"
+                className="navbar-toggler pt-0"
                 type="button"
                 data-toggle="collapse"
                 data-target="#navbarMainNav"
@@ -81,7 +81,7 @@ const Navbar = ({ hideMessage }) => {
                   <path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
                 </svg>
               </button>
-              <Link class="navbar-brand" to="/">
+              <Link className="navbar-brand" to="/">
                 <img
                   width="90"
                   height="100"
@@ -167,7 +167,7 @@ const Navbar = ({ hideMessage }) => {
               <li className="nav-item">
                 <a
                   className="nav-link js-ajax"
-                  href="https://www.acinco.com.co/wp-content/uploads/2018/09/Politica-deprotecciondedatos-min.pdf"
+                  href="https://files-statics-protegeme.s3.amazonaws.com/Politica+deprotecciondedatos-min.pdf"
                   target="_blank"
                   rel="noreferrer"
                   style={{ whiteSpace: "nowrap" }}
@@ -186,7 +186,7 @@ const Navbar = ({ hideMessage }) => {
                   Clausulado Póliza 34
                 </a>
               </li>
-            </ul> 
+            </ul>
           </div>
         </nav>
       </div>

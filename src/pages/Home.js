@@ -6,10 +6,18 @@ import OurExperience from "../layout/layoutHome/OurExperience";
 import OurClients from "../components/OurClients";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>Acinco</title>
+        <meta
+          name="description"
+          content="Aquí conocerás y podrás obtener información sobre los productos que tenemos disponibles para ti."
+        />
+      </Helmet>
       <Banner />
       <SectionService />
       <ProductsHome />

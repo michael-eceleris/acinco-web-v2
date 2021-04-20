@@ -32,8 +32,8 @@ const Banner = () => {
                   </span>
                 </h1>
                 <p className="lead">
-                  Aquí conocerás nuestros productos que tenemos disponibles para
-                  ti, podrás obtener información.
+                  Aquí conocerás y podrás obtener información sobre los
+                  productos que tenemos disponibles para ti.
                 </p>
               </div>
             </div>

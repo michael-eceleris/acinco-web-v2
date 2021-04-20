@@ -18,8 +18,14 @@ import TermAndConditionsTwo from "./components/TermsAndConditions/TermsAndCondit
 import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndConditionsSamsung";
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
+import NotFound from "./pages/NotFound";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 function App() {
   return (
     <FormState>
@@ -98,6 +104,8 @@ function App() {
             <Route path="/samsung/terminos-condiciones" exact>
               <TermAndConditionsSamsung />
             </Route>
+            <Route path="/pagina-no-encontrada" component={NotFound} />
+            <Redirect to="/pagina-no-encontrada" />
           </Switch>
         </Router>
       </AuthState>

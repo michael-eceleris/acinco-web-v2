@@ -24,14 +24,19 @@ const Banner = () => {
             data-aos-delay="0"
           >
             <div className="mt-4 ml--10">
-              <h1 className="font-weight-light mb-4">
+              <h1 className="font-weight-light mb-4 mb-md-0 mb-lg-3 mb-xl-4">
                 <span className="font-weight-medium">Seguro por Gama</span>
               </h1>
-              <p className="lead mb--0">
+              <p className="lead mb--0 h6-md">
                 Este servicio va dirigido a todos los usuarios que tengan un
                 plan pospago en Tigo.
               </p>
-              <p className="fs--14">* Aplican términos y condiciones.</p>
+              <p className="fs--14 mb-0 ml-md-0 ml-0 ml-xl-0 ml-lg-1 ml-0-xs">
+                * Beneficio otorgado por Tigo hasta el 07 de Enero de 2021.
+              </p>
+              <p className="fs--14 ml-md-0 ml-0 ml-xl-0 ml-lg-1 ml-0-xs">
+                * Aplican términos y condiciones.
+              </p>
             </div>
           </div>
           <div className="col-12 col-md-6 order-2 order-md-1 d-middle show2">

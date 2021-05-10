@@ -27,22 +27,7 @@ const MoreInfo = ({ setError, error }) => {
   const [errorDate, setErrorDate] = useState(false);
   const [errorNumberPhone, setErrorNumberPhone] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
-  const date = new Date();
-  let day = null;
-  let month = null;
-  if (date.getDate() < 10) {
-    day = 0;
-  } else {
-    day = "";
-  }
-  if (date.getMonth() + 1 < 10) {
-    month = 0;
-  } else {
-    month = "";
-  }
-  const actualDate = `${date.getFullYear()}-${month}${
-    date.getMonth() + 1
-  }-${day}${date.getDate()} `;
+  const actualDate = new Date().toISOString();
 
   useEffect(() => {
     const getGenre = async () => {
@@ -105,10 +90,10 @@ const MoreInfo = ({ setError, error }) => {
   };
 
   const handleChangeDate = (e) => {
-    if (e === "Invalid Date" || e.toISOString().substring(0, 10) > actualDate) {
+    if (e === "Invalid Date" || e.toISOString() - 1 > actualDate) {
       setErrorDate(true);
     } else {
-      let date = e.toISOString().substring(0, 10);
+      let date = e.toISOString();
       setDateActual(date);
       setErrorDate(false);
     }
@@ -157,47 +142,47 @@ const MoreInfo = ({ setError, error }) => {
 
   return (
     <>
-      <div className="form-group">
+      <div className='form-group'>
         <Dropdown
           options={gender ? gender : []}
-          prompt="Selecciona tu género"
-          id="id"
-          label1="name"
+          prompt='Selecciona tu género'
+          id='id'
+          label1='name'
           onChange={(val) => handleChangeGenre(val)}
           value={genderNameActual}
         />
         {error && !genderActual ? (
-          <p className="text-danger">* Campo requerido</p>
+          <p className='text-danger'>* Campo requerido</p>
         ) : errorGender ? (
-          <p className="text-danger">* Campo obligatorio</p>
+          <p className='text-danger'>* Campo obligatorio</p>
         ) : null}
       </div>
-      <div className="form-group mb-4">
+      <div className='form-group mb-4'>
         <DropdownFilter
           options={city ? city : []}
-          prompt="Selecciona la ciudad en la que ocurrió el siniestro."
-          id="id"
-          label="nombre"
+          prompt='Selecciona la ciudad en la que ocurrió el siniestro.'
+          id='id'
+          label='nombre'
           value={cityNameActual}
           onChange={(val) => handleChangeCity(val)}
         />
         {error && !cityActual ? (
-          <p className="text-danger">* Campo requerido</p>
+          <p className='text-danger'>* Campo requerido</p>
         ) : errorCity ? (
-          <p className="text-danger">* Campo obligatorio</p>
+          <p className='text-danger'>* Campo obligatorio</p>
         ) : null}
       </div>
-      <div className="form-group mb-4">
+      <div className='form-group mb-4'>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <KeyboardDatePicker
             clearable
-            format="dd/MM/yyyy"
-            className="form-control"
-            label="Seleccionar fecha en la que ocurrió el siniestro"
+            format='dd/MM/yyyy'
+            className='form-control'
+            label='Seleccionar fecha en la que ocurrió el siniestro'
             onChange={handleChangeDate}
             value={dateActual}
             maxDate={actualDate}
-            placeholder="dd/mm/aaaa"
+            placeholder='dd/mm/aaaa'
             style={{
               backgroundColor: "#fff",
               padding: "0.78rem 0 0.78rem 1rem",
@@ -206,9 +191,9 @@ const MoreInfo = ({ setError, error }) => {
           />
         </MuiPickersUtilsProvider>
         {error && !dateActual ? (
-          <p className="text-danger">* Campo requerido</p>
+          <p className='text-danger'>* Campo requerido</p>
         ) : errorDate ? (
-          <p className="text-danger">* Fecha incorrecta</p>
+          <p className='text-danger'>* Fecha incorrecta</p>
         ) : null}
       </div>
       {/* <div className="form-label-group mb-4">
@@ -227,76 +212,76 @@ const MoreInfo = ({ setError, error }) => {
           <p className="text-danger">* Fecha incorrecta</p>
         ) : null}
       </div> */}
-      <div className="form-label-group">
+      <div className='form-label-group'>
         <input
-          className="form-control"
-          id="number"
-          type="text"
-          name="number"
+          className='form-control'
+          id='number'
+          type='text'
+          name='number'
           required
           onChange={handleChangeNumber}
           value={phoneNumber}
-          pattern="[0-9]{0,10}"
-          placeholder="Número de línea con la que sucedió el siniestro"
+          pattern='[0-9]{0,10}'
+          placeholder='Número de línea con la que sucedió el siniestro'
         />
-        <label className="fontcustom">
+        <label className='fontcustom'>
           Número de línea con la que sucedió el siniestro
         </label>
       </div>
-      <div className="mb-4 d-flex justify-content-between">
+      <div className='mb-4 d-flex justify-content-between'>
         <div>
           {(error && !phoneNumber) ||
           (error && phoneNumber.length === 0) ||
           (error && phoneNumber.length !== 10) ? (
-            <p className="text-danger">* Campo requerido</p>
+            <p className='text-danger'>* Campo requerido</p>
           ) : phoneNumber.length > 10 ? (
-            <p className="text-danger">* Excediste la cantidad de números</p>
+            <p className='text-danger'>* Excediste la cantidad de números</p>
           ) : errorNumberPhone ? (
             phoneNumber.length === 0 ? (
-              <p className="text-danger">* Campo requerido</p>
+              <p className='text-danger'>* Campo requerido</p>
             ) : (
-              <p className="text-danger">* Solo se permiten números</p>
+              <p className='text-danger'>* Solo se permiten números</p>
             )
           ) : null}
         </div>
         <div>
-          <p className="text-left p-0 m-0">{phoneNumber.length}/10</p>
+          <p className='text-left p-0 m-0'>{phoneNumber.length}/10</p>
         </div>
       </div>
-      <div className="form-label-group">
+      <div className='form-label-group'>
         <textarea
-          className="form-control"
+          className='form-control'
           required
-          placeholder="Descripción del siniestro"
+          placeholder='Descripción del siniestro'
           onChange={handleChangeMenssage}
-          rows="3"
+          rows='3'
         ></textarea>
-        <label className="fontcustom">Descripción del siniestro</label>
+        <label className='fontcustom'>Descripción del siniestro</label>
       </div>
-      <div className="mb-4 d-flex justify-content-between">
+      <div className='mb-4 d-flex justify-content-between'>
         <div>
           {error && !messageActual ? (
-            <p className="text-danger">* Campo requerido</p>
+            <p className='text-danger'>* Campo requerido</p>
           ) : errorMessage ? (
-            <p className="text-danger">
+            <p className='text-danger'>
               * Accediste el número máximo de caracteres
             </p>
           ) : null}
         </div>
         <div>
-          <p className="text-left p-0 m-0">
+          <p className='text-left p-0 m-0'>
             {messageActual ? messageActual.length : 0}/350
           </p>
         </div>
       </div>
-      <div className="mt-4 d-flex justify-content-between">
+      <div className='mt-4 d-flex justify-content-between'>
         <button
-          className="btn btn-sm btn-outline-secondary"
+          className='btn btn-sm btn-outline-secondary'
           onClick={handlePreviusStep}
         >
           Atrás
         </button>
-        <button className="btn btn-sm btn-primary" onClick={handleNextStep}>
+        <button className='btn btn-sm btn-primary' onClick={handleNextStep}>
           Siguiente
         </button>
       </div>

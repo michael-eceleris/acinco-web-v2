@@ -115,13 +115,17 @@ const TermsAndConditions = (props) => {
                 )}
                 {plan === "all" ? (
                   <>
-                    <p>
+                    <p className="mb-2">
                       Este seguro aplica para clientes que adquieran los planes
                       Pospago 5.3, plan Business Combo B2B Voz y SMS Nacional
                       Ilimitado + 35GB y/o Combo B2B Voz y SMS Nacional
                       Ilimitado + 50GB, sin ningún costo adicional.
                     </p>
-                    <h3 className="h6 text-muted">Coberturas</h3>
+                    <p className="fs--14 mb-0">
+                      * Beneficio otorgado por Tigo hasta el 07 de Enero de
+                      2021.
+                    </p>
+                    <h3 className="h6 text-muted mt-4">Coberturas</h3>
                     <p>
                       El usuario tiene derecho a (2) reclamaciones por vigencia
                       anual:
@@ -159,16 +163,20 @@ const TermsAndConditions = (props) => {
                       Popago 5.2, Bancolombia Debito/Credito o Business Combo
                       B2B Ilimitado Voz + 20GB sin ningún costo adicional.
                     </p>
-                    <p>
+                    <p className="mb-2">
                       Este producto cubre la reparación de la pantalla en caso
                       de rotura por accidente.
                     </p>
-                    <h3 className="h6 text-muted">Coberturas</h3>
+                    <p className="fs--14 mb-0">
+                      * Beneficio otorgado por Tigo hasta el 07 de Enero de
+                      2021.
+                    </p>
+                    <h3 className="h6 text-muted mt-4">Coberturas</h3>
                     <p>
                       Cubre solo una (1) reclamación por año por fractura de
                       pantalla en caso de accidente.
                     </p>
-                    <h3 className="h6 text-muted">Recobros</h3>
+                    <h3 className="h6 text-muted mt-4">Recobros</h3>
                     <p>
                       Recobro por reclamación aprobada: 30% del valor de la
                       pantalla.
@@ -176,17 +184,21 @@ const TermsAndConditions = (props) => {
                   </>
                 ) : plan === "smart" ? (
                   <>
-                    <p>
+                    <p className="mb-2">
                       Este plan va dirigido a los usuarios Tigo que tenga activo
                       un arma tu plan superior a $74.900 pesos y activen la
                       casilla de Protección Móvil en Smart App.
                     </p>
-                    <h3 className="h6 text-muted">Coberturas</h3>
+                    <p className="fs--14 mb-0">
+                      * Beneficio otorgado por Tigo hasta el 07 de Enero de
+                      2021.
+                    </p>
+                    <h3 className="h6 text-muted mt-4">Coberturas</h3>
                     <p>
                       Cubre solo una (1) reclamación por año por Hurto
                       Calificado, Hurto Simple o Daño Total Accidental.
                     </p>
-                    <h3 className="h6 text-muted">Recobros</h3>
+                    <h3 className="h6 text-muted mt-4">Recobros</h3>
                     <p>
                       Un recobro por reclamación aprobada: 35% del valor
                       comercial del equipo antes de IVA al momento de tu
@@ -195,17 +207,21 @@ const TermsAndConditions = (props) => {
                   </>
                 ) : plan === "gama" ? (
                   <>
-                    <p>
+                    <p className="mb-0">
                       Este plan va dirigido a los usuarios Tigo que tenga activo
                       un arma tu plan Pospago.
                     </p>
-                    <h3 className="h6 text-muted">Coberturas</h3>
+                    <p className="fs--14 mb-0">
+                      * Beneficio otorgado por Tigo hasta el 07 de Enero de
+                      2021.
+                    </p>
+                    <h3 className="h6 text-muted mt-4">Coberturas</h3>
                     <p>
                       Cubre dos (2) reclamación por año, una (1) por Hurto
                       Calificado o Hurto Simple y una (1) por Daño Total
                       Accidental.
                     </p>
-                    <h3 className="h6 text-muted">Recobros</h3>
+                    <h3 className="h6 text-muted mt-4">Recobros</h3>
                     <p>
                       Un recobro por reclamación aprobada: 35% del valor
                       comercial del equipo antes de IVA al momento de tu

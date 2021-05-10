@@ -25,7 +25,7 @@ const Banner = () => {
               data-aos-delay="0"
             >
               <div className="mt-2 ml--10">
-                <h1 className="font-weight-light mb-4 h3-md">
+                <h1 className="font-weight-light mb-4 h3-md mb-lg-0 mb-xl-4 mb-md-4">
                   <span className="font-weight-medium">
                     Fractura de Pantalla
                   </span>
@@ -34,6 +34,9 @@ const Banner = () => {
                   Este seguro aplica para clientes que adquieran los planes
                   Pospago 5.2, Bancolombia Crédito o Bussiness Combo B2B Voz y
                   SMS Nacional Ilimitado + 12GB o combos.
+                </p>
+                <p className="fs--14 mb-0">
+                  * Beneficio otorgado por Tigo hasta el 07 de Enero de 2021.
                 </p>
                 <p className="fs--14">* Aplican términos y condiciones.</p>
               </div>

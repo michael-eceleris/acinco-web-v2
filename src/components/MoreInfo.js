@@ -113,7 +113,7 @@ const MoreInfo = ({ setError, error }) => {
       selectMoreInfo({
         mensaje_ticket: messageActual,
         linea_siniestro_one: phoneNumber,
-        fecha_siniestro: dateActual,
+        fecha_siniestro: dateActual.substring(0, 10),
         ciudad_siniestro: cityActual,
         nombre_siniestro: cityNameActual,
         genero_reclamante: genderActual,

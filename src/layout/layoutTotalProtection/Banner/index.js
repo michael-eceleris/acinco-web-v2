@@ -19,12 +19,12 @@ const Banner = () => {
       <div className="container min-h75vh d-middle pt-5">
         <div className="row text-center-xs">
           <div
-            className="col-12 col-md-6 order-2 order-md-1 pb-5"
+            className="col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-4"
             data-aos="fade-in"
             data-aos-delay="0"
           >
             <div className="mt-2 ml--10">
-              <h1 className="font-weight-light mb-4 h2-md">
+              <h1 className="font-weight-light mb-4 h2-md mb-lg-0 mb-xl-4 mb-md-4">
                 <span className="font-weight-medium">Protección Total</span>
               </h1>
               <p className="lead mb--0 h6-md">
@@ -33,7 +33,12 @@ const Banner = () => {
                 ilimitado +35GB y/o Combo B2B Voz y SMS Nacional ilimitado
                 +50GB, sin ningún costo adicional
               </p>
-              <p className="fs--14">* Aplican términos y condiciones.</p>
+              <p className="fs--14 mb-0 ml-md-0 ml-0 ml-xl-0 ml-lg-0 ml-0-xs">
+                * Beneficio otorgado por Tigo hasta el 07 de Enero de 2021.
+              </p>
+              <p className="fs--14 ml-md-0 ml-0 ml-xl-0 ml-lg-0 ml-0-xs">
+                * Aplican términos y condiciones.
+              </p>
             </div>
           </div>
           <div className="col-12 col-md-6 order-2 order-md-1 d-middle show2">

@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import Banner from "../layout/layoutMotorola/Banner";
 import Footer from "../components/Footer";
+import Coverages from "../layout/layoutMotorola/Coverages"
 
 const Motorola = () => {
   return ( 
@@ -14,7 +15,7 @@ const Motorola = () => {
         />
       </Helmet>
       <Banner />
-      
+      <Coverages />
       <Footer />
     </>
    );

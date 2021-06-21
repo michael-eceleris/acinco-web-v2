@@ -19,6 +19,7 @@ import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndCo
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
+import Motorola from "./pages/Motorola";
 
 import {
   BrowserRouter as Router,
@@ -67,6 +68,9 @@ function App() {
             </Route>
             <Route path="/detalle-soat" exact>
               <SoatDetail />
+            </Route>
+            <Route paht="/motorola" exact>
+              <Motorola />
             </Route>
             <Route path="/pospago-5-3/terminos-condiciones" exact>
               <TermAndConditions namePlan="Protección Total" plan="all" />

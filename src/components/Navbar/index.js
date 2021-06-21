@@ -148,6 +148,11 @@ const Navbar = ({ hideMessage }) => {
                       </Link>
                     </li>
                     <li className="dropdown-item">
+                      <Link className="dropdown-link" to="/motorola">
+                        Motorola
+                      </Link>
+                    </li>
+                    <li className="dropdown-item">
                       <Link
                         className="dropdown-link"
                         to="/soat-asistencia-de-pantalla"

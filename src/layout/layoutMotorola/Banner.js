@@ -1,5 +1,5 @@
 import React from "react";
-import PhoneRepair from "../../../assets/images/protect.png";
+import Motorola from "../../assets/images/mobile-women-motorola.png";
 
 const Banner = () => {
   return (
@@ -20,23 +20,16 @@ const Banner = () => {
         <div className="container min-h75vh d-middle pt-5">
           <div className="row text-center-xs">
             <div
-              className="col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-5 pt-md-4"
+              className="col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-5"
               data-aos="fade-in"
               data-aos-delay="0"
             >
-              <div className="mt-2 ml--10">
-                <h1 className="font-weight-light mb-4 h3-md mb-lg-0 mb-xl-4 mb-md-4">
-                  <span className="font-weight-medium">
-                    Fractura de Pantalla
-                  </span>
+              <div className="mt-4 ml--10">
+                <h1 className="font-weight-light mb-4">
+                  <span className="font-weight-medium">Motorola</span>
                 </h1>
-                <p className="lead mb--0 h6-md">
-                  Este seguro aplica para clientes que adquieran los planes
-                  Pospago 5.2, Bancolombia Crédito o Bussiness Combo B2B Voz y
-                  SMS Nacional Ilimitado + 12GB o combos.
-                </p>
-                <p className="fs--14 mb-0">
-                  * Beneficio otorgado por Tigo hasta el 07 de Enero de 2021.
+                <p className="lead mb--0">
+                  Este seguro va dirigido a los usuarios que compren su equipo con seguro o asistencia por medio de la pagina web de Motorola.
                 </p>
                 <p className="fs--14">* Aplican términos y condiciones.</p>
               </div>
@@ -44,9 +37,9 @@ const Banner = () => {
             <div className="col-12 col-md-6 order-2 order-md-1 d-middle show2">
               <img
                 width="250"
-                className="img-fluid lazy "
-                src={PhoneRepair}
-                alt="logo_fractura_de_pantalla"
+                className="img-fluid lazy"
+                src={Motorola}
+                alt="logo_motorola"
               />
             </div>
           </div>

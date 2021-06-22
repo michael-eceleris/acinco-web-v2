@@ -286,7 +286,10 @@ const ContactUs = () => {
                   </h3>
                   <ul className="list-unstyled m-0 fs--15">
                     <li className="list-item text-muted">
-                      Lunes &ndash; Sábado: 08:00 am – 6:00 pm
+                      Lunes &ndash; Viernes: 08:00 am &ndash; 6:00 pm
+                    </li>
+                    <li className="list-item text-muted">
+                      Sábado: 08:00 am &ndash; 2:00 pm
                     </li>
                   </ul>
                 </div>

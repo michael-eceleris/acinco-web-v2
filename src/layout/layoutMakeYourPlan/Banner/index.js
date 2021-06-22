@@ -24,18 +24,23 @@ const Banner = () => {
               data-aos="fade-in"
               data-aos-delay="0"
             >
-              <div className="mt-4 ml--10 mb-5">
-                <h1 className="font-weight-light mb-4 h2-md">
+              <div className="mt-4 mt-lg-0 ml--10 mb-5 mt-xl-0 mt-md-0 mt-0-xs">
+                <h1 className="font-weight-light mb-4 h2-md mb-lg-0 mb-xl-4 mb-md-4">
                   <span className="font-weight-medium">
                     Arma tu Plan - Smart App
                   </span>
                 </h1>
-                <p className="lead h6-md">
+                <p className="lead mb--0 h6-md">
                   Este plan va dirigido a los usuarios Tigo que tengan activo un
                   Arma tu plan superior a $74.900 y activen la casilla de
                   Protección Móvil en Smart App
                 </p>
-                <p className="fs--14">* Aplican términos y condiciones.</p>
+                <p className="fs--14 mb-0 ml-md-0 ml-0 ml-xl-0 ml-lg-0 ml-0-xs">
+                  * Beneficio otorgado por Tigo hasta el 07 de Enero de 2021.
+                </p>
+                <p className="fs--14 ml-md-0 ml-0 ml-xl-0 ml-lg-0 ml-0-xs">
+                  * Aplican términos y condiciones.
+                </p>
               </div>
             </div>
             <div className="col-12 col-md-6 order-2 order-md-1 d-middle show2">

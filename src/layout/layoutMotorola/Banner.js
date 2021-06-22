@@ -29,7 +29,7 @@ const Banner = () => {
                   <span className="font-weight-medium">Motorola</span>
                 </h1>
                 <p className="lead mb--0">
-                  Este seguro va dirigido a los usuarios que compren su equipo con seguro o asistencia por medio de la pagina web de Motorola.
+                  Este seguro va dirigido a los usuarios que compren su equipo con seguro o asistencia por medio de la página web de Motorola.
                 </p>
                 <p className="fs--14">* Aplican términos y condiciones.</p>
               </div>

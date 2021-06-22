@@ -29,7 +29,7 @@ const ProductsHome = () => {
                 </div>
                 <h4>Protección Total</h4>
                 <div className='card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column'>
-                  <div className='h-75'>
+                  <div className='h-75 mt-lg-3 mb-lg-5'>
                     <p className='lead fs--18'>
                       Esta es la cobertura que te ofrece el plan Protección
                       Total:
@@ -88,9 +88,9 @@ const ProductsHome = () => {
                 <div className='mt-3 mb-5 d-middle'>
                   <img height='120' src={PhoneRepair} alt='samsung' />
                 </div>
-                <h4>Fractura de Pantalla</h4>
+                <h4 style={{ whiteSpace: "nowrap" }}>Fractura de Pantalla</h4>
                 <div className='card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column'>
-                  <div className='h-75'>
+                  <div className='h-75 mt-lg-2'>
                     <p className='lead fs--18'>
                       Protege la pantalla de tu celular, mira estas coberturas:
                     </p>
@@ -108,7 +108,7 @@ const ProductsHome = () => {
                     </div>
                   </div>
                   <div className='h-25'>
-                    <hr />
+                    <hr className='mt-lg-4' />
                     <div className='d-flex justify-content-center'>
                       <Link
                         className='btn btn-primary btn-lg'
@@ -129,7 +129,7 @@ const ProductsHome = () => {
                 </div>
                 <h4>Motorola</h4>
                 <div className='card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column'>
-                  <div className='h-75'>
+                  <div className='h-75 mt-lg-2'>
                     <p className='lead fs--18'>
                       Si adquieres un equipo en la página web de Motorola,
                       tendrás la posibilidad de proteger tu equipo:
@@ -169,7 +169,7 @@ const ProductsHome = () => {
                     </div>
                   </div>
                   <div className='h-25'>
-                    <hr />
+                    <hr className='mt-lg-4' />
                     <div className='d-flex justify-content-center'>
                       <Link className='btn btn-primary btn-lg' to='/motorola'>
                         Conocer más
@@ -185,9 +185,7 @@ const ProductsHome = () => {
                 <div className='mt-3 mb-5 d-middle'>
                   <img height='120' src={LogoAxaColpatria} alt='samsung' />
                 </div>
-
                 <h4>SOAT Asistencia de Pantalla</h4>
-
                 <div className='card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column'>
                   <div className='h-75'>
                     <p className='lead fs--18'>
@@ -208,7 +206,7 @@ const ProductsHome = () => {
                     </div>
                   </div>
                   <div className='h-25'>
-                    <hr />
+                    <hr className='mt-lg-3' />
                     <div className='d-flex justify-content-center'>
                       <Link
                         className='btn btn-primary btn-lg'
@@ -278,7 +276,7 @@ const ProductsHome = () => {
                 <h4>Arma tu Plan - Smart App </h4>
 
                 <div className='card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column'>
-                  <div className='h-75'>
+                  <div className='h-75 mb-lg-3'>
                     <p className='lead fs--18'>
                       El plan Smart App, dirigido a clientes Tigo, te ofrece las
                       siguientes coberturas:
@@ -312,7 +310,7 @@ const ProductsHome = () => {
                     </div>
                   </div>
                   <div className='h-25'>
-                    <hr />
+                    <hr className='mt-0' />
                     <div className='d-flex justify-content-center'>
                       <Link
                         className='btn btn-primary btn-lg'

@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Coverages from "../layout/layoutMotorola/Coverages";
 import Recoveries from "../layout/layoutMotorola/RecoveriesAndExclutions";
 import ContactUs from "../components/ContactUs";
+import Plans from "../layout/layoutMotorola/Plans";
 
 const Motorola = () => {
   return (
@@ -17,6 +18,7 @@ const Motorola = () => {
         />
       </Helmet>
       <Banner />
+      <Plans />
       <Coverages />
       <Recoveries />
       <ContactUs />

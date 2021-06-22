@@ -11,9 +11,6 @@ const Coverages = () => {
       <section className='bg-white'>
         <div className='container'>
           <div className='text-center mb--100'>
-            <h2 className='font-weight-light mb-4 text-center'>
-              Detalles del plan Motorola
-            </h2>
             <h3 className='h3 ml-2 mb-1 mt-2 text-center'>Coberturas</h3>
           </div>
           <div className='bg-white pt-1 rounded overflow-hidden'>

@@ -19,6 +19,8 @@ import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndCo
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
+import Motorola from "./pages/Motorola";
+import TermsAndConditionsMotorola from "./components/TermsAndConditions/TermsAndConditionMotorola";
 
 import {
   BrowserRouter as Router,
@@ -35,77 +37,83 @@ function App() {
           <Navbar hideMessage={false} />
           <WhatsappButton />
           <Switch>
-            <Route path="/" exact>
+            <Route path='/' exact>
               <Home />
             </Route>
-            <Route path="/productos" exact>
+            <Route path='/productos' exact>
               <Products />
             </Route>
-            <Route path="/tramites-y-reclamaciones" exact>
+            <Route path='/tramites-y-reclamaciones' exact>
               <Claims />
             </Route>
-            <Route path="/pospago-5-3" exact>
+            <Route path='/pospago-5-3' exact>
               <TotalProtection />
             </Route>
-            <Route path="/pospago-5-2" exact>
+            <Route path='/pospago-5-2' exact>
               <ScreenFracture />
             </Route>
-            <Route path="/arma-tu-plan-smart-app" exact>
+            <Route path='/arma-tu-plan-smart-app' exact>
               <MakeYourPlan />
             </Route>
-            <Route path="/seguro-gamas" exact>
+            <Route path='/seguro-gamas' exact>
               <SafeByGama />
             </Route>
-            <Route path="/samsung" exact>
+            <Route path='/samsung' exact>
               <Samsung />
             </Route>
-            <Route path="/soat-asistencia-de-pantalla" exact>
+            <Route path='/soat-asistencia-de-pantalla' exact>
               <ScreenAssistenceSoat />
             </Route>
-            <Route path="/colsubsidio" exact>
+            <Route path='/colsubsidio' exact>
               <AssistenceColsubsidio />
             </Route>
-            <Route path="/detalle-soat" exact>
+            <Route path='/detalle-soat' exact>
               <SoatDetail />
             </Route>
-            <Route path="/pospago-5-3/terminos-condiciones" exact>
-              <TermAndConditions namePlan="Protección Total" plan="all" />
+            <Route path='/motorola' exact>
+              <Motorola />
             </Route>
-            <Route path="/pospago-5-2/terminos-condiciones" exact>
+            <Route path='/pospago-5-3/terminos-condiciones' exact>
+              <TermAndConditions namePlan='Protección Total' plan='all' />
+            </Route>
+            <Route path='/pospago-5-2/terminos-condiciones' exact>
               <TermAndConditions
-                namePlan="Fractura de Pantalla"
-                plan="screen"
+                namePlan='Fractura de Pantalla'
+                plan='screen'
               />
             </Route>
-            <Route path="/arma-tu-plan-smart-app/terminos-condiciones" exact>
+            <Route path='/arma-tu-plan-smart-app/terminos-condiciones' exact>
               <TermAndConditions
-                namePlan="Arma tu plan – Smart App"
-                plan="smart"
+                namePlan='Arma tu plan – Smart App'
+                plan='smart'
               />
             </Route>
-            <Route path="/seguro-gamas/terminos-condiciones" exact>
-              <TermAndConditions namePlan="Seguro por Gama" plan="gama" />
+            <Route path='/seguro-gamas/terminos-condiciones' exact>
+              <TermAndConditions namePlan='Seguro por Gama' plan='gama' />
             </Route>
-            <Route path="/colsubsidio/terminos-condiciones" exact>
+            <Route path='/colsubsidio/terminos-condiciones' exact>
               <TermAndConditionsTwo
-                namePlan="Asistencia Colsubsidio – Axa Colpatria Seguros"
-                plan="colsubsidio"
+                namePlan='Asistencia Colsubsidio – Axa Colpatria Seguros'
+                plan='colsubsidio'
               />
             </Route>
             <Route
-              path="/soat-asistencia-de-pantalla/terminos-condiciones"
+              path='/soat-asistencia-de-pantalla/terminos-condiciones'
               exact
             >
               <TermAndConditionsTwo
-                namePlan="SOAT Asistencia de Pantalla"
-                plan="soat"
+                namePlan='SOAT Asistencia de Pantalla'
+                plan='soat'
               />
             </Route>
-            <Route path="/samsung/terminos-condiciones" exact>
+            <Route path='/samsung/terminos-condiciones' exact>
               <TermAndConditionsSamsung />
             </Route>
-            <Route path="/pagina-no-encontrada" component={NotFound} />
-            <Redirect to="/pagina-no-encontrada" />
+            <Route path='/motorola/terminos-condiciones' exact>
+              <TermsAndConditionsMotorola />
+            </Route>
+            <Route path='/pagina-no-encontrada' component={NotFound} />
+            <Redirect to='/pagina-no-encontrada' />
           </Switch>
         </Router>
       </AuthState>

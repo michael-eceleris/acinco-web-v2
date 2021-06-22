@@ -20,6 +20,7 @@ import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import Motorola from "./pages/Motorola";
+import TermsAndConditionsMotorola from "./components/TermsAndConditions/TermsAndConditionMotorola";
 
 import {
   BrowserRouter as Router,
@@ -107,6 +108,9 @@ function App() {
             </Route>
             <Route path='/samsung/terminos-condiciones' exact>
               <TermAndConditionsSamsung />
+            </Route>
+            <Route path='/motorola/terminos-condiciones' exact>
+              <TermsAndConditionsMotorola />
             </Route>
             <Route path='/pagina-no-encontrada' component={NotFound} />
             <Redirect to='/pagina-no-encontrada' />

@@ -4,6 +4,7 @@ import Banner from "../layout/layoutMotorola/Banner";
 import Footer from "../components/Footer";
 import Coverages from "../layout/layoutMotorola/Coverages";
 import Recoveries from "../layout/layoutMotorola/RecoveriesAndExclutions";
+import ContactUs from "../components/ContactUs";
 
 const Motorola = () => {
   return (
@@ -18,6 +19,7 @@ const Motorola = () => {
       <Banner />
       <Coverages />
       <Recoveries />
+      <ContactUs />
       <Footer />
     </>
   );

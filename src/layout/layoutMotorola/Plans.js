@@ -70,7 +70,7 @@ const Plans = () => {
                       </p>
                       <h6>Cobertura:</h6>
                       <p className='lead fs--18 text-justify hypens'>
-                        Estos contaran con una (1) reclamación al año por hurto
+                        Estos contarán con una (1) reclamación al año por hurto
                         calificado, hurto simple o daño total accidental y una
                         (1) reclamación por fractura de pantalla en caso de
                         accidente.
@@ -111,7 +111,7 @@ const Plans = () => {
                       </p>
                       <h6>Cobertura:</h6>
                       <p className='lead fs--18 text-justify hypens'>
-                        Estos contaran con una (1) reclamación por vigencia por
+                        Estos contarán con una (1) reclamación por vigencia por
                         la fractura o fisura de su pantalla en caso de
                         accidente.
                       </p>

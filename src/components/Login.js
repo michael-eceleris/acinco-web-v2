@@ -85,7 +85,7 @@ const Form = ( { colorPrimary, allUppercase }) => {
           </button>
           <p>Número de identificación o correo electrónico incorrecto.</p>
           <p className="mb-0">
-            Si el problema continua comunicate en Bogotá 4898599, para el resto
+            Si el problema continúa comunícate en Bogotá 4898599, para el resto
             de Colombia 01 8000 513 323 o WhatsApp +57 1 5142355
           </p>
         </div>

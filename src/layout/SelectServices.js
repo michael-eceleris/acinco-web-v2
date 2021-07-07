@@ -1,8 +1,40 @@
 import React, { useContext, useState, useEffect } from "react";
+import styled from "styled-components";
+
 import FormContext from "../context/form/formContext";
 import AuthContext from "../context/auth/authContext";
 import Dropdown from "../components/Dropdown/Dropdown";
-const SelectServices = () => {
+
+const ButtonSubmit = styled.button`
+  background-color: ${props => props.bgColor};
+  color: #fff;
+  :hover{
+    filter: brightness(120%);
+    color: #fff;
+  };
+  :disabled{
+    opacity: 0.65;
+  }
+`;
+
+const CustomH4 = styled.h4`
+  color: ${props => props.bgColor};
+  text-transform: ${props => props.uppercase ? "uppercase" : ""};
+`;
+
+const ButtonBack = styled.button`
+  border-color: ${props => props.bgColor};
+  color: ${props => props.bgColor};
+  :hover{
+    background-color: ${props => props.bgColor};
+    color: #fff;
+  };
+  :disabled{
+    opacity: 0.65;
+  }
+`;
+
+const SelectServices = ({ colorPrimary, colorSecundary, allUppercase }) => {
   const formContext = useContext(FormContext);
   const authContext = useContext(AuthContext);
   const { user, authUser, logOut, authenticate } = authContext;
@@ -65,7 +97,7 @@ const SelectServices = () => {
   return (
     <>
       <div className="container p-1">
-        <h4>Selecciona tu cobertura</h4>
+        <CustomH4 bgColor={colorPrimary} uppercase={allUppercase}>Selecciona tu cobertura</CustomH4>
         <p className="fs--17">
           En esta parte tienes que escoger el dispositivo, el plan y el tipo de
           cobertura para realizar la reclamación.
@@ -118,15 +150,16 @@ const SelectServices = () => {
           ) : null}
         </div>
         <div className="mt-4 d-flex justify-content-between">
-          <button
-            className="btn btn-sm btn-outline-secondary"
+          <ButtonBack
+            className={`btn btn-sm  ${colorSecundary ? "" : "btn-outline-secondary"} `}
             onClick={handlePreviusStep}
+            bgColor={colorSecundary}
           >
             Atrás
-          </button>
-          <button className="btn btn-sm btn-primary" onClick={handleNextStep}>
+          </ButtonBack>
+          <ButtonSubmit bgColor={colorPrimary} className={`btn btn-sm  ${colorPrimary ? "" : "btn-primary"}`} onClick={handleNextStep}>
             Siguiente
-          </button>
+          </ButtonSubmit>
         </div>
       </div>
     </>

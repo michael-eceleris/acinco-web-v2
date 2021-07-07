@@ -1,14 +1,22 @@
 import React, { useContext, useState } from "react";
+import styled from "styled-components";
+
 import FormContext from "../context/form/formContext";
 import Documents from "../components/Documents";
-const DocumentsLayout = () => {
+
+const CustomH4 = styled.h4`
+  color: ${props => props.bgColor};
+  text-transform: ${props => props.uppercase ? "uppercase" : ""};
+`;
+
+const DocumentsLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
   const formContext = useContext(FormContext);
   const { coverage, openModal, plan } = formContext;
   const [error, setError] = useState(false);
   return (
     <>
       <div className="container py-1">
-        <h4>Subir documentos</h4>
+        <CustomH4 bgColor={colorPrimary} uppercase={allUppercase} >Subir documentos</CustomH4>
         <p className="fs--17 mb--5 text-justify">
           En esta sección debes subir los documentos necesarios para la
           cobertura de <b>{coverage.nombre}</b>. Para subir los documentos
@@ -27,7 +35,7 @@ const DocumentsLayout = () => {
         </p>
         <p className="fs--17 mb--0"></p>
         <div className="container py-4">
-          <Documents setError={setError} error={error} />
+          <Documents setError={setError} error={error} colorPrimary={colorPrimary} colorSecundary={colorSecundary} />
         </div>
         {error ? null : null}
       </div>

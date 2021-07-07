@@ -1,0 +1,25 @@
+[
+  {
+    "client": "itau",
+    "clientName": "Itau",
+    "logo": "logo-sbs.png",
+    "icon": "favicon_sbs.png",
+    "imageBanner": "icon_senor_mirando_arriba.png",
+    "colorPrimary": "#9E1C64",
+    "colorSecundary": "#5C6670",
+    "allUppercase": true,
+    "backgroundPrimary": "",
+    "backgroundSecondary": "",
+    "customerService": {
+      "company": "SBS Seguros",
+      "attentionSchedule": [
+        "Lunes - Viernes: 8:00 am - 6:00 pm",
+        "Sabado: 8:00 am - 2:00 pm"
+      ],
+      "contact": [
+        "En Bogota 5818181",
+        "Para el resto de Colombia 01 8000 512 633"
+      ]
+    }
+  }
+]

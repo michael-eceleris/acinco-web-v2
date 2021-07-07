@@ -1,9 +1,27 @@
 import { useState, useContext } from "react";
+import styled from "styled-components";
 
 import AuthContext from "../context/auth/authContext";
 import FormContext from "../context/form/formContext";
 
-const Form = () => {
+const ButtonSubmit = styled.button`
+  background-color: ${props => props.bgColor};
+  color: #fff;
+  :hover{
+    filter: brightness(120%);
+    color: #fff;
+  };
+  :disabled{
+    opacity: 0.65;
+  }
+`;
+
+const CustomH4 = styled.h4`
+  color: ${props => props.bgColor};
+  text-transform: ${props => props.uppercase ? "uppercase" : ""};
+`;
+
+const Form = ( { colorPrimary, allUppercase }) => {
   const authContext = useContext(AuthContext);
   const { error, errorUser, authenticate, login, authUser } = authContext;
   const formContext = useContext(FormContext);
@@ -88,7 +106,7 @@ const Form = () => {
         </div>
       ) : null}
       <div className="container p-2 w-50 tablelogin">
-        <h4>Identifícate</h4>
+        <CustomH4 bgColor={colorPrimary} uppercase={allUppercase}>Identifícate</CustomH4>
         <p className="fs--17">Identifícate para saber quién eres</p>
         <form onSubmit={handleOnSubmit} className="collapse bs-validate show">
           <div className="form-label-group mb-3  ml-auto mr-auto">
@@ -117,10 +135,11 @@ const Form = () => {
             <label htmlFor="password">Correo electrónico</label>
           </div>
           <div className="d-flex justify-content-center">
-            <button
+            <ButtonSubmit
               type="submit"
-              className="btn btn-sm btn-primary justify-content-between"
+              className={`btn btn-sm ${colorPrimary ? "" : "btn-primary"} justify-content-between`}
               disabled={isLoading}
+              bgColor={colorPrimary}
             >
               Inicia Sesión
               {isLoading ? (
@@ -130,7 +149,7 @@ const Form = () => {
                   aria-hidden="true"
                 ></i>
               ) : null}
-            </button>
+            </ButtonSubmit>
           </div>
         </form>
       </div>

@@ -27,7 +27,8 @@ const ClaimsBlank = ({ client }) => {
       company,
       attentionSchedule,
       contact
-    } 
+    },
+    claimsDoc
   } = client;
   sessionStorage.setItem('colorPrimary', colorPrimary);
   const [ iconTab, setIconTab ] = useState(null);
@@ -45,8 +46,8 @@ const ClaimsBlank = ({ client }) => {
       <Navbar  clientName={clientName} logo={logo} />
       <Banner imageBanner={imageBanner} clientName={clientName} colorPrimary={colorPrimary} />
       {showModal ? <Modal /> : null}
-      <ModalInfo />
-      <Layout colorPrimary={colorPrimary} colorSecundary={colorSecundary} allUppercase={allUppercase}/>
+      <ModalInfo clientName={clientName} claimsDoc={claimsDoc} />
+      <Layout colorPrimary={colorPrimary} colorSecundary={colorSecundary} allUppercase={allUppercase} claimsDoc={claimsDoc}/>
       <ContactUs 
         colorPrimary={colorPrimary} 
         company={company} 

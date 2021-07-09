@@ -199,7 +199,7 @@ const Modal = (props) => {
                             {submit.data.data.fecha_creacion.substring(0, 4)}{" "}
                             aplicando a la cobertura de{" "}
                             <span className="font-weight-bold ">
-                              {submit.data.data.plan.cobertura.tipo_cobertura.nombre}
+                              {submit.data.data.tipo_cobertura.nombre}
                             </span>
                           </div>
                         ) : (

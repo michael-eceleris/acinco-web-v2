@@ -9,7 +9,7 @@ const CustomH4 = styled.h4`
   text-transform: ${props => props.uppercase ? "uppercase" : ""};
 `;
 
-const DocumentsLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
+const DocumentsLayout = ({ colorPrimary, allUppercase, colorSecundary, claimsDoc }) => {
   const formContext = useContext(FormContext);
   const { coverage, openModal, plan } = formContext;
   const [error, setError] = useState(false);
@@ -35,7 +35,7 @@ const DocumentsLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
         </p>
         <p className="fs--17 mb--0"></p>
         <div className="container py-4">
-          <Documents setError={setError} error={error} colorPrimary={colorPrimary} colorSecundary={colorSecundary} />
+          <Documents setError={setError} error={error} colorPrimary={colorPrimary} colorSecundary={colorSecundary} claimsDoc={claimsDoc} />
         </div>
         {error ? null : null}
       </div>

@@ -7,7 +7,7 @@ import MoreInfoLayout from "../layout/MoreInfoLayout";
 import ReviewLayout from "../layout/ReviewLayout";
 import FormContext from "../context/form/formContext";
 
-const Layout = ({ colorPrimary, colorSecundary, allUppercase }) => {
+const Layout = ({ colorPrimary, colorSecundary, allUppercase, claimsDoc }) => {
   const formContext = useContext(FormContext);
   const { step } = formContext;
 
@@ -39,6 +39,7 @@ const Layout = ({ colorPrimary, colorSecundary, allUppercase }) => {
                 colorPrimary={colorPrimary} 
                 colorSecundary={colorSecundary} 
                 allUppercase={allUppercase} 
+                claimsDoc={claimsDoc}
               />
             ) : step === 3 ? (
               <MoreInfoLayout 

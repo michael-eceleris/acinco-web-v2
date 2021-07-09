@@ -34,7 +34,7 @@ const CustomFile = styled.label`
   }
 `;
 
-const Documents = ({ setError, colorPrimary, colorSecundary }) => {
+const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
   const formContext = useContext(FormContext);
   const {
     documents,
@@ -187,7 +187,7 @@ const Documents = ({ setError, colorPrimary, colorSecundary }) => {
                     ) : null}
                     {doc.nombre_documento_save === "Formato de reclamación." ? (
                       <a
-                        href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/Formato_Reclamacion_AXA_COLPATRIA.pdf"
+                        href={`${ claimsDoc ? claimsDoc : "https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/Formato_Reclamacion_AXA_COLPATRIA.pdf"}`}
                         target="_blank"
                         rel="noreferrer"
                         className="ml--8 link-muted btn_link font-weight-medium"

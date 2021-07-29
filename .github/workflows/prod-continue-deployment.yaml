@@ -1,4 +1,4 @@
-name: test
+name: rebuild
 on:
   push:
     branches:
@@ -11,10 +11,11 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: |
-            touch ~/acinco-web-prod
+            cd ${{secrets.PROD_DIR}}
+            ${{secrets.PROD_DIR}}/construye.sh ${{secrets.PROD_DIR}}
             exit 0
           host: ${{ secrets.PROD_HOST }}
-          user: notenableduser
+          user: ${{secrets.PROD_USER}}
           key: ${{ secrets.PROD_PASS}}
 #          pass: ${{ secrets.PASS }}
           args: "-tt -vvv"  

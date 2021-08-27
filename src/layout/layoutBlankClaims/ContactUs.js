@@ -1,43 +1,50 @@
-import React, { useState, useContext } from "react";
 import styled from "styled-components";
-
-import FormContext from "../../context/form/formContext";
-import Modal from "../../components/Modal";
 import { useForm } from "react-hook-form";
+import { makeStyles } from "@material-ui/core";
+import React, { useState, useContext } from "react";
 
+import Modal from "../../components/Modal";
+import FormContext from "../../context/form/formContext";
 
 const ButtonSubmit = styled.button`
-  background-color: ${props => props.bgColor};
+  background-color: ${(props) => props.bgColor};
   color: #fff;
-  :hover{
+  :hover {
     filter: brightness(120%);
     color: #fff;
-  };
-  :disabled{
+  }
+  :disabled {
     opacity: 0.65;
   }
 `;
 
 const CustomH2 = styled.h2`
-  color: ${props => props.bgColor};
-  text-transform: ${props => props.uppercase ? "uppercase" : ""};
+  color: ${(props) => props.bgColor};
+  text-transform: ${(props) => (props.uppercase ? "uppercase" : "")};
 `;
 
-/* const LabelCheckbox = styled.label`
-  > input[type="checkbox"]:checked + i {
-    background: ${props => props.bgColor};
-  }
-`; */
+const useStyle = makeStyles(() => ({
+  imageBackground: {
+    backgroundImage: (props) => `url(${props.contactUsBackground})`,
+    backgroundPosition: "left bottom",
+    backgroundRepeat: "no-repeat",
+  },
+}));
 
-
-
-const ContactUs = ({ colorPrimary, company, attentionSchedule, contact, allUppercase }) => {
+const ContactUs = ({
+  colorPrimary,
+  company,
+  contactUsBackground,
+  contact,
+  allUppercase,
+}) => {
+  const classes = useStyle({ contactUsBackground });
   const formContext = useContext(FormContext);
   const { contactUs, isLoading, loading, showModal } = formContext;
   const { register, handleSubmit, errors, setValue } = useForm();
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
-  const [numberError, setNumberError] = useState(false);/* 
+  const [numberError, setNumberError] = useState(false); /*
   const [confirmed, setConfirmed] = useState(false); */
 
   const handleChangeNumber = (e) => {
@@ -71,10 +78,14 @@ const ContactUs = ({ colorPrimary, company, attentionSchedule, contact, allUpper
   };
   return (
     <>
-      <section>
+      <section className={classes.imageBackground}>
         {showModal && !isLoading ? <Modal /> : null}
         <div className="container">
-          <CustomH2 bgColor={colorPrimary} uppercase={allUppercase} className="font-weight-light mb-5">
+          <CustomH2
+            bgColor={colorPrimary}
+            uppercase={allUppercase}
+            className="font-weight-light mb-5"
+          >
             Si tienes alguna duda, contáctanos
           </CustomH2>
           <div className="row">
@@ -258,7 +269,12 @@ const ContactUs = ({ colorPrimary, company, attentionSchedule, contact, allUpper
                 </div>
 
                 <div>
-                  <CustomH2 bgColor={colorPrimary} className="fs--25 font-weight-light">{company}</CustomH2>
+                  <CustomH2
+                    bgColor={colorPrimary}
+                    className="fs--25 font-weight-light"
+                  >
+                    {company}
+                  </CustomH2>
                 </div>
               </div>
 
@@ -268,12 +284,22 @@ const ContactUs = ({ colorPrimary, company, attentionSchedule, contact, allUpper
                 </div>
 
                 <div>
-                  <CustomH2 bgColor={colorPrimary} className="h4 font-weight-normal">
+                  <CustomH2
+                    bgColor={colorPrimary}
+                    className="h4 font-weight-normal"
+                  >
                     Portal Web
                   </CustomH2>
                   <ul className="list-unstyled m-0 fs--15">
-                    <li  className="list-item text-muted">
-                      <a className="text-muted fs--17" href="https://www.itau.co/" target="_blank" rel="noreferrer" >www.itau.co</a>
+                    <li className="list-item text-muted">
+                      <a
+                        className="text-muted fs--17"
+                        href="https://www.itau.co/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        www.itau.co
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -283,10 +309,18 @@ const ContactUs = ({ colorPrimary, company, attentionSchedule, contact, allUpper
                   <i className="fi fi-phone text-gray-500 float-start fs--20"></i>
                 </div>
                 <div>
-                  <CustomH2 bgColor={colorPrimary} className="h4 font-weight-normal">Líneas de Atención</CustomH2>
+                  <CustomH2
+                    bgColor={colorPrimary}
+                    className="h4 font-weight-normal"
+                  >
+                    Líneas de Atención
+                  </CustomH2>
                   <ul className="list-unstyled m-0">
                     {contact.map((cont, index) => (
-                      <li key={`contact_${index}`} className="list-item mb-2 text-gray-500">
+                      <li
+                        key={`contact_${index}`}
+                        className="list-item mb-2 text-gray-500"
+                      >
                         <p>{cont}</p>
                       </li>
                     ))}

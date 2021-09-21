@@ -22,6 +22,8 @@
         "Para el resto de Colombia 01 8000 512 633"
       ]
     },
-    "claimsDoc": "https://files-statics-protegeme.s3.amazonaws.com/Formato_Reclamacion_sbs.pdf"
+    "claimsDoc": "https://files-statics-protegeme.s3.amazonaws.com/Formato_Reclamacion_sbs.pdf",
+    "privacyPolicyPersonalData": "https://files-statics-protegeme.s3.amazonaws.com/Aviso_de_Privacidad_SBS_Seguros_Colombia_2.pdf",
+    "consumerAdvocate": "https://www.sbseguros.co/en/servicio-al-cliente/consumidor-financiero"
   }
 ]

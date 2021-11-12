@@ -16,12 +16,19 @@ const ButtonSubmit = styled.button`
   }
 `;
 
+const ButtonLink = styled.a`
+  color: ${props => props.bgColor};
+  :hover{
+    color: ${props => props.bgColor};
+  }
+`;
+
 const CustomH4 = styled.h4`
   color: ${props => props.bgColor};
   text-transform: ${props => props.uppercase ? "uppercase" : ""};
 `;
 
-const Form = ( { colorPrimary, allUppercase }) => {
+const Form = ( { colorPrimary, allUppercase, privacyPolicyPersonalData }) => {
   const authContext = useContext(AuthContext);
   const { error, errorUser, authenticate, login, authUser } = authContext;
   const formContext = useContext(FormContext);
@@ -153,6 +160,20 @@ const Form = ( { colorPrimary, allUppercase }) => {
           </div>
         </form>
       </div>
+      {privacyPolicyPersonalData &&  
+        <p className="fs--12 mb-1 mt-1 text-center textcustom h6-xs mt-0">
+          * Tus datos están protegidos mediante nuestra política de protección de datos, revisala {" "}
+          <ButtonLink
+            className="link-muted btn_link "
+            href={privacyPolicyPersonalData}
+            bgColor={colorPrimary}
+            target="_blank"
+          >
+            aquí
+          </ButtonLink>
+          .
+        </p>
+        }
       {authenticate && userLocal && error !== 500 ? nextStep(1) : null}
     </>
   );

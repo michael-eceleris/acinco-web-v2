@@ -26,6 +26,8 @@ const ClaimsBlank = ({ client }) => {
     icon,
     customerService: { company, contact },
     claimsDoc,
+    consumerAdvocate,
+    privacyPolicyPersonalData
   } = client;
   sessionStorage.setItem("colorPrimary", colorPrimary);
   const [iconTab, setIconTab] = useState(null);
@@ -49,6 +51,7 @@ const ClaimsBlank = ({ client }) => {
         allUppercase={allUppercase}
         colorPrimary={colorPrimary}
         colorSecundary={colorSecundary}
+        privacyPolicyPersonalData={privacyPolicyPersonalData}
       />
       <ContactUs
         company={company}
@@ -56,6 +59,7 @@ const ClaimsBlank = ({ client }) => {
         colorPrimary={colorPrimary}
         allUppercase={allUppercase}
         contactUsBackground={contactUsBackground}
+        consumerAdvocate={consumerAdvocate}
       />
       <Footer colorPrimary={colorPrimary} />
     </>

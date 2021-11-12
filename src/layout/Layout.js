@@ -7,7 +7,7 @@ import MoreInfoLayout from "../layout/MoreInfoLayout";
 import ReviewLayout from "../layout/ReviewLayout";
 import FormContext from "../context/form/formContext";
 
-const Layout = ({ colorPrimary, colorSecundary, allUppercase, claimsDoc }) => {
+const Layout = ({ colorPrimary, colorSecundary, allUppercase, claimsDoc, privacyPolicyPersonalData }) => {
   const formContext = useContext(FormContext);
   const { step } = formContext;
 
@@ -27,6 +27,7 @@ const Layout = ({ colorPrimary, colorSecundary, allUppercase, claimsDoc }) => {
               <Login 
                 colorPrimary={colorPrimary} 
                 allUppercase={allUppercase} 
+                privacyPolicyPersonalData={privacyPolicyPersonalData}
               />
             ) : step === 1 ? (
               <SelectService 

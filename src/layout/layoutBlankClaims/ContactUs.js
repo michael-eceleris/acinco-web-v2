@@ -6,6 +6,13 @@ import React, { useState, useContext } from "react";
 import Modal from "../../components/Modal";
 import FormContext from "../../context/form/formContext";
 
+const ButtonLink = styled.a`
+  color: ${props => props.bgColor};
+  :hover{
+    color: ${props => props.bgColor};
+  }
+`;
+
 const ButtonSubmit = styled.button`
   background-color: ${(props) => props.bgColor};
   color: #fff;
@@ -37,6 +44,7 @@ const ContactUs = ({
   contactUsBackground,
   contact,
   allUppercase,
+  consumerAdvocate
 }) => {
   const classes = useStyle({ contactUsBackground });
   const formContext = useContext(FormContext);
@@ -88,6 +96,20 @@ const ContactUs = ({
           >
             Si tienes alguna duda, contáctanos
           </CustomH2>
+          {consumerAdvocate && 
+            <p className="lead textcustom h6-xs mt-2">
+              Información sobre el defensor del consumidor, revisala {" "}
+              <ButtonLink
+                className="link-muted btn_link "
+                href={consumerAdvocate}
+                bgColor={colorPrimary}
+                target="_blank"
+              >
+                aquí
+              </ButtonLink>
+              .
+            </p>
+          }
           <div className="row">
             <div className="col-12 col-lg-8 mb-4">
               <form className="bs-validate" onSubmit={handleSubmit(onSubmit)}>
@@ -133,6 +155,7 @@ const ContactUs = ({
                   />
                   <label htmlFor="email">Correo Electrónico</label>
                 </div>
+                
                 {errors ? (
                   errors.email ? (
                     <p className="text-danger">{errors.email.message}</p>

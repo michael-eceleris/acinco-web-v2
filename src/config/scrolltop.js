@@ -12,6 +12,7 @@ const ScrollTop = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     clearForm();
+    sessionStorage.clear();
     logOut();
     //eslint-disable-next-line
   }, [pathname]);

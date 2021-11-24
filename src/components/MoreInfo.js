@@ -1,16 +1,42 @@
 import "date-fns";
 import React, { useState, useContext, useEffect } from "react";
-import FormContext from "../context/form/formContext";
-import clienteAxios from "../config/axios";
-import DropdownFilter from "./Dropdown/DropdownFilter";
-import Dropdown from "./Dropdown/Dropdown";
 import DateFnsUtils from "@date-io/date-fns";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from "@material-ui/pickers";
+import styled from "styled-components";
 
-const MoreInfo = ({ setError, error }) => {
+import FormContext from "../context/form/formContext";
+import clienteAxios from "../config/axios";
+import DropdownFilter from "./Dropdown/DropdownFilter";
+import Dropdown from "./Dropdown/Dropdown";
+
+const ButtonSubmit = styled.button`
+  background-color: ${props => props.bgColor};
+  color: #fff;
+  :hover{
+    filter: brightness(120%);
+    color: #fff;
+  };
+  :disabled{
+    opacity: 0.65;
+  };
+`;
+
+const ButtonBack = styled.button`
+  border-color: ${props => props.bgColor};
+  color: ${props => props.bgColor};
+  :hover{
+    background-color: ${props => props.bgColor};
+    color: #fff;
+  };
+  :disabled{
+    opacity: 0.65;
+  };
+`;
+
+const MoreInfo = ({ setError, error, colorPrimary, colorSecundary }) => {
   const formContext = useContext(FormContext);
   const { documents, selectMoreInfo, nextStep, previusStep } = formContext;
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -196,22 +222,6 @@ const MoreInfo = ({ setError, error }) => {
           <p className='text-danger'>* Fecha incorrecta</p>
         ) : null}
       </div>
-      {/* <div className="form-label-group mb-4">
-        <input
-          className="form-control"
-          type="date"
-          required
-          max={actualDate}
-          onChange={handleChangeDate}
-          placeholder="Seleccionar fecha en la que ocurrió el siniestro"
-        />
-        <label> Seleccionar fecha en la que ocurrió el siniestro</label>
-        {error && !dateActual ? (
-          <p className="text-danger">* Campo requerido</p>
-        ) : errorDate ? (
-          <p className="text-danger">* Fecha incorrecta</p>
-        ) : null}
-      </div> */}
       <div className='form-label-group'>
         <input
           className='form-control'
@@ -275,15 +285,20 @@ const MoreInfo = ({ setError, error }) => {
         </div>
       </div>
       <div className='mt-4 d-flex justify-content-between'>
-        <button
-          className='btn btn-sm btn-outline-secondary'
+        <ButtonBack
+          className={`btn btn-sm  ${colorSecundary ? "" : "btn-outline-secondary"} `}
           onClick={handlePreviusStep}
+          bgColor={colorSecundary}
         >
           Atrás
-        </button>
-        <button className='btn btn-sm btn-primary' onClick={handleNextStep}>
+        </ButtonBack>
+        <ButtonSubmit 
+          bgColor={colorPrimary}  
+          className={`btn btn-sm ${colorPrimary ? "" : "btn-primary"}`} 
+          onClick={handleNextStep}
+        >
           Siguiente
-        </button>
+        </ButtonSubmit>
       </div>
     </>
   );

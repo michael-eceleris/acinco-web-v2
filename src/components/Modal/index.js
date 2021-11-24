@@ -1,8 +1,23 @@
 import React, { useContext } from "react";
 import "./modal.css";
+import styled from "styled-components";
+
 import AuthContext from "../../context/auth/authContext";
 import FormContext from "../../context/form/formContext";
-const Modal = () => {
+
+const ButtonSubmit = styled.button`
+  background-color: ${props => props.bgColor};
+  color: #fff;
+  :hover{
+    filter: brightness(120%);
+    color: #fff;
+  };
+  :disabled{
+    opacity: 0.65;
+  }
+`;
+
+const Modal = (props) => {
   const authContext = useContext(AuthContext);
   const { logOut } = authContext;
   const formContext = useContext(FormContext);
@@ -39,7 +54,7 @@ const Modal = () => {
     clearForm();
     logOut();
   };
-
+  const colorPrimary = sessionStorage.getItem('colorPrimary');
   return (
     <>
       {submit && !isLoading
@@ -184,7 +199,7 @@ const Modal = () => {
                             {submit.data.data.fecha_creacion.substring(0, 4)}{" "}
                             aplicando a la cobertura de{" "}
                             <span className="font-weight-bold ">
-                              {submit.data.data.plan.cobertura.tipo.nombre}
+                              {submit.data.data.tipo_cobertura.nombre}
                             </span>
                           </div>
                         ) : (
@@ -254,12 +269,13 @@ const Modal = () => {
                   </>
                 )}
                 <div className="modal-actions mb-3">
-                  <button
-                    className="btn btn-primary btn-sm"
+                  <ButtonSubmit
+                    className={`btn ${colorPrimary ? "" : "btn-primary"} btn-sm`}
                     onClick={handleClose}
+                    bgColor={colorPrimary}
                   >
                     OK
-                  </button>
+                  </ButtonSubmit>
                 </div>
               </div>
             </div>
@@ -366,12 +382,13 @@ const Modal = () => {
                   </>
                 )}
                 <div className="modal-actions mb-3">
-                  <button
-                    className="btn btn-primary btn-sm"
+                  <ButtonSubmit
+                    className={`btn ${colorPrimary ? "" : "btn-primary"} btn-sm`}
                     onClick={handleClose}
+                    bgColor={colorPrimary}
                   >
                     OK
-                  </button>
+                  </ButtonSubmit>
                 </div>
               </div>
             </div>

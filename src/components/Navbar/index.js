@@ -184,7 +184,7 @@ const Navbar = ({ hideMessage }) => {
               <li>
                 <a
                   className='nav-link js-ajax'
-                  href='https://files-statics-protegeme.s3.amazonaws.com/CONDICIONES_GENERALES_EQUIPOS_DE_TELEFONIA_MOVIL.pdf'
+                  href='https://files-statics-protegeme.s3.amazonaws.com/P1648+EQUIPOS+TELEFONIA+CELULAR_MAR+2022.pdf'
                   target='_blank'
                   rel='noreferrer'
                   style={{ whiteSpace: "nowrap" }}

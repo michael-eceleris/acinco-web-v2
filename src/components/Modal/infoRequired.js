@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./modal.css";
 import FormContext from "../../context/form/formContext";
-const InfoRequired = () => {
+const InfoRequired = ({ clientName, claimsDoc  }) => {
   const formContext = useContext(FormContext);
   const { showModal, closeModal, submit, product, submitContact } = formContext;
   const showModalLocal =
@@ -18,7 +18,7 @@ const InfoRequired = () => {
         Formato de reclamación debidamente diligenciado por el cliente, lo
         puedes descargar dando click en el siguiente{" "}
         <a
-          href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/Formato_Reclamacion_AXA_COLPATRIA.pdf"
+          href={`${ claimsDoc ? claimsDoc : "https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/Formato_Reclamacion_AXA_COLPATRIA.pdf"}`}
           target="_blank"
           rel="noreferrer"
         >
@@ -124,7 +124,7 @@ const InfoRequired = () => {
       </>
     );
   };
-  const DañoTotalAccidental = ({ smartplan }) => {
+  const DañoTotalAccidental = ({ clientName }) => {
     return (
       <>
         {product ? null : (
@@ -133,7 +133,7 @@ const InfoRequired = () => {
         {formatoReclamacion} {cedula} {camaraComercio}
         <li>
           <p className="text-justify">
-            Informe y diagnóstico del taller autorizado por Tigo.{" "}
+            Informe y diagnóstico del taller autorizado{clientName ? "." : " por Tigo."}{" "}
             {product ? (
               <span className=" fs--15 text-red-500 ml--2 ">*</span>
             ) : null}
@@ -240,6 +240,13 @@ const InfoRequired = () => {
                         </p>
                       </>
                     ) : null}
+                    {clientName ? 
+                      <>
+                        <p className="fs--30 mb-1">{product.cobertura}</p>
+                        <p className="fs--20">{clientName}</p>
+                      </>
+                    : null
+                    }
                   </h2>
                 </button>
               </div>
@@ -268,75 +275,109 @@ const InfoRequired = () => {
           ) : (
             <>
               <div className="nav_doc">
-                <button
-                  className="btn_doc tablink active-doc"
-                  onClick={(e) => openDocs(e, "protecciontotal")}
-                >
-                  <h2 className="h5 font-weight-normal h6-xs">
-                    Pospago 5.3 - Protección Total
-                  </h2>
-                </button>
-                <button
-                  className="btn_doc tablink"
-                  onClick={(e) => openDocs(e, "fracturapantalla")}
-                >
-                  <h2 className="h5 font-weight-normal h6-xs">
-                    Pospago 5.2 – Fractura de Pantalla
-                  </h2>
-                </button>
-                <button
-                  className="btn_doc tablink"
-                  onClick={(e) => openDocs(e, "smart")}
-                >
-                  <h2 className="h5 font-weight-normal h6-xs">
-                    Arma tu Plan – Smart App
-                  </h2>
-                </button>
-                <button
-                  className="btn_doc tablink "
-                  onClick={(e) => openDocs(e, "gamas")}
-                >
-                  <h2 className="h5 font-weight-normal h6-xs">
-                    Seguro por gamas
-                  </h2>
-                </button>
+                {clientName ? (
+                  <>
+                    <button
+                      className="btn_doc tablink active-doc"
+                      onClick={(e) => openDocs(e, clientName)}
+                      style={{width: "100%"}}
+                    >
+                      <h2 className="h5 font-weight-normal h6-xs">
+                        {clientName}
+                      </h2>
+                    </button>
+                  </>
+                ): (
+                  <>
+                    <button
+                      className="btn_doc tablink active-doc"
+                      onClick={(e) => openDocs(e, "protecciontotal")}
+                    >
+                      <h2 className="h5 font-weight-normal h6-xs">
+                        Pospago 5.3 - Protección Total
+                      </h2>
+                    </button>
+                    <button
+                      className="btn_doc tablink"
+                      onClick={(e) => openDocs(e, "fracturapantalla")}
+                    >
+                      <h2 className="h5 font-weight-normal h6-xs">
+                        Pospago 5.2 – Fractura de Pantalla
+                      </h2>
+                    </button>
+                    <button
+                      className="btn_doc tablink"
+                      onClick={(e) => openDocs(e, "smart")}
+                    >
+                      <h2 className="h5 font-weight-normal h6-xs">
+                        Arma tu Plan – Smart App
+                      </h2>
+                    </button>
+                    <button
+                      className="btn_doc tablink "
+                      onClick={(e) => openDocs(e, "gamas")}
+                    >
+                      <h2 className="h5 font-weight-normal h6-xs">
+                        Seguro por gamas
+                      </h2>
+                    </button>
+                  </>
+                )}
               </div>
               <section className="sct_doc">
-                <div
-                  id="protecciontotal"
-                  className="doc"
-                  style={{ display: "block" }}
-                >
-                  <ul>
-                    <HurtoCalificado />
-                    <HurtoSimple />
-                    <DañoTotalAccidental />
-                    <FracturaPantalla />
-                  </ul>
-                </div>
-                <div
-                  id="fracturapantalla"
-                  className="doc"
-                  style={{ display: "none" }}
-                >
-                  <ul>
-                    <FracturaPantalla />
-                  </ul>
-                </div>
-                <div id="smart" className="doc" style={{ display: "none" }}>
-                  <ul>
-                    <HurtoCalificado smartplan={true} />
-                    <HurtoSimple smartplan={true} />
-                    <DañoTotalAccidental smartplan={true} />
-                  </ul>
-                </div>
-                <div id="gamas" className="doc" style={{ display: "none" }}>
-                  <ul>
-                    <HurtoCalificado />
-                    <HurtoSimple />
-                    <DañoTotalAccidental />
-                  </ul>
-                </div>
+                {clientName ? (
+                  <>
+                    <div id={clientName}
+                    className="doc"
+                    style={{ display: "block" }}
+                    >
+                      <ul>
+                        <HurtoCalificado />
+                        <HurtoSimple />
+                        <DañoTotalAccidental clientName={clientName} />
+                        <FracturaPantalla />
+                      </ul>
+                    </div>
+                  </>
+                ):(
+                  <>
+                    <div
+                      id="protecciontotal"
+                      className="doc"
+                      style={{ display: "block" }}
+                    >
+                      <ul>
+                        <HurtoCalificado />
+                        <HurtoSimple />
+                        <DañoTotalAccidental />
+                        <FracturaPantalla />
+                      </ul>
+                    </div>
+                    <div
+                      id="fracturapantalla"
+                      className="doc"
+                      style={{ display: "none" }}
+                    >
+                      <ul>
+                        <FracturaPantalla />
+                      </ul>
+                    </div>
+                    <div id="smart" className="doc" style={{ display: "none" }}>
+                      <ul>
+                        <HurtoCalificado smartplan={true} />
+                        <HurtoSimple smartplan={true} />
+                        <DañoTotalAccidental smartplan={true} />
+                      </ul>
+                    </div>
+                    <div id="gamas" className="doc" style={{ display: "none" }}>
+                      <ul>
+                        <HurtoCalificado />
+                        <HurtoSimple />
+                        <DañoTotalAccidental />
+                      </ul>
+                    </div>
+                  </>
+                )}
               </section>
             </>
           )}

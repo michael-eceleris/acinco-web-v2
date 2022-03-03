@@ -1,0 +1,29 @@
+[
+  {
+    "client": "itau",
+    "clientName": "Itau",
+    "logo": "logo-sbs.png",
+    "icon": "favicon_sbs.png",
+    "bannerBackground": "/reclamation/itau/background_banner.jpg",
+    "contactUsBackground": "/reclamation/itau/background_contactUs.png",
+    "colorPrimary": "#9E1C64",
+    "colorSecundary": "#5C6670",
+    "allUppercase": true,
+    "backgroundPrimary": "",
+    "backgroundSecondary": "",
+    "customerService": {
+      "company": "SBS Seguros",
+      "attentionSchedule": [
+        "Lunes - Viernes: 8:00 am - 6:00 pm",
+        "Sabado: 8:00 am - 2:00 pm"
+      ],
+      "contact": [
+        "En Bogotá 5818181",
+        "Para el resto de Colombia 01 8000 512 633"
+      ]
+    },
+    "claimsDoc": "https://files-statics-protegeme.s3.amazonaws.com/Formato_Reclamacion_sbs.pdf",
+    "privacyPolicyPersonalData": "https://files-statics-protegeme.s3.amazonaws.com/Aviso_de_Privacidad_SBS_Seguros_Colombia_2.pdf",
+    "consumerAdvocate": "https://www.sbseguros.co/en/servicio-al-cliente/consumidor-financiero"
+  }
+]

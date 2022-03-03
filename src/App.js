@@ -21,6 +21,8 @@ import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import Motorola from "./pages/Motorola";
 import TermsAndConditionsMotorola from "./components/TermsAndConditions/TermsAndConditionMotorola";
+import ClaimsBlank from "./pages/ClaimsBlank";
+import newClient from "./data/newClients.json";
 
 import {
   BrowserRouter as Router,
@@ -112,6 +114,11 @@ function App() {
             <Route path='/motorola/terminos-condiciones' exact>
               <TermsAndConditionsMotorola />
             </Route>
+            {newClient.map((client, index) => (
+              <Route path={`/tramites-y-reclamaciones/${client.client}`} exact key={`path_key_${index}`} >
+                <ClaimsBlank client={client}  />
+              </Route>
+            ))}
             <Route path='/pagina-no-encontrada' component={NotFound} />
             <Redirect to='/pagina-no-encontrada' />
           </Switch>

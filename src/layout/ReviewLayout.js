@@ -1,8 +1,46 @@
 import React, { useContext, useState } from "react";
+import styled from "styled-components";
+
 import FormContext from "../context/form/formContext";
 import AuthContext from "../context/auth/authContext";
 import Modal from "../components/Modal";
-const ReviewLayout = () => {
+
+const ButtonSubmit = styled.button`
+  background-color: ${props => props.bgColor};
+  color: #fff;
+  :hover{
+    filter: brightness(120%);
+    color: #fff;
+  };
+  :disabled{
+    opacity: 0.65;
+  };
+`;
+
+const ButtonBack = styled.button`
+  border-color: ${props => props.bgColor};
+  color: ${props => props.bgColor};
+  :hover{
+    background-color: ${props => props.bgColor};
+    color: #fff;
+  };
+  :disabled{
+    opacity: 0.65;
+  };
+`;
+
+const CustomH4 = styled.h4`
+  color: ${props => props.bgColor};
+  text-transform: ${props => props.uppercase ? "uppercase" : ""};
+`;
+
+const LabelCheckbox = styled.label`
+  > input[type="checkbox"]:checked + i {
+    background: ${props => props.bgColor} !important;
+  }
+`;
+
+const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
   const formContext = useContext(FormContext);
   const {
     device,
@@ -59,7 +97,7 @@ const ReviewLayout = () => {
   return (
     <>
       <div className='container py-1 '>
-        <h4>Enviar</h4>
+        <CustomH4 bgColor={colorPrimary} uppercase={allUppercase}>Enviar</CustomH4>
         <p className='fs--17'>
           Revisa los datos, confirma que estén correctos y envía tu reclamación.
         </p>
@@ -262,28 +300,30 @@ const ReviewLayout = () => {
         </div>
 
         {showModal && !isLoading ? <Modal /> : null}
-        <label className='form-checkbox form-checkbox-primary'>
+        <LabelCheckbox bgColor={colorPrimary} className='form-checkbox form-checkbox-primary'>
           <input
             type='checkbox'
             checked={confirmed}
             onChange={() => setConfirmed(!confirmed)}
           />
           <i></i>Confirmas que se envíe la reclamación.
-        </label>
+        </LabelCheckbox>
 
         {error ? <p className='text-danger'>* Requerido</p> : null}
         <div className='mt-4 d-flex justify-content-between'>
-          <button
-            className='btn btn-sm btn-outline-secondary'
+          <ButtonBack
+            className={`btn btn-sm  ${colorSecundary ? "" : "btn-outline-secondary"} `}
             onClick={() => previusStep(3)}
             disabled={isLoading}
+            bgColor={colorSecundary}
           >
             Atrás
-          </button>
-          <button
-            className='btn btn-sm btn-primary'
+          </ButtonBack>
+          <ButtonSubmit
             onClick={handleSubmit}
             disabled={isLoading}
+            className={`btn btn-sm ${colorPrimary ? "" : "btn-primary"}`} 
+            bgColor={colorPrimary}
           >
             Enviar
             {isLoading ? (
@@ -293,7 +333,7 @@ const ReviewLayout = () => {
                 aria-hidden='true'
               ></i>
             ) : null}
-          </button>
+          </ButtonSubmit>
         </div>
       </div>
     </>

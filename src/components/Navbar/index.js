@@ -184,12 +184,12 @@ const Navbar = ({ hideMessage }) => {
               <li>
                 <a
                   className='nav-link js-ajax'
-                  href='https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/CLAUSULADO-POLIZA-34.pdf'
+                  href='https://files-statics-protegeme.s3.amazonaws.com/CONDICIONES_GENERALES_EQUIPOS_DE_TELEFONIA_MOVIL.pdf'
                   target='_blank'
                   rel='noreferrer'
                   style={{ whiteSpace: "nowrap" }}
                 >
-                  Clausulado Póliza 34
+                  Clausulado General
                 </a>
               </li>
             </ul>

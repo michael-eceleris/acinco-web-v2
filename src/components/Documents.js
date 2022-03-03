@@ -1,6 +1,40 @@
 import React, { useState, useContext, Fragment, useEffect } from "react";
+import styled from "styled-components";
+
 import FormContext from "../context/form/formContext";
-const Documents = ({ setError }) => {
+
+const ButtonSubmit = styled.button`
+  background-color: ${props => props.bgColor};
+  color: #fff;
+  :hover{
+    filter: brightness(120%);
+    color: #fff;
+  };
+  :disabled{
+    opacity: 0.65;
+  }
+`;
+
+const ButtonBack = styled.button`
+  border-color: ${props => props.bgColor};
+  color: ${props => props.bgColor};
+  :hover{
+    background-color: ${props => props.bgColor};
+    color: #fff;
+  };
+  :disabled{
+    opacity: 0.65;
+  }
+`;
+
+const CustomFile = styled.label`
+  ::after{
+    color: #fff;
+    background-color: ${props => props.bgColor} !important;
+  }
+`;
+
+const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
   const formContext = useContext(FormContext);
   const {
     documents,
@@ -153,7 +187,7 @@ const Documents = ({ setError }) => {
                     ) : null}
                     {doc.nombre_documento_save === "Formato de reclamación." ? (
                       <a
-                        href="https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/Formato_Reclamacion_AXA_COLPATRIA.pdf"
+                        href={`${ claimsDoc ? claimsDoc : "https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/Formato_Reclamacion_AXA_COLPATRIA.pdf"}`}
                         target="_blank"
                         rel="noreferrer"
                         className="ml--8 link-muted btn_link font-weight-medium"
@@ -173,7 +207,7 @@ const Documents = ({ setError }) => {
                     onChange={onLoad}
                     className="custom-file-input"
                   />
-                  <label
+                  <CustomFile
                     className="custom-file-label"
                     style={{
                       whiteSpace: "nowrap",
@@ -181,13 +215,14 @@ const Documents = ({ setError }) => {
                       overflow: "hidden",
                     }}
                     htmlFor={doc.id}
+                    bgColor={colorPrimary}
                   >
                     {doc.files !== null
                       ? doc.nameFile
                       : document.find((docAc) => docAc.id === doc.id)
                       ? document.find((docAc) => docAc.id === doc.id).nameFile
                       : null}
-                  </label>
+                  </CustomFile>
                 </div>
                 <div>
                   {doc.error ? (
@@ -202,15 +237,16 @@ const Documents = ({ setError }) => {
           })
         : null}
       <div className="mt-4 justify-content-between row flex-row">
-        <button
-          className="btn btn-sm btn-outline-secondary"
+        <ButtonBack
+          className={`btn btn-sm  ${colorSecundary ? "" : "btn-outline-secondary"} `}
           onClick={handlePreviusStep}
+          bgColor={colorSecundary}
         >
           Atrás
-        </button>
-        <button className="btn btn-sm btn-primary" onClick={handleNextStep}>
+        </ButtonBack>
+        <ButtonSubmit bgColor={colorPrimary}  className={`btn btn-sm ${colorPrimary ? "" : "btn-primary"}`} onClick={handleNextStep}>
           Siguiente
-        </button>
+        </ButtonSubmit>
       </div>
     </Fragment>
   );

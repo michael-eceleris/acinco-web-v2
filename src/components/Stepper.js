@@ -19,7 +19,19 @@ const DivCircle = styled.div`
   flex-direction: column;
 `;
 
-const CustomStepper = () => {
+const CustomH2 = styled.h2`
+  color: ${props => props.bgColor};
+  text-transform: ${props => props.bgColor ? "uppercase": "" };
+`;
+
+const ButtonLink = styled.button`
+  color: ${props => props.bgColor};
+  :hover{
+    color: ${props => props.bgColor};
+  }
+`;
+
+const CustomStepper = ({ colorPrimary }) => {
   const formContext = useContext(FormContext);
   const { step, openModal } = formContext;
   useEffect(() => {
@@ -30,6 +42,8 @@ const CustomStepper = () => {
   const [thirdStep, setThirdStep] = useState(false);
   const [fourthStep, setFourthStep] = useState(false);
   const [fivethStep, setFivethStep] = useState(false);
+
+  const defaultColor = colorPrimary ? colorPrimary : "#003272"
 
   const changeActiveColor = (id) => {
     switch (id) {
@@ -74,58 +88,59 @@ const CustomStepper = () => {
     <Fragment>
       <div className=" col-xl-12 mb-3">
         <div className="container">
-          <h2 className="ml-5 mb-1 h4-xs h2-md textcustom">
+          <CustomH2 bgColor={colorPrimary} className="ml-5 mb-1 h4-xs h2-md textcustom">
             Proceso de reclamación
-          </h2>
+          </CustomH2>
           <p className="ml-5 lead textcustom h6-xs">
             Antes de realizar tu reclamación revisa los documentos necesarios,
             revísalos{" "}
-            <button
+            <ButtonLink
               className="link-muted btn_link "
               onClick={() => openModal(null)}
+              bgColor={colorPrimary}
             >
               aquí
-            </button>
+            </ButtonLink>
             .
           </p>
           <div className="show3">
             <div className="d-flex justify-content-around ">
               <DivCircle
                 style={{
-                  backgroundColor: firstStep ? "#003272" : "#e1e1e1",
-                  color: firstStep ? "#e1e1e1" : "#003272",
+                  backgroundColor: firstStep ? defaultColor : "#e1e1e1",
+                  color: firstStep ? "#e1e1e1" : defaultColor,
                 }}
               >
                 1
               </DivCircle>
               <DivCircle
                 style={{
-                  backgroundColor: secondStep ? "#003272" : "#e1e1e1",
-                  color: secondStep ? "#e1e1e1" : "#003272",
+                  backgroundColor: secondStep ? defaultColor : "#e1e1e1",
+                  color: secondStep ? "#e1e1e1" : defaultColor,
                 }}
               >
                 2
               </DivCircle>
               <DivCircle
                 style={{
-                  backgroundColor: thirdStep ? "#003272" : "#e1e1e1",
-                  color: thirdStep ? "#e1e1e1" : "#003272",
+                  backgroundColor: thirdStep ? defaultColor : "#e1e1e1",
+                  color: thirdStep ? "#e1e1e1" : defaultColor,
                 }}
               >
                 3
               </DivCircle>
               <DivCircle
                 style={{
-                  backgroundColor: fourthStep ? "#003272" : "#e1e1e1",
-                  color: fourthStep ? "#e1e1e1" : "#003272",
+                  backgroundColor: fourthStep ? defaultColor : "#e1e1e1",
+                  color: fourthStep ? "#e1e1e1" : defaultColor,
                 }}
               >
                 4
               </DivCircle>
               <DivCircle
                 style={{
-                  backgroundColor: fivethStep ? "#003272" : "#e1e1e1",
-                  color: fivethStep ? "#e1e1e1" : "#003272",
+                  backgroundColor: fivethStep ? defaultColor : "#e1e1e1",
+                  color: fivethStep ? "#e1e1e1" : defaultColor,
                 }}
               >
                 5
@@ -133,7 +148,7 @@ const CustomStepper = () => {
             </div>
             <div className="mt-3 mb-0">
               <p
-                style={{ color: "#003272" }}
+                style={{ color: defaultColor }}
                 className="mt--5 fs--20 text-center-xs"
               >
                 {firstStep &&
@@ -186,13 +201,13 @@ const CustomStepper = () => {
             <Step className="col-md-4 cursor-default min-h-150">
               <div className="m-0">
                 <User
-                  fill={firstStep ? "#003272" : "#e1e1e1"}
+                  fill={firstStep ? defaultColor : "#e1e1e1"}
                   width="200"
                   height="80"
                   className="show2"
                 />
                 <p
-                  style={{ color: firstStep ? "#003272" : "#bababa" }}
+                  style={{ color: firstStep ? defaultColor : "#bababa" }}
                   className="mt--5 textcustom h6-xs"
                 >
                   1.Identifícate
@@ -202,13 +217,13 @@ const CustomStepper = () => {
             <Step className="col-md-4 cursor-default min-h-150">
               <div>
                 <Devices
-                  fill={secondStep ? "#003272" : "#e1e1e1"}
+                  fill={secondStep ? defaultColor : "#e1e1e1"}
                   width="200"
                   height="80"
                   className="show2"
                 />
                 <p
-                  style={{ color: secondStep ? "#003272" : "#bababa" }}
+                  style={{ color: secondStep ? defaultColor : "#bababa" }}
                   className="mt--5 textcustom h6-xs"
                 >
                   2.Selecciona tu cobertura{" "}
@@ -218,13 +233,13 @@ const CustomStepper = () => {
             <Step className="col-md-4 cursor-default min-h-150">
               <div>
                 <Upload
-                  fill={thirdStep ? "#003272" : "#e1e1e1"}
+                  fill={thirdStep ? defaultColor : "#e1e1e1"}
                   width="200"
                   height="80"
                   className="show2"
                 />
                 <p
-                  style={{ color: thirdStep ? "#003272" : "#bababa" }}
+                  style={{ color: thirdStep ? defaultColor : "#bababa" }}
                   className="mt--5"
                 >
                   3.Subir documentos{" "}
@@ -234,13 +249,13 @@ const CustomStepper = () => {
             <Step className="col-md-4 cursor-default min-h-150">
               <div>
                 <Document
-                  fill={fourthStep ? "#003272" : "#e1e1e1"}
+                  fill={fourthStep ? defaultColor : "#e1e1e1"}
                   width="200"
                   height="80"
                   className="show2"
                 />
                 <p
-                  style={{ color: fourthStep ? "#003272" : "#bababa" }}
+                  style={{ color: fourthStep ? defaultColor : "#bababa" }}
                   className="mt--5"
                 >
                   4.Información adicional{" "}
@@ -250,13 +265,13 @@ const CustomStepper = () => {
             <Step className="col-md-4 cursor-default min-h-150">
               <div>
                 <Send
-                  fill={fivethStep ? "#003272" : "#e1e1e1"}
+                  fill={fivethStep ? defaultColor : "#e1e1e1"}
                   width="200"
                   height="80"
                   className="show2"
                 />
                 <p
-                  style={{ color: fivethStep ? "#003272" : "#bababa" }}
+                  style={{ color: fivethStep ? defaultColor : "#bababa" }}
                   className="mt--5"
                 >
                   5.Enviar

@@ -1,89 +1,65 @@
-name: Production Continue Deployment
+name: Deploy de Produccion acinco-web
 on:
   push:
     branches:
       - master
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Actualiza Fuente Remota
+        uses: actions/checkout@v2
 
-      - uses: actions/checkout@v1
-
-      - name: Remote - Test Connection
+      - name: Update Remote Project Repo
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.ACINCO_PROD_SSH_HOST }}
-          username: ${{ secrets.ACINCO_PROD_SSH_USER }}
-          key: ${{ secrets.ACINCO_PROD_SSH_KEY }}
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_PASS }}
           script: |
-            ls
+            cd ${{secrets.PROD_DIR}}
+            echo "Ejecutando 'git pull'"
+            /usr/bin/git pull
 
-      - name: Install Node.js v14
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14
-
-      - name: Install Packages
-        run: npm install
-
-      - name: Set Environment
-        run: |
-          mv .env.production .env
-          rm -rf .env.*
-
-      - name: Build
-        run: npm run build
-
-      - name: Remote - Clean Files
+      - name: Ejecutando 'npm install'
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.ACINCO_PROD_SSH_HOST }}
-          username: ${{ secrets.ACINCO_PROD_SSH_USER }}
-          key: ${{ secrets.ACINCO_PROD_SSH_KEY }}
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_PASS }}
           script: |
-            mkdir -p /home/${{ secrets.ACINCO_PROD_SSH_USER }}/acinco-web
-            mkdir -p /home/${{ secrets.ACINCO_PROD_SSH_USER }}/acinco-web/build
-            rm -rf /home/${{ secrets.ACINCO_PROD_SSH_USER }}/acinco-web/*
+            cd ${{secrets.PROD_DIR}}
+            echo "Ejecutando 'npm install'"
+            /usr/bin/npm install
 
-      - name: Remote - Copy Build Files
-        uses: burnett01/rsync-deployments@4.1
-        with:
-          switches: -avzr
-          path: build/
-          remote_path: /home/${{ secrets.ACINCO_PROD_SSH_USER }}/acinco-web/build/
-          remote_host: ${{ secrets.ACINCO_PROD_SSH_HOST }}
-          remote_user: ${{ secrets.ACINCO_PROD_SSH_USER }}
-          remote_key: ${{ secrets.ACINCO_PROD_SSH_KEY }}
-
-      - name: Remote - Copy Deployment Files
-        uses: burnett01/rsync-deployments@4.1
-        with:
-          switches: -avzr
-          path: deployment/
-          remote_path: /home/${{ secrets.ACINCO_PROD_SSH_USER }}/acinco-web/
-          remote_host: ${{ secrets.ACINCO_PROD_SSH_HOST }}
-          remote_user: ${{ secrets.ACINCO_PROD_SSH_USER }}
-          remote_key: ${{ secrets.ACINCO_PROD_SSH_KEY }}
-
-      - name: Remote - Build Docker
+      - name: Eliminando Archivos .env.*
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.ACINCO_PROD_SSH_HOST }}
-          username: ${{ secrets.ACINCO_PROD_SSH_USER }}
-          key: ${{ secrets.ACINCO_PROD_SSH_KEY }}
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_PASS }}
           script: |
-            cd /home/${{ secrets.ACINCO_PROD_SSH_USER }}/acinco-web/
-            docker build -t eceleris/acinco-web .
-
-      - name: Remote - Deploy Docker
+            cd ${{secrets.PROD_DIR}}
+            rm -rf .env.*
+            
+      - name: Ejecutando 'npm run build'
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.ACINCO_PROD_SSH_HOST }}
-          username: ${{ secrets.ACINCO_PROD_SSH_USER }}
-          key: ${{ secrets.ACINCO_PROD_SSH_KEY }}
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_PASS }}
           script: |
-            cd /home/${{ secrets.ACINCO_PROD_SSH_USER }}/acinco-web/
-            docker stop acinco-web
-            docker rm acinco-web
-            docker run -d --name=acinco-web -p 127.0.0.1:8080:80 eceleris/acinco-web
+            cd ${{secrets.PROD_DIR}}
+            echo "Ejecutando 'npm run build'"
+            /usr/bin/npm run build
+
+      - name: Reiniciando servidor nginx (reload)
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_PASS }}
+          script: |
+            cd ${{secrets.PROD_DIR}}
+            echo "Reiniciando servidor nginx (reload)"
+            /usr/sbin/service nginx reload

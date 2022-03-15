@@ -44,7 +44,9 @@ const ContactUs = ({
   contactUsBackground,
   contact,
   allUppercase,
-  consumerAdvocate
+  consumerAdvocate,
+  webPage,
+  urlWebPage,
 }) => {
   const classes = useStyle({ contactUsBackground });
   const formContext = useContext(FormContext);
@@ -317,11 +319,11 @@ const ContactUs = ({
                     <li className="list-item text-muted">
                       <a
                         className="text-muted fs--17"
-                        href="https://www.itau.co/"
+                        href={urlWebPage}
                         target="_blank"
                         rel="noreferrer"
                       >
-                        www.itau.co
+                        {webPage}
                       </a>
                     </li>
                   </ul>

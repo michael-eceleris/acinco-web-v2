@@ -22,7 +22,9 @@ import NotFound from "./pages/NotFound";
 import Motorola from "./pages/Motorola";
 import TermsAndConditionsMotorola from "./components/TermsAndConditions/TermsAndConditionMotorola";
 import ClaimsBlank from "./pages/ClaimsBlank";
+import NotFoundBlank from "./pages/NotFoundBlank";
 import newClient from "./data/newClients.json";
+import newNotFoundClient from "./data/notFoundClients.json"
 
 import {
   BrowserRouter as Router,
@@ -117,6 +119,11 @@ function App() {
             {newClient.map((client, index) => (
               <Route path={`/tramites-y-reclamaciones/${client.client}`} exact key={`path_key_${index}`} >
                 <ClaimsBlank client={client}  />
+              </Route>
+            ))}
+            {newNotFoundClient.map((client, index) => (
+              <Route path={client.path} exact key={`path_not_found_key_${index}`}>
+                <NotFoundBlank client={client}  />
               </Route>
             ))}
             <Route path='/pagina-no-encontrada' component={NotFound} />

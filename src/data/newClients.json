@@ -24,6 +24,42 @@
     },
     "claimsDoc": "https://files-statics-protegeme.s3.amazonaws.com/Formato_Reclamacion_sbs.pdf",
     "privacyPolicyPersonalData": "https://files-statics-protegeme.s3.amazonaws.com/Aviso_de_Privacidad_SBS_Seguros_Colombia_2.pdf",
-    "consumerAdvocate": "https://www.sbseguros.co/en/servicio-al-cliente/consumidor-financiero"
+    "consumerAdvocate": "https://www.sbseguros.co/en/servicio-al-cliente/consumidor-financiero",
+    "webPage": "www.itau.co",
+    "urlWebPage": "https://www.itau.co/",
+    "isLoginValid": false,
+    "sponsorId": ""
+  },
+  {
+    "client": "cardif",
+    "clientName": "Cardif",
+    "logo": "logo_cardif.png",
+    "icon": "favicon_cardif.png",
+    "bannerBackground": "",
+    "contactUsBackground": "",
+    "colorPrimary": "#00965E",
+    "colorSecundary": "#179C97",
+    "allUppercase": true,
+    "backgroundPrimary": "",
+    "backgroundSecondary": "",
+    "customerService": {
+      "company": "Cardif Seguros",
+      "attentionSchedule": [
+        "Lunes - Viernes: ### am - ### pm",
+        "Sabado: ### am - ### pm"
+      ],
+      "contact": [
+        "En Bogotá ######",
+        "Para el resto de Colombia #######"
+      ]
+    },
+    "claimsDoc": "https://files-statics-protegeme.s3.amazonaws.com/Formato_Reclamacion_sbs.pdf",
+    "privacyPolicyPersonalData": "https://files-statics-protegeme.s3.amazonaws.com/Aviso_de_Privacidad_SBS_Seguros_Colombia_2.pdf",
+    "consumerAdvocate": "https://www.sbseguros.co/en/servicio-al-cliente/consumidor-financiero",
+    "webPage": "www.bnpparibascardif.com",
+    "urlWebPage": "https://bnpparibascardif.com.co/",
+    "isLoginValid": true,
+    "sponsorId": "SCOTIABANK",
+    "notFoundPage": "/cardif/not-found"
   }
 ]

@@ -12,9 +12,11 @@ import Footer from "../layout/layoutBlankClaims/Footer";
 import ModalInfo from "../components/Modal/infoRequired";
 import ContactUs from "../layout/layoutBlankClaims/ContactUs";
 import clienteAxios from "../config/axios";
+import Loader from "../components/loader/Loader";
 
 const ClaimsBlank = ({ client }) => {
   const formContext = useContext(FormContext);
+  const [isLoading, setIsLoading] = useState(true);
   const { showModal } = formContext;
   const { push } = useHistory();
   useEffect(() => {}, [showModal]);
@@ -44,13 +46,17 @@ const ClaimsBlank = ({ client }) => {
     const fetchData = async () => {
       if(isLoginValid){
         try {
+          setIsLoading(true)
           const response = await clienteAxios.get(`/api/v1/access?sponsor=${sponsorId}`);
           if(response){
+            setIsLoading(false)
             console.log('response', response)
           }
         } catch (error) {
           push(notFoundPage)
         }
+      }else {
+        setIsLoading(false);
       }
     }
     fetchData();
@@ -67,27 +73,37 @@ const ClaimsBlank = ({ client }) => {
         <link rel="icon" href={iconTab} />
       </Helmet>
       <Navbar clientName={clientName} logo={logo} />
-      <Banner bannerBackground={bannerBackground} />
-      {showModal ? <Modal /> : null}
-      <ModalInfo clientName={clientName} claimsDoc={claimsDoc} />
-      <Layout
-        claimsDoc={claimsDoc}
-        allUppercase={allUppercase}
-        colorPrimary={colorPrimary}
-        colorSecundary={colorSecundary}
-        privacyPolicyPersonalData={privacyPolicyPersonalData}
-      />
-      <ContactUs
-        company={company}
-        contact={contact}
-        colorPrimary={colorPrimary}
-        allUppercase={allUppercase}
-        contactUsBackground={contactUsBackground}
-        consumerAdvocate={consumerAdvocate}
-        webPage={webPage}
-        urlWebPage={urlWebPage}
-      />
-      <Footer colorPrimary={colorPrimary} />
+      {isLoading ? 
+      (
+        <div style={{height: 'calc(100vh - 120px)', display:'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <Loader colorPrimary={colorPrimary} />
+        </div>
+      ) : 
+      (
+        <>
+          <Banner bannerBackground={bannerBackground} />
+          {showModal ? <Modal /> : null}
+          <ModalInfo clientName={clientName} claimsDoc={claimsDoc} />
+          <Layout
+            claimsDoc={claimsDoc}
+            allUppercase={allUppercase}
+            colorPrimary={colorPrimary}
+            colorSecundary={colorSecundary}
+            privacyPolicyPersonalData={privacyPolicyPersonalData}
+          />
+          <ContactUs
+            company={company}
+            contact={contact}
+            colorPrimary={colorPrimary}
+            allUppercase={allUppercase}
+            contactUsBackground={contactUsBackground}
+            consumerAdvocate={consumerAdvocate}
+            webPage={webPage}
+            urlWebPage={urlWebPage}
+          />
+          <Footer colorPrimary={colorPrimary} />
+        </>
+      )}
     </>
   );
 };

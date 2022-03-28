@@ -53,9 +53,9 @@
         "Para el resto de Colombia #######"
       ]
     },
-    "claimsDoc": "https://files-statics-protegeme.s3.amazonaws.com/Formato_Reclamacion_sbs.pdf",
-    "privacyPolicyPersonalData": "https://files-statics-protegeme.s3.amazonaws.com/Aviso_de_Privacidad_SBS_Seguros_Colombia_2.pdf",
-    "consumerAdvocate": "https://www.sbseguros.co/en/servicio-al-cliente/consumidor-financiero",
+    "claimsDoc": "",
+    "privacyPolicyPersonalData": "",
+    "consumerAdvocate": "",
     "webPage": "www.bnpparibascardif.com",
     "urlWebPage": "https://bnpparibascardif.com.co/",
     "isLoginValid": true,

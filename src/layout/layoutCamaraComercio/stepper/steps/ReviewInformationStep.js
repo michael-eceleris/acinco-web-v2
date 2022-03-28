@@ -1,10 +1,9 @@
 import React from "react";
-import { useState } from "react";
 import { Fragment } from "react";
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
 import { useStepperComercio } from "../provider/step-provider";
-
 
 const LabelCheckbox = styled.label`
   > input[type="checkbox"]:checked + i {
@@ -13,13 +12,17 @@ const LabelCheckbox = styled.label`
 `;
 
 const ReviewInformationStep = () => {
-  const { userInfo, setCurrentStep,  } = useStepperComercio();
-  const [confirmed, setConfirmed] = useState(false);
-  
+  const { userInfo, setCurrentStep, setShowModal } = useStepperComercio();
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (value) => {
+    setShowModal(true);
+  };
+
   return (
     <Fragment>
       <h4>Enviar</h4>
-      <p className="fs--17">
+      <p className='fs--17'>
         Revisa los datos, confirma que estén correctos y adquiere tu seguro.
       </p>
       <div className='bg-white rounded font-weight-light mb-4 '>
@@ -28,15 +31,15 @@ const ReviewInformationStep = () => {
             <tbody>
               <tr>
                 <td className='border-top-0'>
-                  <h6 className='font-weight-medium mb-4'>
-                    Datos personales
-                  </h6>
+                  <h6 className='font-weight-medium mb-4'>Datos personales</h6>
                 </td>
                 <td className='border-top-0'>&nbsp;</td>
               </tr>
               <tr>
                 <td className='border-bottom border-top-0'>Nombre(s):</td>
-                <td className='border-bottom border-top-0'>{userInfo?.firstName}</td>
+                <td className='border-bottom border-top-0'>
+                  {userInfo?.firstName}
+                </td>
               </tr>
               <tr>
                 <td className='border-bottom border-top-0'>Apellido(s):</td>
@@ -49,7 +52,7 @@ const ReviewInformationStep = () => {
                   Tipo de documento:
                 </td>
                 <td className='border-bottom border-top-0'>
-                  {userInfo?.idenficationNumber?.type}
+                  {userInfo?.identificationType?.id_system}
                 </td>
               </tr>
               <tr>
@@ -57,25 +60,27 @@ const ReviewInformationStep = () => {
                   Número de documento:
                 </td>
                 <td className='border-bottom border-top-0'>
-                  {userInfo?.idenficationNumber?.number}
+                  {userInfo?.identificationNumber}
                 </td>
               </tr>
               <tr>
                 <td className='border-bottom border-top-0'>Género:</td>
                 <td className='border-bottom border-top-0'>
-                  {userInfo?.genderId}
+                  {userInfo?.genderId?.name}
                 </td>
               </tr>
               <tr>
                 <td className='border-bottom border-top-0'>Email:</td>
-                <td className='border-bottom border-top-0'>{userInfo?.email}</td>
+                <td className='border-bottom border-top-0'>
+                  {userInfo?.email}
+                </td>
               </tr>
               <tr>
                 <td className='border-bottom border-top-0'>
                   Línea Principal Asegurada:
                 </td>
                 <td className='border-bottom border-top-0'>
-                  {userInfo?.phoneNumber}
+                  {userInfo?.phone_number}
                 </td>
               </tr>
               <tr>
@@ -91,7 +96,7 @@ const ReviewInformationStep = () => {
                   Modelo del dispositivo:
                 </td>
                 <td className='border-bottom border-top-0'>
-                  {userInfo?.deviceModel}
+                  {userInfo?.deviceName}
                 </td>
               </tr>
               <tr>
@@ -101,25 +106,27 @@ const ReviewInformationStep = () => {
                 </td>
               </tr>
               <tr>
-                <td className='border-bottom border-top-0'>
-                  IMEI Asegurado:
-                </td>
-                <td className='border-bottom border-top-0'>
-                  {userInfo?.imei}
-                </td>
+                <td className='border-bottom border-top-0'>IMEI Asegurado:</td>
+                <td className='border-bottom border-top-0'>{userInfo?.imei}</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
       <LabelCheckbox className='form-checkbox form-checkbox-primary'>
-          <input
-            type='checkbox'
-            checked={confirmed}
-            onChange={() => setConfirmed(!confirmed)}
-          />
-          <i></i>Confirmas que se envíe la reclamación.
-        </LabelCheckbox>
+        <input
+          ref={register({
+            required: {
+              value: true,
+              message: "* Requerido",
+            },
+          })}
+          id='confirm'
+          name='confirm'
+          type='checkbox'
+        />
+        <i></i>Confirmas tus datos.
+      </LabelCheckbox>
       <div className='mt-4 d-flex justify-content-between'>
         <button
           className={`btn btn-sm btn-outline-secondary `}
@@ -127,15 +134,15 @@ const ReviewInformationStep = () => {
         >
           Atrás
         </button>
-        <button 
-          className={`btn btn-sm btn-primary`} 
-         /*  onClick={() => setCurrentStep((prevState) => prevState + 1)} */
+        <button
+          className={`btn btn-sm btn-primary`}
+          onClick={handleSubmit(onSubmit)}
         >
           Enviar
         </button>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
 export default ReviewInformationStep;

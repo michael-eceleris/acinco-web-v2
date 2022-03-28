@@ -167,6 +167,11 @@ const Navbar = ({ hideMessage }) => {
                         Axa Colpatria Seguros
                       </Link>
                     </li>
+                    <li className='dropdown-item'>
+                      <Link className='dropdown-link' to='/camara-comercio'>
+                        Camara de comercio
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </li>

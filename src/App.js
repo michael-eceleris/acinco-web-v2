@@ -20,6 +20,7 @@ import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import Motorola from "./pages/Motorola";
+import CamaraComercioPage from "./pages/CamaraComercio";
 import TermsAndConditionsMotorola from "./components/TermsAndConditions/TermsAndConditionMotorola";
 import ClaimsBlank from "./pages/ClaimsBlank";
 import NotFoundBlank from "./pages/NotFoundBlank";
@@ -115,6 +116,9 @@ function App() {
             </Route>
             <Route path='/motorola/terminos-condiciones' exact>
               <TermsAndConditionsMotorola />
+            </Route>
+            <Route path='/camara-comercio' exact>
+              <CamaraComercioPage />
             </Route>
             {newClient.map((client, index) => (
               <Route path={`/tramites-y-reclamaciones/${client.client}`} exact key={`path_key_${index}`} >

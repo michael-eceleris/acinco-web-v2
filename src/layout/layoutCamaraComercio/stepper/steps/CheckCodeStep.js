@@ -8,72 +8,72 @@ const CheckCodeStep = () => {
   const { setCurrentStep, setUserInfo } = useStepperComercio();
   const { register, handleSubmit, errors } = useForm();
 
-  const onSubmit = ( values ) => {
+  const onSubmit = (values) => {
     setUserInfo({
-      ...values
-    })
+      ...values,
+    });
     setCurrentStep((prevState) => prevState + 1);
   };
 
   return (
     <Fragment>
-      <h4>Busca tu codigo</h4>
-      <p className="fs--17">
-        En esta parte tienes que escoger buscar tu codigo, para saber si es valido continuar con el proceso.
+      <h4>Registra tu dispositivo</h4>
+      <p className='fs--17'>
+        Registra tu dispositivo ingresando tu código y tu número de NIT.
       </p>
       <div className='form-label-group'>
         <input
           ref={register({
             required: {
               value: true,
-              message: "* Requerido"
+              message: "* Requerido",
             },
-            maxLength: 20
+            maxLength: 20,
           })}
           id='code'
           name='code'
           type='text'
-          placeholder='Codigo a buscar'
+          placeholder='Digita tu código'
           className='form-control'
         />
-        <label className='fontcustom'>
-          Codigo a buscar
-        </label>
+        <label className='fontcustom'>Digita tu código</label>
       </div>
-      {errors && errors.code && <p className="text-danger">{errors.code.message}</p>}
+      {errors && errors.code && (
+        <p className='text-danger'>{errors.code.message}</p>
+      )}
       <div className='form-label-group mt-2'>
         <input
           ref={register({
             required: {
               value: true,
-              message: "* Requerido"
+              message: "* Requerido",
             },
             pattern: {
               value: /^[0-9]+/,
-              message: "* Solo se aceptan números"
-            }
+              message: "* Solo se aceptan números",
+            },
           })}
           id='nit'
           name='nit'
           type='text'
-          placeholder='Nit'
+          placeholder='Digita tu Nit'
           className='form-control'
         />
-        <label className='fontcustom'>
-          Nit
-        </label>
+        <label className='fontcustom'>Digita tu Nit</label>
       </div>
-      {errors && errors.nit && <p className="text-danger">{errors.nit.message}</p>}
+      {errors && errors.nit && (
+        <p className='text-danger'>{errors.nit.message}</p>
+      )}
       <div className='mt-4 d-flex justify-content-end'>
-        <button 
-          className={`btn btn-sm btn-primary`} 
+        <button
+          className={`btn btn-sm btn-primary`}
           onClick={handleSubmit(onSubmit)}
         >
           Siguiente
         </button>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
 export default CheckCodeStep;

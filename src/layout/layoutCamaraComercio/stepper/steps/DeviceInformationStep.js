@@ -15,7 +15,15 @@ const DeviceInformationStep = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [model, setModel] = useState("");
   const [value] = useDebounce(imei, 200);
-  const { register, errors, handleSubmit, getValues, setValue } = useForm({
+  const {
+    register,
+    errors,
+    handleSubmit,
+    getValues,
+    setValue,
+    setError,
+    clearErrors,
+  } = useForm({
     defaultValues: {
       imei: "",
       deviceName: "",
@@ -60,14 +68,24 @@ const DeviceInformationStep = () => {
   const handleChange = (e) => {
     if (e.target.value.length === 15) {
       setImei(e.target.value);
+      clearErrors("imei");
+    } else {
+      setError(
+        "imei",
+        {
+          types: ["maxLength", "minLength"],
+          message: "* El imei debe tener exactamente 15 digítos",
+        },
+        {}
+      );
     }
   };
   return (
     <Fragment>
       <h4>Datos del dispositivo</h4>
       <p className='fs--17'>
-        En esta parte tienes que llenar el campo del imei, para consultar tu
-        dispositivo y continuar con el proceso.
+        Digita el número de imei del dispositivo a proteger, lo puedes obtener
+        marcando *#06# desde tu celular.
       </p>
       <div className='form-label-group'>
         <input
@@ -82,11 +100,11 @@ const DeviceInformationStep = () => {
             },
             maxLength: {
               value: 15,
-              message: "* El imei debe tener exactamente 15 caracteres",
+              message: "* El imei debe tener exactamente 15 digítos",
             },
             minLength: {
               value: 15,
-              message: "* El imei debe tener exactamente 15 caracteres",
+              message: "* El imei debe tener exactamente 15 digítos",
             },
           })}
           placeholder='Nombre'

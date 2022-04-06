@@ -1,5 +1,6 @@
 import React from "react";
 import CamaraComercio from "../../assets/images/camara_comercio_logo.png";
+import LogoAfiliados from "../../assets/images/logo_afiliados.png";
 
 const Banner = () => {
   return (
@@ -19,11 +20,17 @@ const Banner = () => {
       <div className='container min-h75vh d-middle pt-5'>
         <div className='row text-center-xs'>
           <div
-            className='col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-3'
+            className='col-12 col-md-6 order-2 order-md-1 pb--150 pl-md-3'
             data-aos='fade-in'
             data-aos-delay='0'
           >
-            <div className='mt-4 ml-4'>
+            <img
+              height='60'
+              className='ml-4 mt-1'
+              src={LogoAfiliados}
+              alt='logo_afiliados'
+            />
+            <div className='mt-2 ml-4'>
               <h1 className='font-weight-light mb-4 h3-md'>
                 <span className='font-weight-medium'>
                   Cámara de Comercio de Bogotá

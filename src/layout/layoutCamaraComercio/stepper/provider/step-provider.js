@@ -13,6 +13,9 @@ export const StepperComercioProvider = ({ children }) => {
   const [documentTypes, setDocumentTypes] = useState(null);
   const [genders, setGenders] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [interceptors, setInterceptors] = useState(null);
+  const [policy, setPolicy] = useState(null);
+  const [isErrorModal, setIsErrorModal] = useState(false);
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -44,6 +47,12 @@ export const StepperComercioProvider = ({ children }) => {
     fetchApi();
   }, []);
 
+  const resetForm = () => {
+    setInterceptors(null);
+    setPolicy(null);
+    setUserInfo(null);
+  };
+
   return (
     <StepperComercioContext.Provider
       value={{
@@ -55,6 +64,13 @@ export const StepperComercioProvider = ({ children }) => {
         genders,
         showModal,
         setShowModal,
+        interceptors,
+        setInterceptors,
+        policy,
+        setPolicy,
+        isErrorModal,
+        setIsErrorModal,
+        resetForm,
       }}
       children={children}
     />

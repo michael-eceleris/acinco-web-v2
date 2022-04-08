@@ -4,7 +4,8 @@ import "../../../../components/Modal/modal.css";
 import { useStepperComercio } from "../provider/step-provider";
 
 const Modal = (props) => {
-  const { showModal, setShowModal, setCurrentStep } = useStepperComercio();
+  const { showModal, isErrorModal, setShowModal, setCurrentStep, resetForm } =
+    useStepperComercio();
   const showModalLocal = showModal
     ? "modal display-block"
     : "modal display-none";
@@ -12,6 +13,7 @@ const Modal = (props) => {
   const handleClose = () => {
     setShowModal(false);
     setCurrentStep(0);
+    resetForm();
   };
 
   return (
@@ -21,7 +23,7 @@ const Modal = (props) => {
           (
             <div className={showModalLocal}>
               <div className='modal-main'>
-                {showModal ? (
+                {!isErrorModal ? (
                   <>
                     <div className='modal-header'>
                       <svg
@@ -52,7 +54,8 @@ const Modal = (props) => {
                     </div>
                     <div className='modal-body'>
                       <h3 className='modal-title mb-2'>Felicidades!</h3>
-                      Tu reclamación fue creada exitosamente.
+                      Tu póliza ha sido creada exitosamente, encontrarás en tu
+                      correo más información sobre la póliza.
                     </div>
                   </>
                 ) : (
@@ -101,10 +104,15 @@ const Modal = (props) => {
                     </div>
                     <div className='modal-body'>
                       <h3 className='modal-title  mb-2'>
-                        No fue posible crear tu poliza.
+                        No fue posible crear tu póliza.
                       </h3>
                       <div className='modal-text'>
-                        Acaba de ocurrir un problema, lo sentimos.
+                        {isErrorModal?.message} <br />
+                        <small>
+                          Si el problema continúa comunícate en Bogotá 601
+                          4898599, para el resto de Colombia 01 8000 513 323 o
+                          WhatsApp +57 1 5142355.
+                        </small>
                       </div>
                     </div>
                   </>

@@ -1,8 +1,10 @@
 import React from "react";
 import { Fragment } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
+import microServiceAxios from "../config/axios";
 import { useStepperComercio } from "../provider/step-provider";
 
 const LabelCheckbox = styled.label`
@@ -10,13 +12,81 @@ const LabelCheckbox = styled.label`
     background: "#003272" !important;
   }
 `;
+const ButtonSubmit = styled.button`
+  color: #fff;
+  :hover {
+    filter: brightness(120%);
+    color: #fff;
+  }
+  :disabled {
+    opacity: 0.65;
+  }
+`;
 
 const ReviewInformationStep = () => {
-  const { userInfo, setCurrentStep, setShowModal } = useStepperComercio();
+  const {
+    userInfo,
+    policy,
+    interceptors,
+    setCurrentStep,
+    setShowModal,
+    setIsErrorModal,
+  } = useStepperComercio();
   const { register, handleSubmit } = useForm();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = (value) => {
-    setShowModal(true);
+  const onSubmit = async (value) => {
+    setIsLoading((prevState) => !prevState);
+    try {
+      let data = {
+        client: {
+          firstName: userInfo.firstName,
+          lastName: userInfo.lastName,
+          email: userInfo.email,
+          genderId: userInfo.genderId.name.toUpperCase(),
+          identification: {
+            type: userInfo.identificationType.id_system,
+            number: userInfo.identificationNumber,
+          },
+        },
+        planId: policy.policies[0].id,
+        priceOptionId: policy.policies[0].pricingOptions[0].id,
+        device: {
+          imei: userInfo.imei,
+          line: userInfo.phone_number,
+        },
+        promotionCode: userInfo.promotionCode,
+        clientIdentification: userInfo.clientIdentification,
+        sponsorId: policy.policies[0].sponsor,
+      };
+      const response = await microServiceAxios.post(`/api/v1/policy`, data, {
+        headers: {
+          Authorization: `${interceptors.type} ${interceptors.token}`,
+        },
+      });
+      if (response.status === 200) {
+        setIsErrorModal(null);
+        setShowModal(true);
+        setIsLoading((prevState) => !prevState);
+      }
+    } catch (error) {
+      if (error.response.status === 400) {
+        if (
+          error.response.data.error.message ===
+          "the imei already has a valid insurance policy for this sponsor"
+        ) {
+          setIsErrorModal({
+            message: "Este imei ya cuenta con una póliza vigente.",
+          });
+        }
+      } else {
+        setIsErrorModal({
+          message: true,
+        });
+      }
+      setShowModal(true);
+      setIsLoading((prevState) => !prevState);
+    }
   };
 
   return (
@@ -134,12 +204,20 @@ const ReviewInformationStep = () => {
         >
           Atrás
         </button>
-        <button
+        <ButtonSubmit
           className={`btn btn-sm btn-primary`}
           onClick={handleSubmit(onSubmit)}
+          disabled={isLoading}
         >
           Enviar
-        </button>
+          {isLoading && (
+            <i
+              className='spinner-border spinner-border-sm ml-2 mr-0 mb--3'
+              role='status'
+              aria-hidden='true'
+            ></i>
+          )}
+        </ButtonSubmit>
       </div>
     </Fragment>
   );

@@ -4,15 +4,17 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDebounce } from "use-debounce";
-import axios from "axios";
 
+import microServiceAxios from "../config/axios";
 import { useStepperComercio } from "../provider/step-provider";
 
 const DeviceInformationStep = () => {
-  const { userInfo, setCurrentStep, setUserInfo } = useStepperComercio();
+  const { userInfo, interceptors, setCurrentStep, setUserInfo, setPolicy } =
+    useStepperComercio();
   const [imei, setImei] = useState("");
   const [manufacter, setManufacter] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [errorLocal, setErrorLocal] = useState(false);
   const [model, setModel] = useState("");
   const [value] = useDebounce(imei, 200);
   const {
@@ -34,17 +36,25 @@ const DeviceInformationStep = () => {
     const fetchApi = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get(
-          `https://apifalacambio.humc.co/check-imei/${imei}`
+        const response = await microServiceAxios.get(
+          `/api/v1/policy/imei/${imei}?sponsorId=CCB`,
+          {
+            headers: {
+              Authorization: `${interceptors.type} ${interceptors.token}`,
+            },
+          }
         );
         if (response.status === 200) {
-          setManufacter(response.data.marca);
-          setValue("deviceManufacter", response.data.marca);
-          setValue("deviceName", response.data.device.name);
-          setModel(response.data.device.name);
+          setManufacter(response.data.data.brand);
+          setValue("deviceManufacter", response.data.data.brand);
+          setValue("deviceName", response.data.data.key);
+          setModel(response.data.data.key);
+          setPolicy(response.data.data);
           setIsLoading(false);
+          setErrorLocal(false);
         }
       } catch (error) {
+        setErrorLocal(true);
         setIsLoading(false);
         console.log("ero", error);
       }
@@ -79,9 +89,27 @@ const DeviceInformationStep = () => {
         {}
       );
     }
+    setErrorLocal(false);
   };
   return (
     <Fragment>
+      {errorLocal && !isLoading && (
+        <div className='alert alert-danger'>
+          <button
+            onClick={() => {
+              setErrorLocal((prevState) => !prevState);
+            }}
+            className='position-absolute right-0 top-0 btn btn-sm btn-icon'
+          >
+            <i className='fi fi-close '></i>
+          </button>
+          <p>IMEI incorrecto.</p>
+          <p className='mb-0'>
+            Si el problema continúa comunícate en Bogotá 601 4898599, para el
+            resto de Colombia 01 8000 513 323 o WhatsApp +57 1 5142355.
+          </p>
+        </div>
+      )}
       <h4>Datos del dispositivo</h4>
       <p className='fs--17'>
         Digita el número de imei del dispositivo a proteger, lo puedes obtener
@@ -184,6 +212,7 @@ const DeviceInformationStep = () => {
         <button
           className={`btn btn-sm btn-primary`}
           onClick={handleSubmit(onSubmit)}
+          disabled={errorLocal}
         >
           Siguiente
         </button>

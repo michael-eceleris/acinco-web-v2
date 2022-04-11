@@ -1,5 +1,5 @@
 import React from "react";
-import CamaraComercio from "../../assets/images/camara_comercio_logo.png";
+import CamaraComercio from "../../assets/images/logo_afiliados_ccb.png";
 import LogoAfiliados from "../../assets/images/logo_afiliados.png";
 
 const Banner = () => {

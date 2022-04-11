@@ -54,9 +54,14 @@ const DeviceInformationStep = () => {
           setErrorLocal(false);
         }
       } catch (error) {
-        setErrorLocal(true);
+        if (error.response.status === 400) {
+          setErrorLocal({
+            message: error.response.data.error.message,
+          });
+        } else {
+          setErrorLocal({ message: "IMEI incorrecto" });
+        }
         setIsLoading(false);
-        console.log("ero", error);
       }
     };
     if (getValues().imei !== "" && getValues().imei.length === 15) {
@@ -103,8 +108,8 @@ const DeviceInformationStep = () => {
           >
             <i className='fi fi-close '></i>
           </button>
-          <p>IMEI incorrecto.</p>
-          <p className='mb-0'>
+          <p>{errorLocal.message.split(",")[0]}.</p>
+          <p className='mb-0 fs--15'>
             Si el problema continúa comunícate en Bogotá 601 4898599, para el
             resto de Colombia 01 8000 513 323 o WhatsApp +57 1 5142355.
           </p>

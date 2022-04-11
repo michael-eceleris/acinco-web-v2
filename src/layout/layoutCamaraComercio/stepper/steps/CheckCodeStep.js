@@ -39,14 +39,32 @@ const CheckCodeStep = () => {
         }
       })
       .catch((err) => {
-        setError((prevState) => !prevState);
+        if (err.response.status === 400) {
+          if (err.response.data.error.message === "Code already used") {
+            setError({
+              message: "Este código ya se encuentra en uso",
+            });
+          } else {
+            setError({
+              message: "Código o nit incorrecto",
+            });
+          }
+        } else if (err.response.status === 404) {
+          setError({
+            message: "Código o nit incorrecto",
+          });
+        } else {
+          setError({
+            message: "Lo sentimos, ocurrió un problema",
+          });
+        }
         setIsLoading((prevState) => !prevState);
       });
   };
 
   return (
     <Fragment>
-      {error && (
+      {error && !isLoading && (
         <div className='alert alert-danger'>
           <button
             onClick={() => {
@@ -56,8 +74,8 @@ const CheckCodeStep = () => {
           >
             <i className='fi fi-close '></i>
           </button>
-          <p>Código o nit incorrecto.</p>
-          <p className='mb-0'>
+          <p>{error.message}.</p>
+          <p className='mb-0 fs--15'>
             Si el problema continúa comunícate en Bogotá 601 4898599, para el
             resto de Colombia 01 8000 513 323 o WhatsApp +57 1 5142355
           </p>

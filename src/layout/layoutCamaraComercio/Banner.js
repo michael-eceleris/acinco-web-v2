@@ -20,26 +20,24 @@ const Banner = () => {
       <div className='container min-h75vh d-middle pt-5'>
         <div className='row text-center-xs'>
           <div
-            className='col-12 col-md-6 order-2 order-md-1 pb--150 pl-md-3'
+            className='col-12 col-md-6 order-2 order-md-1 pb--180 pl-md-3'
             data-aos='fade-in'
             data-aos-delay='0'
           >
-            <img
-              height='60'
-              className='ml-4 mt-1'
-              src={LogoAfiliados}
-              alt='logo_afiliados'
-            />
             <div className='mt-2 ml-4'>
-              <h1 className='font-weight-light mb-4 h3-md'>
-                <span className='font-weight-medium'>
-                  Cámara de Comercio de Bogotá
-                </span>
-              </h1>
-              <p className='lead mb--0 h6-md'>
-                Dirigido a los usuarios que renueven su matricula mercantil
-                junto con su membresía al Circulo de Afiliado de la cámara de
-                comercio de Bogotá.
+              <img
+                height='90'
+                className='ml-0 mt-1 mb-3'
+                src={LogoAfiliados}
+                alt='logo_afiliados'
+              />
+              <p className='lead mb--0 fs--19'>
+                Gracias por seguir siendo parte del Círculo de Afiliados. Ser
+                Afiliado te brinda beneficios exclusivos que solo los mejores
+                tienen! Al cumplir con la renovación de tu matricula mercantil y
+                membresía oportunamente, te regalamos el 80% de la reparación de
+                la pantalla de un celular. Regístrate aquí y protege tu celular
+                por 9 meses.
               </p>
               <p className='fs--14'>* Aplican términos y condiciones.</p>
             </div>

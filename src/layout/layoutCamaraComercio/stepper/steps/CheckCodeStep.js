@@ -25,9 +25,16 @@ const CheckCodeStep = () => {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (values) => {
+    let data = {};
+    Object.entries(values).forEach((d) => {
+      data = {
+        ...data,
+        [d[0]]: d[1].trim(),
+      };
+    });
     setIsLoading((prevState) => !prevState);
     microServiceAxios
-      .post("/api/v1/promotion-code", values)
+      .post("/api/v1/promotion-code", data)
       .then((res) => {
         if (res) {
           setInterceptors(res.data.data);

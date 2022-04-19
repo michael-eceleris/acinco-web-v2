@@ -1,6 +1,7 @@
 import React from "react";
 import CamaraComercio from "../../assets/images/logo_afiliados_ccb.png";
 import LogoAfiliados from "../../assets/images/logo_afiliados.png";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -31,7 +32,7 @@ const Banner = () => {
                 src={LogoAfiliados}
                 alt='logo_afiliados'
               />
-              <p className='lead mb--0 fs--19'>
+              <p className='lead mb--0 fs--17'>
                 Gracias por seguir siendo parte del Círculo de Afiliados. Ser
                 Afiliado te brinda beneficios exclusivos que solo los mejores
                 tienen! Al cumplir con la renovación de tu matricula mercantil y
@@ -39,7 +40,12 @@ const Banner = () => {
                 la pantalla de un celular. Regístrate aquí y protege tu celular
                 por 9 meses.
               </p>
-              <p className='fs--14'>* Aplican términos y condiciones.</p>
+              <Link
+                className='btn-link text-decoration-none  lead'
+                to='/camara-comercio/terminos-condiciones'
+              >
+                <p className='fs--14'>* Aplican términos y condiciones.</p>
+              </Link>
             </div>
           </div>
           <div className='col-12 col-md-6 order-2 order-md-1 d-middle show2'>

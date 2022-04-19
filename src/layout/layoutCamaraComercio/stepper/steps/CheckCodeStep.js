@@ -83,7 +83,8 @@ const CheckCodeStep = () => {
       )}
       <h4>Registra tu dispositivo</h4>
       <p className='fs--17'>
-        Registra tu dispositivo ingresando tu código y tu número de NIT.
+        Registra tu dispositivo ingresando el código que recibiste en el correo
+        y tu número de NIT.
       </p>
       <div className='form-label-group'>
         <input

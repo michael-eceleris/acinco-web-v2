@@ -29,7 +29,7 @@ const StepperHeader = () => {
       <div className='col-xl-12 mb-3'>
         <div className='container'>
           <h2 className='ml-5 mb-1 h4-xs h2-md textcustom'>
-            Activa tu asistencia de fractura de pantalla
+            Activa ya tu asistencia de fractura de pantalla
           </h2>
           <div className='show3'>
             <div className='d-flex justify-content-around'>
@@ -71,10 +71,10 @@ const StepperHeader = () => {
                 style={{ color: defaultColor }}
                 className='mt--5 fs--20 text-center-xs'
               >
-                {currentStep === 0 && "1. Revisa tu codigo"}
-                {currentStep === 1 && "2. Llena tus datos"}
-                {currentStep === 2 && "3. Informacion del dispositivo"}
-                {currentStep === 3 && "4. Enviar"}
+                {currentStep === 0 && "1. Código."}
+                {currentStep === 1 && "2. Datos personales."}
+                {currentStep === 2 && "3. Datos del dispositivo."}
+                {currentStep === 3 && "4. Enviar."}
               </p>
             </div>
           </div>
@@ -103,7 +103,7 @@ const StepperHeader = () => {
                   style={{ color: currentStep >= 0 ? defaultColor : "#bababa" }}
                   className='mt--5 textcustom h6-xs'
                 >
-                  1. Codigo
+                  1. Código
                 </p>
               </div>
             </Step>

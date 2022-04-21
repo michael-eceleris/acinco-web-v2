@@ -1,6 +1,6 @@
 import React from "react";
-import CamaraComercio from "../../assets/images/logo_afiliados_ccb.png";
 import LogoAfiliados from "../../assets/images/logo_afiliados.png";
+import PhoneRepair from "../../assets/images/protect.png";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
@@ -21,7 +21,7 @@ const Banner = () => {
       <div className='container min-h75vh d-middle pt-5'>
         <div className='row text-center-xs'>
           <div
-            className='col-12 col-md-6 order-2 order-md-1 pb--180 pl-md-3'
+            className='col-12 col-md-6 order-2 order-md-1 pb--150 pl-md-3'
             data-aos='fade-in'
             data-aos-delay='0'
           >
@@ -33,9 +33,9 @@ const Banner = () => {
                 alt='logo_afiliados'
               />
               <p className='lead mb--0 fs--17'>
-                Gracias por seguir siendo parte del Círculo de Afiliados. Ser
+                Gracias por seguir siendo parte del Círculo de Afiliados. ¡Ser
                 Afiliado te brinda beneficios exclusivos que solo los mejores
-                tienen! Al cumplir con la renovación de tu matricula mercantil y
+                tienen! Al cumplir con la renovación de tu matrícula mercantil y
                 membresía oportunamente, te regalamos el 80% de la reparación de
                 la pantalla de un celular. Regístrate aquí y protege tu celular
                 por 9 meses.
@@ -52,7 +52,7 @@ const Banner = () => {
             <img
               width='250'
               className='img-fluid lazy '
-              src={CamaraComercio}
+              src={PhoneRepair}
               alt='logo_camara_comercio'
             />
           </div>

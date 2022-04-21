@@ -38,7 +38,22 @@ export const StepperComercioProvider = ({ children }) => {
           "/api/v1/user/identification-type"
         );
         if (response.status === 200) {
-          setDocumentTypes(response.data.data);
+          let data = response.data.data.map((d) => {
+            if (d.name === "CC") {
+              return {
+                ...d,
+                customName: "Cédula de Ciudadanía",
+              };
+            } else if (d.name === "CE") {
+              return {
+                ...d,
+                customName: "Cédula de Extranjería",
+              };
+            } else {
+              return d;
+            }
+          });
+          setDocumentTypes(data);
         }
       } catch (error) {
         console.log("error", error);

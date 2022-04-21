@@ -13,6 +13,7 @@ const Dropdown = ({
   prop1,
   prop2,
   prop3,
+  withoutLabel = false,
   disabled,
 }) => {
   const [open, setOpen] = useState(false);
@@ -46,12 +47,12 @@ const Dropdown = ({
     setQuery("");
   };
   return (
-    <div className="dropdown">
-      <div className="control">
-        <div className="selected-value">
+    <div className='dropdown'>
+      <div className='control'>
+        <div className='selected-value'>
           <input
             ref={ref}
-            type="text"
+            type='text'
             value={displayValue()}
             onChange={(e) => {
               setQuery(e.target.value);
@@ -60,18 +61,22 @@ const Dropdown = ({
             onClick={toggle}
             onTouchEnd={toggle}
             required
-            className="input-drop"
+            placeholder={withoutLabel ? prompt : ""}
+            className='input-drop'
+            style={{ padding: withoutLabel && "10px" }}
           />
-          <label className="selected-value-label">{prompt}</label>
+          {!withoutLabel && (
+            <label className='selected-value-label'>{prompt}</label>
+          )}
         </div>
         <div className={`arrow ${open ? "open" : null}`} />
       </div>
       <div className={`options ${open ? "open" : null}`}>
         {options.length > 0 ? (
-          options.map((option) =>
+          options.map((option, index) =>
             option !== undefined ? (
               <div
-                key={option[id]}
+                key={`option_${prompt}_${index}`}
                 className={`option ${value === option ? "selected" : null}`}
                 onClick={() => {
                   selecOption(option);
@@ -89,7 +94,7 @@ const Dropdown = ({
             ) : null
           )
         ) : (
-          <div className="option">No hay opciones</div>
+          <div className='option'>No hay opciones</div>
         )}
       </div>
     </div>

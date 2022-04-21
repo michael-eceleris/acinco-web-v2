@@ -84,7 +84,7 @@ const TermsAndConditions = () => {
                 <p>
                   Esta asistencia cubre la reparación de la pantalla en caso de
                   fractura/rotura por accidente. Está dirigido a todos los
-                  usuarios que adquieran o renueven su registro, estos contaran
+                  usuarios que adquieran o renueven su registro, estos contarán
                   con una (1) reclamación por vigencia por fractura de pantalla.
                 </p>
                 <h3 className='h6 text-muted my-2'>Vigencia</h3>
@@ -138,8 +138,8 @@ const TermsAndConditions = () => {
                   <li>
                     <p>
                       Al renovar su registro mercantil, se notificará la URL en
-                      donde deberá realizar el registro de su equipo móvil, sino
-                      se cuenta con este registro no se podrá prestar la
+                      donde deberá realizar el registro de su equipo móvil, si
+                      no se cuenta con este registro no se podrá prestar la
                       asistencia.
                     </p>
                   </li>
@@ -170,7 +170,7 @@ const TermsAndConditions = () => {
                 <p>
                   La reclamación de la asistencia se puede realizar a través de
                   la línea 01 8000 513 323 o en Bogotá al 601 4898599 de lunes a
-                  viernes de 8 am a 6 pm; sábado de 8:00 am a 11:00 am, por
+                  viernes de 8 am a 6 pm, sábado de 8:00 am a 11:00 am; por
                   WhatsApp +57 1 5142355 o por medio del chat habilitado en la
                   siguiente página{" "}
                   <a
@@ -193,11 +193,11 @@ const TermsAndConditions = () => {
                   S.A.S., el cual cubre la rotura accidental de pantalla por 9
                   (nueve) meses a partir de la fecha de adquisición o renovación
                   de su registro. Estarán excluidos de la cobertura todos
-                  aquellos eventos originados, basados o atribuibles a
+                  aquellos eventos originados, basados o atribuibles a:
                 </p>
                 <ul>
                   <li>
-                    <p>Lucro cesante, o pérdidas consecuenciales</p>
+                    <p>Lucro cesante, o pérdidas consecuenciales.</p>
                   </li>
                   <li>
                     <p>
@@ -243,7 +243,7 @@ const TermsAndConditions = () => {
                   <li>
                     <p>
                       Pérdidas como consecuencia de que el usuario, o cualquier
-                      persona a quien éste le haya confiado el bien asistido, se
+                      persona a quien este le haya confiado el bien asistido, se
                       haya desprendido intencionalmente de la misma.
                     </p>
                   </li>
@@ -264,7 +264,7 @@ const TermsAndConditions = () => {
                 </h2>
                 <p>
                   Para hacer efectiva la asistencia el usuario debe radicar los
-                  siguientes documentos por medio de la pagina web{" "}
+                  siguientes documentos por medio de la página web{" "}
                   <a
                     href='http://www.aseguratucelular.com'
                     target='_blank'
@@ -292,7 +292,7 @@ const TermsAndConditions = () => {
                   </li>
                   <li>
                     <p>
-                      Si la unidad enciende imagen del Imei desde el equipo
+                      Si la unidad enciende imagen del IMEI desde el equipo
                       (marcar *#06#).
                     </p>
                   </li>

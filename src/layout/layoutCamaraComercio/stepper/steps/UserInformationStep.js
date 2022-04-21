@@ -75,7 +75,11 @@ const UserInformationStep = () => {
         Diligencia cada uno de los campos con tus datos personales, para
         continuar con el proceso.
       </p>
-      <div className='form-label-group'>
+      <p className='mb-1 text-justify mt-3 ml-1'>
+        Nombre&nbsp;
+        <span className='fs--15 text-red-500 ml--2 '>*</span>
+      </p>
+      <div className='form'>
         <input
           ref={register({
             required: {
@@ -90,12 +94,15 @@ const UserInformationStep = () => {
           type='text'
           className='form-control'
         />
-        <label className='fontcustom'>Nombre</label>
       </div>
       {errors && errors.firstName && (
         <p className='text-danger'>{errors.firstName.message}</p>
       )}
-      <div className='form-label-group mt-3'>
+      <p className='mb-1 text-justify mt-3 ml-1'>
+        Apellido&nbsp;
+        <span className='fs--15 text-red-500 ml--2 '>*</span>
+      </p>
+      <div className='form mt-0'>
         <input
           ref={register({
             required: {
@@ -110,12 +117,15 @@ const UserInformationStep = () => {
           type='text'
           className='form-control'
         />
-        <label className='fontcustom'>Apellido</label>
       </div>
       {errors && errors.lastName && (
         <p className='text-danger'>{errors.lastName.message}</p>
       )}
-      <div className='form-label-group mt-3'>
+      <p className='mb-1 text-justify mt-3 ml-1'>
+        Correo Electrónico&nbsp;
+        <span className='fs--15 text-red-500 ml--2 '>*</span>
+      </p>
+      <div className='form mt-0'>
         <input
           ref={register({
             required: {
@@ -133,12 +143,15 @@ const UserInformationStep = () => {
           type='email'
           className='form-control'
         />
-        <label htmlFor='email'>Correo Electrónico</label>
       </div>
       {errors && errors.email && (
         <p className='text-danger'>{errors.email.message}</p>
       )}
-      <div className='form-group mt-3'>
+      <p className='mb-1 text-justify mt-3 ml-1'>
+        Tipo de documento&nbsp;
+        <span className='fs--15 text-red-500 ml--2 '>*</span>
+      </p>
+      <div className='form mt-0'>
         <Dropdown
           refPropt={register({
             required: {
@@ -150,15 +163,20 @@ const UserInformationStep = () => {
           prompt='Tipo de documento'
           id='identificationType'
           name='identificationType'
-          label1='id_system'
+          label1='customName'
           onChange={(e) => handleChangeOptionsSelects(e, "identificationType")}
           value={identificationType}
+          withoutLabel={true}
         />
         {errors && errors.identificationType && (
           <p className='text-danger'>{errors.identificationType.message}</p>
         )}
       </div>
-      <div className='form-label-group mt-3'>
+      <p className='mb-1 text-justify mt-3 ml-1'>
+        Número de identificación&nbsp;
+        <span className='fs--15 text-red-500 ml--2 '>*</span>
+      </p>
+      <div className='form mt-0'>
         <input
           ref={register({
             maxLength: {
@@ -178,18 +196,21 @@ const UserInformationStep = () => {
               message: "* Solo se aceptan números",
             },
           })}
-          placeholder='Número de identificacion'
+          placeholder='Número de identificación'
           id='identificationNumber'
           name='identificationNumber'
           type='text'
           className='form-control'
         />
-        <label htmlFor='identificationNumber'>Número de identificacion</label>
       </div>
       {errors && errors.identificationNumber && (
         <p className='text-danger'>{errors.identificationNumber.message}</p>
       )}
-      <div className='form-label-group mt-3'>
+      <p className='mb-1 text-justify mt-3 ml-1'>
+        Número de celular&nbsp;
+        <span className='fs--15 text-red-500 ml--2 '>*</span>
+      </p>
+      <div className='form mt-0'>
         <input
           ref={register({
             maxLength: {
@@ -215,12 +236,15 @@ const UserInformationStep = () => {
           type='text'
           className='form-control'
         />
-        <label htmlFor='phone_number'>Número de celular</label>
       </div>
       {errors && errors.phone_number && (
         <p className='text-danger'>{errors.phone_number.message}</p>
       )}
-      <div className='form-group mt-3'>
+      <p className='mb-1 text-justify mt-3 ml-1'>
+        Selecciona tu género&nbsp;
+        <span className='fs--15 text-red-500 ml--2 '>*</span>
+      </p>
+      <div className='form-group mt-0'>
         <Dropdown
           refPropt={register({
             required: {
@@ -235,6 +259,7 @@ const UserInformationStep = () => {
           label1='name'
           onChange={(e) => handleChangeOptionsSelects(e, "gender")}
           value={genderId}
+          withoutLabel={true}
         />
         {errors && errors.gender && (
           <p className='text-danger'>{errors.gender.message}</p>

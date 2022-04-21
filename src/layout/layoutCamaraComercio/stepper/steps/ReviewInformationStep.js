@@ -122,7 +122,7 @@ const ReviewInformationStep = () => {
                   Tipo de documento:
                 </td>
                 <td className='border-bottom border-top-0'>
-                  {userInfo?.identificationType?.id_system}
+                  {userInfo?.identificationType?.customName}
                 </td>
               </tr>
               <tr>

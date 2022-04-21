@@ -89,7 +89,7 @@ const DeviceInformationStep = () => {
         "imei",
         {
           types: ["maxLength", "minLength"],
-          message: "* El imei debe tener exactamente 15 digítos",
+          message: "* El IMEI debe tener exactamente 15 digítos",
         },
         {}
       );
@@ -117,7 +117,7 @@ const DeviceInformationStep = () => {
       )}
       <h4>Datos del dispositivo</h4>
       <p className='fs--17'>
-        Digita el número de imei del dispositivo a proteger, lo puedes obtener
+        Digita el número de IMEI del dispositivo a proteger, lo puedes obtener
         marcando *#06# desde tu celular.
       </p>
       <div className='form-label-group'>
@@ -147,7 +147,7 @@ const DeviceInformationStep = () => {
           className='form-control'
           onChange={handleChange}
         />
-        <label className='fontcustom'>Imei</label>
+        <label className='fontcustom'>IMEI</label>
         <div>
           {isLoading ? (
             <i

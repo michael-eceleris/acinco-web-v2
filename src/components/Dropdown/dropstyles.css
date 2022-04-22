@@ -64,6 +64,11 @@ input[class="input-drop"]:valid ~ label {
   width: 100%;
 }
 
+.dropdown .selected-value input[class="input-drop"]::placeholder {
+  color: #95a4af;
+  padding-left: 5px;
+}
+
 .dropdown .options {
   display: none;
   background-color: #fff;

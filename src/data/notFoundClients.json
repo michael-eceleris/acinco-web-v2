@@ -1,0 +1,11 @@
+[
+  {
+    "path": "/cardif/not-found",
+    "clientName": "Cardif",
+    "message": "Lo sentimos, no tienes acceso a esta página.",
+    "titleMessage": "Página no encontrada",
+    "logo":"logo_cardif.png",
+    "icon": "favicon_cardif.png",
+    "bannerNotFound": "icons/page_not_found.svg"
+  }
+]

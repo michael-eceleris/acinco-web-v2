@@ -167,6 +167,11 @@ const Navbar = ({ hideMessage }) => {
                         Axa Colpatria Seguros
                       </Link>
                     </li>
+                    <li className='dropdown-item'>
+                      <Link className='dropdown-link' to='/camara-comercio'>
+                        Cámara de Comercio de Bogotá
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </li>
@@ -181,17 +186,19 @@ const Navbar = ({ hideMessage }) => {
                   Política de Protección
                 </a>
               </li>
-              <li>
-                <a
-                  className='nav-link js-ajax'
-                  href='https://files-statics-protegeme.s3.amazonaws.com/P1648+EQUIPOS+TELEFONIA+CELULAR_MAR+2022.pdf'
-                  target='_blank'
-                  rel='noreferrer'
-                  style={{ whiteSpace: "nowrap" }}
-                >
-                  Clausulado General
-                </a>
-              </li>
+              {pathname !== "/camara-comercio" && (
+                <li>
+                  <a
+                    className='nav-link js-ajax'
+                    href='https://files-statics-protegeme.s3.amazonaws.com/P1648+EQUIPOS+TELEFONIA+CELULAR_MAR+2022.pdf'
+                    target='_blank'
+                    rel='noreferrer'
+                    style={{ whiteSpace: "nowrap" }}
+                  >
+                    Clausulado General
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </nav>

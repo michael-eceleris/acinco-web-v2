@@ -99,7 +99,7 @@ const FormState = (props) => {
         `/api/v1/documento/tipo-cobertura-cobertura/${id}`
       );
       response.data.map((doc, index) =>
-        doc.nombre_documento_save === "Factura de compra."
+        doc.required === false 
           ? (ind = index)
           : docs.push(doc)
       );

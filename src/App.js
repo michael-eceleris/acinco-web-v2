@@ -16,13 +16,17 @@ import SoatDetail from "./pages/SoatDetail";
 import TermAndConditions from "./components/TermsAndConditions/TermsAndConditions";
 import TermAndConditionsTwo from "./components/TermsAndConditions/TermsAndConditionsTwo";
 import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndConditionsSamsung";
+import TermsAndConditionsCCB from "./layout/layoutCamaraComercio/TermsAndConditions";
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import Motorola from "./pages/Motorola";
+import CamaraComercioPage from "./pages/CamaraComercio";
 import TermsAndConditionsMotorola from "./components/TermsAndConditions/TermsAndConditionMotorola";
 import ClaimsBlank from "./pages/ClaimsBlank";
+import NotFoundBlank from "./pages/NotFoundBlank";
 import newClient from "./data/newClients.json";
+import newNotFoundClient from "./data/notFoundClients.json";
 
 import {
   BrowserRouter as Router,
@@ -114,9 +118,28 @@ function App() {
             <Route path='/motorola/terminos-condiciones' exact>
               <TermsAndConditionsMotorola />
             </Route>
+            <Route path='/camara-comercio' exact>
+              <CamaraComercioPage />
+            </Route>
+            <Route path='/camara-comercio/terminos-condiciones' exact>
+              <TermsAndConditionsCCB />
+            </Route>
             {newClient.map((client, index) => (
-              <Route path={`/tramites-y-reclamaciones/${client.client}`} exact key={`path_key_${index}`} >
-                <ClaimsBlank client={client}  />
+              <Route
+                path={`/tramites-y-reclamaciones/${client.client}`}
+                exact
+                key={`path_key_${index}`}
+              >
+                <ClaimsBlank client={client} />
+              </Route>
+            ))}
+            {newNotFoundClient.map((client, index) => (
+              <Route
+                path={client.path}
+                exact
+                key={`path_not_found_key_${index}`}
+              >
+                <NotFoundBlank client={client} />
               </Route>
             ))}
             <Route path='/pagina-no-encontrada' component={NotFound} />

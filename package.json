@@ -25,6 +25,7 @@
     "react-scripts": "4.0.1",
     "react-step-wizard": "^5.3.5",
     "styled-components": "^5.2.1",
+    "use-debounce": "^7.0.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

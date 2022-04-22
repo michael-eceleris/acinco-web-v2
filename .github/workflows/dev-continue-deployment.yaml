@@ -87,3 +87,4 @@ jobs:
             docker stop acinco-web
             docker rm acinco-web
             docker run -d --name=acinco-web -p 8080:80 eceleris/acinco-web
+  

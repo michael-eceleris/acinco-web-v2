@@ -26,34 +26,36 @@ const Banner = () => {
             data-aos-delay='0'
           >
             <div className='mt-2 ml-4'>
-              <p className='lead mb--0 fs--17'>
-                Servicio Ofrecido por Acinco SAS
-              </p>
               <img
                 height='90'
                 className='ml-0 mt-1 mb-3'
                 src={LogoAfiliados}
                 alt='logo_afiliados'
               />
-              <p className='lead mb--0 fs--17'>
-                Gracias por seguir siendo parte del Círculo de Afiliados. ¡Ser
-                Afiliado te brinda beneficios exclusivos que solo los mejores
-                tienen! Al cumplir con la renovación de tu matrícula mercantil y
+              <p className='lead mb-3 fs--17'>
+                Gracias por seguir siendo parte del Círculo de Afiliados. <br />
+                ¡Ser Afiliado te brinda beneficios exclusivos que solo los
+                mejores tienen!
+              </p>
+              <p className='lead mb--5 fs--17'>
+                Al cumplir con la renovación de tu matrícula mercantil y
                 membresía oportunamente, te regalamos el 80% de la reparación de
                 la pantalla de un celular. Regístrate aquí y protege tu celular
                 por 9 meses.
               </p>
               <Link
-                className='btn-link text-decoration-none  lead'
+                className='btn-link text-decoration-none'
                 to='/camara-comercio/terminos-condiciones'
               >
-                <p className='fs--14'>* Aplican términos y condiciones.</p>
+                <p className='fs--14 text-gray-800'>
+                  * Aplican términos y condiciones.
+                </p>
               </Link>
             </div>
           </div>
           <div className='col-12 col-md-6 order-2 order-md-1 d-middle show2'>
             <img
-              width='250'
+              width='270'
               className='img-fluid lazy '
               src={PhoneRepair}
               alt='logo_camara_comercio'

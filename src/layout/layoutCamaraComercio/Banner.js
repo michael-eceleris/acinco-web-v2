@@ -33,15 +33,16 @@ const Banner = () => {
                 alt='logo_afiliados'
               />
               <p className='lead mb-3 fs--17'>
-                Gracias por seguir siendo parte del Círculo de Afiliados. <br />
+                Gracias por seguir siendo parte del Círculo de Afiliados CCB.
+                <br />
                 ¡Ser Afiliado te brinda beneficios exclusivos que solo los
                 mejores tienen!
               </p>
               <p className='lead mb--5 fs--17'>
                 Al cumplir con la renovación de tu matrícula mercantil y
                 membresía oportunamente, te regalamos el 80% de la reparación de
-                la pantalla de un celular. Regístrate aquí y protege tu celular
-                por 9 meses.
+                la pantalla de tu celular. Regístrate y protege tu celular por 9
+                meses. Este servicio es ofrecido por Acinco SAS.
               </p>
               <Link
                 className='btn-link text-decoration-none'

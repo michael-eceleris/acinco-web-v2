@@ -26,6 +26,7 @@ const Banner = () => {
             data-aos-delay='0'
           >
             <div className='mt-2 ml-4'>
+              <p className='lead mb--0 fs--17'>Servicio ofrecido por:</p>
               <img
                 height='90'
                 className='ml-0 mt-1 mb-3'

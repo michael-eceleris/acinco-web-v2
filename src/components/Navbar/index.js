@@ -172,6 +172,11 @@ const Navbar = ({ hideMessage }) => {
                         Cámara de Comercio de Bogotá
                       </Link>
                     </li>
+                    <li className='dropdown-item'>
+                      <Link className='dropdown-link' to='/protect-my-phone'>
+                        Protect My Phone
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </li>

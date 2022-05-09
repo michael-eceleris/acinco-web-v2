@@ -17,11 +17,14 @@ import TermAndConditions from "./components/TermsAndConditions/TermsAndCondition
 import TermAndConditionsTwo from "./components/TermsAndConditions/TermsAndConditionsTwo";
 import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndConditionsSamsung";
 import TermsAndConditionsCCB from "./layout/layoutCamaraComercio/TermsAndConditions";
+import TermsAndConditionsPMP from "./layout/layoutPMP/TermsAndConditions";
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import Motorola from "./pages/Motorola";
 import CamaraComercioPage from "./pages/CamaraComercio";
+import PMPPage from "./pages/PMP";
+import PMPPageSingUp from "./pages/PMP-signup";
 import TermsAndConditionsMotorola from "./components/TermsAndConditions/TermsAndConditionMotorola";
 import ClaimsBlank from "./pages/ClaimsBlank";
 import NotFoundBlank from "./pages/NotFoundBlank";
@@ -123,6 +126,15 @@ function App() {
             </Route>
             <Route path='/camara-comercio/terminos-condiciones' exact>
               <TermsAndConditionsCCB />
+            </Route>
+            <Route path='/protect-my-phone' exact>
+              <PMPPage />
+            </Route>
+            <Route path='/protect-my-phone/signup' exact>
+              <PMPPageSingUp />
+            </Route>
+            <Route path='/protect-my-phone/terminos-condiciones' exact>
+              <TermsAndConditionsPMP />
             </Route>
             {newClient.map((client, index) => (
               <Route

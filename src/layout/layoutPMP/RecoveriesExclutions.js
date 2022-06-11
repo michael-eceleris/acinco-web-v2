@@ -8,11 +8,13 @@ const Recoveries = () => {
         <div className='container p-0'>
           <div className='d-flex flex-wrap align-items-center my-7 '>
             <div className='col-12 col-lg-6 mb-5'>
-              <h2 className='h1 text-primary mb-4 text-center'>Cero Copagos</h2>
+              <h2 className='h1 text-primary mb-4 text-center'>
+                PERO ADEMAS….
+              </h2>
               <p className='lead mb-3'>
-                Si te ocurre un siniestro, o alguna circunstancia en la cual se
-                vea aplicable alguna de las coberturas que trae el plan, ten en
-                cuenta esta información.
+                La asistencia de fractura de pantalla inicia a partir de la
+                compra de PROTECT MY PHONE GARANTÍA EXTENDIDA en tiendas
+                autorizadas.
               </p>
               <Link
                 className='btn btn-link text-decoration-none'
@@ -33,8 +35,9 @@ const Recoveries = () => {
                       ¿Cuánto pagarás?
                     </h3>
                     <p className='pt-3 text-justify'>
-                      El seguro te cubre el 100% del valor del dispositivo, por
-                      lo tanto no tienes que pagar nada.
+                      El usuario de PROTECT MY PHONE no deberá cancelar ningún
+                      copago o monto en dinero para hacer efectiva la
+                      asistencia.
                     </p>
                   </div>
                 </div>

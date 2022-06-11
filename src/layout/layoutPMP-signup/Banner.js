@@ -19,25 +19,19 @@ const Banner = () => {
       <div className='container min-h75vh d-middle pt-5'>
         <div className='row text-center-xs'>
           <div
-            className='col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-1'
+            className='col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-3'
             data-aos='fade-in'
             data-aos-delay='0'
           >
-            <div className='mt-4 ml-2'>
-              <h1 className='font-weight-light mb-2 h3-md'>
-                <span className='font-weight-medium text-center'>
+            <div className='mt-4 ml-4'>
+              <h1 className='font-weight-light mb-4 h3-md'>
+                <span className='font-weight-medium'>
                   PROTECT MY PHONE GARANTÍA EXTENDIDA
                 </span>
               </h1>
-              <p className='lead mb--0 h6-md text-center'>
-                DEJA EL MIEDO DE ROMPER TU PANTALLA ATRÁS CON LA GARANTÍA
-                EXTENDIDA DE PROTECT MY PHONE
-              </p>
-              <p className='lead fs--18 mb--0 h6-md'>
-                La asistencia de fractura de pantalla es un servicio adicional
-                que permite a los usuarios que la adquieran acceder a la
-                asistencia en la fisura o fractura de pantalla de equipos de
-                telefonía móvil en el caso de presentar daños
+              <p className='lead mb--0 h6-md'>
+                Está dirigido a todos los usuarios que adquieran su Protect My
+                Phone en tiendas autorizadas.
               </p>
               <p className='fs--14'>* Aplican términos y condiciones.</p>
             </div>

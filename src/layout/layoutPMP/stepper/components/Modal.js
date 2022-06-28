@@ -6,7 +6,7 @@ import { useStepperComercio } from "../provider/step-provider";
 const Modal = (props) => {
   const { showModal, isErrorModal, setShowModal, setCurrentStep, resetForm } =
     useStepperComercio();
-  const showModalLocal = !showModal
+  const showModalLocal = showModal
     ? "modal display-block"
     : "modal display-none";
 
@@ -45,7 +45,7 @@ const Modal = (props) => {
 
   return (
     <>
-      {!showModal
+      {showModal
         ? (window.scrollTo(0, 0),
           (
             <div className={showModalLocal}>

@@ -6,7 +6,7 @@ import { useStepperComercio } from "../provider/step-provider";
 const Modal = (props) => {
   const { showModal, isErrorModal, setShowModal, setCurrentStep, resetForm } =
     useStepperComercio();
-  const showModalLocal = showModal
+  const showModalLocal = !showModal
     ? "modal display-block"
     : "modal display-none";
 
@@ -15,10 +15,37 @@ const Modal = (props) => {
     setCurrentStep(0);
     resetForm();
   };
+  const month = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
+
+  const dateNew = () => {
+    let date = new Date();
+    let moreDays = 1;
+    date.setDate(date.getDate() + moreDays);
+    let stringDate = `${month[date.getMonth()]} ${date
+      .toString()
+      .substring(
+        8,
+        16
+      )} después de las ${date.getHours()}:${date.getMinutes()}`;
+    return stringDate;
+  };
 
   return (
     <>
-      {showModal
+      {!showModal
         ? (window.scrollTo(0, 0),
           (
             <div className={showModalLocal}>
@@ -55,7 +82,9 @@ const Modal = (props) => {
                     <div className='modal-body'>
                       <h3 className='modal-title mb-2'>Felicidades!</h3>
                       Tu póliza ha sido creada exitosamente, encontrarás en tu
-                      correo más información sobre la póliza.
+                      correo más información sobre la póliza. Para realizar la
+                      reclamación recuerda esperar 24 horas. Puedes realizar la
+                      siguiente fecha {dateNew()}
                     </div>
                   </>
                 ) : (

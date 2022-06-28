@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
+import microServiceAxios from "../config/axios";
 import { useStepperComercio } from "../provider/step-provider";
 
 const LabelCheckbox = styled.label`
@@ -23,19 +24,20 @@ const ButtonSubmit = styled.button`
 `;
 
 const ReviewInformationStep = () => {
-  const { userInfo, setCurrentStep, setShowModal, setIsErrorModal } =
-    useStepperComercio();
+  const {
+    userInfo,
+    policy,
+    interceptors,
+    setCurrentStep,
+    setShowModal,
+    setIsErrorModal,
+  } = useStepperComercio();
   const { register, handleSubmit } = useForm();
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (value) => {
     setIsLoading((prevState) => !prevState);
-    setTimeout(() => {
-      setIsErrorModal(null);
-      setShowModal(true);
-      setIsLoading((prevState) => !prevState);
-    }, 1000);
-    /* try {
+    try {
       let data = {
         client: {
           firstName: userInfo.firstName,
@@ -47,17 +49,21 @@ const ReviewInformationStep = () => {
             number: userInfo.identificationNumber,
           },
         },
-        planId: policy.policies[0].id,
-        priceOptionId: policy.policies[0].pricingOptions[0].id,
+        planId: policy.policies.filter((d) => d.id === interceptors.planId)[0]
+          .id,
+        priceOptionId: policy.policies.filter((d) => d.id === 38)[0]
+          .pricingOptions[0].id,
         device: {
           imei: userInfo.imei,
           line: userInfo.phone_number,
         },
         promotionCode: userInfo.promotionCode,
         clientIdentification: userInfo.clientIdentification,
-        sponsorId: policy.policies[0].sponsor,
+        sponsorId: policy.policies.filter(
+          (d) => d.id === interceptors.planId
+        )[0].sponsor,
       };
-       const response = await microServiceAxios.post(`/api/v1/policy`, data, {
+      const response = await microServiceAxios.post(`/api/v1/policy`, data, {
         headers: {
           Authorization: `${interceptors.type} ${interceptors.token}`,
         },
@@ -84,7 +90,7 @@ const ReviewInformationStep = () => {
       }
       setShowModal(true);
       setIsLoading((prevState) => !prevState);
-    } */
+    }
   };
 
   return (

@@ -55,12 +55,12 @@ const CheckCodeStep = () => {
             });
           } else {
             setError({
-              message: "Código o nit incorrecto",
+              message: "Código incorrecto",
             });
           }
         } else if (err.response.status === 404) {
           setError({
-            message: "Código o nit incorrecto",
+            message: "Código incorrecto",
           });
         } else {
           setError({
@@ -103,16 +103,16 @@ const CheckCodeStep = () => {
             },
             maxLength: 20,
           })}
-          id='codePMP'
-          name='codePMP'
+          id='promotionCode'
+          name='promotionCode'
           type='text'
           placeholder='Digita tu código'
           className='form-control'
         />
         <label className='fontcustom'>Digita tu código</label>
       </div>
-      {errors && errors.codePMP && (
-        <p className='text-danger'>{errors.codePMP.message}</p>
+      {errors && errors.promotionCode && (
+        <p className='text-danger'>{errors.promotionCode.message}</p>
       )}
       <div className='mt-4 d-flex justify-content-end'>
         <ButtonSubmit

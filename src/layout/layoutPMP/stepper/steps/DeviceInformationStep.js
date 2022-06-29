@@ -37,7 +37,7 @@ const DeviceInformationStep = () => {
       try {
         setIsLoading(true);
         const response = await microServiceAxios.get(
-          `/api/v1/policy/imei/${imei}?sponsorId=CCB`,
+          `/api/v1/policy/imei/${imei}?sponsorId=PMP`,
           {
             headers: {
               Authorization: `${interceptors.type} ${interceptors.token}`,

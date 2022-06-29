@@ -51,17 +51,16 @@ const ReviewInformationStep = () => {
         },
         planId: policy.policies.filter((d) => d.id === interceptors.planId)[0]
           .id,
-        priceOptionId: policy.policies.filter((d) => d.id === 38)[0]
-          .pricingOptions[0].id,
+        priceOptionId: policy.policies.filter(
+          (d) => d.id === interceptors.planId
+        )[0].pricingOptions[0].id,
         device: {
           imei: userInfo.imei,
           line: userInfo.phone_number,
         },
         promotionCode: userInfo.promotionCode,
         clientIdentification: userInfo.clientIdentification,
-        sponsorId: policy.policies.filter(
-          (d) => d.id === interceptors.planId
-        )[0].sponsor,
+        sponsorId: "PMP",
       };
       const response = await microServiceAxios.post(`/api/v1/policy`, data, {
         headers: {
@@ -81,6 +80,10 @@ const ReviewInformationStep = () => {
         ) {
           setIsErrorModal({
             message: "Este imei ya cuenta con una póliza vigente.",
+          });
+        } else {
+          setIsErrorModal({
+            message: true,
           });
         }
       } else {
@@ -182,6 +185,32 @@ const ReviewInformationStep = () => {
               <tr>
                 <td className='border-bottom border-top-0'>IMEI Asegurado:</td>
                 <td className='border-bottom border-top-0'>{userInfo?.imei}</td>
+              </tr>
+              <tr>
+                <td className='border-top-0'>
+                  <h6 className='font-weight-medium mb-4 mt-4'>
+                    Datos del plan
+                  </h6>
+                </td>
+                <td className='border-top-0'>&nbsp;</td>
+              </tr>
+              <tr>
+                <td className='border-bottom border-top-0'>Nombre del plan:</td>
+                <td className='border-bottom border-top-0'>
+                  {policy?.policies
+                    .filter((d) => d.id === interceptors.planId)[0]
+                    .name.substring(0, 6)}
+                </td>
+              </tr>
+              <tr>
+                <td className='border-bottom border-top-0'>Cobertura:</td>
+                <td className='border-bottom border-top-0'>
+                  {
+                    policy?.policies.filter(
+                      (d) => d.id === interceptors.planId
+                    )[0].coverages[0]
+                  }
+                </td>
               </tr>
             </tbody>
           </table>

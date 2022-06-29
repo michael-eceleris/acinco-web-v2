@@ -5,23 +5,24 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDebounce } from "use-debounce";
 
-/* import microServiceAxios from "../config/axios"; */
+import microServiceAxios from "../config/axios";
 import { useStepperComercio } from "../provider/step-provider";
 
 const DeviceInformationStep = () => {
-  const { userInfo, setCurrentStep, setUserInfo } = useStepperComercio();
+  const { userInfo, interceptors, setCurrentStep, setUserInfo, setPolicy } =
+    useStepperComercio();
   const [imei, setImei] = useState("");
-  //const [manufacter, setManufacter] = useState("");
+  const [manufacter, setManufacter] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errorLocal, setErrorLocal] = useState(false);
-  //const [model, setModel] = useState("");
+  const [model, setModel] = useState("");
   const [value] = useDebounce(imei, 200);
   const {
     register,
     errors,
     handleSubmit,
     getValues,
-    /* setValue, */
+    setValue,
     setError,
     clearErrors,
   } = useForm({
@@ -35,15 +36,15 @@ const DeviceInformationStep = () => {
     const fetchApi = async () => {
       try {
         setIsLoading(true);
-        /* const response = await microServiceAxios.get(
-          `/api/v1/policy/imei/${imei}?sponsorId=CCB`,
+        const response = await microServiceAxios.get(
+          `/api/v1/policy/imei/${imei}?sponsorId=PMP`,
           {
             headers: {
               Authorization: `${interceptors.type} ${interceptors.token}`,
             },
           }
-        ); */
-        /* if (response.status === 200) {
+        );
+        if (response.status === 200) {
           setManufacter(response.data.data.brand);
           setValue("deviceManufacter", response.data.data.brand);
           setValue("deviceName", response.data.data.key);
@@ -51,7 +52,7 @@ const DeviceInformationStep = () => {
           setPolicy(response.data.data);
           setIsLoading(false);
           setErrorLocal(false);
-        } */
+        }
       } catch (error) {
         if (error.response.status === 400) {
           setErrorLocal({
@@ -73,8 +74,8 @@ const DeviceInformationStep = () => {
     setUserInfo({
       ...userInfo,
       ...values,
-      /* deviceManufacter: manufacter,
-      deviceName: model, */
+      deviceManufacter: manufacter,
+      deviceName: model,
     });
     setCurrentStep((prevState) => prevState + 1);
   };

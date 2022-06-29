@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
+import microServiceAxios from "../config/axios";
 import { useStepperComercio } from "../provider/step-provider";
 
 const ButtonSubmit = styled.button`
@@ -20,11 +21,13 @@ const ButtonSubmit = styled.button`
 const CheckCodeStep = () => {
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { setCurrentStep } = useStepperComercio();
+  const { setCurrentStep, setInterceptors, setUserInfo } = useStepperComercio();
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (values) => {
-    let data = {};
+    let data = {
+      sponsorId: "PMP",
+    };
     Object.entries(values).forEach((d) => {
       data = {
         ...data,
@@ -32,8 +35,7 @@ const CheckCodeStep = () => {
       };
     });
     setIsLoading((prevState) => !prevState);
-    setCurrentStep((prevState) => prevState + 1);
-    /* microServiceAxios
+    microServiceAxios
       .post("/api/v1/promotion-code", data)
       .then((res) => {
         if (res) {
@@ -42,6 +44,7 @@ const CheckCodeStep = () => {
             ...values,
           });
           setIsLoading((prevState) => !prevState);
+          setCurrentStep((prevState) => prevState + 1);
         }
       })
       .catch((err) => {
@@ -52,12 +55,12 @@ const CheckCodeStep = () => {
             });
           } else {
             setError({
-              message: "Código o nit incorrecto",
+              message: "Código incorrecto",
             });
           }
         } else if (err.response.status === 404) {
           setError({
-            message: "Código o nit incorrecto",
+            message: "Código incorrecto",
           });
         } else {
           setError({
@@ -65,7 +68,7 @@ const CheckCodeStep = () => {
           });
         }
         setIsLoading((prevState) => !prevState);
-      }); */
+      });
   };
 
   return (
@@ -100,16 +103,16 @@ const CheckCodeStep = () => {
             },
             maxLength: 20,
           })}
-          id='codePMP'
-          name='codePMP'
+          id='promotionCode'
+          name='promotionCode'
           type='text'
           placeholder='Digita tu código'
           className='form-control'
         />
         <label className='fontcustom'>Digita tu código</label>
       </div>
-      {errors && errors.codePMP && (
-        <p className='text-danger'>{errors.codePMP.message}</p>
+      {errors && errors.promotionCode && (
+        <p className='text-danger'>{errors.promotionCode.message}</p>
       )}
       <div className='mt-4 d-flex justify-content-end'>
         <ButtonSubmit

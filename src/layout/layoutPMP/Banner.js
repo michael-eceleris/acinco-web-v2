@@ -16,7 +16,7 @@ const Banner = () => {
           d='M1920,0C1217,0,120.574,155.567,0,0v90h1920V0z'
         ></path>
       </svg>
-      <div className='container min-h75vh d-middle pt-5 pl-5'>
+      <div className='container min-h75vh d-middle pt-5 pl-md-5'>
         <div className='row text-center-xs'>
           <div
             className='col-12 col-md-6 order-2 order-md-1 pb-5 pl-md-1'

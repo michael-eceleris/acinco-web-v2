@@ -25,7 +25,9 @@ const CheckCodeStep = () => {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (values) => {
-    let data = {};
+    let data = {
+      sponsorId: "CCB", 
+    };
     Object.entries(values).forEach((d) => {
       data = {
         ...data,

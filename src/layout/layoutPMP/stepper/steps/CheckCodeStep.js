@@ -21,12 +21,12 @@ const ButtonSubmit = styled.button`
 const CheckCodeStep = () => {
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { setCurrentStep, setUserInfo, setInterceptors } = useStepperComercio();
+  const { setCurrentStep, setInterceptors, setUserInfo } = useStepperComercio();
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (values) => {
     let data = {
-      sponsorId: "CCB",
+      sponsorId: "PMP",
     };
     Object.entries(values).forEach((d) => {
       data = {
@@ -55,12 +55,12 @@ const CheckCodeStep = () => {
             });
           } else {
             setError({
-              message: "Código o nit incorrecto",
+              message: "Código incorrecto",
             });
           }
         } else if (err.response.status === 404) {
           setError({
-            message: "Código o nit incorrecto",
+            message: "Código incorrecto",
           });
         } else {
           setError({
@@ -92,8 +92,7 @@ const CheckCodeStep = () => {
       )}
       <h4>Registra tu dispositivo</h4>
       <p className='fs--17'>
-        Registra tu dispositivo ingresando el código que recibiste en el correo
-        y tu número de NIT.
+        Registra tu dispositivo ingresando el código que tienes en la tarjeta.
       </p>
       <div className='form-label-group'>
         <input
@@ -114,29 +113,6 @@ const CheckCodeStep = () => {
       </div>
       {errors && errors.promotionCode && (
         <p className='text-danger'>{errors.promotionCode.message}</p>
-      )}
-      <div className='form-label-group mt-2'>
-        <input
-          ref={register({
-            required: {
-              value: true,
-              message: "* Requerido",
-            },
-            pattern: {
-              value: /^[0-9]+/,
-              message: "* Solo se aceptan números",
-            },
-          })}
-          id='clientIdentification'
-          name='clientIdentification'
-          type='text'
-          placeholder='Digita tu Nit'
-          className='form-control'
-        />
-        <label className='fontcustom'>Digita tu Nit</label>
-      </div>
-      {errors && errors.clientIdentification && (
-        <p className='text-danger'>{errors.clientIdentification.message}</p>
       )}
       <div className='mt-4 d-flex justify-content-end'>
         <ButtonSubmit

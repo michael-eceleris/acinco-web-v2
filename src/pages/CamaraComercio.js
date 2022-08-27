@@ -10,7 +10,11 @@ const CamaraComercioPage = () => {
     <>
       <Helmet>
         <title>Cámara de Comercio de Bogotá | Acinco</title>
-        <meta name='description' content='' />
+        <meta
+          name='description'
+          content='¡Ser Afiliado te brinda beneficios exclusivos que solo los
+                mejores tienen!'
+        />
       </Helmet>
       <Banner />
       <StepperComponent />

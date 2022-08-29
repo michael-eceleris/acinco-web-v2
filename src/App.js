@@ -9,7 +9,7 @@ import TotalProtection from "./pages/TotalProtection";
 import ScreenFracture from "./pages/ScreenFracture";
 import MakeYourPlan from "./pages/MakeYourPlan";
 import SafeByGama from "./pages/SafeByGama";
-import Samsung from "./pages/Samsung";
+import SamsungCarePlus from "./pages/SamsungCarePlus";
 import ScreenAssistenceSoat from "./pages/ScreenAssistenceSoat";
 import AssistenceColsubsidio from "./pages/AssistenceColsubsidio";
 import SoatDetail from "./pages/SoatDetail";
@@ -68,7 +68,7 @@ function App() {
               <SafeByGama />
             </Route>
             <Route path='/samsung' exact>
-              <Samsung />
+              <SamsungCarePlus />
             </Route>
             <Route path='/soat-asistencia-de-pantalla' exact>
               <ScreenAssistenceSoat />

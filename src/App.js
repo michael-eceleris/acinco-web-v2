@@ -15,9 +15,9 @@ import AssistenceColsubsidio from "./pages/AssistenceColsubsidio";
 import SoatDetail from "./pages/SoatDetail";
 import TermAndConditions from "./components/TermsAndConditions/TermsAndConditions";
 import TermAndConditionsTwo from "./components/TermsAndConditions/TermsAndConditionsTwo";
-import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndConditionsSamsung";
 import TermsAndConditionsCCB from "./layout/layoutCamaraComercio/TermsAndConditions";
 import TermsAndConditionsPMP from "./layout/layoutPMP/TermsAndConditions";
+import TermsAndConditionsSamsungCarePlus from "./layout/layoutSamsungCarePlus/TermsAndConditions";
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
@@ -116,7 +116,7 @@ function App() {
               />
             </Route>
             <Route path='/samsung/terminos-condiciones' exact>
-              <TermAndConditionsSamsung />
+              <TermsAndConditionsSamsungCarePlus />
             </Route>
             <Route path='/motorola/terminos-condiciones' exact>
               <TermsAndConditionsMotorola />

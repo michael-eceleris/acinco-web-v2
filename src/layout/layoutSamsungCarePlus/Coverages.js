@@ -8,7 +8,7 @@ import BatteryLow from "../../assets/icons/battery_low.svg";
 
 const Coverages = () => {
   return (
-    <section className='bg-white'>
+    <section className='bg-white pt--20'>
       <div className='container'>
         <div className='text-center mb--100'>
           <h3 className='h3 ml-2 mb-1 mt-2 text-center'>Coberturas</h3>
@@ -105,7 +105,7 @@ const Coverages = () => {
                   <div className=' d-middle mb-1'>
                     <img width='155' src={BatteryLow} alt='cambio_bateria' />
                   </div>
-                  <h5>Cambio de Batería</h5>
+                  <h5>Reemplazo de Batería</h5>
                   <div className='card-body pl-0 pr-0 text-gray-600 justify-content-between'>
                     <div className='h-75'>
                       <p className='lead fs--18 text-justify'>

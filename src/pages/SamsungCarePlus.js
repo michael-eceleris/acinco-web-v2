@@ -3,6 +3,7 @@ import Banner from "../layout/layoutSamsungCarePlus/Banner";
 import Plans from "../layout/layoutSamsungCarePlus/Plans";
 import Coverages from "../layout/layoutSamsungCarePlus/Coverages";
 import Recoveries from "../layout/layoutSamsungCarePlus/RecoveriesAndExclutions";
+import StepperComponent from "../layout/layoutSamsungCarePlus/stepper/StepperComponent";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
@@ -18,6 +19,7 @@ const SamsungCarePlus = () => {
         />
       </Helmet>
       <Banner />
+      <StepperComponent />
       <Plans />
       <Coverages />
       <Recoveries />

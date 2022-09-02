@@ -29,7 +29,7 @@ const Banner = () => {
                   <span className='font-weight-medium'>Samsung Care +</span>
                 </h1>
                 <p className='lead mb--0'>
-                  Este Seguro aplica para nuestros clientes que adquirieron
+                  Este seguro aplica para nuestros clientes que adquirieron
                   nuestro producto Samsung Care +
                 </p>
                 <p className='fs--14'>* Aplican términos y condiciones.</p>

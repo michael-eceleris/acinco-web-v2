@@ -69,7 +69,7 @@ const Plans = () => {
                   />
                 </div>
                 <div className='card-body pl-0 pr-0 text-gray-600 justify-content-between ml-2'>
-                  <h5 style={{ color: "black" }}>Plan Gold:</h5>
+                  <h5 style={{ color: "black" }}>Gold Platino:</h5>
                   <div className='h-75'>
                     <p className='lead fs--18 text-justify'>
                       Cuentas con una cobertura para:

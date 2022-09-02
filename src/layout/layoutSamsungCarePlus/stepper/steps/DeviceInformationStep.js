@@ -37,7 +37,7 @@ const DeviceInformationStep = () => {
       try {
         setIsLoading(true);
         const response = await microServiceAxios.get(
-          `/api/v1/policy/imei/${imei}?sponsorId=PMP`,
+          `/api/v1/policy/imei/${imei}?sponsorId=SAMSUNG&campaign=${userInfo.promotionCode}`,
           {
             headers: {
               Authorization: `${interceptors.type} ${interceptors.token}`,
@@ -53,14 +53,24 @@ const DeviceInformationStep = () => {
           setIsLoading(false);
           setErrorLocal(false);
         }
-      } catch (error) {
-        if (error.response.status === 400) {
+      } catch (err) {
+        if (err.response.status === 400) {
+          if (err.response.data.error.message === "Code already used") {
+            setErrorLocal({
+              message: "Este IMEI ya se encuentra registrado",
+            });
+          }
+        } else if (err.response.status === 404) {
           setErrorLocal({
-            message: error.response.data.error.message,
+            message: "IMEI incorrecto",
           });
         } else {
-          setErrorLocal({ message: "IMEI incorrecto" });
+          setErrorLocal({
+            message: "Lo sentimos, ocurrió un problema",
+          });
         }
+        setValue("deviceManufacter", "");
+        setValue("deviceName", "");
         setIsLoading(false);
       }
     };

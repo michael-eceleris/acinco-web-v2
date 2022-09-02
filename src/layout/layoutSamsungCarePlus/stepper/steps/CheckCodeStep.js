@@ -26,7 +26,7 @@ const CheckCodeStep = () => {
 
   const onSubmit = (values) => {
     let data = {
-      sponsorId: "SAMSUNGCAREPLUS",
+      sponsorId: "SAMSUNG",
     };
     Object.entries(values).forEach((d) => {
       data = {
@@ -34,7 +34,6 @@ const CheckCodeStep = () => {
         [d[0]]: d[1].trim(),
       };
     });
-    setCurrentStep((prevState) => prevState + 1);
     setIsLoading((prevState) => !prevState);
     microServiceAxios
       .post("/api/v1/promotion-code", data)
@@ -56,12 +55,12 @@ const CheckCodeStep = () => {
             });
           } else {
             setError({
-              message: "Código incorrecto",
+              message: "Nombre incorrecto",
             });
           }
         } else if (err.response.status === 404) {
           setError({
-            message: "Código incorrecto",
+            message: "Nombre incorrecto",
           });
         } else {
           setError({
@@ -92,9 +91,7 @@ const CheckCodeStep = () => {
         </div>
       )}
       <h4>Registra tu dispositivo</h4>
-      <p className='fs--17'>
-        Registra tu dispositivo ingresando el código que tienes en la tarjeta.
-      </p>
+      <p className='fs--17'>Digita el nombre de la campaña</p>
       <div className='form-label-group'>
         <input
           ref={register({
@@ -107,10 +104,10 @@ const CheckCodeStep = () => {
           id='promotionCode'
           name='promotionCode'
           type='text'
-          placeholder='Digita tu código'
+          placeholder=' Digita el nombre de la campaña'
           className='form-control'
         />
-        <label className='fontcustom'>Digita tu código</label>
+        <label className='fontcustom'> Digita el nombre de la campaña</label>
       </div>
       {errors && errors.promotionCode && (
         <p className='text-danger'>{errors.promotionCode.message}</p>

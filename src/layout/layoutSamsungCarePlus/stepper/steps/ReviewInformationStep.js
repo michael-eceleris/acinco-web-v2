@@ -49,18 +49,15 @@ const ReviewInformationStep = () => {
             number: userInfo.identificationNumber,
           },
         },
-        planId: policy.policies.filter((d) => d.id === interceptors.planId)[0]
-          .id,
-        priceOptionId: policy.policies.filter(
-          (d) => d.id === interceptors.planId
-        )[0].pricingOptions[0].id,
+        planId: policy.policies[0].id,
+        priceOptionId: policy.policies[0].pricingOptions[0].id,
         device: {
           imei: userInfo.imei,
           line: userInfo.phone_number,
         },
         promotionCode: userInfo.promotionCode,
         clientIdentification: userInfo.clientIdentification,
-        sponsorId: "PMP",
+        sponsorId: "SAMSUNG",
       };
       const response = await microServiceAxios.post(`/api/v1/policy`, data, {
         headers: {
@@ -196,20 +193,13 @@ const ReviewInformationStep = () => {
               </tr>
               <tr>
                 <td className='border-bottom border-top-0'>Nombre del plan:</td>
-                <td className='border-bottom border-top-0'>
-                  {policy?.policies
-                    .filter((d) => d.id === interceptors.planId)[0]
-                    .name.substring(0, 6)}
-                </td>
+                <td className='border-bottom border-top-0'>Básico 12 Meses</td>
               </tr>
               <tr>
                 <td className='border-bottom border-top-0'>Cobertura:</td>
                 <td className='border-bottom border-top-0'>
-                  {
-                    policy?.policies.filter(
-                      (d) => d.id === interceptors.planId
-                    )[0].coverages[0]
-                  }
+                  Daño Accidental <br /> Falla Mecánica/Eléctrica <br />
+                  Reemplazo de Batería <br /> Garantía Extendida
                 </td>
               </tr>
             </tbody>

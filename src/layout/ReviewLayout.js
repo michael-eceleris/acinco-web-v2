@@ -6,37 +6,37 @@ import AuthContext from "../context/auth/authContext";
 import Modal from "../components/Modal";
 
 const ButtonSubmit = styled.button`
-  background-color: ${props => props.bgColor};
+  background-color: ${(props) => props.bgColor};
   color: #fff;
-  :hover{
+  :hover {
     filter: brightness(120%);
     color: #fff;
-  };
-  :disabled{
+  }
+  :disabled {
     opacity: 0.65;
-  };
+  }
 `;
 
 const ButtonBack = styled.button`
-  border-color: ${props => props.bgColor};
-  color: ${props => props.bgColor};
-  :hover{
-    background-color: ${props => props.bgColor};
+  border-color: ${(props) => props.bgColor};
+  color: ${(props) => props.bgColor};
+  :hover {
+    background-color: ${(props) => props.bgColor};
     color: #fff;
-  };
-  :disabled{
+  }
+  :disabled {
     opacity: 0.65;
-  };
+  }
 `;
 
 const CustomH4 = styled.h4`
-  color: ${props => props.bgColor};
-  text-transform: ${props => props.uppercase ? "uppercase" : ""};
+  color: ${(props) => props.bgColor};
+  text-transform: ${(props) => (props.uppercase ? "uppercase" : "")};
 `;
 
 const LabelCheckbox = styled.label`
   > input[type="checkbox"]:checked + i {
-    background: ${props => props.bgColor} !important;
+    background: ${(props) => props.bgColor} !important;
   }
 `;
 
@@ -97,7 +97,9 @@ const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
   return (
     <>
       <div className='container py-1 '>
-        <CustomH4 bgColor={colorPrimary} uppercase={allUppercase}>Enviar</CustomH4>
+        <CustomH4 bgColor={colorPrimary} uppercase={allUppercase}>
+          Enviar
+        </CustomH4>
         <p className='fs--17'>
           Revisa los datos, confirma que estén correctos y envía tu reclamación.
         </p>
@@ -210,7 +212,7 @@ const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
                 <tr>
                   <td className='border-top-0'>
                     <h6 className='font-weight-medium mb-4 mt-4'>
-                      Datos del siniestro
+                      Datos del evento
                     </h6>
                   </td>
                   <td className='border-top-0'>&nbsp;</td>
@@ -233,7 +235,7 @@ const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
                 </tr>
                 <tr>
                   <td className='border-bottom border-top-0'>
-                    Con un valor asegurado de:
+                    Valor de cobertura
                   </td>
                   <td className='border-bottom border-top-0'>
                     ${" "}
@@ -244,7 +246,7 @@ const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
                 </tr>
                 <tr>
                   <td className='border-bottom border-top-0'>
-                    Fecha del Siniestro:
+                    Fecha del evento:
                   </td>
                   <td className='border-bottom border-top-0'>
                     {moreInfo.fecha_siniestro.substring(0, 10)}{" "}
@@ -252,7 +254,7 @@ const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
                 </tr>
                 <tr>
                   <td className='border-bottom border-top-0'>
-                    Ciudad en donde sucedió el siniestro:
+                    Ciudad en donde sucedió el evento:
                   </td>
                   <td className='border-bottom border-top-0'>
                     {moreInfo.nombre_siniestro}{" "}
@@ -260,7 +262,7 @@ const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
                 </tr>
                 <tr>
                   <td className='border-bottom border-top-0'>
-                    Línea con la que sucedió el siniestro:
+                    Línea con la que sucedió el evento:
                   </td>
                   <td className='border-bottom border-top-0'>
                     {moreInfo.linea_siniestro_one}
@@ -268,7 +270,7 @@ const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
                 </tr>
                 <tr>
                   <td className='border-bottom border-top-0'>
-                    Descripción del siniestro
+                    Descripción del evento
                   </td>
                   <td className='border-bottom border-top-0'>
                     {moreInfo.mensaje_ticket}
@@ -300,7 +302,10 @@ const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
         </div>
 
         {showModal && !isLoading ? <Modal /> : null}
-        <LabelCheckbox bgColor={colorPrimary} className='form-checkbox form-checkbox-primary'>
+        <LabelCheckbox
+          bgColor={colorPrimary}
+          className='form-checkbox form-checkbox-primary'
+        >
           <input
             type='checkbox'
             checked={confirmed}
@@ -312,7 +317,9 @@ const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
         {error ? <p className='text-danger'>* Requerido</p> : null}
         <div className='mt-4 d-flex justify-content-between'>
           <ButtonBack
-            className={`btn btn-sm  ${colorSecundary ? "" : "btn-outline-secondary"} `}
+            className={`btn btn-sm  ${
+              colorSecundary ? "" : "btn-outline-secondary"
+            } `}
             onClick={() => previusStep(3)}
             disabled={isLoading}
             bgColor={colorSecundary}
@@ -322,7 +329,7 @@ const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
           <ButtonSubmit
             onClick={handleSubmit}
             disabled={isLoading}
-            className={`btn btn-sm ${colorPrimary ? "" : "btn-primary"}`} 
+            className={`btn btn-sm ${colorPrimary ? "" : "btn-primary"}`}
             bgColor={colorPrimary}
           >
             Enviar

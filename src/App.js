@@ -9,20 +9,27 @@ import TotalProtection from "./pages/TotalProtection";
 import ScreenFracture from "./pages/ScreenFracture";
 import MakeYourPlan from "./pages/MakeYourPlan";
 import SafeByGama from "./pages/SafeByGama";
-import Samsung from "./pages/Samsung";
+import SamsungCarePlus from "./pages/SamsungCarePlus";
 import ScreenAssistenceSoat from "./pages/ScreenAssistenceSoat";
 import AssistenceColsubsidio from "./pages/AssistenceColsubsidio";
 import SoatDetail from "./pages/SoatDetail";
 import TermAndConditions from "./components/TermsAndConditions/TermsAndConditions";
 import TermAndConditionsTwo from "./components/TermsAndConditions/TermsAndConditionsTwo";
-import TermAndConditionsSamsung from "./components/TermsAndConditions/TermsAndConditionsSamsung";
+import TermsAndConditionsCCB from "./layout/layoutCamaraComercio/TermsAndConditions";
+import TermsAndConditionsPMP from "./layout/layoutPMP/TermsAndConditions";
+import TermsAndConditionsSamsungCarePlus from "./layout/layoutSamsungCarePlus/TermsAndConditions";
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import Motorola from "./pages/Motorola";
+import CamaraComercioPage from "./pages/CamaraComercio";
+import PMPPage from "./pages/PMP";
+import PMPPageSingUp from "./pages/PMP-signup";
 import TermsAndConditionsMotorola from "./components/TermsAndConditions/TermsAndConditionMotorola";
 import ClaimsBlank from "./pages/ClaimsBlank";
+import NotFoundBlank from "./pages/NotFoundBlank";
 import newClient from "./data/newClients.json";
+import newNotFoundClient from "./data/notFoundClients.json";
 
 import {
   BrowserRouter as Router,
@@ -61,7 +68,7 @@ function App() {
               <SafeByGama />
             </Route>
             <Route path='/samsung' exact>
-              <Samsung />
+              <SamsungCarePlus />
             </Route>
             <Route path='/soat-asistencia-de-pantalla' exact>
               <ScreenAssistenceSoat />
@@ -109,14 +116,42 @@ function App() {
               />
             </Route>
             <Route path='/samsung/terminos-condiciones' exact>
-              <TermAndConditionsSamsung />
+              <TermsAndConditionsSamsungCarePlus />
             </Route>
             <Route path='/motorola/terminos-condiciones' exact>
               <TermsAndConditionsMotorola />
             </Route>
+            <Route path='/camara-comercio' exact>
+              <CamaraComercioPage />
+            </Route>
+            <Route path='/camara-comercio/terminos-condiciones' exact>
+              <TermsAndConditionsCCB />
+            </Route>
+            <Route path='/protect-my-phone' exact>
+              <PMPPage />
+            </Route>
+            <Route path='/protect-my-phone/signup' exact>
+              <PMPPageSingUp />
+            </Route>
+            <Route path='/protect-my-phone/terminos-condiciones' exact>
+              <TermsAndConditionsPMP />
+            </Route>
             {newClient.map((client, index) => (
-              <Route path={`/tramites-y-reclamaciones/${client.client}`} exact key={`path_key_${index}`} >
-                <ClaimsBlank client={client}  />
+              <Route
+                path={`/tramites-y-reclamaciones/${client.client}`}
+                exact
+                key={`path_key_${index}`}
+              >
+                <ClaimsBlank client={client} />
+              </Route>
+            ))}
+            {newNotFoundClient.map((client, index) => (
+              <Route
+                path={client.path}
+                exact
+                key={`path_not_found_key_${index}`}
+              >
+                <NotFoundBlank client={client} />
               </Route>
             ))}
             <Route path='/pagina-no-encontrada' component={NotFound} />

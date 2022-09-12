@@ -13,27 +13,27 @@ import DropdownFilter from "./Dropdown/DropdownFilter";
 import Dropdown from "./Dropdown/Dropdown";
 
 const ButtonSubmit = styled.button`
-  background-color: ${props => props.bgColor};
+  background-color: ${(props) => props.bgColor};
   color: #fff;
-  :hover{
+  :hover {
     filter: brightness(120%);
     color: #fff;
-  };
-  :disabled{
+  }
+  :disabled {
     opacity: 0.65;
-  };
+  }
 `;
 
 const ButtonBack = styled.button`
-  border-color: ${props => props.bgColor};
-  color: ${props => props.bgColor};
-  :hover{
-    background-color: ${props => props.bgColor};
+  border-color: ${(props) => props.bgColor};
+  color: ${(props) => props.bgColor};
+  :hover {
+    background-color: ${(props) => props.bgColor};
     color: #fff;
-  };
-  :disabled{
+  }
+  :disabled {
     opacity: 0.65;
-  };
+  }
 `;
 
 const MoreInfo = ({ setError, error, colorPrimary, colorSecundary }) => {
@@ -186,7 +186,7 @@ const MoreInfo = ({ setError, error, colorPrimary, colorSecundary }) => {
       <div className='form-group mb-4'>
         <DropdownFilter
           options={city ? city : []}
-          prompt='Selecciona la ciudad en la que ocurrió el siniestro.'
+          prompt='Selecciona la ciudad en la que ocurrió el evento.'
           id='id'
           label='nombre'
           value={cityNameActual}
@@ -204,7 +204,7 @@ const MoreInfo = ({ setError, error, colorPrimary, colorSecundary }) => {
             clearable
             format='dd/MM/yyyy'
             className='form-control'
-            label='Seleccionar fecha en la que ocurrió el siniestro'
+            label='Seleccionar fecha en la que ocurrió el evento'
             onChange={handleChangeDate}
             value={dateActual}
             maxDate={actualDate}
@@ -232,10 +232,10 @@ const MoreInfo = ({ setError, error, colorPrimary, colorSecundary }) => {
           onChange={handleChangeNumber}
           value={phoneNumber}
           pattern='[0-9]{0,10}'
-          placeholder='Número de línea con la que sucedió el siniestro'
+          placeholder='Número de línea con la que sucedió el evento'
         />
         <label className='fontcustom'>
-          Número de línea con la que sucedió el siniestro
+          Número de línea con la que sucedió el evento
         </label>
       </div>
       <div className='mb-4 d-flex justify-content-between'>
@@ -262,11 +262,11 @@ const MoreInfo = ({ setError, error, colorPrimary, colorSecundary }) => {
         <textarea
           className='form-control'
           required
-          placeholder='Descripción del siniestro'
+          placeholder='Descripción del evento'
           onChange={handleChangeMenssage}
           rows='3'
         ></textarea>
-        <label className='fontcustom'>Descripción del siniestro</label>
+        <label className='fontcustom'>Descripción del evento</label>
       </div>
       <div className='mb-4 d-flex justify-content-between'>
         <div>
@@ -274,7 +274,7 @@ const MoreInfo = ({ setError, error, colorPrimary, colorSecundary }) => {
             <p className='text-danger'>* Campo requerido</p>
           ) : errorMessage ? (
             <p className='text-danger'>
-              * Accediste el número máximo de caracteres
+              * Excediste el número máximo de caracteres
             </p>
           ) : null}
         </div>
@@ -286,15 +286,17 @@ const MoreInfo = ({ setError, error, colorPrimary, colorSecundary }) => {
       </div>
       <div className='mt-4 d-flex justify-content-between'>
         <ButtonBack
-          className={`btn btn-sm  ${colorSecundary ? "" : "btn-outline-secondary"} `}
+          className={`btn btn-sm  ${
+            colorSecundary ? "" : "btn-outline-secondary"
+          } `}
           onClick={handlePreviusStep}
           bgColor={colorSecundary}
         >
           Atrás
         </ButtonBack>
-        <ButtonSubmit 
-          bgColor={colorPrimary}  
-          className={`btn btn-sm ${colorPrimary ? "" : "btn-primary"}`} 
+        <ButtonSubmit
+          bgColor={colorPrimary}
+          className={`btn btn-sm ${colorPrimary ? "" : "btn-primary"}`}
           onClick={handleNextStep}
         >
           Siguiente

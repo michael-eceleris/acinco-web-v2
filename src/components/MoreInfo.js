@@ -1,10 +1,9 @@
 import "date-fns";
 import React, { useState, useContext, useEffect } from "react";
-import DateFnsUtils from "@date-io/date-fns";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker,
-} from "@material-ui/pickers";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { TextField } from "@mui/material";
 import styled from "styled-components";
 
 import FormContext from "../context/form/formContext";
@@ -35,6 +34,31 @@ const ButtonBack = styled.button`
     opacity: 0.65;
   }
 `;
+const CssTextField = styled(TextField)({
+  "& .MuiOutlinedInput-root": {
+    borderColor: "transparent !important",
+    "& fieldset": {
+      borderColor: "transparent",
+      marginLeft: "-10px",
+    },
+    "& fieldset:focus-visible": {
+      borderColor: "transparent !important",
+      marginLeft: "-10px",
+      left: "auto",
+    },
+  },
+  "& .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused ": {
+    transform: "translate(14px, 2px) scale(0.75)",
+  },
+  "& .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root:hover": {
+    "& .MuiOutlinedInput-notchedOutline": {
+      borderColor: "transparent !important",
+    },
+  },
+  "& .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root": {
+    transform: "translate(14px, 2px) scale(0.75)",
+  },
+});
 
 const MoreInfo = ({ setError, error, colorPrimary, colorSecundary }) => {
   const formContext = useContext(FormContext);
@@ -199,23 +223,28 @@ const MoreInfo = ({ setError, error, colorPrimary, colorSecundary }) => {
         ) : null}
       </div>
       <div className='form-group mb-4'>
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <KeyboardDatePicker
-            clearable
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
             format='dd/MM/yyyy'
-            className='form-control'
-            label='Seleccionar fecha en la que ocurrió el evento'
             onChange={handleChangeDate}
             value={dateActual}
             maxDate={actualDate}
-            placeholder='dd/mm/aaaa'
-            style={{
-              backgroundColor: "#fff",
-              padding: "0.78rem 0 0.78rem 1rem",
-              border: "1px solid #dde4ea",
-            }}
+            renderInput={(props) => (
+              <CssTextField
+                {...props}
+                fullWidth
+                label='Seleccionar fecha en la que ocurrió el evento'
+                placeholder='dd/mm/aaaa'
+                className='form-control'
+                style={{
+                  backgroundColor: "#fff",
+                  padding: "0.78rem 0 0.78rem 1rem",
+                  border: "1px solid #dde4ea",
+                }}
+              />
+            )}
           />
-        </MuiPickersUtilsProvider>
+        </LocalizationProvider>
         {error && !dateActual ? (
           <p className='text-danger'>* Campo requerido</p>
         ) : errorDate ? (

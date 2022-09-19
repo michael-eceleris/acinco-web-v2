@@ -335,7 +335,7 @@ const ReviewLayout = ({ colorPrimary, allUppercase, colorSecundary }) => {
             Enviar
             {isLoading ? (
               <i
-                class='spinner-border spinner-border-sm ml-2 mr-0 mb--3'
+                className='spinner-border spinner-border-sm ml-2 mr-0 mb--3'
                 role='status'
                 aria-hidden='true'
               ></i>

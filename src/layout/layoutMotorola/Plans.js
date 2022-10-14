@@ -3,6 +3,7 @@ import Security from "../../assets/icons/security.svg";
 import Shield from "../../assets/icons/shield.svg";
 import RepairPhone from "../../assets/icons/cellphone.svg";
 import { ReactComponent as User } from "../../assets/icons/phonse_secure.svg";
+import { Link } from "react-router-dom";
 
 const Plans = () => {
   return (
@@ -46,8 +47,8 @@ const Plans = () => {
                         la garantía dada por MOTOROLA.
                       </p>
                       <p className='lead fs--18 text-justify hypens'>
-                        Inicia tu Reclamacion Aquí : (link del producto de
-                        Motorola/Beneficio Edge)
+                        Inicia tu Reclamacion{" "}
+                        <Link to={"/motorola/beneficio-edge"}> Aquí</Link>
                       </p>
                     </div>
                   </div>

@@ -16,7 +16,7 @@ const Recoveries = () => {
               </p>
               <Link
                 className='btn btn-link text-decoration-none'
-                to='/motorola/terminos-condiciones'
+                to='/motorola/beneficio-edge/terminos-condiciones'
               >
                 Leer más
                 <i className='fi fi-arrow-right-slim ml-2'></i>

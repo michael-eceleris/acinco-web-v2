@@ -27,6 +27,7 @@ import CamaraComercioPage from "./pages/CamaraComercio";
 import PMPPage from "./pages/PMP";
 import PMPPageSingUp from "./pages/PMP-signup";
 import TermsAndConditionsMotorola from "./components/TermsAndConditions/TermsAndConditionMotorola";
+import TermsAndConditionsMotoEdge from "./layout/layoutMotoEdge/TermsAndConditions";
 import ClaimsBlank from "./pages/ClaimsBlank";
 import NotFoundBlank from "./pages/NotFoundBlank";
 import newClient from "./data/newClients.json";
@@ -124,6 +125,9 @@ function App() {
             </Route>
             <Route path='/motorola/terminos-condiciones' exact>
               <TermsAndConditionsMotorola />
+            </Route>
+            <Route path='/motorola/beneficio-edge/terminos-condiciones' exact>
+              <TermsAndConditionsMotoEdge />
             </Route>
             <Route path='/camara-comercio' exact>
               <CamaraComercioPage />

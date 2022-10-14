@@ -13,7 +13,7 @@ const Banner = () => {
           preserveAspectRatio='none'
         >
           <path
-            fill='rgba(0,50,114,1)'
+            fill='rgba(0,20,40,1)'
             d='M1920,0C1217,0,120.574,155.567,0,0v90h1920V0z'
           ></path>
         </svg>
@@ -26,10 +26,14 @@ const Banner = () => {
             >
               <div className='mt-4 ml--10'>
                 <h1 className='font-weight-light mb-4'>
-                  <span className='font-weight-medium'>Motorola</span>
+                  <span className='font-weight-medium'>
+                    Motorola Beneficio Edge
+                  </span>
                 </h1>
                 <p className='lead mb--0'>
-                  Este Seguro aplica para nuestros clientes que adquirieron nuestro producto MotoCare.
+                  Esta asistencia cubre la reparación de la pantalla en caso de
+                  fractura/rotura por accidente. Está dirigido a todos los
+                  usuarios que compren un Motorola Edge (Ultra, Fusión y Neo).
                 </p>
                 <p className='fs--14'>* Aplican términos y condiciones.</p>
               </div>

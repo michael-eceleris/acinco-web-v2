@@ -22,6 +22,7 @@ import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import Motorola from "./pages/Motorola";
+import MotorolaEdge from "./pages/MotoEdge";
 import CamaraComercioPage from "./pages/CamaraComercio";
 import PMPPage from "./pages/PMP";
 import PMPPageSingUp from "./pages/PMP-signup";
@@ -81,6 +82,9 @@ function App() {
             </Route>
             <Route path='/motorola' exact>
               <Motorola />
+            </Route>
+            <Route path='/motorola/beneficio-edge' exact>
+              <MotorolaEdge />
             </Route>
             <Route path='/pospago-5-3/terminos-condiciones' exact>
               <TermAndConditions namePlan='Protección Total' plan='all' />

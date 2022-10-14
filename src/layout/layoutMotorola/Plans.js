@@ -2,6 +2,8 @@ import React from "react";
 import Security from "../../assets/icons/security.svg";
 import Shield from "../../assets/icons/shield.svg";
 import RepairPhone from "../../assets/icons/cellphone.svg";
+import { ReactComponent as User } from "../../assets/icons/phonse_secure.svg";
+import { Link } from "react-router-dom";
 
 const Plans = () => {
   return (
@@ -16,6 +18,42 @@ const Plans = () => {
           </div>
           <div className='p-2 rounded overflow-hidden'>
             <div className='row col-border'>
+              <div className='col-12 col-md-12 col-lg-12 mb-4'>
+                <div className='card p-4 b-0 h-100 mt-1 d-lg-flex flex-lg-row d-md-flex flex-md-row'>
+                  <div className='mb-3 mr-4 d-flex align-items-center justify-content-center'>
+                    <User
+                      fill='#003272'
+                      className='m--0'
+                      style={{ width: "160px", height: "160px" }}
+                    />
+                  </div>
+                  <div>
+                    <h5>Plan Beneficio Motorola Moto Edge </h5>
+                    <div className='card-body pl-0 pr-0 text-gray-600 '>
+                      <h6>Condiciones:</h6>
+                      <p className='lead fs--18 text-justify hypens'>
+                        Servicio preferencial para clientes Motorola que compren
+                        un Motorola Edge (Ultra, Fusión y Neo).
+                      </p>
+                      <h6>Vigencia:</h6>
+                      <p className='lead fs--18 text-justify hypens'>
+                        Doce (12) meses
+                      </p>
+                      <h6>Cobertura:</h6>
+                      <p className='lead fs--18 text-justify hypens'>
+                        Esta garantía se extiende por 1 año la cual empieza una
+                        vez terminado el periodo de la garantía dada por
+                        MOTOROLA. Dicha garantía tiene las mismas coberturas que
+                        la garantía dada por MOTOROLA.
+                      </p>
+                      <p className='lead fs--18 text-justify hypens'>
+                        Inicia tu Reclamacion{" "}
+                        <Link to={"/motorola/beneficio-edge"}> Aquí</Link>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className='col-12 col-md-12 col-lg-12 mb-4'>
                 <div className='card p-4 b-0 h-100 mt-1 d-lg-flex flex-lg-row d-md-flex flex-md-row'>
                   <div className='mb-3 mr-4 d-flex align-items-center justify-content-center'>

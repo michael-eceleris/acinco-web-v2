@@ -137,6 +137,14 @@ const Navbar = ({ hideMessage }) => {
                     <li className='dropdown-item'>
                       <Link
                         className='dropdown-link'
+                        to='/motorola/beneficio-edge'
+                      >
+                        Motorola Edge
+                      </Link>
+                    </li>
+                    <li className='dropdown-item'>
+                      <Link
+                        className='dropdown-link'
                         to='/soat-asistencia-de-pantalla'
                       >
                         SOAT Asistencia de pantalla

@@ -62,4 +62,4 @@ jobs:
           script: |
             cd ${{secrets.PROD_DIR}}
             echo "Reiniciando servidor nginx (reload)"
-            /usr/sbin/service nginx reload
+            sudo /usr/sbin/service nginx reload

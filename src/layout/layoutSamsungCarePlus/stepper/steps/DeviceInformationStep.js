@@ -1,7 +1,4 @@
-import React from "react";
-import { Fragment } from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDebounce } from "use-debounce";
 
@@ -19,7 +16,7 @@ const DeviceInformationStep = () => {
   const [value] = useDebounce(imei, 200);
   const {
     register,
-    errors,
+    formState: { errors },
     handleSubmit,
     getValues,
     setValue,
@@ -93,6 +90,7 @@ const DeviceInformationStep = () => {
   const handleChange = (e) => {
     if (e.target.value.length === 15) {
       setImei(e.target.value);
+      setValue("imei", e.target.value);
       clearErrors("imei");
     } else {
       setError(
@@ -132,13 +130,13 @@ const DeviceInformationStep = () => {
       </p>
       <div className='form-label-group'>
         <input
-          ref={register({
+          {...register("imei", {
             required: {
               value: false,
               message: "* Requerido",
             },
             pattern: {
-              value: /^[0-9]+/,
+              value: /^\d+$/,
               message: "* Solo se aceptan números",
             },
             maxLength: {
@@ -150,7 +148,7 @@ const DeviceInformationStep = () => {
               message: "* El imei debe tener exactamente 15 digítos",
             },
           })}
-          placeholder='Nombre'
+          placeholder='IMEI'
           id='imei'
           name='imei'
           type='text'
@@ -178,7 +176,7 @@ const DeviceInformationStep = () => {
       )}
       <div className='form-label-group mt-3'>
         <input
-          ref={register({
+          {...register("deviceName", {
             required: {
               value: false,
               message: "* Requerido",
@@ -199,7 +197,7 @@ const DeviceInformationStep = () => {
       )}
       <div className='form-label-group mt-3'>
         <input
-          ref={register({
+          {...register("deviceManufacter", {
             required: {
               value: false,
               message: "* Requerido",

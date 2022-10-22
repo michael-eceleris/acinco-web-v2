@@ -1,6 +1,4 @@
-import React from "react";
-import { Fragment } from "react";
-import { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
@@ -208,7 +206,7 @@ const ReviewInformationStep = () => {
       </div>
       <LabelCheckbox className='form-checkbox form-checkbox-primary'>
         <input
-          ref={register({
+          {...register("confirm", {
             required: {
               value: true,
               message: "* Requerido",

@@ -1,21 +1,21 @@
 import React, { useState, useContext } from "react";
 import FormContext from "../../context/form/formContext";
 import Modal from "../Modal";
-//import ReCAPTCHA from "react-google-recaptcha";
-//import axios from "axios";
 import { useForm } from "react-hook-form";
 
 const ContactUs = () => {
   const formContext = useContext(FormContext);
   const { contactUs, isLoading, loading, showModal } = formContext;
-  const { register, handleSubmit, errors, setValue } = useForm();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm();
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
   const [numberError, setNumberError] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
-  //const [captcha, setCaptcha] = useState(null);
-  //const [errorCaptcha, setErrorCaptcha] = useState(false);
-  //const sitekey = process.env.REACT_APP_SITE_KEY_CAPTCHA;
 
   const handleChangeNumber = (e) => {
     setNumber(e.target.value);
@@ -31,7 +31,7 @@ const ContactUs = () => {
 
   const onSubmit = (data) => {
     data.consent = data.consent.toString();
-    if (data /*&& captcha*/) {
+    if (data) {
       loading(true);
       contactUs(data);
       setTimeout(() => {
@@ -44,32 +44,9 @@ const ContactUs = () => {
       setConfirmed(false);
       setNumber("");
       setMessage("");
-      //window.grecaptcha.reset();
-      //setCaptcha(null);
-      //setErrorCaptcha(false);
-    } else {
-      //setErrorCaptcha(true);
     }
   };
 
-  /* const onChange = async (value) => {
-    const secret = process.env.REACT_APP_SECRET_KEY_CAPTCHA;
-    try {
-      const res = await axios.post(
-        `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${value}`
-      );
-      if (res.status === 200) {
-        setCaptcha(res);
-        setErrorCaptcha(false);
-      } else {
-        setCaptcha(res);
-      }
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-      setErrorCaptcha(true);
-    }
-  }; */
   return (
     <>
       <section>
@@ -83,7 +60,7 @@ const ContactUs = () => {
               <form className='bs-validate' onSubmit={handleSubmit(onSubmit)}>
                 <div className='form-label-group '>
                   <input
-                    ref={register({
+                    {...register("name", {
                       required: {
                         value: true,
                         message: "* Requerido",
@@ -98,14 +75,12 @@ const ContactUs = () => {
                   />
                   <label htmlFor='name'>Nombre</label>
                 </div>
-                {errors ? (
-                  errors.name ? (
-                    <p className='text-danger'>{errors.name.message}</p>
-                  ) : null
+                {errors && errors.name ? (
+                  <p className='text-danger'>{errors.name.message}</p>
                 ) : null}
                 <div className='form-label-group mt-3'>
                   <input
-                    ref={register({
+                    {...register("email", {
                       required: {
                         value: true,
                         message: "* Requerido",
@@ -123,14 +98,12 @@ const ContactUs = () => {
                   />
                   <label htmlFor='email'>Correo Electrónico</label>
                 </div>
-                {errors ? (
-                  errors.email ? (
-                    <p className='text-danger'>{errors.email.message}</p>
-                  ) : null
+                {errors && errors.email ? (
+                  <p className='text-danger'>{errors.email.message}</p>
                 ) : null}
                 <div className='form-label-group mt-3'>
                   <input
-                    ref={register({
+                    {...register("phone_number", {
                       maxLength: {
                         value: 10,
                         message: "* Excediste la cantidad de números",
@@ -179,7 +152,7 @@ const ContactUs = () => {
 
                 <div className='form-label-group'>
                   <textarea
-                    ref={register({
+                    {...register("message", {
                       required: {
                         value: true,
                         message: "* Requerido",
@@ -200,10 +173,8 @@ const ContactUs = () => {
                 </div>
                 <div className='mb-4 d-flex justify-content-between'>
                   <div>
-                    {errors ? (
-                      errors.message ? (
-                        <p className='text-danger'>{errors.message.message}</p>
-                      ) : null
+                    {errors && errors.message ? (
+                      <p className='text-danger'>{errors.message.message}</p>
                     ) : null}
                   </div>
                   <div>
@@ -215,7 +186,7 @@ const ContactUs = () => {
                 <div className='clearfix bg-light position-relative rounded p-4'>
                   <label className='form-checkbox form-checkbox-primary'>
                     <input
-                      ref={register({
+                      {...register("consent", {
                         required: { value: true, message: "* Requerido" },
                       })}
                       name='consent'
@@ -240,24 +211,10 @@ const ContactUs = () => {
                     </span>
                   </label>
                 </div>
-                {errors ? (
-                  errors.consent && confirmed === false ? (
-                    <p className='text-danger'>{errors.consent.message}</p>
-                  ) : null
+                {errors && errors.consent && confirmed === false ? (
+                  <p className='text-danger'>{errors.consent.message}</p>
                 ) : null}
-                {/* <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    marginTop: 20,
-                  }}
-                >
-                  <ReCAPTCHA onChange={onChange} sitekey={sitekey} />
-                </div>
-                {errorCaptcha ? (
-                  <p className="text-danger">* Requerido</p>
-                ) : null}
-                */}
+
                 <button
                   type='submit'
                   className='btn btn-primary btn-block mt-4'
@@ -266,7 +223,7 @@ const ContactUs = () => {
                   Enviar Mensaje
                   {isLoading ? (
                     <i
-                      class='spinner-border spinner-border-sm ml-2 mr-0 mb--3'
+                      className='spinner-border spinner-border-sm ml-2 mr-0 mb--3'
                       role='status'
                       aria-hidden='true'
                     ></i>

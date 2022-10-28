@@ -19981,7 +19981,7 @@ label + .MuiInput-formControl {
 }
 .MuiFormLabel-root {
   color: #95a4af !important;
-  padding: 3px 1rem 0px 1rem !important;
+  /*padding: 3px 1rem 0px 1rem !important;  */
 }
 .MuiSvgIcon-root {
   margin-top: 0;

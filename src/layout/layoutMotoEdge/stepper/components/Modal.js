@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../../../components/Modal/modal.css";
 import { useStepperComercio } from "../provider/step-provider";
 
@@ -9,7 +9,7 @@ const Modal = (props) => {
   const showModalLocal = showModal
     ? "modal display-block"
     : "modal display-none";
-  const { push } = useHistory();
+  const navigate = useNavigate();
 
   const handleClose = () => {
     setShowModal(false);
@@ -21,7 +21,7 @@ const Modal = (props) => {
     setShowModal(false);
     setCurrentStep(0);
     resetForm();
-    push("/tramites-y-reclamaciones");
+    navigate("/tramites-y-reclamaciones");
   };
 
   return (

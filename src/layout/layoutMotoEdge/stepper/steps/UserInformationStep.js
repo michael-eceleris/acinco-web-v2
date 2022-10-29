@@ -12,18 +12,24 @@ const UserInformationStep = () => {
     useStepperComercio();
   const [genderId, setGenderId] = useState(null);
   const [identificationType, setIdentificationType] = useState(null);
-  const { register, errors, setValue, handleSubmit, setError, clearErrors } =
-    useForm({
-      defaultValues: {
-        firstName: "",
-        lastName: "",
-        email: "",
-        identificationType: "",
-        identificationNumber: "",
-        phone_number: "",
-        gender: "",
-      },
-    });
+  const {
+    register,
+    formState: { errors },
+    setValue,
+    handleSubmit,
+    setError,
+    clearErrors,
+  } = useForm({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      identificationType: "",
+      identificationNumber: "",
+      phone_number: "",
+      gender: "",
+    },
+  });
 
   const onSubmit = (values) => {
     let data = {
@@ -81,7 +87,7 @@ const UserInformationStep = () => {
       </p>
       <div className='form'>
         <input
-          ref={register({
+          {...register("firstName", {
             required: {
               value: true,
               message: "* Requerido",
@@ -104,7 +110,7 @@ const UserInformationStep = () => {
       </p>
       <div className='form mt-0'>
         <input
-          ref={register({
+          {...register("lastName", {
             required: {
               value: true,
               message: "* Requerido",
@@ -127,7 +133,7 @@ const UserInformationStep = () => {
       </p>
       <div className='form mt-0'>
         <input
-          ref={register({
+          {...register("email", {
             required: {
               value: true,
               message: "* Requerido",
@@ -153,7 +159,7 @@ const UserInformationStep = () => {
       </p>
       <div className='form mt-0'>
         <Dropdown
-          refPropt={register({
+          refPropt={register("identificationType", {
             required: {
               value: true,
               message: "* Requerido",
@@ -178,7 +184,7 @@ const UserInformationStep = () => {
       </p>
       <div className='form mt-0'>
         <input
-          ref={register({
+          {...register("identificationNumber", {
             maxLength: {
               value: 13,
               message: "* Excediste la cantidad de números",
@@ -212,7 +218,7 @@ const UserInformationStep = () => {
       </p>
       <div className='form mt-0'>
         <input
-          ref={register({
+          {...register("phone_number", {
             maxLength: {
               value: 10,
               message: "* El número debe tener exactamente 10 digítos",
@@ -246,7 +252,7 @@ const UserInformationStep = () => {
       </p>
       <div className='form-group mt-0'>
         <Dropdown
-          refPropt={register({
+          refPropt={register("gender", {
             required: {
               value: true,
               message: "* Requerido",

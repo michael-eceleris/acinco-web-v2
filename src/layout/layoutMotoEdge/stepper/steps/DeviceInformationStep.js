@@ -90,7 +90,7 @@ const DeviceInformationStep = () => {
       </p>
       <div className='form-label-group'>
         <input
-          ref={register({
+          {...register("imei", {
             required: {
               value: false,
               message: "* Requerido",
@@ -136,7 +136,7 @@ const DeviceInformationStep = () => {
       )}
       <div className='form-label-group mt-3'>
         <input
-          ref={register({
+          {...register("deviceName", {
             required: {
               value: false,
               message: "* Requerido",
@@ -157,7 +157,7 @@ const DeviceInformationStep = () => {
       )}
       <div className='form-label-group mt-3'>
         <input
-          ref={register({
+          {...register("deviceManufacter", {
             required: {
               value: false,
               message: "* Requerido",

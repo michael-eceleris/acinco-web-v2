@@ -68,7 +68,6 @@ const ReviewInformationStep = () => {
         setIsLoading((prevState) => !prevState);
       }
     } catch (error) {
-      console.log(error);
       if (error.response?.status === 400) {
         if (
           error.response.data.error.message ===
@@ -210,7 +209,7 @@ const ReviewInformationStep = () => {
       </div>
       <LabelCheckbox className='form-checkbox form-checkbox-primary'>
         <input
-          ref={register({
+          {...register("confirm", {
             required: {
               value: true,
               message: "* Requerido",

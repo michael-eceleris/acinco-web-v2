@@ -35,9 +35,9 @@ import newNotFoundClient from "./data/notFoundClients.json";
 
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
-  Redirect,
+  Navigate,
 } from "react-router-dom";
 function App() {
   return (
@@ -47,124 +47,152 @@ function App() {
           <ScrollTop />
           <Navbar hideMessage={false} />
           <WhatsappButton />
-          <Switch>
-            <Route path='/' exact>
-              <Home />
-            </Route>
-            <Route path='/productos' exact>
-              <Products />
-            </Route>
-            <Route path='/tramites-y-reclamaciones' exact>
-              <Claims />
-            </Route>
-            <Route path='/pospago-5-3' exact>
-              <TotalProtection />
-            </Route>
-            <Route path='/pospago-5-2' exact>
-              <ScreenFracture />
-            </Route>
-            <Route path='/arma-tu-plan-smart-app' exact>
-              <MakeYourPlan />
-            </Route>
-            <Route path='/seguro-gamas' exact>
-              <SafeByGama />
-            </Route>
-            <Route path='/samsung' exact>
-              <SamsungCarePlus />
-            </Route>
-            <Route path='/soat-asistencia-de-pantalla' exact>
-              <ScreenAssistenceSoat />
-            </Route>
-            <Route path='/colsubsidio' exact>
-              <AssistenceColsubsidio />
-            </Route>
-            <Route path='/detalle-soat' exact>
-              <SoatDetail />
-            </Route>
-            <Route path='/motorola' exact>
-              <Motorola />
-            </Route>
-            <Route path='/motorola/beneficio-edge' exact>
-              <MotorolaEdge />
-            </Route>
-            <Route path='/pospago-5-3/terminos-condiciones' exact>
-              <TermAndConditions namePlan='Protección Total' plan='all' />
-            </Route>
-            <Route path='/pospago-5-2/terminos-condiciones' exact>
-              <TermAndConditions
-                namePlan='Fractura de Pantalla'
-                plan='screen'
-              />
-            </Route>
-            <Route path='/arma-tu-plan-smart-app/terminos-condiciones' exact>
-              <TermAndConditions
-                namePlan='Arma tu plan – Smart App'
-                plan='smart'
-              />
-            </Route>
-            <Route path='/seguro-gamas/terminos-condiciones' exact>
-              <TermAndConditions namePlan='Seguro por Gama' plan='gama' />
-            </Route>
-            <Route path='/colsubsidio/terminos-condiciones' exact>
-              <TermAndConditionsTwo
-                namePlan='Asistencia Colsubsidio – Axa Colpatria Seguros'
-                plan='colsubsidio'
-              />
-            </Route>
+          <Routes>
+            <Route path='/' exact element={<Home />} />
+            <Route path='/productos' exact element={<Products />} />
+            <Route
+              path='/tramites-y-reclamaciones'
+              exact
+              element={<Claims />}
+            />
+            <Route path='/pospago-5-3' exact element={<TotalProtection />} />
+            <Route path='/pospago-5-2' exact element={<ScreenFracture />} />
+            <Route
+              path='/arma-tu-plan-smart-app'
+              exact
+              element={<MakeYourPlan />}
+            />
+            <Route path='/seguro-gamas' exact element={<SafeByGama />} />
+            <Route path='/samsung' exact element={<SamsungCarePlus />} />
+            <Route
+              path='/soat-asistencia-de-pantalla'
+              exact
+              element={<ScreenAssistenceSoat />}
+            />
+            <Route
+              path='/colsubsidio'
+              exact
+              element={<AssistenceColsubsidio />}
+            />
+            <Route path='/detalle-soat' exact element={<SoatDetail />} />
+            <Route path='/motorola' exact element={<Motorola />} />
+            <Route
+              path='/motorola/beneficio-edge'
+              exact
+              element={<MotorolaEdge />}
+            />
+            <Route
+              path='/pospago-5-3/terminos-condiciones'
+              exact
+              element={
+                <TermAndConditions namePlan='Protección Total' plan='all' />
+              }
+            />
+            <Route
+              path='/pospago-5-2/terminos-condiciones'
+              exact
+              element={
+                <TermAndConditions
+                  namePlan='Fractura de Pantalla'
+                  plan='screen'
+                />
+              }
+            />
+            <Route
+              path='/arma-tu-plan-smart-app/terminos-condiciones'
+              exact
+              element={
+                <TermAndConditions
+                  namePlan='Arma tu plan – Smart App'
+                  plan='smart'
+                />
+              }
+            />
+            <Route
+              path='/seguro-gamas/terminos-condiciones'
+              exact
+              element={
+                <TermAndConditions namePlan='Seguro por Gama' plan='gama' />
+              }
+            />
+            <Route
+              path='/colsubsidio/terminos-condiciones'
+              exact
+              element={
+                <TermAndConditionsTwo
+                  namePlan='Asistencia Colsubsidio – Axa Colpatria Seguros'
+                  plan='colsubsidio'
+                />
+              }
+            />
             <Route
               path='/soat-asistencia-de-pantalla/terminos-condiciones'
               exact
-            >
-              <TermAndConditionsTwo
-                namePlan='SOAT Asistencia de Pantalla'
-                plan='soat'
-              />
-            </Route>
-            <Route path='/samsung/terminos-condiciones' exact>
-              <TermsAndConditionsSamsungCarePlus />
-            </Route>
-            <Route path='/motorola/terminos-condiciones' exact>
-              <TermsAndConditionsMotorola />
-            </Route>
-            <Route path='/motorola/beneficio-edge/terminos-condiciones' exact>
-              <TermsAndConditionsMotoEdge />
-            </Route>
-            <Route path='/camara-comercio' exact>
-              <CamaraComercioPage />
-            </Route>
-            <Route path='/camara-comercio/terminos-condiciones' exact>
-              <TermsAndConditionsCCB />
-            </Route>
-            <Route path='/protect-my-phone' exact>
-              <PMPPage />
-            </Route>
-            <Route path='/protect-my-phone/signup' exact>
-              <PMPPageSingUp />
-            </Route>
-            <Route path='/protect-my-phone/terminos-condiciones' exact>
-              <TermsAndConditionsPMP />
-            </Route>
+              element={
+                <TermAndConditionsTwo
+                  namePlan='SOAT Asistencia de Pantalla'
+                  plan='soat'
+                />
+              }
+            />
+            <Route
+              path='/samsung/terminos-condiciones'
+              exact
+              element={<TermsAndConditionsSamsungCarePlus />}
+            />
+            <Route
+              path='/motorola/terminos-condiciones'
+              exact
+              element={<TermsAndConditionsMotorola />}
+            />
+            <Route
+              path='/motorola/beneficio-edge/terminos-condiciones'
+              exact
+              element={<TermsAndConditionsMotoEdge />}
+            />
+            <Route
+              path='/camara-comercio'
+              exact
+              element={<CamaraComercioPage />}
+            />
+            <Route
+              path='/camara-comercio/terminos-condiciones'
+              exact
+              element={<TermsAndConditionsCCB />}
+            />
+            <Route path='/protect-my-phone' exact element={<PMPPage />} />
+            <Route
+              path='/protect-my-phone/signup'
+              exact
+              element={<PMPPageSingUp />}
+            />
+            <Route
+              path='/protect-my-phone/terminos-condiciones'
+              exact
+              element={<TermsAndConditionsPMP />}
+            />
             {newClient.map((client, index) => (
               <Route
                 path={`/tramites-y-reclamaciones/${client.client}`}
                 exact
                 key={`path_key_${index}`}
-              >
-                <ClaimsBlank client={client} />
-              </Route>
+                element={<ClaimsBlank client={client} />}
+              />
             ))}
             {newNotFoundClient.map((client, index) => (
               <Route
                 path={client.path}
                 exact
                 key={`path_not_found_key_${index}`}
-              >
-                <NotFoundBlank client={client} />
-              </Route>
+                element={<NotFoundBlank client={client} />}
+              />
             ))}
-            <Route path='/pagina-no-encontrada' component={NotFound} />
-            <Redirect to='/pagina-no-encontrada' />
-          </Switch>
+            <Route path='/pagina-no-encontrada' element={<NotFound />} />
+            <Route
+              path='*'
+              element={<Navigate to='/pagina-no-encontrada' replace />}
+            />
+          </Routes>
         </Router>
       </AuthState>
     </FormState>

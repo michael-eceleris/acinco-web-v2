@@ -1,6 +1,4 @@
-import React from "react";
-import { useState } from "react";
-import { Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
@@ -22,7 +20,11 @@ const CheckCodeStep = () => {
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { setCurrentStep, setInterceptors, setUserInfo } = useStepperComercio();
-  const { register, handleSubmit, errors } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const onSubmit = (values) => {
     let data = {
@@ -94,7 +96,7 @@ const CheckCodeStep = () => {
       <p className='fs--17'>Digita el nombre de la campaña</p>
       <div className='form-label-group'>
         <input
-          ref={register({
+          {...register("promotionCode", {
             required: {
               value: true,
               message: "* Requerido",
@@ -104,7 +106,7 @@ const CheckCodeStep = () => {
           id='promotionCode'
           name='promotionCode'
           type='text'
-          placeholder=' Digita el nombre de la campaña'
+          placeholder='Digita el nombre de la campaña'
           className='form-control'
         />
         <label className='fontcustom'> Digita el nombre de la campaña</label>

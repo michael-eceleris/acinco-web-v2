@@ -51,11 +51,15 @@ const ContactUs = ({
   const classes = useStyle({ contactUsBackground });
   const formContext = useContext(FormContext);
   const { contactUs, isLoading, loading, showModal } = formContext;
-  const { register, handleSubmit, errors, setValue } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+  } = useForm();
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
-  const [numberError, setNumberError] = useState(false); /*
-  const [confirmed, setConfirmed] = useState(false); */
+  const [numberError, setNumberError] = useState(false);
 
   const handleChangeNumber = (e) => {
     setNumber(e.target.value);
@@ -81,7 +85,6 @@ const ContactUs = ({
       setValue("phone_number", "");
       setValue("email", "");
       setValue("message", "");
-      /* setConfirmed(false); */
       setNumber("");
       setMessage("");
     }
@@ -117,7 +120,7 @@ const ContactUs = ({
               <form className='bs-validate' onSubmit={handleSubmit(onSubmit)}>
                 <div className='form-label-group '>
                   <input
-                    ref={register({
+                    {...register("name", {
                       required: {
                         value: true,
                         message: "* Requerido",
@@ -132,14 +135,12 @@ const ContactUs = ({
                   />
                   <label htmlFor='name'>Nombre</label>
                 </div>
-                {errors ? (
-                  errors.name ? (
-                    <p className='text-danger'>{errors.name.message}</p>
-                  ) : null
+                {errors && errors.name ? (
+                  <p className='text-danger'>{errors.name.message}</p>
                 ) : null}
                 <div className='form-label-group mt-3'>
                   <input
-                    ref={register({
+                    {...register("email", {
                       required: {
                         value: true,
                         message: "* Requerido",
@@ -158,14 +159,12 @@ const ContactUs = ({
                   <label htmlFor='email'>Correo Electrónico</label>
                 </div>
 
-                {errors ? (
-                  errors.email ? (
-                    <p className='text-danger'>{errors.email.message}</p>
-                  ) : null
+                {errors && errors.email ? (
+                  <p className='text-danger'>{errors.email.message}</p>
                 ) : null}
                 <div className='form-label-group mt-3'>
                   <input
-                    ref={register({
+                    {...register("phone_number", {
                       maxLength: {
                         value: 10,
                         message: "* Excediste la cantidad de números",
@@ -214,7 +213,7 @@ const ContactUs = ({
 
                 <div className='form-label-group'>
                   <textarea
-                    ref={register({
+                    {...register("message", {
                       required: {
                         value: true,
                         message: "* Requerido",
@@ -235,10 +234,8 @@ const ContactUs = ({
                 </div>
                 <div className='mb-4 d-flex justify-content-between'>
                   <div>
-                    {errors ? (
-                      errors.message ? (
-                        <p className='text-danger'>{errors.message.message}</p>
-                      ) : null
+                    {errors && errors.message ? (
+                      <p className='text-danger'>{errors.message.message}</p>
                     ) : null}
                   </div>
                   <div>
@@ -247,28 +244,7 @@ const ContactUs = ({
                     </p>
                   </div>
                 </div>
-                {/* <div className="clearfix bg-light position-relative rounded p-4">
-                  <LabelCheckbox bgColor={colorPrimary} className="form-checkbox">
-                    <input
-                      ref={register({
-                        required: { value: true, message: "* Requerido" },
-                      })}
-                      name="consent"
-                      type="checkbox"
-                      checked={confirmed}
-                      onChange={() => setConfirmed(!confirmed)}
-                    />
-                    <i></i>
-                    <span>
-                      Doy mi consentimiento para que mis datos se almacenen.
-                    </span>
-                  </LabelCheckbox>
-                </div> */}
-                {/* {errors ? (
-                  errors.consent && confirmed === false ? (
-                    <p className="text-danger">{errors.consent.message}</p>
-                  ) : null
-                ) : null} */}
+
                 <ButtonSubmit
                   type='submit'
                   className='btn btn-block mt-4'

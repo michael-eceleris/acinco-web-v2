@@ -1,6 +1,4 @@
-import React from "react";
-import { Fragment } from "react";
-import { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
@@ -49,8 +47,10 @@ const ReviewInformationStep = () => {
             number: userInfo.identificationNumber,
           },
         },
-        planId: policy.policies[0].id,
-        priceOptionId: policy.policies[0].pricingOptions[0].id,
+        planId: policy.policies.filter((d) => d.id === policy.planId)[0].id,
+        priceOptionId: policy.policies
+          .filter((d) => d.id === policy.planId)[0]
+          .pricingOptions.filter((e) => e.paymentFrequency === "ANUAL")[0].id,
         device: {
           imei: userInfo.imei,
           line: userInfo.phone_number,
@@ -193,13 +193,23 @@ const ReviewInformationStep = () => {
               </tr>
               <tr>
                 <td className='border-bottom border-top-0'>Nombre del plan:</td>
-                <td className='border-bottom border-top-0'>Básico 12 Meses</td>
+                <td className='border-bottom border-top-0'>
+                  {
+                    policy?.policies.filter((d) => d.id === policy.planId)[0]
+                      .name
+                  }
+                </td>
               </tr>
               <tr>
                 <td className='border-bottom border-top-0'>Cobertura:</td>
                 <td className='border-bottom border-top-0'>
-                  Daño Accidental <br /> Falla Mecánica/Eléctrica <br />
-                  Reemplazo de Batería <br /> Garantía Extendida
+                  {policy?.policies
+                    .filter((d) => d.id === policy.planId)[0]
+                    .coverages.map((e, i) => (
+                      <p key={`coverages_${i}`} className='mb-0'>
+                        {e}
+                      </p>
+                    ))}
                 </td>
               </tr>
             </tbody>
@@ -208,7 +218,7 @@ const ReviewInformationStep = () => {
       </div>
       <LabelCheckbox className='form-checkbox form-checkbox-primary'>
         <input
-          ref={register({
+          {...register("confirm", {
             required: {
               value: true,
               message: "* Requerido",

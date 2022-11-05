@@ -47,17 +47,15 @@ const ReviewInformationStep = () => {
             number: userInfo.identificationNumber,
           },
         },
-        planId: policy.policies.filter((d) => d.id === policy.planId)[0].id,
-        priceOptionId: policy.policies
-          .filter((d) => d.id === policy.planId)[0]
-          .pricingOptions.filter((e) => e.paymentFrequency === "ANUAL")[0].id,
+        planId: policy.policies[0].id,
+        priceOptionId: policy.policies[0].pricingOptions[0].id,
         device: {
-          imei: userInfo.imei,
+          imei: userInfo.promotionCode,
           line: userInfo.phone_number,
         },
         promotionCode: userInfo.promotionCode,
         clientIdentification: userInfo.clientIdentification,
-        sponsorId: "SAMSUNG",
+        sponsorId: "MOTOCARE",
       };
       const response = await microServiceAxios.post(`/api/v1/policy`, data, {
         headers: {
@@ -70,7 +68,7 @@ const ReviewInformationStep = () => {
         setIsLoading((prevState) => !prevState);
       }
     } catch (error) {
-      if (error.response.status === 400) {
+      if (error.response?.status === 400) {
         if (
           error.response.data.error.message ===
           "the imei already has a valid insurance policy for this sponsor"
@@ -181,7 +179,9 @@ const ReviewInformationStep = () => {
               </tr>
               <tr>
                 <td className='border-bottom border-top-0'>IMEI Asegurado:</td>
-                <td className='border-bottom border-top-0'>{userInfo?.imei}</td>
+                <td className='border-bottom border-top-0'>
+                  {userInfo?.promotionCode}
+                </td>
               </tr>
               <tr>
                 <td className='border-top-0'>
@@ -194,22 +194,13 @@ const ReviewInformationStep = () => {
               <tr>
                 <td className='border-bottom border-top-0'>Nombre del plan:</td>
                 <td className='border-bottom border-top-0'>
-                  {
-                    policy?.policies.filter((d) => d.id === policy.planId)[0]
-                      .name
-                  }
+                  {policy?.policies[0].name}
                 </td>
               </tr>
               <tr>
                 <td className='border-bottom border-top-0'>Cobertura:</td>
                 <td className='border-bottom border-top-0'>
-                  {policy?.policies
-                    .filter((d) => d.id === policy.planId)[0]
-                    .coverages.map((e, i) => (
-                      <p key={`coverages_${i}`} className='mb-0'>
-                        {e}
-                      </p>
-                    ))}
+                  {policy?.policies[0].coverages[0]}
                 </td>
               </tr>
             </tbody>

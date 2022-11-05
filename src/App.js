@@ -22,10 +22,12 @@ import WhatsappButton from "./components/WhatsappButton/WhatsappButton";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import Motorola from "./pages/Motorola";
+import MotorolaEdge from "./pages/MotoEdge";
 import CamaraComercioPage from "./pages/CamaraComercio";
 import PMPPage from "./pages/PMP";
 import PMPPageSingUp from "./pages/PMP-signup";
 import TermsAndConditionsMotorola from "./components/TermsAndConditions/TermsAndConditionMotorola";
+import TermsAndConditionsMotoEdge from "./layout/layoutMotoEdge/TermsAndConditions";
 import ClaimsBlank from "./pages/ClaimsBlank";
 import NotFoundBlank from "./pages/NotFoundBlank";
 import newClient from "./data/newClients.json";
@@ -74,6 +76,11 @@ function App() {
             />
             <Route path='/detalle-soat' exact element={<SoatDetail />} />
             <Route path='/motorola' exact element={<Motorola />} />
+            <Route
+              path='/motorola/beneficio-edge'
+              exact
+              element={<MotorolaEdge />}
+            />
             <Route
               path='/pospago-5-3/terminos-condiciones'
               exact
@@ -137,6 +144,11 @@ function App() {
               path='/motorola/terminos-condiciones'
               exact
               element={<TermsAndConditionsMotorola />}
+            />
+            <Route
+              path='/motorola/beneficio-edge/terminos-condiciones'
+              exact
+              element={<TermsAndConditionsMotoEdge />}
             />
             <Route
               path='/camara-comercio'

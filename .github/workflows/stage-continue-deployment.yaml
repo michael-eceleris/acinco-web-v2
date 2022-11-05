@@ -17,24 +17,21 @@ jobs:
           username: ${{ secrets.ACINCO_STAGE_SSH_USER }}
           key: ${{ secrets.ACINCO_STAGE_SSH_KEY }}
           script: |
-            ls
+            cd ${{secrets.QA_DIR}}
+            git checkout stage
+            git pull origin stage
 
-      - name: Install Node.js v14
-        uses: actions/setup-node@v1
+      - name: Remote - Test Connection
+        uses: appleboy/ssh-action@master
         with:
-          node-version: 14
-
-      - name: Install Packages
-        run: npm install
-
-      - name: Set Environment
-        run: |
-          mv .env.stage .env
-          rm -rf .env.*
-
-      - name: Build
-        run: npm run build
-
+          host: ${{ secrets.ACINCO_STAGE_SSH_HOST }}
+          username: ${{ secrets.ACINCO_STAGE_SSH_USER }}
+          key: ${{ secrets.ACINCO_STAGE_SSH_KEY }}
+          script: |
+            cd ${{secrets.QA_DIR}}
+            echo "Ejecutando 'npm install'"
+            npm install
+            
       - name: Remote - Clean Files
         uses: appleboy/ssh-action@master
         with:
@@ -42,29 +39,9 @@ jobs:
           username: ${{ secrets.ACINCO_STAGE_SSH_USER }}
           key: ${{ secrets.ACINCO_STAGE_SSH_KEY }}
           script: |
-            mkdir -p /home/${{ secrets.ACINCO_STAGE_SSH_USER }}/acinco-web
-            mkdir -p /home/${{ secrets.ACINCO_STAGE_SSH_USER }}/acinco-web/build
-            rm -rf /home/${{ secrets.ACINCO_STAGE_SSH_USER }}/acinco-web/*
-
-      - name: Remote - Copy Build Files
-        uses: burnett01/rsync-deployments@4.1
-        with:
-          switches: -avzr
-          path: build/
-          remote_path: /home/${{ secrets.ACINCO_STAGE_SSH_USER }}/acinco-web/build/
-          remote_host: ${{ secrets.ACINCO_STAGE_SSH_HOST }}
-          remote_user: ${{ secrets.ACINCO_STAGE_SSH_USER }}
-          remote_key: ${{ secrets.ACINCO_STAGE_SSH_KEY }}
-
-      - name: Remote - Copy Deployment Files
-        uses: burnett01/rsync-deployments@4.1
-        with:
-          switches: -avzr
-          path: deployment/
-          remote_path: /home/${{ secrets.ACINCO_STAGE_SSH_USER }}/acinco-web/
-          remote_host: ${{ secrets.ACINCO_STAGE_SSH_HOST }}
-          remote_user: ${{ secrets.ACINCO_STAGE_SSH_USER }}
-          remote_key: ${{ secrets.ACINCO_STAGE_SSH_KEY }}
+            cd ${{secrets.QA_DIR}}
+            echo "Ejecutando 'npm run build'"
+            /usr/bin/npm run build
 
       - name: Remote - Build Docker
         uses: appleboy/ssh-action@master
@@ -73,17 +50,6 @@ jobs:
           username: ${{ secrets.ACINCO_STAGE_SSH_USER }}
           key: ${{ secrets.ACINCO_STAGE_SSH_KEY }}
           script: |
-            cd /home/${{ secrets.ACINCO_STAGE_SSH_USER }}/acinco-web/
-            docker build -t eceleris/acinco-web .
-
-      - name: Remote - Deploy Docker
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.ACINCO_STAGE_SSH_HOST }}
-          username: ${{ secrets.ACINCO_STAGE_SSH_USER }}
-          key: ${{ secrets.ACINCO_STAGE_SSH_KEY }}
-          script: |
-            cd /home/${{ secrets.ACINCO_STAGE_SSH_USER }}/acinco-web/
-            docker stop acinco-web
-            docker rm acinco-web
-            docker run -d --name=acinco-web -p 8080:80 eceleris/acinco-web
+            cd ${{secrets.QA_DIR}}
+            echo "Reiniciando servidor nginx (reload)"
+            sudo /usr/sbin/service nginx reload

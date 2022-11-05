@@ -149,7 +149,7 @@ const InfoRequired = () => {
         <li>
           <p className='text-justify'>
             Informe y diagnóstico del taller autorizado
-            {clientName ? "." : " por Tigo."}{" "}
+            {clientName ? "." : " por Acinco."}{" "}
             {product ? (
               <span className=' fs--15 text-red-500 ml--2 '>*</span>
             ) : null}

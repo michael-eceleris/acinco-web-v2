@@ -27,7 +27,7 @@ const Banner = () => {
               <div className='mt-4 ml--10'>
                 <h1 className='font-weight-light mb-4'>
                   <span className='font-weight-medium'>
-                    Samsung Care + Dispositivos Móviles
+                    Samsung Care + Electrodoméstico
                   </span>
                 </h1>
                 <p className='lead mb--0'>

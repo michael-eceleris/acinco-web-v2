@@ -132,7 +132,10 @@ const NavbarSamsungCarePlus = ({ hideMessage }) => {
                       </Link>
                     </li>
                     <li className='dropdown-item'>
-                      <Link className='dropdown-link' to='/samsung'>
+                      <Link
+                        className='dropdown-link'
+                        to='/samsung-care-plus/electro'
+                      >
                         Samsung Care + Electrodoméstico
                       </Link>
                     </li>

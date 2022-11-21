@@ -1,4 +1,11 @@
 import "./App.css";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
 import AuthState from "./context/auth/authState";
 import FormState from "./context/form/formState";
 import Navbar from "./components/Navbar";
@@ -34,14 +41,10 @@ import SamsungCarePlusDevices from "./pages/SamsungCarePluesDevices";
 import SamsungCarePlusDevicesTermsAndConditions from "./layout/layoutSamsungCarePlusDevices/TermsAndConditions";
 import newClient from "./data/newClients.json";
 import newNotFoundClient from "./data/notFoundClients.json";
-
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
 import ClaimsSamsungCarePlus from "./pages/ClaimsSamsungCarePlus";
+import SamsungCarePlusElectro from "./pages/SamsungCarePlusElectro";
+import SamsungCarePlusElectroTermsAndConditions from "./layout/layoutSamsungCarePlusElectro/TermsAndConditions";
+
 function App() {
   return (
     <FormState>
@@ -188,6 +191,16 @@ function App() {
               path='/samsung-care-plus/tramites-y-reclamaciones'
               exact
               element={<ClaimsSamsungCarePlus />}
+            />
+            <Route
+              path='/samsung-care-plus/electro'
+              exact
+              element={<SamsungCarePlusElectro />}
+            />
+            <Route
+              path='/samsung-care-plus/electro/terminos-condiciones'
+              exact
+              element={<SamsungCarePlusElectroTermsAndConditions />}
             />
             {newClient.map((client, index) => (
               <Route

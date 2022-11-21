@@ -1,8 +1,10 @@
 import React from "react";
+import NavbarSamsungCarePlus from "../layoutClaimsSamsungCarePlus/Navbar";
 
 const TermsAndConditions = () => {
   return (
     <>
+      <NavbarSamsungCarePlus />
       <section className='bg-white p-5'>
         <div className='container'>
           <h1 className='h2 text-center'>

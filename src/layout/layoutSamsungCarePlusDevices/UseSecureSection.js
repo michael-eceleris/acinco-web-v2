@@ -27,7 +27,7 @@ const UseSecureSection = () => {
                   <div className='mt-4 d-flex justify-content-center'>
                     <Link
                       className='btn btn-sm btn-primary'
-                      to='/protect-my-phone/signup'
+                      to='/samsung-care-plus/tramites-y-reclamaciones'
                     >
                       Ingresar
                     </Link>

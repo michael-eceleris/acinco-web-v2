@@ -41,6 +41,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import ClaimsSamsungCarePlus from "./pages/ClaimsSamsungCarePlus";
 function App() {
   return (
     <FormState>
@@ -174,14 +175,19 @@ function App() {
               element={<TermsAndConditionsPMP />}
             />
             <Route
-              path='/samsung-care-plus-devices'
+              path='/samsung-care-plus/devices'
               exact
               element={<SamsungCarePlusDevices />}
             />
             <Route
-              path='/samsung-care-plus-devices/terminos-condiciones'
+              path='/samsung-care-plus/devices/terminos-condiciones'
               exact
               element={<SamsungCarePlusDevicesTermsAndConditions />}
+            />
+            <Route
+              path='/samsung-care-plus/tramites-y-reclamaciones'
+              exact
+              element={<ClaimsSamsungCarePlus />}
             />
             {newClient.map((client, index) => (
               <Route

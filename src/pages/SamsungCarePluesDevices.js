@@ -7,6 +7,7 @@ import Plans from "../layout/layoutSamsungCarePlusDevices/Plans";
 import Coverages from "../layout/layoutSamsungCarePlusDevices/Coverages";
 import Recoveries from "../layout/layoutSamsungCarePlusDevices/RecoveriesAndExclutions";
 import UseSecureSection from "../layout/layoutSamsungCarePlusDevices/UseSecureSection";
+import NavbarSamsungCarePlus from "../layout/layoutClaimsSamsungCarePlus/Navbar";
 
 const SamsungCarePlusDevices = () => {
   return (
@@ -19,6 +20,7 @@ const SamsungCarePlusDevices = () => {
                   nuestro producto Samsung Care +'
         />
       </Helmet>
+      <NavbarSamsungCarePlus />
       <Banner />
       <Plans />
       <Coverages />

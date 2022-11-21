@@ -1,13 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Banner from "../layout/layoutSamsungCarePlusElectro/Banner";
-import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
 import Plans from "../layout/layoutSamsungCarePlusElectro/Plans";
 import Coverages from "../layout/layoutSamsungCarePlusElectro/Coverages";
 import Recoveries from "../layout/layoutSamsungCarePlusElectro/RecoveriesAndExclutions";
 import UseSecureSection from "../layout/layoutSamsungCarePlusElectro/UseSecureSection";
 import NavbarSamsungCarePlus from "../layout/layoutClaimsSamsungCarePlus/Navbar";
+import ContactUsElectro from "../layout/layoutSamsungCarePlusElectro/ContactUs";
 
 const SamsungCarePlusElectro = () => {
   return (
@@ -26,7 +26,7 @@ const SamsungCarePlusElectro = () => {
       <Coverages />
       <Recoveries />
       <UseSecureSection />
-      <ContactUs />
+      <ContactUsElectro />
       <Footer />
     </>
   );

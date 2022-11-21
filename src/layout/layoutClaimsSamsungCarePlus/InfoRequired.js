@@ -22,7 +22,7 @@ const InfoRequired = () => {
         Formato de reclamación debidamente diligenciado por el cliente, lo
         puedes descargar dando click en el siguiente{" "}
         <a
-          href={`https://files-statics-protegeme.s3.amazonaws.com/ASEGURATUCELULAR/Formato_Reclamacion_AXA_COLPATRIA.pdf`}
+          href={`https://files-statics-protegeme.s3.amazonaws.com/SAMSUNG/Formato_Reclamacion_AXA_COLPATRIA+SC%2B.pdf`}
           target='_blank'
           rel='noreferrer'
         >

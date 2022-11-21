@@ -170,7 +170,7 @@ const NavbarSamsungCarePlus = ({ hideMessage }) => {
                     <li className='dropdown-item'>
                       <a
                         className='nav-link js-ajax'
-                        href='https://files-statics-protegeme.s3.amazonaws.com/P1648+EQUIPOS+TELEFONIA+CELULAR_MAR+2022.pdf'
+                        href='https://files-statics-protegeme.s3.amazonaws.com/SAMSUNG/SEGURO+EQUIPO+TELEFONIA+MOVIL-+SAMSUNG+CARE+%2B+CAMPA%C3%91A2.pdf'
                         target='_blank'
                         rel='noreferrer'
                         style={{ whiteSpace: "nowrap" }}
@@ -181,7 +181,7 @@ const NavbarSamsungCarePlus = ({ hideMessage }) => {
                     <li className='dropdown-item'>
                       <a
                         className='nav-link js-ajax'
-                        href='https://files-statics-protegeme.s3.amazonaws.com/P1648+EQUIPOS+TELEFONIA+CELULAR_MAR+2022.pdf'
+                        href='https://files-statics-protegeme.s3.amazonaws.com/SAMSUNG/SEGURO+HOGAR+PLUS+CONTENIDOS+-+ELECTRODOMESTICOS+-+SAMSUNG+CARE+%2B+CAMPA%C3%91A2.pdf'
                         target='_blank'
                         rel='noreferrer'
                         style={{ whiteSpace: "nowrap" }}

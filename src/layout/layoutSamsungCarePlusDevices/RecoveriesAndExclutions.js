@@ -75,7 +75,7 @@ const Recoveries = () => {
               </p>
               <a
                 className='btn btn-link text-decoration-none'
-                href='https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/CLAUSULADO-POLIZA-34.pdf'
+                href='https://files-statics-protegeme.s3.amazonaws.com/SAMSUNG/SEGURO+EQUIPO+TELEFONIA+MOVIL-+SAMSUNG+CARE+%2B+CAMPA%C3%91A2.pdf'
                 target='_blank'
                 rel='noreferrer'
               >

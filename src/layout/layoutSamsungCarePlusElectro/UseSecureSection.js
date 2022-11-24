@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import CellUse from "../../assets/icons/ElectroSamsung.svg";
 
 const UseSecureSection = () => {
@@ -25,12 +24,15 @@ const UseSecureSection = () => {
                     ¡Es muy fácil!, Solo debes ingresar con el siguiente botón.
                   </p>
                   <div className='mt-4 d-flex justify-content-center'>
-                    <Link
+                    <a
+                      target='_blank'
+                      rel='noreferrer'
+                      style={{ whiteSpace: "nowrap" }}
+                      href='http://www.aseguratuelectro.com/'
                       className='btn btn-sm btn-primary'
-                      to='/samsung-care-plus/tramites-y-reclamaciones'
                     >
                       Ingresar
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

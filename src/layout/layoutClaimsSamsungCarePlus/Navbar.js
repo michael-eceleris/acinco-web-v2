@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../../assets/images/Logo.png";
-const Navbar = ({ hideMessage }) => {
+
+const NavbarSamsungCarePlus = ({ hideMessage }) => {
   const hide = hideMessage ? "mt--30" : "top-0";
   const hideM = hideMessage ? " " : "mb-5";
   const [show, setShow] = useState(false);
@@ -81,7 +82,7 @@ const Navbar = ({ hideMessage }) => {
                   <path d='M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z'></path>
                 </svg>
               </button>
-              <Link className='navbar-brand' to='/'>
+              <Link className='navbar-brand' to='/samsung-care-plus/devices'>
                 <img
                   width='90'
                   height='100'
@@ -92,14 +93,17 @@ const Navbar = ({ hideMessage }) => {
             </div>
             <ul className='navbar-nav'>
               <li className='nav-item'>
-                <Link className='nav-link js-ajax' to='/'>
+                <Link
+                  className='nav-link js-ajax'
+                  to='/samsung-care-plus/devices'
+                >
                   Inicio
                 </Link>
               </li>
               <li className='nav-item'>
                 <Link
                   className='nav-link js-ajax '
-                  to='/tramites-y-reclamaciones'
+                  to='/samsung-care-plus/tramites-y-reclamaciones'
                 >
                   Reclamaciones
                 </Link>
@@ -120,87 +124,19 @@ const Navbar = ({ hideMessage }) => {
                 >
                   <ul className='list-unstyled m-0 p-o'>
                     <li className='dropdown-item'>
-                      <Link className='dropdown-link' to='/pospago-5-3'>
-                        Protección total
-                      </Link>
-                    </li>
-                    <li className='dropdown-item'>
-                      <Link className='dropdown-link' to='/pospago-5-2'>
-                        Fractura de pantalla
-                      </Link>
-                    </li>
-                    <li className='dropdown-item'>
-                      <Link className='dropdown-link' to='/motorola'>
-                        Motorola
+                      <Link
+                        className='dropdown-link'
+                        to='/samsung-care-plus/devices'
+                      >
+                        Samsung Care + Dispositivos Móviles
                       </Link>
                     </li>
                     <li className='dropdown-item'>
                       <Link
                         className='dropdown-link'
-                        to='/motorola/beneficio-edge'
+                        to='/samsung-care-plus/electro'
                       >
-                        Motorola Edge
-                      </Link>
-                    </li>
-                    <li className='dropdown-item'>
-                      <Link
-                        className='dropdown-link'
-                        to='/soat-asistencia-de-pantalla'
-                      >
-                        SOAT Asistencia de pantalla
-                      </Link>
-                    </li>
-                    <li className='dropdown-item'>
-                      <Link className='dropdown-link' to='/samsung'>
-                        Samsung
-                      </Link>
-                      <ul>
-                        <li className='dropdown-item'>
-                          <Link
-                            className='dropdown-link'
-                            to='/samsung-care-plus/devices'
-                          >
-                            Samsung Care + Dispositivos Móviles
-                          </Link>
-                        </li>
-                        <li className='dropdown-item'>
-                          <Link
-                            className='dropdown-link'
-                            to='/samsung-care-plus/electro'
-                          >
-                            Samsung Care + Electrodoméstico
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className='dropdown-item'>
-                      <Link
-                        className='dropdown-link'
-                        to='/arma-tu-plan-smart-app'
-                      >
-                        Arma tu plan - Smart App
-                      </Link>
-                    </li>
-
-                    <li className='dropdown-item'>
-                      <Link className='dropdown-link' to='/seguro-gamas'>
-                        Seguro por Gama
-                      </Link>
-                    </li>
-                    <li className='dropdown-item'>
-                      <Link className='dropdown-link' to='/colsubsidio'>
-                        Asistencia Colsubsidio -<br />
-                        Axa Colpatria Seguros
-                      </Link>
-                    </li>
-                    <li className='dropdown-item'>
-                      <Link className='dropdown-link' to='/camara-comercio'>
-                        Cámara de Comercio de Bogotá
-                      </Link>
-                    </li>
-                    <li className='dropdown-item'>
-                      <Link className='dropdown-link' to='/protect-my-phone'>
-                        Protect My Phone
+                        Samsung Care + Electrodoméstico
                       </Link>
                     </li>
                   </ul>
@@ -217,19 +153,45 @@ const Navbar = ({ hideMessage }) => {
                   Política de Protección
                 </a>
               </li>
-              {pathname !== "/camara-comercio" && (
-                <li>
-                  <a
-                    className='nav-link js-ajax'
-                    href='https://files-statics-protegeme.s3.amazonaws.com/P1648+EQUIPOS+TELEFONIA+CELULAR_MAR+2022.pdf'
-                    target='_blank'
-                    rel='noreferrer'
-                    style={{ whiteSpace: "nowrap" }}
-                  >
-                    Clausulado General
-                  </a>
-                </li>
-              )}
+              <li className='nav-item dropdown active'>
+                <div
+                  className='nav-link dropdown-toggle'
+                  data-toggle='dropdown'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                >
+                  Clausulado General
+                </div>
+                <div
+                  aria-labelledby='mainNavHome'
+                  className='dropdown-menu dropdown-menu-clean dropdown-menu-hover'
+                >
+                  <ul className='list-unstyled m-0 p-o'>
+                    <li className='dropdown-item'>
+                      <a
+                        className='nav-link js-ajax'
+                        href='https://files-statics-protegeme.s3.amazonaws.com/SAMSUNG/SEGURO+EQUIPO+TELEFONIA+MOVIL-+SAMSUNG+CARE+%2B+CAMPA%C3%91A2.pdf'
+                        target='_blank'
+                        rel='noreferrer'
+                        style={{ whiteSpace: "nowrap" }}
+                      >
+                        Dispositivos Móviles
+                      </a>
+                    </li>
+                    <li className='dropdown-item'>
+                      <a
+                        className='nav-link js-ajax'
+                        href='https://files-statics-protegeme.s3.amazonaws.com/SAMSUNG/SEGURO+HOGAR+PLUS+CONTENIDOS+-+ELECTRODOMESTICOS+-+SAMSUNG+CARE+%2B+CAMPA%C3%91A2.pdf'
+                        target='_blank'
+                        rel='noreferrer'
+                        style={{ whiteSpace: "nowrap" }}
+                      >
+                        Electrodoméstico
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
             </ul>
           </div>
         </nav>
@@ -237,4 +199,4 @@ const Navbar = ({ hideMessage }) => {
     </header>
   );
 };
-export default Navbar;
+export default NavbarSamsungCarePlus;

@@ -1,4 +1,11 @@
 import "./App.css";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
 import AuthState from "./context/auth/authState";
 import FormState from "./context/form/formState";
 import Navbar from "./components/Navbar";
@@ -30,15 +37,14 @@ import TermsAndConditionsMotorola from "./components/TermsAndConditions/TermsAnd
 import TermsAndConditionsMotoEdge from "./layout/layoutMotoEdge/TermsAndConditions";
 import ClaimsBlank from "./pages/ClaimsBlank";
 import NotFoundBlank from "./pages/NotFoundBlank";
+import SamsungCarePlusDevices from "./pages/SamsungCarePluesDevices";
+import SamsungCarePlusDevicesTermsAndConditions from "./layout/layoutSamsungCarePlusDevices/TermsAndConditions";
 import newClient from "./data/newClients.json";
 import newNotFoundClient from "./data/notFoundClients.json";
+import ClaimsSamsungCarePlus from "./pages/ClaimsSamsungCarePlus";
+import SamsungCarePlusElectro from "./pages/SamsungCarePlusElectro";
+import SamsungCarePlusElectroTermsAndConditions from "./layout/layoutSamsungCarePlusElectro/TermsAndConditions";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
 function App() {
   return (
     <FormState>
@@ -170,6 +176,31 @@ function App() {
               path='/protect-my-phone/terminos-condiciones'
               exact
               element={<TermsAndConditionsPMP />}
+            />
+            <Route
+              path='/samsung-care-plus/devices'
+              exact
+              element={<SamsungCarePlusDevices />}
+            />
+            <Route
+              path='/samsung-care-plus/devices/terminos-condiciones'
+              exact
+              element={<SamsungCarePlusDevicesTermsAndConditions />}
+            />
+            <Route
+              path='/samsung-care-plus/tramites-y-reclamaciones'
+              exact
+              element={<ClaimsSamsungCarePlus />}
+            />
+            <Route
+              path='/samsung-care-plus/electro'
+              exact
+              element={<SamsungCarePlusElectro />}
+            />
+            <Route
+              path='/samsung-care-plus/electro/terminos-condiciones'
+              exact
+              element={<SamsungCarePlusElectroTermsAndConditions />}
             />
             {newClient.map((client, index) => (
               <Route

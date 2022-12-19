@@ -114,7 +114,7 @@ const NavbarSamsungCarePlus = ({ hideMessage }) => {
                   data-toggle='dropdown'
                   aria-haspopup='true'
                   aria-expanded='false'
-                  to='/productos'
+                  to='/samsung-care-plus/devices'
                 >
                   Nuestros Productos
                 </Link>

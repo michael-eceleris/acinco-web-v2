@@ -1,8 +1,8 @@
-name: workflow run cleanup
+name: Cleanup Old actions workflows
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 0 1 * *'
 jobs:
   cleanup:
     runs-on: ubuntu-latest

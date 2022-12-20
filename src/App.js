@@ -44,6 +44,7 @@ import newNotFoundClient from "./data/notFoundClients.json";
 import ClaimsSamsungCarePlus from "./pages/ClaimsSamsungCarePlus";
 import SamsungCarePlusElectro from "./pages/SamsungCarePlusElectro";
 import SamsungCarePlusElectroTermsAndConditions from "./layout/layoutSamsungCarePlusElectro/TermsAndConditions";
+import SBSEstimatePage from "./pages/SBSEstimatePolicy";
 
 function App() {
   return (
@@ -218,6 +219,7 @@ function App() {
                 element={<NotFoundBlank client={client} />}
               />
             ))}
+            <Route path='/estimate-policy/itau' element={<SBSEstimatePage />} />
             <Route path='/pagina-no-encontrada' element={<NotFound />} />
             <Route
               path='*'

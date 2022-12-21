@@ -181,7 +181,7 @@ const UserInformationStep = () => {
       </p>
       <div className='form mt-0'>
         <input
-          ref={register({
+          {...register("identificationNumber", {
             maxLength: {
               value: 13,
               message: "* Excediste la cantidad de números",

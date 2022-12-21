@@ -49,7 +49,7 @@ const NavbarSamsungCarePlus = ({ hideMessage }) => {
                 ></path>
               </svg>
             </button>
-            <Link className='navbar-brand' to='/'>
+            <Link className='navbar-brand' to='/samsung-care-plus/devices'>
               <img
                 width='100'
                 height='100'

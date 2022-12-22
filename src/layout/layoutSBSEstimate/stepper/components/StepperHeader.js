@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import { ReactComponent as DeviceInfo } from "../../../../assets/icons/device-info.svg";
 import { ReactComponent as Formulario } from "../../../../assets/icons/formulario.svg";
+import { ReactComponent as Cellphone } from "../../../../assets/icons/cellphone-estimate.svg";
 import { useStepperComercio } from "../provider/step-provider";
 
 const DivCircle = styled.div`
@@ -45,6 +46,14 @@ const StepperHeader = () => {
               >
                 2
               </DivCircle>
+              <DivCircle
+                style={{
+                  backgroundColor: currentStep >= 2 ? defaultColor : "#e1e1e1",
+                  color: currentStep >= 1 ? "#e1e1e1" : defaultColor,
+                }}
+              >
+                2
+              </DivCircle>
             </div>
             <div className='mt-3 mb-0'>
               <p
@@ -53,6 +62,7 @@ const StepperHeader = () => {
               >
                 {currentStep === 0 && "1. Datos del dispositivo."}
                 {currentStep === 1 && "2. Pólizas disponibles."}
+                {currentStep === 2 && "3. Verificación de pantalla."}
               </p>
             </div>
           </div>
@@ -98,6 +108,22 @@ const StepperHeader = () => {
                   className='mt--1 textcustom h6-xs'
                 >
                   2. Pólizas disponibles.
+                </p>
+              </div>
+            </Step>
+            <Step className='col-md-4 cursor-default min-h-150'>
+              <div className='m-0'>
+                <Cellphone
+                  fill={currentStep >= 2 ? defaultColor : "#e1e1e1"}
+                  width='200'
+                  height='80'
+                  className='show2 ml-4'
+                />
+                <p
+                  style={{ color: currentStep >= 2 ? defaultColor : "#bababa" }}
+                  className='mt--1 textcustom h6-xs'
+                >
+                  3. Verificación de pantalla.
                 </p>
               </div>
             </Step>

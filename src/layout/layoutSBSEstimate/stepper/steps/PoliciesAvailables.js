@@ -20,13 +20,12 @@ const PoliciesAvailableStep = () => {
   const { handleSubmit } = useForm();
 
   const onSubmit = (value) => {
-    setCurrentStep(0);
+    setCurrentStep((prevState) => prevState + 1);
   };
 
   return (
     <Fragment>
       <h4>Pólizas disponsibles</h4>
-      {console.log("poli", policy)}
       <p className='fs--17'>
         A continuación encontraras las pólizas disponibles para el dispositivo
       </p>
@@ -120,7 +119,7 @@ const PoliciesAvailableStep = () => {
           style={{ backgroundColor: "#9E1C64", borderColor: "#9E1C64" }}
           onClick={handleSubmit(onSubmit)}
         >
-          Terminar
+          Siguiente
         </ButtonSubmit>
       </div>
     </Fragment>

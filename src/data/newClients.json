@@ -1,6 +1,6 @@
 [
   {
-    "client": "itau",
+    "client": "SBS",
     "clientName": "Itau",
     "logo": "logo-sbs.png",
     "icon": "favicon_sbs.png",
@@ -48,10 +48,7 @@
         "Lunes - Viernes: ### am - ### pm",
         "Sabado: ### am - ### pm"
       ],
-      "contact": [
-        "En Bogotá ######",
-        "Para el resto de Colombia #######"
-      ]
+      "contact": ["En Bogotá ######", "Para el resto de Colombia #######"]
     },
     "claimsDoc": "",
     "privacyPolicyPersonalData": "",

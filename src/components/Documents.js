@@ -130,13 +130,14 @@ const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
     }
   };
   const handleNextStep = () => {
+    console.log(documentsCoverage.length);
     const pasa = documents.map((doc, index) =>
       documents[index].required && documents[index].files === null
         ? (doc.error = "* Requerido")
         : null
     );
     if (
-      document.length === documentsCoverage.length - noRequiredDoc &&
+      document.length >= documentsCoverage.length - noRequiredDoc &&
       pasa.filter((pa) => pa === "* Requerido").length === 0
     ) {
       documentsCoverage.find((doc) =>
@@ -150,10 +151,6 @@ const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
             })
           : null
       );
-      selectDocument(document);
-      nextStep(3);
-      setError(false);
-    } else if (document.length === documentsCoverage.length) {
       selectDocument(document);
       nextStep(3);
       setError(false);
@@ -178,12 +175,12 @@ const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
       {documents
         ? documents.map((doc) => {
             return (
-              <div className=' mb-3 row flex-row' key={doc.id}>
-                <div className='mb-0 d-flex'>
-                  <p className=' mb-0 text-justify'>
+              <div className=" mb-3 row flex-row" key={doc.id}>
+                <div className="mb-0 d-flex">
+                  <p className=" mb-0 text-justify">
                     {doc.nombre_documento_save}{" "}
                     {doc.required === true || doc.required === "true" ? (
-                      <span className='fs--15 text-red-500 ml--2 '>*</span>
+                      <span className="fs--15 text-red-500 ml--2 ">*</span>
                     ) : null}
                     {doc.nombre_documento_save === "Formato de reclamación." ? (
                       <a
@@ -192,27 +189,27 @@ const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
                             ? claimsDoc
                             : "https://secureservercdn.net/104.238.68.130/j5f.49f.myftpupload.com/wp-content/uploads/2018/09/Formato_Reclamacion_AXA_COLPATRIA.pdf"
                         }`}
-                        target='_blank'
-                        rel='noreferrer'
-                        className='ml--8 link-muted btn_link font-weight-medium'
+                        target="_blank"
+                        rel="noreferrer"
+                        className="ml--8 link-muted btn_link font-weight-medium"
                       >
                         Descárgalo aquí.
                       </a>
                     ) : null}
                   </p>
                 </div>
-                <div className='custom-file custom-file-primary'>
+                <div className="custom-file custom-file-primary">
                   <input
                     id={doc.id}
                     name={doc.nombre_documento_save}
-                    type='file'
+                    type="file"
                     required
-                    accept='.pdf, .jpg, .jpeg'
+                    accept=".pdf, .jpg, .jpeg"
                     onChange={onLoad}
-                    className='custom-file-input'
+                    className="custom-file-input"
                   />
                   <CustomFile
-                    className='custom-file-label'
+                    className="custom-file-label"
                     style={{
                       whiteSpace: "nowrap",
                       textOverflow: "ellipsis",
@@ -230,9 +227,9 @@ const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
                 </div>
                 <div>
                   {doc.error ? (
-                    <p className='text-danger'> {doc.error} </p>
+                    <p className="text-danger"> {doc.error} </p>
                   ) : null}
-                  <small className='d-block text-muted'>
+                  <small className="d-block text-muted">
                     Upload max size 4MB (PDF o JPG).
                   </small>
                 </div>
@@ -240,7 +237,7 @@ const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
             );
           })
         : null}
-      <div className='mt-4 justify-content-between row flex-row'>
+      <div className="mt-4 justify-content-between row flex-row">
         <ButtonBack
           className={`btn btn-sm  ${
             colorSecundary ? "" : "btn-outline-secondary"

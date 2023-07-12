@@ -1,5 +1,6 @@
-import React, { useState, useContext, Fragment, useEffect } from "react";
+import React, { useContext, Fragment } from "react";
 import styled from "styled-components";
+import { useForm } from "react-hook-form";
 
 import FormContext from "../context/form/formContext";
 
@@ -34,10 +35,17 @@ const CustomFile = styled.label`
   }
 `;
 
-const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
+const Documents = ({ colorPrimary, colorSecundary, claimsDoc }) => {
   const formContext = useContext(FormContext);
   const {
-    documents,
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+    setError,
+    clearErrors,
+  } = useForm();
+  const {
     maxSizeDoc,
     documentsCoverage,
     selectDevice,
@@ -48,119 +56,44 @@ const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
     previusStep,
     clearForm,
   } = formContext;
-  const [document, setDocument] = useState([]);
-  const [noRequiredDoc, setNoRequiredDoc] = useState(0);
-  useEffect(() => {
-    let doc = documents.filter((doc) => (doc.required === false ? doc : null));
-    setNoRequiredDoc(doc.length);
-  }, [documents]);
-  const onLoad = (e) => {
-    if (e.target) {
-      const { files, name, id } = e.target;
-      if (files.length > 0) {
-        const { size, type } = files[0];
-        documents.find((doc, index) =>
-          doc.id === parseInt(id)
-            ? (documents[index] = {
-                id: doc.id,
-                nombre_documento_save: doc.nombre_documento_save,
-                files: files[0],
-                nameFile: files[0].name,
-                required: doc.required,
-                error:
-                  size > maxSizeDoc
-                    ? "Excediste el tamaño permitido de 4MB"
-                    : type !== "application/pdf" && type !== "image/jpeg"
-                    ? "Error el tipo de documento tiene que ser pdf o jpg"
-                    : null,
-              })
-            : null
-        );
-        const actual = document.map((doc) => doc.id).indexOf(id);
-        const required = documentsCoverage.find(
-          (doc) => doc.id === parseInt(id)
-        );
-        if (
-          size > maxSizeDoc ||
-          (type !== "application/pdf" && type !== "image/jpeg")
-        ) {
-          setDocument([...document]);
-        } else if (
-          document.length === documentsCoverage.length ||
-          actual !== -1
-        ) {
-          document.splice(actual, 1);
-          setDocument([
-            ...document,
-            {
-              id,
-              nombre_documento_save: name,
-              files: files[0],
-              nameFile: files[0].name,
-              required: required.required,
-              error:
-                size > maxSizeDoc
-                  ? "Excediste el tamaño permitido de 4MB"
-                  : type !== "application/pdf" && type !== "image/jpeg"
-                  ? "Error el tipo de documento tiene que ser pdf o jpg"
-                  : null,
-            },
-          ]);
-        } else {
-          setDocument([
-            ...document,
-            {
-              id,
-              nombre_documento_save: name,
-              files: files[0],
-              nameFile: files[0].name,
-              required: required.required,
-              error:
-                size > maxSizeDoc
-                  ? "Excediste el tamaño permitido de 4MB"
-                  : type !== "application/pdf" && type !== "image/jpeg"
-                  ? "Error el tipo de documento tiene que ser pdf o jpg"
-                  : null,
-            },
-          ]);
-        }
-      } else {
-        setDocument([...document]);
-      }
+
+  const validateSize = (id, value) => {
+    if (
+      value.target.files.length > 0 &&
+      value.target.files[0].size > maxSizeDoc
+    ) {
+      setError(`${id}`, {
+        message: "Excediste el tamaño permitido de 4MB",
+      });
+    } else {
+      clearErrors(`${id}`);
     }
   };
-  const handleNextStep = () => {
-    console.log(documentsCoverage.length);
-    const pasa = documents.map((doc, index) =>
-      documents[index].required && documents[index].files === null
-        ? (doc.error = "* Requerido")
-        : null
-    );
-    if (
-      document.length >= documentsCoverage.length - noRequiredDoc &&
-      pasa.filter((pa) => pa === "* Requerido").length === 0
-    ) {
-      documentsCoverage.find((doc) =>
-        doc.required === false
-          ? (document[documentsCoverage.length - 1] = {
-              id: doc.id,
-              nombre_documento_save: doc.nombre_documento_save,
-              files: null,
-              nameFile: null,
-              required: doc.required,
-            })
-          : null
-      );
-      selectDocument(document);
+
+  const handleNextStep = (values) => {
+    const documents = [];
+    let countErros = 0;
+    Object.entries(values).forEach((val) => {
+      if (val[1].length > 0 && val[1][0].size > maxSizeDoc) {
+        setError(`${val[0]}`, {
+          message: "Excediste el tamaño permitido de 4MB",
+        });
+        countErros += 1;
+      } else if (val[1].length > 0) {
+        documents.push({
+          id: val[0],
+          nameFile: val[1][0].name,
+          nombre_documento_save: documentsCoverage.find(
+            (doc) => doc.id === Number(val[0])
+          ).nombre_documento_save,
+          files: val[1][0],
+          error: null,
+        });
+      }
+    });
+    if (countErros === 0) {
+      selectDocument(documents);
       nextStep(3);
-      setError(false);
-    } else {
-      setError(true);
-      documents.map((doc) =>
-        doc.required === true || doc.required === "true"
-          ? (doc.error = "* Requerido")
-          : null
-      );
     }
   };
   const handlePreviusStep = () => {
@@ -172,8 +105,8 @@ const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
   };
   return (
     <Fragment>
-      {documents
-        ? documents.map((doc) => {
+      {documentsCoverage
+        ? documentsCoverage.map((doc) => {
             return (
               <div className=" mb-3 row flex-row" key={doc.id}>
                 <div className="mb-0 d-flex">
@@ -200,12 +133,13 @@ const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
                 </div>
                 <div className="custom-file custom-file-primary">
                   <input
-                    id={doc.id}
-                    name={doc.nombre_documento_save}
+                    {...register(`${doc.id}`, {
+                      required: { value: doc.required, message: "* Requerido" },
+                      onChange: (event) => validateSize(doc.id, event),
+                    })}
                     type="file"
                     required
                     accept=".pdf, .jpg, .jpeg"
-                    onChange={onLoad}
                     className="custom-file-input"
                   />
                   <CustomFile
@@ -218,17 +152,16 @@ const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
                     htmlFor={doc.id}
                     bgColor={colorPrimary}
                   >
-                    {doc.files !== null
-                      ? doc.nameFile
-                      : document.find((docAc) => docAc.id === doc.id)
-                      ? document.find((docAc) => docAc.id === doc.id).nameFile
+                    {watch(`${doc.id}`)
+                      ? watch(`${doc.id}`).length > 0 &&
+                        watch(`${doc.id}`)[0].name
                       : null}
                   </CustomFile>
                 </div>
                 <div>
-                  {doc.error ? (
-                    <p className="text-danger"> {doc.error} </p>
-                  ) : null}
+                  {errors[doc.id] && (
+                    <p className="text-danger"> {errors[doc.id].message} </p>
+                  )}
                   <small className="d-block text-muted">
                     Upload max size 4MB (PDF o JPG).
                   </small>
@@ -250,7 +183,7 @@ const Documents = ({ setError, colorPrimary, colorSecundary, claimsDoc }) => {
         <ButtonSubmit
           bgColor={colorPrimary}
           className={`btn btn-sm ${colorPrimary ? "" : "btn-primary"}`}
-          onClick={handleNextStep}
+          onClick={handleSubmit(handleNextStep)}
         >
           Siguiente
         </ButtonSubmit>

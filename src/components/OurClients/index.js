@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import LogoHuawei from "../../assets/icons/huawei.svg";
+import LogoMotorola from "../../assets/images/Motorola_Logo_White.png";
 import LogoSamgung from "../../assets/icons/samsung.svg";
-import LogoTigo from "../../assets/icons/Logo_Tigo.svg";
 import LogoAxaColpatria from "../../assets/icons/logo-axa-colpatria.svg";
-import LogoTelefonicaTelecom from "../../assets/icons/telefonica_telecom_logo.svg";
-import LogoTelefonicaData from "../../assets/icons/telefonica-data.svg";
-import LogoEricsson from "../../assets/icons/ericsson-logo.svg";
 import LogoAxaService from "../../assets/icons/axa-assistance.svg";
+import LogoItau from "../../assets/images/itau.webp";
+import LogoScotiabank from "../../assets/images/scotiabank.png";
+import LogoCelya from "../../assets/images/celya.png";
+import LogoBancolombia from "../../assets/images/bancolombia.png";
 
 const H2 = styled.h2`
   display: inline-block;
@@ -51,9 +51,9 @@ const OurClients = () => {
                 <div className="h--150 col-6 col-md-3 d-flex align-items-center text-center">
                   <a href="#!" className="w-100">
                     <img
-                      className="max-h-80 img-fluid ml-3 mr-3  lazy"
-                      src={LogoHuawei}
-                      alt="logo_huawei"
+                      className="max-h-50 img-fluid ml-3 mr-3 lazy max-h-25-xs"
+                      src={LogoMotorola}
+                      alt="logo_motorola"
                     />
                   </a>
                 </div>
@@ -97,10 +97,10 @@ const OurClients = () => {
                 >
                   <a href="#!" className="w-100">
                     <img
-                      className="max-h-80 img-fluid ml-3 mr-3 max-w-120 lazy"
+                      className="img-fluid ml-3 mr-3 lazy max-h-60-xs max-h-100"
                       data-src="demo.files/svg/vendors/vendor_instagram.svg"
-                      src={LogoTigo}
-                      alt="logo_tigo"
+                      src={LogoItau}
+                      alt="logo_itau"
                     />
                   </a>
                 </div>
@@ -129,10 +129,10 @@ const OurClients = () => {
                 >
                   <a href="#!" className="w-100">
                     <img
-                      className="max-h-600 img-fluid ml-3 r-3 max-w-180 lazy"
+                      className="max-h-40 img-fluid ml-3 r-3 lazy max-h-20-xs"
                       data-src="demo.files/svg/vendors/vendor_dribble.svg"
-                      src={LogoTelefonicaTelecom}
-                      alt="logo_telefonica_telecom"
+                      src={LogoScotiabank}
+                      alt="logo_scotiabank"
                     />
                   </a>
                 </div>
@@ -145,9 +145,9 @@ const OurClients = () => {
                 >
                   <a href="#!" className="w-100">
                     <img
-                      className="max-h-600 img-fluid ml-3 mr-3 max-w-180 lazy"
-                      src={LogoTelefonicaData}
-                      alt="logo_telefonica_data"
+                      className="max-h-40 img-fluid ml-3 mr-3 lazy max-h-20-xs"
+                      src={LogoCelya}
+                      alt="logo_celya"
                     />
                   </a>
                 </div>
@@ -161,8 +161,8 @@ const OurClients = () => {
                   <a href="#!" className="w-100">
                     <img
                       className="max-h-600 img-fluid pl-4 pr-4 lazy"
-                      src={LogoEricsson}
-                      alt="logo_ericsson"
+                      src={LogoBancolombia}
+                      alt="logo_bancolombia"
                     />
                   </a>
                 </div>

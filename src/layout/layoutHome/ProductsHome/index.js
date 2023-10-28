@@ -272,8 +272,7 @@ const ProductsHome = () => {
                 <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column">
                   <div className="h-75 mb-lg-3">
                     <p className="lead fs--18">
-                      El plan Smart App, dirigido a clientes Tigo, te ofrece las
-                      siguientes coberturas:
+                      El plan Smart App, te ofrece las siguientes coberturas:
                     </p>
                     <div className="clearfix mb-2">
                       <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">

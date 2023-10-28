@@ -2,8 +2,8 @@ import React from "react";
 import People from "../../../assets/icons/People.svg";
 import Merchandising from "../../../assets/icons/merchandising.svg";
 import SearchSiniestros from "../../../assets/icons/Search.svg";
-import Net from "../../../assets/icons/red.svg"
-
+import Net from "../../../assets/icons/red.svg";
+import Renting from "../../../assets/icons/cell_use.svg";
 
 const SectionServices = () => {
   return (
@@ -260,6 +260,31 @@ const SectionServices = () => {
               <p className="fs--15 m-0">
                 Contamos con una red de servicio técnico a nivel nacional para
                 reparación de equipos móviles y pantallas.
+              </p>
+            </div>
+          </div>
+          <div className="col-12 col-lg-4 mb-4 d-flex">
+            <div className="w--50">
+              <img
+                src={Renting}
+                width="60"
+                className="mt--30"
+                alt="renting-celulares"
+              />
+            </div>
+            <div className="col">
+              <h3 className="h5">
+                <a
+                  href="#!"
+                  className="text-secondary  text-success-hover text-decoration-none cursor-default"
+                >
+                  Renting <small>de celulares.</small>
+                </a>
+              </h3>
+              <p className="fs--15 m-0">
+                Para usuarios de postpago de operadores, contamos con una
+                solución taylor-made que aumenta la fidelización y mejora la
+                retencion de los usuarios.
               </p>
             </div>
           </div>

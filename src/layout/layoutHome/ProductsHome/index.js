@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SmartPhone from "../../../assets/icons/telefono-inteligente.svg";
 import PhoneRepair from "../../../assets/icons/phone-repair-icon.svg";
 import MobileSecure from "../../../assets/icons/mobile-secure.svg";
 import LogoSamgung from "../../../assets/icons/samsung.svg";
@@ -20,9 +19,9 @@ const ProductsHome = () => {
             Te ofrecemos productos adecuados a lo que necesitas
           </p>
         </div>
-        <div className="bg-white pt-4 rounded overflow-hidden">
+        <div className="bg-white pt-4 rounded overflow-hidden mt--30 pl-lg-5 pr-lg-5 ml-lg-5 mr-lg-5">
           <div className="row col-border">
-            <div className="col-12 col-md-12 col-lg-3 mb-4">
+            <div className="col-12 col-md-12 col-lg-4 mb-4">
               <div className="card p-4 b-0 h-100">
                 <div className="mt-3 mb-5 d-middle">
                   <img height="120" src={MobileSecure} alt="mobile" />
@@ -80,7 +79,7 @@ const ProductsHome = () => {
               </div>
             </div>
 
-            <div className="col-12 col-md-12 col-lg-3 mb-4">
+            <div className="col-12 col-md-12 col-lg-4 mb-4">
               <div className="card p-4 b-0 h-100">
                 <div className="mt-3 mb-5 d-middle">
                   <img height="120" src={PhoneRepair} alt="samsung" />
@@ -116,7 +115,7 @@ const ProductsHome = () => {
               </div>
             </div>
 
-            <div className="col-12 col-md-12 col-lg-3 mb-4">
+            <div className="col-12 col-md-12 col-lg-4 mb-4">
               <div className="card p-4 b-0 h-100">
                 <div className="mt-5 mb-6 d-middle">
                   <img width="200" src={MotorolaIcon} alt="motorola" />
@@ -173,8 +172,11 @@ const ProductsHome = () => {
                 </div>
               </div>
             </div>
-
-            <div className="col-12 col-md-12 col-lg-3 mb-4">
+          </div>
+        </div>
+        <div className="bg-white pt-4 rounded overflow-hidden mt--30 pl-lg-5 pr-lg-5 ml-lg-5 mr-lg-5">
+          <div className="row col-border">
+            <div className="col-12 col-md-12 col-lg-4 mb-4">
               <div className="card p-4 b-0 h-100">
                 <div className="mt-3 mb-5 d-middle">
                   <img height="120" src={LogoAxaColpatria} alt="samsung" />
@@ -213,10 +215,6 @@ const ProductsHome = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="bg-white pt-4 rounded overflow-hidden mt--30 pl-lg-5 pr-lg-5 ml-lg-5 mr-lg-5">
-          <div className="row col-border">
             <div className="col-12 col-md-12 col-lg-4 mb-4">
               <div className="card p-4 b-0 h-100">
                 <div className="mt-3 mb-3 d-middle">
@@ -254,58 +252,6 @@ const ProductsHome = () => {
                     <hr />
                     <div className="d-flex justify-content-center">
                       <Link className="btn btn-primary btn-lg" to="/samsung">
-                        Conocer más
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-12 col-md-12 col-lg-4 mb-4">
-              <div className="card p-4 b-0 h-100 mt-1">
-                <div className="mt-3 mb-5 d-middle">
-                  <img height="120" src={SmartPhone} alt="mobile_2" />
-                </div>
-                <h4>Arma tu Plan - Smart App </h4>
-
-                <div className="card-body pl-0 pr-0 text-gray-600 justify-content-between d-flex flex-column">
-                  <div className="h-75 mb-lg-3">
-                    <p className="lead fs--18">
-                      El plan Smart App, te ofrece las siguientes coberturas:
-                    </p>
-                    <div className="clearfix mb-2">
-                      <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
-                        <i className="fi fi-check"></i>
-                      </div>{" "}
-                      Hurto Calificado
-                    </div>
-
-                    <div className="clearfix mb-2">
-                      <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
-                        <i className="fi fi-check"></i>
-                      </div>{" "}
-                      Hurto Simple
-                    </div>
-
-                    <div className="clearfix mb-2">
-                      <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
-                        <i className="fi fi-check"></i>
-                      </div>{" "}
-                      Daño Total Accidental
-                    </div>
-
-                    <div className="clearfix mb-2 d-flex">
-                      <div className="badge badge-secondary badge-soft badge-ico-sm rounded-circle float-start">
-                        <i className="fi fi-check"></i>
-                      </div>{" "}
-                      Cobertura hasta del 65% de tu equipo
-                    </div>
-                  </div>
-                  <div className="h-25">
-                    <hr className="mt-0" />
-                    <div className="d-flex justify-content-center">
-                      <Link className="btn btn-primary btn-lg" to="/">
                         Conocer más
                       </Link>
                     </div>

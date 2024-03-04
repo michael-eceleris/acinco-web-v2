@@ -310,7 +310,7 @@ const TermsAndConditions = (props) => {
                 </h2>
                 <p>
                   La reclamación del servicio de asistencia se puede realizar a
-                  través de la línea 01 8000 513 323 o en Bogotá al 4898599 de
+                  través de la línea 01 8000 513 323 o en Bogotá al 3905567 de
                   lunes a sábado de 8 am a 6 pm o por medio del chat habilitado
                   en la siguiente página{" "}
                   <a

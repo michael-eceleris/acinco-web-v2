@@ -3,129 +3,129 @@ import React from "react";
 const TermsAndConditions = () => {
   return (
     <>
-      <section className='bg-white p-5'>
-        <div className='container'>
-          <h1 className='h2 text-center'>
+      <section className="bg-white p-5">
+        <div className="container">
+          <h1 className="h2 text-center">
             Términos y Condiciones Seguro Móvil Samsung Care +
           </h1>
         </div>
       </section>
-      <section className='pt--50 bg-theme-color-light'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-12 col-lg-4'>
-              <div className='position-sticky' style={{ top: 10 }}>
+      <section className="pt--50 bg-theme-color-light">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-lg-4">
+              <div className="position-sticky" style={{ top: 10 }}>
                 <div>
                   <ul
-                    id='list-example'
-                    className='p-2 list-unstyled nav-default shadow-md rounded-xl bg-white mb-5'
+                    id="list-example"
+                    className="p-2 list-unstyled nav-default shadow-md rounded-xl bg-white mb-5"
                   >
-                    <li className='px-3 py-2'>
-                      <h2 className='h5 font-weight-normal text-primary text-center'>
+                    <li className="px-3 py-2">
+                      <h2 className="h5 font-weight-normal text-primary text-center">
                         Términos y Condiciones
                       </h2>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#plan'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#plan"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Plan</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#cobertura-12'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#cobertura-12"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Cobertura 12 meses</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#cobertura-24'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#cobertura-24"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Cobertura 24 meses</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#terminos-condiciones'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#terminos-condiciones"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Términos y condiciones</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#condiciones-generales'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#condiciones-generales"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Condiciones Generales</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#clausulado-general'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#clausulado-general"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Clausulado General</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#reclamacion'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#reclamacion"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Instrucciones de Reclamación</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#atencion-cliente'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#atencion-cliente"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Atención al Cliente</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#documentacion'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#documentacion"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Documentación</span>
                       </a>
                     </li>
-                    <li className='px-3 py-2'>
-                      <h2 className='h5 font-weight-normal text-primary text-center'>
+                    <li className="px-3 py-2">
+                      <h2 className="h5 font-weight-normal text-primary text-center">
                         Samsung Care + Básico Zflip4/ZFold4 5G
                       </h2>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#terminos-condiciones-basico'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#terminos-condiciones-basico"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Términos y condiciones</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#mecanica'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#mecanica"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Mecánica</span>
                       </a>
                     </li>
@@ -134,32 +134,32 @@ const TermsAndConditions = () => {
               </div>
             </div>
 
-            <div className='col-12 col-lg-8'>
-              <div className='bg-white p-5 p-4-xs rounded-xl article-format'>
-                <h2 id='plan' className='h4 text-primary font-weight-normal'>
+            <div className="col-12 col-lg-8">
+              <div className="bg-white p-5 p-4-xs rounded-xl article-format">
+                <h2 id="plan" className="h4 text-primary font-weight-normal">
                   Términos y Condiciones Seguro Móvil Samsung Care +
                 </h2>
                 <p>
                   Está dirigido a todos los usuarios que adquieran Samsung Care
                   +.
                 </p>
-                <h3 className='h6 text-muted my-2'>Vigencia</h3>
-                <p className='mb-2'> 12 meses </p> <p> 24 meses</p>
-                <h3 className='h6 text-muted my-2'>Recobro</h3>
+                <h3 className="h6 text-muted my-2">Vigencia</h3>
+                <p className="mb-2"> 12 meses </p> <p> 24 meses</p>
+                <h3 className="h6 text-muted my-2">Recobro</h3>
                 <p>30%</p>
                 <h2
-                  id='seguro-pantalla'
-                  className='h4 text-primary font-weight-normal my-0 mb-3'
+                  id="seguro-pantalla"
+                  className="h4 text-primary font-weight-normal my-0 mb-3"
                 >
                   Descripción del servicio.
                 </h2>
                 <h2
-                  id='cobertura-12'
-                  className='h5 text-primary font-weight-normal'
+                  id="cobertura-12"
+                  className="h5 text-primary font-weight-normal"
                 >
                   Cobertura por 12 meses
                 </h2>
-                <h3 className='h6 text-muted my-2'>Básica:</h3>
+                <h3 className="h6 text-muted my-2">Básica:</h3>
                 <p>
                   Cobertura súbita, accidental e imprevista con un máximo de dos
                   (2) reclamaciones por cada doce (12) meses de vigencia del
@@ -206,7 +206,7 @@ const TermsAndConditions = () => {
                     </p>
                   </li>
                 </ul>
-                <h3 className='h6 text-muted my-2'>Gold:</h3>
+                <h3 className="h6 text-muted my-2">Gold:</h3>
                 <p>
                   Cobertura súbita, accidental e imprevista con un máximo de dos
                   (2) reclamaciones por cada doce (12) meses de vigencia del
@@ -260,12 +260,12 @@ const TermsAndConditions = () => {
                   </li>
                 </ul>
                 <h2
-                  id='cobertura-24'
-                  className='h5 text-primary font-weight-normal'
+                  id="cobertura-24"
+                  className="h5 text-primary font-weight-normal"
                 >
                   Cobertura por 24 meses
                 </h2>
-                <h3 className='h6 text-muted my-2'>Básica:</h3>
+                <h3 className="h6 text-muted my-2">Básica:</h3>
                 <p>
                   Cobertura súbita, accidental e imprevista con un máximo de
                   cuatro (4) reclamaciones por cada veinticuatro (24) meses de
@@ -312,7 +312,7 @@ const TermsAndConditions = () => {
                     </p>
                   </li>
                 </ul>
-                <h3 className='h6 text-muted my-2'>Gold:</h3>
+                <h3 className="h6 text-muted my-2">Gold:</h3>
                 <p>
                   Cobertura súbita, accidental e imprevista con un máximo de
                   cuatro (4) reclamaciones por cada veinticuatro (24) meses de
@@ -366,8 +366,8 @@ const TermsAndConditions = () => {
                   </li>
                 </ul>
                 <h2
-                  id='terminos-condiciones'
-                  className='h4 text-primary font-weight-normal'
+                  id="terminos-condiciones"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Términos y Condiciones
                 </h2>
@@ -457,12 +457,12 @@ const TermsAndConditions = () => {
                   </li>
                 </ul>
                 <h2
-                  id='condiciones-generales'
-                  className='h4 text-primary font-weight-normal'
+                  id="condiciones-generales"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Condiciones Generales
                 </h2>
-                <h3 className='h6 text-muted my-2'>
+                <h3 className="h6 text-muted my-2">
                   Situaciones no cubiertas por la garantía:
                 </h3>
                 <ul>
@@ -550,7 +550,7 @@ const TermsAndConditions = () => {
                     <p>Productos cuyo periodo de garantía haya finalizado</p>
                   </li>
                 </ul>
-                <h3 className='h6 text-muted my-2'>
+                <h3 className="h6 text-muted my-2">
                   Situaciones no cubiertas por las otras coberturas:
                 </h3>
                 <p>
@@ -596,8 +596,8 @@ const TermsAndConditions = () => {
                   </li>
                 </ul>
                 <h2
-                  id='clausulado-general'
-                  className='h4 text-primary font-weight-normal'
+                  id="clausulado-general"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Clausulado General
                 </h2>
@@ -606,16 +606,16 @@ const TermsAndConditions = () => {
                   que van a regular nuestra relación comercial como: coberturas,
                   exclusiones, deducibles y demás condiciones del seguro:{" "}
                   <a
-                    href='https://files-statics-protegeme.s3.amazonaws.com/P1648+EQUIPOS+TELEFONIA+CELULAR_MAR+2022.pdf'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="https://files-statics-protegeme.s3.amazonaws.com/P1648+EQUIPOS+TELEFONIA+CELULAR_MAR+2022.pdf"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     link
                   </a>
                 </p>
                 <h2
-                  id='reclamacion'
-                  className='h4 text-primary font-weight-normal'
+                  id="reclamacion"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Instrucciones de Reclamación
                 </h2>
@@ -623,29 +623,29 @@ const TermsAndConditions = () => {
                   Para solicitar la indemnización se debe radicar la
                   documentación correspondiente por medio de la página web{" "}
                   <a
-                    href='http://www.aseguratucelular.com'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="http://www.aseguratucelular.com"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     www.aseguratucelular.com
                   </a>{" "}
                   en la opción Reclamaciones. Inicio de Reclamación:{" "}
                   <a
-                    href='https://www.acinco.com.co/tramites-y-reclamaciones'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="https://www.acinco.com.co/tramites-y-reclamaciones"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     https://www.acinco.com.co/tramites-y-reclamaciones
                   </a>
                 </p>
                 <h2
-                  id='atencion-cliente'
-                  className='h4 text-primary font-weight-normal'
+                  id="atencion-cliente"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Atención al Cliente
                 </h2>
                 <p>
-                  En Bogotá 601 4898599 <br /> Para el resto del país: 01 8000
+                  En Bogotá 601 3905567 <br /> Para el resto del país: 01 8000
                   513 323 <br />
                   WhatsApp al +57 1 5142355
                 </p>
@@ -655,8 +655,8 @@ const TermsAndConditions = () => {
                   Sábado: 08:00 am – 2:00 pm
                 </p>
                 <h2
-                  id='documentacion'
-                  className='h4 text-primary font-weight-normal'
+                  id="documentacion"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Documentación
                 </h2>
@@ -664,15 +664,15 @@ const TermsAndConditions = () => {
                   Para hacer efectiva la asistencia el usuario debe radicar los
                   siguientes documentos por medio de la página web{" "}
                   <a
-                    href='http://www.aseguratucelular.com'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="http://www.aseguratucelular.com"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     www.aseguratucelular.com
                   </a>
                   .
                 </p>
-                <h3 className='h6 text-muted my-2 mb-4'>Hurto Calificado</h3>
+                <h3 className="h6 text-muted my-2 mb-4">Hurto Calificado</h3>
                 <ul>
                   <li>
                     <p>
@@ -712,7 +712,7 @@ const TermsAndConditions = () => {
                     </p>
                   </li>
                 </ul>
-                <h3 className='h6 text-muted my-2 mb-4'>Hurto Simple</h3>
+                <h3 className="h6 text-muted my-2 mb-4">Hurto Simple</h3>
                 <ul>
                   <li>
                     <p>
@@ -758,7 +758,7 @@ const TermsAndConditions = () => {
                     </p>
                   </li>
                 </ul>
-                <h3 className='h6 text-muted my-2 mb-4'>
+                <h3 className="h6 text-muted my-2 mb-4">
                   Daño Físico Accidental
                 </h3>
                 <ul>
@@ -804,7 +804,7 @@ const TermsAndConditions = () => {
                     </p>
                   </li>
                 </ul>
-                <h3 className='h6 text-muted my-2 mb-4'>Cambio de Batería</h3>
+                <h3 className="h6 text-muted my-2 mb-4">Cambio de Batería</h3>
                 <ul>
                   <li>
                     <p>
@@ -848,7 +848,7 @@ const TermsAndConditions = () => {
                     </p>
                   </li>
                 </ul>
-                <h3 className='h6 text-muted my-2 mb-4'>Falla Mecánica</h3>
+                <h3 className="h6 text-muted my-2 mb-4">Falla Mecánica</h3>
                 <ul>
                   <li>
                     <p>
@@ -897,12 +897,12 @@ const TermsAndConditions = () => {
                   documentación, se analizarán los documentos y se indicará el
                   estado de esta.
                 </p>
-                <h2 className='h4 text-primary font-weight-normal'>
+                <h2 className="h4 text-primary font-weight-normal">
                   Samsung Care + Básico Zflip4/ZFold4 5G
                 </h2>
                 <h2
-                  id='terminos-condiciones-basico'
-                  className='h4 text-primary font-weight-normal'
+                  id="terminos-condiciones-basico"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Términos y Condiciones
                 </h2>
@@ -967,7 +967,7 @@ const TermsAndConditions = () => {
                       El usuario podrá comunicarse a la línea nacional de
                       atención al cliente Samsung 01-8000118418, líneas de
                       atención de la aseguradora Axa Colpatria en la ciudad de
-                      Bogotá D.C. (601)4898599, línea nacional 01-8000513323 y
+                      Bogotá D.C. (601)3905567, línea nacional 01-8000513323 y
                       línea WhatsApp +57 1 5142355, con un horario de atención
                       de lunes a viernes de 08:00 am a 6:00 pm, sábados de 08:00
                       am a 2:00 pm.
@@ -975,8 +975,8 @@ const TermsAndConditions = () => {
                   </li>
                 </ul>
                 <h2
-                  id='mecanica'
-                  className='h4 text-primary font-weight-normal'
+                  id="mecanica"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Mecánica:
                 </h2>

@@ -76,28 +76,28 @@ const CheckCodeStep = () => {
   return (
     <Fragment>
       {error && !isLoading && (
-        <div className='alert alert-danger'>
+        <div className="alert alert-danger">
           <button
             onClick={() => {
               setError((prevState) => !prevState);
             }}
-            className='position-absolute right-0 top-0 btn btn-sm btn-icon'
+            className="position-absolute right-0 top-0 btn btn-sm btn-icon"
           >
-            <i className='fi fi-close '></i>
+            <i className="fi fi-close "></i>
           </button>
           <p>{error.message}.</p>
-          <p className='mb-0 fs--15'>
-            Si el problema continúa comunícate en Bogotá 601 4898599, para el
+          <p className="mb-0 fs--15">
+            Si el problema continúa comunícate en Bogotá 601 3905567, para el
             resto de Colombia 01 8000 513 323 o WhatsApp +57 1 5142355
           </p>
         </div>
       )}
       <h4>Registra tu dispositivo</h4>
-      <p className='fs--17'>
+      <p className="fs--17">
         Registra tu dispositivo ingresando el código que recibiste en el correo
         y tu número de NIT.
       </p>
-      <div className='form-label-group'>
+      <div className="form-label-group">
         <input
           {...register("promotionCode", {
             required: {
@@ -106,18 +106,18 @@ const CheckCodeStep = () => {
             },
             maxLength: 20,
           })}
-          id='promotionCode'
-          name='promotionCode'
-          type='text'
-          placeholder='Digita tu código'
-          className='form-control'
+          id="promotionCode"
+          name="promotionCode"
+          type="text"
+          placeholder="Digita tu código"
+          className="form-control"
         />
-        <label className='fontcustom'>Digita tu código</label>
+        <label className="fontcustom">Digita tu código</label>
       </div>
       {errors && errors.promotionCode && (
-        <p className='text-danger'>{errors.promotionCode.message}</p>
+        <p className="text-danger">{errors.promotionCode.message}</p>
       )}
-      <div className='form-label-group mt-2'>
+      <div className="form-label-group mt-2">
         <input
           {...register("clientIdentification", {
             required: {
@@ -129,18 +129,18 @@ const CheckCodeStep = () => {
               message: "* Solo se aceptan números",
             },
           })}
-          id='clientIdentification'
-          name='clientIdentification'
-          type='text'
-          placeholder='Digita tu Nit'
-          className='form-control'
+          id="clientIdentification"
+          name="clientIdentification"
+          type="text"
+          placeholder="Digita tu Nit"
+          className="form-control"
         />
-        <label className='fontcustom'>Digita tu Nit</label>
+        <label className="fontcustom">Digita tu Nit</label>
       </div>
       {errors && errors.clientIdentification && (
-        <p className='text-danger'>{errors.clientIdentification.message}</p>
+        <p className="text-danger">{errors.clientIdentification.message}</p>
       )}
-      <div className='mt-4 d-flex justify-content-end'>
+      <div className="mt-4 d-flex justify-content-end">
         <ButtonSubmit
           className={`btn btn-sm btn-primary`}
           onClick={handleSubmit(onSubmit)}
@@ -149,9 +149,9 @@ const CheckCodeStep = () => {
           Siguiente
           {isLoading && (
             <i
-              className='spinner-border spinner-border-sm ml-2 mr-0 mb--3'
-              role='status'
-              aria-hidden='true'
+              className="spinner-border spinner-border-sm ml-2 mr-0 mb--3"
+              role="status"
+              aria-hidden="true"
             ></i>
           )}
         </ButtonSubmit>

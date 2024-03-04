@@ -5,19 +5,19 @@ const CustomerSupport = ({ section = "" }) => {
     <>
       <h2
         id={`customer-support${section}`}
-        className='h4 text-primary font-weight-normal'
+        className="h4 text-primary font-weight-normal"
       >
         Atención al Cliente
       </h2>
       <p>
         La reclamación de la asistencia se puede realizar a través de la línea
-        01 8000 513 323 o en Bogotá al 601 4898599 de lunes a viernes de 8 am a
+        01 8000 513 323 o en Bogotá al 601 3905567 de lunes a viernes de 8 am a
         6 pm; sábado de 8:00 am a 2:00 pm, por WhatsApp +57 1 5142355 o por
         medio del chat habilitado en la siguiente página{" "}
         <a
-          href='http://www.aseguratucelular.com'
-          target='_blank'
-          rel='noreferrer'
+          href="http://www.aseguratucelular.com"
+          target="_blank"
+          rel="noreferrer"
         >
           www.aseguratucelular.com
         </a>
@@ -32,7 +32,7 @@ const Documents = ({ section = "" }) => {
     <>
       <h2
         id={`documentacion${section}`}
-        className='h4 text-primary font-weight-normal'
+        className="h4 text-primary font-weight-normal"
       >
         Documentación
       </h2>
@@ -40,9 +40,9 @@ const Documents = ({ section = "" }) => {
         Para hacer efectivo el servicio el usuario debe radicar los siguientes
         documentos por medio de la página web de{" "}
         <a
-          href='http://www.aseguratucelular.com'
-          target='_blank'
-          rel='noreferrer'
+          href="http://www.aseguratucelular.com"
+          target="_blank"
+          rel="noreferrer"
         >
           www.aseguratucelular.com
         </a>
@@ -90,70 +90,70 @@ const Documents = ({ section = "" }) => {
 const TermsAndConditions = () => {
   return (
     <>
-      <section className='bg-white p-5'>
-        <div className='container'>
-          <h1 className='h2 text-center'>
+      <section className="bg-white p-5">
+        <div className="container">
+          <h1 className="h2 text-center">
             Asistencia Fractura de Pantalla – MOTO EDGE
           </h1>
         </div>
       </section>
-      <section className='pt--50 bg-theme-color-light'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-12 col-lg-4'>
-              <div className='position-sticky' style={{ top: 10 }}>
+      <section className="pt--50 bg-theme-color-light">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-lg-4">
+              <div className="position-sticky" style={{ top: 10 }}>
                 <div>
                   <ul
-                    id='list-example'
-                    className='p-2 list-unstyled nav-default shadow-md rounded-xl bg-white mb-5'
+                    id="list-example"
+                    className="p-2 list-unstyled nav-default shadow-md rounded-xl bg-white mb-5"
                   >
-                    <li className='px-3 py-2'>
-                      <h2 className='h5 font-weight-normal text-primary text-center'>
+                    <li className="px-3 py-2">
+                      <h2 className="h5 font-weight-normal text-primary text-center">
                         Términos y Condiciones
                       </h2>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#plan'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#plan"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Plan</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#seguro-pantalla'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#seguro-pantalla"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Asistencia de Pantalla</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#condiciones-generales'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#condiciones-generales"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Condiciones Generales</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#customer-support'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#customer-support"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Atención al Cliente</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#documentacion'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#documentacion"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Documentación</span>
                       </a>
                     </li>
@@ -162,9 +162,9 @@ const TermsAndConditions = () => {
               </div>
             </div>
 
-            <div className='col-12 col-lg-8'>
-              <div className='bg-white p-5 p-4-xs rounded-xl article-format'>
-                <h2 id='plan' className='h4 text-primary font-weight-normal'>
+            <div className="col-12 col-lg-8">
+              <div className="bg-white p-5 p-4-xs rounded-xl article-format">
+                <h2 id="plan" className="h4 text-primary font-weight-normal">
                   Asistencia Fractura de Pantalla – MOTO EDGE
                 </h2>
                 <p>
@@ -173,13 +173,13 @@ const TermsAndConditions = () => {
                   usuarios que compren un Motorola Edge, estos contaran con una
                   (1) reclamación por vigencia por fractura de pantalla.
                 </p>
-                <h3 className='h6 text-muted'>Vigencia</h3>
+                <h3 className="h6 text-muted">Vigencia</h3>
                 <p> 12 meses.</p>
-                <h3 className='h6 text-muted'>Copago</h3>
+                <h3 className="h6 text-muted">Copago</h3>
                 <p>35% del valor de la pantalla.</p>
                 <h2
-                  id='seguro-pantalla'
-                  className='h4 text-primary font-weight-normal'
+                  id="seguro-pantalla"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Términos y Condiciones Asistencia de Pantalla
                 </h2>
@@ -236,8 +236,8 @@ const TermsAndConditions = () => {
                   </li>
                 </ul>
                 <h2
-                  id='condiciones-generales'
-                  className='h4 text-primary font-weight-normal'
+                  id="condiciones-generales"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Condiciones Generales
                 </h2>

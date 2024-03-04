@@ -5,19 +5,19 @@ const CustomerSupport = ({ section = "" }) => {
     <>
       <h2
         id={`customer-support${section}`}
-        className='h4 text-primary font-weight-normal'
+        className="h4 text-primary font-weight-normal"
       >
         Atención al Cliente
       </h2>
       <p>
         La reclamación del seguro se puede realizar a través de la línea 01 8000
-        513 323 o en Bogotá al 4898599 de lunes a viernes de 8 am a 6 pm y
+        513 323 o en Bogotá al 3905567 de lunes a viernes de 8 am a 6 pm y
         sábado de 8 am a 2 pm , por WhatsApp al +57 1 5142355 o por medio del
         siguiente link{" "}
         <a
-          href='http://www.aseguratucelular.com'
-          target='_blank'
-          rel='noreferrer'
+          href="http://www.aseguratucelular.com"
+          target="_blank"
+          rel="noreferrer"
         >
           www.aseguratucelular.com
         </a>
@@ -32,7 +32,7 @@ const Documents = ({ section = "" }) => {
     <>
       <h2
         id={`documentacion${section}`}
-        className='h4 text-primary font-weight-normal'
+        className="h4 text-primary font-weight-normal"
       >
         Documentación
       </h2>
@@ -40,9 +40,9 @@ const Documents = ({ section = "" }) => {
         Para hacer efectivo el servicio el usuario debe radicar los siguientes
         documentos por medio de la página web de{" "}
         <a
-          href='http://www.aseguratucelular.com'
-          target='_blank'
-          rel='noreferrer'
+          href="http://www.aseguratucelular.com"
+          target="_blank"
+          rel="noreferrer"
         >
           www.aseguratucelular.com
         </a>
@@ -83,166 +83,166 @@ const Documents = ({ section = "" }) => {
 const TermsAndConditions = () => {
   return (
     <>
-      <section className='bg-white p-5'>
-        <div className='container'>
-          <h1 className='h2 text-center'>
+      <section className="bg-white p-5">
+        <div className="container">
+          <h1 className="h2 text-center">
             Términos y Condiciones del Plan Motorola
           </h1>
         </div>
       </section>
-      <section className='pt--50 bg-theme-color-light'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-12 col-lg-4'>
-              <div className='position-sticky' style={{ top: 10 }}>
+      <section className="pt--50 bg-theme-color-light">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-lg-4">
+              <div className="position-sticky" style={{ top: 10 }}>
                 <div>
                   <ul
-                    id='list-example'
-                    className='p-2 list-unstyled nav-default shadow-md rounded-xl bg-white mb-5'
+                    id="list-example"
+                    className="p-2 list-unstyled nav-default shadow-md rounded-xl bg-white mb-5"
                   >
-                    <li className='px-3 py-2'>
-                      <h2 className='h5 font-weight-normal text-primary text-center'>
+                    <li className="px-3 py-2">
+                      <h2 className="h5 font-weight-normal text-primary text-center">
                         Términos y Condiciones
                       </h2>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#plan'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#plan"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Plan</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#seguro-pantalla'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#seguro-pantalla"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Asistencia de Pantalla</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#condiciones-generales'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#condiciones-generales"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Condiciones Generales</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#customer-support'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#customer-support"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Atención al Cliente</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#documentacion'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#documentacion"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Documentación</span>
                       </a>
                     </li>
-                    <h2 className='h5 font-weight-normal text-primary text-center'>
+                    <h2 className="h5 font-weight-normal text-primary text-center">
                       Garantía Extendida
                     </h2>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#plan-extendido'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#plan-extendido"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Plan</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#terms-conditions-extend'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#terms-conditions-extend"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Términos y Condiciones</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#customer-support-extend'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#customer-support-extend"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Atención al Cliente</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#documentacion-extend'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#documentacion-extend"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Documentación</span>
                       </a>
                     </li>
-                    <h2 className='h5 font-weight-normal text-primary text-center'>
+                    <h2 className="h5 font-weight-normal text-primary text-center">
                       Cobertura Todo Riesgo
                     </h2>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#todo-riesgo'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#todo-riesgo"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Plan</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#terms-conditions-mobile'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#terms-conditions-mobile"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Seguro Móvil</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#terms-conditions-screen'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#terms-conditions-screen"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Seguro de Pantalla</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#condiciones-generales-all'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#condiciones-generales-all"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Condiciones Generalidades</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#customer-support-all'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#customer-support-all"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Atención al Cliente</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#documentacion-all'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#documentacion-all"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Documentación</span>
                       </a>
                     </li>
@@ -251,9 +251,9 @@ const TermsAndConditions = () => {
               </div>
             </div>
 
-            <div className='col-12 col-lg-8'>
-              <div className='bg-white p-5 p-4-xs rounded-xl article-format'>
-                <h2 id='plan' className='h4 text-primary font-weight-normal'>
+            <div className="col-12 col-lg-8">
+              <div className="bg-white p-5 p-4-xs rounded-xl article-format">
+                <h2 id="plan" className="h4 text-primary font-weight-normal">
                   Motorola
                 </h2>
                 <p>
@@ -263,9 +263,9 @@ const TermsAndConditions = () => {
                   estos contarán con una (1) reclamación por vigencia por
                   fractura de pantalla.
                 </p>
-                <h3 className='h6 text-muted'>Vigencia</h3>
+                <h3 className="h6 text-muted">Vigencia</h3>
                 <p> Doce (12) meses desde la compra de la póliza</p>
-                <h3 className='h6 text-muted'>Cobertura</h3>
+                <h3 className="h6 text-muted">Cobertura</h3>
                 <ul>
                   <li>
                     <p>
@@ -277,11 +277,11 @@ const TermsAndConditions = () => {
                     <p>Un (1) año de garantía extendida</p>
                   </li>
                 </ul>
-                <h3 className='h6 text-muted'>Recobro</h3>
+                <h3 className="h6 text-muted">Recobro</h3>
                 <p>35% del valor de la reparación de la pantalla.</p>
                 <h2
-                  id='seguro-pantalla'
-                  className='h4 text-primary font-weight-normal'
+                  id="seguro-pantalla"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Términos y Condiciones Asistencia de Pantalla
                 </h2>
@@ -331,8 +331,8 @@ const TermsAndConditions = () => {
                   </li>
                 </ul>
                 <h2
-                  id='condiciones-generales'
-                  className='h4 text-primary font-weight-normal'
+                  id="condiciones-generales"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Condiciones Generales
                 </h2>
@@ -409,8 +409,8 @@ const TermsAndConditions = () => {
                 <CustomerSupport />
                 <Documents />
                 <h2
-                  id='plan-extendido'
-                  className='h4 text-primary font-weight-normal'
+                  id="plan-extendido"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Términos y Condiciones Garantía Extendida Motorola.
                 </h2>
@@ -418,12 +418,12 @@ const TermsAndConditions = () => {
                   Servicio preferencial para clientes Motorola, estos cuentan
                   con 1 año más de garantía extendida para su equipo MOTOROLA.
                 </p>
-                <h3 className='h6 text-muted'>Vigencia</h3>
+                <h3 className="h6 text-muted">Vigencia</h3>
                 <p>
                   Doce (12) meses, inicia una vez acabe la garantía con
                   MOTOROLA.
                 </p>
-                <h3 className='h6 text-muted'>Cobertura</h3>
+                <h3 className="h6 text-muted">Cobertura</h3>
                 <p>
                   Garantía Extendida 1 año: Cuenta con 1 año de Garantía
                   extendida, la cual empieza una vez terminado el periodo de la
@@ -434,8 +434,8 @@ const TermsAndConditions = () => {
                   dada por MOTOROLA.
                 </p>
                 <h2
-                  id='terms-conditions-extend'
-                  className='h4 text-primary font-weight-normal'
+                  id="terms-conditions-extend"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Términos y Condiciones
                 </h2>
@@ -501,8 +501,8 @@ const TermsAndConditions = () => {
                 <CustomerSupport section={"-extend"} />
                 <Documents section={"-extend"} />
                 <h2
-                  id='todo-riesgo'
-                  className='h4 text-primary font-weight-normal'
+                  id="todo-riesgo"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Términos y Condiciones Cobertura Todo Riesgo.
                 </h2>
@@ -510,15 +510,15 @@ const TermsAndConditions = () => {
                   Está dirigido a todos los usuarios que compren su equipo en
                   tiendas propias MOTOROLA.
                 </p>
-                <h3 className='h6 text-muted'>Vigencia</h3>
+                <h3 className="h6 text-muted">Vigencia</h3>
                 <p>Doce (12) meses.</p>
-                <h3 className='h6 text-muted'>Cobertura</h3>
+                <h3 className="h6 text-muted">Cobertura</h3>
                 <p>
                   Estos contaran con una (1) reclamación al año por hurto
                   calificado, hurto simple o daño total accidental y una (1)
                   reclamación por fractura de pantalla en caso de accidente
                 </p>
-                <h3 className='h6 text-muted'>Recobro</h3>
+                <h3 className="h6 text-muted">Recobro</h3>
                 <p>
                   Una vez aprobada la reclamación, el usuario debe cancelar un
                   recobro equivalente al 35% del valor comercial del equipo al
@@ -530,8 +530,8 @@ const TermsAndConditions = () => {
                   recobro del 35% del costo de la reparación.
                 </p>
                 <h2
-                  id='terms-conditions-mobile'
-                  className='h4 text-primary font-weight-normal'
+                  id="terms-conditions-mobile"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Términos y Condiciones Seguro Móvil
                 </h2>
@@ -573,8 +573,8 @@ const TermsAndConditions = () => {
                   </li>
                 </ul>
                 <h2
-                  id='terms-conditions-screen'
-                  className='h4 text-primary font-weight-normal'
+                  id="terms-conditions-screen"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Términos y Condiciones Seguro de Pantalla
                 </h2>
@@ -630,8 +630,8 @@ const TermsAndConditions = () => {
                   </li>
                 </ul>
                 <h2
-                  id='condiciones-generales-all'
-                  className='h4 text-primary font-weight-normal'
+                  id="condiciones-generales-all"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Condiciones Generales
                 </h2>
@@ -709,7 +709,7 @@ const TermsAndConditions = () => {
                 <CustomerSupport section={"-all"} />
                 <h2
                   id={`documentacion-all`}
-                  className='h4 text-primary font-weight-normal'
+                  className="h4 text-primary font-weight-normal"
                 >
                   Documentación
                 </h2>
@@ -717,14 +717,14 @@ const TermsAndConditions = () => {
                   Para hacer efectivo el servicio el usuario debe radicar los
                   siguientes documentos por medio de la página web de{" "}
                   <a
-                    href='http://www.aseguratucelular.com'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="http://www.aseguratucelular.com"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     www.aseguratucelular.com
                   </a>
                 </p>
-                <h4 className='h5 text-primary font-weight-normal'>
+                <h4 className="h5 text-primary font-weight-normal">
                   Hurto Calificado
                 </h4>
                 <ul>
@@ -758,7 +758,7 @@ const TermsAndConditions = () => {
                     </p>
                   </li>
                 </ul>
-                <h4 className='h5 text-primary font-weight-normal'>
+                <h4 className="h5 text-primary font-weight-normal">
                   Hurto Simple
                 </h4>
                 <ul>
@@ -798,7 +798,7 @@ const TermsAndConditions = () => {
                     </p>
                   </li>
                 </ul>
-                <h4 className='h5 text-primary font-weight-normal'>
+                <h4 className="h5 text-primary font-weight-normal">
                   Daño Total Accidental
                 </h4>
                 <ul>
@@ -827,7 +827,7 @@ const TermsAndConditions = () => {
                     <p>Equipo objeto del siniestro.</p>
                   </li>
                 </ul>
-                <h4 className='h5 text-primary font-weight-normal'>
+                <h4 className="h5 text-primary font-weight-normal">
                   Fractura de Pantalla
                 </h4>
                 <ul>

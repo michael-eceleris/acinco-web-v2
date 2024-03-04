@@ -3,70 +3,70 @@ import React from "react";
 const TermsAndConditions = () => {
   return (
     <>
-      <section className='bg-white p-5'>
-        <div className='container'>
-          <h1 className='h2 text-center'>
+      <section className="bg-white p-5">
+        <div className="container">
+          <h1 className="h2 text-center">
             Términos y Condiciones Protección de Pantalla PMP
           </h1>
         </div>
       </section>
-      <section className='pt--50 bg-theme-color-light'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-12 col-lg-4'>
-              <div className='position-sticky' style={{ top: 10 }}>
+      <section className="pt--50 bg-theme-color-light">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-lg-4">
+              <div className="position-sticky" style={{ top: 10 }}>
                 <div>
                   <ul
-                    id='list-example'
-                    className='p-2 list-unstyled nav-default shadow-md rounded-xl bg-white mb-5'
+                    id="list-example"
+                    className="p-2 list-unstyled nav-default shadow-md rounded-xl bg-white mb-5"
                   >
-                    <li className='px-3 py-2'>
-                      <h2 className='h5 font-weight-normal text-primary text-center'>
+                    <li className="px-3 py-2">
+                      <h2 className="h5 font-weight-normal text-primary text-center">
                         Términos y Condiciones
                       </h2>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#plan'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#plan"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Plan</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#seguro-pantalla'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#seguro-pantalla"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Asistencia de Pantalla</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#condiciones-generales'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#condiciones-generales"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Condiciones Generales</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#atencion-cliente'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#atencion-cliente"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Atención al Cliente</span>
                       </a>
                     </li>
                     <li>
                       <a
-                        className='nav-link rounded-pill scroll-to py-3'
-                        href='#documentacion'
+                        className="nav-link rounded-pill scroll-to py-3"
+                        href="#documentacion"
                       >
-                        <i className='fs--13 fi fi-arrow-end-slim'></i>
+                        <i className="fs--13 fi fi-arrow-end-slim"></i>
                         <span>Documentación</span>
                       </a>
                     </li>
@@ -75,9 +75,9 @@ const TermsAndConditions = () => {
               </div>
             </div>
 
-            <div className='col-12 col-lg-8'>
-              <div className='bg-white p-5 p-4-xs rounded-xl article-format'>
-                <h2 id='plan' className='h4 text-primary font-weight-normal'>
+            <div className="col-12 col-lg-8">
+              <div className="bg-white p-5 p-4-xs rounded-xl article-format">
+                <h2 id="plan" className="h4 text-primary font-weight-normal">
                   Términos y Condiciones Protección de Pantalla PMP
                 </h2>
                 <p>
@@ -87,13 +87,13 @@ const TermsAndConditions = () => {
                   tiendas autorizadas, estos contaran con una (1) reclamación
                   por vigencia (12 meses) por fractura de pantalla.
                 </p>
-                <h3 className='h6 text-muted my-2'>Vigencia</h3>
+                <h3 className="h6 text-muted my-2">Vigencia</h3>
                 <p> Nueve (12) meses desde la compra del protector.</p>
-                <h3 className='h6 text-muted my-2'>Copago</h3>
+                <h3 className="h6 text-muted my-2">Copago</h3>
                 <p>Ninguno.</p>
                 <h2
-                  id='seguro-pantalla'
-                  className='h4 text-primary font-weight-normal'
+                  id="seguro-pantalla"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Términos y Condiciones Asistencia de Pantalla
                 </h2>
@@ -165,8 +165,8 @@ const TermsAndConditions = () => {
                   </li>
                 </ul>
                 <h2
-                  id='condiciones-generales'
-                  className='h4 text-primary font-weight-normal'
+                  id="condiciones-generales"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Condiciones Generales
                 </h2>
@@ -242,29 +242,29 @@ const TermsAndConditions = () => {
                   </li>
                 </ul>
                 <h2
-                  id='atencion-cliente'
-                  className='h4 text-primary font-weight-normal'
+                  id="atencion-cliente"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Atención al Cliente
                 </h2>
                 <p>
                   La reclamación de la asistencia se puede realizar a través de
-                  la línea 01 8000 513 323 o en Bogotá al 601 4898599 de lunes a
+                  la línea 01 8000 513 323 o en Bogotá al 601 3905567 de lunes a
                   viernes de 8 am a 6 pm, sábado de 8:00 am a 11:00 am; por
                   WhatsApp +57 1 5142355 o por medio del chat habilitado en la
                   siguiente página{" "}
                   <a
-                    href='http://www.aseguratucelular.com'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="http://www.aseguratucelular.com"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     www.aseguratucelular.com
                   </a>
                   .
                 </p>
                 <h2
-                  id='documentacion'
-                  className='h4 text-primary font-weight-normal'
+                  id="documentacion"
+                  className="h4 text-primary font-weight-normal"
                 >
                   Documentación
                 </h2>
@@ -272,9 +272,9 @@ const TermsAndConditions = () => {
                   Para hacer efectiva la asistencia el usuario debe radicar los
                   siguientes documentos por medio de la página web{" "}
                   <a
-                    href='http://www.aseguratucelular.com'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="http://www.aseguratucelular.com"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     www.aseguratucelular.com
                   </a>

@@ -34,6 +34,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import SamsungCarePlusClaims from "./pages/SamsungCarePlusClaims";
 function App() {
   return (
     <FormState>
@@ -51,6 +52,11 @@ function App() {
               element={<Claims />}
             />
             <Route path="/samsung" exact element={<SamsungCarePlus />} />
+            <Route
+              path="/samsung-care-plus/reclamaciones"
+              exact
+              element={<SamsungCarePlusClaims />}
+            />
             <Route
               path="/soat-asistencia-de-pantalla"
               exact

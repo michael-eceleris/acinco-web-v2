@@ -144,6 +144,16 @@ const Navbar = ({ hideMessage }) => {
                       <Link className="dropdown-link" to="/samsung">
                         Samsung
                       </Link>
+                      <ul>
+                        <li className="dropdown-item">
+                          <Link
+                            className="dropdown-link"
+                            to="/samsung-care-plus/reclamaciones"
+                          >
+                            Reclamaciones
+                          </Link>
+                        </li>
+                      </ul>
                     </li>
                     <li className="dropdown-item">
                       <Link className="dropdown-link" to="/colsubsidio">

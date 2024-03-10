@@ -108,6 +108,12 @@ const DocumentStep = ({ colorPrimary, colorSecundary, allUppercase }) => {
         });
       }
     });
+    documentsLocal.push({
+      ...documents.find(
+        (doc) => doc.nombre_documento_save === "Formato de reclamación."
+      ),
+      error: null,
+    });
     if (countErros === 0) {
       setCurrentDocuments(documentsLocal);
       setCurrentStep(3);

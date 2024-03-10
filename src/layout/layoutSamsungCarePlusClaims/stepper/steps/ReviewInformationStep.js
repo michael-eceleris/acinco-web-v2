@@ -32,7 +32,6 @@ const ReviewInformationStep = ({
 }) => {
   const {
     userInfo,
-    policy,
     interceptors,
     setCurrentStep,
     setShowModal,
@@ -49,41 +48,35 @@ const ReviewInformationStep = ({
   const onSubmit = async (value) => {
     setIsLoading((prevState) => !prevState);
     try {
-      let data = {
-        client: {
-          firstName: userInfo.firstName,
-          lastName: userInfo.lastName,
-          email: userInfo.email,
-          genderId: userInfo.genderId.name.toUpperCase(),
-          identification: {
-            type: userInfo.identificationType.id_system,
-            number: userInfo.identificationNumber,
-          },
-        },
-        planId: policy.policies.filter((d) => d.id === policy.planId)[0].id,
-        priceOptionId: policy.policies
-          .filter((d) => d.id === policy.planId)[0]
-          .pricingOptions.filter((e) => e.paymentFrequency === "ANUAL")[0].id,
-        device: {
-          imei: userInfo.imei,
-          line: userInfo.phone_number,
-        },
-        promotionCode: userInfo.promotionCode,
-        clientIdentification: userInfo.clientIdentification,
-        sponsorId: "SAMSUNG",
-      };
-      const response = await microServiceAxios.post(`/api/v1/policy`, data, {
-        headers: {
-          Authorization: `${interceptors.type} ${interceptors.token}`,
-        },
+      const formData = new FormData();
+      currentDocuments.forEach((doc) => {
+        formData.append(doc.id, doc.files);
       });
-      if (response.status === 200) {
+      formData.append("principalIMEI", currentDevice?.imei_uno);
+      formData.append("planID", currentPlan?.plan.id);
+      formData.append("coverageID", currentCoverage?.id);
+      formData.append("cityID", currentMoreInfo.ciudad_siniestro);
+      formData.append("genderID", currentMoreInfo.genero_reclamante);
+      formData.append("message", currentMoreInfo.mensaje_ticket);
+      formData.append("phoneAccident", currentMoreInfo.linea_siniestro_one);
+      formData.append("dateAccident", currentMoreInfo.fecha_siniestro);
+      const response = await microServiceAxios.post(
+        `/api/v1/claim/create`,
+        formData,
+        {
+          headers: {
+            Authorization: `${interceptors.type} ${interceptors.token}`,
+          },
+        }
+      );
+      console.log(response);
+      /* if (response.status === 200) {
         setIsErrorModal(null);
         setShowModal(true);
         setIsLoading((prevState) => !prevState);
-      }
+      } */
     } catch (error) {
-      if (error.response.status === 400) {
+      /* if (error.response.status === 400) {
         if (
           error.response.data.error.message ===
           "the imei already has a valid insurance policy for this sponsor"
@@ -101,7 +94,7 @@ const ReviewInformationStep = ({
           message: true,
         });
       }
-      setShowModal(true);
+      setShowModal(true); */
       setIsLoading((prevState) => !prevState);
     }
   };
@@ -180,7 +173,7 @@ const ReviewInformationStep = ({
               </tr>
               <tr>
                 <td className="border-bottom border-top-0">
-                  País y ciudad de residencia:
+                  Ciudad de residencia:
                 </td>
                 <td className="border-bottom border-top-0">
                   {currentMoreInfo?.ciudad_pais_residencia}
@@ -264,7 +257,7 @@ const ReviewInformationStep = ({
                   Fecha del evento:
                 </td>
                 <td className="border-bottom border-top-0">
-                  {currentMoreInfo.fecha_siniestro.substring(0, 10)}{" "}
+                  {currentMoreInfo?.fecha_siniestro.substring(0, 10)}{" "}
                 </td>
               </tr>
               <tr>
@@ -280,7 +273,15 @@ const ReviewInformationStep = ({
                   Ciudad en donde sucedió el evento:
                 </td>
                 <td className="border-bottom border-top-0">
-                  {currentMoreInfo.nombre_siniestro}
+                  {currentMoreInfo?.nombre_siniestro}
+                </td>
+              </tr>
+              <tr>
+                <td className="border-bottom border-top-0">
+                  País en donde sucedió el evento:
+                </td>
+                <td className="border-bottom border-top-0">
+                  {currentMoreInfo?.pais_siniestro}
                 </td>
               </tr>
               <tr>
@@ -288,7 +289,7 @@ const ReviewInformationStep = ({
                   Línea con la que sucedió el evento:
                 </td>
                 <td className="border-bottom border-top-0">
-                  {currentMoreInfo.linea_siniestro_one}
+                  {currentMoreInfo?.linea_siniestro_one}
                 </td>
               </tr>
               <tr>
@@ -296,7 +297,7 @@ const ReviewInformationStep = ({
                   Descripción del evento
                 </td>
                 <td className="border-bottom border-top-0">
-                  {currentMoreInfo.mensaje_ticket}
+                  {currentMoreInfo?.mensaje_ticket}
                 </td>
               </tr>
               <tr>

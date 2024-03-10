@@ -84,6 +84,7 @@ const MoreInfoStep = ({
   const [messageActual, setMessageActual] = useState(null);
   const [address, setAddress] = useState(null);
   const [country, setCountry] = useState(null);
+  const [countryClaim, setCountryClaim] = useState(null);
   const [errorGender, setErrorGender] = useState(false);
   const [errorCity, setErrorCity] = useState(false);
   const [errorDate, setErrorDate] = useState(false);
@@ -98,6 +99,7 @@ const MoreInfoStep = ({
     setCurrentStep,
     setCurrentDocuments,
     setCurrentMoreInfo,
+    createClaimsFormat,
   } = useStepperClaimsSamsung();
   const actualDate = new Date().toISOString();
 
@@ -170,6 +172,10 @@ const MoreInfoStep = ({
     setCountry(e.target.value);
   };
 
+  const handleChangeCountryClaim = (e) => {
+    setCountryClaim(e.target.value);
+  };
+
   const handleNextStep = () => {
     if (
       messageActual &&
@@ -192,13 +198,15 @@ const MoreInfoStep = ({
         nombre_siniestro: cityNameActual,
         genero_reclamante: genderActual,
         nombre_genero: genderNameActual.name,
-        ciudad_pais_residencia: country,
+        ciudad_residencia: country,
         direccion_residencia: address,
         hora_siniestro: hourActual,
         second_imei: secondImei,
+        pais_siniestro: countryClaim,
       });
       setCurrentStep(4);
       setError(false);
+      createClaimsFormat();
     } else {
       setError(true);
     }
@@ -331,13 +339,33 @@ const MoreInfoStep = ({
           required
           onChange={handleChangeCountry}
           value={country}
-          placeholder="País y ciudad de residencia"
+          placeholder="Ciudad de residencia"
         />
-        <label className="fontcustom">País y ciudad de residencia</label>
+        <label className="fontcustom">Ciudad de residencia</label>
       </div>
       <div className="mb-4 d-flex justify-content-between">
         <div>
           {error && !country ? (
+            <p className="text-danger">* Campo requerido</p>
+          ) : null}
+        </div>
+      </div>
+      <div className="form-label-group">
+        <input
+          className="form-control"
+          id="address"
+          type="text"
+          name="address"
+          required
+          onChange={handleChangeCountryClaim}
+          value={countryClaim}
+          placeholder="País donde ocurrió el evento"
+        />
+        <label className="fontcustom">País donde ocurrió el evento</label>
+      </div>
+      <div className="mb-4 d-flex justify-content-between">
+        <div>
+          {error && !countryClaim ? (
             <p className="text-danger">* Campo requerido</p>
           ) : null}
         </div>
@@ -351,7 +379,7 @@ const MoreInfoStep = ({
           required
           onChange={handleChangeSecondIme}
           value={secondImei}
-          pattern="[0-9]{0,10}"
+          pattern="[0-9]{0,15}"
           placeholder="Número del imei secundario"
         />
         <label className="fontcustom">Número del imei secundario</label>

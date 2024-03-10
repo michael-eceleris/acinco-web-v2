@@ -1,4 +1,5 @@
 import React, { useState, createContext, useContext, useEffect } from "react";
+import { saveAs } from "file-saver";
 
 import clientAxios from "../../../../config/axios";
 import microServiceAxios from "../config/axios";
@@ -102,6 +103,61 @@ export const StepperClaimsSamsungCarePlusProvider = ({ children }) => {
     setUserInfo(null);
   };
 
+  const createClaimsFormat = () => {
+    const data = [
+      "nombre: ",
+      userInfo.name,
+      "\napellido: ",
+      userInfo.second_name,
+      "\ndocumento: ",
+      userInfo.identification_number,
+      "\ntipo_documento: ",
+      userInfo.identification_type.id_system,
+      "\ngenero: ",
+      currentMoreInfo.nombre_genero,
+      "\nemail: ",
+      userInfo.email,
+      "\nnumero_celular_asegurado: ",
+      currentDevice.linea_uno,
+      "\ndireccion_residencia: ",
+      currentMoreInfo.direccion_residencia,
+      "\nciudad_residencia: ",
+      currentMoreInfo.ciudad_residencia,
+      "\npais_siniestro: ",
+      currentMoreInfo.pais_siniestro,
+      "\nciudad_siniestro: ",
+      currentMoreInfo.nombre_siniestro,
+      "\ncelular_siniestro: ",
+      currentMoreInfo.linea_siniestro_one,
+      "\ndescripcion_siniestro: ",
+      currentMoreInfo.mensaje_ticket,
+      "\nmodelo_dispositivo: ",
+      currentDevice.dispositivo.nombre,
+      "\nmarca_dispositivo: ",
+      currentDevice.dispositivo.fabricante.nombre,
+      "\nimei_principal: ",
+      currentDevice.imei_uno,
+      "\nimei_secundario: ",
+      currentMoreInfo.second_imei,
+      "\nfecha_siniestro: ",
+      currentMoreInfo.fecha_siniestro.substring(0, 10),
+      "\nhora_siniestro: ",
+      new Date(currentMoreInfo?.hora_siniestro).toLocaleTimeString(),
+    ];
+    const file = new File(data, "formato_reclamacion.txt", {
+      type: "text/plain",
+    });
+    const idDoc = currentDocuments.findIndex(
+      (doc) => doc.nombre_documento_save === "Formato de reclamación."
+    );
+    currentDocuments[idDoc] = {
+      ...currentDocuments[idDoc],
+      nameFile: "formato_reclamacion.txt",
+      files: file,
+      id: currentDocuments[idDoc].id,
+    };
+  };
+
   return (
     <StepperClaimsSamsungCarePlusContext.Provider
       value={{
@@ -132,6 +188,7 @@ export const StepperClaimsSamsungCarePlusProvider = ({ children }) => {
         setCities,
         currentMoreInfo,
         setCurrentMoreInfo,
+        createClaimsFormat,
       }}
       children={children}
     />

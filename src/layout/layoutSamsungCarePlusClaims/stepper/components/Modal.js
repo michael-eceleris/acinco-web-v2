@@ -3,9 +3,15 @@ import React from "react";
 import "../../../../components/Modal/modal.css";
 import { useStepperClaimsSamsung } from "../provider/step-provider";
 
-const Modal = (props) => {
-  const { showModal, isErrorModal, setShowModal, setCurrentStep, resetForm } =
-    useStepperClaimsSamsung();
+const Modal = () => {
+  const {
+    showModal,
+    isErrorModal,
+    setShowModal,
+    setCurrentStep,
+    resetForm,
+    idClaim,
+  } = useStepperClaimsSamsung();
   const showModalLocal = showModal
     ? "modal display-block"
     : "modal display-none";
@@ -14,33 +20,6 @@ const Modal = (props) => {
     setShowModal(false);
     setCurrentStep(0);
     resetForm();
-  };
-  const month = [
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre",
-  ];
-
-  const dateNew = () => {
-    let date = new Date();
-    let moreDays = 1;
-    date.setDate(date.getDate() + moreDays);
-    let stringDate = `${month[date.getMonth()]} ${date
-      .toString()
-      .substring(
-        8,
-        16
-      )} después de las ${date.getHours()}:${date.getMinutes()}`;
-    return stringDate;
   };
 
   return (
@@ -80,11 +59,9 @@ const Modal = (props) => {
                       </svg>
                     </div>
                     <div className="modal-body">
-                      <h3 className="modal-title mb-2">Felicidades!</h3>
-                      Tu póliza ha sido creada exitosamente, encontrarás en tu
-                      correo más información sobre la póliza. Para realizar la
-                      reclamación recuerda esperar 24 horas. Puedes realizar la
-                      siguiente fecha {dateNew()}
+                      <h3 className="modal-title mb-2">Reclamación exitosa</h3>
+                      Tu reclamación fue creada exitosamente, tu número de
+                      radicado es No. {("000000" + idClaim).slice(-6)}{" "}
                     </div>
                   </>
                 ) : (
@@ -132,8 +109,8 @@ const Modal = (props) => {
                       </svg>
                     </div>
                     <div className="modal-body">
-                      <h3 className="modal-title  mb-2">
-                        No fue posible crear tu póliza.
+                      <h3 className="modal-title mb-2">
+                        No fue posible crear tu reclamación
                       </h3>
                       <div className="modal-text">
                         {isErrorModal?.message} <br />

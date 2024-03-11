@@ -204,9 +204,9 @@ const MoreInfoStep = ({
         second_imei: secondImei,
         pais_siniestro: countryClaim,
       });
+      createClaimsFormat();
       setCurrentStep(4);
       setError(false);
-      createClaimsFormat();
     } else {
       setError(true);
     }

@@ -1,5 +1,4 @@
 import React, { useState, createContext, useContext, useEffect } from "react";
-import { saveAs } from "file-saver";
 
 import clientAxios from "../../../../config/axios";
 import microServiceAxios from "../config/axios";
@@ -21,6 +20,7 @@ export const StepperClaimsSamsungCarePlusProvider = ({ children }) => {
   const [currentCoverage, setCurrentCoverage] = useState(null);
   const [currentDocuments, setCurrentDocuments] = useState(null);
   const [currentMoreInfo, setCurrentMoreInfo] = useState(null);
+  const [idClaim, setIdClaim] = useState(null);
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -101,6 +101,11 @@ export const StepperClaimsSamsungCarePlusProvider = ({ children }) => {
     setInterceptors(null);
     setPolicy(null);
     setUserInfo(null);
+    setCurrentCoverage(null);
+    setCurrentDocuments(null);
+    setCurrentDevice(null);
+    setCurrentMoreInfo(null);
+    setCurrentPlan(null);
   };
 
   const createClaimsFormat = () => {
@@ -189,6 +194,8 @@ export const StepperClaimsSamsungCarePlusProvider = ({ children }) => {
         currentMoreInfo,
         setCurrentMoreInfo,
         createClaimsFormat,
+        idClaim,
+        setIdClaim,
       }}
       children={children}
     />

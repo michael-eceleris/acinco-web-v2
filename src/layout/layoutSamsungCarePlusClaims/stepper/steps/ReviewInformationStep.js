@@ -36,6 +36,7 @@ const ReviewInformationStep = ({
     setCurrentStep,
     setShowModal,
     setIsErrorModal,
+    setIdClaim,
     currentDevice,
     currentMoreInfo,
     currentCoverage,
@@ -44,6 +45,8 @@ const ReviewInformationStep = ({
   } = useStepperClaimsSamsung();
   const { register, handleSubmit } = useForm();
   const [isLoading, setIsLoading] = useState(false);
+  const [validatedCode, setValidatedCode] = useState(false);
+  const [code, setCode] = useState(null);
 
   const onSubmit = async (value) => {
     setIsLoading((prevState) => !prevState);
@@ -69,33 +72,70 @@ const ReviewInformationStep = ({
           },
         }
       );
-      console.log(response);
-      /* if (response.status === 200) {
+      if (response.status === 200) {
         setIsErrorModal(null);
         setShowModal(true);
         setIsLoading((prevState) => !prevState);
-      } */
+        setIdClaim(response.data.data.claim.id);
+      }
     } catch (error) {
-      /* if (error.response.status === 400) {
-        if (
-          error.response.data.error.message ===
-          "the imei already has a valid insurance policy for this sponsor"
-        ) {
-          setIsErrorModal({
-            message: "Este imei ya cuenta con una póliza vigente.",
-          });
-        } else {
-          setIsErrorModal({
-            message: true,
-          });
-        }
+      if (error.response.status === 400) {
+        setIsErrorModal({
+          message:
+            "Ya existe una reclamación en proceso, con ID 1677 ,creada el 2024-03-10 16:12:12 ",
+        });
       } else {
         setIsErrorModal({
           message: true,
         });
       }
-      setShowModal(true); */
+      setShowModal(true);
       setIsLoading((prevState) => !prevState);
+    }
+  };
+
+  const generateCode = async () => {
+    setValidatedCode(false);
+    try {
+      await microServiceAxios.post(
+        `/api/v1/claim/generate-code`,
+        {
+          IMEI: currentDevice?.imei_uno,
+          name: userInfo?.name,
+          lastName: userInfo?.second_name,
+          email: userInfo?.email,
+        },
+        {
+          headers: {
+            Authorization: `${interceptors.type} ${interceptors.token}`,
+          },
+        }
+      );
+    } catch (error) {
+      setValidatedCode(false);
+    }
+  };
+
+  const handleChangeValueCode = (e) => {
+    setCode(e.target.value);
+  };
+
+  const validateCode = async () => {
+    try {
+      const response = await microServiceAxios.post(
+        `/api/v1/claim/validate-code`,
+        { code },
+        {
+          headers: {
+            Authorization: `${interceptors.type} ${interceptors.token}`,
+          },
+        }
+      );
+      if (response.status === 200) {
+        setValidatedCode(true);
+      }
+    } catch (error) {
+      setValidatedCode(false);
     }
   };
 
@@ -176,7 +216,7 @@ const ReviewInformationStep = ({
                   Ciudad de residencia:
                 </td>
                 <td className="border-bottom border-top-0">
-                  {currentMoreInfo?.ciudad_pais_residencia}
+                  {currentMoreInfo?.ciudad_residencia}
                 </td>
               </tr>
               <tr>
@@ -322,6 +362,31 @@ const ReviewInformationStep = ({
               )}
             </tbody>
           </table>
+          <div className="form-label-group">
+            <input
+              className="form-control"
+              id="code"
+              type="text"
+              name="code"
+              required
+              onChange={handleChangeValueCode}
+              value={code}
+              placeholder="Código de verificación"
+            />
+            <label className="fontcustom">Código de verificación</label>
+          </div>
+          <div className="d-flex justify-content-between mt-2">
+            <button
+              className={`btn btn-sm btn-outline-secondary  `}
+              onClick={generateCode}
+              disabled={false}
+            >
+              Generar código
+            </button>
+            <button className={`btn btn-sm btn-primary`} onClick={validateCode}>
+              Validar código
+            </button>
+          </div>
         </div>
       </div>
       <LabelCheckbox className="form-checkbox form-checkbox-primary">
@@ -348,7 +413,7 @@ const ReviewInformationStep = ({
         <ButtonSubmit
           className={`btn btn-sm btn-primary`}
           onClick={handleSubmit(onSubmit)}
-          disabled={isLoading}
+          disabled={!isLoading && !validatedCode}
         >
           Enviar
           {isLoading && (

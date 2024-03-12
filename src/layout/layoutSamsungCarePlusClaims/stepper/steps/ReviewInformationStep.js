@@ -7,7 +7,7 @@ import { useStepperClaimsSamsung } from "../provider/step-provider";
 
 const LabelCheckbox = styled.label`
   > input[type="checkbox"]:checked + i {
-    background: "#003272" !important;
+    background: "#000000" !important;
   }
 `;
 const ButtonSubmit = styled.button`
@@ -377,13 +377,16 @@ const ReviewInformationStep = ({
           </div>
           <div className="d-flex justify-content-between mt-2">
             <button
-              className={`btn btn-sm btn-outline-secondary  `}
+              className={`btn btn-sm btn-outline-secondary `}
               onClick={generateCode}
               disabled={false}
             >
               Generar código
             </button>
-            <button className={`btn btn-sm btn-primary`} onClick={validateCode}>
+            <button
+              className={`btn btn-sm btn-primary bg-dark`}
+              onClick={validateCode}
+            >
               Validar código
             </button>
           </div>
@@ -411,7 +414,7 @@ const ReviewInformationStep = ({
           Atrás
         </button>
         <ButtonSubmit
-          className={`btn btn-sm btn-primary`}
+          className={`btn btn-sm btn-primary bg-dark`}
           onClick={handleSubmit(onSubmit)}
           disabled={!isLoading && !validatedCode}
         >

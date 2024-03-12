@@ -22,7 +22,7 @@ const DivCircle = styled.div`
 
 const StepperHeader = () => {
   const { currentStep } = useStepperClaimsSamsung();
-  const defaultColor = "#003272";
+  const defaultColor = "#000000";
   return (
     <div className="col-xl-12 mb-3">
       <div className="container">

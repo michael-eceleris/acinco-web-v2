@@ -1,9 +1,10 @@
 import React from "react";
 import Banner from "../layout/layoutSamsungCarePlusClaims/Banner";
 import ClaimsStepper from "../layout/layoutSamsungCarePlusClaims/stepper/StepperComponent";
-import ContactUs from "../components/ContactUs";
-import Footer from "../components/Footer";
+import Footer from "../layout/layoutBlankClaims/Footer";
 import { Helmet } from "react-helmet";
+import Navbar from "../layout/layoutSamsungCarePlusClaims/Navbar";
+import Logo from "../assets/images/samsung_care_plus.png";
 
 const SamsungCarePlusClaims = () => {
   return (
@@ -15,10 +16,10 @@ const SamsungCarePlusClaims = () => {
           content="¡Es muy simple! Con tan solo 5 sencillos pasos puedes realizar tu reclamación."
         />
       </Helmet>
+      <Navbar clientName={"Samsung Care +"} logo={Logo} />
       <Banner />
       <ClaimsStepper />
-      <ContactUs />
-      <Footer />
+      <Footer colorPrimary="#000000" />
     </>
   );
 };

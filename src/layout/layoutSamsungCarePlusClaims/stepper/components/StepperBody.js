@@ -11,11 +11,11 @@ const StepperBody = () => {
   const { currentStep } = useStepperClaimsSamsung();
   return (
     <div className="container p-1">
-      {currentStep === 0 && <LoginStep />}
-      {currentStep === 1 && <CoveragesStep />}
-      {currentStep === 2 && <DocumentStep />}
-      {currentStep === 3 && <MoreInfoStep />}
-      {currentStep === 4 && <ReviewInformationStep />}
+      {currentStep === 0 && <LoginStep colorPrimary={"#000000"} />}
+      {currentStep === 1 && <CoveragesStep colorPrimary={"#000000"} />}
+      {currentStep === 2 && <DocumentStep colorPrimary={"#000000"} />}
+      {currentStep === 3 && <MoreInfoStep colorPrimary={"#000000"} />}
+      {currentStep === 4 && <ReviewInformationStep colorPrimary={"#000000"} />}
     </div>
   );
 };

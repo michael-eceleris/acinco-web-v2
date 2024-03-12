@@ -125,7 +125,7 @@ const Modal = () => {
                 )}
                 <div className="modal-actions mb-3">
                   <button
-                    className={`btn btn-primary btn-sm`}
+                    className={`btn btn-primary btn-sm bg-dark`}
                     onClick={handleClose}
                   >
                     OK

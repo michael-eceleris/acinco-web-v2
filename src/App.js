@@ -40,6 +40,7 @@ import ClaimsSamsungCarePlus from "./pages/ClaimsSamsungCarePlus";
 import SamsungCarePlusElectro from "./pages/SamsungCarePlusElectro";
 import SamsungCarePlusElectroTermsAndConditions from "./layout/layoutSamsungCarePlusElectro/TermsAndConditions";
 import SBSEstimatePage from "./pages/SBSEstimatePolicy";
+import SamsungCarePlusClaims from "./pages/SamsungCarePlusClaims";
 
 function App() {
   return (
@@ -58,6 +59,11 @@ function App() {
               element={<Claims />}
             />
             <Route path="/samsung" exact element={<SamsungCarePlus />} />
+            <Route
+              path="/samsung-care-plus/reclamaciones"
+              exact
+              element={<SamsungCarePlusClaims />}
+            />
             <Route
               path="/soat-asistencia-de-pantalla"
               exact
@@ -132,27 +138,27 @@ function App() {
               element={<TermsAndConditionsPMP />}
             />
             <Route
-              path='/samsung-care-plus/devices'
+              path="/samsung-care-plus/devices"
               exact
               element={<SamsungCarePlusDevices />}
             />
             <Route
-              path='/samsung-care-plus/devices/terminos-condiciones'
+              path="/samsung-care-plus/devices/terminos-condiciones"
               exact
               element={<SamsungCarePlusDevicesTermsAndConditions />}
             />
             <Route
-              path='/samsung-care-plus/tramites-y-reclamaciones'
+              path="/samsung-care-plus/tramites-y-reclamaciones"
               exact
               element={<ClaimsSamsungCarePlus />}
             />
             <Route
-              path='/samsung-care-plus/electro'
+              path="/samsung-care-plus/electro"
               exact
               element={<SamsungCarePlusElectro />}
             />
             <Route
-              path='/samsung-care-plus/electro/terminos-condiciones'
+              path="/samsung-care-plus/electro/terminos-condiciones"
               exact
               element={<SamsungCarePlusElectroTermsAndConditions />}
             />
@@ -172,8 +178,8 @@ function App() {
                 element={<NotFoundBlank client={client} />}
               />
             ))}
-            <Route path='/estimate-policy/itau' element={<SBSEstimatePage />} />
-            <Route path='/pagina-no-encontrada' element={<NotFound />} />
+            <Route path="/estimate-policy/itau" element={<SBSEstimatePage />} />
+            <Route path="/pagina-no-encontrada" element={<NotFound />} />
             <Route
               path="*"
               element={<Navigate to="/pagina-no-encontrada" replace />}

@@ -188,7 +188,11 @@ const MoreInfoStep = ({
       genderNameActual &&
       country &&
       hourActual &&
-      address
+      address &&
+      secondImei &&
+      secondImei.length === 15 &&
+      hourActual &&
+      countryClaim
     ) {
       setCurrentMoreInfo({
         mensaje_ticket: messageActual,

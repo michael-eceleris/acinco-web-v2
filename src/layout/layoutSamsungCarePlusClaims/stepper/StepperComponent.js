@@ -3,6 +3,7 @@ import { StepperClaimsSamsungCarePlusProvider } from "./provider/step-provider";
 import StepperHeader from "./components/StepperHeader";
 import StepperBody from "./components/StepperBody";
 import Modal from "./components/Modal";
+import ModalValidationCode from "./components/ModalValidationCode";
 
 const StepperComponent = () => {
   return (
@@ -18,6 +19,7 @@ const StepperComponent = () => {
         </div>
       </section>
       <Modal />
+      <ModalValidationCode />
     </StepperClaimsSamsungCarePlusProvider>
   );
 };

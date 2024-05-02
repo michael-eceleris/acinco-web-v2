@@ -21,6 +21,7 @@ export const StepperClaimsSamsungCarePlusProvider = ({ children }) => {
   const [currentDocuments, setCurrentDocuments] = useState(null);
   const [currentMoreInfo, setCurrentMoreInfo] = useState(null);
   const [idClaim, setIdClaim] = useState(null);
+  const [showModalCodeValidation, setShowModalCodeValidation] = useState(false);
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -108,7 +109,7 @@ export const StepperClaimsSamsungCarePlusProvider = ({ children }) => {
     setCurrentPlan(null);
   };
 
-  const createClaimsFormat = () => {
+  const createClaimsFormat = ({ currentMoreInfo }) => {
     const data = [
       "nombre: ",
       userInfo.name,
@@ -196,6 +197,8 @@ export const StepperClaimsSamsungCarePlusProvider = ({ children }) => {
         createClaimsFormat,
         idClaim,
         setIdClaim,
+        showModalCodeValidation,
+        setShowModalCodeValidation,
       }}
       children={children}
     />

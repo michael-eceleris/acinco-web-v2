@@ -25,77 +25,24 @@ const CustomH4 = styled.h4`
   text-transform: ${(props) => (props.uppercase ? "uppercase" : "")};
 `;
 
-const ReviewInformationStep = ({
-  colorPrimary,
-  allUppercase,
-  colorSecundary,
-}) => {
+const ReviewInformationStep = ({ colorPrimary, allUppercase }) => {
   const {
     userInfo,
     interceptors,
     setCurrentStep,
-    setShowModal,
-    setIsErrorModal,
-    setIdClaim,
     currentDevice,
     currentMoreInfo,
     currentCoverage,
     currentPlan,
     currentDocuments,
+    setShowModalCodeValidation,
   } = useStepperClaimsSamsung();
   const { register, handleSubmit } = useForm();
   const [isLoading, setIsLoading] = useState(false);
-  const [validatedCode, setValidatedCode] = useState(false);
-  const [code, setCode] = useState(null);
-
-  const onSubmit = async (value) => {
-    setIsLoading((prevState) => !prevState);
-    try {
-      const formData = new FormData();
-      currentDocuments.forEach((doc) => {
-        formData.append(doc.id, doc.files);
-      });
-      formData.append("principalIMEI", currentDevice?.imei_uno);
-      formData.append("planID", currentPlan?.plan.id);
-      formData.append("coverageID", currentCoverage?.id);
-      formData.append("cityID", currentMoreInfo.ciudad_siniestro);
-      formData.append("genderID", currentMoreInfo.genero_reclamante);
-      formData.append("message", currentMoreInfo.mensaje_ticket);
-      formData.append("phoneAccident", currentMoreInfo.linea_siniestro_one);
-      formData.append("dateAccident", currentMoreInfo.fecha_siniestro);
-      const response = await microServiceAxios.post(
-        `/api/v1/claim/create`,
-        formData,
-        {
-          headers: {
-            Authorization: `${interceptors.type} ${interceptors.token}`,
-          },
-        }
-      );
-      if (response.status === 200) {
-        setIsErrorModal(null);
-        setShowModal(true);
-        setIsLoading((prevState) => !prevState);
-        setIdClaim(response.data.data.claim.id);
-      }
-    } catch (error) {
-      if (error.response.status === 400) {
-        setIsErrorModal({
-          message:
-            "Ya existe una reclamación en proceso, con ID 1677 ,creada el 2024-03-10 16:12:12 ",
-        });
-      } else {
-        setIsErrorModal({
-          message: true,
-        });
-      }
-      setShowModal(true);
-      setIsLoading((prevState) => !prevState);
-    }
-  };
 
   const generateCode = async () => {
-    setValidatedCode(false);
+    setShowModalCodeValidation(true);
+    setIsLoading((prevState) => !prevState);
     try {
       await microServiceAxios.post(
         `/api/v1/claim/generate-code`,
@@ -112,30 +59,7 @@ const ReviewInformationStep = ({
         }
       );
     } catch (error) {
-      setValidatedCode(false);
-    }
-  };
-
-  const handleChangeValueCode = (e) => {
-    setCode(e.target.value);
-  };
-
-  const validateCode = async () => {
-    try {
-      const response = await microServiceAxios.post(
-        `/api/v1/claim/validate-code`,
-        { code },
-        {
-          headers: {
-            Authorization: `${interceptors.type} ${interceptors.token}`,
-          },
-        }
-      );
-      if (response.status === 200) {
-        setValidatedCode(true);
-      }
-    } catch (error) {
-      setValidatedCode(false);
+      console.log(error);
     }
   };
 
@@ -362,34 +286,6 @@ const ReviewInformationStep = ({
               )}
             </tbody>
           </table>
-          <div className="form-label-group">
-            <input
-              className="form-control"
-              id="code"
-              type="text"
-              name="code"
-              required
-              onChange={handleChangeValueCode}
-              value={code}
-              placeholder="Código de verificación"
-            />
-            <label className="fontcustom">Código de verificación</label>
-          </div>
-          <div className="d-flex justify-content-between mt-2">
-            <button
-              className={`btn btn-sm btn-outline-secondary `}
-              onClick={generateCode}
-              disabled={false}
-            >
-              Generar código
-            </button>
-            <button
-              className={`btn btn-sm btn-primary bg-dark`}
-              onClick={validateCode}
-            >
-              Validar código
-            </button>
-          </div>
         </div>
       </div>
       <LabelCheckbox className="form-checkbox form-checkbox-primary">
@@ -415,8 +311,8 @@ const ReviewInformationStep = ({
         </button>
         <ButtonSubmit
           className={`btn btn-sm btn-primary bg-dark`}
-          onClick={handleSubmit(onSubmit)}
-          disabled={!isLoading && !validatedCode}
+          onClick={handleSubmit(generateCode)}
+          disabled={isLoading}
         >
           Enviar
           {isLoading && (

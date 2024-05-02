@@ -66,14 +66,9 @@ const CustomH4 = styled.h4`
   text-transform: ${(props) => (props.uppercase ? "uppercase" : "")};
 `;
 
-const MoreInfoStep = ({
-  setError,
-  error,
-  colorPrimary,
-  colorSecundary,
-  allUppercase,
-}) => {
+const MoreInfoStep = ({ colorPrimary, colorSecundary, allUppercase }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [error, setError] = useState(false);
   const [secondImei, setSecondImei] = useState("");
   const [cityActual, setCityActual] = useState(null);
   const [cityNameActual, setCityNameActual] = useState(null);
@@ -157,7 +152,6 @@ const MoreInfoStep = ({
     }
   };
   const handleChangeHour = (value) => {
-    console.log(new Date(value.toISOString()).toLocaleTimeString());
     if (value === null) {
       setErrorHour(true);
     } else {
@@ -208,7 +202,22 @@ const MoreInfoStep = ({
         second_imei: secondImei,
         pais_siniestro: countryClaim,
       });
-      createClaimsFormat();
+      createClaimsFormat({
+        currentMoreInfo: {
+          mensaje_ticket: messageActual,
+          linea_siniestro_one: phoneNumber,
+          fecha_siniestro: dateActual.substring(0, 10),
+          ciudad_siniestro: cityActual,
+          nombre_siniestro: cityNameActual,
+          genero_reclamante: genderActual,
+          nombre_genero: genderNameActual.name,
+          ciudad_residencia: country,
+          direccion_residencia: address,
+          hora_siniestro: hourActual,
+          second_imei: secondImei,
+          pais_siniestro: countryClaim,
+        },
+      });
       setCurrentStep(4);
       setError(false);
     } else {

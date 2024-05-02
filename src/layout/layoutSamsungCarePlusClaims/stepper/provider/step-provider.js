@@ -108,7 +108,7 @@ export const StepperClaimsSamsungCarePlusProvider = ({ children }) => {
     setCurrentPlan(null);
   };
 
-  const createClaimsFormat = () => {
+  const createClaimsFormat = ({ currentMoreInfo }) => {
     const data = [
       "nombre: ",
       userInfo.name,

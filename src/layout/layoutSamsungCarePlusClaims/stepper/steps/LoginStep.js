@@ -21,6 +21,12 @@ const CustomH4 = styled.h4`
   text-transform: ${(props) => (props.uppercase ? "uppercase" : "")};
 `;
 
+const LabelCheckbox = styled.label`
+  > input[type="checkbox"]:checked + i {
+    background: "#000000" !important;
+  }
+`;
+
 const LoginStep = ({
   colorPrimary,
   allUppercase,
@@ -39,7 +45,10 @@ const LoginStep = ({
   const onSubmit = (values) => {
     setIsLoading((prevState) => !prevState);
     microServiceAxios
-      .post("/api/v1/claim/auth", values)
+      .post("/api/v1/claim/auth", {
+        password: values.password,
+        username: values.username,
+      })
       .then((res) => {
         if (res) {
           setInterceptors(res.data.data);
@@ -118,6 +127,46 @@ const LoginStep = ({
               <p className="text-danger">{errors.password.message}</p>
             )}
           </div>
+          <LabelCheckbox className="form-checkbox">
+            <input
+              {...register("confirm", {
+                required: {
+                  value: true,
+                  message: "* Requerido",
+                },
+              })}
+              id="confirm"
+              name="confirm"
+              type="checkbox"
+            />
+            <i></i>Acepta{" "}
+            <a
+              className=""
+              href="https://files-statics-protegeme.s3.amazonaws.com/P1648+EQUIPOS+TELEFONIA+CELULAR_MAR+2022.pdf"
+              target="_blank"
+              rel="noreferrer"
+              style={{ whiteSpace: "nowrap", color: "black" }}
+            >
+              términos y condiciones.
+            </a>
+          </LabelCheckbox>
+          {errors && errors.confirm && (
+            <p className="text-danger">{errors.confirm.message}</p>
+          )}
+          <p className="fs--13 mb-1">
+            <a
+              className=""
+              href="https://files-statics-protegeme.s3.amazonaws.com/Politica+deprotecciondedatos-min.pdf"
+              target="_blank"
+              rel="noreferrer"
+              style={{ whiteSpace: "nowrap", color: "black" }}
+            >
+              Política de tratamiento de datos.
+            </a>
+          </p>
+          <p className="fs--13">
+            Este proceso se realiza mediante la aseguradora AXA Colpatria.
+          </p>
           <div className="d-flex justify-content-center">
             <ButtonSubmit
               type="submit"

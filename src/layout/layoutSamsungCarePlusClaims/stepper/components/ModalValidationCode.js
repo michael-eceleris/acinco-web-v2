@@ -23,6 +23,7 @@ const ModalValidationCode = () => {
     ? "modal display-block"
     : "modal display-none";
   const [code, setCode] = useState(null);
+  // eslint-disable-next-line
   const [validatedCode, setValidatedCode] = useState(false);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

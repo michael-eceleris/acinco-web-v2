@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../../assets/images/Logo.png";
+import clsx from "clsx";
 
 const Navbar = () => {
   const TOP_OFFSET = 50;
   const [showBackgroundNavbar, setShowBackgroundNavbar] =
     useState<boolean>(false);
-
+  const { pathname } = useLocation();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= TOP_OFFSET) {
@@ -21,34 +22,58 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleUnderlineNav = (path: string): string => {
+    if (path === pathname) {
+      return "underline underline-offset-4";
+    } else {
+      return "";
+    }
+  };
+
   return (
     <header className={`w-full`}>
       <div className={`fixed z-50 w-full`}>
         <nav
           className={`flex w-full ${showBackgroundNavbar ? "bg-white" : "bg-transparent"}`}
         >
-          <div className="flex w-3/6 justify-center ">
+          <div className="flex justify-center xl:w-2/6 2xl:w-2/6 ">
             <Link to="/">
               <div className="h-28 w-24 pt-2">
                 <img alt="acinco_logo" src={Logo} />
               </div>
             </Link>
           </div>
-          <div className="mb-5 mt-10 w-2/6">
-            <ul className="flex flex-row justify-between">
-              <li className="mt-1 hover:underline hover:underline-offset-4">
-                <Link to="/">La Solución</Link>
-              </li>
-              <li className="mt-1 hover:underline hover:underline-offset-4">
-                <Link to="/tramites-y-reclamaciones">Servicios</Link>
-              </li>
-              <li className="mt-1 hover:underline hover:underline-offset-4">
-                <Link to="/tramites-y-reclamaciones">Nosotros</Link>
-              </li>
-              <li className="h-9 rounded-lg bg-buttonPrimary px-3 py-1 font-bold text-white">
-                <Link to="/tramites-y-reclamaciones">Reclamaciones</Link>
-              </li>
-              {/* <li className="nav-item dropdown active">
+          <div className="mb-5 mt-10 flex justify-center xl:w-4/6 2xl:w-4/6">
+            <div className="w-1/2">
+              <ul className="flex flex-row xl:justify-between 2xl:justify-evenly">
+                <li
+                  className={clsx([
+                    "mt-1 hover:underline hover:underline-offset-4",
+                    handleUnderlineNav("/"),
+                  ])}
+                >
+                  <Link to="/">La Solución</Link>
+                </li>
+                <li
+                  className={clsx([
+                    "mt-1 hover:underline hover:underline-offset-4",
+                    handleUnderlineNav("/claims"),
+                  ])}
+                >
+                  <Link to="/tramites-y-reclamaciones">Servicios</Link>
+                </li>
+                <li
+                  className={clsx([
+                    "mt-1 hover:underline hover:underline-offset-4",
+                    handleUnderlineNav("/aboutus"),
+                  ])}
+                >
+                  <Link to="/aboutus">Nosotros</Link>
+                </li>
+                <li className="h-9 rounded-lg bg-buttonPrimary px-3 py-1 font-bold text-white">
+                  <Link to="/tramites-y-reclamaciones">Reclamaciones</Link>
+                </li>
+                {/* <li className="nav-item dropdown active">
                 <Link
                   className="nav-link dropdown-toggle"
                   data-toggle="dropdown"
@@ -158,7 +183,8 @@ const Navbar = () => {
                   </a>
                 </li>
               )} */}
-            </ul>
+              </ul>
+            </div>
           </div>
         </nav>
       </div>

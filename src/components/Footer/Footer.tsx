@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import LogoAcincoWhite from "../../assets/images/logo_acinco_white.png";
 import { ReactComponent as LogoFacebook } from "../../assets/icons/facebook.svg";
 import { ReactComponent as LogoTwitter } from "../../assets/icons/twitter.svg";
@@ -42,9 +44,13 @@ const Footer = () => {
               <div>
                 <p className="text-md font-semibold">Enlaces</p>
                 <ul>
-                  <li className="my-1 text-sm font-light">Inicio</li>
+                  <li className="my-1 text-sm font-light">
+                    <Link to="/">Inicio</Link>{" "}
+                  </li>
                   <li className="my-1 text-sm font-light">Productos</li>
-                  <li className="my-1 text-sm font-light">Nosotros</li>
+                  <li className="my-1 text-sm font-light">
+                    <Link to="/aboutus">Nosotros</Link>
+                  </li>
                   <li className="my-1 text-sm font-light">Reclamaciones</li>
                 </ul>
               </div>

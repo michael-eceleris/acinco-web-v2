@@ -14,7 +14,7 @@ import InsurranceSection from "./components/insurance.component";
 import AdvisorySection from "./components/advisory.component";
 import Footer from "../../components/Footer/Footer";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Helmet>
@@ -67,6 +67,7 @@ const Home = () => {
             </div>
           </div>
         }
+        classNameContainer="py-48 2xl:pb-80"
       />
       <ClientsSection />
       <OperationSection />
@@ -79,4 +80,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

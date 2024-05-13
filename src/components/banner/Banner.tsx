@@ -1,4 +1,5 @@
 import React, { ReactNode, ReactElement } from "react";
+import clsx from "clsx";
 
 interface BannerPros {
   title: ReactNode | string | ReactElement;
@@ -6,6 +7,7 @@ interface BannerPros {
   sectionImages: ReactNode | ReactElement;
   subtitle?: ReactNode | string;
   actions?: ReactElement | ReactNode;
+  classNameContainer?: string;
 }
 
 const Banner = ({
@@ -14,18 +16,21 @@ const Banner = ({
   sectionImages,
   subtitle,
   actions,
+  classNameContainer,
 }: BannerPros) => {
   return (
     <section className="w-full bg-backgroundPrimary p-0">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 gap-4">
-          <div className="px-10 py-48 2xl:pb-80">
+          <div className={clsx(["px-10", classNameContainer])}>
             {title}
             {subtitle}
             {paragraph}
             {actions}
           </div>
-          <div className="px-10 py-48 2xl:pb-80">{sectionImages}</div>
+          <div className={clsx(["px-10", classNameContainer])}>
+            {sectionImages}
+          </div>
         </div>
       </div>
     </section>

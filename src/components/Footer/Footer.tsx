@@ -45,9 +45,11 @@ const Footer = () => {
                 <p className="text-md font-semibold">Enlaces</p>
                 <ul>
                   <li className="my-1 text-sm font-light">
-                    <Link to="/">Inicio</Link>{" "}
+                    <Link to="/">Inicio</Link>
                   </li>
-                  <li className="my-1 text-sm font-light">Productos</li>
+                  <li className="my-1 text-sm font-light">
+                    <Link to="/products">Productos</Link>
+                  </li>
                   <li className="my-1 text-sm font-light">
                     <Link to="/aboutus">Nosotros</Link>
                   </li>

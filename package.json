@@ -30,6 +30,8 @@
     "react-google-recaptcha": "^3.1.0",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.51.5",
+    "react-if": "^4.1.5",
+    "react-query": "^3.39.3",
     "react-router-dom": "^6.23.1",
     "react-scripts": "^5.0.1",
     "react-step-wizard": "^5.3.11",

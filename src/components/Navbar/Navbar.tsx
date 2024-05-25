@@ -7,6 +7,7 @@ const Navbar = () => {
   const TOP_OFFSET = 50;
   const [showBackgroundNavbar, setShowBackgroundNavbar] =
     useState<boolean>(false);
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
   const { pathname } = useLocation();
   useEffect(() => {
     const handleScroll = () => {
@@ -31,164 +32,82 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`w-full`}>
-      <div className={`fixed z-50 w-full`}>
-        <nav
-          className={`flex w-full ${showBackgroundNavbar ? "bg-white" : "bg-transparent"}`}
-        >
-          <div className="flex justify-center xl:w-2/6 2xl:w-2/6 ">
-            <Link to="/">
-              <div className="h-28 w-24 pt-2">
-                <img alt="acinco_logo" src={Logo} />
-              </div>
-            </Link>
-          </div>
-          <div className="mb-5 mt-10 flex justify-center xl:w-4/6 2xl:w-4/6">
-            <div className="w-1/2">
-              <ul className="flex flex-row xl:justify-between 2xl:justify-evenly">
-                <li
-                  className={clsx([
-                    "mt-1 hover:underline hover:underline-offset-4",
-                    handleUnderlineNav("/"),
-                  ])}
-                >
-                  <Link to="/">La Solución</Link>
-                </li>
-                <li
-                  className={clsx([
-                    "mt-1 hover:underline hover:underline-offset-4",
-                    handleUnderlineNav("/claims"),
-                  ])}
-                >
-                  <Link to="/tramites-y-reclamaciones">Servicios</Link>
-                </li>
-                <li
-                  className={clsx([
-                    "mt-1 hover:underline hover:underline-offset-4",
-                    handleUnderlineNav("/aboutus"),
-                  ])}
-                >
-                  <Link to="/aboutus">Nosotros</Link>
-                </li>
-                <li className="h-9 rounded-lg bg-buttonPrimary px-3 py-1 font-bold text-white">
-                  <Link to="/tramites-y-reclamaciones">Reclamaciones</Link>
-                </li>
-                {/* <li className="nav-item dropdown active">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  to="/productos"
-                >
-                  Nuestros Productos
-                </Link>
-                <div
-                  aria-labelledby="mainNavHome"
-                  className="dropdown-menu dropdown-menu-clean dropdown-menu-hover"
-                >
-                  <ul className="list-unstyled p-o m-0">
-                    <li className="dropdown-item">
-                      <Link className="dropdown-link" to="/motorola">
-                        Motorola
-                      </Link>
-                    </li>
-                    <li className="dropdown-item">
-                      <Link
-                        className="dropdown-link"
-                        to="/motorola/beneficio-edge"
-                      >
-                        Motorola Edge
-                      </Link>
-                    </li>
-                    <li className="dropdown-item">
-                      <Link
-                        className="dropdown-link"
-                        to="/soat-asistencia-de-pantalla"
-                      >
-                        SOAT Asistencia de pantalla
-                      </Link>
-                    </li>
-                    <li className="dropdown-item">
-                      <Link className="dropdown-link" to="/samsung">
-                        Samsung
-                      </Link>
-                      <ul>
-                        <li className="dropdown-item">
-                          <Link
-                            className="dropdown-link"
-                            to="/samsung-care-plus/reclamaciones"
-                          >
-                            Reclamaciones
-                          </Link>
-                        </li>
-                        <li className="dropdown-item">
-                          <Link
-                            className="dropdown-link"
-                            to="/samsung-care-plus/devices"
-                          >
-                            Samsung Care + Dispositivos Móviles
-                          </Link>
-                        </li>
-                        <li className="dropdown-item">
-                          <Link
-                            className="dropdown-link"
-                            to="/samsung-care-plus/electro"
-                          >
-                            Samsung Care + Electrodoméstico
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="dropdown-item">
-                      <Link className="dropdown-link" to="/colsubsidio">
-                        Asistencia Colsubsidio -<br />
-                        Axa Colpatria Seguros
-                      </Link>
-                    </li>
-                    <li className="dropdown-item">
-                      <Link className="dropdown-link" to="/camara-comercio">
-                        Cámara de Comercio de Bogotá
-                      </Link>
-                    </li>
-                    <li className="dropdown-item">
-                      <Link className="dropdown-link" to="/protect-my-phone">
-                        Protect My Phone
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link js-ajax"
-                  href="https://files-statics-protegeme.s3.amazonaws.com/Politica+deprotecciondedatos-min.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ whiteSpace: "nowrap" }}
-                >
-                  Política de Protección
-                </a>
-              </li>
-              {pathname !== "/camara-comercio" && (
-                <li>
-                  <a
-                    className="nav-link js-ajax"
-                    href="https://files-statics-protegeme.s3.amazonaws.com/P1648+EQUIPOS+TELEFONIA+CELULAR_MAR+2022.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ whiteSpace: "nowrap" }}
-                  >
-                    Clausulado General
-                  </a>
-                </li>
-              )} */}
-              </ul>
+    <nav
+      className={`fixed z-50 w-full ${showBackgroundNavbar ? "bg-white" : "bg-transparent"}`}
+    >
+      <div className="max-w-screen flex ">
+        <div className="flex w-full items-center justify-between px-5 md:justify-center md:px-0 xl:w-2/6 2xl:w-2/6">
+          <Link to="/">
+            <div className="h-20 w-20 pt-2 md:h-20 md:w-20 xl:h-28 xl:w-24">
+              <img alt="acinco_logo" src={Logo} />
             </div>
+          </Link>
+          <button
+            type="button"
+            className="text-gray-500 hover:bg-gray-100 focus:ring-gray-200  focus:ring-gray-200 h-12 w-12 items-center justify-center rounded-lg p-2 text-sm focus:outline-none focus:ring-2 md:hidden"
+            onClick={() => setShowMobileMenu((prevState) => !prevState)}
+          >
+            <svg
+              style={{ marginTop: 0, width: "100%" }}
+              width="25"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill="#003272"
+                d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"
+              ></path>
+              <path
+                fill="#003272"
+                d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"
+              ></path>
+              <path
+                fill="#003272"
+                d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"
+              ></path>
+              <path
+                fill="#003272"
+                d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          className={`${showMobileMenu ? "absolute left-1/3 z-50 mb-5 mt-20 w-2/3 items-center justify-center rounded-md bg-white md:mt-10" : "hidden"}  mb-5 md:mt-10 md:block md:w-full md:justify-center xl:flex xl:w-4/6 2xl:w-4/6`}
+        >
+          <div className="md:w-1/2 ">
+            <ul className="flex flex-col items-center justify-center px-10 md:flex-row md:justify-between 2xl:justify-evenly">
+              <li
+                className={clsx([
+                  "my-5 mt-1 hover:underline hover:underline-offset-4 md:my-0",
+                  handleUnderlineNav("/"),
+                ])}
+              >
+                <Link to="/">La Solución</Link>
+              </li>
+              <li
+                className={clsx([
+                  "my-5 mt-1 hover:underline hover:underline-offset-4 md:my-0",
+                  handleUnderlineNav("/productos"),
+                ])}
+              >
+                <Link to="/productos">Servicios</Link>
+              </li>
+              <li
+                className={clsx([
+                  "my-5 mt-1 hover:underline hover:underline-offset-4 md:my-0",
+                  handleUnderlineNav("/nosotros"),
+                ])}
+              >
+                <Link to="/nosotros">Nosotros</Link>
+              </li>
+              <li className="h-9 rounded-lg bg-buttonPrimary px-3 py-1 font-bold text-white">
+                <Link to="/tramites-y-reclamaciones">Reclamaciones</Link>
+              </li>
+            </ul>
           </div>
-        </nav>
+        </div>
       </div>
-    </header>
+    </nav>
   );
 };
 export default Navbar;

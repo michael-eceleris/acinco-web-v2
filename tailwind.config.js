@@ -20,6 +20,7 @@ module.exports = {
       backgroundSecondary: "#082256",
       whiteSoft: "#E5E5E5",
       blueFinance: "#2868D8",
+      critical: "#EB4D4D",
     },
     extend: {},
   },

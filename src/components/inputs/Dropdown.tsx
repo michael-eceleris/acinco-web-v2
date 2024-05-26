@@ -111,8 +111,8 @@ const Dropdown = <T extends any>({
           <div className="option">No hay opciones</div>
         )}
       </div>
-      <div className="h-1">
-        {error && <p className="text-critical my-0 py-0 text-sm">{error}</p>}
+      <div className="-mt-3 h-4">
+        {error && <p className="my-0 py-0 text-sm text-critical">{error}</p>}
       </div>
     </div>
   );

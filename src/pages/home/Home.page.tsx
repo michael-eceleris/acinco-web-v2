@@ -27,10 +27,10 @@ const HomePage = () => {
       <Banner
         title={
           <>
-            <h1 className="text-6xl font-bold text-textPrimary">
+            <h1 className="text-center text-5xl font-bold text-textPrimary md:text-left md:text-6xl">
               Somos un TPA
             </h1>
-            <h2 className="text-6xl font-bold text-textSecundary">
+            <h2 className="text-center text-5xl font-bold text-textSecundary md:text-left md:text-6xl">
               como ningún otro
             </h2>
           </>
@@ -43,7 +43,7 @@ const HomePage = () => {
           </p>
         }
         sectionImages={
-          <div className="relative -mt-12 h-full w-full">
+          <div className="hidden h-full w-full md:relative md:-mt-12 md:block">
             <div className="absolute w-7/12">
               <img
                 src={Img1}
@@ -67,7 +67,7 @@ const HomePage = () => {
             </div>
           </div>
         }
-        classNameContainer="py-48 2xl:pb-80"
+        classNameContainer="pt-24 md:py-48 2xl:pb-80"
       />
       <ClientsSection />
       <OperationSection />

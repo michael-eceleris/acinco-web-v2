@@ -29,11 +29,11 @@ const ProductsPage = () => {
           </p>
         }
         sectionImages={
-          <div className="h-full xl:-ml-3 xl:w-9/12 2xl:w-10/12">
+          <div className=" hidden h-full md:block xl:-ml-3 xl:w-9/12 2xl:w-10/12">
             <img src={Img1} className="h-auto max-w-full" alt="banner_img_1" />
           </div>
         }
-        classNameContainer="py-40 pb-24  px-24"
+        classNameContainer="pt-24 pb-5 md:py-40 md:pb-24 md:px-24"
       />
       <ProductsComponent />
       <Footer />

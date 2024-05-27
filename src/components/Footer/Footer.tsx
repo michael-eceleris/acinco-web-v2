@@ -13,28 +13,28 @@ import Input from "../inputs/Input";
 
 const Footer = () => {
   return (
-    <section className="bg-backgroundSecondary flex w-full justify-center p-0 2xl:h-80">
-      <div className="text-whiteSoft container w-full justify-center py-20 xl:px-24 2xl:px-20">
-        <div className="grid pb-10 xl:grid-cols-7  2xl:grid-cols-8">
+    <section className="flex w-full justify-center bg-backgroundSecondary p-0 2xl:h-80">
+      <div className="container w-full justify-center py-20 text-whiteSoft xl:px-24 2xl:px-20">
+        <div className="mx-10 grid pb-10  md:mx-0 xl:grid-cols-7 2xl:grid-cols-8">
           <div className="col-span-1 flex align-top ">
             <img src={LogoAcincoWhite} alt="logo_acinco" className="max-h-20" />
           </div>
           <div className="xl:col-span-2 2xl:col-span-3">
             <p>Conéctese con nostros a través de nuestras redes sociales</p>
             <div className="mt-2 flex">
-              <div className="border-whiteSoft mr-2 flex h-10 w-10 items-center justify-center rounded-full border bg-transparent ">
+              <div className="mr-2 flex h-10 w-10 items-center justify-center rounded-full border border-whiteSoft bg-transparent ">
                 <LogoFacebook />
               </div>
-              <div className="border-whiteSoft mx-2 flex h-10 w-10 items-center justify-center rounded-full border bg-transparent ">
+              <div className="mx-2 flex h-10 w-10 items-center justify-center rounded-full border border-whiteSoft bg-transparent ">
                 <LogoLinkedin />
               </div>
-              <div className="border-whiteSoft mx-2 flex h-10 w-10 items-center justify-center rounded-full border bg-transparent ">
+              <div className="mx-2 flex h-10 w-10 items-center justify-center rounded-full border border-whiteSoft bg-transparent ">
                 <LogoTwitter />
               </div>
-              <div className="border-whiteSoft mx-2 flex h-10 w-10 items-center justify-center rounded-full border bg-transparent ">
+              <div className="mx-2 flex h-10 w-10 items-center justify-center rounded-full border border-whiteSoft bg-transparent ">
                 <LogoInstagram />
               </div>
-              <div className="border-whiteSoft mx-2 flex h-10 w-10 items-center justify-center rounded-full border bg-transparent ">
+              <div className="mx-2 flex h-10 w-10 items-center justify-center rounded-full border border-whiteSoft bg-transparent ">
                 <LogoYoutube />
               </div>
             </div>
@@ -53,7 +53,10 @@ const Footer = () => {
                   <li className="my-1 text-sm font-light">
                     <Link to="/nosotros">Nosotros</Link>
                   </li>
-                  <li className="my-1 text-sm font-light">Reclamaciones</li>
+                  <li className="my-1 text-sm font-light">
+                    {" "}
+                    <Link to="/tramites-y-reclamaciones">Reclamaciones</Link>
+                  </li>
                 </ul>
               </div>
               <div>
@@ -92,7 +95,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full border-t pt-2 text-center">
-          <p>©2023 ACincoSAS. Todos los derechos reservados</p>
+          <p>©2023 Acinco S.A.S. Todos los derechos reservados</p>
         </div>
       </div>
     </section>

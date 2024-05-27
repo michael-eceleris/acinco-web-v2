@@ -13,7 +13,7 @@ const Modal = () => {
   };
   return (
     <div
-      className={`${visible ? "" : "hidden"} fixed left-0 right-0 top-0 z-50 flex h-[calc(100%)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0`}
+      className={`${visible ? "" : "hidden"} h-[calc(100% - 1rem)] fixed left-0 right-0 top-0 z-50 flex max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0`}
       style={{ background: "rgba(0, 0, 0, 0.7)" }}
     >
       <div className="relative max-h-full w-full max-w-2xl p-4">

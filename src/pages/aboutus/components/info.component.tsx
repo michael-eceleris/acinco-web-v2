@@ -7,10 +7,14 @@ import Img3 from "../../../assets/images/alliance_about_us.png";
 const InfoSection = () => {
   return (
     <section className="flex w-full justify-center p-0">
-      <div className="container my-32 w-full py-10 xl:px-32 2xl:px-20">
-        <div className="grid grid-cols-3 gap-10">
-          <div>
-            <img src={Img1} alt="independence_img" />
+      <div className="container my-14 w-full py-10 md:my-32 xl:px-32 2xl:px-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+          <div className="mx-10 md:mx-0">
+            <img
+              src={Img1}
+              alt="independence_img"
+              className="hidden md:block"
+            />
             <h2 className="my-5 text-3xl font-bold text-textSecondary">
               Independencia
             </h2>
@@ -23,8 +27,8 @@ const InfoSection = () => {
               seguros con nuestras aseguradoras aliadas.
             </p>
           </div>
-          <div>
-            <img src={Img2} alt="alliance_img" />
+          <div className="mx-10 md:mx-0">
+            <img src={Img2} alt="alliance_img" className="hidden md:block" />
             <h2 className="my-5 text-3xl font-bold text-textSecondary">
               Alianzas
             </h2>
@@ -34,8 +38,8 @@ const InfoSection = () => {
               incluyendo dispositivos usados, algo innovador en el país.
             </p>
           </div>
-          <div>
-            <img src={Img3} alt="leads_img" />
+          <div className="mx-10 md:mx-0">
+            <img src={Img3} alt="leads_img" className="hidden md:block" />
             <h2 className="my-5 text-3xl font-bold text-textSecondary">
               Liderazgo
             </h2>

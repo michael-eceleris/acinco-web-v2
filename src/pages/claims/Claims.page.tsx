@@ -30,11 +30,11 @@ const ClaimsPage = () => {
           </p>
         }
         sectionImages={
-          <div className="h-full xl:-ml-3 xl:w-11/12 2xl:-ml-10 2xl:w-10/12">
+          <div className="hidden h-full md:block xl:-ml-3 xl:w-11/12 2xl:-ml-10 2xl:w-10/12">
             <img src={Img} className="h-auto max-w-full" alt="banner_img_1" />
           </div>
         }
-        classNameContainer="py-40 pb-24  px-24"
+        classNameContainer="pt-28 md:py-40 md:pb-24 md:px-24"
       />
       <ClaimsComponent />
       <Footer />

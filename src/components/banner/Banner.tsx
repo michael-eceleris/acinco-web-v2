@@ -21,7 +21,7 @@ const Banner = ({
   return (
     <section className="w-full bg-backgroundPrimary p-0">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className={clsx(["px-10", classNameContainer])}>
             {title}
             {subtitle}

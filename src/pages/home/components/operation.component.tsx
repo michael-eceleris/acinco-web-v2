@@ -11,9 +11,9 @@ const OperationSection = () => {
         <h2 className="mb-14 text-center text-4xl font-semibold">
           OPERATIVIDAD
         </h2>
-        <div className="my-5 grid grid-cols-2 gap-20">
+        <div className="my-5 grid grid-cols-1 gap-20 md:grid-cols-2">
           <div className="flex">
-            <div className="mx-2">
+            <div className="mx-2 hidden md:block">
               <img
                 src={LogoAutogestion}
                 className="img-fluid max-h-20 w-24"
@@ -32,7 +32,7 @@ const OperationSection = () => {
             </div>
           </div>
           <div className="flex">
-            <div className="mx-2">
+            <div className="mx-2 hidden md:block">
               <img
                 src={LogoReparaciones}
                 className="img-fluid max-h-20 w-24"
@@ -51,12 +51,12 @@ const OperationSection = () => {
             </div>
           </div>
         </div>
-        <div className="my-5 grid grid-cols-2 gap-20">
-          <div className="flex">
-            <div className="mx-2">
+        <div className="my-5 grid grid-cols-1 gap-20 md:grid-cols-2">
+          <div className="flex ">
+            <div className="mx-2 hidden md:block">
               <img
                 src={LogoCallCenter}
-                className="img-fluid max-h-20 w-24"
+                className="img-fluid w-40  md:max-h-20 md:w-24"
                 alt="callcenter_imagen"
               />
             </div>
@@ -72,7 +72,7 @@ const OperationSection = () => {
             </div>
           </div>
           <div className="flex">
-            <div className="mx-2">
+            <div className="mx-2 hidden md:block">
               <img
                 src={LogoLogistica}
                 className="img-fluid max-h-20 w-24"

@@ -23,7 +23,8 @@ const ProductsComponent = () => {
     {
       nameProduct: "axa-samsung",
       buttonTitle: "Conoce Más",
-      buttonNavPath: "/",
+      buttonNavPath:
+        "https://www.samsung.com/co/offer/samsung-care-plus/?cid=co_pd_ppc_google_epp-estudiantes_ecommerce_performance-estore-im_pmax_banner-multiple_na_pfm_pla_product_list_ad&gad_source=1",
       secureImage: (
         <img src={LogoAxa} alt="axa_colpatria" className="mx-auto max-h-20" />
       ),
@@ -38,7 +39,7 @@ const ProductsComponent = () => {
     {
       nameProduct: "axa-cellya",
       buttonTitle: "Haz Tu Reclamación",
-      buttonNavPath: "/",
+      buttonNavPath: "/tramites-y-reclamaciones",
       secureImage: (
         <img src={LogoAxa} alt="axa_colpatria" className="mx-auto max-h-20" />
       ),
@@ -49,7 +50,7 @@ const ProductsComponent = () => {
     {
       nameProduct: "axa-motorola",
       buttonTitle: "Haz Tu Reclamación",
-      buttonNavPath: "/",
+      buttonNavPath: "/tramites-y-reclamaciones",
       secureImage: (
         <img src={LogoAxa} alt="axa_colpatria" className="mx-auto max-h-20" />
       ),
@@ -60,7 +61,8 @@ const ProductsComponent = () => {
     {
       nameProduct: "cardif-scotiabank",
       buttonTitle: "Conoce Más",
-      buttonNavPath: "/",
+      buttonNavPath:
+        "https://www.scotiabankcolpatria.com/personas/seguros/seguro-para-celulares",
       secureImage: (
         <img src={LogoCardif} alt="cardif" className="mx-auto max-h-14" />
       ),
@@ -75,7 +77,8 @@ const ProductsComponent = () => {
     {
       nameProduct: "sbs-itau",
       buttonTitle: "Conoce Más",
-      buttonNavPath: "/",
+      buttonNavPath:
+        "https://banco.itau.co/web/personas/seguros/seguro-de-celulares",
       secureImage: (
         <img src={LogoSBS} alt="sbs" className="mx-auto my-auto max-h-16" />
       ),
@@ -86,8 +89,8 @@ const ProductsComponent = () => {
   ];
   return (
     <section className="flex w-full justify-center p-0">
-      <div className="container w-full px-20 py-24">
-        <div className="grid grid-cols-2 gap-10">
+      <div className="container w-full px-6 py-24 md:px-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
           {products.map((product, index) => (
             <CardProduct key={`${product.nameProduct}_${index}`} {...product} />
           ))}

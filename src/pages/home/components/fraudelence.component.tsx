@@ -11,12 +11,16 @@ const FraudelenceSection = () => {
           Construido para <span className="text-textSecondary">prevenir</span>{" "}
           el fraude
         </h1>
-        <div className="grid grid-cols-3 gap-10">
-          <div>
+        <div className="mx-10 grid grid-cols-1 gap-10 md:mx-0 md:grid-cols-3">
+          <div className="hidden md:block">
             <img src={FraudLogo} alt="fraud_logo_1" />
           </div>
           <div>
-            <img src={VerifyLogo} alt="fraud_logo_2" />
+            <img
+              className="hidden md:block"
+              src={VerifyLogo}
+              alt="fraud_logo_2"
+            />
             <h2 className="my-5 text-2xl font-bold">
               <span className="text-textSecondary">Verificaciones</span> remotas
             </h2>
@@ -28,7 +32,11 @@ const FraudelenceSection = () => {
             </p>
           </div>
           <div>
-            <img src={SecureLogo} alt="fraud_logo_3" />
+            <img
+              className="hidden md:block"
+              src={SecureLogo}
+              alt="fraud_logo_3"
+            />
             <h2 className="my-5 text-2xl font-bold">
               <span className="text-textSecondary">Determinación</span> de
               asegurabilidad

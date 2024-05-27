@@ -52,13 +52,13 @@ const StepperHeader = () => {
     }
   };
   return (
-    <section className="w-full p-10">
-      <div className="px-5">
-        <p className="my-3 text-center">
+    <section className="w-full p-2 md:p-10">
+      <div className="md:px-5">
+        <p className="text-center md:my-3">
           Antes de realizar tu reclamación revisa los documentos necesarios,
           revísalos aquí.
         </p>
-        <div className="my-5 grid grid-cols-5 gap-4">
+        <div className="grid hidden grid-cols-5 gap-4 md:my-5 md:block">
           {steps.map(({ image, title, titleBold, stepNumber }) => (
             <div
               key={stepNumber}
@@ -70,7 +70,7 @@ const StepperHeader = () => {
               <img
                 src={image}
                 alt={`step_${stepNumber}_img`}
-                className="img-fluid bg-transparent"
+                className="img-fluid hidden bg-transparent md:block"
               />
               <h3 className="mt-2 text-center text-xl font-bold">
                 {stepNumber}.{" "}

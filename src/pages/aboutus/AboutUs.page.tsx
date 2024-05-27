@@ -30,11 +30,11 @@ const AboutUsPage = () => {
           </p>
         }
         sectionImages={
-          <div className="h-full xl:-ml-3 xl:w-9/12 2xl:w-10/12">
+          <div className=" hidden h-full md:block xl:-ml-3 xl:w-9/12 2xl:w-10/12">
             <img src={Img1} className="h-auto max-w-full" alt="banner_img_1" />
           </div>
         }
-        classNameContainer="py-48 2xl:pb-50"
+        classNameContainer="pt-20 md:py-48 2xl:pb-50"
       />
       <InfoSection />
       <Footer />

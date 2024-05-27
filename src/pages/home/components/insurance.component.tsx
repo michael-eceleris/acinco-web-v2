@@ -7,27 +7,33 @@ const InsurranceSection = () => {
   return (
     <>
       <section className="flex w-full justify-center p-0">
-        <div className="container w-full px-20 py-20">
-          <div className="bg-gray rounded-xl py-14">
+        <div className="container w-full px-2 py-20 md:px-20">
+          <div className="rounded-xl bg-gray py-14">
             <h1 className="mb-10 text-center text-4xl font-bold">
               <span className="text-textSecondary">Acompañamos</span> el cuidado
               de tus dispositivos
             </h1>
-            <div className="grid grid-cols-3 items-center justify-center gap-10">
+            <div className="grid grid-cols-1 items-center justify-center gap-10 md:grid-cols-3">
               <div className="mx-auto w-2/3 ">
-                <h4 className="text-center text-6xl font-medium">1,3M+</h4>
+                <h4 className="text-center text-5xl font-medium md:text-6xl">
+                  1,3M+
+                </h4>
                 <p className="text-center text-lg font-normal">
                   Reclamaciones atendidas
                 </p>
               </div>
               <div className="mx-auto w-2/3 ">
-                <h4 className="text-center text-6xl font-medium">80K+</h4>
+                <h4 className="text-center text-5xl font-medium md:text-6xl">
+                  80K+
+                </h4>
                 <p className="text-center text-lg font-normal">
                   Órdenes de verficación de estado de celulares
                 </p>
               </div>
               <div className="mx-auto w-2/3 ">
-                <h4 className="text-center text-6xl font-medium">20+</h4>
+                <h4 className="text-center text-5xl font-medium md:text-6xl">
+                  20+
+                </h4>
                 <p className="text-center text-lg font-normal">
                   Años acompañando clientes privados y públicos
                 </p>
@@ -38,7 +44,7 @@ const InsurranceSection = () => {
       </section>
       <section className="flex w-full justify-center p-0">
         <div className="container w-full px-20 py-20">
-          <h2 className="mx-40 mb-20 text-center text-4xl font-bold 2xl:mx-56">
+          <h2 className="mb-20 text-center text-4xl font-bold md:mx-40 2xl:mx-56">
             Gestionamos seguros respaldados por las aseguradoras{" "}
             <span className="text-textSecondary">
               más destacadas del mercado

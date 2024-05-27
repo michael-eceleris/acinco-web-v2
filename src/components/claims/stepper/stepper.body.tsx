@@ -14,7 +14,7 @@ const StepperBody = () => {
   const fourthStep = <AditionalStepComponent />;
   const fiveStep = <SendStepComponet />;
   return (
-    <section className="mx-auto w-2/4 border-t pt-10 ">
+    <section className="mx-auto w-3/4 border-t pt-10 md:w-2/4 ">
       <div className="mx-auto">
         {currentStep === 1 && firstStep}
         {currentStep === 2 && secondStep}

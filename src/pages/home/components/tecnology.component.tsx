@@ -6,29 +6,29 @@ import ImgPtgmv2 from "../../../assets/images/ptgmv2_home.png";
 const TecnologySection = () => {
   return (
     <section className="flex w-full  justify-center p-0">
-      <div className="container w-full px-20 py-20 xl:ml-16 2xl:ml-36 ">
-        <div className="ml-10 w-11/12 rounded-2xl bg-white p-10 py-28 shadow-2xl">
-          <div className="grid grid-cols-2 gap-10">
-            <div className="relative h-full w-full">
+      <div className="w-full py-20 md:container md:px-20 xl:ml-16 2xl:ml-36 ">
+        <div className="w-full rounded-2xl bg-white p-10 py-28 shadow-2xl md:ml-10 md:w-11/12">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+            <div className="relative hidden h-full w-full md:block">
               <div className="absolute -left-36 -top-10">
-                <img src={ImgCode} alt="code_img" className="max-w-md" />
+                <img src={ImgCode} alt="code_img" className=" max-w-md " />
               </div>
               <div className="absolute -left-10 -top-40">
                 <img
-                  className="max-w-md rounded-2xl shadow-lg"
+                  className="max-w-md rounded-2xl shadow-lg "
                   src={ImgPtgmv2}
                   alt="software_img"
                 />
               </div>
             </div>
-            <div className="">
-              <h3 className="my-2 text-2xl font-bold">
+            <div>
+              <h3 className="my-2 text-xl font-bold md:text-2xl">
                 Tecnología: PROTÉGEME V2 ®
               </h3>
               <p className="my-2 text-base font-normal">
                 Este es el software que impulsa a A5
               </p>
-              <h3 className="my-2 text-2xl font-bold">
+              <h3 className="my-2 text-xl font-bold md:text-2xl">
                 Reúne la información y permite gestionar:{" "}
               </h3>
               <ul>

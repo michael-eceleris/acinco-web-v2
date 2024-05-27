@@ -3,7 +3,7 @@ export const microserviceApiRoutes = {
     claim: {
       auth: {
         login: () => "/api/v1/claim/auth",
-        me: () => "/api/v1/user/me",
+        me: () => "/api/v1/claim/user",
       },
       device: {
         list: () => `/api/v1/claim/device`,

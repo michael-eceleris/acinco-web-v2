@@ -20,7 +20,7 @@ export interface ICreateClaimRes {
 }
 
 interface IData extends ICredentials {
-  data: {
+  claim: {
     id: number;
   };
   error: {

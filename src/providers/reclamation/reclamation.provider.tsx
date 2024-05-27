@@ -43,6 +43,7 @@ type IContext = {
   setIsLoadingSubmit: Dispatch<SetStateAction<boolean>>;
   setHeaders: Dispatch<SetStateAction<ICredentials>>;
   setHeadersInsurrance: Dispatch<SetStateAction<ICredentialsInsurrance>>;
+  clear: () => void;
 };
 
 export const ReclamationContext = React.createContext<IContext>({} as IContext);
@@ -72,6 +73,14 @@ const ReclamationProvider = ({ children }: IProps) => {
     IPolicyDeviceUserInsurrance | undefined | null
   >(null);
 
+  const clear = () => {
+    setPlans([]);
+    setDevices([]);
+    setCoverages([]);
+    setDocuments([]);
+    setGlobalForm(null);
+  };
+
   const context: IContext = useMemo(
     () => ({
       client,
@@ -94,6 +103,7 @@ const ReclamationProvider = ({ children }: IProps) => {
       setHeaders,
       setHeadersInsurrance,
       setCurrentPlan,
+      clear,
     }),
     [
       plans,

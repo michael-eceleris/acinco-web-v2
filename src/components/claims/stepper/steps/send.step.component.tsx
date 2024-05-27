@@ -18,6 +18,10 @@ import {
 } from "../../../../providers/reclamation/types/claims";
 import { toFormData } from "../../../../util/toFormData";
 import { useCreateClaim } from "../../../../services/microservice/claim/create/use-claim";
+import ModalBody from "../../components/ModalBody";
+import ModalHeader from "../../components/ModalHeader";
+import { useModalContext } from "../../../../providers/modal/modal.provider";
+import { useLoginClaim } from "../../../../hooks/useLoginClaim";
 
 interface ICreateFormValues {
   client: {
@@ -36,10 +40,12 @@ interface ICreateFormValues {
 }
 
 const SendStepComponet = () => {
-  const { globalForm, documents } = useReclamationContext();
+  const { globalForm, documents, clear } = useReclamationContext();
   const { setCurrentStep } = useStepContext();
   const [user, setUser] = useState<IClientClaim>();
   const { mutateAsync: createClaim, isLoading } = useCreateClaim();
+  const { setShow } = useModalContext();
+  const { logout } = useLoginClaim();
 
   const formatSumbitData = (values: ICreateFormValues): ICreateInsurrance => {
     const documentData = {};
@@ -60,12 +66,63 @@ const SendStepComponet = () => {
     };
   };
 
+  const clearProcess = () => {
+    clear();
+    setCurrentStep(1);
+    logout();
+    setShow((prevState) => ({ ...prevState, visible: false }));
+  };
+
   const onSubmit = () => {
     const data = formatSumbitData(globalForm as ICreateFormValues);
     const form = toFormData<ICreateInsurrance>(data);
     createClaim({ data: form })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setShow((prevState) => ({
+          ...prevState,
+          visible: true,
+          header: <ModalHeader success={true} />,
+          content: (
+            <ModalBody
+              title="Reclamación exitosa"
+              message={`Tu reclamación fue creada exitosamente, tu número de radicado es No. ${res.data.claim.id}`}
+            />
+          ),
+          onAccept: clearProcess,
+          titleOnAccept: "Aceptar",
+        }));
+      })
+      .catch((err) => {
+        if (err.response.status === 400) {
+          setShow((prevState) => ({
+            ...prevState,
+            visible: true,
+            header: <ModalHeader success={false} />,
+            content: (
+              <ModalBody
+                title=" No fue posible crear tu reclamación"
+                message={err?.response.data.error.message}
+              />
+            ),
+            onAccept: clearProcess,
+            titleOnAccept: "Aceptar",
+          }));
+        } else {
+          setShow((prevState) => ({
+            ...prevState,
+            visible: true,
+            header: <ModalHeader success={false} />,
+            content: (
+              <ModalBody
+                title=" No fue posible crear tu reclamación"
+                message="Acaba de ocurrir un problema, lo sentimos."
+              />
+            ),
+            onAccept: clearProcess,
+            titleOnAccept: "Aceptar",
+          }));
+        }
+      });
   };
   const handlePreviusStep = () => {
     setCurrentStep(4);

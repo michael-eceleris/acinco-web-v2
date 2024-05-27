@@ -6,6 +6,7 @@ import routes from "./providers/router/routes";
 import Navbar from "./components/Navbar/Navbar";
 import ModalProvider from "./providers/modal/modal.provider";
 import Modal from "./components/modalv2/Modal";
+import ScrollTop from "./util/scrollTop";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -15,6 +16,7 @@ const App = () => {
         <ModalProvider>
           <Navbar />
           <Modal />
+          <ScrollTop />
           <Routes>
             {routes.map((route, index) => (
               <Route

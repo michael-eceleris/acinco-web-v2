@@ -58,7 +58,7 @@ const StepperHeader = () => {
           Antes de realizar tu reclamación revisa los documentos necesarios,
           revísalos aquí.
         </p>
-        <div className="grid hidden grid-cols-5 gap-4 md:my-5 md:block">
+        <div className=" hidden md:my-5 md:grid md:grid-cols-5 md:gap-4 ">
           {steps.map(({ image, title, titleBold, stepNumber }) => (
             <div
               key={stepNumber}

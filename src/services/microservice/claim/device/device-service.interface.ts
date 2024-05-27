@@ -1,14 +1,11 @@
-import {
-  ICredentials,
-  ICredentialsInsurrance,
-} from "../../types/authorization";
+import { ICredentials, ICredentialsClaims } from "../../types/authorization";
 import { IDeviceUserClaim } from "../types/claims";
 
 export interface IListDeviceReqBody {}
 
 export interface IListDeviceReqParams {
   userId: string | number | undefined;
-  headers?: ICredentialsInsurrance;
+  headers?: ICredentialsClaims;
 }
 
 export interface IListDeviceRes {

@@ -1,13 +1,10 @@
-import {
-  ICredentials,
-  ICredentialsInsurrance,
-} from "../../types/authorization";
+import { ICredentials, ICredentialsClaims } from "../../types/authorization";
 import { ICitiesClaim } from "../types/claims";
 
 export interface IListCityReqBody {}
 
 export interface IListCityReqParams {
-  headers?: ICredentialsInsurrance;
+  headers?: ICredentialsClaims;
 }
 
 export interface IIListCityRes {

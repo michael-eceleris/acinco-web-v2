@@ -1,13 +1,10 @@
-import {
-  ICredentials,
-  ICredentialsInsurrance,
-} from "../../types/authorization";
+import { ICredentials, ICredentialsClaims } from "../../types/authorization";
 import { IGenderClaim } from "../types/claims";
 
 export interface IListGenderReqBody {}
 
 export interface IListGenderReqParams {
-  headers?: ICredentialsInsurrance;
+  headers?: ICredentialsClaims;
 }
 
 export interface IIListGenderRes {

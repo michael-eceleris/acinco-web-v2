@@ -10,7 +10,7 @@ import {
 export const listDeviceUserInsurranceService = ({
   userId,
 }: IListDeviceReqParams) => {
-  const url = microserviceApiRoutes.v1.claim.device.list(userId);
+  const url = microserviceApiRoutes.v1.claim.device.list();
   return microserviceApiAxios
     .get<Error, AxiosResponse<IListDeviceRes>>(url, {})
     .then((res) => res.data);

@@ -6,6 +6,8 @@ import * as yup from "yup";
 import Input from "../../../inputs/Input";
 import PrimaryButton from "../../../buttons/PrimaryButton";
 import { useStepContext } from "../stepper.provider";
+import { useLoginClaimService } from "../../../../services/microservice/claim/auth/use-auth";
+import { useLoginClaim } from "../../../../hooks/useLoginClaim";
 
 type IFormInput = {
   username: string;
@@ -30,11 +32,18 @@ const LoginStepComponent = () => {
   } = useForm({
     resolver: yupResolver(schemaLogin),
   });
-
+  const { mutateAsync: loginClaim, isLoading } = useLoginClaimService();
+  const { login } = useLoginClaim();
   const { setCurrentStep } = useStepContext();
 
-  const onSubmit: SubmitHandler<IFormInput> = (val) => {
-    setCurrentStep(2);
+  const onSubmit: SubmitHandler<IFormInput> = async (val) => {
+    try {
+      const res = await loginClaim(val);
+      login(res.data, false);
+      setCurrentStep(2);
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <section className="w-full">
@@ -71,7 +80,11 @@ const LoginStepComponent = () => {
           />
           <PrimaryButton
             title="INICIAR SESIÓN"
-            className="mt-5 rounded-3xl bg-buttonBlack px-5 py-1 text-sm font-normal text-whiteSoft"
+            className={
+              "mt-5 rounded-3xl bg-buttonBlack px-5 py-1 text-sm font-normal text-whiteSoft"
+            }
+            disabled={isLoading}
+            loading={isLoading}
           />
         </form>
       </div>

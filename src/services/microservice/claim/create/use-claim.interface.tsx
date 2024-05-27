@@ -1,4 +1,4 @@
-import { ICredentialsInsurrance } from "../../types/authorization";
+import { ICredentialsClaims } from "../../types/authorization";
 
 export interface IUseCreateClaimService {
   cliente_id: number | undefined;
@@ -14,5 +14,5 @@ export interface IUseCreateClaimService {
 }
 
 export interface IUseCreateClaimHeaders {
-  headers: ICredentialsInsurrance;
+  headers: ICredentialsClaims;
 }

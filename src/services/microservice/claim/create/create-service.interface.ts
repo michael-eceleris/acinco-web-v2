@@ -1,7 +1,4 @@
-import {
-  ICredentials,
-  ICredentialsInsurrance,
-} from "../../types/authorization";
+import { ICredentials, ICredentialsClaims } from "../../types/authorization";
 
 export interface ICreateClaimReqBody {
   cliente_id: number | undefined;
@@ -17,7 +14,7 @@ export interface ICreateClaimReqBody {
 }
 
 export interface ICreateClaimReqParams {
-  headers?: ICredentialsInsurrance;
+  headers?: ICredentialsClaims;
 }
 
 export interface ICreateClaimRes {

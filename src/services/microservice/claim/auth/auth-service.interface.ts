@@ -1,7 +1,4 @@
-import {
-  ICredentials,
-  ICredentialsInsurrance,
-} from "../../types/authorization";
+import { ICredentials, ICredentialsClaims } from "../../types/authorization";
 import { IClientClaim } from "../types/claims";
 
 export interface ILoginReqBody {
@@ -10,7 +7,7 @@ export interface ILoginReqBody {
 }
 
 export interface ILoginRes {
-  data: ICredentials;
+  data: ICredentialsClaims;
 }
 
 export interface IGetMeRes {
@@ -18,7 +15,7 @@ export interface IGetMeRes {
 }
 
 export interface IGetMeReqParams {
-  headers?: ICredentialsInsurrance;
+  headers?: ICredentialsClaims;
 }
 
 interface IData extends ICredentials {

@@ -8,9 +8,10 @@ export interface ICredentials {
   accessToken: string;
 }
 
-export interface ICredentialsInsurrance {
+export interface ICredentialsClaims {
   type: string;
   token: string;
+  expiresIn: number;
 }
 
 export interface IUserMe {

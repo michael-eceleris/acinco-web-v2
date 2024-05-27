@@ -3,41 +3,13 @@ import { useForm, SubmitHandler } from "react-hook-form";
 
 import { useStepContext } from "../stepper.provider";
 import PrimaryButton from "../../../buttons/PrimaryButton";
+import { useReclamationContext } from "../../../../providers/reclamation/reclamation.provider";
 
 type IFormInput = {
   device: string;
   plan: string;
   coverage: string;
 };
-
-const documents = [
-  {
-    nombre_documento_save: "Formato de reclamación.",
-    id: 2603,
-    required: true,
-  },
-  {
-    nombre_documento_save: "Fotografía de cedula.",
-    id: 2602,
-    required: true,
-  },
-  {
-    nombre_documento_save: "Factura de compra.",
-    id: 2601,
-    required: false,
-  },
-  {
-    nombre_documento_save:
-      "Fotografías de la parte posterior, delantera y laterales del equipo.",
-    id: 2600,
-    required: true,
-  },
-  {
-    nombre_documento_save: "Fotografía del serial.",
-    id: 2599,
-    required: false,
-  },
-];
 
 const DocumentStepComponent = () => {
   const {
@@ -49,6 +21,7 @@ const DocumentStepComponent = () => {
     formState: { errors },
   } = useForm();
   const { setCurrentStep } = useStepContext();
+  const { documents, setGlobalForm } = useReclamationContext();
 
   const validateSize = (id, value) => {
     if (value.target.files.length > 0 && value.target.files[0].size > 4000000) {
@@ -59,8 +32,8 @@ const DocumentStepComponent = () => {
       clearErrors(`${id}`);
     }
   };
-  const onSubmit: SubmitHandler<IFormInput> = (val) => {
-    console.log(val);
+  const onSubmit: SubmitHandler<IFormInput> = (values) => {
+    setGlobalForm((prevState) => ({ ...prevState, documents: values }));
     setCurrentStep(4);
   };
   const handlePreviusStep = () => {

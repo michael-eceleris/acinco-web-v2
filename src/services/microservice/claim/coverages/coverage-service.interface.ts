@@ -13,5 +13,5 @@ export interface IListCoveragePlanRes {
 }
 
 interface IData extends ICredentials {
-  coverages: ICoveragePlanDeviceUserClaim[];
+  coverage: ICoveragePlanDeviceUserClaim[];
 }

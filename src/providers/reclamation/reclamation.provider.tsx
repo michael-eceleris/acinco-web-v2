@@ -23,6 +23,7 @@ interface IProps {
 type IContext = {
   client: IClientInsurrance | null;
   devices: IDeviceUserInsurrance[];
+  globalForm: any;
   plans: IPolicyDeviceUserInsurrance[];
   currentPlan: IPolicyDeviceUserInsurrance | undefined | null;
   coverages: ICoverageDevicePlanUser[];
@@ -31,6 +32,7 @@ type IContext = {
   headersInsurrance: ICredentialsInsurrance;
   isLoadingSubmit: boolean;
   setDevices: Dispatch<SetStateAction<IDeviceUserInsurrance[]>>;
+  setGlobalForm: Dispatch<SetStateAction<any>>;
   setClient: Dispatch<SetStateAction<IClientInsurrance | null>>;
   setPlans: Dispatch<SetStateAction<IPolicyDeviceUserInsurrance[]>>;
   setCurrentPlan: Dispatch<
@@ -55,6 +57,7 @@ const ReclamationProvider = ({ children }: IProps) => {
   const [documents, setDocuments] = useState<IDocumentsCoveragesInsurrance[]>(
     [],
   );
+  const [globalForm, setGlobalForm] = useState<any>(null);
   const [headers, setHeaders] = useState<ICredentials>({
     refreshToken: "",
     accessToken: "",
@@ -73,6 +76,7 @@ const ReclamationProvider = ({ children }: IProps) => {
     () => ({
       client,
       devices,
+      globalForm,
       plans,
       coverages,
       documents,
@@ -82,6 +86,7 @@ const ReclamationProvider = ({ children }: IProps) => {
       currentPlan,
       setClient,
       setDevices,
+      setGlobalForm,
       setPlans,
       setCoverages,
       setDocuments,
@@ -100,6 +105,7 @@ const ReclamationProvider = ({ children }: IProps) => {
       headers,
       headersInsurrance,
       currentPlan,
+      globalForm,
     ],
   );
 

@@ -13,5 +13,5 @@ export interface IListPlanRes {
 }
 
 interface IData extends ICredentials {
-  policies: IPolicyDeviceUserClaim[];
+  plan: IPolicyDeviceUserClaim[];
 }

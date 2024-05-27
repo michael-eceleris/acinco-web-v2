@@ -27,7 +27,7 @@ export const microserviceApiRoutes = {
         list: () => "/api/v1/shared/gender",
       },
       city: {
-        list: () => "/api/v1/shared/city",
+        list: () => "/api/v1/shared/cities",
       },
     },
   },

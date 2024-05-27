@@ -12,5 +12,5 @@ export interface IIListGenderRes {
 }
 
 interface IData extends ICredentials {
-  genders: IGenderClaim[];
+  cities: IGenderClaim[];
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Controller, useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -11,63 +11,14 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import PrimaryButton from "../../../buttons/PrimaryButton";
 import DropdownFilter from "../../../inputs/DropdownFilter";
-
-const genderList = [
-  {
-    id: 1,
-    name: "Masculino",
-  },
-  {
-    id: 2,
-    name: "Femenino",
-  },
-  {
-    id: 3,
-    name: "No Binario",
-  },
-  {
-    id: 4,
-    name: "Por Actualizar",
-  },
-];
-
-const citiesList = [
-  {
-    id: 2,
-    nombre: "Leticia",
-    departamento: {
-      nombre: "Amazonas",
-    },
-  },
-  {
-    id: 3,
-    nombre: "Puerto Nariño",
-    departamento: {
-      nombre: "Amazonas",
-    },
-  },
-  {
-    id: 4,
-    nombre: "Abejorral",
-    departamento: {
-      nombre: "Antioquia",
-    },
-  },
-  {
-    id: 5,
-    nombre: "Abriaquí",
-    departamento: {
-      nombre: "Antioquia",
-    },
-  },
-  {
-    id: 6,
-    nombre: "Alejandría",
-    departamento: {
-      nombre: "Antioquia",
-    },
-  },
-];
+import { listGenderInsurrance } from "../../../../services/microservice/claim/gender/gender-service";
+import { useReclamationContext } from "../../../../providers/reclamation/reclamation.provider";
+import {
+  ICitiesClaim,
+  IGenderClaim,
+} from "../../../../services/microservice/claim/types/claims";
+import { listCityInsurrance } from "../../../../services/microservice/claim/city/city-service";
+import { useStepContext } from "../stepper.provider";
 
 type IFormInput = {
   gender: {
@@ -105,7 +56,7 @@ const schemaAditionalInfo = yup
       .string()
       .matches(/^\d+$/, { message: messageRequired })
       .max(15, "Máximo 15 dígitos")
-      .min(15, "Minimo 10 dígitos")
+      .min(15, "Minimo 15 dígitos")
       .required(messageRequired),
     linePrincipal: yup
       .string()
@@ -122,10 +73,26 @@ const AditionalStepComponent = () => {
     control,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schemaAditionalInfo) });
-
-  const onSubmit: SubmitHandler<IFormInput> = (val) => {
-    console.log(val);
+  const [genders, setGenders] = useState<IGenderClaim[]>();
+  const [cities, setCities] = useState<ICitiesClaim[]>();
+  const { setCurrentStep } = useStepContext();
+  const { setGlobalForm } = useReclamationContext();
+  const onSubmit: SubmitHandler<IFormInput> = (values) => {
+    setGlobalForm((prevState) => ({ ...prevState, ...values }));
+    setCurrentStep(5);
   };
+
+  const handlePreviusStep = () => {
+    setCurrentStep(3);
+  };
+
+  useEffect(() => {
+    listGenderInsurrance().then((res) => setGenders(res.data.cities));
+  }, []);
+  useEffect(() => {
+    listCityInsurrance().then((res) => setCities(res.data.cities));
+  }, []);
+
   return (
     <section>
       <h2 className="mb-5 text-center text-3xl font-bold">
@@ -138,7 +105,7 @@ const AditionalStepComponent = () => {
             control={control}
             render={({ field }) => (
               <Dropdown
-                options={genderList}
+                options={genders || []}
                 label1="name"
                 placeholder="Selecciona tu género"
                 error={errors.gender?.message}
@@ -151,7 +118,7 @@ const AditionalStepComponent = () => {
             control={control}
             render={({ field }) => (
               <DropdownFilter
-                options={citiesList}
+                options={cities || []}
                 label="nombre"
                 placeholder="Selecciona la ciudad en la que ocurrió el evento"
                 error={errors.claimCity?.message}
@@ -321,6 +288,8 @@ const AditionalStepComponent = () => {
             <PrimaryButton
               title="Atras"
               className="rounded-2xl border px-5 text-textBlack"
+              onClick={() => handlePreviusStep()}
+              type="button"
             />
             <PrimaryButton
               type="submit"
